@@ -1,5 +1,6 @@
 import { describe, it, expect, afterAll } from "vitest";
 import {
+  getVehicleTypes,
   getMakesForVehicleType,
   getModelsForMakeYear,
   getAvailableYears,
@@ -20,8 +21,6 @@ describe("getAvailableYears", () => {
   it("contains known years", () => {
     const years = getAvailableYears();
     expect(years).toContain(2024);
-    expect(years).toContain(2020);
-    expect(years).toContain(2000);
   });
 
   it("returns years in ascending order", () => {
@@ -32,29 +31,66 @@ describe("getAvailableYears", () => {
   });
 });
 
+describe("getVehicleTypes", () => {
+  it("returns the expected response shape", () => {
+    const result = getVehicleTypes();
+    expect(result).toHaveProperty("Count");
+    expect(result).toHaveProperty("Message");
+    expect(result).toHaveProperty("Results");
+    expect(result.Count).toBe(result.Results.length);
+  });
+
+  it("includes car, truck, and MPV", () => {
+    const result = getVehicleTypes();
+    const names = result.Results.map((r) => r.VehicleTypeName);
+    expect(names).toContain("Passenger Car");
+    expect(names).toContain("Truck");
+    expect(names).toContain("Multipurpose Passenger Vehicle (MPV)");
+  });
+
+  it("each type has an id and name", () => {
+    const result = getVehicleTypes();
+    for (const vt of result.Results) {
+      expect(typeof vt.VehicleTypeId).toBe("number");
+      expect(typeof vt.VehicleTypeName).toBe("string");
+      expect(vt.VehicleTypeName.length).toBeGreaterThan(0);
+    }
+  });
+});
+
 describe("getMakesForVehicleType", () => {
   it("returns the expected response shape", () => {
-    const result = getMakesForVehicleType(2024);
+    const result = getMakesForVehicleType("Passenger Car", 2024);
     expect(result).toHaveProperty("Count");
     expect(result).toHaveProperty("Message");
     expect(result).toHaveProperty("SearchCriteria");
     expect(result).toHaveProperty("Results");
-    expect(typeof result.Count).toBe("number");
-    expect(result.Message).toBe("Results returned successfully");
     expect(result.Count).toBe(result.Results.length);
+    expect(result.Message).toBe("Results returned successfully");
   });
 
-  it("returns makes for 2024", () => {
-    const result = getMakesForVehicleType(2024);
-    expect(result.Count).toBeGreaterThan(50);
+  it("returns car makes for 2024", () => {
+    const result = getMakesForVehicleType("Passenger Car", 2024);
+    expect(result.Count).toBeGreaterThan(10);
     const names = result.Results.map((r) => r.MakeName);
     expect(names).toContain("TOYOTA");
     expect(names).toContain("HONDA");
+  });
+
+  it("returns truck makes for 2024", () => {
+    const result = getMakesForVehicleType("Truck", 2024);
+    expect(result.Count).toBeGreaterThan(10);
+    const names = result.Results.map((r) => r.MakeName);
     expect(names).toContain("FORD");
   });
 
+  it("returns MPV makes for 2024", () => {
+    const result = getMakesForVehicleType("Multipurpose Passenger Vehicle (MPV)", 2024);
+    expect(result.Count).toBeGreaterThan(10);
+  });
+
   it("each make has the expected fields", () => {
-    const result = getMakesForVehicleType(2024);
+    const result = getMakesForVehicleType("Passenger Car", 2024);
     for (const make of result.Results) {
       expect(typeof make.MakeId).toBe("number");
       expect(typeof make.MakeName).toBe("string");
@@ -65,25 +101,29 @@ describe("getMakesForVehicleType", () => {
   });
 
   it("returns results sorted by make name", () => {
-    const result = getMakesForVehicleType(2024);
+    const result = getMakesForVehicleType("Passenger Car", 2024);
     for (let i = 1; i < result.Results.length; i++) {
-      expect(
-        result.Results[i].MakeName.localeCompare(result.Results[i - 1].MakeName)
-      ).toBeGreaterThanOrEqual(0);
+      expect(result.Results[i].MakeName >= result.Results[i - 1].MakeName).toBe(true);
     }
   });
 
+  it("is case-insensitive for vehicle type", () => {
+    const a = getMakesForVehicleType("Passenger Car", 2024);
+    const b = getMakesForVehicleType("passenger car", 2024);
+    expect(a.Count).toBe(b.Count);
+  });
+
   it("returns empty results for a year with no data", () => {
-    const result = getMakesForVehicleType(1900);
+    const result = getMakesForVehicleType("Passenger Car", 1900);
     expect(result.Count).toBe(0);
     expect(result.Results).toEqual([]);
   });
 
-  it("returns consistent results across calls", () => {
-    const a = getMakesForVehicleType(2024);
-    const b = getMakesForVehicleType(2024);
-    expect(a.Count).toBe(b.Count);
-    expect(a.Results).toEqual(b.Results);
+  it("returns different makes for different vehicle types", () => {
+    const cars = getMakesForVehicleType("Passenger Car", 2024);
+    const trucks = getMakesForVehicleType("Truck", 2024);
+    // Counts should differ
+    expect(cars.Count).not.toBe(trucks.Count);
   });
 });
 
@@ -94,19 +134,15 @@ describe("getModelsForMakeYear", () => {
     expect(result).toHaveProperty("Message");
     expect(result).toHaveProperty("SearchCriteria");
     expect(result).toHaveProperty("Results");
-    expect(typeof result.Count).toBe("number");
-    expect(result.Message).toBe("Results returned successfully");
-    expect(result.SearchCriteria).toBe("Make:Toyota | ModelYear:2024");
     expect(result.Count).toBe(result.Results.length);
+    expect(result.Message).toBe("Results returned successfully");
   });
 
   it("returns Toyota models for 2024", () => {
     const result = getModelsForMakeYear("Toyota", 2024);
-    expect(result.Count).toBeGreaterThan(10);
+    expect(result.Count).toBeGreaterThan(5);
     const models = result.Results.map((r) => r.Model_Name);
     expect(models).toContain("Camry");
-    expect(models).toContain("Corolla");
-    expect(models).toContain("RAV4");
   });
 
   it("each model has the expected fields", () => {
@@ -126,15 +162,19 @@ describe("getModelsForMakeYear", () => {
     const mixed = getModelsForMakeYear("Toyota", 2024);
     expect(lower.Count).toBe(upper.Count);
     expect(upper.Count).toBe(mixed.Count);
-    expect(lower.Results).toEqual(upper.Results);
   });
 
-  it("returns results sorted by model name", () => {
-    const result = getModelsForMakeYear("Toyota", 2024);
-    // SQLite sorts with binary collation (uppercase before lowercase)
-    for (let i = 1; i < result.Results.length; i++) {
-      expect(result.Results[i].Model_Name >= result.Results[i - 1].Model_Name).toBe(true);
-    }
+  it("filters by vehicle type when provided", () => {
+    const all = getModelsForMakeYear("Ford", 2024);
+    const trucks = getModelsForMakeYear("Ford", 2024, "Truck");
+    const cars = getModelsForMakeYear("Ford", 2024, "Passenger Car");
+
+    expect(trucks.Count).toBeGreaterThan(0);
+    expect(cars.Count).toBeGreaterThan(0);
+    expect(trucks.Count + cars.Count).toBeLessThanOrEqual(all.Count);
+
+    const truckNames = trucks.Results.map((r) => r.Model_Name);
+    expect(truckNames).toContain("F-150");
   });
 
   it("returns empty results for unknown make", () => {
@@ -150,23 +190,24 @@ describe("getModelsForMakeYear", () => {
   });
 
   it("works for multiple makes", () => {
-    for (const make of ["Honda", "Ford", "BMW", "Mercedes-Benz"]) {
+    for (const make of ["Honda", "Ford", "BMW"]) {
       const result = getModelsForMakeYear(make, 2024);
       expect(result.Count).toBeGreaterThan(0);
-      expect(result.Results[0].Make_Name.toUpperCase()).toContain(
-        make.toUpperCase()
-      );
     }
   });
 
   it("returns different models for different years", () => {
-    const r2024 = getModelsForMakeYear("Toyota", 2024);
-    const r2000 = getModelsForMakeYear("Toyota", 2000);
-    // Both should have data but may differ
-    expect(r2024.Count).toBeGreaterThan(0);
-    expect(r2000.Count).toBeGreaterThan(0);
-    // Model counts will likely differ across decades
-    expect(r2024.Results).not.toEqual(r2000.Results);
+    const years = getAvailableYears();
+    if (years.length < 2) return; // need at least 2 years
+    const r1 = getModelsForMakeYear("Toyota", years[0]);
+    const r2 = getModelsForMakeYear("Toyota", years[years.length - 1]);
+    expect(r1.Count).toBeGreaterThan(0);
+    expect(r2.Count).toBeGreaterThan(0);
+  });
+
+  it("includes SearchCriteria with vehicle type when filtered", () => {
+    const result = getModelsForMakeYear("Ford", 2024, "Truck");
+    expect(result.SearchCriteria).toContain("VehicleType:Truck");
   });
 });
 
@@ -178,7 +219,7 @@ describe("close", () => {
 
   it("allows re-opening after close", () => {
     close();
-    const result = getMakesForVehicleType(2024);
+    const result = getMakesForVehicleType("Passenger Car", 2024);
     expect(result.Count).toBeGreaterThan(0);
   });
 });

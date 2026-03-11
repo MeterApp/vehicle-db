@@ -20,6 +20,11 @@ export interface ModelResult {
   Model_Name: string;
 }
 
+export interface VehicleType {
+  VehicleTypeId: number;
+  VehicleTypeName: string;
+}
+
 export interface NHTSAResponse<T> {
   Count: number;
   Message: string;
@@ -40,23 +45,50 @@ function getDb(): ReturnType<typeof Database> {
 }
 
 // ---------------------------------------------------------------------------
-// Public API — drop-in replacements for the NHTSA REST calls
+// Public API
 // ---------------------------------------------------------------------------
 
 /**
- * Equivalent to:
- * GET /api/vehicles/GetMakesForVehicleType/car?year={year}&format=json
+ * Returns all vehicle types in the database.
  */
-export function getMakesForVehicleType(year: number): NHTSAResponse<MakeResult> {
+export function getVehicleTypes(): NHTSAResponse<VehicleType> {
+  const db = getDb();
+  const rows = db
+    .prepare("SELECT vehicle_type_id, vehicle_type_name FROM vehicle_types ORDER BY vehicle_type_name")
+    .all() as { vehicle_type_id: number; vehicle_type_name: string }[];
+
+  const results: VehicleType[] = rows.map((r) => ({
+    VehicleTypeId: r.vehicle_type_id,
+    VehicleTypeName: r.vehicle_type_name,
+  }));
+
+  return {
+    Count: results.length,
+    Message: "Results returned successfully",
+    SearchCriteria: "",
+    Results: results,
+  };
+}
+
+/**
+ * Equivalent to:
+ * GET /api/vehicles/GetMakesForVehicleType/{type}?year={year}&format=json
+ */
+export function getMakesForVehicleType(
+  vehicleType: string,
+  year: number
+): NHTSAResponse<MakeResult> {
   const db = getDb();
   const rows = db
     .prepare(
-      `SELECT make_id, make_name, vehicle_type_id, vehicle_type_name
-       FROM makes
-       WHERE year = ?
-       ORDER BY make_name`
+      `SELECT DISTINCT mk.make_id, mk.make_name, vt.vehicle_type_id, vt.vehicle_type_name
+       FROM models m
+       JOIN makes mk USING (make_id)
+       JOIN vehicle_types vt USING (vehicle_type_id)
+       WHERE m.year = ? AND vt.vehicle_type_name = ? COLLATE NOCASE
+       ORDER BY mk.make_name`
     )
-    .all(year) as {
+    .all(year, vehicleType) as {
     make_id: number;
     make_name: string;
     vehicle_type_id: number;
@@ -73,7 +105,7 @@ export function getMakesForVehicleType(year: number): NHTSAResponse<MakeResult> 
   return {
     Count: results.length,
     Message: "Results returned successfully",
-    SearchCriteria: `Vehicle Type: car`,
+    SearchCriteria: `Vehicle Type: ${vehicleType}`,
     Results: results,
   };
 }
@@ -81,20 +113,34 @@ export function getMakesForVehicleType(year: number): NHTSAResponse<MakeResult> 
 /**
  * Equivalent to:
  * GET /api/vehicles/GetModelsForMakeYear/make/{make}/modelyear/{year}?format=json
+ *
+ * Optionally filter by vehicle type.
  */
 export function getModelsForMakeYear(
   make: string,
-  year: number
+  year: number,
+  vehicleType?: string
 ): NHTSAResponse<ModelResult> {
   const db = getDb();
-  const rows = db
-    .prepare(
-      `SELECT make_id, make_name, model_id, model_name
-       FROM models
-       WHERE year = ? AND make_name = ? COLLATE NOCASE
-       ORDER BY model_name`
-    )
-    .all(year, make) as {
+
+  let sql = `
+    SELECT mk.make_id, mk.make_name, m.model_id, m.model_name
+    FROM models m
+    JOIN makes mk USING (make_id)
+  `;
+  const params: any[] = [year, make];
+
+  if (vehicleType) {
+    sql += `JOIN vehicle_types vt USING (vehicle_type_id)
+            WHERE m.year = ? AND mk.make_name = ? COLLATE NOCASE AND vt.vehicle_type_name = ? COLLATE NOCASE`;
+    params.push(vehicleType);
+  } else {
+    sql += `WHERE m.year = ? AND mk.make_name = ? COLLATE NOCASE`;
+  }
+
+  sql += ` ORDER BY m.model_name`;
+
+  const rows = db.prepare(sql).all(...params) as {
     make_id: number;
     make_name: string;
     model_id: number;
@@ -111,7 +157,7 @@ export function getModelsForMakeYear(
   return {
     Count: results.length,
     Message: "Results returned successfully",
-    SearchCriteria: `Make:${make} | ModelYear:${year}`,
+    SearchCriteria: `Make:${make} | ModelYear:${year}${vehicleType ? ` | VehicleType:${vehicleType}` : ""}`,
     Results: results,
   };
 }
@@ -122,7 +168,7 @@ export function getModelsForMakeYear(
 export function getAvailableYears(): number[] {
   const db = getDb();
   const rows = db
-    .prepare("SELECT DISTINCT year FROM makes ORDER BY year")
+    .prepare("SELECT DISTINCT year FROM models ORDER BY year")
     .all() as { year: number }[];
   return rows.map((r) => r.year);
 }
