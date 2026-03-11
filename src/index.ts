@@ -4,32 +4,36 @@ import path from "path";
 const DB_PATH = path.join(__dirname, "..", "data", "nhtsa.db");
 
 // ---------------------------------------------------------------------------
-// Public types — mirror the NHTSA API response shapes
+// Public types
 // ---------------------------------------------------------------------------
-export interface MakeResult {
-  MakeId: number;
-  MakeName: string;
-  VehicleTypeId: number;
-  VehicleTypeName: string;
-}
-
-export interface ModelResult {
-  Make_ID: number;
-  Make_Name: string;
-  Model_ID: number;
-  Model_Name: string;
-}
-
 export interface VehicleType {
-  VehicleTypeId: number;
-  VehicleTypeName: string;
+  vehicleTypeId: number;
+  vehicleTypeName: string;
 }
 
-export interface NHTSAResponse<T> {
-  Count: number;
-  Message: string;
-  SearchCriteria: string;
-  Results: T[];
+export interface Make {
+  makeId: number;
+  makeName: string;
+}
+
+export interface Model {
+  modelId: number;
+  modelName: string;
+  makeId: number;
+  makeName: string;
+  vehicleTypeId: number;
+  vehicleTypeName: string;
+}
+
+export interface GetMakesOptions {
+  year?: number;
+  vehicleTypeId?: number;
+}
+
+export interface GetModelsOptions {
+  year?: number;
+  vehicleTypeId?: number;
+  makeId?: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -51,115 +55,106 @@ function getDb(): ReturnType<typeof Database> {
 /**
  * Returns all vehicle types in the database.
  */
-export function getVehicleTypes(): NHTSAResponse<VehicleType> {
+export function getVehicleTypes(): VehicleType[] {
   const db = getDb();
   const rows = db
     .prepare("SELECT vehicle_type_id, vehicle_type_name FROM vehicle_types ORDER BY vehicle_type_name")
     .all() as { vehicle_type_id: number; vehicle_type_name: string }[];
 
-  const results: VehicleType[] = rows.map((r) => ({
-    VehicleTypeId: r.vehicle_type_id,
-    VehicleTypeName: r.vehicle_type_name,
+  return rows.map((r) => ({
+    vehicleTypeId: r.vehicle_type_id,
+    vehicleTypeName: r.vehicle_type_name,
   }));
-
-  return {
-    Count: results.length,
-    Message: "Results returned successfully",
-    SearchCriteria: "",
-    Results: results,
-  };
 }
 
 /**
- * Equivalent to:
- * GET /api/vehicles/GetMakesForVehicleType/{type}?year={year}&format=json
+ * Returns makes, optionally filtered by year and/or vehicle type.
  */
-export function getMakesForVehicleType(
-  vehicleType: string,
-  year: number
-): NHTSAResponse<MakeResult> {
+export function getMakes(options: GetMakesOptions = {}): Make[] {
   const db = getDb();
-  const rows = db
-    .prepare(
-      `SELECT DISTINCT mk.make_id, mk.make_name, vt.vehicle_type_id, vt.vehicle_type_name
-       FROM models m
-       JOIN makes mk USING (make_id)
-       JOIN vehicle_types vt USING (vehicle_type_id)
-       WHERE m.year = ? AND vt.vehicle_type_name = ? COLLATE NOCASE
-       ORDER BY mk.make_name`
-    )
-    .all(year, vehicleType) as {
+  const conditions: string[] = [];
+  const params: any[] = [];
+
+  if (options.year != null) {
+    conditions.push("m.year = ?");
+    params.push(options.year);
+  }
+  if (options.vehicleTypeId != null) {
+    conditions.push("m.vehicle_type_id = ?");
+    params.push(options.vehicleTypeId);
+  }
+
+  let sql: string;
+  if (conditions.length > 0) {
+    sql = `SELECT DISTINCT mk.make_id, mk.make_name
+           FROM models m
+           JOIN makes mk USING (make_id)
+           WHERE ${conditions.join(" AND ")}
+           ORDER BY mk.make_name`;
+  } else {
+    sql = `SELECT make_id, make_name FROM makes ORDER BY make_name`;
+  }
+
+  const rows = db.prepare(sql).all(...params) as {
+    make_id: number;
+    make_name: string;
+  }[];
+
+  return rows.map((r) => ({
+    makeId: r.make_id,
+    makeName: r.make_name,
+  }));
+}
+
+/**
+ * Returns models, optionally filtered by year, vehicle type, and/or make.
+ */
+export function getModels(options: GetModelsOptions = {}): Model[] {
+  const db = getDb();
+  const conditions: string[] = [];
+  const params: any[] = [];
+
+  if (options.year != null) {
+    conditions.push("m.year = ?");
+    params.push(options.year);
+  }
+  if (options.vehicleTypeId != null) {
+    conditions.push("m.vehicle_type_id = ?");
+    params.push(options.vehicleTypeId);
+  }
+  if (options.makeId != null) {
+    conditions.push("m.make_id = ?");
+    params.push(options.makeId);
+  }
+
+  const where = conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
+
+  const sql = `
+    SELECT m.model_id, m.model_name, mk.make_id, mk.make_name,
+           vt.vehicle_type_id, vt.vehicle_type_name
+    FROM models m
+    JOIN makes mk USING (make_id)
+    JOIN vehicle_types vt USING (vehicle_type_id)
+    ${where}
+    ORDER BY m.model_name`;
+
+  const rows = db.prepare(sql).all(...params) as {
+    model_id: number;
+    model_name: string;
     make_id: number;
     make_name: string;
     vehicle_type_id: number;
     vehicle_type_name: string;
   }[];
 
-  const results: MakeResult[] = rows.map((r) => ({
-    MakeId: r.make_id,
-    MakeName: r.make_name,
-    VehicleTypeId: r.vehicle_type_id,
-    VehicleTypeName: r.vehicle_type_name,
+  return rows.map((r) => ({
+    modelId: r.model_id,
+    modelName: r.model_name,
+    makeId: r.make_id,
+    makeName: r.make_name,
+    vehicleTypeId: r.vehicle_type_id,
+    vehicleTypeName: r.vehicle_type_name,
   }));
-
-  return {
-    Count: results.length,
-    Message: "Results returned successfully",
-    SearchCriteria: `Vehicle Type: ${vehicleType}`,
-    Results: results,
-  };
-}
-
-/**
- * Equivalent to:
- * GET /api/vehicles/GetModelsForMakeYear/make/{make}/modelyear/{year}?format=json
- *
- * Optionally filter by vehicle type.
- */
-export function getModelsForMakeYear(
-  make: string,
-  year: number,
-  vehicleType?: string
-): NHTSAResponse<ModelResult> {
-  const db = getDb();
-
-  let sql = `
-    SELECT mk.make_id, mk.make_name, m.model_id, m.model_name
-    FROM models m
-    JOIN makes mk USING (make_id)
-  `;
-  const params: any[] = [year, make];
-
-  if (vehicleType) {
-    sql += `JOIN vehicle_types vt USING (vehicle_type_id)
-            WHERE m.year = ? AND mk.make_name = ? COLLATE NOCASE AND vt.vehicle_type_name = ? COLLATE NOCASE`;
-    params.push(vehicleType);
-  } else {
-    sql += `WHERE m.year = ? AND mk.make_name = ? COLLATE NOCASE`;
-  }
-
-  sql += ` ORDER BY m.model_name`;
-
-  const rows = db.prepare(sql).all(...params) as {
-    make_id: number;
-    make_name: string;
-    model_id: number;
-    model_name: string;
-  }[];
-
-  const results: ModelResult[] = rows.map((r) => ({
-    Make_ID: r.make_id,
-    Make_Name: r.make_name,
-    Model_ID: r.model_id,
-    Model_Name: r.model_name,
-  }));
-
-  return {
-    Count: results.length,
-    Message: "Results returned successfully",
-    SearchCriteria: `Make:${make} | ModelYear:${year}${vehicleType ? ` | VehicleType:${vehicleType}` : ""}`,
-    Results: results,
-  };
 }
 
 /**
