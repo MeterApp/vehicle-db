@@ -34,8 +34,7 @@ let _db: ReturnType<typeof Database> | null = null;
 
 function getDb(): ReturnType<typeof Database> {
   if (!_db) {
-    _db = new Database(DB_PATH, { readonly: true });
-    _db.pragma("journal_mode = WAL");
+    _db = new Database(DB_PATH, { readonly: true, fileMustExist: true });
   }
   return _db;
 }

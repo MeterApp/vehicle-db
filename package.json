@@ -12,7 +12,8 @@
     "build:db": "tsx scripts/build-db.ts",
     "build:ts": "tsc",
     "build": "npm run build:ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
   },
   "keywords": [
     "nhtsa",
@@ -32,6 +33,7 @@
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.4.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }
