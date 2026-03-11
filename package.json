@@ -1,0 +1,37 @@
+{
+  "name": "nhtsa-offline",
+  "version": "1.0.0",
+  "description": "Offline NHTSA vehicle makes/models database bundled as SQLite",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "data/nhtsa.db"
+  ],
+  "scripts": {
+    "build:db": "tsx scripts/build-db.ts",
+    "build:ts": "tsc",
+    "build": "npm run build:ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "nhtsa",
+    "vehicles",
+    "makes",
+    "models",
+    "offline",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "better-sqlite3": "^12.6.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
