@@ -1,11 +1,14 @@
 # vehicle-db
 
-Offline NHTSA vehicle database. All U.S. passenger car makes and models from 1990-2026, bundled as a 2.4 MB SQLite file inside the package. No network requests needed.
+Offline NHTSA vehicle database. All U.S. vehicle makes and models from 1990–2026, bundled as a 3.8 MB SQLite file inside the package. No network requests needed.
 
-Drop-in replacement for two NHTSA vPIC API endpoints:
+Covers three vehicle types: **Passenger Car**, **Truck**, and **Multipurpose Passenger Vehicle (MPV)**.
 
-- `GetMakesForVehicleType/car`
+Drop-in replacement for these NHTSA vPIC API endpoints:
+
+- `GetMakesForVehicleType/{type}`
 - `GetModelsForMakeYear/make/{make}/modelyear/{year}`
+- `GetModelsForMakeIdYear/makeId/{id}/modelyear/{year}/vehicleType/{type}`
 
 ## Install
 
@@ -19,19 +22,28 @@ npm install @meterapp/vehicle-db
 
 ```typescript
 import {
+  getVehicleTypes,
   getMakesForVehicleType,
   getModelsForMakeYear,
   getAvailableYears,
   close,
 } from "@meterapp/vehicle-db";
 
-// Get all car makes for a given year
-const makes = getMakesForVehicleType(2024);
-// => { Count: 193, Message: "...", SearchCriteria: "...", Results: [...] }
+// List available vehicle types
+const types = getVehicleTypes();
+// => Passenger Car, Truck, Multipurpose Passenger Vehicle (MPV)
 
-// Get all models for a specific make and year
+// Get all truck makes for a given year
+const makes = getMakesForVehicleType("Truck", 2024);
+// => { Count: 171, Message: "...", Results: [...] }
+
+// Get all models for a make and year (all vehicle types)
 const models = getModelsForMakeYear("Toyota", 2024);
-// => { Count: 27, Message: "...", SearchCriteria: "...", Results: [...] }
+// => { Count: 27, Message: "...", Results: [...] }
+
+// Filter models by vehicle type
+const trucks = getModelsForMakeYear("Ford", 2024, "Truck");
+// => { Count: 10, Message: "...", Results: [F-150, Ranger, ...] }
 
 // See what years are available
 const years = getAvailableYears();
@@ -43,41 +55,49 @@ close();
 
 ## API
 
-### `getMakesForVehicleType(year: number): NHTSAResponse<MakeResult>`
+### `getVehicleTypes(): NHTSAResponse<VehicleType>`
 
-Returns all passenger car makes for a given model year. Equivalent to:
+Returns all vehicle types in the database.
+
+```typescript
+{ VehicleTypeId: number; VehicleTypeName: string }
+```
+
+### `getMakesForVehicleType(vehicleType: string, year: number): NHTSAResponse<MakeResult>`
+
+Returns all makes for a given vehicle type and model year. Vehicle type is **case-insensitive**. Equivalent to:
 
 ```
-GET https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?year=2024&format=json
+GET https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/truck?year=2024&format=json
 ```
 
 Each result contains:
 
 ```typescript
 {
-  MakeId: number;       // e.g. 474
-  MakeName: string;     // e.g. "TOYOTA"
-  VehicleTypeId: number; // e.g. 2
-  VehicleTypeName: string; // e.g. "Passenger Car"
+  MakeId: number;          // e.g. 460
+  MakeName: string;        // e.g. "FORD"
+  VehicleTypeId: number;   // e.g. 3
+  VehicleTypeName: string; // e.g. "Truck"
 }
 ```
 
-### `getModelsForMakeYear(make: string, year: number): NHTSAResponse<ModelResult>`
+### `getModelsForMakeYear(make: string, year: number, vehicleType?: string): NHTSAResponse<ModelResult>`
 
-Returns all models for a given make and year. Make name is **case-insensitive**. Equivalent to:
+Returns all models for a given make and year. Make name is **case-insensitive**. Optionally filter by vehicle type.
 
 ```
-GET https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/Toyota/modelyear/2024?format=json
+GET https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/Ford/modelyear/2024?format=json
 ```
 
 Each result contains:
 
 ```typescript
 {
-  Make_ID: number;    // e.g. 474
-  Make_Name: string;  // e.g. "TOYOTA"
-  Model_ID: number;   // e.g. 2208
-  Model_Name: string; // e.g. "Corolla"
+  Make_ID: number;    // e.g. 460
+  Make_Name: string;  // e.g. "FORD"
+  Model_ID: number;   // e.g. 1801
+  Model_Name: string; // e.g. "F-150"
 }
 ```
 
@@ -98,7 +118,7 @@ Replace your fetch calls directly:
 -   `https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?year=${year}&format=json`
 - );
 - const makes = await res.json();
-+ const makes = getMakesForVehicleType(year);
++ const makes = getMakesForVehicleType("Passenger Car", year);
 ```
 
 ```diff
@@ -115,10 +135,11 @@ The response shape (`Count`, `Message`, `SearchCriteria`, `Results`) matches the
 
 | | |
 |---|---|
-| **Years** | 1990 - 2026 |
-| **Make entries** | 7,141 |
-| **Model entries** | 30,094 |
-| **SQLite file size** | 2.4 MB |
+| **Years** | 1990 – 2026 |
+| **Vehicle types** | 3 (Passenger Car, Truck, MPV) |
+| **Makes** | 400 |
+| **Model entries** | 51,270 |
+| **SQLite file size** | 3.8 MB |
 
 ## Rebuilding the database
 
