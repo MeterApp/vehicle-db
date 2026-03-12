@@ -1,13 +1,13 @@
 /**
- * Fetches NHTSA vehicle data and builds a local SQLite database.
+ * Fetches NHTSA vehicle data and builds a compact JSON database.
  *
  * Usage:
  *   npx tsx scripts/build-db.ts [--start-year 1990] [--end-year 2026]
  */
-import Database from "better-sqlite3";
+import fs from "fs";
 import path from "path";
 
-const DB_PATH = path.join(__dirname, "..", "data", "nhtsa.db");
+const OUT_PATH = path.join(__dirname, "..", "data", "compact.json");
 const BASE = "https://vpic.nhtsa.dot.gov/api/vehicles";
 const CONCURRENCY = 3;
 const RETRY_LIMIT = 3;
@@ -105,73 +105,20 @@ async function main() {
 
   console.log(`Building NHTSA database for years ${startYear}–${endYear}`);
   console.log(`Vehicle types: ${VEHICLE_TYPES.map((t) => t.name).join(", ")}`);
-  console.log(`Output: ${DB_PATH}\n`);
-
-  const db = new Database(DB_PATH);
-  db.pragma("journal_mode = DELETE");
-
-  db.exec(`
-    DROP TABLE IF EXISTS models;
-    DROP TABLE IF EXISTS makes;
-    DROP TABLE IF EXISTS vehicle_types;
-
-    CREATE TABLE vehicle_types (
-      vehicle_type_id   INTEGER PRIMARY KEY,
-      vehicle_type_name TEXT NOT NULL
-    );
-
-    CREATE TABLE makes (
-      make_id   INTEGER PRIMARY KEY,
-      make_name TEXT NOT NULL
-    );
-
-    CREATE TABLE models (
-      year            INTEGER NOT NULL,
-      make_id         INTEGER NOT NULL,
-      model_id        INTEGER NOT NULL,
-      model_name      TEXT    NOT NULL,
-      vehicle_type_id INTEGER NOT NULL,
-      PRIMARY KEY (year, make_id, model_id, vehicle_type_id),
-      FOREIGN KEY (make_id) REFERENCES makes(make_id),
-      FOREIGN KEY (vehicle_type_id) REFERENCES vehicle_types(vehicle_type_id)
-    );
-
-    CREATE INDEX idx_models_year_make ON models(year, make_id);
-    CREATE INDEX idx_models_year_type ON models(year, vehicle_type_id);
-  `);
-
-  const insertVehicleType = db.prepare(
-    `INSERT OR IGNORE INTO vehicle_types (vehicle_type_id, vehicle_type_name) VALUES (?, ?)`
-  );
-  const insertMake = db.prepare(
-    `INSERT OR IGNORE INTO makes (make_id, make_name) VALUES (?, ?)`
-  );
-  const insertModel = db.prepare(
-    `INSERT OR IGNORE INTO models (year, make_id, model_id, model_name, vehicle_type_id) VALUES (?, ?, ?, ?, ?)`
-  );
-
-  // Insert vehicle types
-  const insertTypes = db.transaction(() => {
-    for (const vt of VEHICLE_TYPES) {
-      insertVehicleType.run(vt.id, vt.name);
-    }
-  });
-  insertTypes();
+  console.log(`Output: ${OUT_PATH}\n`);
 
   const years = Array.from(
     { length: endYear - startYear + 1 },
     (_, i) => startYear + i
   );
 
-  // ---- Step 1: Fetch makes per vehicle type (no year filter) ----
-  console.log("Step 1/3: Fetching makes per vehicle type...");
+  // ---- Step 1: Fetch makes per vehicle type ----
+  console.log("Step 1/2: Fetching makes per vehicle type...");
 
-  const allMakes = new Map<number, string>(); // make_id -> make_name
-  // Track which make IDs belong to each vehicle type + year
-  const makesByTypeAndYear = new Map<string, Set<number>>(); // `${typeId}:${year}` -> Set<makeId>
+  const allMakes = new Map<number, string>();
+  const makesByTypeAndYear = new Map<string, Set<number>>();
 
   for (const vt of VEHICLE_TYPES) {
-    // Fetch makes for each year and vehicle type
     await runPool(years, CONCURRENCY, async (year) => {
       const url = `${BASE}/GetMakesForVehicleType/${encodeURIComponent(vt.slug)}?year=${year}&format=json`;
       const data = await fetchJson<MakeResult>(url);
@@ -190,17 +137,10 @@ async function main() {
     });
   }
 
-  // Insert all makes
   console.log(`\nTotal unique makes: ${allMakes.size}`);
-  const insertAllMakes = db.transaction(() => {
-    for (const [id, name] of allMakes) {
-      insertMake.run(id, name);
-    }
-  });
-  insertAllMakes();
 
   // ---- Step 2: Fetch models per make/year/vehicleType ----
-  console.log("\nStep 2/3: Fetching models per make/year/vehicleType...");
+  console.log("\nStep 2/2: Fetching models per make/year/vehicleType...");
 
   interface WorkItem {
     year: number;
@@ -224,13 +164,16 @@ async function main() {
   console.log(`  Total API calls needed: ${work.length}`);
 
   let completed = 0;
-  const allModels: { year: number; makeId: number; vehicleTypeId: number; models: ModelResult[] }[] = [];
+  // Collect raw model rows: [year, makeId, modelId, modelName, vehicleTypeId]
+  const rawModels: [number, number, number, string, number][] = [];
 
   await runPool(work, CONCURRENCY, async ({ year, makeId, vehicleType }) => {
     const url = `${BASE}/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}/vehicleType/${encodeURIComponent(vehicleType.slug)}?format=json`;
     const data = await fetchJson<ModelResult>(url);
     if (data && data.Results.length > 0) {
-      allModels.push({ year, makeId, vehicleTypeId: vehicleType.id, models: data.Results });
+      for (const m of data.Results) {
+        rawModels.push([year, m.Make_ID, m.Model_ID, m.Model_Name, vehicleType.id]);
+      }
     }
 
     completed++;
@@ -239,34 +182,46 @@ async function main() {
     }
   });
 
-  // ---- Step 3: Insert models ----
-  console.log("\nStep 3/3: Inserting models into database...");
-  const insertAllModels = db.transaction(() => {
-    for (const { year, vehicleTypeId, models } of allModels) {
-      for (const m of models) {
-        insertModel.run(year, m.Make_ID, m.Model_ID, m.Model_Name, vehicleTypeId);
-      }
+  // ---- Build compact JSON ----
+  console.log("\nBuilding compact JSON...");
+
+  // Deduplicate model names
+  const modelNames = [...new Set(rawModels.map((m) => m[3]))].sort();
+  const nameIndex = new Map(modelNames.map((n, i) => [n, i]));
+
+  // Deduplicate models (year + makeId + modelId + vehicleTypeId)
+  const seen = new Set<string>();
+  const compactModels: [number, number, number, number, number][] = [];
+  for (const m of rawModels) {
+    const key = `${m[0]}:${m[1]}:${m[2]}:${m[4]}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      compactModels.push([m[0], m[1], m[2], nameIndex.get(m[3])!, m[4]]);
     }
-  });
-  insertAllModels();
+  }
 
-  // ---- Stats ----
-  const makeCount = (db.prepare("SELECT COUNT(*) as c FROM makes").get() as any).c;
-  const modelCount = (db.prepare("SELECT COUNT(*) as c FROM models").get() as any).c;
-  const typeCount = (db.prepare("SELECT COUNT(*) as c FROM vehicle_types").get() as any).c;
-  const yearCount = (db.prepare("SELECT COUNT(DISTINCT year) as c FROM models").get() as any).c;
+  const vehicleTypes = VEHICLE_TYPES.map((vt) => ({
+    vehicle_type_id: vt.id,
+    vehicle_type_name: vt.name,
+  }));
 
-  db.close();
+  const makes = [...allMakes.entries()]
+    .map(([id, name]) => ({ make_id: id, make_name: name }))
+    .sort((a, b) => (a.make_name >= b.make_name ? 1 : -1));
 
-  const { size } = require("fs").statSync(DB_PATH);
+  const output = JSON.stringify({ vehicleTypes, makes, modelNames, models: compactModels });
+  fs.writeFileSync(OUT_PATH, output);
+
+  const { size } = fs.statSync(OUT_PATH);
   const sizeMB = (size / 1024 / 1024).toFixed(2);
 
   console.log(`\nDone!`);
-  console.log(`  Years:          ${yearCount}`);
-  console.log(`  Vehicle types:  ${typeCount}`);
-  console.log(`  Makes:          ${makeCount}`);
-  console.log(`  Model entries:  ${modelCount}`);
-  console.log(`  DB size:        ${sizeMB} MB`);
+  console.log(`  Years:          ${years.length}`);
+  console.log(`  Vehicle types:  ${VEHICLE_TYPES.length}`);
+  console.log(`  Makes:          ${makes.length}`);
+  console.log(`  Model names:    ${modelNames.length}`);
+  console.log(`  Model entries:  ${compactModels.length}`);
+  console.log(`  File size:      ${sizeMB} MB`);
 }
 
 main().catch((err) => {

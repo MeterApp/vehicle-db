@@ -1,7 +1,7 @@
-import Database from "better-sqlite3";
 import path from "path";
+import fs from "fs";
 
-const DB_PATH = path.join(__dirname, "..", "data", "nhtsa.db");
+const DATA_PATH = path.join(__dirname, "..", "data", "compact.json");
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -37,15 +37,43 @@ export interface GetModelsOptions {
 }
 
 // ---------------------------------------------------------------------------
-// Database singleton
+// Internal data format: [year, makeId, modelId, modelNameIndex, vehicleTypeId]
 // ---------------------------------------------------------------------------
-let _db: ReturnType<typeof Database> | null = null;
+type CompactModel = [number, number, number, number, number];
 
-function getDb(): ReturnType<typeof Database> {
-  if (!_db) {
-    _db = new Database(DB_PATH, { readonly: true, fileMustExist: true });
+interface CompactData {
+  vehicleTypes: { vehicle_type_id: number; vehicle_type_name: string }[];
+  makes: { make_id: number; make_name: string }[];
+  modelNames: string[];
+  models: CompactModel[];
+}
+
+// ---------------------------------------------------------------------------
+// Lazy-loaded singleton
+// ---------------------------------------------------------------------------
+let _data: CompactData | null = null;
+let _makeMap: Map<number, string> | null = null;
+let _typeMap: Map<number, string> | null = null;
+
+function getData(): CompactData {
+  if (!_data) {
+    _data = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
   }
-  return _db;
+  return _data!;
+}
+
+function getMakeMap(): Map<number, string> {
+  if (!_makeMap) {
+    _makeMap = new Map(getData().makes.map((m) => [m.make_id, m.make_name]));
+  }
+  return _makeMap;
+}
+
+function getTypeMap(): Map<number, string> {
+  if (!_typeMap) {
+    _typeMap = new Map(getData().vehicleTypes.map((t) => [t.vehicle_type_id, t.vehicle_type_name]));
+  }
+  return _typeMap;
 }
 
 // ---------------------------------------------------------------------------
@@ -56,14 +84,9 @@ function getDb(): ReturnType<typeof Database> {
  * Returns all vehicle types in the database.
  */
 export function getVehicleTypes(): VehicleType[] {
-  const db = getDb();
-  const rows = db
-    .prepare("SELECT vehicle_type_id, vehicle_type_name FROM vehicle_types ORDER BY vehicle_type_name")
-    .all() as { vehicle_type_id: number; vehicle_type_name: string }[];
-
-  return rows.map((r) => ({
-    vehicleTypeId: r.vehicle_type_id,
-    vehicleTypeName: r.vehicle_type_name,
+  return getData().vehicleTypes.map((t) => ({
+    vehicleTypeId: t.vehicle_type_id,
+    vehicleTypeName: t.vehicle_type_name,
   }));
 }
 
@@ -71,109 +94,69 @@ export function getVehicleTypes(): VehicleType[] {
  * Returns makes, optionally filtered by year and/or vehicle type.
  */
 export function getMakes(options: GetMakesOptions = {}): Make[] {
-  const db = getDb();
-  const conditions: string[] = [];
-  const params: any[] = [];
+  const data = getData();
+  const { year, vehicleTypeId } = options;
 
-  if (options.year != null) {
-    conditions.push("m.year = ?");
-    params.push(options.year);
-  }
-  if (options.vehicleTypeId != null) {
-    conditions.push("m.vehicle_type_id = ?");
-    params.push(options.vehicleTypeId);
+  if (year == null && vehicleTypeId == null) {
+    return data.makes.map((m) => ({ makeId: m.make_id, makeName: m.make_name }));
   }
 
-  let sql: string;
-  if (conditions.length > 0) {
-    sql = `SELECT DISTINCT mk.make_id, mk.make_name
-           FROM models m
-           JOIN makes mk USING (make_id)
-           WHERE ${conditions.join(" AND ")}
-           ORDER BY mk.make_name`;
-  } else {
-    sql = `SELECT make_id, make_name FROM makes ORDER BY make_name`;
+  const makeIds = new Set<number>();
+  for (const m of data.models) {
+    if (year != null && m[0] !== year) continue;
+    if (vehicleTypeId != null && m[4] !== vehicleTypeId) continue;
+    makeIds.add(m[1]);
   }
 
-  const rows = db.prepare(sql).all(...params) as {
-    make_id: number;
-    make_name: string;
-  }[];
-
-  return rows.map((r) => ({
-    makeId: r.make_id,
-    makeName: r.make_name,
-  }));
+  const makeMap = getMakeMap();
+  return [...makeIds]
+    .map((id) => ({ makeId: id, makeName: makeMap.get(id)! }))
+    .sort((a, b) => (a.makeName >= b.makeName ? 1 : -1));
 }
 
 /**
  * Returns models, optionally filtered by year, vehicle type, and/or make.
  */
 export function getModels(options: GetModelsOptions = {}): Model[] {
-  const db = getDb();
-  const conditions: string[] = [];
-  const params: any[] = [];
+  const data = getData();
+  const makeMap = getMakeMap();
+  const typeMap = getTypeMap();
+  const { year, vehicleTypeId, makeId } = options;
 
-  if (options.year != null) {
-    conditions.push("m.year = ?");
-    params.push(options.year);
+  const results: Model[] = [];
+  for (const m of data.models) {
+    if (year != null && m[0] !== year) continue;
+    if (makeId != null && m[1] !== makeId) continue;
+    if (vehicleTypeId != null && m[4] !== vehicleTypeId) continue;
+    results.push({
+      modelId: m[2],
+      modelName: data.modelNames[m[3]],
+      makeId: m[1],
+      makeName: makeMap.get(m[1])!,
+      vehicleTypeId: m[4],
+      vehicleTypeName: typeMap.get(m[4])!,
+    });
   }
-  if (options.vehicleTypeId != null) {
-    conditions.push("m.vehicle_type_id = ?");
-    params.push(options.vehicleTypeId);
-  }
-  if (options.makeId != null) {
-    conditions.push("m.make_id = ?");
-    params.push(options.makeId);
-  }
 
-  const where = conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
-
-  const sql = `
-    SELECT m.model_id, m.model_name, mk.make_id, mk.make_name,
-           vt.vehicle_type_id, vt.vehicle_type_name
-    FROM models m
-    JOIN makes mk USING (make_id)
-    JOIN vehicle_types vt USING (vehicle_type_id)
-    ${where}
-    ORDER BY m.model_name`;
-
-  const rows = db.prepare(sql).all(...params) as {
-    model_id: number;
-    model_name: string;
-    make_id: number;
-    make_name: string;
-    vehicle_type_id: number;
-    vehicle_type_name: string;
-  }[];
-
-  return rows.map((r) => ({
-    modelId: r.model_id,
-    modelName: r.model_name,
-    makeId: r.make_id,
-    makeName: r.make_name,
-    vehicleTypeId: r.vehicle_type_id,
-    vehicleTypeName: r.vehicle_type_name,
-  }));
+  return results.sort((a, b) => (a.modelName >= b.modelName ? 1 : -1));
 }
 
 /**
  * Get all available years in the database.
  */
 export function getAvailableYears(): number[] {
-  const db = getDb();
-  const rows = db
-    .prepare("SELECT DISTINCT year FROM models ORDER BY year")
-    .all() as { year: number }[];
-  return rows.map((r) => r.year);
+  const years = new Set<number>();
+  for (const m of getData().models) {
+    years.add(m[0]);
+  }
+  return [...years].sort((a, b) => a - b);
 }
 
 /**
- * Close the database connection (optional cleanup).
+ * Clear cached data (optional cleanup, frees memory).
  */
 export function close(): void {
-  if (_db) {
-    _db.close();
-    _db = null;
-  }
+  _data = null;
+  _makeMap = null;
+  _typeMap = null;
 }

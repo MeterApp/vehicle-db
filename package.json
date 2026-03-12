@@ -1,12 +1,12 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "1.0.1",
-  "description": "Offline NHTSA vehicle makes/models database bundled as SQLite",
+  "version": "2.0.0",
+  "description": "Offline NHTSA vehicle makes/models database — zero dependencies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "data/nhtsa.db"
+    "data/compact.json"
   ],
   "scripts": {
     "build:db": "tsx scripts/build-db.ts",
@@ -20,18 +20,15 @@
     "vehicles",
     "makes",
     "models",
-    "offline",
-    "sqlite"
+    "offline"
   ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "better-sqlite3": "^12.6.2"
-  },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.4.0",
+    "better-sqlite3": "^12.6.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"

@@ -1,6 +1,6 @@
 # @meterapp/vehicle-db
 
-Offline NHTSA vehicle database. All U.S. vehicle makes and models from 1990–2026, bundled as a 3.8 MB SQLite file inside the package. No network requests needed.
+Offline NHTSA vehicle database. All U.S. vehicle makes and models from 1990–2026. Zero dependencies, ~189 KB on npm. No network requests needed.
 
 Covers three vehicle types: **Passenger Car**, **Truck**, and **Multipurpose Passenger Vehicle (MPV)**.
 
@@ -10,7 +10,7 @@ Covers three vehicle types: **Passenger Car**, **Truck**, and **Multipurpose Pas
 npm install @meterapp/vehicle-db
 ```
 
-> Requires Node.js 18+. Uses [better-sqlite3](https://github.com/WiseLibs/better-sqlite3) under the hood.
+> Requires Node.js 18+. Zero runtime dependencies — data is bundled as JSON.
 
 ## Usage
 
@@ -129,7 +129,8 @@ Closes the SQLite connection. Safe to call multiple times. The connection reopen
 | **Vehicle types** | 3 (Passenger Car, Truck, MPV) |
 | **Makes** | 400 |
 | **Model entries** | 51,270 |
-| **SQLite file size** | 3.8 MB |
+| **Data file** | 1.2 MB (JSON) |
+| **npm package** | 189 KB |
 | **npm package size** | 1.5 MB |
 
 ## Rebuilding the database
