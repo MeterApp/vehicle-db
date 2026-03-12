@@ -1,7 +1,4 @@
-import path from "path";
-import fs from "fs";
-
-const DATA_PATH = path.join(__dirname, "..", "data", "compact.json");
+import data from "./data";
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -37,41 +34,21 @@ export interface GetModelsOptions {
 }
 
 // ---------------------------------------------------------------------------
-// Internal data format: [year, makeId, modelId, modelNameIndex, vehicleTypeId]
+// Internal lookup maps (lazy)
 // ---------------------------------------------------------------------------
-type CompactModel = [number, number, number, number, number];
-
-interface CompactData {
-  vehicleTypes: { vehicle_type_id: number; vehicle_type_name: string }[];
-  makes: { make_id: number; make_name: string }[];
-  modelNames: string[];
-  models: CompactModel[];
-}
-
-// ---------------------------------------------------------------------------
-// Lazy-loaded singleton
-// ---------------------------------------------------------------------------
-let _data: CompactData | null = null;
 let _makeMap: Map<number, string> | null = null;
 let _typeMap: Map<number, string> | null = null;
 
-function getData(): CompactData {
-  if (!_data) {
-    _data = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
-  }
-  return _data!;
-}
-
 function getMakeMap(): Map<number, string> {
   if (!_makeMap) {
-    _makeMap = new Map(getData().makes.map((m) => [m.make_id, m.make_name]));
+    _makeMap = new Map(data.makes.map((m) => [m.make_id, m.make_name]));
   }
   return _makeMap;
 }
 
 function getTypeMap(): Map<number, string> {
   if (!_typeMap) {
-    _typeMap = new Map(getData().vehicleTypes.map((t) => [t.vehicle_type_id, t.vehicle_type_name]));
+    _typeMap = new Map(data.vehicleTypes.map((t) => [t.vehicle_type_id, t.vehicle_type_name]));
   }
   return _typeMap;
 }
@@ -84,7 +61,7 @@ function getTypeMap(): Map<number, string> {
  * Returns all vehicle types in the database.
  */
 export function getVehicleTypes(): VehicleType[] {
-  return getData().vehicleTypes.map((t) => ({
+  return data.vehicleTypes.map((t) => ({
     vehicleTypeId: t.vehicle_type_id,
     vehicleTypeName: t.vehicle_type_name,
   }));
@@ -94,7 +71,6 @@ export function getVehicleTypes(): VehicleType[] {
  * Returns makes, optionally filtered by year and/or vehicle type.
  */
 export function getMakes(options: GetMakesOptions = {}): Make[] {
-  const data = getData();
   const { year, vehicleTypeId } = options;
 
   if (year == null && vehicleTypeId == null) {
@@ -118,7 +94,6 @@ export function getMakes(options: GetMakesOptions = {}): Make[] {
  * Returns models, optionally filtered by year, vehicle type, and/or make.
  */
 export function getModels(options: GetModelsOptions = {}): Model[] {
-  const data = getData();
   const makeMap = getMakeMap();
   const typeMap = getTypeMap();
   const { year, vehicleTypeId, makeId } = options;
@@ -146,17 +121,8 @@ export function getModels(options: GetModelsOptions = {}): Model[] {
  */
 export function getAvailableYears(): number[] {
   const years = new Set<number>();
-  for (const m of getData().models) {
+  for (const m of data.models) {
     years.add(m[0]);
   }
   return [...years].sort((a, b) => a - b);
-}
-
-/**
- * Clear cached data (optional cleanup, frees memory).
- */
-export function close(): void {
-  _data = null;
-  _makeMap = null;
-  _typeMap = null;
 }

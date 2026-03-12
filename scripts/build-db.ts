@@ -1,5 +1,5 @@
 /**
- * Fetches NHTSA vehicle data and builds a compact JSON database.
+ * Fetches NHTSA vehicle data and builds src/data.ts.
  *
  * Usage:
  *   npx tsx scripts/build-db.ts [--start-year 1990] [--end-year 2026]
@@ -7,7 +7,7 @@
 import fs from "fs";
 import path from "path";
 
-const OUT_PATH = path.join(__dirname, "..", "data", "compact.json");
+const OUT_PATH = path.join(__dirname, "..", "src", "data.ts");
 const BASE = "https://vpic.nhtsa.dot.gov/api/vehicles";
 const CONCURRENCY = 3;
 const RETRY_LIMIT = 3;
@@ -209,8 +209,21 @@ async function main() {
     .map(([id, name]) => ({ make_id: id, make_name: name }))
     .sort((a, b) => (a.make_name >= b.make_name ? 1 : -1));
 
-  const output = JSON.stringify({ vehicleTypes, makes, modelNames, models: compactModels });
-  fs.writeFileSync(OUT_PATH, output);
+  const json = JSON.stringify({ vehicleTypes, makes, modelNames, models: compactModels });
+  const tsOutput = `// Auto-generated — do not edit. Run npm run build:db to regenerate.
+
+interface CompactData {
+  vehicleTypes: { vehicle_type_id: number; vehicle_type_name: string }[];
+  makes: { make_id: number; make_name: string }[];
+  modelNames: string[];
+  models: [number, number, number, number, number][];
+}
+
+const data: CompactData = ${json};
+
+export default data;
+`;
+  fs.writeFileSync(OUT_PATH, tsOutput);
 
   const { size } = fs.statSync(OUT_PATH);
   const sizeMB = (size / 1024 / 1024).toFixed(2);

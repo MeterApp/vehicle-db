@@ -1,15 +1,10 @@
-import { describe, it, expect, afterAll } from "vitest";
+import { describe, it, expect } from "vitest";
 import {
   getVehicleTypes,
   getMakes,
   getModels,
   getAvailableYears,
-  close,
 } from "./index";
-
-afterAll(() => {
-  close();
-});
 
 describe("getAvailableYears", () => {
   it("returns an array of years", () => {
@@ -176,15 +171,3 @@ describe("getModels", () => {
   });
 });
 
-describe("close", () => {
-  it("can be called multiple times without error", () => {
-    expect(() => close()).not.toThrow();
-    expect(() => close()).not.toThrow();
-  });
-
-  it("allows re-opening after close", () => {
-    close();
-    const makes = getMakes({ year: 2024 });
-    expect(makes.length).toBeGreaterThan(0);
-  });
-});
