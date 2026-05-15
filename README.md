@@ -1,8 +1,8 @@
 # @meterapp/vehicle-db
 
-Offline NHTSA vehicle database. All U.S. vehicle makes and models from 1990–2026. Zero dependencies, ~189 KB on npm. No network requests needed.
+Offline NHTSA vehicle database plus Meter-owned auto-rickshaw entries. All U.S. vehicle makes and models from 1990–2026, plus Atul Auto rickshaws. Zero dependencies, ~190 KB on npm. No network requests needed.
 
-Covers three vehicle types: **Passenger Car**, **Truck**, and **Multipurpose Passenger Vehicle (MPV)**.
+Covers four vehicle types: **Passenger Car**, **Truck**, **Multipurpose Passenger Vehicle (MPV)**, and **Auto Rickshaw**.
 
 ## Install
 
@@ -29,6 +29,7 @@ const types = getVehicleTypes();
 //   { vehicleTypeId: 2, vehicleTypeName: "Passenger Car" },
 //   { vehicleTypeId: 3, vehicleTypeName: "Truck" },
 //   { vehicleTypeId: 7, vehicleTypeName: "Multipurpose Passenger Vehicle (MPV)" },
+//   { vehicleTypeId: 10001, vehicleTypeName: "Auto Rickshaw" },
 // ]
 
 // Get all makes
@@ -51,6 +52,10 @@ const toyotaModels = getModels({ makeId: 474, year: 2024 });
 // Get only Ford trucks for 2024
 const fordTrucks = getModels({ makeId: 460, year: 2024, vehicleTypeId: 3 });
 // => [{ modelId: 1801, modelName: "F-150", ... }, ...]
+
+// Get Atul auto-rickshaw models for 2024
+const atulRickshaws = getModels({ makeId: 100001, year: 2024, vehicleTypeId: 10001 });
+// => [{ modelId: 100001, modelName: "RIK", makeName: "ATUL AUTO", vehicleTypeName: "Auto Rickshaw", ... }, ...]
 
 // Get all available years
 const years = getAvailableYears();
@@ -82,6 +87,7 @@ getMakes()                                    // all makes
 getMakes({ year: 2024 })                      // makes with models in 2024
 getMakes({ vehicleTypeId: 3 })                // truck makes (all years)
 getMakes({ year: 2024, vehicleTypeId: 3 })    // truck makes in 2024
+getMakes({ year: 2024, vehicleTypeId: 10001 }) // auto-rickshaw makes in 2024
 ```
 
 ```typescript
@@ -98,6 +104,7 @@ Returns models, optionally filtered by year, vehicle type, and/or make.
 ```typescript
 getModels({ makeId: 474, year: 2024 })                      // Toyota 2024 (all types)
 getModels({ makeId: 460, year: 2024, vehicleTypeId: 3 })    // Ford trucks 2024
+getModels({ makeId: 100001, year: 2024, vehicleTypeId: 10001 }) // Atul auto-rickshaws 2024
 getModels({ vehicleTypeId: 3 })                              // all trucks (all years)
 getModels({ year: 2024 })                                    // everything in 2024
 ```
@@ -126,11 +133,11 @@ Closes the SQLite connection. Safe to call multiple times. The connection reopen
 | | |
 |---|---|
 | **Years** | 1990 – 2026 |
-| **Vehicle types** | 3 (Passenger Car, Truck, MPV) |
-| **Makes** | 400 |
-| **Model entries** | 51,270 |
+| **Vehicle types** | 4 (Passenger Car, Truck, MPV, Auto Rickshaw) |
+| **Makes** | 401 |
+| **Model entries** | 51,714 |
 | **Data file** | 1.2 MB (JSON) |
-| **npm package** | 189 KB |
+| **npm package** | 190 KB |
 | **npm package size** | 1.5 MB |
 
 ## Rebuilding the database
