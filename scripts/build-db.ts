@@ -8,16 +8,40 @@ import fs from "fs";
 import path from "path";
 
 const OUT_PATH = path.join(__dirname, "..", "src", "data.ts");
+const COMPACT_JSON_PATH = path.join(__dirname, "..", "data", "compact.json");
 const BASE = "https://vpic.nhtsa.dot.gov/api/vehicles";
 const CONCURRENCY = 3;
 const RETRY_LIMIT = 3;
 const RETRY_DELAY_MS = 2000;
 
-// Vehicle types to fetch
-const VEHICLE_TYPES = [
+// Vehicle types to fetch from NHTSA vPIC
+const NHTSA_VEHICLE_TYPES = [
   { id: 2, name: "Passenger Car", slug: "car" },
   { id: 3, name: "Truck", slug: "truck" },
   { id: 7, name: "Multipurpose Passenger Vehicle (MPV)", slug: "multipurpose passenger vehicle (mpv)" },
+];
+
+const CUSTOM_VEHICLE_TYPES = [
+  { id: 10001, name: "Auto Rickshaw" },
+];
+
+const CUSTOM_MAKES = [
+  { id: 100001, name: "ATUL AUTO" },
+];
+
+const CUSTOM_MODELS = [
+  { id: 100001, makeId: 100001, name: "RIK", vehicleTypeId: 10001 },
+  { id: 100002, makeId: 100001, name: "RIK+", vehicleTypeId: 10001 },
+  { id: 100003, makeId: 100001, name: "GEM-PAXX DIESEL", vehicleTypeId: 10001 },
+  { id: 100004, makeId: 100001, name: "GEM-PAXX CNG AQUA", vehicleTypeId: 10001 },
+  { id: 100005, makeId: 100001, name: "GEM-CARGO DIESEL", vehicleTypeId: 10001 },
+  { id: 100006, makeId: 100001, name: "GEM-CARGO AQUA CNG", vehicleTypeId: 10001 },
+  { id: 100007, makeId: 100001, name: "ELITE PAXX", vehicleTypeId: 10001 },
+  { id: 100008, makeId: 100001, name: "ELITE CARGO", vehicleTypeId: 10001 },
+  { id: 100009, makeId: 100001, name: "RIK TWIN", vehicleTypeId: 10001 },
+  { id: 100010, makeId: 100001, name: "ENERGIE2", vehicleTypeId: 10001 },
+  { id: 100011, makeId: 100001, name: "SHAKTI", vehicleTypeId: 10001 },
+  { id: 100012, makeId: 100001, name: "GEMINI+", vehicleTypeId: 10001 },
 ];
 
 // ---------------------------------------------------------------------------
@@ -43,6 +67,8 @@ interface ApiResponse<T> {
   Results: T[];
 }
 
+type RawModel = [number, number, number, string, number];
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -67,6 +93,18 @@ async function fetchJson<T>(url: string): Promise<ApiResponse<T> | null> {
     }
   }
   return null;
+}
+
+function addCustomCatalogData(years: number[], allMakes: Map<number, string>, rawModels: RawModel[]): void {
+  for (const make of CUSTOM_MAKES) {
+    allMakes.set(make.id, make.name);
+  }
+
+  for (const year of years) {
+    for (const model of CUSTOM_MODELS) {
+      rawModels.push([year, model.makeId, model.id, model.name, model.vehicleTypeId]);
+    }
+  }
 }
 
 function sleep(ms: number) {
@@ -104,7 +142,8 @@ async function main() {
   }
 
   console.log(`Building NHTSA database for years ${startYear}–${endYear}`);
-  console.log(`Vehicle types: ${VEHICLE_TYPES.map((t) => t.name).join(", ")}`);
+  console.log(`NHTSA vehicle types: ${NHTSA_VEHICLE_TYPES.map((t) => t.name).join(", ")}`);
+  console.log(`Custom vehicle types: ${CUSTOM_VEHICLE_TYPES.map((t) => t.name).join(", ")}`);
   console.log(`Output: ${OUT_PATH}\n`);
 
   const years = Array.from(
@@ -118,7 +157,7 @@ async function main() {
   const allMakes = new Map<number, string>();
   const makesByTypeAndYear = new Map<string, Set<number>>();
 
-  for (const vt of VEHICLE_TYPES) {
+  for (const vt of NHTSA_VEHICLE_TYPES) {
     await runPool(years, CONCURRENCY, async (year) => {
       const url = `${BASE}/GetMakesForVehicleType/${encodeURIComponent(vt.slug)}?year=${year}&format=json`;
       const data = await fetchJson<MakeResult>(url);
@@ -145,11 +184,11 @@ async function main() {
   interface WorkItem {
     year: number;
     makeId: number;
-    vehicleType: (typeof VEHICLE_TYPES)[number];
+    vehicleType: (typeof NHTSA_VEHICLE_TYPES)[number];
   }
 
   const work: WorkItem[] = [];
-  for (const vt of VEHICLE_TYPES) {
+  for (const vt of NHTSA_VEHICLE_TYPES) {
     for (const year of years) {
       const key = `${vt.id}:${year}`;
       const makeIds = makesByTypeAndYear.get(key);
@@ -165,7 +204,7 @@ async function main() {
 
   let completed = 0;
   // Collect raw model rows: [year, makeId, modelId, modelName, vehicleTypeId]
-  const rawModels: [number, number, number, string, number][] = [];
+  const rawModels: RawModel[] = [];
 
   await runPool(work, CONCURRENCY, async ({ year, makeId, vehicleType }) => {
     const url = `${BASE}/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}/vehicleType/${encodeURIComponent(vehicleType.slug)}?format=json`;
@@ -181,6 +220,8 @@ async function main() {
       console.log(`  Progress: ${completed}/${work.length}`);
     }
   });
+
+  addCustomCatalogData(years, allMakes, rawModels);
 
   // ---- Build compact JSON ----
   console.log("\nBuilding compact JSON...");
@@ -200,7 +241,7 @@ async function main() {
     }
   }
 
-  const vehicleTypes = VEHICLE_TYPES.map((vt) => ({
+  const vehicleTypes = [...NHTSA_VEHICLE_TYPES, ...CUSTOM_VEHICLE_TYPES].map((vt) => ({
     vehicle_type_id: vt.id,
     vehicle_type_name: vt.name,
   }));
@@ -209,7 +250,8 @@ async function main() {
     .map(([id, name]) => ({ make_id: id, make_name: name }))
     .sort((a, b) => (a.make_name >= b.make_name ? 1 : -1));
 
-  const json = JSON.stringify({ vehicleTypes, makes, modelNames, models: compactModels });
+  const compactData = { vehicleTypes, makes, modelNames, models: compactModels };
+  const json = JSON.stringify(compactData);
   const tsOutput = `// Auto-generated — do not edit. Run npm run build:db to regenerate.
 
 interface CompactData {
@@ -223,6 +265,7 @@ const data: CompactData = ${json};
 
 export default data;
 `;
+  fs.writeFileSync(COMPACT_JSON_PATH, json);
   fs.writeFileSync(OUT_PATH, tsOutput);
 
   const { size } = fs.statSync(OUT_PATH);
@@ -230,7 +273,7 @@ export default data;
 
   console.log(`\nDone!`);
   console.log(`  Years:          ${years.length}`);
-  console.log(`  Vehicle types:  ${VEHICLE_TYPES.length}`);
+  console.log(`  Vehicle types:  ${vehicleTypes.length}`);
   console.log(`  Makes:          ${makes.length}`);
   console.log(`  Model names:    ${modelNames.length}`);
   console.log(`  Model entries:  ${compactModels.length}`);

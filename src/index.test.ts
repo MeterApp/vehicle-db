@@ -6,6 +6,23 @@ import {
   getAvailableYears,
 } from "./index";
 
+const AUTO_RICKSHAW_TYPE_ID = 10001;
+const ATUL_AUTO_MAKE_ID = 100001;
+const ATUL_AUTO_MODELS = [
+  "RIK",
+  "RIK+",
+  "GEM-PAXX DIESEL",
+  "GEM-PAXX CNG AQUA",
+  "GEM-CARGO DIESEL",
+  "GEM-CARGO AQUA CNG",
+  "ELITE PAXX",
+  "ELITE CARGO",
+  "RIK TWIN",
+  "ENERGIE2",
+  "SHAKTI",
+  "GEMINI+",
+];
+
 describe("getAvailableYears", () => {
   it("returns an array of years", () => {
     const years = getAvailableYears();
@@ -32,11 +49,12 @@ describe("getVehicleTypes", () => {
     expect(types.length).toBeGreaterThan(0);
   });
 
-  it("includes car, truck, and MPV", () => {
+  it("includes car, truck, MPV, and auto rickshaw", () => {
     const names = getVehicleTypes().map((t) => t.vehicleTypeName);
     expect(names).toContain("Passenger Car");
     expect(names).toContain("Truck");
     expect(names).toContain("Multipurpose Passenger Vehicle (MPV)");
+    expect(names).toContain("Auto Rickshaw");
   });
 
   it("each type has camelCase id and name", () => {
@@ -72,6 +90,13 @@ describe("getMakes", () => {
     const allMakes2024 = getMakes({ year: 2024 });
     expect(carMakes2024.length).toBeGreaterThan(0);
     expect(carMakes2024.length).toBeLessThanOrEqual(allMakes2024.length);
+  });
+
+  it("includes Atul Auto for auto rickshaws across the catalog year range", () => {
+    for (const year of [1990, 2026]) {
+      const makes = getMakes({ year, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID });
+      expect(makes).toEqual([{ makeId: ATUL_AUTO_MAKE_ID, makeName: "ATUL AUTO" }]);
+    }
   });
 
   it("each make has camelCase id and name", () => {
@@ -151,6 +176,22 @@ describe("getModels", () => {
     }
   });
 
+  it("returns Atul Auto Rickshaw models with the custom type metadata", () => {
+    const models = getModels({
+      makeId: ATUL_AUTO_MAKE_ID,
+      year: 2026,
+      vehicleTypeId: AUTO_RICKSHAW_TYPE_ID,
+    });
+
+    expect(new Set(models.map((m) => m.modelName))).toEqual(new Set(ATUL_AUTO_MODELS));
+    for (const model of models) {
+      expect(model.makeId).toBe(ATUL_AUTO_MAKE_ID);
+      expect(model.makeName).toBe("ATUL AUTO");
+      expect(model.vehicleTypeId).toBe(AUTO_RICKSHAW_TYPE_ID);
+      expect(model.vehicleTypeName).toBe("Auto Rickshaw");
+    }
+  });
+
   it("returns empty for unknown makeId", () => {
     expect(getModels({ makeId: 999999, year: 2024 })).toEqual([]);
   });
@@ -170,4 +211,3 @@ describe("getModels", () => {
     expect(r2.length).toBeGreaterThan(0);
   });
 });
-

@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Offline NHTSA vehicle makes/models database — zero dependencies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
