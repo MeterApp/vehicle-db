@@ -1,6 +1,6 @@
 # @meterapp/vehicle-db
 
-Offline NHTSA vehicle database plus Meter-owned auto-rickshaw entries. All U.S. vehicle makes and models from 1990–2026, plus Atul Auto rickshaws. Zero dependencies, ~190 KB on npm. No network requests needed.
+Offline NHTSA vehicle database plus Meter-owned auto-rickshaw and global market passenger fleet entries. All U.S. vehicle makes and models from 1990–2026, plus Atul Auto rickshaws and common global vans, MPVs, minibuses, sedans, SUVs, and EVs. Zero dependencies, ~190 KB on npm. No network requests needed.
 
 Covers four vehicle types: **Passenger Car**, **Truck**, **Multipurpose Passenger Vehicle (MPV)**, and **Auto Rickshaw**.
 
@@ -134,9 +134,9 @@ Closes the SQLite connection. Safe to call multiple times. The connection reopen
 |---|---|
 | **Years** | 1990 – 2026 |
 | **Vehicle types** | 4 (Passenger Car, Truck, MPV, Auto Rickshaw) |
-| **Makes** | 401 |
-| **Model entries** | 51,714 |
-| **Data file** | 1.2 MB (JSON) |
+| **Makes** | 409 |
+| **Model entries** | 55,589 |
+| **Data file** | 1.3 MB (JSON) |
 | **npm package** | 190 KB |
 | **npm package size** | 1.5 MB |
 
