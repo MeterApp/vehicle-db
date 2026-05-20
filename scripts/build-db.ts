@@ -27,6 +27,14 @@ const CUSTOM_VEHICLE_TYPES = [
 
 const CUSTOM_MAKES = [
   { id: 100001, name: "ATUL AUTO" },
+  { id: 100101, name: "VAUXHALL" },
+  { id: 100102, name: "CITROEN" },
+  { id: 100103, name: "MAXUS" },
+  { id: 100104, name: "IVECO" },
+  { id: 100105, name: "SKODA" },
+  { id: 100106, name: "DACIA" },
+  { id: 100107, name: "RANGE ROVER" },
+  { id: 100108, name: "MG" },
 ];
 
 const CUSTOM_MODELS = [
@@ -42,6 +50,126 @@ const CUSTOM_MODELS = [
   { id: 100010, makeId: 100001, name: "ENERGIE2", vehicleTypeId: 10001 },
   { id: 100011, makeId: 100001, name: "SHAKTI", vehicleTypeId: 10001 },
   { id: 100012, makeId: 100001, name: "GEMINI+", vehicleTypeId: 10001 },
+  { id: 101001, makeId: 449, name: "V-Class", vehicleTypeId: 7 },
+  { id: 101002, makeId: 449, name: "V-Klasse", vehicleTypeId: 7 },
+  { id: 101003, makeId: 449, name: "Viano", vehicleTypeId: 7 },
+  { id: 101004, makeId: 449, name: "Vito", vehicleTypeId: 7 },
+  { id: 101005, makeId: 449, name: "Vito Tourer", vehicleTypeId: 7 },
+  { id: 101006, makeId: 449, name: "EQV", vehicleTypeId: 7 },
+  { id: 101007, makeId: 449, name: "Sprinter Tourer", vehicleTypeId: 7 },
+  { id: 101008, makeId: 449, name: "GLE", vehicleTypeId: 7 },
+  { id: 101009, makeId: 449, name: "GLS", vehicleTypeId: 7 },
+  { id: 101010, makeId: 449, name: "EQE", vehicleTypeId: 2 },
+  { id: 101011, makeId: 449, name: "EQS", vehicleTypeId: 2 },
+  { id: 101012, makeId: 482, name: "Transporter", vehicleTypeId: 7 },
+  { id: 101013, makeId: 482, name: "Caravelle", vehicleTypeId: 7 },
+  { id: 101014, makeId: 482, name: "Multivan", vehicleTypeId: 7 },
+  { id: 101015, makeId: 482, name: "California", vehicleTypeId: 7 },
+  { id: 101016, makeId: 482, name: "Crafter", vehicleTypeId: 7 },
+  { id: 101017, makeId: 482, name: "Touran", vehicleTypeId: 7 },
+  { id: 101018, makeId: 482, name: "Polo Sedan", vehicleTypeId: 2 },
+  { id: 101019, makeId: 482, name: "Virtus", vehicleTypeId: 2 },
+  { id: 101020, makeId: 460, name: "Transit Custom", vehicleTypeId: 7 },
+  { id: 101021, makeId: 460, name: "Tourneo Custom", vehicleTypeId: 7 },
+  { id: 101022, makeId: 460, name: "Transit Passenger", vehicleTypeId: 7 },
+  { id: 101023, makeId: 448, name: "HiAce", vehicleTypeId: 7 },
+  { id: 101024, makeId: 448, name: "HiAce Commuter", vehicleTypeId: 7 },
+  { id: 101025, makeId: 448, name: "Proace Verso", vehicleTypeId: 7 },
+  { id: 101026, makeId: 448, name: "Alphard", vehicleTypeId: 7 },
+  { id: 101027, makeId: 448, name: "Vellfire", vehicleTypeId: 7 },
+  { id: 101028, makeId: 448, name: "Coaster", vehicleTypeId: 7 },
+  { id: 101029, makeId: 448, name: "Corolla Touring Sports", vehicleTypeId: 2 },
+  { id: 101030, makeId: 448, name: "Yaris Sedan", vehicleTypeId: 2 },
+  { id: 101031, makeId: 448, name: "Vios", vehicleTypeId: 2 },
+  { id: 101032, makeId: 448, name: "Avanza", vehicleTypeId: 7 },
+  { id: 101033, makeId: 448, name: "Innova", vehicleTypeId: 7 },
+  { id: 101034, makeId: 448, name: "Kijang Innova", vehicleTypeId: 7 },
+  { id: 101035, makeId: 448, name: "Fortuner", vehicleTypeId: 7 },
+  { id: 101036, makeId: 498, name: "Staria", vehicleTypeId: 7 },
+  { id: 101037, makeId: 498, name: "H-1", vehicleTypeId: 7 },
+  { id: 101038, makeId: 498, name: "iMax", vehicleTypeId: 7 },
+  { id: 101039, makeId: 498, name: "Starex", vehicleTypeId: 7 },
+  { id: 101040, makeId: 498, name: "Accent", vehicleTypeId: 2 },
+  { id: 101041, makeId: 498, name: "Verna", vehicleTypeId: 2 },
+  { id: 101042, makeId: 498, name: "Solaris", vehicleTypeId: 2 },
+  { id: 101043, makeId: 498, name: "Avante", vehicleTypeId: 2 },
+  { id: 101044, makeId: 499, name: "Rio", vehicleTypeId: 2 },
+  { id: 101045, makeId: 499, name: "Cerato", vehicleTypeId: 2 },
+  { id: 101046, makeId: 499, name: "Forte", vehicleTypeId: 2 },
+  { id: 101047, makeId: 499, name: "Niro", vehicleTypeId: 7 },
+  { id: 101048, makeId: 499, name: "EV9", vehicleTypeId: 7 },
+  { id: 101049, makeId: 499, name: "Sorento", vehicleTypeId: 7 },
+  { id: 101050, makeId: 13647, name: "Trafic Passenger", vehicleTypeId: 7 },
+  { id: 101051, makeId: 13647, name: "Master Passenger", vehicleTypeId: 7 },
+  { id: 101052, makeId: 13647, name: "Logan", vehicleTypeId: 2 },
+  { id: 101053, makeId: 13647, name: "Zoe", vehicleTypeId: 2 },
+  { id: 101054, makeId: 471, name: "Vivaro Life", vehicleTypeId: 7 },
+  { id: 101055, makeId: 471, name: "Movano Minibus", vehicleTypeId: 7 },
+  { id: 101056, makeId: 100101, name: "Vivaro Life", vehicleTypeId: 7 },
+  { id: 101057, makeId: 100101, name: "Movano Minibus", vehicleTypeId: 7 },
+  { id: 101058, makeId: 5554, name: "Traveller", vehicleTypeId: 7 },
+  { id: 101059, makeId: 5554, name: "Expert Combi", vehicleTypeId: 7 },
+  { id: 101060, makeId: 5554, name: "Boxer Minibus", vehicleTypeId: 7 },
+  { id: 101061, makeId: 100102, name: "SpaceTourer", vehicleTypeId: 7 },
+  { id: 101062, makeId: 100102, name: "Jumpy Combi", vehicleTypeId: 7 },
+  { id: 101063, makeId: 100102, name: "Relay Minibus", vehicleTypeId: 7 },
+  { id: 101064, makeId: 100102, name: "Jumper Minibus", vehicleTypeId: 7 },
+  { id: 101065, makeId: 492, name: "Scudo Combi", vehicleTypeId: 7 },
+  { id: 101066, makeId: 492, name: "Ducato Passenger", vehicleTypeId: 7 },
+  { id: 101067, makeId: 478, name: "Primastar Combi", vehicleTypeId: 7 },
+  { id: 101068, makeId: 478, name: "NV200", vehicleTypeId: 7 },
+  { id: 101069, makeId: 478, name: "Evalia", vehicleTypeId: 7 },
+  { id: 101070, makeId: 478, name: "Sunny", vehicleTypeId: 2 },
+  { id: 101071, makeId: 478, name: "Almera", vehicleTypeId: 2 },
+  { id: 101072, makeId: 478, name: "Versa", vehicleTypeId: 2 },
+  { id: 101073, makeId: 478, name: "Sentra", vehicleTypeId: 2 },
+  { id: 101074, makeId: 100103, name: "MIFA 9", vehicleTypeId: 7 },
+  { id: 101075, makeId: 515, name: "LM", vehicleTypeId: 7 },
+  { id: 101076, makeId: 515, name: "RX", vehicleTypeId: 7 },
+  { id: 101077, makeId: 515, name: "LX", vehicleTypeId: 7 },
+  { id: 101078, makeId: 100104, name: "Daily Minibus", vehicleTypeId: 7 },
+  { id: 101079, makeId: 528, name: "Rosa", vehicleTypeId: 7 },
+  { id: 101080, makeId: 542, name: "Novo", vehicleTypeId: 7 },
+  { id: 101081, makeId: 542, name: "Journey", vehicleTypeId: 7 },
+  { id: 101082, makeId: 452, name: "3 Series", vehicleTypeId: 2 },
+  { id: 101083, makeId: 452, name: "5 Series", vehicleTypeId: 2 },
+  { id: 101084, makeId: 452, name: "7 Series", vehicleTypeId: 2 },
+  { id: 101085, makeId: 452, name: "X5", vehicleTypeId: 7 },
+  { id: 101086, makeId: 452, name: "X7", vehicleTypeId: 7 },
+  { id: 101087, makeId: 582, name: "A4", vehicleTypeId: 2 },
+  { id: 101088, makeId: 582, name: "A6", vehicleTypeId: 2 },
+  { id: 101089, makeId: 582, name: "A8", vehicleTypeId: 2 },
+  { id: 101090, makeId: 582, name: "Q7", vehicleTypeId: 7 },
+  { id: 101091, makeId: 582, name: "Q8", vehicleTypeId: 7 },
+  { id: 101092, makeId: 100105, name: "Octavia", vehicleTypeId: 2 },
+  { id: 101093, makeId: 100105, name: "Superb", vehicleTypeId: 2 },
+  { id: 101094, makeId: 100105, name: "Rapid", vehicleTypeId: 2 },
+  { id: 101095, makeId: 485, name: "V60", vehicleTypeId: 2 },
+  { id: 101096, makeId: 485, name: "V70", vehicleTypeId: 2 },
+  { id: 101097, makeId: 485, name: "V90", vehicleTypeId: 2 },
+  { id: 101098, makeId: 485, name: "XC90", vehicleTypeId: 7 },
+  { id: 101099, makeId: 474, name: "City", vehicleTypeId: 2 },
+  { id: 101100, makeId: 100106, name: "Logan", vehicleTypeId: 2 },
+  { id: 101101, makeId: 467, name: "Cobalt", vehicleTypeId: 2 },
+  { id: 101102, makeId: 467, name: "Onix Plus", vehicleTypeId: 2 },
+  { id: 101103, makeId: 100107, name: "Range Rover", vehicleTypeId: 7 },
+  { id: 101104, makeId: 444, name: "Discovery", vehicleTypeId: 7 },
+  { id: 101105, makeId: 481, name: "Pajero", vehicleTypeId: 7 },
+  { id: 101106, makeId: 481, name: "Montero", vehicleTypeId: 7 },
+  { id: 101107, makeId: 481, name: "Shogun", vehicleTypeId: 7 },
+  { id: 101108, makeId: 441, name: "Model Y", vehicleTypeId: 7 },
+  { id: 101109, makeId: 441, name: "Model S", vehicleTypeId: 2 },
+  { id: 101110, makeId: 441, name: "Model X", vehicleTypeId: 7 },
+  { id: 101111, makeId: 482, name: "ID. Buzz", vehicleTypeId: 7 },
+  { id: 101112, makeId: 100108, name: "MG4", vehicleTypeId: 2 },
+  { id: 101113, makeId: 100108, name: "MG5 EV", vehicleTypeId: 2 },
+  { id: 101114, makeId: 1991, name: "Atto 3", vehicleTypeId: 7 },
+  { id: 101115, makeId: 1991, name: "Yuan Plus", vehicleTypeId: 7 },
+  { id: 101116, makeId: 1991, name: "Dolphin", vehicleTypeId: 2 },
+  { id: 101117, makeId: 1991, name: "Seal", vehicleTypeId: 2 },
+  { id: 101118, makeId: 482, name: "Passat", vehicleTypeId: 2 },
+  { id: 101119, makeId: 498, name: "Ioniq", vehicleTypeId: 2 },
+  { id: 101120, makeId: 499, name: "Sedona", vehicleTypeId: 7 },
 ];
 
 // ---------------------------------------------------------------------------
@@ -100,11 +228,23 @@ function addCustomCatalogData(years: number[], allMakes: Map<number, string>, ra
     allMakes.set(make.id, make.name);
   }
 
+  const existingModels = new Set(
+    rawModels.map((m) => `${m[0]}:${m[1]}:${normalizeModelName(m[3])}:${m[4]}`)
+  );
+
   for (const year of years) {
     for (const model of CUSTOM_MODELS) {
-      rawModels.push([year, model.makeId, model.id, model.name, model.vehicleTypeId]);
+      const key = `${year}:${model.makeId}:${normalizeModelName(model.name)}:${model.vehicleTypeId}`;
+      if (!existingModels.has(key)) {
+        rawModels.push([year, model.makeId, model.id, model.name, model.vehicleTypeId]);
+        existingModels.add(key);
+      }
     }
   }
+}
+
+function normalizeModelName(name: string): string {
+  return name.trim().toLocaleUpperCase("en-US").replace(/\s+/g, " ");
 }
 
 function sleep(ms: number) {

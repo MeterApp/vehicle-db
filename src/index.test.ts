@@ -210,4 +210,26 @@ describe("getModels", () => {
     expect(r1.length).toBeGreaterThan(0);
     expect(r2.length).toBeGreaterThan(0);
   });
+
+  it("includes custom global passenger van aliases", () => {
+    const mercedes = getMakes({ year: 2026 }).find((m) => m.makeName === "MERCEDES-BENZ");
+    expect(mercedes).toBeDefined();
+
+    const models = getModels({ makeId: mercedes!.makeId, year: 2026 }).map((m) => m.modelName);
+    expect(models).toContain("V-Class");
+    expect(models).toContain("V-Klasse");
+    expect(models).toContain("Vito Tourer");
+    expect(models).toContain("Sprinter Tourer");
+  });
+
+  it("includes custom makes for global market models", () => {
+    const makes = getMakes({ year: 2026 }).map((m) => m.makeName);
+    expect(makes).toContain("CITROEN");
+    expect(makes).toContain("MAXUS");
+    expect(makes).toContain("SKODA");
+
+    const maxus = getMakes({ year: 2026 }).find((m) => m.makeName === "MAXUS");
+    const models = getModels({ makeId: maxus!.makeId, year: 2026 }).map((m) => m.modelName);
+    expect(models).toContain("MIFA 9");
+  });
 });
