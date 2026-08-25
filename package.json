@@ -1,7 +1,7 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.2.0",
-  "description": "Offline NHTSA vehicle makes/models database — zero dependencies",
+  "version": "2.4.0",
+  "description": "Offline international vehicle makes/models database — zero dependencies",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MeterApp/vehicle-db.git"
@@ -12,28 +12,37 @@
     "dist"
   ],
   "scripts": {
-    "build:db": "tsx scripts/build-db.ts",
+    "build:db": "npm run build:data",
+    "build:data": "tsx scripts/build-db.ts",
+    "refresh:nhtsa": "tsx scripts/import-nhtsa.ts",
+    "refresh:uk-dft": "tsx scripts/import-uk-dft.ts",
     "build:ts": "tsc",
     "build": "npm run build:ts",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
     "prepublishOnly": "npm run build",
     "test": "vitest run"
   },
   "keywords": [
     "nhtsa",
+    "dvla",
     "vehicles",
     "makes",
     "models",
+    "motorcycles",
+    "buses",
+    "international",
     "offline"
   ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^25.4.0",
-    "better-sqlite3": "^12.6.2",
-    "tsx": "^4.21.0",
+    "@types/node": "^25.9.5",
+    "tsx": "^4.23.12",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.11"
   }
 }
