@@ -1,13 +1,11 @@
 /**
- * Refreshes the normalized UK Department for Transport/DVLA source snapshot.
- *
- * The upstream VEH0124 files contain registered vehicles by make, generic
- * model, body type, and year of manufacture (or first use when unavailable).
- * Raw CSVs are downloaded to a temporary directory and are not committed.
+ * Refreshes the normalized Malaysian Road Transport Department (JPJ) source
+ * snapshot from data.gov.my's annual registration transaction CSVs.
  *
  * Usage:
- *   npx tsx scripts/import-uk-dft.ts
- *   npx tsx scripts/import-uk-dft.ts --input data.csv [--input data-2.csv]
+ *   npx tsx scripts/import-malaysia-jpj.ts
+ *   npx tsx scripts/import-malaysia-jpj.ts --start-year 2024 --end-year 2026
+ *   npx tsx scripts/import-malaysia-jpj.ts --input cars_2026.csv
  */
 import fs from "fs";
 import os from "os";
@@ -24,61 +22,25 @@ import {
   type SourceCatalog,
 } from "./catalog-types";
 
-export { parseCsvLine } from "./catalog-types";
+const SOURCE_PAGE = "https://data.gov.my/data-catalogue/registration_transactions_car";
+const RAW_URL = (year: number) =>
+  `https://storage.data.gov.my/transportation/cars_${year}.csv`;
+const DEFAULT_OUT_PATH = path.join(
+  __dirname,
+  "..",
+  "data",
+  "sources",
+  "malaysia-jpj.json",
+);
+const DEFAULT_START_YEAR = 2024;
 
-const SOURCE_PAGE =
-  "https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files";
-const RAW_URLS = [
-  "https://assets.publishing.service.gov.uk/media/69ef3c3a20a498c16734afd1/df_VEH0124_AM.csv",
-  "https://assets.publishing.service.gov.uk/media/69ef3c8520a498c16734afd2/df_VEH0124_NZ.csv",
-];
-const DEFAULT_OUT_PATH = path.join(__dirname, "..", "data", "sources", "uk-dft.json");
-const MIN_YEAR = 1990;
-const MAX_YEAR = 2026;
-
-const BODY_TYPE_MAP = new Map<string, { id: number; name: string }>([
-  ["Motorcycles", { id: 1, name: "Motorcycle" }],
-  ["Cars", { id: 2, name: "Passenger Car" }],
-  ["Heavy goods vehicles", { id: 3, name: "Truck" }],
-  ["Light goods vehicles", { id: 3, name: "Truck" }],
-  ["Buses and coaches", { id: 5, name: "Bus" }],
-  ["Other vehicles", { id: 10002, name: "Other Vehicle" }],
+const VEHICLE_TYPE_MAP = new Map<string, { id: number; name: string }>([
+  ["motokar", { id: 2, name: "Passenger Car" }],
+  ["pick_up", { id: 3, name: "Truck" }],
+  ["jip", { id: 7, name: "Multipurpose Passenger Vehicle (MPV)" }],
+  ["motokar_pelbagai_utiliti", { id: 7, name: "Multipurpose Passenger Vehicle (MPV)" }],
+  ["window_van", { id: 7, name: "Multipurpose Passenger Vehicle (MPV)" }],
 ]);
-
-function hasVehicleCount(value: string): boolean {
-  if (value === "[c]") return true;
-  const count = Number(value);
-  return Number.isFinite(count) && count > 0;
-}
-
-function isUsefulName(value: string): boolean {
-  const normalized = normalizeName(value);
-  return (
-    normalized.length > 0 &&
-    normalized !== "[X]" &&
-    normalized !== "UNKNOWN" &&
-    !normalized.includes("MISSING") &&
-    !normalized.includes("NOT RECORDED")
-  );
-}
-
-function modelNameWithoutMake(makeName: string, genericModel: string): string {
-  const normalizedMake = normalizeName(makeName);
-  const normalizedModel = normalizeName(genericModel);
-  if (normalizedModel.startsWith(`${normalizedMake} `)) {
-    return normalizedModel.slice(normalizedMake.length + 1);
-  }
-  return normalizedModel;
-}
-
-async function download(url: string, destination: string): Promise<void> {
-  console.log(`Downloading ${url}`);
-  const response = await fetch(url);
-  if (!response.ok || !response.body) {
-    throw new Error(`HTTP ${response.status} while downloading ${url}`);
-  }
-  await pipeline(Readable.fromWeb(response.body as never), fs.createWriteStream(destination));
-}
 
 interface RawEntry {
   year: number;
@@ -87,12 +49,30 @@ interface RawEntry {
   vehicleTypeId: number;
 }
 
+function isUsefulName(value: string): boolean {
+  const normalized = normalizeName(value);
+  return (
+    normalized.length > 0 &&
+    !["N/A", "NA", "NOT APPLICABLE", "OTHER", "UNKNOWN", "UNSPECIFIED"].includes(normalized)
+  );
+}
+
+async function download(url: string, destination: string): Promise<void> {
+  console.log(`Downloading ${url}`);
+  const response = await fetch(url, {
+    headers: { "User-Agent": "MeterApp-vehicle-db-source-refresh" },
+  });
+  if (!response.ok || !response.body) {
+    throw new Error(`HTTP ${response.status} while downloading ${url}`);
+  }
+  await pipeline(Readable.fromWeb(response.body as never), fs.createWriteStream(destination));
+}
+
 async function readSourceFile(filePath: string, entries: Map<string, RawEntry>): Promise<number> {
   const input = readline.createInterface({
     input: fs.createReadStream(filePath),
     crlfDelay: Infinity,
   });
-
   let header: string[] | undefined;
   let included = 0;
   let lineNumber = 0;
@@ -101,50 +81,42 @@ async function readSourceFile(filePath: string, entries: Map<string, RawEntry>):
     lineNumber++;
     const values = parseCsvLine(line);
     if (!header) {
-      header = values;
+      header = values.map((value) => value.trim());
       continue;
     }
     if (values.length !== header.length) {
       throw new Error(`${filePath}:${lineNumber} has ${values.length} columns; expected ${header.length}`);
     }
 
-    const [bodyType, makeName, genericModel, , yearFirstUsed, yearManufacture] = values;
-    const vehicleType = BODY_TYPE_MAP.get(bodyType);
-    if (!vehicleType || !isUsefulName(makeName) || !isUsefulName(genericModel)) continue;
-    if (!values.slice(7).some(hasVehicleCount)) continue;
+    const get = (name: string): string => values[header!.indexOf(name)] ?? "";
+    const date = get("date_reg");
+    const year = Number(date.slice(0, 4));
+    const vehicleType = VEHICLE_TYPE_MAP.get(get("type"));
+    const make = get("maker");
+    const model = get("model");
+    if (!Number.isInteger(year) || !vehicleType || !isUsefulName(make) || !isUsefulName(model)) {
+      continue;
+    }
 
-    const manufactureYear = Number(yearManufacture);
-    const firstUsedYear = Number(yearFirstUsed);
-    const year =
-      Number.isInteger(manufactureYear) && manufactureYear >= MIN_YEAR && manufactureYear <= MAX_YEAR
-        ? manufactureYear
-        : firstUsedYear;
-    if (!Number.isInteger(year) || year < MIN_YEAR || year > MAX_YEAR) continue;
-
-    const normalizedMake = normalizeName(makeName);
-    const normalizedModel = modelNameWithoutMake(makeName, genericModel);
-    if (!isUsefulName(normalizedModel)) continue;
-
-    const key = `${year}\u0000${normalizedMake}\u0000${normalizedModel}\u0000${vehicleType.id}`;
+    const makeName = normalizeName(make);
+    const modelName = normalizeName(model);
+    const key = `${year}\u0000${makeName}\u0000${modelName}\u0000${vehicleType.id}`;
     if (!entries.has(key)) {
-      entries.set(key, {
-        year,
-        makeName: normalizedMake,
-        modelName: normalizedModel,
-        vehicleTypeId: vehicleType.id,
-      });
+      entries.set(key, { year, makeName, modelName, vehicleTypeId: vehicleType.id });
       included++;
     }
   }
-
   return included;
 }
 
-export async function buildSourceCatalog(inputPaths: string[]): Promise<SourceCatalog> {
+export async function buildSourceCatalog(
+  inputPaths: string[],
+  retrievedAt = new Date().toISOString().slice(0, 10),
+): Promise<SourceCatalog> {
   const entries = new Map<string, RawEntry>();
   for (const inputPath of inputPaths) {
     const added = await readSourceFile(inputPath, entries);
-    console.log(`Read ${path.basename(inputPath)}: ${added.toLocaleString()} unique entries added`);
+    console.log(`${path.basename(inputPath)}: ${added.toLocaleString()} unique entries added`);
   }
 
   const makeNames = [...new Set([...entries.values()].map((entry) => entry.makeName))].sort(
@@ -159,7 +131,7 @@ export async function buildSourceCatalog(inputPaths: string[]): Promise<SourceCa
   const usedModelIds = new Map<number, string>();
 
   const makes = makeNames.map((makeName) => {
-    const idKey = `uk-dft:make:${makeName}`;
+    const idKey = `malaysia-jpj:make:${makeName}`;
     const makeId = stableSourceId(idKey);
     assertNoIdCollision(usedMakeIds, makeId, idKey, "Make");
     makeIds.set(makeName, makeId);
@@ -175,7 +147,7 @@ export async function buildSourceCatalog(inputPaths: string[]): Promise<SourceCa
         left.vehicleTypeId - right.vehicleTypeId,
     )
     .map((entry) => {
-      const modelKey = `uk-dft:model:${entry.makeName}:${entry.modelName}`;
+      const modelKey = `malaysia-jpj:model:${entry.makeName}:${entry.modelName}`;
       const modelId = stableSourceId(modelKey);
       assertNoIdCollision(usedModelIds, modelId, modelKey, "Model");
       return [
@@ -188,25 +160,22 @@ export async function buildSourceCatalog(inputPaths: string[]): Promise<SourceCa
     });
 
   const usedTypeIds = new Set(models.map((model) => model[4]));
-  const vehicleTypes = [...new Map([...BODY_TYPE_MAP.values()].map((type) => [type.id, type])).values()]
+  const vehicleTypes = [...new Map([...VEHICLE_TYPE_MAP.values()].map((type) => [type.id, type])).values()]
     .filter((type) => usedTypeIds.has(type.id))
     .sort((left, right) => left.id - right.id)
-    .map((type) => ({
-      vehicle_type_id: type.id,
-      vehicle_type_name: type.name,
-    }));
+    .map((type) => ({ vehicle_type_id: type.id, vehicle_type_name: type.name }));
 
   return {
     metadata: {
-      id: "uk-dft-vehicle-licensing",
-      name: "UK DfT/DVLA Vehicle Licensing Statistics",
+      id: "malaysia-jpj-registrations",
+      name: "Malaysia JPJ Car Registration Transactions",
       url: SOURCE_PAGE,
-      license: "Open Government Licence v3.0",
-      licenseUrl: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-      region: "United Kingdom",
+      license: "Creative Commons Attribution 4.0 International",
+      licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+      region: "Malaysia",
       description:
-        "Registered fleet make/model catalog by year of manufacture, including cars, goods vehicles, motorcycles, buses and coaches, and other vehicles.",
-      retrievedAt: new Date().toISOString().slice(0, 10),
+        "Passenger cars, MPVs, jeeps, pickups, and window vans registered by Malaysia's Road Transport Department, keyed by registration year.",
+      retrievedAt,
     },
     vehicleTypes,
     makes,
@@ -215,30 +184,44 @@ export async function buildSourceCatalog(inputPaths: string[]): Promise<SourceCa
   };
 }
 
-function parseArguments(): { inputPaths: string[]; outPath: string } {
+function parseArguments(): {
+  inputPaths: string[];
+  outPath: string;
+  startYear: number;
+  endYear: number;
+} {
   const args = process.argv.slice(2);
   const inputPaths: string[] = [];
   let outPath = DEFAULT_OUT_PATH;
+  let startYear = DEFAULT_START_YEAR;
+  let endYear = new Date().getUTCFullYear();
+
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--input") inputPaths.push(path.resolve(args[++index]));
     else if (args[index] === "--out") outPath = path.resolve(args[++index]);
+    else if (args[index] === "--start-year") startYear = Number(args[++index]);
+    else if (args[index] === "--end-year") endYear = Number(args[++index]);
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
-  return { inputPaths, outPath };
+
+  if (!Number.isInteger(startYear) || !Number.isInteger(endYear) || startYear > endYear) {
+    throw new Error(`Invalid year range: ${startYear}–${endYear}`);
+  }
+  return { inputPaths, outPath, startYear, endYear };
 }
 
 async function main(): Promise<void> {
-  const { inputPaths, outPath } = parseArguments();
+  const { inputPaths, outPath, startYear, endYear } = parseArguments();
   let temporaryDirectory: string | undefined;
   let sources = inputPaths;
 
   try {
     if (sources.length === 0) {
-      temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "vehicle-db-uk-dft-"));
+      temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "vehicle-db-malaysia-jpj-"));
       sources = [];
-      for (const [index, url] of RAW_URLS.entries()) {
-        const destination = path.join(temporaryDirectory, `source-${index + 1}.csv`);
-        await download(url, destination);
+      for (let year = startYear; year <= endYear; year++) {
+        const destination = path.join(temporaryDirectory, `cars-${year}.csv`);
+        await download(RAW_URL(year), destination);
         sources.push(destination);
       }
     }
