@@ -12,6 +12,8 @@ const MOTORCYCLE_TYPE_ID = 1;
 const BUS_TYPE_ID = 5;
 const ATUL_AUTO_MAKE_ID = 100001;
 const UK_DFT_SOURCE_ID = "uk-dft-vehicle-licensing";
+const NZTA_ASIA_SOURCE_ID = "nzta-asia-pacific-mvr";
+const MALAYSIA_JPJ_SOURCE_ID = "malaysia-jpj-registrations";
 const ATUL_AUTO_MODELS = [
   "RIK",
   "RIK+",
@@ -80,6 +82,8 @@ describe("getDataSources", () => {
       "nhtsa-vpic",
       UK_DFT_SOURCE_ID,
       "atul-auto-catalog",
+      NZTA_ASIA_SOURCE_ID,
+      MALAYSIA_JPJ_SOURCE_ID,
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
@@ -87,6 +91,19 @@ describe("getDataSources", () => {
     expect(ukSource.vehicleTypeIds).toEqual(expect.arrayContaining([MOTORCYCLE_TYPE_ID, BUS_TYPE_ID]));
     expect(ukSource.makeCount).toBeGreaterThan(500);
     expect(ukSource.modelCount).toBeGreaterThan(50_000);
+
+    const asiaSource = sources.find((source) => source.sourceId === NZTA_ASIA_SOURCE_ID)!;
+    expect(asiaSource.license).toBe("Creative Commons Attribution 4.0 International");
+    expect(asiaSource.vehicleTypeIds).toEqual(
+      expect.arrayContaining([MOTORCYCLE_TYPE_ID, BUS_TYPE_ID]),
+    );
+    expect(asiaSource.modelCount).toBeGreaterThan(30_000);
+
+    const malaysiaSource = sources.find(
+      (source) => source.sourceId === MALAYSIA_JPJ_SOURCE_ID,
+    )!;
+    expect(malaysiaSource.region).toBe("Malaysia");
+    expect(malaysiaSource.yearFrom).toBe(2024);
   });
 });
 
@@ -288,6 +305,75 @@ describe("getModels", () => {
         sourceId: UK_DFT_SOURCE_ID,
       }).map((model) => model.modelName),
     ).toContain("ENVIRO");
+  });
+
+  it("includes Japanese kei cars, Chinese EVs, Indian vehicles, and Asian motorcycles", () => {
+    const honda = getMakes({ year: 2022, sourceId: NZTA_ASIA_SOURCE_ID }).find(
+      (make) => make.makeName === "HONDA",
+    );
+    expect(honda).toBeDefined();
+    expect(
+      getModels({
+        makeId: honda!.makeId,
+        year: 2022,
+        vehicleTypeId: 2,
+        sourceId: NZTA_ASIA_SOURCE_ID,
+      }).map((model) => model.modelName),
+    ).toContain("N-BOX");
+
+    const byd = getMakes({ year: 2024, sourceId: NZTA_ASIA_SOURCE_ID }).find(
+      (make) => make.makeName === "BYD",
+    );
+    expect(byd).toBeDefined();
+    expect(
+      getModels({ makeId: byd!.makeId, year: 2024, sourceId: NZTA_ASIA_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toContain("DOLPHIN");
+
+    const mahindra = getMakes({ year: 2024, sourceId: NZTA_ASIA_SOURCE_ID }).find(
+      (make) => make.makeName === "MAHINDRA",
+    );
+    expect(mahindra).toBeDefined();
+    expect(
+      getModels({
+        makeId: mahindra!.makeId,
+        year: 2024,
+        vehicleTypeId: 2,
+        sourceId: NZTA_ASIA_SOURCE_ID,
+      }).map((model) => model.modelName),
+    ).toContain("SCORPIO N");
+
+    expect(
+      getModels({
+        makeId: honda!.makeId,
+        year: 2024,
+        vehicleTypeId: MOTORCYCLE_TYPE_ID,
+        sourceId: NZTA_ASIA_SOURCE_ID,
+      }).map((model) => model.modelName),
+    ).toContain("CBR");
+  });
+
+  it("includes Malaysian and regional Southeast Asian market models", () => {
+    const perodua = getMakes({ year: 2026, sourceId: MALAYSIA_JPJ_SOURCE_ID }).find(
+      (make) => make.makeName === "PERODUA",
+    );
+    expect(perodua).toBeDefined();
+    expect(
+      getModels({ makeId: perodua!.makeId, year: 2026, sourceId: MALAYSIA_JPJ_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toEqual(expect.arrayContaining(["AXIA", "BEZZA", "MYVI"]));
+
+    const proton = getMakes({ year: 2026, sourceId: MALAYSIA_JPJ_SOURCE_ID }).find(
+      (make) => make.makeName === "PROTON",
+    );
+    expect(proton).toBeDefined();
+    expect(
+      getModels({ makeId: proton!.makeId, year: 2026, sourceId: MALAYSIA_JPJ_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toContain("S70");
   });
 
   it("filters by source and returns empty for an unknown source", () => {

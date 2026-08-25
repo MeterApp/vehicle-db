@@ -25,6 +25,33 @@ export function compareStrings(left: string, right: string): number {
   return left < right ? -1 : left > right ? 1 : 0;
 }
 
+export function parseCsvLine(line: string): string[] {
+  const values: string[] = [];
+  let value = "";
+  let quoted = false;
+
+  for (let index = 0; index < line.length; index++) {
+    const character = line[index];
+    if (character === '"') {
+      if (quoted && line[index + 1] === '"') {
+        value += '"';
+        index++;
+      } else {
+        quoted = !quoted;
+      }
+    } else if (character === "," && !quoted) {
+      values.push(value);
+      value = "";
+    } else {
+      value += character;
+    }
+  }
+
+  if (quoted) throw new Error("Unsupported newline inside a quoted CSV field");
+  values.push(value);
+  return values;
+}
+
 /** Stable unsigned FNV-1a ID in a namespace above the IDs assigned by vPIC. */
 export function stableSourceId(value: string): number {
   let hash = 0x811c9dc5;
