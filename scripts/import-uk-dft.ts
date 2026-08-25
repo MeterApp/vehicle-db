@@ -19,9 +19,12 @@ import {
   assertNoIdCollision,
   compareStrings,
   normalizeName,
+  parseCsvLine,
   stableSourceId,
   type SourceCatalog,
 } from "./catalog-types";
+
+export { parseCsvLine } from "./catalog-types";
 
 const SOURCE_PAGE =
   "https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files";
@@ -66,33 +69,6 @@ function modelNameWithoutMake(makeName: string, genericModel: string): string {
     return normalizedModel.slice(normalizedMake.length + 1);
   }
   return normalizedModel;
-}
-
-export function parseCsvLine(line: string): string[] {
-  const values: string[] = [];
-  let value = "";
-  let quoted = false;
-
-  for (let index = 0; index < line.length; index++) {
-    const character = line[index];
-    if (character === '"') {
-      if (quoted && line[index + 1] === '"') {
-        value += '"';
-        index++;
-      } else {
-        quoted = !quoted;
-      }
-    } else if (character === "," && !quoted) {
-      values.push(value);
-      value = "";
-    } else {
-      value += character;
-    }
-  }
-
-  if (quoted) throw new Error("Unsupported newline inside a quoted CSV field");
-  values.push(value);
-  return values;
 }
 
 async function download(url: string, destination: string): Promise<void> {

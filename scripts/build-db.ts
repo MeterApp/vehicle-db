@@ -14,6 +14,8 @@ const SOURCE_PRIORITY = [
   "nhtsa-vpic",
   "uk-dft-vehicle-licensing",
   "atul-auto-catalog",
+  "nzta-asia-pacific-mvr",
+  "malaysia-jpj-registrations",
 ];
 // Preserve IDs shipped for these international makes before source snapshots
 // were introduced, so stored make selections remain valid across the upgrade.
@@ -28,7 +30,10 @@ const LEGACY_MAKE_IDS = new Map<string, number>([
   ["MG", 100108],
 ]);
 const MAKE_NAME_ALIASES = new Map<string, string>([
+  ["DONG FENG", "DONGFENG"],
+  ["HARLEY DAVIDSON", "HARLEY-DAVIDSON"],
   ["MERCEDES", "MERCEDES-BENZ"],
+  ["MERCEDES BENZ", "MERCEDES-BENZ"],
   ["ROLLS ROYCE", "ROLLS-ROYCE"],
 ]);
 

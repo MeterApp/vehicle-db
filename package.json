@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Offline international vehicle makes/models database — zero dependencies",
   "repository": {
     "type": "git",
@@ -16,6 +16,8 @@
     "build:data": "tsx scripts/build-db.ts",
     "refresh:nhtsa": "tsx scripts/import-nhtsa.ts",
     "refresh:uk-dft": "tsx scripts/import-uk-dft.ts",
+    "refresh:nzta-asia-pacific": "tsx scripts/import-nzta-asia-pacific.ts",
+    "refresh:malaysia-jpj": "tsx scripts/import-malaysia-jpj.ts",
     "build:ts": "tsc",
     "build": "npm run build:ts",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
@@ -30,6 +32,10 @@
     "models",
     "motorcycles",
     "buses",
+    "asia",
+    "japan",
+    "malaysia",
+    "china",
     "international",
     "offline"
   ],
