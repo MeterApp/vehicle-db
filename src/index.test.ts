@@ -1,13 +1,17 @@
 import { describe, it, expect } from "vitest";
 import {
   getVehicleTypes,
+  getDataSources,
   getMakes,
   getModels,
   getAvailableYears,
 } from "./index";
 
 const AUTO_RICKSHAW_TYPE_ID = 10001;
+const MOTORCYCLE_TYPE_ID = 1;
+const BUS_TYPE_ID = 5;
 const ATUL_AUTO_MAKE_ID = 100001;
+const UK_DFT_SOURCE_ID = "uk-dft-vehicle-licensing";
 const ATUL_AUTO_MODELS = [
   "RIK",
   "RIK+",
@@ -49,12 +53,15 @@ describe("getVehicleTypes", () => {
     expect(types.length).toBeGreaterThan(0);
   });
 
-  it("includes car, truck, MPV, and auto rickshaw", () => {
+  it("includes passenger, commercial, motorcycle, bus, rickshaw, and special-purpose types", () => {
     const names = getVehicleTypes().map((t) => t.vehicleTypeName);
+    expect(names).toContain("Motorcycle");
     expect(names).toContain("Passenger Car");
     expect(names).toContain("Truck");
+    expect(names).toContain("Bus");
     expect(names).toContain("Multipurpose Passenger Vehicle (MPV)");
     expect(names).toContain("Auto Rickshaw");
+    expect(names).toContain("Other Vehicle");
   });
 
   it("each type has camelCase id and name", () => {
@@ -63,6 +70,23 @@ describe("getVehicleTypes", () => {
       expect(typeof vt.vehicleTypeName).toBe("string");
       expect(vt.vehicleTypeName.length).toBeGreaterThan(0);
     }
+  });
+});
+
+describe("getDataSources", () => {
+  it("returns transparent source, license, and coverage metadata", () => {
+    const sources = getDataSources();
+    expect(sources.map((source) => source.sourceId)).toEqual([
+      "nhtsa-vpic",
+      UK_DFT_SOURCE_ID,
+      "atul-auto-catalog",
+    ]);
+
+    const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
+    expect(ukSource.license).toBe("Open Government Licence v3.0");
+    expect(ukSource.vehicleTypeIds).toEqual(expect.arrayContaining([MOTORCYCLE_TYPE_ID, BUS_TYPE_ID]));
+    expect(ukSource.makeCount).toBeGreaterThan(500);
+    expect(ukSource.modelCount).toBeGreaterThan(50_000);
   });
 });
 
@@ -92,11 +116,12 @@ describe("getMakes", () => {
     expect(carMakes2024.length).toBeLessThanOrEqual(allMakes2024.length);
   });
 
-  it("includes Atul Auto for auto rickshaws across the catalog year range", () => {
-    for (const year of [1990, 2026]) {
+  it("includes Atul Auto only for the sourced product-catalog years", () => {
+    for (const year of [2024, 2026]) {
       const makes = getMakes({ year, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID });
       expect(makes).toEqual([{ makeId: ATUL_AUTO_MAKE_ID, makeName: "ATUL AUTO" }]);
     }
+    expect(getMakes({ year: 1990, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID })).toEqual([]);
   });
 
   it("each make has camelCase id and name", () => {
@@ -146,6 +171,8 @@ describe("getModels", () => {
       expect(typeof model.makeName).toBe("string");
       expect(typeof model.vehicleTypeId).toBe("number");
       expect(typeof model.vehicleTypeName).toBe("string");
+      expect(Array.isArray(model.sourceIds)).toBe(true);
+      expect(model.sourceIds.length).toBeGreaterThan(0);
     }
   });
 
@@ -189,6 +216,7 @@ describe("getModels", () => {
       expect(model.makeName).toBe("ATUL AUTO");
       expect(model.vehicleTypeId).toBe(AUTO_RICKSHAW_TYPE_ID);
       expect(model.vehicleTypeName).toBe("Auto Rickshaw");
+      expect(model.sourceIds).toEqual(["atul-auto-catalog"]);
     }
   });
 
@@ -211,25 +239,62 @@ describe("getModels", () => {
     expect(r2.length).toBeGreaterThan(0);
   });
 
-  it("includes custom global passenger van aliases", () => {
-    const mercedes = getMakes({ year: 2026 }).find((m) => m.makeName === "MERCEDES-BENZ");
-    expect(mercedes).toBeDefined();
+  it("includes sourced European and Asian market models", () => {
+    const ukMakes = getMakes({ year: 2024, sourceId: UK_DFT_SOURCE_ID });
+    const skoda = ukMakes.find((make) => make.makeName === "SKODA");
+    const byd = ukMakes.find((make) => make.makeName === "BYD");
+    expect(skoda).toBeDefined();
+    expect(byd).toBeDefined();
 
-    const models = getModels({ makeId: mercedes!.makeId, year: 2026 }).map((m) => m.modelName);
-    expect(models).toContain("V-Class");
-    expect(models).toContain("V-Klasse");
-    expect(models).toContain("Vito Tourer");
-    expect(models).toContain("Sprinter Tourer");
+    expect(
+      getModels({ makeId: skoda!.makeId, year: 2024, sourceId: UK_DFT_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toContain("OCTAVIA");
+    expect(
+      getModels({ makeId: byd!.makeId, year: 2024, sourceId: UK_DFT_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toContain("ATTO 3");
   });
 
-  it("includes custom makes for global market models", () => {
-    const makes = getMakes({ year: 2026 }).map((m) => m.makeName);
-    expect(makes).toContain("CITROEN");
-    expect(makes).toContain("MAXUS");
-    expect(makes).toContain("SKODA");
+  it("includes motorcycles and buses/coaches from the UK source", () => {
+    const honda = getMakes({
+      year: 2024,
+      vehicleTypeId: MOTORCYCLE_TYPE_ID,
+      sourceId: UK_DFT_SOURCE_ID,
+    }).find((make) => make.makeName === "HONDA");
+    expect(honda).toBeDefined();
+    expect(
+      getModels({
+        makeId: honda!.makeId,
+        year: 2024,
+        vehicleTypeId: MOTORCYCLE_TYPE_ID,
+        sourceId: UK_DFT_SOURCE_ID,
+      }).map((model) => model.modelName),
+    ).toContain("CBR");
 
-    const maxus = getMakes({ year: 2026 }).find((m) => m.makeName === "MAXUS");
-    const models = getModels({ makeId: maxus!.makeId, year: 2026 }).map((m) => m.modelName);
-    expect(models).toContain("MIFA 9");
+    const alexanderDennis = getMakes({
+      year: 2024,
+      vehicleTypeId: BUS_TYPE_ID,
+      sourceId: UK_DFT_SOURCE_ID,
+    }).find((make) => make.makeName === "ALEXANDER DENNIS");
+    expect(alexanderDennis).toBeDefined();
+    expect(
+      getModels({
+        makeId: alexanderDennis!.makeId,
+        year: 2024,
+        vehicleTypeId: BUS_TYPE_ID,
+        sourceId: UK_DFT_SOURCE_ID,
+      }).map((model) => model.modelName),
+    ).toContain("ENVIRO");
+  });
+
+  it("filters by source and returns empty for an unknown source", () => {
+    const models = getModels({ year: 2024, sourceId: UK_DFT_SOURCE_ID });
+    expect(models.length).toBeGreaterThan(1_000);
+    expect(models.every((model) => model.sourceIds.includes(UK_DFT_SOURCE_ID))).toBe(true);
+    expect(getModels({ sourceId: "not-a-source" })).toEqual([]);
+    expect(getMakes({ sourceId: "not-a-source" })).toEqual([]);
   });
 });
