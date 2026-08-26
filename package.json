@@ -1,7 +1,7 @@
 {
   "name": "@meterapp/vehicle-db",
   "version": "2.5.0",
-  "description": "Offline international vehicle makes/models database — zero dependencies",
+  "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MeterApp/vehicle-db.git"
