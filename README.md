@@ -2,7 +2,13 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, and an Indian manufacturer catalog into one small, zero-dependency API. It never makes runtime network requests.
 
+The current snapshot spans **1990–2026** and includes **1,145 makes**, **14,841 model names**, and **132,491 deduplicated model-year entries** from **5 data sources**.
+
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
+
+## Demo and playground
+
+Want to see the API in action? Browse [Car Images](https://car-imgs.vercel.app), an example app built with this package, or explore the data directly in the [interactive playground](https://car-imgs.vercel.app/playground).
 
 ## Install
 
