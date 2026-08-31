@@ -46,6 +46,35 @@ describe("getAvailableYears", () => {
       expect(years[i]).toBeGreaterThan(years[i - 1]);
     }
   });
+
+  it("filters years by make, model, type, and source", () => {
+    const toyota = getMakes({ year: 2024, sourceId: "nhtsa-vpic" }).find(
+      (make) => make.makeName === "TOYOTA",
+    )!;
+    const camry = getModels({
+      makeId: toyota.makeId,
+      year: 2024,
+      vehicleTypeId: 2,
+      sourceId: "nhtsa-vpic",
+    }).find((model) => model.modelName === "Camry")!;
+
+    const makeYears = getAvailableYears({
+      makeId: toyota.makeId,
+      vehicleTypeId: 2,
+      sourceId: "nhtsa-vpic",
+    });
+    const modelYears = getAvailableYears({
+      makeId: toyota.makeId,
+      modelId: camry.modelId,
+      vehicleTypeId: 2,
+      sourceId: "nhtsa-vpic",
+    });
+
+    expect(makeYears).toContain(2024);
+    expect(modelYears).toContain(2024);
+    expect(modelYears.length).toBeLessThanOrEqual(makeYears.length);
+    expect(getAvailableYears({ sourceId: "not-a-source" })).toEqual([]);
+  });
 });
 
 describe("getVehicleTypes", () => {
@@ -239,6 +268,17 @@ describe("getModels", () => {
 
   it("returns empty for unknown makeId", () => {
     expect(getModels({ makeId: 999999, year: 2024 })).toEqual([]);
+  });
+
+  it("filters by modelId", () => {
+    const toyota = getMakes({ year: 2024 }).find((make) => make.makeName === "TOYOTA")!;
+    const camry = getModels({ makeId: toyota.makeId, year: 2024 }).find(
+      (model) => model.modelName === "Camry",
+    )!;
+    const models = getModels({ modelId: camry.modelId, year: 2024 });
+
+    expect(models.length).toBeGreaterThan(0);
+    expect(models.every((model) => model.modelId === camry.modelId)).toBe(true);
   });
 
   it("returns empty for a year with no data", () => {
