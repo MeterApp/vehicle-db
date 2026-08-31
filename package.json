@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
@@ -8,6 +8,27 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./search": {
+      "types": "./dist/search.d.ts",
+      "require": "./dist/search.js",
+      "default": "./dist/search.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "search": [
+        "dist/search.d.ts"
+      ]
+    }
+  },
+  "sideEffects": false,
   "files": [
     "dist"
   ],
@@ -28,6 +49,9 @@
     "nhtsa",
     "dvla",
     "vehicles",
+    "vehicle-search",
+    "autocomplete",
+    "fuzzy-search",
     "makes",
     "models",
     "motorcycles",

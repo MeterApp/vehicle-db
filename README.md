@@ -81,8 +81,50 @@ const malaysiaMakes = getMakes({
 // Existing queries remain valid.
 const toyota = getMakes({ year: 2024 }).find((make) => make.makeName === "TOYOTA");
 const toyotaModels = getModels({ makeId: toyota!.makeId, year: 2024 });
-const years = getAvailableYears();
+const years = getAvailableYears({
+  makeId: toyota!.makeId,
+  vehicleTypeId: 2,
+  sourceId: "nhtsa-vpic",
+});
 ```
+
+## Driver search and autocomplete
+
+The optional, zero-dependency search entry point turns free-form driver input into canonical catalog candidates. Its index is built lazily on the first search, and matching runs entirely in memory without network requests.
+
+```typescript
+import { searchVehicles } from "@meterapp/vehicle-db/search";
+
+const suggestions = searchVehicles("2020 toy cam", {
+  sourceId: "nhtsa-vpic",
+  vehicleTypeId: 2,
+  limit: 10,
+});
+
+const camry = suggestions.find(
+  (result) => result.kind === "model" && result.modelName === "Camry",
+);
+
+if (camry?.kind === "model") {
+  // A query containing a year has one directly selectable variant.
+  const selection = camry.variants[0];
+  // Persist year, makeId, modelId, and vehicleTypeId — not display text alone.
+}
+```
+
+Search accepts year, make, and model tokens in any order. It recognizes common punctuation variants such as `F-150`/`f150` and `CR-V`/`crv`, a small set of make aliases such as `VW` and `Chevy`, and conservative misspellings. Results are ranked deterministically by exact, prefix, token, substring, then fuzzy match. Fuzzy matching is only used when no lexical result exists.
+
+Queries without a year group a canonical make/model/type across all available years rather than returning duplicate suggestions for every year. Each model result contains `variants`, which provides the preferred catalog `modelId` for every selectable year.
+
+For the simplest driver experience:
+
+1. Infer the relevant market and pass its `sourceId`; year semantics differ by source.
+2. Offer one field labelled “Search year, make, or model” and begin suggesting after two characters.
+3. If the driver enters only a year, use `getMakes({ year, ... })` for the next step; a year-only search intentionally returns no arbitrary alphabetical suggestions.
+4. On empty input, show application-owned recent vehicles. The catalog intentionally does not pretend that record frequency is vehicle popularity.
+5. Use the manual fallback Year → Make → Model. `getAvailableYears(options)` supports every step.
+
+Applications with regional telemetry can request more candidates and rerank **within the same `matchKind`**. Text quality and market compatibility should remain ahead of behavioral popularity so an exact result never loses to an unrelated popular vehicle.
 
 ## API
 
@@ -139,10 +181,11 @@ interface Make {
 
 ### `getModels(options?): Model[]`
 
-Returns models, optionally filtered by `year`, `vehicleTypeId`, `makeId`, and/or `sourceId`. `sourceIds` preserves provenance when equivalent records appear in more than one source.
+Returns models, optionally filtered by `year`, `vehicleTypeId`, `makeId`, `modelId`, and/or `sourceId`. `sourceIds` preserves provenance when equivalent records appear in more than one source.
 
 ```typescript
 getModels({ makeId: 474, year: 2024 });
+getModels({ modelId: 2469, year: 2024 });
 getModels({ year: 2024, vehicleTypeId: 1 });
 getModels({ year: 2024, vehicleTypeId: 5, sourceId: "uk-dft-vehicle-licensing" });
 ```
@@ -159,9 +202,21 @@ interface Model {
 }
 ```
 
-### `getAvailableYears(): number[]`
+### `getAvailableYears(options?): number[]`
 
-Returns all years present in the combined catalog, sorted ascending.
+Returns years present in the combined catalog, optionally filtered by `makeId`, `modelId`, `vehicleTypeId`, and/or `sourceId`. Results are sorted ascending.
+
+```typescript
+getAvailableYears();
+getAvailableYears({ makeId: 448, vehicleTypeId: 2, sourceId: "nhtsa-vpic" });
+getAvailableYears({ modelId: 2469, sourceId: "nhtsa-vpic" });
+```
+
+### `searchVehicles(query, options?): VehicleSearchResult[]`
+
+Import from `@meterapp/vehicle-db/search`. Returns deterministic make and grouped model candidates for free-form input. Options include `year`, `vehicleTypeId`, `sourceId`, `limit` (default 10, maximum 100), and `fuzzy` (default `true`).
+
+Model results contain `years` and a year-specific `variants` array. Make results intentionally omit models, allowing applications to transition into the existing `getModels` flow after the driver chooses a make.
 
 ## Data sources
 
