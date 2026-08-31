@@ -49,6 +49,14 @@ export interface GetModelsOptions {
   year?: number;
   vehicleTypeId?: number;
   makeId?: number;
+  modelId?: number;
+  sourceId?: string;
+}
+
+export interface GetAvailableYearsOptions {
+  vehicleTypeId?: number;
+  makeId?: number;
+  modelId?: number;
   sourceId?: string;
 }
 
@@ -156,7 +164,7 @@ export function getMakes(options: GetMakesOptions = {}): Make[] {
 export function getModels(options: GetModelsOptions = {}): Model[] {
   const makeMap = getMakeMap();
   const typeMap = getTypeMap();
-  const { year, vehicleTypeId, makeId, sourceId } = options;
+  const { year, vehicleTypeId, makeId, modelId, sourceId } = options;
   const sourceMask = sourceId == null ? undefined : getSourceMaskMap().get(sourceId);
   if (sourceId != null && sourceMask == null) return [];
 
@@ -164,6 +172,7 @@ export function getModels(options: GetModelsOptions = {}): Model[] {
   for (const m of data.models) {
     if (year != null && m[0] !== year) continue;
     if (makeId != null && m[1] !== makeId) continue;
+    if (modelId != null && m[2] !== modelId) continue;
     if (vehicleTypeId != null && m[4] !== vehicleTypeId) continue;
     if (sourceMask != null && (m[5] & sourceMask) === 0) continue;
     results.push({
@@ -185,11 +194,19 @@ export function getModels(options: GetModelsOptions = {}): Model[] {
 }
 
 /**
- * Get all available years in the database.
+ * Gets available years, optionally filtered by vehicle identity and source.
  */
-export function getAvailableYears(): number[] {
+export function getAvailableYears(options: GetAvailableYearsOptions = {}): number[] {
+  const { vehicleTypeId, makeId, modelId, sourceId } = options;
+  const sourceMask = sourceId == null ? undefined : getSourceMaskMap().get(sourceId);
+  if (sourceId != null && sourceMask == null) return [];
+
   const years = new Set<number>();
   for (const m of data.models) {
+    if (makeId != null && m[1] !== makeId) continue;
+    if (modelId != null && m[2] !== modelId) continue;
+    if (vehicleTypeId != null && m[4] !== vehicleTypeId) continue;
+    if (sourceMask != null && (m[5] & sourceMask) === 0) continue;
     years.add(m[0]);
   }
   return [...years].sort((a, b) => a - b);
