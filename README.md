@@ -8,7 +8,9 @@ The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Tru
 
 ## Demo and playground
 
-Want to see the API in action? Browse [Car Images](https://car-imgs.vercel.app), an example app built with this package, or explore the data directly in the [interactive playground](https://car-imgs.vercel.app/playground).
+This catalog is the backbone of the [Car Image API](https://car-imgs.vercel.app) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (six camera angles, 15 colors, PNG/WebP/JPG, $1 per 1,000 images). Explore the data in the [interactive playground](https://car-imgs.vercel.app/playground) or browse vehicles at [car-imgs.vercel.app/cars](https://car-imgs.vercel.app/cars).
+
+**Missing a vehicle?** Add it here and it becomes renderable in the API on the next release — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Install
 
