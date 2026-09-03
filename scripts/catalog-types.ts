@@ -17,6 +17,25 @@ export interface SourceCatalog {
   models: [number, number, number, number, number][];
 }
 
+export interface AppearanceRangeInput {
+  id: string;
+  make: string;
+  model: string;
+  label: string;
+  bodyStyle: string;
+  yearFrom: number;
+  yearTo: number;
+  representativeYear: number;
+  regions: string[];
+  sourceName: string;
+  sourceUrl: string;
+}
+
+export interface AppearanceRangeCatalog {
+  schemaVersion: number;
+  ranges: AppearanceRangeInput[];
+}
+
 export function normalizeName(value: string): string {
   return value.trim().toLocaleUpperCase("en-US").replace(/\s+/g, " ");
 }

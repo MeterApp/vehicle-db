@@ -29,6 +29,10 @@ import {
   getMakes,
   getModels,
   getAvailableYears,
+  getAvailableYearRanges,
+  getModelAppearanceRanges,
+  getModelRenderGroups,
+  getRepresentativeYear,
 } from "@meterapp/vehicle-db";
 
 // Inspect provenance and coverage before querying.
@@ -88,6 +92,55 @@ const years = getAvailableYears({
   vehicleTypeId: 2,
   sourceId: "nhtsa-vpic",
 });
+
+// Availability and exterior equivalence are intentionally separate.
+const availability = getAvailableYearRanges({ makeId: toyota!.makeId });
+const arteonAppearances = getModelAppearanceRanges({
+  makeId: getMakes().find((make) => make.makeName === "VOLKSWAGEN")!.makeId,
+  modelName: "Arteon",
+});
+
+// Safe cache identity: verified ranges share a representative year; unknown
+// and overlapping transition years return the requested year unchanged.
+const renderYear = getRepresentativeYear({
+  makeId: arteonAppearances[0].makeId,
+  modelName: "Arteon",
+  year: 2018,
+}); // 2019
+```
+
+## Appearance ranges and image reuse
+
+A model being available in consecutive years does **not** prove that its exterior stayed the
+same. `getAvailableYearRanges()` only compresses catalog availability for display. Sourced
+generation/facelift facts live in `data/appearance-ranges.json` and are returned by
+`getModelAppearanceRanges()` with their body style, market, and evidence URL.
+
+`getModelRenderGroups()` turns those facts into a complete cache plan. It groups a year only when
+exactly one verified appearance range covers it. Years with no evidence, and transition years
+covered by two overlapping ranges, remain singleton exact-year groups. `getRepresentativeYear()`
+is the convenience lookup for storage/cache keys and has the same fail-closed behavior.
+
+This split is deliberate. NHTSA vPIC provides model-year and body-class data but no global
+generation identifier; Wikidata is CC0 but generation and facelift coverage is sparse. Broad
+third-party generation dumps commonly carry restrictive or share-alike terms and overlapping
+records, so they are useful for research but are not imported automatically. Verified ranges are
+small, reviewable facts linked to first-party or equivalently authoritative public evidence.
+
+NHTSA wheelbase, dimensions, doors, series, and truck cab/bed fields can rank possible body-family
+matches. They are candidate evidence only: related platforms and trims can still have visibly
+different bodywork. `appearanceId` is intentionally stricter than a derived `body_family_id` and
+is the only grouping allowed to drive render reuse. See CONTRIBUTING for the review criteria.
+
+```typescript
+const volkswagen = getMakes().find((make) => make.makeName === "VOLKSWAGEN")!;
+
+getModelAppearanceRanges({ makeId: volkswagen.makeId, modelName: "Arteon" });
+// Original Arteon: 2017–2020, Fastback, with Volkswagen evidence
+// Updated Arteon:  2020–2026, Fastback, with Volkswagen evidence
+
+getModelRenderGroups({ makeId: volkswagen.makeId, modelName: "Arteon" });
+// 2017–2019 share one render; overlapping 2020 stays exact; 2021–2026 share one render.
 ```
 
 ## Driver search and autocomplete
@@ -213,6 +266,17 @@ getAvailableYears();
 getAvailableYears({ makeId: 448, vehicleTypeId: 2, sourceId: "nhtsa-vpic" });
 getAvailableYears({ modelId: 2469, sourceId: "nhtsa-vpic" });
 ```
+
+### Appearance and year-range APIs
+
+- `getAvailableYearRanges(options?): VehicleYearRange[]` compresses consecutive availability
+  years; it makes no exterior-equivalence claim.
+- `getModelAppearanceRanges({ makeId, modelName, year? }): VehicleAppearanceRange[]` returns
+  verified generation/facelift periods and evidence. Overlap is preserved.
+- `getModelRenderGroups({ makeId, modelName, vehicleTypeId?, sourceId? }): VehicleRenderGroup[]`
+  returns safe, non-overlapping cache groups for every available year.
+- `getRepresentativeYear({ makeId, modelName, year, ... }): number` returns the canonical cache
+  year for an unambiguous verified group, otherwise the requested year.
 
 ### `searchVehicles(query, options?): VehicleSearchResult[]`
 

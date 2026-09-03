@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
