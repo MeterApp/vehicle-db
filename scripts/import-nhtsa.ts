@@ -3,6 +3,11 @@
  *
  * Usage:
  *   npx tsx scripts/import-nhtsa.ts [--start-year 1990] [--end-year 2026]
+ *   npx tsx scripts/import-nhtsa.ts --start-year 2027 --end-year 2027 --merge
+ *
+ * With --merge, only the requested years are fetched; entries for every other
+ * year are carried over from the existing snapshot. vPIC rate-limits heavily,
+ * so this is the practical way to add a new model year.
  */
 import fs from "fs";
 import path from "path";
@@ -100,16 +105,19 @@ async function main() {
   const args = process.argv.slice(2);
   let startYear = 1990;
   let endYear = 2026;
+  let merge = false;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--start-year") startYear = Number(args[++i]);
-    if (args[i] === "--end-year") endYear = Number(args[++i]);
+    else if (args[i] === "--end-year") endYear = Number(args[++i]);
+    else if (args[i] === "--merge") merge = true;
+    else throw new Error(`Unknown argument: ${args[i]}`);
   }
   if (!Number.isInteger(startYear) || !Number.isInteger(endYear) || startYear > endYear) {
     throw new Error(`Invalid year range: ${startYear}–${endYear}`);
   }
 
-  console.log(`Refreshing NHTSA source for years ${startYear}–${endYear}`);
+  console.log(`Refreshing NHTSA source for years ${startYear}–${endYear}${merge ? " (merging into existing snapshot)" : ""}`);
   console.log(`NHTSA vehicle types: ${NHTSA_VEHICLE_TYPES.map((t) => t.name).join(", ")}`);
   console.log(`Output: ${OUT_PATH}\n`);
 
@@ -197,6 +205,41 @@ async function main() {
       `NHTSA refresh failed for ${failures.length} request(s); existing snapshot was not changed. First failures: ${failures.slice(0, 10).join(", ")}`,
     );
   }
+
+  // ---- Merge untouched years from the existing snapshot ----
+  if (merge) {
+    const existing = JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) as SourceCatalog;
+    let carried = 0;
+    for (const [year, makeId, modelId, nameIndex, vehicleTypeId] of existing.models) {
+      if (year >= startYear && year <= endYear) continue;
+      rawModels.push([year, makeId, modelId, existing.modelNames[nameIndex]!, vehicleTypeId]);
+      carried++;
+    }
+    for (const make of existing.makes) {
+      if (!allMakes.has(make.make_id)) allMakes.set(make.make_id, make.make_name);
+    }
+    console.log(`\nCarried over ${carried.toLocaleString()} entries from the existing snapshot`);
+  }
+
+  // ---- One name per model ID: vPIC occasionally renames a model (e.g. Polestar
+  // "PS2" became "POLESTAR 2"), and the catalog build requires a single name.
+  // The name reported for the latest model year wins.
+  const latestName = new Map<number, { year: number; name: string }>();
+  for (const [year, , modelId, name] of rawModels) {
+    const current = latestName.get(modelId);
+    if (!current || year > current.year || (year === current.year && name > current.name)) {
+      latestName.set(modelId, { year, name });
+    }
+  }
+  let renamed = 0;
+  for (const model of rawModels) {
+    const name = latestName.get(model[2])!.name;
+    if (model[3] !== name) {
+      model[3] = name;
+      renamed++;
+    }
+  }
+  if (renamed > 0) console.log(`Applied latest vPIC names to ${renamed} renamed model entries`);
 
   // ---- Build compact JSON ----
   console.log("\nBuilding compact JSON...");
