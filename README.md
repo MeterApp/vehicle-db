@@ -127,6 +127,11 @@ third-party generation dumps commonly carry restrictive or share-alike terms and
 records, so they are useful for research but are not imported automatically. Verified ranges are
 small, reviewable facts linked to first-party or equivalently authoritative public evidence.
 
+NHTSA wheelbase, dimensions, doors, series, and truck cab/bed fields can rank possible body-family
+matches. They are candidate evidence only: related platforms and trims can still have visibly
+different bodywork. `appearanceId` is intentionally stricter than a derived `body_family_id` and
+is the only grouping allowed to drive render reuse. See CONTRIBUTING for the review criteria.
+
 ```typescript
 const volkswagen = getMakes().find((make) => make.makeName === "VOLKSWAGEN")!;
 
