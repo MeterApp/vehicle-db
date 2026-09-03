@@ -5,6 +5,10 @@ import {
   getMakes,
   getModels,
   getAvailableYears,
+  getAvailableYearRanges,
+  getModelAppearanceRanges,
+  getModelRenderGroups,
+  getRepresentativeYear,
 } from "./index";
 
 const AUTO_RICKSHAW_TYPE_ID = 10001;
@@ -74,6 +78,78 @@ describe("getAvailableYears", () => {
     expect(modelYears).toContain(2024);
     expect(modelYears.length).toBeLessThanOrEqual(makeYears.length);
     expect(getAvailableYears({ sourceId: "not-a-source" })).toEqual([]);
+  });
+});
+
+describe("appearance ranges", () => {
+  it("keeps availability ranges distinct from sourced exterior-design ranges", () => {
+    const volkswagen = getMakes().find((make) => make.makeName === "VOLKSWAGEN")!;
+    expect(getAvailableYearRanges({ makeId: volkswagen.makeId })).not.toEqual([]);
+
+    const appearances = getModelAppearanceRanges({
+      makeId: volkswagen.makeId,
+      modelName: "arteon",
+    });
+    expect(appearances.map((appearance) => appearance.appearanceId)).toEqual([
+      "volkswagen-arteon-2017-fastback",
+      "volkswagen-arteon-2020-fastback",
+    ]);
+    expect(appearances.every((appearance) => appearance.sourceUrl.startsWith("https://"))).toBe(
+      true,
+    );
+  });
+
+  it("only groups years covered by exactly one verified appearance", () => {
+    const volkswagen = getMakes().find((make) => make.makeName === "VOLKSWAGEN")!;
+    const groups = getModelRenderGroups({
+      makeId: volkswagen.makeId,
+      modelName: "ARTEON",
+    });
+
+    expect(groups).toEqual([
+      expect.objectContaining({
+        groupId: "volkswagen-arteon-2017-fastback",
+        kind: "appearance",
+        years: [2017, 2018, 2019],
+        representativeYear: 2019,
+      }),
+      expect.objectContaining({
+        groupId: "year:2020",
+        kind: "year",
+        years: [2020],
+        representativeYear: 2020,
+      }),
+      expect.objectContaining({
+        groupId: "volkswagen-arteon-2020-fastback",
+        kind: "appearance",
+        years: [2021, 2022, 2023, 2024, 2025, 2026],
+        representativeYear: 2021,
+      }),
+    ]);
+  });
+
+  it("falls back to exact years for models without verified appearance data", () => {
+    const toyota = getMakes().find((make) => make.makeName === "TOYOTA")!;
+    const groups = getModelRenderGroups({ makeId: toyota.makeId, modelName: "Camry" });
+
+    expect(groups.length).toBeGreaterThan(30);
+    expect(groups.every((group) => group.kind === "year" && group.years.length === 1)).toBe(true);
+    expect(
+      getRepresentativeYear({ makeId: toyota.makeId, modelName: "Camry", year: 2024 }),
+    ).toBe(2024);
+  });
+
+  it("returns a stable representative year only for an unambiguous range", () => {
+    const volkswagen = getMakes().find((make) => make.makeName === "VOLKSWAGEN")!;
+    expect(
+      getRepresentativeYear({ makeId: volkswagen.makeId, modelName: "Arteon", year: 2018 }),
+    ).toBe(2019);
+    expect(
+      getRepresentativeYear({ makeId: volkswagen.makeId, modelName: "Arteon", year: 2020 }),
+    ).toBe(2020);
+    expect(
+      getRepresentativeYear({ makeId: volkswagen.makeId, modelName: "Arteon", year: 2024 }),
+    ).toBe(2021);
   });
 });
 
