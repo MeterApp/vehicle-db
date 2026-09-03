@@ -5,11 +5,17 @@
  */
 import fs from "fs";
 import path from "path";
-import { compareStrings, normalizeName, type SourceCatalog } from "./catalog-types";
+import {
+  compareStrings,
+  normalizeName,
+  type AppearanceRangeCatalog,
+  type SourceCatalog,
+} from "./catalog-types";
 
 const SOURCES_DIRECTORY = path.join(__dirname, "..", "data", "sources");
 const COMPACT_JSON_PATH = path.join(__dirname, "..", "data", "compact.json");
 const TYPESCRIPT_PATH = path.join(__dirname, "..", "src", "data.ts");
+const APPEARANCE_RANGES_PATH = path.join(__dirname, "..", "data", "appearance-ranges.json");
 const SOURCE_PRIORITY = [
   "nhtsa-vpic",
   "uk-dft-vehicle-licensing",
@@ -61,6 +67,20 @@ interface CompactData {
   makes: { make_id: number; make_name: string }[];
   modelNames: string[];
   models: [number, number, number, number, number, number][];
+  appearanceRanges: {
+    id: string;
+    make_id: number;
+    make_name: string;
+    model_name: string;
+    label: string;
+    body_style: string;
+    year_from: number;
+    year_to: number;
+    representative_year: number;
+    regions: string[];
+    source_name: string;
+    source_url: string;
+  }[];
 }
 
 function loadSources(): SourceCatalog[] {
@@ -90,7 +110,17 @@ function loadSources(): SourceCatalog[] {
   return sources;
 }
 
-function compile(sources: SourceCatalog[]): CompactData {
+function loadAppearanceRanges(): AppearanceRangeCatalog {
+  const catalog = JSON.parse(
+    fs.readFileSync(APPEARANCE_RANGES_PATH, "utf8"),
+  ) as AppearanceRangeCatalog;
+  if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.ranges)) {
+    throw new Error(`Invalid appearance range catalog: ${APPEARANCE_RANGES_PATH}`);
+  }
+  return catalog;
+}
+
+function compile(sources: SourceCatalog[], appearanceCatalog: AppearanceRangeCatalog): CompactData {
   const vehicleTypes = new Map<number, string>();
   const makeByNormalizedName = new Map<string, { id: number; name: string }>();
   const makeNameById = new Map<number, string>();
@@ -195,6 +225,63 @@ function compile(sources: SourceCatalog[]): CompactData {
     model.sourceMask,
   ]);
 
+  const appearanceIds = new Set<string>();
+  const catalogModelKeys = new Set(
+    workingModels.map((model) => `${model.makeId}\u0000${normalizeName(model.modelName)}`),
+  );
+  const appearanceRanges: CompactData["appearanceRanges"] = appearanceCatalog.ranges
+    .map((range) => {
+      if (!range.id || appearanceIds.has(range.id)) {
+        throw new Error(`Duplicate or empty appearance range ID: ${range.id}`);
+      }
+      appearanceIds.add(range.id);
+      if (
+        !Number.isInteger(range.yearFrom) ||
+        !Number.isInteger(range.yearTo) ||
+        !Number.isInteger(range.representativeYear) ||
+        range.yearFrom > range.yearTo ||
+        range.representativeYear < range.yearFrom ||
+        range.representativeYear > range.yearTo
+      ) {
+        throw new Error(`Invalid years for appearance range ${range.id}`);
+      }
+      if (!range.sourceName || !/^https:\/\//.test(range.sourceUrl)) {
+        throw new Error(`Appearance range ${range.id} needs an HTTPS evidence source`);
+      }
+
+      const normalizedMake = MAKE_NAME_ALIASES.get(normalizeName(range.make)) ?? normalizeName(range.make);
+      const make = makeByNormalizedName.get(normalizedMake);
+      if (!make) throw new Error(`Unknown make for appearance range ${range.id}: ${range.make}`);
+      const normalizedModel = normalizeName(range.model);
+      if (!catalogModelKeys.has(`${make.id}\u0000${normalizedModel}`)) {
+        throw new Error(`Unknown model for appearance range ${range.id}: ${range.make} ${range.model}`);
+      }
+      const modelName = workingModels.find(
+        (model) => model.makeId === make.id && normalizeName(model.modelName) === normalizedModel,
+      )!.modelName;
+      return {
+        id: range.id,
+        make_id: make.id,
+        make_name: make.name,
+        model_name: modelName,
+        label: range.label.trim(),
+        body_style: range.bodyStyle.trim(),
+        year_from: range.yearFrom,
+        year_to: range.yearTo,
+        representative_year: range.representativeYear,
+        regions: [...new Set(range.regions.map((region) => region.trim()).filter(Boolean))],
+        source_name: range.sourceName.trim(),
+        source_url: range.sourceUrl,
+      };
+    })
+    .sort(
+      (left, right) =>
+        left.make_id - right.make_id ||
+        compareStrings(normalizeName(left.model_name), normalizeName(right.model_name)) ||
+        left.year_from - right.year_from ||
+        compareStrings(left.id, right.id),
+    );
+
   const compiledSources: CompiledSource[] = sources.map((source, sourceIndex) => {
     const sourceMask = 2 ** sourceIndex;
     const matchingModels = workingModels.filter((model) => (model.sourceMask & sourceMask) !== 0);
@@ -231,6 +318,7 @@ function compile(sources: SourceCatalog[]): CompactData {
       .sort((left, right) => compareStrings(left.make_name, right.make_name)),
     modelNames,
     models,
+    appearanceRanges,
   };
 }
 
@@ -258,6 +346,20 @@ interface CompactData {
   makes: { make_id: number; make_name: string }[];
   modelNames: string[];
   models: [number, number, number, number, number, number][];
+  appearanceRanges: {
+    id: string;
+    make_id: number;
+    make_name: string;
+    model_name: string;
+    label: string;
+    body_style: string;
+    year_from: number;
+    year_to: number;
+    representative_year: number;
+    regions: string[];
+    source_name: string;
+    source_url: string;
+  }[];
 }
 
 const data: CompactData = ${json};
@@ -271,7 +373,7 @@ export default data;
 
 function main(): void {
   const sources = loadSources();
-  const data = compile(sources);
+  const data = compile(sources, loadAppearanceRanges());
   writeCatalog(data);
 
   const sizeMb = (fs.statSync(TYPESCRIPT_PATH).size / 1024 / 1024).toFixed(2);
@@ -287,6 +389,7 @@ function main(): void {
   console.log(`  Makes:         ${data.makes.length.toLocaleString()}`);
   console.log(`  Model names:   ${data.modelNames.length.toLocaleString()}`);
   console.log(`  Model entries: ${data.models.length.toLocaleString()}`);
+  console.log(`  Appearance ranges: ${data.appearanceRanges.length.toLocaleString()}`);
   console.log(`  File size:     ${sizeMb} MB`);
 }
 
