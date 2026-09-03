@@ -16,6 +16,8 @@ const SOURCE_PRIORITY = [
   "atul-auto-catalog",
   "nzta-asia-pacific-mvr",
   "malaysia-jpj-registrations",
+  "eea-co2-monitoring",
+  "rdw-nl-vehicle-register",
 ];
 // Preserve IDs shipped for these international makes before source snapshots
 // were introduced, so stored make selections remain valid across the upgrade.

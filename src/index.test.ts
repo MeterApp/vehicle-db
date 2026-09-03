@@ -14,6 +14,8 @@ const ATUL_AUTO_MAKE_ID = 100001;
 const UK_DFT_SOURCE_ID = "uk-dft-vehicle-licensing";
 const NZTA_ASIA_SOURCE_ID = "nzta-asia-pacific-mvr";
 const MALAYSIA_JPJ_SOURCE_ID = "malaysia-jpj-registrations";
+const EEA_CO2_SOURCE_ID = "eea-co2-monitoring";
+const RDW_NL_SOURCE_ID = "rdw-nl-vehicle-register";
 const ATUL_AUTO_MODELS = [
   "RIK",
   "RIK+",
@@ -113,6 +115,8 @@ describe("getDataSources", () => {
       "atul-auto-catalog",
       NZTA_ASIA_SOURCE_ID,
       MALAYSIA_JPJ_SOURCE_ID,
+      EEA_CO2_SOURCE_ID,
+      RDW_NL_SOURCE_ID,
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
@@ -133,6 +137,22 @@ describe("getDataSources", () => {
     )!;
     expect(malaysiaSource.region).toBe("Malaysia");
     expect(malaysiaSource.yearFrom).toBe(2024);
+
+    const eeaSource = sources.find((source) => source.sourceId === EEA_CO2_SOURCE_ID)!;
+    expect(eeaSource.license).toBe("Creative Commons Attribution 4.0 International");
+    expect(eeaSource.region).toBe("European Union, Iceland, and Norway");
+    expect(eeaSource.vehicleTypeIds).toEqual([2, 3]);
+    expect(eeaSource.yearFrom).toBe(2010);
+    expect(eeaSource.yearTo).toBeGreaterThanOrEqual(2025);
+    expect(eeaSource.makeCount).toBeGreaterThan(100);
+    expect(eeaSource.modelCount).toBeGreaterThan(20_000);
+
+    const rdwSource = sources.find((source) => source.sourceId === RDW_NL_SOURCE_ID)!;
+    expect(rdwSource.license).toBe("Public Domain");
+    expect(rdwSource.region).toBe("Netherlands");
+    expect(rdwSource.vehicleTypeIds).toEqual([1, 2, 3, 5]);
+    expect(rdwSource.yearFrom).toBe(1990);
+    expect(rdwSource.yearTo).toBeGreaterThanOrEqual(2026);
   });
 });
 
@@ -414,6 +434,74 @@ describe("getModels", () => {
         (model) => model.modelName,
       ),
     ).toContain("S70");
+  });
+
+  it("includes European market models from the EEA CO2 register", () => {
+    const byd = getMakes({ year: 2024, sourceId: EEA_CO2_SOURCE_ID }).find(
+      (make) => make.makeName === "BYD",
+    );
+    expect(byd).toBeDefined();
+    expect(
+      getModels({ makeId: byd!.makeId, year: 2024, sourceId: EEA_CO2_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toEqual(expect.arrayContaining(["ATTO 3", "DOLPHIN", "SEAL"]));
+
+    const dacia = getMakes({ year: 2023, sourceId: EEA_CO2_SOURCE_ID }).find(
+      (make) => make.makeName === "DACIA",
+    );
+    expect(dacia).toBeDefined();
+    expect(
+      getModels({ makeId: dacia!.makeId, year: 2023, sourceId: EEA_CO2_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toEqual(expect.arrayContaining(["SANDERO", "DUSTER", "JOGGER"]));
+
+    // Makes reported under legal-entity or multi-brand strings are merged.
+    const makeNames = getMakes({ year: 2021, sourceId: EEA_CO2_SOURCE_ID }).map(
+      (make) => make.makeName,
+    );
+    expect(makeNames).toContain("VOLKSWAGEN");
+    expect(makeNames).toContain("MERCEDES-BENZ");
+    expect(makeNames).not.toContain("VW");
+    expect(makeNames.filter((name) => name.startsWith("VOLKSWAGEN"))).toEqual(["VOLKSWAGEN"]);
+
+    // Vans (N1) are reported as trucks, matching the UK light goods vehicle mapping.
+    const ford = getMakes({ year: 2024, vehicleTypeId: 3, sourceId: EEA_CO2_SOURCE_ID }).find(
+      (make) => make.makeName === "FORD",
+    );
+    expect(ford).toBeDefined();
+    expect(
+      getModels({ makeId: ford!.makeId, year: 2024, vehicleTypeId: 3, sourceId: EEA_CO2_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toEqual(expect.arrayContaining(["TRANSIT CUSTOM"]));
+  });
+
+  it("includes current-year European registrations from the Dutch register", () => {
+    const byd = getMakes({ year: 2026, sourceId: RDW_NL_SOURCE_ID }).find(
+      (make) => make.makeName === "BYD",
+    );
+    expect(byd).toBeDefined();
+    const bydModels = getModels({ makeId: byd!.makeId, year: 2026, sourceId: RDW_NL_SOURCE_ID }).map(
+      (model) => model.modelName,
+    );
+    expect(bydModels).toEqual(expect.arrayContaining(["ATTO 2", "DOLPHIN SURF", "SEALION 7"]));
+    expect(bydModels.some((name) => name.startsWith("BYD "))).toBe(false);
+
+    const renault = getMakes({ year: 2026, sourceId: RDW_NL_SOURCE_ID }).find(
+      (make) => make.makeName === "RENAULT",
+    );
+    expect(renault).toBeDefined();
+    expect(
+      getModels({ makeId: renault!.makeId, year: 2026, sourceId: RDW_NL_SOURCE_ID }).map(
+        (model) => model.modelName,
+      ),
+    ).toEqual(expect.arrayContaining(["CLIO", "5 E-TECH ELECTRIC"]));
+
+    // Motorcycles and buses are covered too.
+    expect(getMakes({ year: 2025, vehicleTypeId: 1, sourceId: RDW_NL_SOURCE_ID }).length).toBeGreaterThan(10);
+    expect(getMakes({ year: 2025, vehicleTypeId: 5, sourceId: RDW_NL_SOURCE_ID }).length).toBeGreaterThan(2);
   });
 
   it("filters by source and returns empty for an unknown source", () => {

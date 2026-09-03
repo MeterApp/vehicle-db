@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
@@ -39,6 +39,8 @@
     "refresh:uk-dft": "tsx scripts/import-uk-dft.ts",
     "refresh:nzta-asia-pacific": "tsx scripts/import-nzta-asia-pacific.ts",
     "refresh:malaysia-jpj": "tsx scripts/import-malaysia-jpj.ts",
+    "refresh:eea-co2": "tsx scripts/import-eea-co2.ts",
+    "refresh:rdw-nl": "tsx scripts/import-rdw-nl.ts",
     "build:ts": "tsc",
     "build": "npm run build:ts",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
@@ -48,6 +50,8 @@
   "keywords": [
     "nhtsa",
     "dvla",
+    "eea",
+    "rdw",
     "vehicles",
     "vehicle-search",
     "autocomplete",
@@ -60,6 +64,9 @@
     "japan",
     "malaysia",
     "china",
+    "europe",
+    "netherlands",
+    "byd",
     "international",
     "offline"
   ],

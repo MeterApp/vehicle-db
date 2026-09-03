@@ -1,10 +1,10 @@
 # @meterapp/vehicle-db
 
-An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, and an Indian manufacturer catalog into one small, zero-dependency API. It never makes runtime network requests.
+An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, and an Indian manufacturer catalog into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2026** and includes **1,145 makes**, **14,841 model names**, and **132,491 deduplicated model-year entries** from **5 data sources**.
+The current snapshot spans **1990–2027** and includes **1,580 makes**, **36,870 model names**, and **207,953 deduplicated model-year entries** from **7 data sources**.
 
-The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
+The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
 
 ## Demo and playground
 
@@ -78,6 +78,25 @@ const hondaAsiaModels = getModels({
 const malaysiaMakes = getMakes({
   year: 2026,
   sourceId: "malaysia-jpj-registrations",
+});
+
+// Models registered as new in the EU, Iceland, and Norway, e.g. BYD Seal U.
+const euMakes = getMakes({ year: 2024, sourceId: "eea-co2-monitoring" });
+const bydEu = euMakes.find((make) => make.makeName === "BYD");
+const bydEuModels = getModels({
+  makeId: bydEu!.makeId,
+  year: 2024,
+  sourceId: "eea-co2-monitoring",
+});
+
+// Current-year European registrations from the Dutch register, e.g. BYD Atto 2.
+const bydNl = getMakes({ year: 2026, sourceId: "rdw-nl-vehicle-register" }).find(
+  (make) => make.makeName === "BYD",
+);
+const bydNlModels = getModels({
+  makeId: bydNl!.makeId,
+  year: 2026,
+  sourceId: "rdw-nl-vehicle-register",
 });
 
 // Existing queries remain valid.
@@ -224,17 +243,23 @@ Model results contain `years` and a year-specific `variants` array. Make results
 
 | Source | Coverage in this snapshot | Terms |
 |---|---|---|
-| [NHTSA vPIC](https://vpic.nhtsa.dot.gov/api/) | U.S. passenger cars, trucks, and MPVs; model years 1990–2026 | U.S. government public data |
+| [NHTSA vPIC](https://vpic.nhtsa.dot.gov/api/) | U.S. passenger cars, trucks, and MPVs; model years 1990–2027 | U.S. government public data |
 | [UK DfT/DVLA vehicle licensing statistics](https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files) | 701 normalized makes across cars, motorcycles, goods vehicles, buses and coaches, and other vehicles; manufacture years 1990–2025 | [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) |
 | [Atul Auto product catalog](https://atulauto.co.in/products/) | Current Indian passenger and cargo auto-rickshaw range; catalog years 2024–2026 | Source attribution; factual product names only |
 | [NZTA Motor Vehicle Register](https://www.nzta.govt.nz/resources/new-zealand-motor-vehicle-register-statistics/new-zealand-vehicle-fleet-open-data-sets) | 30,374 Asian-origin car, truck, bus, motorcycle, and moped model-year records from 12 countries of origin; vehicle years 1990–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [Malaysia JPJ registration transactions](https://data.gov.my/data-catalogue/registration_transactions_car) | 1,756 passenger car, MPV, jeep, pickup, and window-van model/registration-year records; 2024–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [EEA CO2 monitoring of new passenger cars and vans](https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b) | 29,939 passenger car (M1) and van (N1) model/registration-year records from 235 makes reported by EU member states, Iceland, and Norway; 2010–2025 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [Netherlands RDW vehicle register](https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2) | 73,190 passenger car, commercial vehicle, bus, and motorcycle model/first-admission-year records from 624 makes licensed in the Netherlands; 1990–2026 | [Public domain (RDW Open Data)](https://opendata.rdw.nl/) |
 
-Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, and registration year for Malaysia JPJ. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
+Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, registration year for Malaysia JPJ, the reporting (registration) year for the EEA register, and the year of first admission (first registration anywhere, so imported used vehicles keep their original year) for the Dutch RDW register. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
 
 UK source attribution: Contains public sector information licensed under the Open Government Licence v3.0. Source: Department for Transport and Driver and Vehicle Licensing Agency.
 
 NZTA and Malaysia source attribution: Licensed under Creative Commons Attribution 4.0 International. Sources: New Zealand Transport Agency Waka Kotahi and Malaysia Road Transport Department/data.gov.my.
+
+EEA source attribution: Licensed under Creative Commons Attribution 4.0 International. Source: European Environment Agency, *Monitoring of CO2 emissions from passenger cars* and *Monitoring of CO2 emissions from vans*, Regulation (EU) 2019/631. Member states report the make and commercial name inconsistently (multi-brand strings, legal entities, and trim-level names), so the importer merges brand spellings, drops engine and gearbox suffixes, keeps a make/model/year only when at least two countries report it or one country reports it more than 1,000 times, and uses the most reported spelling of each model name. The latest year is provisional data. EU vehicle categories map to the catalog as M1/M1G → Passenger Car and N1/N1G/N2 → Truck.
+
+RDW source attribution: Open Data RDW (Dienst Wegverkeer), public domain. The register only contains vehicles currently licensed in the Netherlands, is republished daily, and is the freshest European source in the catalog. The same brand and model-name normalization as the EEA source is applied, plus a minimum of three vehicles per make/model/year to drop typos; RDW vehicle kinds map as Personenauto → Passenger Car, Bedrijfsauto → Truck, Bus → Bus, and Motorfiets → Motorcycle.
 
 ## Factory colors
 
@@ -244,13 +269,13 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 
 | | |
 |---|---:|
-| Years | 1990–2026 |
-| Sources | 5 |
+| Years | 1990–2027 |
+| Sources | 7 |
 | Vehicle types | 7 |
-| Makes | 1,145 |
-| Model names | 14,841 |
-| Deduplicated model-year entries | 132,491 |
-| Bundled TypeScript data | 4.21 MB |
+| Makes | 1,580 |
+| Model names | 36,870 |
+| Deduplicated model-year entries | 207,953 |
+| Bundled TypeScript data | 7.17 MB |
 
 ## Refreshing and rebuilding
 
@@ -267,13 +292,15 @@ Refresh either network source independently, then rebuild the combined catalog:
 
 ```bash
 npm run refresh:uk-dft
-npm run refresh:nhtsa -- --start-year 1990 --end-year 2026
+npm run refresh:nhtsa -- --start-year 1990 --end-year 2027
 npm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2026
 npm run refresh:malaysia-jpj -- --start-year 2024 --end-year 2026
+npm run refresh:eea-co2 -- --start-year 2010 --end-year 2026
+npm run refresh:rdw-nl -- --start-year 1990 --end-year 2026
 npm run build:data
 ```
 
-The NHTSA API rate-limits aggressively, so a full NHTSA refresh can take time. The UK importer downloads the two official VEH0124 CSV files. The NZTA importer discovers the current official ArcGIS service and requests distinct records for supported vehicle types and Asian countries of origin. The Malaysia importer downloads annual JPJ CSVs and aggregates individual transactions into unique model/registration-year records. Importers assign deterministic numeric IDs, write normalized snapshots, and discard temporary raw downloads.
+The NHTSA API rate-limits aggressively, so a full NHTSA refresh can take hours; to add a new model year, fetch only that year and merge it into the existing snapshot with `npm run refresh:nhtsa -- --start-year 2027 --end-year 2027 --merge`. The UK importer downloads the two official VEH0124 CSV files. The NZTA importer discovers the current official ArcGIS service and requests distinct records for supported vehicle types and Asian countries of origin. The Malaysia importer downloads annual JPJ CSVs and aggregates individual transactions into unique model/registration-year records. The EEA importer discovers the current final and provisional register tables from the EEA DiscoData catalogue and asks its public SQL endpoint for make/commercial-name counts grouped by reporting country and year, so it never downloads the individual registration records; `--min-countries` and `--min-count` tune the noise filter. The RDW importer asks the Socrata API for make/commercial-name counts per year of first admission, one request per year, so a refresh takes about ten minutes and can be run any day to pick up the latest registrations. Importers assign deterministic numeric IDs, write normalized snapshots, and discard temporary raw downloads.
 
 ## License
 
