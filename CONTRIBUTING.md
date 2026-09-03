@@ -52,6 +52,25 @@ API** on the next release.
 Open an issue with the `makeId`/`modelId`, the source it came from
 (`sourceIds` on the model), and the correction with a link to evidence.
 
+## Adding an exterior-design range
+
+Appearance ranges let image consumers reuse one render across model years without pretending that
+every consecutive year has the same body. Add a record to `data/appearance-ranges.json` with a
+stable ID, make/model, inclusive years, representative year, body style, applicable regions, and a
+public evidence URL.
+
+- Prefer the manufacturer newsroom, brochure, or official model history. Wikidata is acceptable
+  when the exact generation and dates are explicitly represented.
+- Record facelifts separately. It is valid—and useful—for the outgoing and incoming appearances to
+  overlap in a transition year; the runtime will keep that year as an exact-year cache key.
+- Do not infer exterior equivalence from continuous registrations, a shared NHTSA body class, trim
+  names, or a third-party scraper.
+- Keep ranges bounded. Extending the catalog to a new year requires checking that the appearance
+  did not change.
+
+Run `npm run build:data`, `npm test`, and `npm run typecheck`. The build rejects unknown vehicles,
+duplicate IDs, invalid years, and evidence URLs that are not HTTPS.
+
 ## Code changes
 
 - Zero runtime dependencies and no network access at runtime are hard rules.
