@@ -4,7 +4,7 @@
  *
  * Usage:
  *   npx tsx scripts/import-malaysia-jpj.ts
- *   npx tsx scripts/import-malaysia-jpj.ts --start-year 2024 --end-year 2026
+ *   npx tsx scripts/import-malaysia-jpj.ts --start-year 2015 --end-year 2026
  *   npx tsx scripts/import-malaysia-jpj.ts --input cars_2026.csv
  */
 import fs from "fs";
@@ -32,7 +32,9 @@ const DEFAULT_OUT_PATH = path.join(
   "sources",
   "malaysia-jpj.json",
 );
-const DEFAULT_START_YEAR = 2024;
+// Keep historical coverage on the next refresh; starting with recent years
+// removes still-active vehicles such as the 2015 Axia and 2018 Alza.
+const DEFAULT_START_YEAR = 2015;
 
 const VEHICLE_TYPE_MAP = new Map<string, { id: number; name: string }>([
   ["motokar", { id: 2, name: "Passenger Car" }],
