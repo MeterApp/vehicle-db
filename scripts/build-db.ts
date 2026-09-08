@@ -10,6 +10,12 @@ import { compareStrings, normalizeName, type SourceCatalog } from "./catalog-typ
 const SOURCES_DIRECTORY = path.join(__dirname, "..", "data", "sources");
 const COMPACT_JSON_PATH = path.join(__dirname, "..", "data", "compact.json");
 const TYPESCRIPT_PATH = path.join(__dirname, "..", "src", "data.ts");
+// New source coverage must not replace IDs already published for an identical
+// year/make/model/type. These pins retain the 2.9.0 selections where expanded
+// Malaysia coverage would otherwise outrank the European source's model ID.
+// Pins for newly reported types also preserve the first model ID returned by
+// an unfiltered year/make/model picker that previously had only another type.
+const MODEL_ID_COMPATIBILITY_PATH = path.join(__dirname, "..", "data", "model-id-compatibility.json");
 const SOURCE_PRIORITY = [
   "nhtsa-vpic",
   "uk-dft-vehicle-licensing",
@@ -19,9 +25,10 @@ const SOURCE_PRIORITY = [
   "eea-co2-monitoring",
   "rdw-nl-vehicle-register",
 ];
-// Preserve IDs shipped for these international makes before source snapshots
-// were introduced, so stored make selections remain valid across the upgrade.
+// Preserve previously shipped make IDs as source coverage expands, so stored
+// selections remain valid even when an earlier-priority source gains a make.
 const LEGACY_MAKE_IDS = new Map<string, number>([
+  ["BORGWARD", 3026144727],
   ["VAUXHALL", 100101],
   ["CITROEN", 100102],
   ["MAXUS", 100103],
@@ -175,6 +182,25 @@ function compile(sources: SourceCatalog[]): CompactData {
         });
       }
     }
+  }
+
+  const compatibilityRows = JSON.parse(fs.readFileSync(MODEL_ID_COMPATIBILITY_PATH, "utf8")) as
+    [number, number, string, number, number][];
+  const pinnedKeys = new Set<string>();
+  for (const [year, makeId, modelName, vehicleTypeId, modelId] of compatibilityRows) {
+    const ownerKey = `${makeId}\u0000${normalizeName(modelName)}`;
+    const key = `${year}\u0000${ownerKey}\u0000${vehicleTypeId}`;
+    const model = modelByKey.get(key);
+    if (!model || pinnedKeys.has(key) || !Number.isSafeInteger(modelId) || modelId <= 0) {
+      throw new Error(`Invalid or missing published model identity: ${key}`);
+    }
+    const existingOwner = modelIdOwners.get(modelId);
+    if (existingOwner && existingOwner !== ownerKey) {
+      throw new Error(`Published model ID ${modelId} conflicts with ${existingOwner}`);
+    }
+    modelIdOwners.set(modelId, ownerKey);
+    model.modelId = modelId;
+    pinnedKeys.add(key);
   }
 
   const workingModels = [...modelByKey.values()].sort(
