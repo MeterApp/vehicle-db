@@ -42,6 +42,14 @@ API** on the next release.
    CI verifies that the generated catalog is deterministic
    (`git diff --exit-code -- data/compact.json src/data.ts`).
 
+   Compare the rebuilt catalog with the previous release before publishing:
+   preserve existing make/model IDs, including the first result for consumers
+   that select by year/make/model without a vehicle-type filter. Source overlap
+   can otherwise replace an existing ID. `data/model-id-compatibility.json`
+   stores reviewed `[year, makeId, normalizedModelName, vehicleTypeId, modelId]`
+   pins from the published catalog; the builder checks missing tuples and ID
+   collisions. Add a pin only with prior-release identity evidence.
+
 5. **Open a pull request** against `main` with: the source you used, the
    number of makes/models added, and the license. Bump `version` in
    `package.json` (minor for new data). Merging to `main` publishes the new

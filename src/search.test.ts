@@ -20,6 +20,19 @@ function firstModel(results: VehicleSearchResult[]): VehicleModelSearchResult {
 }
 
 describe("searchVehicles", () => {
+  it.each([
+    [2015, "AXIA"],
+    [2018, "ALZA"],
+  ] as const)("returns the requested historical year for %i Perodua %s", (year, modelName) => {
+    const result = firstModel(searchVehicles(`${year} Perodua ${modelName}`, {
+      sourceId: "malaysia-jpj-registrations",
+    }));
+    expect(result.makeName).toBe("PERODUA");
+    expect(result.modelName).toBe(modelName);
+    expect(result.years).toEqual([year]);
+    expect(result.variants.every((variant) => variant.year === year)).toBe(true);
+  });
+
   it("finds a complete year, make, and model query", () => {
     const results = searchVehicles("2020 toy cam", {
       sourceId: NHTSA_SOURCE_ID,
