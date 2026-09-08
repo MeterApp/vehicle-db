@@ -136,7 +136,7 @@ describe("getDataSources", () => {
       (source) => source.sourceId === MALAYSIA_JPJ_SOURCE_ID,
     )!;
     expect(malaysiaSource.region).toBe("Malaysia");
-    expect(malaysiaSource.yearFrom).toBe(2024);
+    expect(malaysiaSource.yearFrom).toBe(2015);
 
     const eeaSource = sources.find((source) => source.sourceId === EEA_CO2_SOURCE_ID)!;
     expect(eeaSource.license).toBe("Creative Commons Attribution 4.0 International");
@@ -412,6 +412,38 @@ describe("getModels", () => {
         sourceId: NZTA_ASIA_SOURCE_ID,
       }).map((model) => model.modelName),
     ).toContain("CBR");
+  });
+
+  it("preserves published model IDs when a higher-priority source adds historical coverage", () => {
+    const audi = getMakes({ year: 2015 }).find((make) => make.makeName === "AUDI")!;
+    const model = getModels({ year: 2015, makeId: audi.makeId }).find(
+      (entry) => entry.modelName === "A4 AVANT" && entry.vehicleTypeId === 2,
+    )!;
+    // This ID shipped in 2.9.0 before the Malaysia source covered 2015.
+    expect(model.modelId).toBe(2405664190);
+    expect(model.sourceIds).toContain(MALAYSIA_JPJ_SOURCE_ID);
+    expect(getMakes().find((make) => make.makeName === "BORGWARD")?.makeId).toBe(3026144727);
+    const mercedes = getMakes({ year: 2015 }).find((make) => make.makeName === "MERCEDES-BENZ")!;
+    // A new passenger-car classification must not change the ID selected by
+    // consumers that previously saw only the MPV classification.
+    expect(getModels({ year: 2015, makeId: mercedes.makeId }).find(
+      (entry) => entry.modelName === "B-CLASS",
+    )?.modelId).toBe(2113);
+  });
+
+  it.each([
+    [2015, "AXIA"],
+    [2018, "ALZA"],
+  ] as const)("includes historical Malaysian registrations for %i Perodua %s", (year, modelName) => {
+    const perodua = getMakes({ year, sourceId: MALAYSIA_JPJ_SOURCE_ID }).find(
+      (make) => make.makeName === "PERODUA",
+    );
+    expect(perodua).toBeDefined();
+    const model = getModels({ year, makeId: perodua!.makeId, sourceId: MALAYSIA_JPJ_SOURCE_ID }).find(
+      (entry) => entry.modelName === modelName,
+    );
+    expect(model?.sourceIds).toContain(MALAYSIA_JPJ_SOURCE_ID);
+    expect(getAvailableYears({ makeId: perodua!.makeId, modelId: model!.modelId, sourceId: MALAYSIA_JPJ_SOURCE_ID })).toContain(year);
   });
 
   it("includes Malaysian and regional Southeast Asian market models", () => {

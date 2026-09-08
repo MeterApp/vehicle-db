@@ -2,7 +2,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, and an Indian manufacturer catalog into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,580 makes**, **36,870 model names**, and **207,953 deduplicated model-year entries** from **7 data sources**.
+The current snapshot spans **1990–2027** and includes **1,599 makes**, **36,998 model names**, and **210,424 deduplicated model-year entries** from **7 data sources**.
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
 
@@ -247,7 +247,7 @@ Model results contain `years` and a year-specific `variants` array. Make results
 | [UK DfT/DVLA vehicle licensing statistics](https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files) | 701 normalized makes across cars, motorcycles, goods vehicles, buses and coaches, and other vehicles; manufacture years 1990–2025 | [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) |
 | [Atul Auto product catalog](https://atulauto.co.in/products/) | Current Indian passenger and cargo auto-rickshaw range; catalog years 2024–2026 | Source attribution; factual product names only |
 | [NZTA Motor Vehicle Register](https://www.nzta.govt.nz/resources/new-zealand-motor-vehicle-register-statistics/new-zealand-vehicle-fleet-open-data-sets) | 30,374 Asian-origin car, truck, bus, motorcycle, and moped model-year records from 12 countries of origin; vehicle years 1990–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| [Malaysia JPJ registration transactions](https://data.gov.my/data-catalogue/registration_transactions_car) | 1,756 passenger car, MPV, jeep, pickup, and window-van model/registration-year records; 2024–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [Malaysia JPJ registration transactions](https://data.gov.my/data-catalogue/registration_transactions_car) | 6,645 passenger car, MPV, jeep, pickup, and window-van model/registration-year records; 2015–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [EEA CO2 monitoring of new passenger cars and vans](https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b) | 29,939 passenger car (M1) and van (N1) model/registration-year records from 235 makes reported by EU member states, Iceland, and Norway; 2010–2025 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [Netherlands RDW vehicle register](https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2) | 73,190 passenger car, commercial vehicle, bus, and motorcycle model/first-admission-year records from 624 makes licensed in the Netherlands; 1990–2026 | [Public domain (RDW Open Data)](https://opendata.rdw.nl/) |
 
@@ -272,10 +272,10 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | Years | 1990–2027 |
 | Sources | 7 |
 | Vehicle types | 7 |
-| Makes | 1,580 |
-| Model names | 36,870 |
-| Deduplicated model-year entries | 207,953 |
-| Bundled TypeScript data | 7.17 MB |
+| Makes | 1,599 |
+| Model names | 36,998 |
+| Deduplicated model-year entries | 210,424 |
+| Bundled TypeScript data | 7.25 MB |
 
 ## Refreshing and rebuilding
 
@@ -294,7 +294,7 @@ Refresh either network source independently, then rebuild the combined catalog:
 npm run refresh:uk-dft
 npm run refresh:nhtsa -- --start-year 1990 --end-year 2027
 npm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2026
-npm run refresh:malaysia-jpj -- --start-year 2024 --end-year 2026
+npm run refresh:malaysia-jpj -- --start-year 2015 --end-year 2026
 npm run refresh:eea-co2 -- --start-year 2010 --end-year 2026
 npm run refresh:rdw-nl -- --start-year 1990 --end-year 2026
 npm run build:data
