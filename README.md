@@ -1,5 +1,9 @@
 # @meterapp/vehicle-db
 
+[![npm](https://img.shields.io/npm/v/@meterapp/vehicle-db)](https://www.npmjs.com/package/@meterapp/vehicle-db)
+![license](https://img.shields.io/npm/l/@meterapp/vehicle-db)
+[![playground](https://img.shields.io/badge/playground-carimage.dev-black)](https://carimage.dev/playground?ref=catalog)
+
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, and an Indian manufacturer catalog into one small, zero-dependency API. It never makes runtime network requests.
 
 The current snapshot spans **1990–2027** and includes **1,599 makes**, **36,998 model names**, and **210,424 deduplicated model-year entries** from **7 data sources**.
@@ -8,7 +12,7 @@ The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Tru
 
 ## Demo and playground
 
-This catalog is the backbone of the [Car Image API](https://car-imgs.vercel.app) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (six camera angles, 15 colors, PNG/WebP/JPG, $1 per 1,000 images). Explore the data in the [interactive playground](https://car-imgs.vercel.app/playground) or browse vehicles at [car-imgs.vercel.app/cars](https://car-imgs.vercel.app/cars).
+This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (six camera angles, 15 colors, PNG/WebP/JPG, $1 per 1,000 images). Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse vehicles at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
 
 **Missing a vehicle?** Add it here and it becomes renderable in the API on the next release — see [CONTRIBUTING.md](CONTRIBUTING.md).
 

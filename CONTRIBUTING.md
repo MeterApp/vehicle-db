@@ -1,6 +1,6 @@
 # Contributing to @meterapp/vehicle-db
 
-This catalog powers the [Car Image API](https://car-imgs.vercel.app) and any
+This catalog powers the [Car Image API](https://carimage.dev?ref=catalog) and any
 app that needs an offline make/model/year list. Every vehicle the image API can
 render comes from here, so **adding a vehicle to this package adds it to the
 API** on the next release.
@@ -69,7 +69,7 @@ Open an issue with the `makeId`/`modelId`, the source it came from
 
 ## Downstream
 
-- [Car Image API](https://car-imgs.vercel.app) — studio renders for every
+- [Car Image API](https://carimage.dev?ref=catalog) — studio renders for every
   catalog vehicle (`GET /api/v1/images/car?make=…&model=…&year=…`). After a new
   `@meterapp/vehicle-db` release, the API bumps the dependency and the new
   vehicles become renderable immediately.
