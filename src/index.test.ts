@@ -117,6 +117,7 @@ describe("getDataSources", () => {
       MALAYSIA_JPJ_SOURCE_ID,
       EEA_CO2_SOURCE_ID,
       RDW_NL_SOURCE_ID,
+      "hyundai-brazil-catalog",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
