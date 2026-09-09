@@ -6,6 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/MeterApp/vehicle-db.git"
   },
+  "homepage": "https://github.com/MeterApp/vehicle-db#readme",
+  "bugs": {
+    "url": "https://github.com/MeterApp/vehicle-db/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
