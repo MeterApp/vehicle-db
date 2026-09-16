@@ -277,11 +277,11 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | | |
 |---|---:|
 | Years | 1990–2027 |
-| Sources | 7 |
+| Sources | 8 |
 | Vehicle types | 7 |
 | Makes | 1,599 |
-| Model names | 36,998 |
-| Deduplicated model-year entries | 210,424 |
+| Model names | 37,001 |
+| Deduplicated model-year entries | 210,464 |
 | Bundled TypeScript data | 7.25 MB |
 
 ## Refreshing and rebuilding
