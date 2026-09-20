@@ -118,6 +118,7 @@ describe("getDataSources", () => {
       EEA_CO2_SOURCE_ID,
       RDW_NL_SOURCE_ID,
       "hyundai-brazil-catalog",
+      "fueleconomy-maserati-us",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;

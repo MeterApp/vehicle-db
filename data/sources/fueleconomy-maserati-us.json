@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "id": "fueleconomy-maserati-us",
+    "name": "FuelEconomy.gov 2026 Maserati models missing from vPIC",
+    "url": "https://www.fueleconomy.gov/feg/noframes/50273.shtml",
+    "license": "United States government public domain (FuelEconomy.gov)",
+    "region": "US",
+    "description": "2026 Maserati model names listed as distinct models by the DOE/EPA FuelEconomy.gov catalog but not present in the current vPIC snapshot for any year: GT2 Stradale (record 50273) and MCPura Spyder (record 50274). The 2026 MCPura itself is already in vPIC and arrives via the NHTSA source refresh. Verified via the public FuelEconomy.gov model-year menu API.",
+    "retrievedAt": "2026-09-20"
+  },
+  "vehicleTypes": [
+    { "vehicle_type_id": 2, "vehicle_type_name": "Passenger Car" }
+  ],
+  "makes": [
+    { "make_id": 443, "make_name": "MASERATI" }
+  ],
+  "modelNames": [
+    "GT2 STRADALE",
+    "MCPURA SPYDER"
+  ],
+  "models": [
+    [2026, 443, 3729461697, 0, 2],
+    [2026, 443, 4906098597, 1, 2]
+  ]
+}

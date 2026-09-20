@@ -6,7 +6,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, an Indian manufacturer catalog, and the Brazil-exclusive Hyundai HB20 family into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,599 makes**, **37,001 model names**, and **210,464 deduplicated model-year entries** from **8 data sources**.
+The current snapshot spans **1990–2027** and includes **1,599 makes**, **37,002 model names**, and **209,976 deduplicated model-year entries** from **9 data sources**.
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
 
@@ -255,6 +255,7 @@ Model results contain `years` and a year-specific `variants` array. Make results
 | [EEA CO2 monitoring of new passenger cars and vans](https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b) | 29,939 passenger car (M1) and van (N1) model/registration-year records from 235 makes reported by EU member states, Iceland, and Norway; 2010–2025 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [Netherlands RDW vehicle register](https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2) | 73,190 passenger car, commercial vehicle, bus, and motorcycle model/first-admission-year records from 624 makes licensed in the Netherlands; 1990–2026 | [Public domain (RDW Open Data)](https://opendata.rdw.nl/) |
 | [Hyundai Motor Brasil line-up](https://www.hyundai.com.br/) | The Brazil-exclusive HB20 family (HB20 hatchback, HB20S sedan, HB20X crossover), 40 model-year records; Brazilian model years 2013–2027 | Source attribution; factual product names only |
+| [FuelEconomy.gov 2026 Maserati models](https://www.fueleconomy.gov/) | The 2026 Maserati GT2 Stradale and MCPura Spyder, listed as distinct models by the DOE/EPA fuel-economy catalog but absent from the vPIC snapshot; 2 model-year records | [U.S. government public domain](https://www.fueleconomy.gov/) |
 
 Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, registration year for Malaysia JPJ, the reporting (registration) year for the EEA register, the year of first admission (first registration anywhere, so imported used vehicles keep their original year) for the Dutch RDW register, and the Brazilian model year (ano/modelo) for the Hyundai Motor Brasil line-up. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
 
@@ -265,6 +266,8 @@ NZTA and Malaysia source attribution: Licensed under Creative Commons Attributio
 EEA source attribution: Licensed under Creative Commons Attribution 4.0 International. Source: European Environment Agency, *Monitoring of CO2 emissions from passenger cars* and *Monitoring of CO2 emissions from vans*, Regulation (EU) 2019/631. Member states report the make and commercial name inconsistently (multi-brand strings, legal entities, and trim-level names), so the importer merges brand spellings, drops engine and gearbox suffixes, keeps a make/model/year only when at least two countries report it or one country reports it more than 1,000 times, and uses the most reported spelling of each model name. The latest year is provisional data. EU vehicle categories map to the catalog as M1/M1G → Passenger Car and N1/N1G/N2 → Truck.
 
 Hyundai Motor Brasil attribution: HB20, HB20S and HB20X are factual product names from Hyundai Motor Brasil's published line-up; launch (September 2012, January and April 2013) and discontinuation (HB20X, January 2022) dates come from Hyundai's announcements. No registration source in this catalog covers Brazil.
+
+FuelEconomy.gov attribution: GT2 Stradale and MCPura Spyder are factual 2026 model names from the U.S. Department of Energy/EPA fuel-economy catalog (vehicle records [50273](https://www.fueleconomy.gov/feg/noframes/50273.shtml) and [50274](https://www.fueleconomy.gov/feg/noframes/50274.shtml)), which lists them as distinct models while vPIC does not carry either name for any model year. The 2026 MCPura itself is already in vPIC and is expected to arrive through the regular NHTSA source refresh.
 
 RDW source attribution: Open Data RDW (Dienst Wegverkeer), public domain. The register only contains vehicles currently licensed in the Netherlands, is republished daily, and is the freshest European source in the catalog. The same brand and model-name normalization as the EEA source is applied, plus a minimum of three vehicles per make/model/year to drop typos; RDW vehicle kinds map as Personenauto → Passenger Car, Bedrijfsauto → Truck, Bus → Bus, and Motorfiets → Motorcycle.
 
@@ -277,12 +280,12 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | | |
 |---|---:|
 | Years | 1990–2027 |
-| Sources | 8 |
+| Sources | 9 |
 | Vehicle types | 7 |
 | Makes | 1,599 |
-| Model names | 37,001 |
-| Deduplicated model-year entries | 210,464 |
-| Bundled TypeScript data | 7.25 MB |
+| Model names | 37,002 |
+| Deduplicated model-year entries | 209,976 |
+| Bundled TypeScript data | 7.24 MB |
 
 ## Refreshing and rebuilding
 
