@@ -21,6 +21,7 @@
  *   npx tsx scripts/import-eea-co2.ts --min-count 5 --min-countries 2
  *   npx tsx scripts/import-eea-co2.ts --raw-out rows.json   # keep aggregated rows
  *   npx tsx scripts/import-eea-co2.ts --input rows.json      # rebuild offline
+ *   npx tsx scripts/import-eea-co2.ts --prune                # drop entries the registers no longer support
  */
 import fs from "fs";
 import path from "path";
@@ -29,6 +30,7 @@ import {
   compareStrings,
   normalizeName,
   stableSourceId,
+  writeSnapshot,
   type SourceCatalog,
 } from "./catalog-types";
 import {
@@ -351,6 +353,7 @@ function parseArguments(): {
   endYear: number;
   minCount: number;
   minCountries: number;
+  prune: boolean;
 } {
   const args = process.argv.slice(2);
   let inputPath: string | undefined;
@@ -360,6 +363,7 @@ function parseArguments(): {
   let endYear = new Date().getUTCFullYear();
   let minCount = DEFAULT_MIN_COUNT;
   let minCountries = DEFAULT_MIN_COUNTRIES;
+  let prune = false;
 
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--input") inputPath = path.resolve(args[++index]);
@@ -369,6 +373,7 @@ function parseArguments(): {
     else if (args[index] === "--end-year") endYear = Number(args[++index]);
     else if (args[index] === "--min-count") minCount = Number(args[++index]);
     else if (args[index] === "--min-countries") minCountries = Number(args[++index]);
+    else if (args[index] === "--prune") prune = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
 
@@ -381,11 +386,11 @@ function parseArguments(): {
   if (!Number.isInteger(minCountries) || minCountries < 1) {
     throw new Error(`Invalid minimum countries: ${minCountries}`);
   }
-  return { inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries };
+  return { inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries, prune };
 }
 
 async function main(): Promise<void> {
-  const { inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries } =
+  const { inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries, prune } =
     parseArguments();
   const rows = inputPath
     ? (JSON.parse(fs.readFileSync(inputPath, "utf8")) as EeaRow[])
@@ -395,9 +400,7 @@ async function main(): Promise<void> {
     fs.writeFileSync(rawOutPath, JSON.stringify(rows));
   }
 
-  const catalog = buildSourceCatalog(rows, { minCount, minCountries });
-  fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify(catalog));
+  const catalog = writeSnapshot(outPath, buildSourceCatalog(rows, { minCount, minCountries }), prune);
 
   const sizeMb = (fs.statSync(outPath).size / 1024 / 1024).toFixed(2);
   console.log("\nDone!");

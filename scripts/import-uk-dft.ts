@@ -8,6 +8,7 @@
  * Usage:
  *   npx tsx scripts/import-uk-dft.ts
  *   npx tsx scripts/import-uk-dft.ts --input data.csv [--input data-2.csv]
+ *   npx tsx scripts/import-uk-dft.ts --prune   # drop entries the files no longer list
  */
 import fs from "fs";
 import os from "os";
@@ -21,6 +22,7 @@ import {
   normalizeName,
   parseCsvLine,
   stableSourceId,
+  writeSnapshot,
   type SourceCatalog,
 } from "./catalog-types";
 
@@ -215,20 +217,22 @@ export async function buildSourceCatalog(inputPaths: string[]): Promise<SourceCa
   };
 }
 
-function parseArguments(): { inputPaths: string[]; outPath: string } {
+function parseArguments(): { inputPaths: string[]; outPath: string; prune: boolean } {
   const args = process.argv.slice(2);
   const inputPaths: string[] = [];
   let outPath = DEFAULT_OUT_PATH;
+  let prune = false;
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--input") inputPaths.push(path.resolve(args[++index]));
     else if (args[index] === "--out") outPath = path.resolve(args[++index]);
+    else if (args[index] === "--prune") prune = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
-  return { inputPaths, outPath };
+  return { inputPaths, outPath, prune };
 }
 
 async function main(): Promise<void> {
-  const { inputPaths, outPath } = parseArguments();
+  const { inputPaths, outPath, prune } = parseArguments();
   let temporaryDirectory: string | undefined;
   let sources = inputPaths;
 
@@ -243,9 +247,7 @@ async function main(): Promise<void> {
       }
     }
 
-    const catalog = await buildSourceCatalog(sources);
-    fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, JSON.stringify(catalog));
+    const catalog = writeSnapshot(outPath, await buildSourceCatalog(sources), prune);
 
     const sizeMb = (fs.statSync(outPath).size / 1024 / 1024).toFixed(2);
     console.log("\nDone!");

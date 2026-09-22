@@ -22,7 +22,11 @@ API** on the next release.
    dataset or manufacturer catalog. The bundled sources live in
    `data/sources/*.json` and are described in the README's *Data sources*
    table. If your vehicle is in a source we already import, refresh that source
-   (`npm run refresh:<source>`) instead of hand-editing.
+   (`npm run refresh:<source>`) instead of hand-editing. A refresh only adds:
+   entries the previous snapshot published and the source no longer reports
+   are kept, because applications store the year/make/model they were given.
+   Pass `--prune` only to remove a source error, and say so in the pull
+   request.
 
 3. **Add a small curated source when no dataset exists.** Follow
    `data/sources/atul-auto.json`: give the source an `sourceId`, `sourceName`,

@@ -6,6 +6,7 @@
  *   npx tsx scripts/import-malaysia-jpj.ts
  *   npx tsx scripts/import-malaysia-jpj.ts --start-year 2015 --end-year 2026
  *   npx tsx scripts/import-malaysia-jpj.ts --input cars_2026.csv
+ *   npx tsx scripts/import-malaysia-jpj.ts --prune   # drop entries the files no longer list
  */
 import fs from "fs";
 import os from "os";
@@ -19,6 +20,7 @@ import {
   normalizeName,
   parseCsvLine,
   stableSourceId,
+  writeSnapshot,
   type SourceCatalog,
 } from "./catalog-types";
 
@@ -191,29 +193,32 @@ function parseArguments(): {
   outPath: string;
   startYear: number;
   endYear: number;
+  prune: boolean;
 } {
   const args = process.argv.slice(2);
   const inputPaths: string[] = [];
   let outPath = DEFAULT_OUT_PATH;
   let startYear = DEFAULT_START_YEAR;
   let endYear = new Date().getUTCFullYear();
+  let prune = false;
 
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--input") inputPaths.push(path.resolve(args[++index]));
     else if (args[index] === "--out") outPath = path.resolve(args[++index]);
     else if (args[index] === "--start-year") startYear = Number(args[++index]);
     else if (args[index] === "--end-year") endYear = Number(args[++index]);
+    else if (args[index] === "--prune") prune = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
 
   if (!Number.isInteger(startYear) || !Number.isInteger(endYear) || startYear > endYear) {
     throw new Error(`Invalid year range: ${startYear}–${endYear}`);
   }
-  return { inputPaths, outPath, startYear, endYear };
+  return { inputPaths, outPath, startYear, endYear, prune };
 }
 
 async function main(): Promise<void> {
-  const { inputPaths, outPath, startYear, endYear } = parseArguments();
+  const { inputPaths, outPath, startYear, endYear, prune } = parseArguments();
   let temporaryDirectory: string | undefined;
   let sources = inputPaths;
 
@@ -228,9 +233,7 @@ async function main(): Promise<void> {
       }
     }
 
-    const catalog = await buildSourceCatalog(sources);
-    fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, JSON.stringify(catalog));
+    const catalog = writeSnapshot(outPath, await buildSourceCatalog(sources), prune);
 
     const sizeMb = (fs.statSync(outPath).size / 1024 / 1024).toFixed(2);
     console.log("\nDone!");
