@@ -8,6 +8,10 @@
  *   npx tsx scripts/import-nzta-asia-pacific.ts
  *   npx tsx scripts/import-nzta-asia-pacific.ts --start-year 2000 --end-year 2026
  *   npx tsx scripts/import-nzta-asia-pacific.ts --input records.json
+ *   npx tsx scripts/import-nzta-asia-pacific.ts --prune   # drop entries the register no longer lists
+ *
+ * Vehicle years run ahead of the calendar (a new model can be registered
+ * with next year's vehicle year), so the default range ends next year.
  */
 import fs from "fs";
 import path from "path";
@@ -16,6 +20,7 @@ import {
   compareStrings,
   normalizeName,
   stableSourceId,
+  writeSnapshot,
   type SourceCatalog,
 } from "./catalog-types";
 
@@ -251,29 +256,32 @@ function parseArguments(): {
   outPath: string;
   startYear: number;
   endYear: number;
+  prune: boolean;
 } {
   const args = process.argv.slice(2);
   let inputPath: string | undefined;
   let outPath = DEFAULT_OUT_PATH;
   let startYear = DEFAULT_START_YEAR;
-  let endYear = new Date().getUTCFullYear();
+  let endYear = new Date().getUTCFullYear() + 1;
+  let prune = false;
 
   for (let index = 0; index < args.length; index++) {
     if (args[index] === "--input") inputPath = path.resolve(args[++index]);
     else if (args[index] === "--out") outPath = path.resolve(args[++index]);
     else if (args[index] === "--start-year") startYear = Number(args[++index]);
     else if (args[index] === "--end-year") endYear = Number(args[++index]);
+    else if (args[index] === "--prune") prune = true;
     else throw new Error(`Unknown argument: ${args[index]}`);
   }
 
   if (!Number.isInteger(startYear) || !Number.isInteger(endYear) || startYear > endYear) {
     throw new Error(`Invalid year range: ${startYear}–${endYear}`);
   }
-  return { inputPath, outPath, startYear, endYear };
+  return { inputPath, outPath, startYear, endYear, prune };
 }
 
 async function main(): Promise<void> {
-  const { inputPath, outPath, startYear, endYear } = parseArguments();
+  const { inputPath, outPath, startYear, endYear, prune } = parseArguments();
   let records: NztaRecord[];
 
   if (inputPath) {
@@ -288,9 +296,7 @@ async function main(): Promise<void> {
     records = groups.flat();
   }
 
-  const catalog = buildSourceCatalog(records);
-  fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify(catalog));
+  const catalog = writeSnapshot(outPath, buildSourceCatalog(records), prune);
 
   const sizeMb = (fs.statSync(outPath).size / 1024 / 1024).toFixed(2);
   console.log("\nDone!");
