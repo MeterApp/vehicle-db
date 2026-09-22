@@ -118,6 +118,7 @@ describe("getDataSources", () => {
       EEA_CO2_SOURCE_ID,
       RDW_NL_SOURCE_ID,
       "hyundai-brazil-catalog",
+      "fueleconomy-maserati-us",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
@@ -430,6 +431,18 @@ describe("getModels", () => {
     expect(getModels({ year: 2015, makeId: mercedes.makeId }).find(
       (entry) => entry.modelName === "B-CLASS",
     )?.modelId).toBe(2113);
+  });
+
+  it("keeps a published model year when vPIC re-files it under a new name", () => {
+    // Maserati filed the 2026 mid-engine coupe as the MC20, then re-filed it as
+    // the MCPura. Applications that stored the 2026 MC20 keep resolving it, with
+    // the vPIC ID it shipped with, beside the new name.
+    const models = getModels({ year: 2026, makeId: 443, vehicleTypeId: 2 });
+    const named = (name: string) => models.find((model) => model.modelName.toUpperCase() === name);
+    expect(named("MC20")?.modelId).toBe(28982);
+    expect(named("MCPURA")?.modelId).toBe(38002);
+    expect(named("MCPURA SPYDER")?.sourceIds).toEqual(["fueleconomy-maserati-us"]);
+    expect(named("GT2 STRADALE")?.sourceIds).toEqual(["fueleconomy-maserati-us"]);
   });
 
   it.each([

@@ -4,9 +4,9 @@
 ![license](https://img.shields.io/npm/l/@meterapp/vehicle-db)
 [![playground](https://img.shields.io/badge/playground-carimage.dev-black)](https://carimage.dev/playground?ref=catalog)
 
-An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, an Indian manufacturer catalog, and the Brazil-exclusive Hyundai HB20 family into one small, zero-dependency API. It never makes runtime network requests.
+An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, and U.S. models listed by FuelEconomy.gov but not by vPIC into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,599 makes**, **37,001 model names**, and **210,464 deduplicated model-year entries** from **8 data sources**.
+The current snapshot spans **1990–2027** and includes **1,603 makes**, **37,048 model names**, and **210,659 deduplicated model-year entries** from **9 data sources**.
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
 
@@ -250,13 +250,14 @@ Model results contain `years` and a year-specific `variants` array. Make results
 | [NHTSA vPIC](https://vpic.nhtsa.dot.gov/api/) | U.S. passenger cars, trucks, and MPVs; model years 1990–2027 | U.S. government public data |
 | [UK DfT/DVLA vehicle licensing statistics](https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files) | 701 normalized makes across cars, motorcycles, goods vehicles, buses and coaches, and other vehicles; manufacture years 1990–2025 | [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) |
 | [Atul Auto product catalog](https://atulauto.co.in/products/) | Current Indian passenger and cargo auto-rickshaw range; catalog years 2024–2026 | Source attribution; factual product names only |
-| [NZTA Motor Vehicle Register](https://www.nzta.govt.nz/resources/new-zealand-motor-vehicle-register-statistics/new-zealand-vehicle-fleet-open-data-sets) | 30,374 Asian-origin car, truck, bus, motorcycle, and moped model-year records from 12 countries of origin; vehicle years 1990–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| [Malaysia JPJ registration transactions](https://data.gov.my/data-catalogue/registration_transactions_car) | 6,645 passenger car, MPV, jeep, pickup, and window-van model/registration-year records; 2015–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [NZTA Motor Vehicle Register](https://www.nzta.govt.nz/resources/new-zealand-motor-vehicle-register-statistics/new-zealand-vehicle-fleet-open-data-sets) | 30,431 Asian-origin car, truck, bus, motorcycle, and moped model-year records from 12 countries of origin; vehicle years 1990–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [Malaysia JPJ registration transactions](https://data.gov.my/data-catalogue/registration_transactions_car) | 6,678 passenger car, MPV, jeep, pickup, and window-van model/registration-year records; 2015–2026 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [EEA CO2 monitoring of new passenger cars and vans](https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b) | 29,939 passenger car (M1) and van (N1) model/registration-year records from 235 makes reported by EU member states, Iceland, and Norway; 2010–2025 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| [Netherlands RDW vehicle register](https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2) | 73,190 passenger car, commercial vehicle, bus, and motorcycle model/first-admission-year records from 624 makes licensed in the Netherlands; 1990–2026 | [Public domain (RDW Open Data)](https://opendata.rdw.nl/) |
+| [Netherlands RDW vehicle register](https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2) | 73,299 passenger car, commercial vehicle, bus, and motorcycle model/first-admission-year records from 627 makes licensed in the Netherlands; 1990–2026 | [Public domain (RDW Open Data)](https://opendata.rdw.nl/) |
 | [Hyundai Motor Brasil line-up](https://www.hyundai.com.br/) | The Brazil-exclusive HB20 family (HB20 hatchback, HB20S sedan, HB20X crossover), 40 model-year records; Brazilian model years 2013–2027 | Source attribution; factual product names only |
+| [FuelEconomy.gov](https://www.fueleconomy.gov/) (U.S. DOE/EPA) | U.S. models the fuel-economy catalog lists as distinct models but vPIC does not list under any model year: the 2026 Maserati GT2 Stradale and MCPURA Spyder, 2 model-year records | U.S. government public data |
 
-Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, registration year for Malaysia JPJ, the reporting (registration) year for the EEA register, the year of first admission (first registration anywhere, so imported used vehicles keep their original year) for the Dutch RDW register, and the Brazilian model year (ano/modelo) for the Hyundai Motor Brasil line-up. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
+Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, registration year for Malaysia JPJ, the reporting (registration) year for the EEA register, the year of first admission (first registration anywhere, so imported used vehicles keep their original year) for the Dutch RDW register, the Brazilian model year (ano/modelo) for the Hyundai Motor Brasil line-up, and the U.S. model year for FuelEconomy.gov. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
 
 UK source attribution: Contains public sector information licensed under the Open Government Licence v3.0. Source: Department for Transport and Driver and Vehicle Licensing Agency.
 
@@ -265,6 +266,8 @@ NZTA and Malaysia source attribution: Licensed under Creative Commons Attributio
 EEA source attribution: Licensed under Creative Commons Attribution 4.0 International. Source: European Environment Agency, *Monitoring of CO2 emissions from passenger cars* and *Monitoring of CO2 emissions from vans*, Regulation (EU) 2019/631. Member states report the make and commercial name inconsistently (multi-brand strings, legal entities, and trim-level names), so the importer merges brand spellings, drops engine and gearbox suffixes, keeps a make/model/year only when at least two countries report it or one country reports it more than 1,000 times, and uses the most reported spelling of each model name. The latest year is provisional data. EU vehicle categories map to the catalog as M1/M1G → Passenger Car and N1/N1G/N2 → Truck.
 
 Hyundai Motor Brasil attribution: HB20, HB20S and HB20X are factual product names from Hyundai Motor Brasil's published line-up; launch (September 2012, January and April 2013) and discontinuation (HB20X, January 2022) dates come from Hyundai's announcements. No registration source in this catalog covers Brazil.
+
+FuelEconomy.gov attribution: GT2 Stradale and MCPURA Spyder are factual 2026 model names from the U.S. Department of Energy and EPA fuel-economy catalog (vehicle records [50273](https://www.fueleconomy.gov/feg/noframes/50273.shtml) and [50274](https://www.fueleconomy.gov/feg/noframes/50274.shtml)), which lists them as distinct models while vPIC files neither name for any model year. The 2026 MCPura itself comes from vPIC. Contributed in [#20](https://github.com/MeterApp/vehicle-db/pull/20).
 
 RDW source attribution: Open Data RDW (Dienst Wegverkeer), public domain. The register only contains vehicles currently licensed in the Netherlands, is republished daily, and is the freshest European source in the catalog. The same brand and model-name normalization as the EEA source is applied, plus a minimum of three vehicles per make/model/year to drop typos; RDW vehicle kinds map as Personenauto → Passenger Car, Bedrijfsauto → Truck, Bus → Bus, and Motorfiets → Motorcycle.
 
@@ -277,12 +280,12 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | | |
 |---|---:|
 | Years | 1990–2027 |
-| Sources | 8 |
+| Sources | 9 |
 | Vehicle types | 7 |
-| Makes | 1,599 |
-| Model names | 37,001 |
-| Deduplicated model-year entries | 210,464 |
-| Bundled TypeScript data | 7.25 MB |
+| Makes | 1,603 |
+| Model names | 37,048 |
+| Deduplicated model-year entries | 210,659 |
+| Bundled TypeScript data | 7.26 MB |
 
 ## Refreshing and rebuilding
 
@@ -299,15 +302,17 @@ Refresh either network source independently, then rebuild the combined catalog:
 
 ```bash
 npm run refresh:uk-dft
-npm run refresh:nhtsa -- --start-year 1990 --end-year 2027
-npm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2026
+npm run refresh:nhtsa -- --start-year 2025 --end-year 2027 --merge --cache-dir .cache/nhtsa
+npm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2027
 npm run refresh:malaysia-jpj -- --start-year 2015 --end-year 2026
 npm run refresh:eea-co2 -- --start-year 2010 --end-year 2026
 npm run refresh:rdw-nl -- --start-year 1990 --end-year 2026
 npm run build:data
 ```
 
-The NHTSA API rate-limits aggressively, so a full NHTSA refresh can take hours; to add a new model year, fetch only that year and merge it into the existing snapshot with `npm run refresh:nhtsa -- --start-year 2027 --end-year 2027 --merge`. The UK importer downloads the two official VEH0124 CSV files. The NZTA importer discovers the current official ArcGIS service and requests distinct records for supported vehicle types and Asian countries of origin. The Malaysia importer downloads annual JPJ CSVs and aggregates individual transactions into unique model/registration-year records. The EEA importer discovers the current final and provisional register tables from the EEA DiscoData catalogue and asks its public SQL endpoint for make/commercial-name counts grouped by reporting country and year, so it never downloads the individual registration records; `--min-countries` and `--min-count` tune the noise filter. The RDW importer asks the Socrata API for make/commercial-name counts per year of first admission, one request per year, so a refresh takes about ten minutes and can be run any day to pick up the latest registrations. Importers assign deterministic numeric IDs, write normalized snapshots, and discard temporary raw downloads.
+**A refresh only adds.** Registers drop scrapped vehicles, count thresholds move between releases, and manufacturers re-file model years in vPIC (the 2026 Maserati MC20 became the MCPura in September 2026), but an application may already store a year/make/model this package published. Every importer therefore keeps the entries its previous snapshot published and the source no longer reports, and logs how many it kept; pass `--prune` to drop them deliberately, for example to remove a source error. Model-year sources run a year ahead of the calendar, so the NHTSA and NZTA importers default to ending next year; registration sources end with the current year.
+
+The NHTSA API rate-limits aggressively: past a few requests a second its CDN answers HTTP 403 to every request from the address for an hour or more. The importer spaces requests (`--concurrency 2`, `--interval-ms 500` by default), stops at the first sustained 403 instead of retrying into the block, and with `--cache-dir` keeps every answer it already received, so rerunning the same command later resumes where it stopped. A full NHTSA refresh can take hours; to refresh recent model years, fetch only those years and merge them into the existing snapshot with `--merge`, as above. The UK importer downloads the two official VEH0124 CSV files. The NZTA importer discovers the current official ArcGIS service and requests distinct records for supported vehicle types and Asian countries of origin. The Malaysia importer downloads annual JPJ CSVs and aggregates individual transactions into unique model/registration-year records. The EEA importer discovers the current final and provisional register tables from the EEA DiscoData catalogue and asks its public SQL endpoint for make/commercial-name counts grouped by reporting country and year, so it never downloads the individual registration records; `--min-countries` and `--min-count` tune the noise filter. The RDW importer asks the Socrata API for make/commercial-name counts per year of first admission, one request per year, so a refresh takes about ten minutes and can be run any day to pick up the latest registrations. Importers assign deterministic numeric IDs, write normalized snapshots, and discard temporary raw downloads.
 
 ## License
 

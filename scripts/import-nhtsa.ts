@@ -2,22 +2,38 @@
  * Refreshes the normalized NHTSA vPIC source snapshot.
  *
  * Usage:
- *   npx tsx scripts/import-nhtsa.ts [--start-year 1990] [--end-year 2026]
- *   npx tsx scripts/import-nhtsa.ts --start-year 2027 --end-year 2027 --merge
+ *   npx tsx scripts/import-nhtsa.ts [--start-year 1990] [--end-year <next year>]
+ *   npx tsx scripts/import-nhtsa.ts --start-year 2025 --end-year 2027 --merge
+ *   npx tsx scripts/import-nhtsa.ts ... --cache-dir .cache/nhtsa   # resumable
+ *   npx tsx scripts/import-nhtsa.ts ... --prune   # drop entries vPIC no longer lists
  *
  * With --merge, only the requested years are fetched; entries for every other
  * year are carried over from the existing snapshot. vPIC rate-limits heavily,
- * so this is the practical way to add a new model year.
+ * so this is the practical way to add a new model year. Model years run ahead
+ * of the calendar, so the default range ends next year.
+ *
+ * A refreshed year never loses an entry the snapshot already published:
+ * manufacturers re-file model years (Maserati's 2026 MC20 became the MCPura),
+ * but consumers store the year/make/model they rendered. --prune drops them.
+ *
+ * vPIC's CDN answers HTTP 403 to every request from an address it considers
+ * too busy, for an hour or more. Requests are therefore spaced out, the run
+ * stops at the first sustained 403, and with --cache-dir every answer already
+ * received is kept on disk so the next run resumes where this one stopped.
  */
+import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { compareStrings, type SourceCatalog } from "./catalog-types";
 
 const OUT_PATH = path.join(__dirname, "..", "data", "sources", "nhtsa.json");
 const BASE = "https://vpic.nhtsa.dot.gov/api/vehicles";
-const CONCURRENCY = 3;
+const DEFAULT_CONCURRENCY = 2;
+const DEFAULT_INTERVAL_MS = 500;
 const RETRY_LIMIT = 3;
 const RETRY_DELAY_MS = 2000;
+/** Consecutive 403 answers after which the address is treated as blocked. */
+const BLOCKED_AFTER = 5;
 
 // Vehicle types to fetch from NHTSA vPIC
 const NHTSA_VEHICLE_TYPES = [
@@ -54,18 +70,62 @@ type RawModel = [number, number, number, string, number];
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+class BlockedError extends Error {}
+
+const client = {
+  cacheDir: undefined as string | undefined,
+  intervalMs: DEFAULT_INTERVAL_MS,
+  nextSlot: 0,
+  consecutive403: 0,
+};
+
+/** Spaces request starts at least `intervalMs` apart across all workers. */
+async function throttle(): Promise<void> {
+  const now = Date.now();
+  const slot = Math.max(now, client.nextSlot);
+  client.nextSlot = slot + client.intervalMs;
+  if (slot > now) await sleep(slot - now);
+}
+
+function cachePath(url: string): string | undefined {
+  if (!client.cacheDir) return undefined;
+  const digest = crypto.createHash("sha256").update(url).digest("hex").slice(0, 32);
+  return path.join(client.cacheDir, `${digest}.json`);
+}
+
 async function fetchJson<T>(url: string): Promise<ApiResponse<T> | null> {
+  const cached = cachePath(url);
+  if (cached && fs.existsSync(cached)) {
+    return JSON.parse(fs.readFileSync(cached, "utf8")) as ApiResponse<T>;
+  }
   for (let attempt = 1; attempt <= RETRY_LIMIT; attempt++) {
     try {
+      await throttle();
       const res = await fetch(url);
+      if (res.status === 403) {
+        client.consecutive403++;
+        if (client.consecutive403 >= BLOCKED_AFTER) {
+          throw new BlockedError(
+            "vPIC is refusing this address (HTTP 403). Wait, then rerun with the same --cache-dir to resume.",
+          );
+        }
+      } else {
+        client.consecutive403 = 0;
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       const text = await res.text();
       if (text.startsWith("<")) {
         console.warn(`  Skipping (HTML response): ${url}`);
         return null;
       }
-      return JSON.parse(text) as ApiResponse<T>;
+      const data = JSON.parse(text) as ApiResponse<T>;
+      if (cached) {
+        fs.mkdirSync(path.dirname(cached), { recursive: true });
+        fs.writeFileSync(cached, text);
+      }
+      return data;
     } catch (err) {
+      if (err instanceof BlockedError) throw err;
       if (attempt === RETRY_LIMIT) {
         console.warn(`  Failed after ${RETRY_LIMIT} attempts: ${url}`);
         return null;
@@ -104,17 +164,29 @@ async function runPool<T, R>(
 async function main() {
   const args = process.argv.slice(2);
   let startYear = 1990;
-  let endYear = 2026;
+  let endYear = new Date().getUTCFullYear() + 1;
   let merge = false;
+  let prune = false;
+  let concurrency = DEFAULT_CONCURRENCY;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--start-year") startYear = Number(args[++i]);
     else if (args[i] === "--end-year") endYear = Number(args[++i]);
     else if (args[i] === "--merge") merge = true;
+    else if (args[i] === "--prune") prune = true;
+    else if (args[i] === "--cache-dir") client.cacheDir = path.resolve(args[++i]);
+    else if (args[i] === "--concurrency") concurrency = Number(args[++i]);
+    else if (args[i] === "--interval-ms") client.intervalMs = Number(args[++i]);
     else throw new Error(`Unknown argument: ${args[i]}`);
   }
   if (!Number.isInteger(startYear) || !Number.isInteger(endYear) || startYear > endYear) {
     throw new Error(`Invalid year range: ${startYear}–${endYear}`);
+  }
+  if (!Number.isInteger(concurrency) || concurrency < 1) {
+    throw new Error(`Invalid concurrency: ${concurrency}`);
+  }
+  if (!Number.isInteger(client.intervalMs) || client.intervalMs < 0) {
+    throw new Error(`Invalid interval: ${client.intervalMs}`);
   }
 
   console.log(`Refreshing NHTSA source for years ${startYear}–${endYear}${merge ? " (merging into existing snapshot)" : ""}`);
@@ -134,7 +206,7 @@ async function main() {
   const failures: string[] = [];
 
   for (const vt of NHTSA_VEHICLE_TYPES) {
-    await runPool(years, CONCURRENCY, async (year) => {
+    await runPool(years, concurrency, async (year) => {
       const url = `${BASE}/GetMakesForVehicleType/${encodeURIComponent(vt.slug)}?year=${year}&format=json`;
       const data = await fetchJson<MakeResult>(url);
       if (data) {
@@ -183,7 +255,7 @@ async function main() {
   // Collect raw model rows: [year, makeId, modelId, modelName, vehicleTypeId]
   const rawModels: RawModel[] = [];
 
-  await runPool(work, CONCURRENCY, async ({ year, makeId, vehicleType }) => {
+  await runPool(work, concurrency, async ({ year, makeId, vehicleType }) => {
     const url = `${BASE}/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}/vehicleType/${encodeURIComponent(vehicleType.slug)}?format=json`;
     const data = await fetchJson<ModelResult>(url);
     if (data && data.Results.length > 0) {
@@ -206,19 +278,37 @@ async function main() {
     );
   }
 
-  // ---- Merge untouched years from the existing snapshot ----
-  if (merge) {
-    const existing = JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) as SourceCatalog;
+  // ---- Carry over untouched years, and keep what refreshed years published ----
+  const existing =
+    (merge || !prune) && fs.existsSync(OUT_PATH)
+      ? (JSON.parse(fs.readFileSync(OUT_PATH, "utf8")) as SourceCatalog)
+      : undefined;
+  if (existing) {
+    const fetched = new Set(
+      rawModels.map(([year, makeId, modelId, , type]) => `${year}:${makeId}:${modelId}:${type}`),
+    );
     let carried = 0;
+    let retained = 0;
     for (const [year, makeId, modelId, nameIndex, vehicleTypeId] of existing.models) {
-      if (year >= startYear && year <= endYear) continue;
+      const refreshed = year >= startYear && year <= endYear;
+      const keep = refreshed
+        ? !prune && !fetched.has(`${year}:${makeId}:${modelId}:${vehicleTypeId}`)
+        : merge;
+      if (!keep) continue;
       rawModels.push([year, makeId, modelId, existing.modelNames[nameIndex]!, vehicleTypeId]);
-      carried++;
+      if (refreshed) retained++;
+      else carried++;
     }
+    const usedMakeIds = new Set(rawModels.map(([, makeId]) => makeId));
     for (const make of existing.makes) {
-      if (!allMakes.has(make.make_id)) allMakes.set(make.make_id, make.make_name);
+      if (!allMakes.has(make.make_id) && (merge || usedMakeIds.has(make.make_id))) {
+        allMakes.set(make.make_id, make.make_name);
+      }
     }
-    console.log(`\nCarried over ${carried.toLocaleString()} entries from the existing snapshot`);
+    if (merge) console.log(`\nCarried over ${carried.toLocaleString()} entries from the existing snapshot`);
+    if (retained > 0) {
+      console.log(`Kept ${retained.toLocaleString()} published entries vPIC no longer lists (--prune drops them)`);
+    }
   }
 
   // ---- One name per model ID: vPIC occasionally renames a model (e.g. Polestar
