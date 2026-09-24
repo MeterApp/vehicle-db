@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
@@ -23,12 +23,28 @@
       "require": "./dist/search.js",
       "default": "./dist/search.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./resolve": {
+      "types": "./dist/resolve.d.ts",
+      "require": "./dist/resolve.js",
+      "default": "./dist/resolve.js"
+    },
+    "./identity": {
+      "types": "./dist/identity.d.ts",
+      "require": "./dist/identity.js",
+      "default": "./dist/identity.js"
+    }
   },
   "typesVersions": {
     "*": {
       "search": [
         "dist/search.d.ts"
+      ],
+      "resolve": [
+        "dist/resolve.d.ts"
+      ],
+      "identity": [
+        "dist/identity.d.ts"
       ]
     }
   },
@@ -38,7 +54,7 @@
   ],
   "scripts": {
     "build:db": "npm run build:data",
-    "build:data": "tsx scripts/build-db.ts",
+    "build:data": "tsx scripts/build-db.ts && tsx scripts/build-identities.ts",
     "refresh:nhtsa": "tsx scripts/import-nhtsa.ts",
     "refresh:uk-dft": "tsx scripts/import-uk-dft.ts",
     "refresh:nzta-asia-pacific": "tsx scripts/import-nzta-asia-pacific.ts",
@@ -49,7 +65,12 @@
     "build": "npm run build:ts",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
     "prepublishOnly": "npm run build",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:identities": "tsx scripts/build-identities.ts",
+    "check:compatibility": "tsx scripts/check-compatibility.ts",
+    "refresh:fueleconomy-us": "tsx scripts/import-fueleconomy-us.ts",
+    "refresh:reviewed": "tsx scripts/import-reviewed-models.ts data/evidence/manufacturer-reviewed.json",
+    "replay": "tsx scripts/replay-catalog.ts"
   },
   "keywords": [
     "nhtsa",

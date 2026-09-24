@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "id": "manufacturer-reviewed",
+    "name": "Reviewed manufacturer model-year catalogs",
+    "url": "https://www.kia.com/saudiarabia/en.html",
+    "license": "Source attribution (factual product names only)",
+    "region": "Saudi Arabia and United States",
+    "retrievedAt": "2026-09-24",
+    "description": "Individually reviewed marketed models and body derivatives with explicit model-year evidence. Evidence URLs and market scopes are retained in data/evidence/manufacturer-reviewed.json."
+  },
+  "records": [
+    {
+      "year": 2025,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Pegas",
+      "vehicleTypeId": 2,
+      "market": "SA",
+      "url": "https://www.kia.com/content/dam/kwcms/sa/en/files/trim/Pegas/LX-D389.pdf",
+      "note": "Manufacturer specification explicitly labels Pegas 2025 MY; Saudi distributor Aljabr."
+    },
+    {
+      "year": 2025,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "4 Series Coupe",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0439311EN_US/the-new-2025-bmw-4-series-coupe-and-convertible",
+      "note": "BMW USA explicitly identifies 2025 model year and the two body derivatives; facelift, not a new generation."
+    },
+    {
+      "year": 2025,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "4 Series Convertible",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0439311EN_US/the-new-2025-bmw-4-series-coupe-and-convertible",
+      "note": "BMW USA explicitly identifies 2025 model year and the two body derivatives; facelift, not a new generation."
+    },
+    {
+      "year": 2014,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "4 Series Coupe",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0142773EN_US/the-all-new-bmw-4-series-coupe",
+      "note": "BMW USA introduces the first-generation Coupe as model year 2014."
+    },
+    {
+      "year": 2023,
+      "makeId": 502,
+      "make": "LAMBORGHINI",
+      "model": "Huracan STO",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://preowned.lamborghini.com/en_gb/vdp/30004705-2023-Hurac%C3%A1n-EVO-LP-640-2-STO",
+      "note": "Lamborghini official pre-owned US dealer listing explicitly identifies model year 2023 STO; no VIN or individual vehicle data retained."
+    },
+    {
+      "year": 2024,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "4 Series Coupe",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://bmwtechinfo.bmwgroup.com/sib_attachments/B000223%20Attachment%205%202024%20BMW%20Group%20models%20reference%20guide%209_23.pdf",
+      "note": "BMW model-year 2024 reference guide lists G22 Coupe, G23 Convertible, and G26 Gran Coupe separately."
+    },
+    {
+      "year": 2024,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "4 Series Convertible",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://bmwtechinfo.bmwgroup.com/sib_attachments/B000223%20Attachment%205%202024%20BMW%20Group%20models%20reference%20guide%209_23.pdf",
+      "note": "BMW model-year 2024 reference guide lists G22 Coupe, G23 Convertible, and G26 Gran Coupe separately."
+    },
+    {
+      "year": 2024,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "4 Series Gran Coupe",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://bmwtechinfo.bmwgroup.com/sib_attachments/B000223%20Attachment%205%202024%20BMW%20Group%20models%20reference%20guide%209_23.pdf",
+      "note": "BMW model-year 2024 reference guide lists G22 Coupe, G23 Convertible, and G26 Gran Coupe separately."
+    }
+  ]
+}

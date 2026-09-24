@@ -1,0 +1,10 @@
+[
+  {"query":"2024 Toyota Camry","cohort":"synthetic","expectedStatus":"MATCHED"},
+  {"query":"2024 Chevrolet Silverado EV","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["Silverado","Silverado 1500"]},
+  {"query":"2026 Lamborghini Huracan STO","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED","forbiddenModelNames":["Huracan"]},
+  {"query":"2023 Lamborghini Huracán STO","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"MATCHED"},
+  {"query":"2024 BMW 4 Series Gran Coupe","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["4 Series Coupe"]},
+  {"query":"2024 BMW 4 Series Coupe unknown","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"UNRESOLVED_TOKENS"},
+  {"query":"2024 Toyota Camry","cohort":"synthetic","options":{"depth":"visual"},"expectedStatus":"GENERATION_UNRESOLVED"},
+  {"query":"2025 Kia Pegas","cohort":"synthetic","options":{"market":"SA"},"expectedStatus":"MATCHED"}
+]

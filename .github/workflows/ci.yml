@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -33,7 +35,15 @@ jobs:
       - name: Verify generated catalog
         run: |
           npm run build:data
-          git diff --exit-code -- data/compact.json src/data.ts
+          git diff --exit-code -- data/compact.json src/data.ts src/identity-data.ts
+
+      - name: Preserve published selections
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: npm run check:compatibility -- "$BASE_REF"
+
+      - name: Replay identity assertions
+        run: npm run replay
 
       - name: Test
         run: npm test

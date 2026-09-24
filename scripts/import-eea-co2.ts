@@ -1,3 +1,4 @@
+import { writeEuropeanEvidence } from "./source-evidence";
 /**
  * Refreshes the normalized European Environment Agency (EEA) source snapshot
  * from the CO2 emission monitoring registers for new passenger cars (M1) and
@@ -77,6 +78,10 @@ const REGISTERS = [
 ] as const;
 
 export interface EeaRow {
+  TAN?: string | null;
+  T?: string | null;
+  Va?: string | null;
+  Ve?: string | null;
   Year: number;
   /** Reporting country (ISO 3166-1 alpha-2). */
   MS: string | null;
@@ -139,7 +144,7 @@ async function query<T>(sql: string): Promise<T[]> {
 interface DiscoDataMetadata {
   name?: string;
   Name?: string;
-  Schemas?: { name?: string; Name?: string; Tables?: { Columns?: { table: string }[] }[] }[];
+  Schemas?: { name?: string; Name?: string; Tables?: { Columns?: { table: string; name?: string }[] }[] }[];
 }
 
 /**
@@ -170,26 +175,26 @@ export function selectYearTables(
   return new Map([...selected].map(([year, value]) => [year, value.table]));
 }
 
-async function listLatestTables(): Promise<string[]> {
+async function listLatestTables(): Promise<Map<string, string[]>> {
   console.log(`Discovering ${DATABASE} tables from ${DISCODATA_METADATA_URL}`);
   const databases = await fetchJson<DiscoDataMetadata[]>(DISCODATA_METADATA_URL);
   const database = databases.find((entry) => (entry.name ?? entry.Name) === DATABASE);
   const schema = database?.Schemas?.find((entry) => (entry.name ?? entry.Name) === SCHEMA);
   if (!schema) throw new Error(`Schema ${DATABASE}.${SCHEMA} not found in DiscoData metadata`);
-  const names = new Set<string>();
+  const names = new Map<string, string[]>();
   for (const table of schema.Tables ?? []) {
     const name = table.Columns?.[0]?.table;
-    if (name) names.add(name);
+    if (name) names.set(name, (table.Columns ?? []).flatMap(c => c.name ? [c.name] : []));
   }
-  return [...names];
+  return names;
 }
 
-export async function fetchRows(startYear: number, endYear: number): Promise<EeaRow[]> {
+export async function fetchRows(startYear: number, endYear: number, enriched = false): Promise<EeaRow[]> {
   const tableNames = await listLatestTables();
   const rows: EeaRow[] = [];
 
   for (const register of REGISTERS) {
-    const yearTables = selectYearTables(tableNames, register.table);
+    const yearTables = selectYearTables([...tableNames.keys()], register.table);
     const combinedYears = await query<{ Year: number }>(
       `SELECT DISTINCT Year FROM [${DATABASE}].[${SCHEMA}].[${register.table}]`,
     );
@@ -201,9 +206,11 @@ export async function fetchRows(startYear: number, endYear: number): Promise<Eea
     for (let year = startYear; year <= endYear; year++) {
       if (!availableYears.has(year)) continue;
       const table = yearTables.get(year) ?? register.table;
+      const extras = enriched ? ["TAN", "T", "Va", "Ve"].filter(field => tableNames.get(table)?.includes(field)) : [];
+      const fields = ["Year", "MS", "Mk", "Cn", "Ct", "Cr", ...extras].join(", ");
       const sql =
-        `SELECT Year, MS, Mk, Cn, Ct, Cr, COUNT(*) AS n FROM [${DATABASE}].[${SCHEMA}].[${table}]` +
-        ` WHERE Year = ${year} GROUP BY Year, MS, Mk, Cn, Ct, Cr`;
+        `SELECT ${fields}, COUNT(*) AS n FROM [${DATABASE}].[${SCHEMA}].[${table}]` +
+        ` WHERE Year = ${year} GROUP BY ${fields} ORDER BY ${fields}`;
       const yearRows = await query<EeaRow>(sql);
       console.log(`${table} ${year}: ${yearRows.length.toLocaleString()} grouped rows`);
       rows.push(...yearRows.map((row) => ({ ...row, register: register.table })));
@@ -346,6 +353,7 @@ export function buildSourceCatalog(
 }
 
 function parseArguments(): {
+  evidenceOutPath?: string;
   inputPath?: string;
   rawOutPath?: string;
   outPath: string;
@@ -356,6 +364,7 @@ function parseArguments(): {
   prune: boolean;
 } {
   const args = process.argv.slice(2);
+  let evidenceOutPath: string | undefined;
   let inputPath: string | undefined;
   let rawOutPath: string | undefined;
   let outPath = DEFAULT_OUT_PATH;
@@ -366,7 +375,8 @@ function parseArguments(): {
   let prune = false;
 
   for (let index = 0; index < args.length; index++) {
-    if (args[index] === "--input") inputPath = path.resolve(args[++index]);
+    if (args[index] === "--evidence-out") evidenceOutPath = path.resolve(args[++index]);
+    else if (args[index] === "--input") inputPath = path.resolve(args[++index]);
     else if (args[index] === "--raw-out") rawOutPath = path.resolve(args[++index]);
     else if (args[index] === "--out") outPath = path.resolve(args[++index]);
     else if (args[index] === "--start-year") startYear = Number(args[++index]);
@@ -386,15 +396,16 @@ function parseArguments(): {
   if (!Number.isInteger(minCountries) || minCountries < 1) {
     throw new Error(`Invalid minimum countries: ${minCountries}`);
   }
-  return { inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries, prune };
+  return { evidenceOutPath, inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries, prune };
 }
 
 async function main(): Promise<void> {
-  const { inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries, prune } =
+  const { evidenceOutPath, inputPath, rawOutPath, outPath, startYear, endYear, minCount, minCountries, prune } =
     parseArguments();
   const rows = inputPath
     ? (JSON.parse(fs.readFileSync(inputPath, "utf8")) as EeaRow[])
-    : await fetchRows(startYear, endYear);
+    : await fetchRows(startYear, endYear, !!evidenceOutPath);
+  if (evidenceOutPath) writeEuropeanEvidence(evidenceOutPath, "eea-co2-monitoring", SOURCE_PAGE, rows);
   if (rawOutPath) {
     fs.mkdirSync(path.dirname(rawOutPath), { recursive: true });
     fs.writeFileSync(rawOutPath, JSON.stringify(rows));

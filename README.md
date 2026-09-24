@@ -4,9 +4,9 @@
 ![license](https://img.shields.io/npm/l/@meterapp/vehicle-db)
 [![playground](https://img.shields.io/badge/playground-carimage.dev-black)](https://carimage.dev/playground?ref=catalog)
 
-An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, and U.S. models listed by FuelEconomy.gov but not by vPIC into one small, zero-dependency API. It never makes runtime network requests.
+An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,603 makes**, **37,048 model names**, and **210,659 deduplicated model-year entries** from **9 data sources**.
+The current snapshot spans **1990–2027** and includes **1,607 makes**, **38,831 model names**, and **215,446 deduplicated model-year entries** from **11 data sources**.
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
 
@@ -14,7 +14,7 @@ The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Tru
 
 This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (six camera angles, 15 colors, PNG/WebP/JPG, $1 per 1,000 images). Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse vehicles at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
 
-**Missing a vehicle?** Add it here and it becomes renderable in the API on the next release — see [CONTRIBUTING.md](CONTRIBUTING.md).
+**Missing a vehicle?** Add its source-backed identity here; downstream image support and asset sharing are validated separately — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Install
 
@@ -151,6 +151,34 @@ For the simplest driver experience:
 
 Applications with regional telemetry can request more candidates and rerank **within the same `matchKind`**. Text quality and market compatibility should remain ahead of behavioral popularity so an exact result never loses to an unrelated popular vehicle.
 
+## Conservative identity resolution
+
+`@meterapp/vehicle-db/resolve` is an optional, offline entry point separate from autocomplete:
+
+```typescript
+import { resolveVehicle } from "@meterapp/vehicle-db/resolve";
+
+const result = resolveVehicle("2024 BMW 4 Series Gran Coupé", {
+  market: "US",
+  yearBasis: "model-year",
+  depth: "visual",
+});
+if (result.status === "MATCHED") {
+  // Identity is established; the application must still find an appropriate asset.
+  console.log(result.selection.lineage, result.selection.visualIdentityIds);
+}
+```
+
+Queries use an optional leading year, followed by make and full model phrase. With `makeId`, the make can be omitted. Only exact normalized phrases and reviewed aliases resolve; autocomplete/fuzzy candidates never silently become resolved identities. Unknown suffixes remain `UNRESOLVED_TOKENS`. Options also include `year`, `vehicleTypeId`, and `sourceId`.
+
+`depth` defaults to `catalog`: a match at this depth establishes catalog presence only, with the source's documented year semantics. Request `generation`, `derivative`, or `visual` for stricter evidence. The curated identity graph is intentionally sparse: most catalog rows return `GENERATION_UNRESOLVED` at visual depth. `MATCHED` includes a `selection`; all results include `candidates`, `unresolvedTokens`, and the identity revision. Missing market/year context cannot satisfy restricted evidence, and overlapping generations remain ambiguous. No nearby year is substituted.
+
+The graph uses **make → line → generation → derivative → specification**, with visual identities for bodies and appearance revisions. BMW Coupe, Convertible and Gran Coupe remain distinct; the 2014 generation and 2024/2025 appearance revisions do not share images implicitly. Aliases such as Prado and the reviewed Macan misspelling resolve only the line, not a generation or render.
+
+`@meterapp/vehicle-db/identity` exports the graph types and `evaluateVisualCompatibility`. The latter evaluates direct, directional, scoped allow/deny rules: missing rules return `unknown`, an applicable deny wins, and approvals are never reversed or chained. It is a portable fact evaluator, not an asset database. Applications own reviewed asset bindings and final sharing policy. No asset-sharing approvals are bundled in this release.
+
+Raw configuration and homologation evidence stays in build-time sidecars under `data/evidence/`, outside the npm bundle. See [the implementation plan](docs/catalog-update-plan.md) and [source investigation](docs/source-investigation.md).
+
 ## API
 
 ### `getDataSources(): DataSource[]`
@@ -271,6 +299,11 @@ FuelEconomy.gov attribution: GT2 Stradale and MCPURA Spyder are factual 2026 mod
 
 RDW source attribution: Open Data RDW (Dienst Wegverkeer), public domain. The register only contains vehicles currently licensed in the Netherlands, is republished daily, and is the freshest European source in the catalog. The same brand and model-name normalization as the EEA source is applied, plus a minimum of three vehicles per make/model/year to drop typos; RDW vehicle kinds map as Personenauto → Passenger Car, Bedrijfsauto → Truck, Bus → Bus, and Motorfiets → Motorcycle.
 
+New sources in 2.13.0:
+
+- [FuelEconomy.gov bulk feed](https://www.fueleconomy.gov/feg/ws/): 2022–2027 model-year configurations; U.S. government public data. The legacy Maserati source remains independently addressable. Configuration suffixes are preserved, with a reviewed separator-only normalization for Mercedes-Benz AMG G63.
+- Reviewed manufacturer evidence: eight model-year records for Saudi Kia Pegas and U.S. BMW body derivatives / Lamborghini STO. Factual names only, with per-record URLs and market/year rationale in `data/evidence/manufacturer-reviewed.json`. GSO/SASO bulk data is not bundled; access/permission dependencies are documented in the source investigation.
+
 ## Factory colors
 
 Factory paint availability is not included. The NZTA and Malaysia records contain the observed basic color of each registered vehicle, not the manufacturer’s stock colors for a make/model/year. Treating those fields as factory availability would produce false positives from repaints, imports, and broad color categories, so the importers intentionally omit them. A future color API should require manufacturer-backed paint options with explicit market and model-year provenance.
@@ -280,12 +313,12 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | | |
 |---|---:|
 | Years | 1990–2027 |
-| Sources | 9 |
+| Sources | 11 |
 | Vehicle types | 7 |
-| Makes | 1,603 |
-| Model names | 37,048 |
-| Deduplicated model-year entries | 210,659 |
-| Bundled TypeScript data | 7.26 MB |
+| Makes | 1,607 |
+| Model names | 38,831 |
+| Deduplicated model-year entries | 215,446 |
+| Bundled TypeScript data | 7.46 MB |
 
 ## Refreshing and rebuilding
 
@@ -307,12 +340,27 @@ npm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2027
 npm run refresh:malaysia-jpj -- --start-year 2015 --end-year 2026
 npm run refresh:eea-co2 -- --start-year 2010 --end-year 2026
 npm run refresh:rdw-nl -- --start-year 1990 --end-year 2026
+npm run refresh:fueleconomy-us -- --start-year 2022 --end-year 2027
+npm run refresh:reviewed
 npm run build:data
 ```
 
 **A refresh only adds.** Registers drop scrapped vehicles, count thresholds move between releases, and manufacturers re-file model years in vPIC (the 2026 Maserati MC20 became the MCPura in September 2026), but an application may already store a year/make/model this package published. Every importer therefore keeps the entries its previous snapshot published and the source no longer reports, and logs how many it kept; pass `--prune` to drop them deliberately, for example to remove a source error. Model-year sources run a year ahead of the calendar, so the NHTSA and NZTA importers default to ending next year; registration sources end with the current year.
 
 The NHTSA API rate-limits aggressively: past a few requests a second its CDN answers HTTP 403 to every request from the address for an hour or more. The importer spaces requests (`--concurrency 2`, `--interval-ms 500` by default), stops at the first sustained 403 instead of retrying into the block, and with `--cache-dir` keeps every answer it already received, so rerunning the same command later resumes where it stopped. A full NHTSA refresh can take hours; to refresh recent model years, fetch only those years and merge them into the existing snapshot with `--merge`, as above. The UK importer downloads the two official VEH0124 CSV files. The NZTA importer discovers the current official ArcGIS service and requests distinct records for supported vehicle types and Asian countries of origin. The Malaysia importer downloads annual JPJ CSVs and aggregates individual transactions into unique model/registration-year records. The EEA importer discovers the current final and provisional register tables from the EEA DiscoData catalogue and asks its public SQL endpoint for make/commercial-name counts grouped by reporting country and year, so it never downloads the individual registration records; `--min-countries` and `--min-count` tune the noise filter. The RDW importer asks the Socrata API for make/commercial-name counts per year of first admission, one request per year, so a refresh takes about ten minutes and can be run any day to pick up the latest registrations. Importers assign deterministic numeric IDs, write normalized snapshots, and discard temporary raw downloads.
+
+## Evidence and regression checks
+
+```bash
+npm run refresh:rdw-nl -- --start-year 2026 --end-year 2026 --evidence-out .cache/rdw-evidence.json
+npm run refresh:eea-co2 -- --start-year 2024 --end-year 2024 --evidence-out .cache/eea-evidence.json
+npx tsx scripts/reconcile-source.ts
+npm run check:compatibility -- <prior-release-git-ref>
+npm run replay
+npm run replay -- /private/replay.json /private/report.json
+```
+
+Replay cases contain `query` (or `make`, `model`, `year`), `cohort` (`customer`, `synthetic`, `haraj-sweep`), optional `n`, resolver `options`, `expectedStatus`, and `forbiddenModelNames`. Reports record catalog, fixture and resolver hashes, commit/version, and separate cohort totals. Unreviewed matches measure resolution coverage only; they do not establish render correctness. Synthetic cohorts have zero demand weight. Never commit customer exports.
 
 ## License
 

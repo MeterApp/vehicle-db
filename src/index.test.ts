@@ -119,6 +119,8 @@ describe("getDataSources", () => {
       RDW_NL_SOURCE_ID,
       "hyundai-brazil-catalog",
       "fueleconomy-maserati-us",
+      "fueleconomy-us",
+      "manufacturer-reviewed",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
@@ -441,8 +443,8 @@ describe("getModels", () => {
     const named = (name: string) => models.find((model) => model.modelName.toUpperCase() === name);
     expect(named("MC20")?.modelId).toBe(28982);
     expect(named("MCPURA")?.modelId).toBe(38002);
-    expect(named("MCPURA SPYDER")?.sourceIds).toEqual(["fueleconomy-maserati-us"]);
-    expect(named("GT2 STRADALE")?.sourceIds).toEqual(["fueleconomy-maserati-us"]);
+    expect(named("MCPURA SPYDER")?.sourceIds).toEqual(["fueleconomy-maserati-us", "fueleconomy-us"]);
+    expect(named("GT2 STRADALE")?.sourceIds).toEqual(["fueleconomy-maserati-us", "fueleconomy-us"]);
   });
 
   it.each([

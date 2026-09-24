@@ -33,6 +33,9 @@ export interface VehicleSearchVariant {
   sourceIds: string[];
 }
 
+/** Clearer name for the existing year-specific selection; variants remains compatible. */
+export type VehicleSearchSelection = VehicleSearchVariant;
+
 export interface VehicleModelSearchResult extends VehicleSearchResultBase {
   kind: "model";
   modelName: string;
