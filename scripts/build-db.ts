@@ -26,6 +26,7 @@ const SOURCE_PRIORITY = [
   "rdw-nl-vehicle-register",
   "hyundai-brazil-catalog",
   "fueleconomy-maserati-us",
+  "fueleconomy-us",
 ];
 // Preserve previously shipped make IDs as source coverage expands, so stored
 // selections remain valid even when an earlier-priority source gains a make.
