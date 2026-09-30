@@ -6,13 +6,13 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,607 makes**, **38,831 model names**, and **215,446 deduplicated model-year entries** from **11 data sources**.
+The current snapshot spans **1990–2027** and includes **1,595 makes** and **41,838 models** in **194,288 model years**, from **11 data sources**. Those are distinct vehicles by name, with case, accents and punctuation ignored, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,607 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles.
 
 ## Demo and playground
 
-This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (six camera angles, 15 colors, PNG/WebP/JPG, $1 per 1,000 images). Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse vehicles at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
+This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (eight camera views, any paint color, PNG/WebP/JPG up to 1024 px, 1 credit per image with 100 free credits to start; see [pricing](https://carimage.dev/pricing?ref=catalog)). Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse every make and model at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
 
 **Missing a vehicle?** Add its source-backed identity here; downstream image support and asset sharing are validated separately — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -315,9 +315,12 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | Years | 1990–2027 |
 | Sources | 11 |
 | Vehicle types | 7 |
-| Makes | 1,607 |
-| Model names | 38,831 |
-| Deduplicated model-year entries | 215,446 |
+| Makes | 1,595 |
+| Models | 41,838 |
+| Model years | 194,288 |
+| Make records (`getMakes()`) | 1,607 |
+| Model records (distinct `modelId`) | 46,120 |
+| Model-year records (`getModels()`) | 215,446 |
 | Bundled TypeScript data | 7.46 MB |
 
 ## Refreshing and rebuilding
