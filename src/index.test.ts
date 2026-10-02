@@ -16,6 +16,7 @@ const NZTA_ASIA_SOURCE_ID = "nzta-asia-pacific-mvr";
 const MALAYSIA_JPJ_SOURCE_ID = "malaysia-jpj-registrations";
 const EEA_CO2_SOURCE_ID = "eea-co2-monitoring";
 const RDW_NL_SOURCE_ID = "rdw-nl-vehicle-register";
+const SENATRAN_BR_SOURCE_ID = "senatran-br-renavam";
 const ATUL_AUTO_MODELS = [
   "RIK",
   "RIK+",
@@ -121,6 +122,7 @@ describe("getDataSources", () => {
       "fueleconomy-maserati-us",
       "fueleconomy-us",
       "manufacturer-reviewed",
+      SENATRAN_BR_SOURCE_ID,
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
@@ -157,6 +159,28 @@ describe("getDataSources", () => {
     expect(rdwSource.vehicleTypeIds).toEqual([1, 2, 3, 5]);
     expect(rdwSource.yearFrom).toBe(1990);
     expect(rdwSource.yearTo).toBeGreaterThanOrEqual(2026);
+
+    const brazilSource = sources.find((source) => source.sourceId === SENATRAN_BR_SOURCE_ID)!;
+    expect(brazilSource.license).toBe("Public Domain");
+    expect(brazilSource.region).toBe("Brazil");
+    expect(brazilSource.vehicleTypeIds).toEqual([1, 2, 3, 5, 7]);
+    expect(brazilSource.yearFrom).toBe(1990);
+    expect(brazilSource.yearTo).toBeGreaterThanOrEqual(2026);
+  });
+
+  it("lists Brazilian models from the RENAVAM register", () => {
+    const models = (makeName: string, year: number) => {
+      const make = getMakes({ year, sourceId: SENATRAN_BR_SOURCE_ID }).find(
+        (candidate) => candidate.makeName === makeName,
+      )!;
+      return getModels({ makeId: make.makeId, year, sourceId: SENATRAN_BR_SOURCE_ID }).map(
+        (model) => model.modelName.toUpperCase(),
+      );
+    };
+    expect(models("FIAT", 2024)).toEqual(expect.arrayContaining(["ARGO", "MOBI", "STRADA", "TORO"]));
+    expect(models("VOLKSWAGEN", 2010)).toEqual(expect.arrayContaining(["GOL", "SAVEIRO", "VOYAGE"]));
+    expect(models("RENAULT", 2024)).toContain("KWID");
+    expect(models("HONDA", 2024)).toEqual(expect.arrayContaining(["BIZ", "CG", "POP"]));
   });
 });
 
