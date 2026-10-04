@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.13.1",
+  "version": "2.14.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
@@ -61,6 +61,7 @@
     "refresh:malaysia-jpj": "tsx scripts/import-malaysia-jpj.ts",
     "refresh:eea-co2": "tsx scripts/import-eea-co2.ts",
     "refresh:rdw-nl": "tsx scripts/import-rdw-nl.ts",
+    "refresh:senatran-br": "tsx scripts/import-senatran-br.ts",
     "build:ts": "tsc",
     "build": "npm run build:ts",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
@@ -91,6 +92,9 @@
     "china",
     "europe",
     "netherlands",
+    "brazil",
+    "senatran",
+    "renavam",
     "byd",
     "international",
     "offline"

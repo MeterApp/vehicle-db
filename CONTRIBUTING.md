@@ -24,7 +24,10 @@ app that needs an offline make/model/year list. The image API consumes this cata
    entries the previous snapshot published and the source no longer reports
    are kept, because applications store the year/make/model they were given.
    Pass `--prune` only to remove a source error, and say so in the pull
-   request.
+   request. Brazilian models come from the SENATRAN register through the
+   reviewed table in `scripts/senatran-br-models.ts`: to add one, add its
+   RENAVAM make/model prefix there (`npm run refresh:senatran-br` logs the
+   largest unmapped families) and refresh.
 
 3. **Add a small curated source when no dataset exists.** Follow
    `data/sources/atul-auto.json`: give the source an `sourceId`, `sourceName`,
