@@ -1,5 +1,10 @@
 # Source investigation — September 24, 2026
 
+For the October 12 mail-driven audit, Brazilian coverage checks, and manufacturer
+sources for Vietnamese, Indian and variant gaps, see
+[Vehicle coverage source plan](mail-coverage-source-plan.md) and its
+[candidate inventory](../data/evidence/coverage-source-candidates.json).
+
 ## GCC
 
 [GSO's guide](https://www.gso.org.sa/cc/mv-fuel-economy-guide) is accessible, but its [terms](https://www.gso.org.sa/en/contact-gso/terms-of-use/) require prior written consent for copying/saving site content into data extraction systems. No GSO dataset is bundled or bulk importer enabled. Permission is an external dependency.

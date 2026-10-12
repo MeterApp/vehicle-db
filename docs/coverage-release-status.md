@@ -1,0 +1,13 @@
+# Coverage additions for vehicle db 2.15.0
+
+This release adds 28 individually evidenced year/model/type records while preserving all published make/model IDs and first selections. Eleven records have explicit manufacturer model-year evidence. Seventeen records use a separate dated manufacturer catalog source: their years mean marketed calendar years, not model years or years of manufacture. Evidence, market and rationale remain in `data/evidence/manufacturer-reviewed.json`.
+
+The additions include modern Defender 130 MY2023, Defender OCTA MY2025, Range Rover Sport SV MY2024, Cayenne Electric MY2026, Indian Meridian, Dominar 250/400 and Tata Tiago, Tiago EV, Tigor and Altroz. Dated market facts cover EC Van, Vietnam Custin, Viloran, Teramont X, Lynk & Co 03/03+/05/06/09, selected Maruti and Mahindra models, and TVS King EV Max. Remaining Indian source candidates, Lynk & Co 07, generic Song and unverified editions are pending; no historical ranges are inferred.
+
+The identity graph distinguishes the reviewed G60 generation, modern and historical Defender generations, extended Defender 130 body, OCTA, Sport SV and Cayenne Electric appearance identities. Dated catalog-only facts remain unresolved at visual depth. The strict resolver preserves a plus badge, so 03 and 03+ are distinct. No visual compatibility allow rules or implicit image sharing were added.
+
+Before the release, all 23 requested Brazilian model names were checked through the local public API and the deployed catalog. Every name is present. Spin retains type 7 and Saveiro type 3. The deployed server manifest already requests vehicle-db 2.14.0; its live catalog includes the Brazil additions. The local server install was stale at 2.11.0 and is not evidence of the deployed package version.
+
+Representative front three-quarter silver renders returned successfully and were visually inspected for all eleven originally missing Brazilian families. Ten checks use 2022; Prisma uses 2019. These are representative validation years, not supplied driver years. Exact driver-year validation remains dependent on a customer vehicle list. This verification establishes representative image delivery and family appearance, not accuracy for every factory trim or regional facelift.
+
+Checks: generated snapshots, importer and identity tests, complete test suite, TypeScript checks, build, compatibility against v2.14.0 and synthetic resolution replay. The compatibility comparison found 28 additions and zero removed records, changed IDs, changed makes or changed first selections. Downstream adoption and request notifications are operational work in the server repository; private request exports and customer identifiers are not bundled here.

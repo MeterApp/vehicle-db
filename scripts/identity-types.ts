@@ -30,7 +30,7 @@ export function validateIdentityGraph(graph: IdentityGraph, catalog: CatalogSnap
   const scope = (s: IdentityScope) => {
     if (s.years && (!s.years.length || s.years.some(y => !Number.isInteger(y) || y < 1886 || y > 2200) || !s.yearBasis)) fail("invalid year scope/basis");
     if (s.markets && (!s.markets.length || s.markets.some(m => !/^[A-Z]{2}$/.test(m)))) fail("invalid market scope");
-    if (s.yearBasis && !["model-year", "manufacture-year", "registration-year", "first-admission-year"].includes(s.yearBasis)) fail("invalid year basis");
+    if (s.yearBasis && !["model-year", "manufacture-year", "registration-year", "first-admission-year", "catalog-year"].includes(s.yearBasis)) fail("invalid year basis");
   };
   for (const e of graph.evidence) {
     if (!/^https:\/\//.test(e.url) || !e.sourceId || !/^\d{4}-\d{2}-\d{2}$/.test(e.retrievedAt) || !e.note) fail(`invalid evidence ${e.id}`);

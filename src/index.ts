@@ -17,6 +17,8 @@ export interface DataSource {
   region: string;
   description: string;
   retrievedAt: string;
+  /** Present on reviewed catalogs; catalog-year means marketed during that year, not model year. */
+  yearBasis?: "model-year" | "catalog-year";
   vehicleTypeIds: number[];
   yearFrom: number;
   yearTo: number;
@@ -123,6 +125,7 @@ export function getDataSources(): DataSource[] {
     region: source.region,
     description: source.description,
     retrievedAt: source.retrieved_at,
+    ...(source.year_basis ? { yearBasis: source.year_basis } : {}),
     vehicleTypeIds: [...source.vehicle_type_ids],
     yearFrom: source.year_from,
     yearTo: source.year_to,

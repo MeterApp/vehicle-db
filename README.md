@@ -6,7 +6,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, Brazil's national vehicle register, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,600 makes** and **41,975 models** in **196,336 model years**, from **12 data sources**. Those are distinct vehicles by name, with case, accents and punctuation ignored, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,612 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
+The current snapshot spans **1990–2027** and includes **1,601 makes** and **42,002 models** in **196,364 model years**, from **13 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,613 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles. The Brazilian register adds the cars and motorcycles that fill Brazil's roads but are rarely sold elsewhere, such as the Fiat Argo, Mobi and Toro, the Volkswagen Gol and Saveiro, the Renault Kwid, and the Honda Biz and Pop.
 
@@ -295,6 +295,7 @@ Model results contain `years` and a year-specific `variants` array. Make results
 | [Brazil SENATRAN national vehicle register (RENAVAM)](https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam) | 5,533 car, pickup, van, SUV, minibus, and motorcycle model/manufacture-year records from 45 makes, mapped from Brazil's registered fleet; 1990–2026 | [Public domain (dados.transportes.gov.br)](https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam) |
 | [Hyundai Motor Brasil line-up](https://www.hyundai.com.br/) | The Brazil-exclusive HB20 family (HB20 hatchback, HB20S sedan, HB20X crossover), 40 model-year records; Brazilian model years 2013–2027 | Source attribution; factual product names only |
 | [FuelEconomy.gov](https://www.fueleconomy.gov/) (U.S. DOE/EPA) | U.S. models the fuel-economy catalog lists as distinct models but vPIC does not list under any model year: the 2026 Maserati GT2 Stradale and MCPURA Spyder, 2 model-year records | U.S. government public data |
+| [Reviewed dated manufacturer market catalogs](https://lynkco.com.vn/en) | Individually documented marketed years in Vietnam and India; includes regional MPVs, Lynk & Co models, Indian passenger cars and TVS King EV Max | Source attribution; factual product names only |
 
 Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, registration year for Malaysia JPJ, the reporting (registration) year for the EEA register, the year of first admission (first registration anywhere, so imported used vehicles keep their original year) for the Dutch RDW register, the year of manufacture on the registration certificate (ano de fabricação) for the Brazilian SENATRAN register, the Brazilian model year (ano/modelo) for the Hyundai Motor Brasil line-up, and the U.S. model year for FuelEconomy.gov. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
 
@@ -317,6 +318,12 @@ New sources in 2.13.0:
 - [FuelEconomy.gov bulk feed](https://www.fueleconomy.gov/feg/ws/): 2022–2027 model-year configurations; U.S. government public data. The legacy Maserati source remains independently addressable. Configuration suffixes are preserved, with a reviewed separator-only normalization for Mercedes-Benz AMG G63.
 - Reviewed manufacturer evidence: eight model-year records for Saudi Kia Pegas and U.S. BMW body derivatives / Lamborghini STO. Factual names only, with per-record URLs and market/year rationale in `data/evidence/manufacturer-reviewed.json`. GSO/SASO bulk data is not bundled; access/permission dependencies are documented in the source investigation.
 
+## Dated manufacturer catalogs
+
+The reviewed manufacturer sources now include focused US, Indian and Vietnamese additions. `manufacturer-reviewed` carries explicit model-year evidence; `manufacturer-reviewed-catalog` uses **catalog years**: a model was marketed during a specific year documented by a dated sales offer, sales bulletin or manufacturer catalog. These calendar years are not model years or years of manufacture. `getDataSources().yearBasis` identifies these reviewed sources; the per-row market and rationale remain in `data/evidence/manufacturer-reviewed.json`.
+
+For scoped resolution of a dated catalog record, pass `yearBasis: "catalog-year"` and its evidenced market. Catalog presence does not establish a generation, facelift, derivative or render; requesting visual depth remains unresolved without reviewed appearance evidence. Lynk & Co 03 and 03+ stay distinct, as do Defender OCTA, Range Rover Sport SV and Cayenne Electric from their base models. The regional additions cover only individually evidenced years; 07, generic Song and unverified editions remain pending in [the source plan](docs/mail-coverage-source-plan.md).
+
 ## Factory colors
 
 Factory paint availability is not included. The NZTA and Malaysia records contain the observed basic color of each registered vehicle, not the manufacturer’s stock colors for a make/model/year. Treating those fields as factory availability would produce false positives from repaints, imports, and broad color categories, so the importers intentionally omit them. A future color API should require manufacturer-backed paint options with explicit market and model-year provenance.
@@ -326,14 +333,14 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | | |
 |---|---:|
 | Years | 1990–2027 |
-| Sources | 12 |
+| Sources | 13 |
 | Vehicle types | 7 |
-| Makes | 1,600 |
-| Models | 41,975 |
-| Model years | 196,336 |
-| Make records (`getMakes()`) | 1,612 |
-| Model records (distinct `modelId`) | 46,407 |
-| Model-year records (`getModels()`) | 217,830 |
+| Makes | 1,601 |
+| Models | 42,002 |
+| Model years | 196,364 |
+| Make records (`getMakes()`) | 1,613 |
+| Model records (distinct `modelId`) | 46,435 |
+| Model-year records (`getModels()`) | 217,858 |
 | Bundled TypeScript data | 7.55 MB |
 
 ## Refreshing and rebuilding

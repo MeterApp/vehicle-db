@@ -5,9 +5,10 @@
     "name": "Reviewed manufacturer model-year catalogs",
     "url": "https://www.kia.com/saudiarabia/en.html",
     "license": "Source attribution (factual product names only)",
-    "region": "Saudi Arabia and United States",
-    "retrievedAt": "2026-09-24",
-    "description": "Individually reviewed marketed models and body derivatives with explicit model-year evidence. Evidence URLs and market scopes are retained in data/evidence/manufacturer-reviewed.json."
+    "region": "Saudi Arabia, United States and India",
+    "retrievedAt": "2026-10-12",
+    "description": "Individually reviewed marketed models and body derivatives with explicit model-year evidence. Evidence URLs and market scopes are retained in data/evidence/manufacturer-reviewed.json.",
+    "yearBasis": "model-year"
   },
   "records": [
     {
@@ -89,6 +90,324 @@
       "market": "US",
       "url": "https://bmwtechinfo.bmwgroup.com/sib_attachments/B000223%20Attachment%205%202024%20BMW%20Group%20models%20reference%20guide%209_23.pdf",
       "note": "BMW model-year 2024 reference guide lists G22 Coupe, G23 Convertible, and G26 Gran Coupe separately."
+    },
+    {
+      "year": 2023,
+      "makeId": 444,
+      "make": "LAND ROVER",
+      "model": "Defender 130",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://static.nhtsa.gov/odi/rcl/2023/RCRIT-23V137-8571.pdf",
+      "note": "JLR recall technical questions explicitly identify 2023 model-year Defender 130 and third-row seating; modern L663 body. Manufacturer document hosted by NHTSA.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 444,
+      "make": "LAND ROVER",
+      "model": "Defender OCTA",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://media.jlr.com/corporate/en-us/news/2024/04/groundbreaking-new-defender-octa-will-be-revealed-july-3-following-exclusive-client",
+      "note": "JLR explicitly allocates Defender OCTA to North American Model Year 2025. Distinct performance derivative; no base Defender substitution.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 444,
+      "make": "LAND ROVER",
+      "model": "Range Rover Sport SV",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://media.jlr.com/range-rover/en-us/news/2023/05/new-range-rover-sport-sv-modern-luxury-performance-flagship",
+      "note": "JLR US introduces SV as new for 2024 in the Range Rover Sport model-year update; EDITION ONE performance flagship with distinct chassis/body features, not SVR.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 584,
+      "make": "PORSCHE",
+      "model": "Cayenne Electric",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://newsroom.porsche.com/en_US/2025/products/new-porsche-all-rounder-Cayenne-nameplate-expands-portfolio-to-include-electrification-41132.html",
+      "note": "Porsche USA explicitly introduces the 2026 Cayenne Electric SUV alongside separate combustion and plug-in hybrid variants.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 483,
+      "make": "JEEP",
+      "model": "Meridian",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.jeep-india.com/press-release/jeep-introduces-the-all-new-2025-meridian-with-updated-features-and-more-variants.html",
+      "note": "Jeep India explicitly calls the range MY25; seven-seat SUV derivative sold in India.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Dominar 250",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/corporate/media-centre/press-releases/2025-dominar-launched-with-ride-by-wire-ride-modes-and-touring-accessories",
+      "note": "Bajaj explicitly names the 2025 Dominar 250 and 400 models in its July 4, 2025 India launch release; the two engine models remain distinct.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Dominar 400",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/corporate/media-centre/press-releases/2025-dominar-launched-with-ride-by-wire-ride-modes-and-touring-accessories",
+      "note": "Bajaj explicitly names the 2025 Dominar 250 and 400 models in its July 4, 2025 India launch release; the two engine models remain distinct.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 11366,
+      "make": "VINFAST",
+      "model": "EC Van",
+      "vehicleTypeId": 3,
+      "market": "VN",
+      "url": "https://static-cms-prod.vinfastauto.com/20250603_thong-bao-chinh-sach-thuc-day-ban-hang-thang-05.2025.pdf",
+      "note": "VinFast May 2025 sales policy explicitly offers EC Van preorders May 25-30, 2025. Cargo van; marketed catalog year only, not MY2025 proof.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Custin",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://thegioiphuongtien.vn/uploaded/2024/Thang%202/News/TGPT%20-%20TC%20Group%20thong%20bao%20doanh%20so%20ban%20hang%20xe%20o%20to%20Hyundai%20thang%201%20nam%202024.pdf",
+      "note": "TC Group manufacturer/distributor sales bulletin explicitly records Custin sales in January 2024. Primary authored bulletin mirrored by publication; catalog sales year, not model year. Official VN spelling Custin; Custo alias remains unreviewed.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 482,
+      "make": "VOLKSWAGEN",
+      "model": "Viloran",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://newsletter.vw.com.vn/wp-content/uploads/2025/06/NEWSLETTER-T6_1080x1920-1.pdf",
+      "note": "Volkswagen Vietnam June 2025 newsletter includes this marketed model; calendar catalog year, not MY. Viloran MPV and Teramont X SUV body identities stay separate from Teramont.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 482,
+      "make": "VOLKSWAGEN",
+      "model": "Teramont X",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://newsletter.vw.com.vn/wp-content/uploads/2025/06/NEWSLETTER-T6_1080x1920-1.pdf",
+      "note": "Volkswagen Vietnam June 2025 newsletter includes this marketed model; calendar catalog year, not MY. Viloran MPV and Teramont X SUV body identities stay separate from Teramont.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 3885285967,
+      "make": "LYNK&CO",
+      "model": "03+",
+      "vehicleTypeId": 2,
+      "market": "VN",
+      "url": "https://lynkco.com.vn/tu-hao-tien-buoc-uu-dai-but-pha-cung-lynk-co-thang-9-2025",
+      "note": "Official Vietnam sales offer explicitly applies September 1-30, 2025 and names this model. Catalog marketed year only; 03+ is distinct from 03.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 3885285967,
+      "make": "LYNK&CO",
+      "model": "05",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://lynkco.com.vn/tu-hao-tien-buoc-uu-dai-but-pha-cung-lynk-co-thang-9-2025",
+      "note": "Official Vietnam sales offer explicitly applies September 1-30, 2025 and names this model. Catalog marketed year only; 03+ is distinct from 03.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 3885285967,
+      "make": "LYNK&CO",
+      "model": "06",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://lynkco.com.vn/tu-hao-tien-buoc-uu-dai-but-pha-cung-lynk-co-thang-9-2025",
+      "note": "Official Vietnam sales offer explicitly applies September 1-30, 2025 and names this model. Catalog marketed year only; 03+ is distinct from 03.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 3885285967,
+      "make": "LYNK&CO",
+      "model": "09",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://lynkco.com.vn/tu-hao-tien-buoc-uu-dai-but-pha-cung-lynk-co-thang-9-2025",
+      "note": "Official Vietnam sales offer explicitly applies September 1-30, 2025 and names this model. Catalog marketed year only; 03+ is distinct from 03.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 3885285967,
+      "make": "LYNK&CO",
+      "model": "03",
+      "vehicleTypeId": 2,
+      "market": "VN",
+      "url": "https://lynkco.com.vn/en/lynk-co-chinh-thuc-gioi-thieu-lynk-co-02-va-lynk-co-03-hai-mau-xe-hoan-toan-moi-cua-thuong-hieu-tai-thi-truong-viet-nam",
+      "note": "Official Vietnam launch and market offer dated August 12, 2026 names the 03 separately from 03+. This is marketed catalog year, not MY2026.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2026/april/Press_Release_Maruti_Suzuki_sales_in_March_2026_and_FY_2025_26.pdf",
+      "note": "Manufacturer March 2026 sales table explicitly includes the model in a category with positive March sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "S-Presso",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2026/april/Press_Release_Maruti_Suzuki_sales_in_March_2026_and_FY_2025_26.pdf",
+      "note": "Manufacturer March 2026 sales table explicitly includes the model in a category with positive March sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Brezza",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2026/april/Press_Release_Maruti_Suzuki_sales_in_March_2026_and_FY_2025_26.pdf",
+      "note": "Manufacturer March 2026 sales table explicitly includes the model in a category with positive March sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Ertiga",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2026/april/Press_Release_Maruti_Suzuki_sales_in_March_2026_and_FY_2025_26.pdf",
+      "note": "Manufacturer March 2026 sales table explicitly includes the model in a category with positive March sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "XL6",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2026/april/Press_Release_Maruti_Suzuki_sales_in_March_2026_and_FY_2025_26.pdf",
+      "note": "Manufacturer March 2026 sales table explicitly includes the model in a category with positive March sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "Bolero",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://auto.mahindra.com/press-release/mahindra-introduces-new-bolero-range.html",
+      "note": "Mahindra India October 6, 2025 release offers this member of the new Bolero range. Calendar catalog year, not model-year history; Neo remains distinct.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "Bolero Neo",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://auto.mahindra.com/press-release/mahindra-introduces-new-bolero-range.html",
+      "note": "Mahindra India October 6, 2025 release offers this member of the new Bolero range. Calendar catalog year, not model-year history; Neo remains distinct.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "King EV Max",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/-/media/04C72359318E4567A12EF684616EB12B.ashx",
+      "note": "TVS July 31, 2025 earnings-call transcript explicitly reports sales of the recently launched King EV Max electric passenger three-wheeler. Calendar catalog year only.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Tiago",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "yearBasis": "model-year",
+      "url": "https://www.tatamotors.com/press-releases/tata-motors-consolidated-q4-fy25-results/",
+      "note": "Tata manufacturer results explicitly identify the 2025 Tiago, Tiago.ev and Tigor refreshed range, rather than inferring a model year from the fiscal report date. EV is distinct from combustion Tiago."
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Tiago EV",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "yearBasis": "model-year",
+      "url": "https://www.tatamotors.com/press-releases/tata-motors-consolidated-q4-fy25-results/",
+      "note": "Tata manufacturer results explicitly identify the 2025 Tiago, Tiago.ev and Tigor refreshed range, rather than inferring a model year from the fiscal report date. EV is distinct from combustion Tiago."
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Tigor",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "yearBasis": "model-year",
+      "url": "https://www.tatamotors.com/press-releases/tata-motors-consolidated-q4-fy25-results/",
+      "note": "Tata manufacturer results explicitly identify the 2025 Tiago, Tiago.ev and Tigor refreshed range, rather than inferring a model year from the fiscal report date. EV is distinct from combustion Tiago."
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Altroz",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "yearBasis": "model-year",
+      "url": "https://www.tatamotors.com/press-releases/tata-motors-launches-the-all-new-altroz-premium-by-legacy-modern-by-design/",
+      "note": "Tata calls this the 2025 edition of Altroz in its May 22, 2025 launch release; refreshed design is not assigned to older years."
     }
-  ]
+  ],
+  "catalogYearMetadata": {
+    "id": "manufacturer-reviewed-catalog",
+    "name": "Reviewed dated manufacturer market catalogs",
+    "url": "https://lynkco.com.vn/en",
+    "license": "Source attribution (factual product names only)",
+    "region": "Vietnam and India",
+    "retrievedAt": "2026-10-12",
+    "yearBasis": "catalog-year",
+    "description": "Models explicitly offered or reported sold in a dated manufacturer catalog, sales release or offer. Years mean marketed catalog year, not manufacturer model year or vehicle manufacture year. Only documented individual years are included; no ranges are inferred. Per-row market, URL, year basis and rationale remain in data/evidence/manufacturer-reviewed.json."
+  }
 }
