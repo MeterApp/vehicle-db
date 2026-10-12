@@ -10,6 +10,8 @@ export interface SourceMetadata {
   region: string;
   description: string;
   retrievedAt: string;
+  /** Explicitly distinguishes dated marketed catalogs from manufacturer model years. */
+  yearBasis?: "model-year" | "catalog-year";
 }
 
 export interface SourceCatalog {

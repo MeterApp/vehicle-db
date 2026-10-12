@@ -79,3 +79,40 @@ test("reviewed aliases resolve a line without inventing generation or render equ
   expect(resolveVehicle("2024 Toyota Prado").status).toBe("MATCHED");
   expect(resolveVehicle("2024 Toyota Prado EV").status).not.toBe("MATCHED");
 });
+
+test("reviewed regional additions preserve generation, body and performance boundaries", () => {
+  const octa = resolveVehicle("2025 Land Rover Defender OCTA", { market: "US", depth: "visual" });
+  const modern = resolveVehicle("2023 Land Rover Defender 130", { market: "US", depth: "visual" });
+  const sv = resolveVehicle("2024 Land Rover Range Rover Sport SV", { market: "US", depth: "visual" });
+  const electric = resolveVehicle("2026 Porsche Cayenne Electric", { market: "US", depth: "visual" });
+  for (const result of [octa, modern, sv, electric]) expect(result.status).toBe("MATCHED");
+  expect(octa.candidates[0].lineage.derivative).not.toBe(modern.candidates[0].lineage.derivative);
+  expect(modern.candidates[0].lineage.generation).toBe("lr:defender:l663");
+  expect(electric.candidates[0].lineage.derivative).toContain("distinct");
+  for (const [query, market] of [
+    ["2023 Land Rover Defender OCTA", "US"],
+    ["2005 Land Rover Defender 130", "US"],
+    ["2023 Land Rover Defender 130", "GB"],
+    ["2024 Land Rover Range Rover Sport SVR SV", "US"],
+    ["2025 Porsche Cayenne Electric", "US"],
+    ["2026 Porsche Cayenne Electric PHEV", "US"],
+    ["2025 LYNK&CO 03", "VN"],
+    ["2024 Hyundai Custin Unknown Trim", "VN"],
+  ]) expect(resolveVehicle(query, { market, depth: "visual" }).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2025 Land Rover Defender OCTA", { market: "IN", depth: "visual" }).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2024 BMW 5 Series G60", { market: "US", depth: "visual" }).status).toBe("MATCHED");
+  expect(resolveVehicle("2023 BMW 5 Series G60", { market: "US", depth: "visual" }).status).not.toBe("MATCHED");
+  expect(evaluateVisualCompatibility([], octa.candidates[0].visualIdentityIds[0], modern.candidates[0].visualIdentityIds[0], { year: 2025, market: "US", yearBasis: "model-year" })).toBe("unknown");
+});
+
+test("dated marketed catalogs require catalog-year context and do not infer generation or model year", () => {
+  const context = { market: "VN", yearBasis: "catalog-year" as const };
+  expect(resolveVehicle("2025 LYNK&CO 03+", context).status).toBe("MATCHED");
+  expect(resolveVehicle("2025 LYNK&CO 03", context).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2026 LYNK&CO 03", context).status).toBe("MATCHED");
+  expect(resolveVehicle("2025 LYNK&CO 03+").status).not.toBe("MATCHED");
+  expect(resolveVehicle("2025 LYNK&CO 03+", { ...context, depth: "visual" }).status).toBe("GENERATION_UNRESOLVED");
+  expect(resolveVehicle("2025 Volkswagen Teramont X", context).status).toBe("MATCHED");
+  expect(resolveVehicle("2024 Volkswagen Teramont X", context).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2025 Volkswagen Teramont X", { ...context, market: "US" }).status).not.toBe("MATCHED");
+});
