@@ -1,0 +1,1350 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-12",
+  "baselineCommit": "0ef6e930af7b8653082ea187355e3e3529caeef5",
+  "catalogVersion": "2.14.0",
+  "purpose": "Source discovery and implementation queue; not an importable model-year snapshot. No catalog or render availability claims follow from a source lead.",
+  "matchingMethod": "Exact make/model after case, accent and punctuation normalization. India checks include listed make spelling candidates; no suffix removal, fuzzy matching or alias approvals. Empty exact-name coverage requires alias review before classification as a genuine gap.",
+  "reuseReview": "Manufacturer pages are factual-name/specification evidence leads, not open dataset licenses. Review terms per source before bulk ingestion; do not copy prose or images. SENATRAN metadata lists Public Domain.",
+  "brazil": [
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Gol",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.vw.com.br/pt/servicos-e-acessorios/servicos-e-produtos/manuais-e-garantia/manuais.html"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "FIAT",
+      "model": "Mobi",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.media.stellantis.com/br-pt/fiat/press/fiat-mobi-chega-em-sua-linha-2026-com-o-interior-remodelado-e-novos-equipamentos"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "FIAT",
+      "model": "Argo",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.media.stellantis.com/br-pt/fiat/fiat-argo-my26"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "RENAULT",
+      "model": "Kwid",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.renault.com.br/veiculos-de-passeio/kwid.html"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "FIAT",
+      "model": "Cronos",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.media.stellantis.com/br-pt/fiat/press/com-novo-design-fiat-cronos-chega-mais-moderno-e-sofisticado-na-linha-2026"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "CHEVROLET",
+      "model": "Onix Plus",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.chevrolet.com.br/servicos/manuais-veiculos/anos-anteriores"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "CHEVROLET",
+      "model": "Prisma",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.chevrolet.com.br/servicos/manuais-veiculos/anos-anteriores"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "CHEVROLET",
+      "model": "Spin",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        7
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.chevrolet.com.br/servicos/manuais-veiculos/anos-anteriores"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Voyage",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.vw.com.br/pt/servicos-e-acessorios/servicos-e-produtos/manuais-e-garantia/manuais.html"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Virtus",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        2
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.vw.com.br/pt/servicos-e-acessorios/servicos-e-produtos/manuais-e-garantia/manuais.html"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Saveiro",
+      "market": "BR",
+      "status": "already-in-senatran-snapshot",
+      "manufactureYears": [
+        1990,
+        1991,
+        1992,
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "vehicleTypeIds": [
+        3
+      ],
+      "sourceUrls": [
+        "https://dados.transportes.gov.br/dataset/registro-nacional-de-veiculos-automotores-renavam",
+        "https://www.vw.com.br/pt/servicos-e-acessorios/servicos-e-produtos/manuais-e-garantia/manuais.html"
+      ],
+      "action": "Validate downstream package adoption and exact requested year; add manufacturer-backed model-year evidence only where needed."
+    }
+  ],
+  "focusedCandidates": [
+    {
+      "make": "VINFAST",
+      "model": "EC Van",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://vinfastauto.com/vn_vi/vinfast-nhan-coc-som-mau-xe-dien-cho-hang-vinfast-ec-van"
+      ],
+      "reviewNote": "2025 launch evidence; not an explicit model year. Determine cargo type and year basis.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LAND ROVER",
+      "model": "Defender 130",
+      "market": "US",
+      "currentExactNameCoverage": {
+        "years": [
+          1999,
+          2000,
+          2001,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2025,
+          2026
+        ],
+        "sourceIds": [
+          "fueleconomy-us",
+          "rdw-nl-vehicle-register"
+        ]
+      },
+      "sourceUrls": [
+        "https://www.landroverusa.com/vehicles/defender-23my/defender-130/index"
+      ],
+      "reviewNote": "2023 model-year source; missing 2023 locally despite 2025/2026 presence. Keep old and modern generations separate.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LAND ROVER",
+      "model": "Defender OCTA",
+      "market": "US",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://media.jlr.com/corporate/en-us/news/2024/04/groundbreaking-new-defender-octa-will-be-revealed-july-3-following-exclusive-client"
+      ],
+      "reviewNote": "Explicit North American MY2025; separate derivative, verify India scope before market-restricted resolution.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LAND ROVER",
+      "model": "Range Rover Sport SV",
+      "market": "US",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://media.jlr.com/range-rover/en-us/news/2023/05/new-range-rover-sport-sv-modern-luxury-performance-flagship"
+      ],
+      "reviewNote": "2024 US launch/year lead; verify exact MY technical specification and edition scope.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "PORSCHE",
+      "model": "Cayenne Electric",
+      "market": "US",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://newsroom.porsche.com/en_US/2025/products/new-porsche-all-rounder-Cayenne-nameplate-expands-portfolio-to-include-electrification-41132.html"
+      ],
+      "reviewNote": "Explicit 2026 US model evidence. Distinct from ICE/PHEV Cayenne; verify India evidence separately.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "BMW",
+      "model": "5 Series",
+      "market": "US",
+      "currentExactNameCoverage": {
+        "years": [
+          1990,
+          1991,
+          1992,
+          1993,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "sourceIds": [
+          "malaysia-jpj-registrations",
+          "nzta-asia-pacific-mvr",
+          "rdw-nl-vehicle-register",
+          "uk-dft-vehicle-licensing"
+        ]
+      },
+      "sourceUrls": [
+        "https://www.press.bmwgroup.com/usa/article/attachment/T0418778EN_US/624323"
+      ],
+      "reviewNote": "2024 G60 specification evidence; generation enrichment, not another generic 5 Series record. India long-wheelbase evidence remains separate.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "HYUNDAI",
+      "model": "Custin",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://hyundai.thanhcong.vn/custin"
+      ],
+      "reviewNote": "Vietnam official name Custin; requested Custo spelling requires regional alias evidence before normalization. Year pending.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Viloran",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.vw.com.vn/vi/sanpham/viloran.html"
+      ],
+      "reviewNote": "Official Vietnam model; dated brochure https://www.vw.com.vn/idhub/content/dam/onehub_pkw/importers/vn/pdf/VILORAN_E-CATALOGUE_27012026.pdf is a publication date, not MY proof.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Teramont X",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.vw.com.vn/vi/sanpham/teramont_x.html"
+      ],
+      "reviewNote": "Official Vietnam model; separate body from Teramont. Year pending.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "VOLKSWAGEN",
+      "model": "Teramont",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [
+          2019
+        ],
+        "sourceIds": [
+          "rdw-nl-vehicle-register"
+        ]
+      },
+      "sourceUrls": [
+        "https://www.vw.com.vn/vi/sanpham.html"
+      ],
+      "reviewNote": "Only 2019 locally. Current product navigation is a discovery lead; retain precise generation/suffix (including Pro) and verify requested year.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LYNK & CO",
+      "model": "03",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://lynkco.com.vn/en/lynk-co-chinh-thuc-gioi-thieu-lynk-co-02-va-lynk-co-03-hai-mau-xe-hoan-toan-moi-cua-thuong-hieu-tai-thi-truong-viet-nam"
+      ],
+      "reviewNote": "2026 Vietnam launch evidence; verify year semantics. Do not replace with 03+.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LYNK & CO",
+      "model": "05",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://lynkco.com.vn/en"
+      ],
+      "reviewNote": "Official Vietnam lineup; year pending.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LYNK & CO",
+      "model": "06",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://lynkco.com.vn/pdf/06.pdf"
+      ],
+      "reviewNote": "Official Vietnam specification; year pending.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LYNK & CO",
+      "model": "07",
+      "market": "CN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.lynkco.com.cn/Cars/07"
+      ],
+      "reviewNote": "Official China 07 EM-P evidence only; Vietnam scope and MY pending. Separate 07 GT.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LYNK & CO",
+      "model": "09",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://lynkco.com.vn/en"
+      ],
+      "reviewNote": "Official Vietnam lineup; year pending.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "BYD",
+      "model": "Song",
+      "market": "CN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.byd.com/cn/dynasty-home/models/song/2025song-l-ev"
+      ],
+      "reviewNote": "Evidence is for Song L EV 2025, not generic Song. Obtain original Song or specific Song Pro/Plus/L facts; no global family collapse.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "MAHINDRA",
+      "model": "Bolero",
+      "market": "IN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://auto.mahindra.com/on/demandware.static/-/Sites-amc-Library/default/dwca8fb900/brochure/BOLERO%20brochure.pdf"
+      ],
+      "reviewNote": "Official specification; current sales evidence does not establish historical model years. Distinguish Bolero Neo.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "TATA",
+      "model": "Nano",
+      "market": "IN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.tatamotors.com/press-releases/the-tata-nano-arrives/"
+      ],
+      "reviewNote": "March 2009 launch evidence; year basis must be explicit, historical refresh needed.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "GREAT WALL",
+      "model": "Wingle",
+      "market": "unspecified",
+      "currentExactNameCoverage": {
+        "years": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019
+        ],
+        "sourceIds": [
+          "malaysia-jpj-registrations"
+        ]
+      },
+      "sourceUrls": [
+        "https://www.gwm-global.com/news_detail-1192.html"
+      ],
+      "reviewNote": "Wingle 5 manufacturer evidence; generic Wingle already 2015-2019. Preserve Wingle 5/7 distinctions and Great Wall/GWM IDs.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "HYUNDAI",
+      "model": "Santa Fe Calligraphy",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.hyundai.com/worldwide/en/newsroom/detail/0000000284"
+      ],
+      "reviewNote": "Global trim lead; verify Vietnam MY2024 trim and appearance.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "FORD",
+      "model": "Mustang Mach-E GT",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "sourceIds": [
+          "fueleconomy-us"
+        ]
+      },
+      "sourceUrls": [
+        "https://media.ford.com/content/fordmedia/feu/de/en/news/2021/07/09/exhilarating-electric-performance--online-ordering-for-ford-must.html"
+      ],
+      "reviewNote": "European 2021 GT launch evidence; Vietnam/import-market MY2021 pending.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "HONDA",
+      "model": "Accord 260 Turbo",
+      "market": "CN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.honda.com.cn/news/20211009.html"
+      ],
+      "reviewNote": "Official 2021 launch confirms 260 TURBO badge. Requested 2022 and visual distinction unverified; may be specification only.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "KIA",
+      "model": "Sportage X-Line",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://sportage.kiavietnam.com.vn/storage/e-catalogue/e-catalogue-sportage-82022.pdf"
+      ],
+      "reviewNote": "Vietnam dated August 2022 catalog lists X-Line. Publication date alone is not MY; do not use US 2022 generation.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LEXUS",
+      "model": "IS F Sport",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.lexus.com/content/dam/lexus/documents/brochures/models/2021/MY21-Lexus-IS-Brochure.pdf"
+      ],
+      "reviewNote": "US MY2021 trim evidence; verify Vietnam/import engine and market.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LEXUS",
+      "model": "LX 570 Peak Edition",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://www.lexus.com.vn/content/dam/lexus-v3-vietnam/brochure/Catalogue-LX570.pdf"
+      ],
+      "reviewNote": "Official base LX570 source only; Peak Edition unsupported by this evidence. Hold edition until official importer/coachbuilder proof.",
+      "status": "research-candidate-not-imported"
+    },
+    {
+      "make": "LEXUS",
+      "model": "LX 600 F Sport",
+      "market": "VN",
+      "currentExactNameCoverage": {
+        "years": [],
+        "sourceIds": []
+      },
+      "sourceUrls": [
+        "https://pressroom.lexus.com/lexus-flagship-suv-returns-for-2026-with-an-f-sport-appearance-package/"
+      ],
+      "reviewNote": "US MY2026 LX600 F SPORT Handling evidence; requested year unspecified, Vietnam scope pending.",
+      "status": "research-candidate-not-imported"
+    }
+  ],
+  "indiaCandidateGroups": [
+    {
+      "manufacturer": "Maruti Suzuki",
+      "market": "IN",
+      "modelsToReview": [
+        "Dzire",
+        "Brezza",
+        "Ertiga",
+        "XL6",
+        "Ciaz",
+        "Alto K10",
+        "S-Presso"
+      ],
+      "sourceUrls": [
+        "https://www.marutisuzuki.com/arena",
+        "https://www.nexaexperience.com/xl6",
+        "https://www.nexaexperience.com/nexaworld/created-inspire-elegance"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Hyundai",
+      "market": "IN",
+      "modelsToReview": [
+        "Alcazar",
+        "Verna",
+        "Exter",
+        "Aura"
+      ],
+      "sourceUrls": [
+        "https://www.hyundai.com/in/en/click-to-buy/request-a-brochure"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Tata",
+      "market": "IN",
+      "modelsToReview": [
+        "Tiago",
+        "Tigor",
+        "Altroz",
+        "Punch",
+        "Nexon",
+        "Curvv",
+        "Harrier",
+        "Nexon EV",
+        "Punch EV",
+        "Tiago EV"
+      ],
+      "sourceUrls": [
+        "https://cars.tatamotors.com/news-and-events.html",
+        "https://ev.tatamotors.com/"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Mahindra",
+      "market": "IN",
+      "modelsToReview": [
+        "Thar",
+        "Thar Roxx",
+        "XUV 3XO",
+        "XUV700",
+        "Scorpio Classic",
+        "Bolero",
+        "Bolero Neo",
+        "Marazzo",
+        "XUV400"
+      ],
+      "sourceUrls": [
+        "https://auto.mahindra.com/suv"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Toyota",
+      "market": "IN",
+      "modelsToReview": [
+        "Urban Cruiser Taisor",
+        "Urban Cruiser Hyryder",
+        "Innova Crysta",
+        "Innova HyCross",
+        "Land Cruiser 300"
+      ],
+      "sourceUrls": [
+        "https://www.toyotabharat.com/sitemap/"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Kia",
+      "market": "IN",
+      "modelsToReview": [
+        "Sonet"
+      ],
+      "sourceUrls": [
+        "https://www.kia.com/content/dam/kia2/in/en/images/buy/download-brochure/Sonet-Brochure-Mobile.pdf"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Honda",
+      "market": "IN",
+      "modelsToReview": [
+        "Amaze",
+        "Elevate",
+        "City e:HEV"
+      ],
+      "sourceUrls": [
+        "https://www.hondacarindia.com/download-brochure",
+        "https://www.hondacarindia.com/content/pdf/City-e-Hev-Brochure-Digital-12-June.pdf"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Volkswagen",
+      "market": "IN",
+      "modelsToReview": [
+        "Taigun"
+      ],
+      "sourceUrls": [
+        "https://www.volkswagen.co.in/idhub/content/dam/onehub_pkw/importers/in/models/taigun/taigun-brochure.pdf"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Skoda",
+      "market": "IN",
+      "modelsToReview": [
+        "Slavia",
+        "Kushaq"
+      ],
+      "sourceUrls": [
+        "https://www.skoda-auto.co.in/"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Renault",
+      "market": "IN",
+      "modelsToReview": [
+        "Triber"
+      ],
+      "sourceUrls": [
+        "https://www.renault.co.in/cars/renault-triber/triber-price.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Nissan",
+      "market": "IN",
+      "modelsToReview": [
+        "Magnite"
+      ],
+      "sourceUrls": [
+        "https://www.nissan.in/vehicles/new/nissan-magnite.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "MG",
+      "market": "IN",
+      "modelsToReview": [
+        "Comet EV",
+        "Windsor EV",
+        "Astor",
+        "Hector",
+        "Hector Plus",
+        "Gloster"
+      ],
+      "sourceUrls": [
+        "https://www.mgmotor.co.in/tools/brochures"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Jeep",
+      "market": "IN",
+      "modelsToReview": [
+        "Meridian"
+      ],
+      "sourceUrls": [
+        "https://www.jeep-india.com/press-release/jeep-introduces-the-all-new-2025-meridian-with-updated-features-and-more-variants.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "BYD",
+      "market": "IN",
+      "modelsToReview": [
+        "eMAX 7"
+      ],
+      "sourceUrls": [
+        "https://www.bydautoindia.com/car-dealer/electric-car-price"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Royal Enfield",
+      "market": "IN",
+      "modelsToReview": [
+        "Himalayan 450",
+        "Continental GT 650"
+      ],
+      "sourceUrls": [
+        "https://www.royalenfield.com/in/en/motorcycles/new-himalayan/",
+        "https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/continental-gt/specifications/Royal%20Enfield%20Continental%20GT%20650.pdf"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Hero MotoCorp",
+      "market": "IN",
+      "modelsToReview": [
+        "Splendor Plus",
+        "HF Deluxe",
+        "Glamour",
+        "Xtreme 125R",
+        "Xtreme 160R",
+        "Xpulse 200",
+        "Karizma XMR"
+      ],
+      "sourceUrls": [
+        "https://www.heromotocorp.com/en-in/blogs.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Bajaj",
+      "market": "IN",
+      "modelsToReview": [
+        "Pulsar 125",
+        "Pulsar 150",
+        "Pulsar N160",
+        "Pulsar NS200",
+        "Dominar 250",
+        "Dominar 400",
+        "Avenger 160"
+      ],
+      "sourceUrls": [
+        "https://www.bajajauto.com/bikes"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "TVS",
+      "market": "IN",
+      "modelsToReview": [
+        "Apache RTR 160",
+        "Apache RTR 200 4V",
+        "Apache RR 310",
+        "Raider",
+        "Ronin"
+      ],
+      "sourceUrls": [
+        "https://www.tvsmotor.com/our-service/user-manual"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Yamaha",
+      "market": "IN",
+      "modelsToReview": [
+        "MT-15",
+        "R15"
+      ],
+      "sourceUrls": [
+        "https://www.yamaha-motor-india.com/product-enquiry.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Honda Motorcycles",
+      "market": "IN",
+      "modelsToReview": [
+        "Shine",
+        "SP 125",
+        "Hornet 2.0",
+        "CB200X",
+        "CB350",
+        "CB650R"
+      ],
+      "sourceUrls": [
+        "https://www.honda2wheelersindia.com/"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "KTM",
+      "market": "IN",
+      "modelsToReview": [
+        "250 Duke",
+        "RC 200"
+      ],
+      "sourceUrls": [
+        "https://www.ktm.com/en-in/ktm-world.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Harley-Davidson",
+      "market": "IN",
+      "modelsToReview": [
+        "X440"
+      ],
+      "sourceUrls": [
+        "https://www.harley-davidson.com/in/en/motorcycles/h-d-x.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Honda Scooters",
+      "market": "IN",
+      "modelsToReview": [
+        "Activa 6G",
+        "Activa 125",
+        "Dio 125"
+      ],
+      "sourceUrls": [
+        "https://www.honda2wheelersindia.com/scooter"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "TVS Scooters",
+      "market": "IN",
+      "modelsToReview": [
+        "Jupiter",
+        "NTorq",
+        "iQube"
+      ],
+      "sourceUrls": [
+        "https://www.tvsmotor.com/our-service/user-manual"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Suzuki Scooters",
+      "market": "IN",
+      "modelsToReview": [
+        "Access 125",
+        "Burgman Street",
+        "Avenis"
+      ],
+      "sourceUrls": [
+        "https://www.suzukimotorcycle.co.in/all-products/scooters"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Yamaha Scooters",
+      "market": "IN",
+      "modelsToReview": [
+        "RayZR",
+        "Fascino"
+      ],
+      "sourceUrls": [
+        "https://www.yamaha-motor-india.com/product-enquiry.html"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Ola Electric",
+      "market": "IN",
+      "modelsToReview": [
+        "S1 Pro",
+        "S1 Air",
+        "S1 X"
+      ],
+      "sourceUrls": [
+        "https://www.olaelectric.com/brochure",
+        "https://cdn.olaelectric.com/brochure/s1-air.pdf"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Ather",
+      "market": "IN",
+      "modelsToReview": [
+        "450X",
+        "450 Apex",
+        "Rizta"
+      ],
+      "sourceUrls": [
+        "https://media.atherenergy.com/Consolidated-DRHP.pdf",
+        "https://www.atherenergy.com/rizta",
+        "https://www.atherenergy.com/apex"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Vespa",
+      "market": "IN",
+      "modelsToReview": [
+        "VXL",
+        "SXL"
+      ],
+      "sourceUrls": [
+        "https://vespaindia.com/vespa-vxl-3d-test"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Tata Commercial",
+      "market": "IN",
+      "modelsToReview": [
+        "Ace",
+        "Intra",
+        "407",
+        "Ultra",
+        "Prima"
+      ],
+      "sourceUrls": [
+        "https://smalltrucks.tatamotors.com/compare",
+        "https://trucks.tatamotors.com/all-trucks"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Ashok Leyland",
+      "market": "IN",
+      "modelsToReview": [
+        "Dost",
+        "Partner",
+        "Ecomet",
+        "Boss",
+        "AVTR"
+      ],
+      "sourceUrls": [
+        "https://www.ashokleyland.com/in/trucks",
+        "https://www.ashokleyland.com/backend/wp-content/uploads/2025/10/Sustainability-Report-2024-25.pdf"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Eicher",
+      "market": "IN",
+      "modelsToReview": [
+        "Pro 2055",
+        "Pro 3015",
+        "Pro 6042"
+      ],
+      "sourceUrls": [
+        "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/light-duty/pro-2055",
+        "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/medium-duty/pro-3015",
+        "https://www.eichertrucksandbuses.com/heavy-duty-trucks/haulage/pro-6042"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    },
+    {
+      "manufacturer": "Tata Buses",
+      "market": "IN",
+      "modelsToReview": [
+        "Starbus",
+        "LPO"
+      ],
+      "sourceUrls": [
+        "https://busesandvans.tatamotors.com/buses"
+      ],
+      "evidenceLevel": "manufacturer-catalog-lead",
+      "action": "Check existing spelling/derivative candidates before adding; obtain exact year and type evidence per model. Current catalogs do not establish historical model-year ranges."
+    }
+  ],
+  "broadCoverageSources": [
+    {
+      "make": "BAJAJ",
+      "market": "IN",
+      "urls": [
+        "https://www.bajajauto.com/three-wheelers",
+        "https://www.bajajauto.com/three-wheelers/maxima-c"
+      ],
+      "note": "RE, Maxima and current electric families need scoped years and Auto Rickshaw type; do not map all to generic Rickshaw."
+    },
+    {
+      "make": "CHANGAN",
+      "market": "SA",
+      "urls": [
+        "https://changan-ksa.com/models/"
+      ],
+      "note": "Official distributor catalog has explicit 2026 labels; local CHANGAN has two normalized names. Prioritize exact customer models, not all regional models blindly."
+    },
+    {
+      "make": "WULING",
+      "market": "ID",
+      "urls": [
+        "https://wuling.id/id/",
+        "https://wuling.id/id/download-brosur"
+      ],
+      "note": "Local make is TQ WULING with one normalized model. Review make alias and preserve IDs; Indonesian source does not prove Chinese/Vietnam market availability."
+    }
+  ],
+  "catalogSha256": "91a8438e63867df9e7f28fd76b128ec3accdd93a6087dbe15af498dfaae36ea2",
+  "sourceAccessExceptions": [
+    {
+      "url": "https://ev.tatamotors.com/",
+      "result": "Direct web retrieval timed out; discovery lead only."
+    },
+    {
+      "url": "https://changan-ksa.com/models/",
+      "result": "Search index supplies a model listing, but direct web open returned 404; reverify live documents before use."
+    },
+    {
+      "url": "https://www.byd.com/cn/dynasty-home/models/song/2025song-l-ev",
+      "result": "Search index labels Song L EV 2025; direct web open failed. Does not establish generic Song."
+    }
+  ]
+}

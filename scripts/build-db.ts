@@ -27,6 +27,9 @@ const SOURCE_PRIORITY = [
   "hyundai-brazil-catalog",
   "fueleconomy-maserati-us",
   "fueleconomy-us",
+  "manufacturer-reviewed",
+  "senatran-br-renavam",
+  "manufacturer-reviewed-catalog",
 ];
 // Preserve previously shipped make IDs as source coverage expands, so stored
 // selections remain valid even when an earlier-priority source gains a make.
@@ -58,6 +61,7 @@ interface CompiledSource {
   region: string;
   description: string;
   retrieved_at: string;
+  year_basis?: "model-year" | "catalog-year";
   vehicle_type_ids: number[];
   year_from: number;
   year_to: number;
@@ -240,6 +244,7 @@ function compile(sources: SourceCatalog[]): CompactData {
       region: source.metadata.region,
       description: source.metadata.description,
       retrieved_at: source.metadata.retrievedAt,
+      ...(source.metadata.yearBasis ? { year_basis: source.metadata.yearBasis } : {}),
       vehicle_type_ids: [...new Set(matchingModels.map((model) => model.vehicleTypeId))].sort(
         (left, right) => left - right,
       ),
@@ -277,6 +282,7 @@ interface CompactData {
     region: string;
     description: string;
     retrieved_at: string;
+    year_basis?: "model-year" | "catalog-year";
     vehicle_type_ids: number[];
     year_from: number;
     year_to: number;
