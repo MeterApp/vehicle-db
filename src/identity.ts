@@ -1,6 +1,6 @@
 /** Portable identities. These IDs never replace published numeric catalog IDs. */
 export type IdentityKind = "line" | "generation" | "derivative" | "specification" | "visual";
-export type YearBasis = "model-year" | "manufacture-year" | "registration-year" | "first-admission-year";
+export type YearBasis = "model-year" | "manufacture-year" | "registration-year" | "first-admission-year" | "catalog-year";
 export interface IdentityScope {
   years?: number[];
   markets?: string[];
@@ -90,6 +90,8 @@ export function scopeMatches(scope: IdentityScope, context: ScopeContext): boole
 }
 export function normalizeIdentityText(text: string): string {
   return text.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    // A plus badge can identify a distinct body/performance model (03 vs 03+).
+    .replace(/\+/g, " plus ")
     .replace(/[^a-z0-9\p{L}]+/gu, " ").trim().replace(/\s+/g, " ");
 }
 /** Direct, directional facts only; no reverse or transitive inference. */

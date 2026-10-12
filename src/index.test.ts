@@ -123,6 +123,7 @@ describe("getDataSources", () => {
       "fueleconomy-us",
       "manufacturer-reviewed",
       SENATRAN_BR_SOURCE_ID,
+      "manufacturer-reviewed-catalog",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;

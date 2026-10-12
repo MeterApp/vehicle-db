@@ -16,6 +16,7 @@ const key = (name: string) =>
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
+    .replace(/\b03\s*\+(?=$|[\s,])/g, "03-plus")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 const format = (value: number) => value.toLocaleString("en-US");
