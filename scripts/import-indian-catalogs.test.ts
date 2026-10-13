@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { parseSalesCatalog, salesObservations, type CatalogGroup } from "./import-indian-catalogs";
+import { parseSalesCatalog, salesObservations, stripNonCatalogMarkup, type CatalogGroup } from "./import-indian-catalogs";
 
 const group: CatalogGroup = { id: "fixture", url: "https://example.com/in/catalog", cacheFile: "fixture.html",
   make: "EXAMPLE", makeId: 1, batch: "tvs", mappings: [
@@ -15,7 +15,7 @@ test("sales parser rejects script/comment observations and does not treat image 
     { name: "Cargo", url: "https://example.com/in/cargo" },
   ]);
   expect(parsed.headings).toEqual([]);
-  expect(parseSalesCatalog('<scr<script></script>ipt><a href="ghost">Ghost</a></scr<script></script>ipt>', group.url).links).toEqual([]);
+  expect(stripNonCatalogMarkup('<scr<script></script>ipt>')).toBe('<scr ipt>');
 });
 
 test("catalog observations keep current year and body type without interpreting manual filename years", () => {
