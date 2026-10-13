@@ -35,6 +35,11 @@ const SOURCE_PRIORITY = [
   "changan-manufacturer-model-years",
   "sgmw-manufacturer-catalog",
   "sgmw-manufacturer-model-years",
+  "india-commercial-sales-catalog",
+  "india-hero-sales-catalog",
+  "india-passenger-sales-catalog",
+  "india-tvs-sales-catalog",
+  "india-two-wheelers-sales-catalog",
 ];
 // Preserve previously shipped make IDs as source coverage expands, so stored
 // selections remain valid even when an earlier-priority source gains a make.

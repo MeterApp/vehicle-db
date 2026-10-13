@@ -31,6 +31,8 @@ app that needs an offline make/model/year list. The image API consumes this cata
 
 Changan, SGMW and Bajaj regional facts now refresh through `npm run refresh:manufacturer-catalogs`. Review newly discovered exact names in `data/evidence/manufacturer-catalog-mappings.json`, rather than adding their current models one at a time to the generic reviewed file. Keep the complete original names and per-market evidence; never infer model years from guide upload dates. Old reviewed source filters remain published for compatibility.
 
+Indian TVS, Hero, commercial, passenger and other two-wheeler sales catalogs refresh through `npm run refresh:india`. Reviewed product links and headings live in `data/evidence/indian-catalog-mappings.json`; a missing or changed name fails the refresh rather than selecting a similar product. Use `--batch tvs|hero|commercial|passenger|two-wheelers` for a focused refresh, or `--offline --date YYYY-MM-DD --cache-dir DIR` with the original dated HTML captures. Raw HTML stays in ignored `.cache/`; public evidence retains factual names, URLs and hashes. These sources establish calendar-year catalog presence only. Owner-manual dates and archived brochures are discovery evidence, and cannot establish current sales or historical year ranges.
+
 3. **Add a small curated source when no dataset exists.** Follow
    `data/sources/atul-auto.json`: give the source an `sourceId`, `sourceName`,
    `sourceUrl`, `license`, `region`, `retrievedAt`, and a list of

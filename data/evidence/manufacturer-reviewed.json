@@ -1166,7 +1166,7 @@
       "vehicleTypeId": 7,
       "market": "CN",
       "url": "https://www.lexus.com.cn/node/3625",
-      "note": "Lexus China explicitly identifies 2019款 LX570 巅峰特别版 (translated Peak Special Edition), reusing 2018 special edition spindle grille, front/rear bumpers and dark mirrors. Exact China model year; not generic LX570 or a VN official trim.",
+      "note": "Lexus China explicitly identifies 2019\u6b3e LX570 \u5dc5\u5cf0\u7279\u522b\u7248 (translated Peak Special Edition), reusing 2018 special edition spindle grille, front/rear bumpers and dark mirrors. Exact China model year; not generic LX570 or a VN official trim.",
       "yearBasis": "model-year"
     },
     {
@@ -1630,6 +1630,83 @@
       "url": "https://zgh.com/media-center/news/2024-04-26/?lang=en",
       "note": "Geely Holding April26,2024 dated release explicitly identifies Lynk&Co07EM-P PHEV sedan unveiled in China March2024. Calendar announced catalog year only; no Vietnam-market proof or equivalence to07GT.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Punch",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.tatamotors.com/wp-content/uploads/2025/06/TML-Investor-Day-2025-presentation.pdf#page=89",
+      "yearBasis": "catalog-year",
+      "note": "Investor Day 2025, slide 89, lists this passenger SUV in the Existing Portfolio, separately from future products. India marketed-calendar-year evidence only; no manufacturer model-year or historical range."
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Nexon",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.tatamotors.com/wp-content/uploads/2025/06/TML-Investor-Day-2025-presentation.pdf#page=89",
+      "yearBasis": "catalog-year",
+      "note": "Investor Day 2025, slide 89, lists this passenger SUV in the Existing Portfolio, separately from future products. India marketed-calendar-year evidence only; no manufacturer model-year or historical range."
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Curvv",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.tatamotors.com/wp-content/uploads/2025/06/TML-Investor-Day-2025-presentation.pdf#page=89",
+      "yearBasis": "catalog-year",
+      "note": "Investor Day 2025, slide 89, lists this passenger SUV in the Existing Portfolio, separately from future products. India marketed-calendar-year evidence only; no manufacturer model-year or historical range."
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Harrier",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.tatamotors.com/wp-content/uploads/2025/06/TML-Investor-Day-2025-presentation.pdf#page=89",
+      "yearBasis": "catalog-year",
+      "note": "Investor Day 2025, slide 89, lists this passenger SUV in the Existing Portfolio, separately from future products. India marketed-calendar-year evidence only; no manufacturer model-year or historical range."
+    },
+    {
+      "year": 2024,
+      "makeId": 4809200172,
+      "make": "ATHER",
+      "model": "450X",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://media.atherenergy.com/Ather-Energy-Prospectus.pdf#page=66",
+      "yearBasis": "catalog-year",
+      "note": "Prospectus physical page 66 (printed 61) lists Ather 450X battery variants with New Delhi prices as at December 31, 2024 and sales during that period. Scooter family only; battery/generation/body resolution remains unverified. Calendar-year evidence, not factory model year."
+    },
+    {
+      "year": 2024,
+      "makeId": 4809200172,
+      "make": "ATHER",
+      "model": "450 Apex",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://media.atherenergy.com/Ather-Energy-Prospectus.pdf#page=66",
+      "yearBasis": "catalog-year",
+      "note": "Prospectus physical page 66 (printed 61) lists Ather 450 Apex with New Delhi prices as at December 31, 2024 and sales during that period. Scooter family only; battery/generation/body resolution remains unverified. Calendar-year evidence, not factory model year."
+    },
+    {
+      "year": 2024,
+      "makeId": 4809200172,
+      "make": "ATHER",
+      "model": "Rizta",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://media.atherenergy.com/Ather-Energy-Prospectus.pdf#page=66",
+      "yearBasis": "catalog-year",
+      "note": "Prospectus physical page 66 (printed 61) lists Ather Rizta S and Rizta Z with New Delhi prices as at December 31, 2024 and sales during that period. Scooter family only; battery/generation/body resolution remains unverified. Calendar-year evidence, not factory model year."
     }
   ],
   "catalogYearMetadata": {
