@@ -129,6 +129,11 @@ const MAKE_SEARCH_ALIASES = new Map<string, string[]>([
   ["volkswagen", ["vw"]],
   // TQ WULING is the official Malaysian brand; retain its published identity.
   ["tq wuling", ["wuling"]],
+  // Reviewed manufacturer brand names; numeric catalog make IDs stay stable.
+  // Evidence: data/identity/catalog.json makeAliases (Hero FY2024-25 report,
+  // Maruti Suzuki March 2026 sales release). These are lexical candidates only.
+  ["hero", ["hero motocorp"]],
+  ["maruti", ["maruti suzuki"]],
 ]);
 
 const sourceMaskById = new Map(
