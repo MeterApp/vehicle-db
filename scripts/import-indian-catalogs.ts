@@ -45,7 +45,8 @@ export function stripNonCatalogMarkup(html: string): string {
   let previous: string;
   do {
     previous = html;
-    html = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, "").replace(/<!--[\s\S]*?-->/g, "");
+    // Retain a separator so deleting markup cannot assemble a new tag from its neighbors.
+    html = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
   } while (html !== previous);
   return html;
 }
