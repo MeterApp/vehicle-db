@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Broad dated manufacturer portfolio/sales reports, consolidated into existing India source IDs. Calendar-year facts only; no fiscal-period splitting, production/export-to-domestic substitution or interpolated histories.",
+  "reports": [
+    {
+      "id": "mahindra-monthly-2024",
+      "batch": "passenger",
+      "make": "MAHINDRA",
+      "makeId": 2146,
+      "url": "https://www.mahindra.com/sites/default/files/2024-07/MonthlyReport11072024.pdf",
+      "cacheFile": "mahindra-monthly-2024.pdf",
+      "kind": "mahindra-monthly",
+      "year": 2024,
+      "page": 2,
+      "dateProof": "Report for the Month of June, 2024",
+      "rows": [
+        {
+          "rawName": "Thar",
+          "model": "Thar",
+          "vehicleTypeId": 7,
+          "proof": "Thar",
+          "scope": "family"
+        },
+        {
+          "rawName": "KUV100",
+          "model": "KUV100",
+          "vehicleTypeId": 7,
+          "proof": "KUV100",
+          "scope": "family"
+        },
+        {
+          "rawName": "XUV3XO",
+          "model": "XUV 3XO",
+          "vehicleTypeId": 7,
+          "proof": "XUV3XO",
+          "scope": "family"
+        },
+        {
+          "rawName": "XUV300",
+          "model": "XUV300",
+          "vehicleTypeId": 7,
+          "proof": "XUV300",
+          "scope": "family"
+        },
+        {
+          "rawName": "Bolero",
+          "model": "Bolero",
+          "vehicleTypeId": 7,
+          "proof": "Bolero",
+          "scope": "family"
+        },
+        {
+          "rawName": "Marazzo",
+          "model": "Marazzo",
+          "vehicleTypeId": 7,
+          "proof": "Marazzo",
+          "scope": "family"
+        },
+        {
+          "rawName": "Scorpio",
+          "model": "Scorpio",
+          "vehicleTypeId": 7,
+          "proof": "Scorpio",
+          "scope": "family"
+        },
+        {
+          "rawName": "XUV700",
+          "model": "XUV700",
+          "vehicleTypeId": 7,
+          "proof": "XUV700",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "yamaha-briefing-2024",
+      "batch": "two-wheelers",
+      "make": "YAMAHA",
+      "makeId": 2427767883,
+      "url": "https://global.yamaha-motor.com/ir/library/report/pdf/2024/dialogue_en_01.pdf",
+      "cacheFile": "yamaha-briefing-2024.pdf",
+      "kind": "pdf-portfolio",
+      "year": 2024,
+      "page": 5,
+      "dateProof": "Branding Strategy (2024)",
+      "rows": [
+        {
+          "rawName": "YZF-R15",
+          "model": "YZF-R15",
+          "vehicleTypeId": 1,
+          "proof": "YZF-R15",
+          "scope": "family"
+        },
+        {
+          "rawName": "MT-15",
+          "model": "MT-15",
+          "vehicleTypeId": 1,
+          "proof": "MT-15",
+          "scope": "family"
+        },
+        {
+          "rawName": "FZ15",
+          "model": "FZ15",
+          "vehicleTypeId": 1,
+          "proof": "FZ15",
+          "scope": "family"
+        },
+        {
+          "rawName": "FZ-X",
+          "model": "FZ-X",
+          "vehicleTypeId": 1,
+          "proof": "FZ-X",
+          "scope": "family"
+        },
+        {
+          "rawName": "AEROX",
+          "model": "AEROX",
+          "vehicleTypeId": 1,
+          "proof": "AEROX",
+          "scope": "family"
+        },
+        {
+          "rawName": "Ray ZR",
+          "model": "RayZR",
+          "vehicleTypeId": 1,
+          "proof": "Ray ZR",
+          "scope": "family"
+        },
+        {
+          "rawName": "Fascino",
+          "model": "Fascino",
+          "vehicleTypeId": 1,
+          "proof": "Fascino",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "ola-quarterly-2024",
+      "batch": "two-wheelers",
+      "make": "OLA ELECTRIC",
+      "makeId": 5283244173,
+      "url": "https://cdn.olaelectric.com/sites/evdp/pages/investor/fy25_earninig_segmentation.pdf",
+      "cacheFile": "ola-quarterly-2024.pdf",
+      "kind": "pdf-portfolio",
+      "year": 2024,
+      "page": 1,
+      "dateProof": "Bengaluru, August 14, 2024",
+      "rows": [
+        {
+          "rawName": "S1 Pro",
+          "model": "S1 Pro",
+          "vehicleTypeId": 1,
+          "proof": "(S1 Pro, S1 Air, S1 X+)",
+          "scope": "family"
+        },
+        {
+          "rawName": "S1 Air",
+          "model": "S1 Air",
+          "vehicleTypeId": 1,
+          "proof": "(S1 Pro, S1 Air, S1 X+)",
+          "scope": "family"
+        },
+        {
+          "rawName": "S1 X+",
+          "model": "S1 X+",
+          "vehicleTypeId": 1,
+          "proof": "(S1 Pro, S1 Air, S1 X+)",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "honda-car-monthly-2022",
+      "batch": "passenger",
+      "make": "HONDA",
+      "makeId": 474,
+      "url": "https://www.hondacarindia.com/pressreleaseattachment/HCIL%20June%2722%20Sales%20Release.pdf",
+      "cacheFile": "honda-car-monthly-2022.pdf",
+      "kind": "pdf-portfolio",
+      "year": 2022,
+      "page": 1,
+      "dateProof": "New Delhi, July 01, 2022",
+      "rows": [
+        {
+          "rawName": "Honda Jazz",
+          "model": "Jazz",
+          "vehicleTypeId": 2,
+          "proof": "Honda Jazz",
+          "scope": "family"
+        },
+        {
+          "rawName": "Honda Amaze",
+          "model": "Amaze",
+          "vehicleTypeId": 2,
+          "proof": "Honda Amaze",
+          "scope": "family"
+        },
+        {
+          "rawName": "Honda WR -V",
+          "model": "WR-V",
+          "vehicleTypeId": 7,
+          "proof": "Honda WR -V",
+          "scope": "family"
+        },
+        {
+          "rawName": "Honda City",
+          "model": "City",
+          "vehicleTypeId": 2,
+          "proof": "Honda City",
+          "scope": "family"
+        },
+        {
+          "rawName": "Honda City e:HEV",
+          "model": "City e:HEV",
+          "vehicleTypeId": 2,
+          "proof": "Honda City e:HEV",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "honda-results-2020",
+      "batch": "two-wheelers",
+      "make": "HONDA",
+      "makeId": 474,
+      "url": "https://global.honda/en/investors/library/financialresult/main/03/teaserItems3/02/linkList/00/link/FY202003_3Q_financial_presentation_e.pdf",
+      "cacheFile": "honda-results-2020.pdf",
+      "kind": "pdf-portfolio",
+      "year": 2020,
+      "page": 7,
+      "dateProof": "February 7, 2020",
+      "rows": [
+        {
+          "rawName": "SP125 (India)",
+          "model": "SP 125",
+          "vehicleTypeId": 1,
+          "proof": "SP125 (India)",
+          "scope": "family"
+        },
+        {
+          "rawName": "Activa 6G (India)",
+          "model": "Activa 6G",
+          "vehicleTypeId": 1,
+          "proof": "Activa 6G (India)",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "mg-range-2024",
+      "batch": "passenger",
+      "make": "MG",
+      "makeId": 100108,
+      "url": "https://www.mgmotor.co.in/content/dam/mgmotor/documents/mg-dsc-pdf-0344.pdf",
+      "cacheFile": "mg-range-2024.pdf",
+      "kind": "pdf-portfolio",
+      "year": 2024,
+      "page": 1,
+      "dateProof": "Gurugram, February 2, 2024",
+      "rows": [
+        {
+          "rawName": "MG ZS EV",
+          "model": "ZS EV",
+          "vehicleTypeId": 7,
+          "proof": "MG ZS EV",
+          "scope": "family"
+        },
+        {
+          "rawName": "MG Comet EV",
+          "model": "Comet EV",
+          "vehicleTypeId": 2,
+          "proof": "MG Comet EV",
+          "scope": "family"
+        },
+        {
+          "rawName": "MG Hector",
+          "model": "Hector",
+          "vehicleTypeId": 7,
+          "proof": "MG Hector",
+          "scope": "family"
+        },
+        {
+          "rawName": "MG Gloster",
+          "model": "Gloster",
+          "vehicleTypeId": 7,
+          "proof": "MG Gloster",
+          "scope": "family"
+        },
+        {
+          "rawName": "MG Astor",
+          "model": "Astor",
+          "vehicleTypeId": 7,
+          "proof": "MG Astor",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "mg-hector-range-2023",
+      "batch": "passenger",
+      "make": "MG",
+      "makeId": 100108,
+      "url": "https://www.mgmotor.co.in/content/dam/mgmotor/documents/mg-dc-pdf-0306.pdf",
+      "cacheFile": "mg-hector-range-2023.pdf",
+      "kind": "pdf-portfolio",
+      "year": 2023,
+      "page": 1,
+      "dateProof": "Greater Noida, January 11, 2023",
+      "rows": [
+        {
+          "rawName": "Hector",
+          "model": "Hector",
+          "vehicleTypeId": 7,
+          "proof": "Hector 5-Seater",
+          "scope": "family"
+        },
+        {
+          "rawName": "Hector Plus",
+          "model": "Hector Plus",
+          "vehicleTypeId": 7,
+          "proof": "Hector Plus 6-Seater",
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "honda-news",
+      "batch": "two-wheelers",
+      "make": "HONDA",
+      "makeId": 474,
+      "url": "https://www.honda2wheelersindia.com/news",
+      "cacheFile": "honda-news.html",
+      "kind": "html-portfolio",
+      "year": 2025,
+      "page": 1,
+      "dateProof": "Chennai, 18th February 2025",
+      "rows": [
+        {
+          "rawName": "Shine 100",
+          "model": "Shine 100",
+          "vehicleTypeId": 1,
+          "proof": "100-110cc (Shine 100, CD 110 Dream Deluxe & Livo)",
+          "scope": "family"
+        },
+        {
+          "rawName": "CD 110 Dream Deluxe",
+          "model": "CD 110 Dream Deluxe",
+          "vehicleTypeId": 1,
+          "proof": "100-110cc (Shine 100, CD 110 Dream Deluxe & Livo)",
+          "scope": "family"
+        },
+        {
+          "rawName": "Livo",
+          "model": "Livo",
+          "vehicleTypeId": 1,
+          "proof": "100-110cc (Shine 100, CD 110 Dream Deluxe & Livo)",
+          "scope": "family"
+        },
+        {
+          "rawName": "Shine 125",
+          "model": "Shine 125",
+          "vehicleTypeId": 1,
+          "proof": "125cc (Shine 125 & SP125)",
+          "scope": "family"
+        },
+        {
+          "rawName": "SP125",
+          "model": "SP 125",
+          "vehicleTypeId": 1,
+          "proof": "125cc (Shine 125 & SP125)",
+          "scope": "family"
+        },
+        {
+          "rawName": "Unicorn",
+          "model": "Unicorn",
+          "vehicleTypeId": 1,
+          "proof": "160cc (Unicorn & SP160)",
+          "scope": "family"
+        },
+        {
+          "rawName": "SP160",
+          "model": "SP 160",
+          "vehicleTypeId": 1,
+          "proof": "160cc (Unicorn & SP160)",
+          "scope": "family"
+        },
+        {
+          "rawName": "Hornet 2.0",
+          "model": "Hornet 2.0",
+          "vehicleTypeId": 1,
+          "proof": "180-200cc (Hornet 2.0 & CB200X)",
+          "scope": "family"
+        },
+        {
+          "rawName": "CB200X",
+          "model": "CB200X",
+          "vehicleTypeId": 1,
+          "proof": "180-200cc (Hornet 2.0 & CB200X)",
+          "scope": "family"
+        },
+        {
+          "rawName": "Activa",
+          "model": "Activa",
+          "vehicleTypeId": 1,
+          "proof": "buyers of Activa and Activa 125",
+          "scope": "family"
+        },
+        {
+          "rawName": "Activa 125",
+          "model": "Activa 125",
+          "vehicleTypeId": 1,
+          "proof": "buyers of Activa and Activa 125",
+          "scope": "family"
+        },
+        {
+          "rawName": "CB350",
+          "model": "CB350",
+          "vehicleTypeId": 1,
+          "proof": "all-new CB350,",
+          "scope": "family"
+        },
+        {
+          "rawName": "CB350RS",
+          "model": "CB350RS",
+          "vehicleTypeId": 1,
+          "proof": "CB350RS, CB300F, CB300R, NX500, XL750 Transalp, and Gold Wing Tour",
+          "scope": "family"
+        },
+        {
+          "rawName": "CB300F",
+          "model": "CB300F",
+          "vehicleTypeId": 1,
+          "proof": "CB350RS, CB300F, CB300R, NX500, XL750 Transalp, and Gold Wing Tour",
+          "scope": "family"
+        },
+        {
+          "rawName": "CB300R",
+          "model": "CB300R",
+          "vehicleTypeId": 1,
+          "proof": "CB350RS, CB300F, CB300R, NX500, XL750 Transalp, and Gold Wing Tour",
+          "scope": "family"
+        },
+        {
+          "rawName": "NX500",
+          "model": "NX500",
+          "vehicleTypeId": 1,
+          "proof": "CB350RS, CB300F, CB300R, NX500, XL750 Transalp, and Gold Wing Tour",
+          "scope": "family"
+        },
+        {
+          "rawName": "XL750 Transalp",
+          "model": "XL750 Transalp",
+          "vehicleTypeId": 1,
+          "proof": "CB350RS, CB300F, CB300R, NX500, XL750 Transalp, and Gold Wing Tour",
+          "scope": "family"
+        },
+        {
+          "rawName": "Gold Wing Tour",
+          "model": "Gold Wing Tour",
+          "vehicleTypeId": 1,
+          "proof": "CB350RS, CB300F, CB300R, NX500, XL750 Transalp, and Gold Wing Tour",
+          "scope": "family"
+        }
+      ],
+      "blockStart": "Chennai, 18th February 2025:",
+      "blockEnd": "With a commitment to innovation and customer satisfaction"
+    }
+  ]
+}

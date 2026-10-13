@@ -22,6 +22,7 @@ export interface CatalogGroup {
   mappings: ProductMapping[];
   headingMappings?: ProductMapping[];
   titleMappings?: ProductMapping[];
+  selectorMappings?: ProductMapping[];
 }
 export interface CatalogObservation extends ReviewedModel {
   rawName: string;
@@ -55,7 +56,9 @@ export function parseSalesCatalog(html: string, baseUrl: string) {
   });
   const headings = [...body.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi)].map(m => decodeText(m[1]));
   const titles = [...body.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)].map(m => decodeText(m[1]));
-  return { links, headings, titles };
+  // Bajaj exposes reviewed product names in its current vehicle selector, rather than anchor labels.
+  const selectors = [...body.matchAll(/<div\b[^>]*class="[^"]*\bbaj-nav-card\b[^"]*"[^>]*data-model-name="([^"]+)"[^>]*>/gi)].map(m => decodeText(m[1]));
+  return { links, headings, titles, selectors };
 }
 
 export function salesObservations(group: CatalogGroup, html: string, date: string): CatalogObservation[] {
@@ -63,11 +66,11 @@ export function salesObservations(group: CatalogGroup, html: string, date: strin
     throw new Error("Invalid catalog observation date");
   }
   const parsed = parseSalesCatalog(html, group.url);
-  const validate = (mapping: ProductMapping, kind: "link" | "heading" | "title") => {
+  const validate = (mapping: ProductMapping, kind: "link" | "heading" | "title" | "selector") => {
     const expected = normalized(mapping.rawName);
     const found = kind === "link"
       ? parsed.links.some(link => link.url === mapping.url && normalized(link.name) === expected)
-      : parsed[kind === "heading" ? "headings" : "titles"].some(name => normalized(name) === expected);
+      : parsed[kind === "heading" ? "headings" : kind === "selector" ? "selectors" : "titles"].some(name => normalized(name) === expected);
     if (!found) throw new Error(`${group.id}: reviewed ${kind} missing: ${mapping.rawName}`);
     if (new URL(mapping.url).origin !== new URL(group.url).origin) throw new Error("Product evidence must stay on the reviewed official host");
     return { year: Number(date.slice(0, 4)), make: group.make, makeId: group.makeId,
@@ -79,6 +82,7 @@ export function salesObservations(group: CatalogGroup, html: string, date: strin
     ...group.mappings.map(m => validate(m, "link")),
     ...(group.headingMappings ?? []).map(m => validate(m, "heading")),
     ...(group.titleMappings ?? []).map(m => validate(m, "title")),
+    ...(group.selectorMappings ?? []).map(m => validate(m, "selector")),
   ];
 }
 
@@ -124,9 +128,10 @@ async function main() {
     const unique = [...new Map(records.map(r => [[r.year, r.makeId, r.model, r.vehicleTypeId].join("\0"), r])).values()];
     const catalog = buildReviewedCatalog(unique, metadata);
     const evidencePath = path.join(root, "data/evidence/manufacturer-catalogs", `india-${batch}.json`);
-    const previous: { records: CatalogObservation[] } = fs.existsSync(evidencePath) ? JSON.parse(fs.readFileSync(evidencePath, "utf8")) : { records: [] };
+    const previous: { records: CatalogObservation[]; audits?: object[] } = fs.existsSync(evidencePath) ? JSON.parse(fs.readFileSync(evidencePath, "utf8")) : { records: [] };
     const evidenceRecords = [...new Map([...previous.records, ...records].map(r => [[r.year, r.makeId, r.model, r.vehicleTypeId, r.url].join("\0"), r])).values()];
-    fs.writeFileSync(evidencePath, JSON.stringify({ schemaVersion: 1, observedAt: date, audits, records: evidenceRecords }, null, 2) + "\n");
+    const evidenceAudits = [...new Map([...(previous.audits ?? []), ...audits].map(a => [JSON.stringify(a), a])).values()];
+    fs.writeFileSync(evidencePath, JSON.stringify({ schemaVersion: 1, observedAt: date, audits: evidenceAudits, records: evidenceRecords }, null, 2) + "\n");
     writeSnapshot(path.join(root, "data/sources", id + ".json"), catalog, false);
     console.log(`${id}: ${unique.length} dated product/family selections`);
   }

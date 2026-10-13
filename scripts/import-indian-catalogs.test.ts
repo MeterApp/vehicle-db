@@ -36,3 +36,14 @@ test("reviewed headings decode entities and preserve explicit plus badges", () =
   ] };
   expect(salesObservations(headings, '<h2>Product &amp; Plus&#43;</h2>', "2026-10-13")[0]).toMatchObject({ model: "Product & Plus+", vehicleTypeId: 5 });
 });
+
+test("reviewed selector names require the product-card context and preserve suffixes", () => {
+  const selectors = { ...group, mappings: [], selectorMappings: [
+    { rawName: "Pulsar 125", url: group.url, model: "Pulsar 125", vehicleTypeId: 1, scope: "product" as const },
+  ] };
+  const card = '<div class="baj-nav-card" data-model-name="Pulsar 125 ">';
+  expect(salesObservations(selectors, card, "2026-10-13")[0].model).toBe("Pulsar 125");
+  for (const invalid of [card.replace("baj-nav-card", "unrelated"), card.replace("125 ", "125 NS"), `<script>${card}</script>`, `<!-- ${card} -->`]) {
+    expect(() => salesObservations(selectors, invalid, "2026-10-13")).toThrow(/missing/);
+  }
+});
