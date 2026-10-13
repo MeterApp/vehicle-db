@@ -1,0 +1,920 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-13",
+  "catalogVersion": "2.17.0",
+  "baselineCommit": "7e431f7",
+  "purpose": "Official Indian manufacturer catalog discovery. Candidate names are review targets, not validated additions, source observations or importable model-year facts.",
+  "method": "Official web searches plus bounded direct GET probes; HTML PDF links extracted without guessing hidden endpoints. No historical ranges inferred.",
+  "reuse": "Factual-name evidence only. No open bulk license established; manufacturer prose, PDFs and imagery are not bundled.",
+  "sources": [
+    {
+      "sourceId": "hero",
+      "url": "https://www.heromotocorp.com/en-in/motorcycles.html",
+      "candidateNames": [
+        "Splendor Plus",
+        "HF Deluxe",
+        "Glamour",
+        "Xtreme 125R",
+        "Xtreme 160R",
+        "Xpulse 200",
+        "Karizma XMR"
+      ],
+      "reviewNote": "Current product names require review of Splendor+ spelling and Xpulse 200 4V suffix; no range inferred.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.heromotocorp.com/en-in/motorcycles.html",
+      "contentType": "text/html;charset=utf-8",
+      "sha256": "c517f3e195e9572cc0f2537a81eb7cf6a37142a9b2e664210a5c6bf975290aa4",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 418579
+    },
+    {
+      "sourceId": "tvs",
+      "url": "https://www.tvsmotor.com/our-service/user-manual",
+      "candidateNames": [
+        "Apache RTR 160",
+        "Apache RTR 200 4V",
+        "Apache RR 310",
+        "Raider",
+        "Ronin",
+        "Jupiter",
+        "NTorq",
+        "iQube"
+      ],
+      "reviewNote": "Manual index distinguishes 2V/4V, RR310 2024, iQube production-date cutoffs and 2026 versions. Date basis must be reviewed. Extracted PDF URL inventory is capped at 100; full library contains further links. Sample large PDFs exceed web-reader limits, so manual contents are not yet reviewed.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tvsmotor.com/our-service/user-manual",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1b287a90a75733c83d69dd60a9c331f7e9a47d2ebc20d3407eea92d7d1b29b51",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://www.tvsmotor.com/-/media/Feature/Blog/EnvironmentalClearance.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/20-03-26/TVS-NTORQ-150---TFT.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/20-03-26/TVS-NTORQ-Race-XP.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/20-03-26/TVS-NTORQ.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/AfterAug2025/TVS-Apache-RTR-200-4V---USD.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-Apache-RTR-160-2V---Dual-Channel-ABS-with-TCS.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-Apache-RTR-160-4V---TFT-with-Map-Mirroring.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-Apache-RTR-200-4V---TFT-with-Map-Mirroring.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-Ronin-with-TCS.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-iQube-09-23-kWh-2026.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-iQube-31-kWh-2026.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-iQube-35-kWh-2026.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-iQube-S-47-kWh-2026.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/User-Manual/festive/TVS-iQube-ST-53-kWh-2026.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/14-04-26/TVS-Apache-RTX.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-160-2V---With-Ride-Mode---Conneted-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-160-2V---With-Ride-Mode---Non-Conneted-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-160-4V---TFT.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-160-4V---USD.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-160-4V---With-Ride-Mode---Connected-Cluste.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-160-4V---With-Ride-Mode---Non-Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-180.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/Apache-OnAfter-Augest-2025/TVS-Apache-RTR-200-4V---TFT.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Jupiter-125---Alloy-Wheel.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Jupiter-125-DT-SXC.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Jupiter-125-TFT-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Jupiter110--Drum--Drum-Alloy.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Jupiter110--SmartXonnect-Disc--Drum.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-NTORQ-150.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Ntorq-XT.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Radeon---Digital-Speedometer-Version.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Radeon.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Raider---Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Raider---SXC-DD.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Raider---TFT-DD.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Raider---iGO-Assist.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Raider.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Ronin.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Sport.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-StaR-City.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-XL100-Heavy-Duty-Alloy.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-XL100.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Zest-SXC.pdf",
+        "https://www.tvsmotor.com/-/media/Feature/Owners/UserManual2026/TVS-Zest.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-09-22-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-23-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-31-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-34-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-35-kWh-for-vehicles-produced-after-21042025.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-OM-for-the-vehicles-produced-before-08-Jun-2022.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-S-34-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-S-35-kWh-for-vehicles-produced-after-21042025.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-S-47-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-S.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-ST-51-kWh-and-34-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube-ST-53-kWh-and-35-kWh.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/Iqube/TVS-iQube.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/TVS-Orbiter.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Electric/TVS-X.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Moped/TVS-XL100.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RR/TVS-Apache-RR-310-BTO.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RR/TVS-Apache-RR-310.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RR/TVS-Apache-RR310-2024.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-160-2V---with-Ride-Mode---Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-160-2V---with-Ride-Mode---Non-Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-160-2V.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-160-4V---with-Ride-Mode---Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-160-4V---with-Ride-Mode---Non-Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-160-4V-USD.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-180-2V---with-Ride-Mode---Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-180-2V.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/RTR/TVS-Apache-RTR-200-4V---with-Ride-Mode.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/Radeon/TVS-Radeon--Digital-Speedometer-version.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/Radeon/TVS-Radeon.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/Raider/TVS-Raider---iGO-assist.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/Raider/TVS-Raider-Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/Raider/TVS-Raider.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/Sport_Rev9_BSVI.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/TVS-Ronin.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Motorcycles/TVS-StaR-City.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/New-TVS-Jupiter-SmartXonnect36.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/TVS-Jupiter---Basic---All-in-one-lock.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/TVS-Jupiter---Classic.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/TVS-Jupiter---SMW.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/TVS-Jupiter---intelliGO.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/TVS-Jupiter-Alloy-Drum-and-SMW-drum.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-110/TVS-Jupiter-ZX---Connected-cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-125/TVS-Jupiter-125---Alloy-wheel.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-125/TVS-Jupiter-125---SMW.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Jupiter-125/TVS-Jupiter-125--TFT-cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Ntorq/TVS-Ntorq---Connected-cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Ntorq/TVS-Ntorq---Non-Connected-cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Ntorq/TVS-Ntorq---Race-XP.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/Ntorq/TVS-Ntorq---XT.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/TVS-Scooty-Pep.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/Before-April-2025/Scooters/TVS-Zest.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/TVS-Apache-RTR_OnAfter-April-2025/TVS-Apache-RTR-160-2V---With-Ride-Mode---Non-Conneted-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/TVS-Apache-RTR_OnAfter-April-2025/TVS-Apache-RTR-160-2V---with-Ride-Mode---Connected-Cluster.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/TVS-Apache-RTR_OnAfter-April-2025/TVS-Apache-RTR-160-4V---USD.pdf",
+        "https://www.tvsmotor.com/-/media/UpdatedUserManuals2026/TVS-Apache-RTR_OnAfter-April-2025/TVS-Apache-RTR-160-4V---With-Ride-Mode---Conneted-Cluster.pdf"
+      ],
+      "visibleTextCharacters": 128532,
+      "documentUrlLimit": 100
+    },
+    {
+      "sourceId": "bajaj",
+      "url": "https://www.bajajauto.com/bikes",
+      "candidateNames": [
+        "Pulsar 125",
+        "Pulsar 150",
+        "Pulsar N160",
+        "Pulsar NS200"
+      ],
+      "reviewNote": "Current sales catalog; keep NS/N badges and engine capacities.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bajajauto.com/bikes",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "54a7d5183b13ed0dead315fb7937e9bd59ce512fc60b5d0ee99507219516759e",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 113677
+    },
+    {
+      "sourceId": "bajaj-avenger",
+      "url": "https://www.bajajauto.com/pdf/avenger-160.pdf",
+      "candidateNames": [
+        "Avenger 160 Street"
+      ],
+      "reviewNote": "Historical manual; April 2019 revision is not model-year range.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bajajauto.com/pdf/avenger-160.pdf",
+      "contentType": "application/pdf",
+      "sha256": "4abf8d3f1e84019bfe3a65d045adbe5975b103589ea545b41f2c99d0eb23b3d5",
+      "access": "pdf-retrieved"
+    },
+    {
+      "sourceId": "honda-two-wheelers",
+      "url": "https://www.honda2wheelersindia.com/resources/owners-manual",
+      "candidateNames": [
+        "Shine",
+        "SP 125",
+        "Hornet 2.0",
+        "CB200X",
+        "CB350",
+        "CB650R",
+        "Activa 6G",
+        "Activa 125",
+        "Dio 125"
+      ],
+      "reviewNote": "Check model/date selector and BigWing scope. Current Activa is not automatically historical Activa 6G.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.honda2wheelersindia.com/resources/owners-manual",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c7fecb37646032e0023d5a953ebd5a28d3ef2ac7f338b9d1c18b534ad5435747",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 4951
+    },
+    {
+      "sourceId": "suzuki-scooters",
+      "url": "https://www.suzukimotorcycle.co.in/all-products/scooters",
+      "candidateNames": [
+        "Access 125",
+        "Burgman Street",
+        "Avenis"
+      ],
+      "reviewNote": "Current range spells Access without engine suffix. Burgman Street EX is a separate reviewed identity.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.suzukimotorcycle.co.in/all-products/scooters",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "8c4c8be0e48809ba463383f71d51bdfa820a974bf5b5b5db845f8778dab5ef7e",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://s3.ap-south-1.amazonaws.com/suzuki-website-s3/public-live/uploads/pdf/Revised-MRP-Post-GST-Revision.pdf"
+      ],
+      "visibleTextCharacters": 42930
+    },
+    {
+      "sourceId": "yamaha",
+      "url": "https://www.yamaha-motor-india.com/product-enquiry.html",
+      "candidateNames": [
+        "MT-15",
+        "R15",
+        "RayZR",
+        "Fascino"
+      ],
+      "reviewNote": "Discovery catalog; map R15 generations, MT-15 Ver2 and scooter variants explicitly. Legacy product-enquiry URL now returns 404; official shop and indexed 2025 July MT-15 brochure are alternatives.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "access": "direct-fetch-failed",
+      "error": "HTTP Error 404: Not Found",
+      "alternativeUrls": [
+        "https://shop.yamaha-motor-india.com/",
+        "https://www.yamaha-motor-india.com/theme/v4/pdfs/brochure/MT-15_Brochure%202025_July.pdf?v=50"
+      ]
+    },
+    {
+      "sourceId": "ola",
+      "url": "https://www.olaelectric.com/brochure",
+      "candidateNames": [
+        "S1 Pro",
+        "S1 X"
+      ],
+      "reviewNote": "Current brochure library; preserve generation/battery variants.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.olaelectric.com/brochure",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "3cd7d0667e710a120497491c4f2fdff3742caa84f5ee5492b8fa8c0de78d3883",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://cdn.olaelectric.com/sites/evdp/brochure/Ola_Shakti_Brochure.pdf",
+        "https://cdn.olaelectric.com/sites/evdp/brochure/Roadster_X_Brochure.pdf",
+        "https://cdn.olaelectric.com/sites/evdp/brochure/S1_Pro_Brochure.pdf",
+        "https://cdn.olaelectric.com/sites/evdp/brochure/S1_X_Brochure.pdf",
+        "https://cdn.olaelectric.com/sites/evdp/brochure/S1_Z_Brochure.pdf"
+      ],
+      "visibleTextCharacters": 5713
+    },
+    {
+      "sourceId": "ola-s1-air",
+      "url": "https://cdn.olaelectric.com/brochure/s1-air.pdf",
+      "candidateNames": [
+        "S1 Air"
+      ],
+      "reviewNote": "Historical official brochure; no ongoing sales or full model-year history claimed. Official web search indexes the source, but direct retrieval failed during this audit.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "access": "direct-fetch-failed",
+      "error": "The read operation timed out"
+    },
+    {
+      "sourceId": "ather",
+      "url": "https://www.atherenergy.com/electric-scooter-all-models",
+      "candidateNames": [
+        "450X",
+        "450 Apex",
+        "Rizta"
+      ],
+      "reviewNote": "Current lineup; prospectus can enrich historical generation/launch dates separately. Direct lineup fetch returns 403; manufacturer-hosted offering documents remain indexed.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "access": "direct-fetch-failed",
+      "error": "HTTP Error 403: Forbidden",
+      "alternativeUrls": [
+        "https://media.atherenergy.com/Consolidated-DRHP.pdf",
+        "https://media.atherenergy.com/Ather-Energy-Prospectus.pdf"
+      ]
+    },
+    {
+      "sourceId": "royal-enfield",
+      "url": "https://www.royalenfield.com/in/en/motorcycles/new-himalayan/",
+      "candidateNames": [
+        "Himalayan 450",
+        "Continental GT 650"
+      ],
+      "reviewNote": "Product/menu names establish discovery; original Himalayan is not Himalayan 450.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.royalenfield.com/in/en/motorcycles/new-himalayan/",
+      "contentType": "text/html;charset=utf-8",
+      "sha256": "99e2827c37200691129b1df3b239e569f09f9e1d924f1f8994c04c080ed926d5",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://www.royalenfield.com/content/dam/open-pdf/royal-enfield-himalayan-450-updated-technical-specifications-india.pdf"
+      ],
+      "visibleTextCharacters": 147383
+    },
+    {
+      "sourceId": "ktm",
+      "url": "https://www.ktmindia.com/ktm-bikes",
+      "candidateNames": [
+        "250 Duke",
+        "RC 200"
+      ],
+      "reviewNote": "India product catalog; preserve Duke/RC and generation distinction.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ktmindia.com/ktm-bikes",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a034cd417320a3eaa719cdf00d2234a191b8079d05702fa2525b6305887a2225",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 139965
+    },
+    {
+      "sourceId": "harley-x440",
+      "url": "https://www.harley-davidson.com/in/en/motorcycles/h-d-x.html",
+      "candidateNames": [
+        "X440"
+      ],
+      "reviewNote": "India-specific product; distinguish X440 T.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.harley-davidson.com/in/en/motorcycles/h-d-x.html",
+      "contentType": "text/html;charset=utf-8",
+      "sha256": "f3d838497da16ce65ca056848bbb93db32df380f45c21eb0e21047b0edc9f4ee",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 2368
+    },
+    {
+      "sourceId": "vespa",
+      "url": "https://vespaindia.com/vespa-vxl-3d-test",
+      "candidateNames": [
+        "VXL",
+        "SXL"
+      ],
+      "reviewNote": "Legacy product page and brochure entry; verify marketed dates separately. Official web search indexes the source, but direct retrieval failed during this audit.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "access": "direct-fetch-failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "sourceId": "maruti-alto",
+      "url": "https://www.marutisuzuki.com/content/dam/msil/arena/in/en/assets/cars/alto-k10/documents/AltoK10-KV-Brochure.pdf",
+      "candidateNames": [
+        "Alto K10"
+      ],
+      "reviewNote": "Official brochure; document revision date is not historical range.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.marutisuzuki.com/content/dam/msil/arena/in/en/assets/cars/alto-k10/documents/AltoK10-KV-Brochure.pdf",
+      "contentType": "application/pdf",
+      "sha256": "423656a807b17101c5d22493ef73f488bce76ab299a7b7f07949e1a2c8f4693a",
+      "access": "pdf-retrieved"
+    },
+    {
+      "sourceId": "nexa-ciaz",
+      "url": "https://nexaexperience.com/-/media/feature/nexawebsiteherobanner/brochure/ciaz_brochure.pdf",
+      "candidateNames": [
+        "Ciaz"
+      ],
+      "reviewNote": "Historical brochure; do not infer current sales from preserved PDF. Official web search indexes the source, but direct retrieval failed during this audit.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "access": "direct-fetch-failed",
+      "error": "HTTP Error 403: Ip Forbidden"
+    },
+    {
+      "sourceId": "hyundai",
+      "url": "https://www.hyundai.com/in/en/find-a-car",
+      "candidateNames": [
+        "Alcazar",
+        "Verna",
+        "Exter",
+        "Aura"
+      ],
+      "reviewNote": "India selector has direct per-model brochure links.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.hyundai.com/in/en/find-a-car",
+      "contentType": "text/html",
+      "sha256": "5f4b349b9c8854ca5a164ada8e402540e5a51fd4e1a0e3f87e3921894b10947e",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/alcazar.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/aura-prime-sd.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/aura.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/creta-ev.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/creta-n-line.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/creta.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/exter.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/grand-i10-nios.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/i20-n-line.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/i20.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/ioniq-5.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/nios-prime-hb.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/venue-n-line.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/venue.pdf",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/verna.pdf"
+      ],
+      "visibleTextCharacters": 234277
+    },
+    {
+      "sourceId": "tata-cars",
+      "url": "https://cars.tatamotors.com/",
+      "candidateNames": [
+        "Punch",
+        "Nexon",
+        "Curvv",
+        "Harrier"
+      ],
+      "reviewNote": "Access-dependent; official investor presentations provide dated portfolio fallback. Old domain fails certificate verification.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "access": "direct-fetch-failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)>",
+      "alternativeUrls": [
+        "https://cars.tata.cars/",
+        "https://www.tatamotors.com/wp-content/uploads/2025/06/TML-Investor-Day-2025-presentation.pdf"
+      ]
+    },
+    {
+      "sourceId": "tata-ev",
+      "url": "https://ev.tata.cars/content/tml/ev/in/en/support/brochures.html",
+      "candidateNames": [
+        "Nexon EV",
+        "Punch EV"
+      ],
+      "reviewNote": "Search index exposes Nexon.ev and Punch.ev brochures; direct access must be checked.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://ev.tata.cars/content/tml/ev/in/en/support/brochures.html",
+      "contentType": "text/html;charset=utf-8",
+      "sha256": "81d36e889e7521eab19c0ac0d3b647269706d08848ad9cde01c7a49b65c6aa20",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://ev.tata.cars/content/dam/tml/ev/general/arcade-ev-brochure/arcade-ev-brochure.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/curvv/year-2026/ev/promoting-vc/broucher/year-2026/september/curvv-ev-x-web-brochure.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/harrier/year-2026/ev/promoting-vc/brochure/october/harrier-ev-brochure-oct-26.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/nexon/year-2026/ev/promoting-vc/brochures/october/nexon-ev-brochure.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/punch/year-2026/ev/promoting-vc/brochure/june/punch-ev-brochure-june.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/sierra/year-2026/ev/promoting-vc/brochure/july/sierra-ev-brochure.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/tiago/year-2026/ev/promoting-vc/brochure/tiago-brouchure-evf-final.pdf",
+        "https://ev.tata.cars/content/dam/tml/ev/products/tigor/year-2023/ev/promoting-vc/brochure/tigor-ev-brochure.pdf"
+      ],
+      "visibleTextCharacters": 52281
+    },
+    {
+      "sourceId": "mahindra",
+      "url": "https://auto.mahindra.com/suv",
+      "candidateNames": [
+        "Thar",
+        "Thar Roxx",
+        "XUV 3XO",
+        "Scorpio Classic",
+        "XUV400"
+      ],
+      "reviewNote": "Current lineup now includes XUV7XO; cannot substitute for XUV700. Thar OG naming needs review.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://auto.mahindra.com/suv",
+      "contentType": "text/html;charset=UTF-8",
+      "sha256": "ad2c1280223f57a99fdddcbe642c32ad7940a63ba4182a5a6b7cc4495cfc9933",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 75016
+    },
+    {
+      "sourceId": "mahindra-xuv700",
+      "url": "https://auto.mahindra.com/on/demandware.static/-/Sites-amc-Library/default/dw527ccea2/brochures/X700EBN/X700EBN_brochure.pdf",
+      "candidateNames": [
+        "XUV700"
+      ],
+      "reviewNote": "Archived Ebony brochure; edition/date is not universal family history.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://auto.mahindra.com/on/demandware.static/-/Sites-amc-Library/default/dw527ccea2/brochures/X700EBN/X700EBN_brochure.pdf",
+      "contentType": "application/pdf",
+      "sha256": "e67852488e205885e20675815bb822dd7ef89b0d969eebd9b3a1886256237e15",
+      "access": "pdf-retrieved"
+    },
+    {
+      "sourceId": "mahindra-marazzo",
+      "url": "https://auto.mahindra.com/on/demandware.static/-/Sites-amc-Library/default/dwa00130f0/Marazzo/Marazzo_Brochure.pdf",
+      "candidateNames": [
+        "Marazzo"
+      ],
+      "reviewNote": "Official archived brochure; no current-sales assumption.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://auto.mahindra.com/on/demandware.static/-/Sites-amc-Library/default/dwa00130f0/Marazzo/Marazzo_Brochure.pdf",
+      "contentType": "application/pdf",
+      "sha256": "6c33b7b29cbfcbeca41649635f2582a760e77623078ac38850bd9b2d0012688a",
+      "access": "pdf-retrieved"
+    },
+    {
+      "sourceId": "toyota",
+      "url": "https://www.toyotabharat.com/sitemap/",
+      "candidateNames": [
+        "Urban Cruiser Taisor",
+        "Urban Cruiser Hyryder",
+        "Innova Crysta",
+        "Innova HyCross",
+        "Land Cruiser 300"
+      ],
+      "reviewNote": "India site-map links to specific models; trim/market mappings pending.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.toyotabharat.com/sitemap/",
+      "contentType": "text/html",
+      "sha256": "bd3d873329aac0b85a2e95bd42197885a9ea891204d14153c18cccbdaa694c3d",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 3694
+    },
+    {
+      "sourceId": "kia",
+      "url": "https://www.kia.com/in/our-vehicles/sonet/showroom.html",
+      "candidateNames": [
+        "Sonet"
+      ],
+      "reviewNote": "India product page links brochure; title year needs document corroboration.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.kia.com/in/our-vehicles/sonet/showroom.html",
+      "contentType": "text/html",
+      "sha256": "bc8df2e77185ece8bc5d5bbc6f701e96711bce9b25d37b8450a5d0059bc0d250",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://www.kia.com/content/dam/kia2/in/en/data/discover/new-and-pr/kin-csr-policy.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/images/csr/CSR-Plan-FY25-26.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/images/csr/CSR_Committee_new.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/images/csr/Project_DROP_Assessment_Report.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/images/csr/Project_Uphaar_Assessment_report.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/new-seltos/All-New-Seltos-BNCAP-Fact-Sheet.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/sonet/brochure/Sonet_Wild_Reborn_Brochure_2026_Desktop.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/sonet/brochure/Sonet_Wild_Reborn_Brochure_2026_Mobile.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/syros/FACT-SHEET-SYROS-1.pdf",
+        "https://www.kia.com/content/dam/kia2/in/en/ulitiy/Vulnerability-Disclosure-Policy-v1.0.pdf"
+      ],
+      "visibleTextCharacters": 119100
+    },
+    {
+      "sourceId": "honda-cars",
+      "url": "https://www.hondacarindia.com/download-brochure",
+      "candidateNames": [
+        "Amaze",
+        "Elevate",
+        "City e:HEV"
+      ],
+      "reviewNote": "Download library; preserve City e:HEV versus ICE City.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.hondacarindia.com/download-brochure",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "14a636d833c3275ba9c775d6f9c2954e19b7b6d0c8c9cca427253a97e855119a",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 2890
+    },
+    {
+      "sourceId": "volkswagen",
+      "url": "https://www.volkswagen.co.in/idhub/content/dam/onehub_pkw/importers/in/models/taigun/taigun-brochure.pdf",
+      "candidateNames": [
+        "Taigun"
+      ],
+      "reviewNote": "India brochure; do not substitute Tiguan or Taigo.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.volkswagen.co.in/idhub/content/dam/onehub_pkw/importers/in/models/taigun/taigun-brochure.pdf",
+      "contentType": "application/pdf",
+      "sha256": "fe4b734b736b316686c7461487ed0103d3fa002ed8bc55a3733492388653f4d9",
+      "access": "pdf-retrieved"
+    },
+    {
+      "sourceId": "skoda",
+      "url": "https://www.skoda-auto.co.in/",
+      "candidateNames": [
+        "Slavia",
+        "Kushaq"
+      ],
+      "reviewNote": "India model navigation and brochures.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.skoda-auto.co.in/",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c0484a4b8533eb47e3c073121ec26375209f38ac17f359a35d99f2e4a5b75fa3",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 5872
+    },
+    {
+      "sourceId": "renault",
+      "url": "https://www.renault.co.in/cars/renault-triber.html",
+      "candidateNames": [
+        "Triber"
+      ],
+      "reviewNote": "India product and brochure entry.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.renault.co.in/cars/renault-triber.html",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6b36ac8af6d7e277adeed677da1eec37caf69b03d65e50fb699e7b79f04a297e",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://cdn.group.renault.com/ren/in/investor-new/Renault_MGT_7%20FY22-23%20signed-filed.pdf.asset.pdf/accc0c1df3.pdf",
+        "https://cdn.group.renault.com/ren/in/triber2026/triber-turbo/triber-turbo-product-brochure.pdf.asset.pdf/c06d54e6d0.pdf"
+      ],
+      "visibleTextCharacters": 8580
+    },
+    {
+      "sourceId": "nissan",
+      "url": "https://www.nissan.in/vehicles/new/nissan-magnite.html",
+      "candidateNames": [
+        "Magnite"
+      ],
+      "reviewNote": "India product and brochure entry.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nissan.in/vehicles/new/nissan-magnite.html",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "47dc8a55bd3f7179ef87a81128cecc12b2fe073ccaa619a13e0fcd53a47de629",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://www-asia.nissan-cdn.net/content/dam/Nissan/in/brochures/2026/New-Nissan-Magnite-Main-Brochure.pdf"
+      ],
+      "visibleTextCharacters": 77460
+    },
+    {
+      "sourceId": "mg",
+      "url": "https://www.mgmotor.co.in/tools/brochures",
+      "candidateNames": [
+        "Comet EV",
+        "Windsor EV",
+        "Astor",
+        "Hector",
+        "Hector Plus",
+        "Gloster"
+      ],
+      "reviewNote": "Brochure library; preserve Windsor Pro/Majestor separately from older requested families.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.mgmotor.co.in/tools/brochures",
+      "contentType": "text/html;charset=utf-8",
+      "sha256": "d318ed44d810e560ece6929946746ad1579c349d05efc755b7708115dfe45976",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://s7ap1.scene7.com/is/content/mgmotor/brand/mgmotor/homepage/tools/brochures/MG%20Astor%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/EV%20Charger%20Installation%20Guide.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/Hector%20ADAS%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Astor%20Accessories%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Comet%20EV%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Comet%20EV%20Accessories%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Hector%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Hector%20Accessories%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Hector%20Shield%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Hector%20Tomahawk%20EV%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Hector%20Tomahawk%20PHEV%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Majestor%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Windsor%20EV%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Windsor%20EV%20Accessories%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20ZS%20EV%20iSmart2%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20ZSEV%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/Majestor%20Accessory%20-%20Brochure.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/i-Smart%20Brochure-v2.pdf",
+        "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/voluntary%20vehicle%20scrapper.pdf",
+        "https://www.mgmotor.co.in/content/dam/mgmotor/documents/Windsor%20Depreciation%20Terms%20and%20Conditions.pdf"
+      ],
+      "visibleTextCharacters": 142773
+    },
+    {
+      "sourceId": "byd",
+      "url": "https://www.bydautoindia.com/car-dealer/electric-car-price",
+      "candidateNames": [
+        "eMAX 7"
+      ],
+      "reviewNote": "India official lineup; model page/brochure access and year pending.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bydautoindia.com/car-dealer/electric-car-price",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "3f2b80074a803c89a6e29aea19e3747c78e665a335405ab99296cd1f330d1a35",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 6940
+    },
+    {
+      "sourceId": "tata-smalltrucks",
+      "url": "https://smalltrucks.tatamotors.com/",
+      "candidateNames": [
+        "Ace",
+        "Intra"
+      ],
+      "reviewNote": "Mini-truck range; variants are body/configuration candidates, not full history.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://smalltrucks.tatamotors.com/",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "d2deca4d9f18caf116f37c8254155807827e0a211945ddc466be98795005f55e",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 27435
+    },
+    {
+      "sourceId": "tata-trucks",
+      "url": "https://trucks.tatamotors.com/all-trucks",
+      "candidateNames": [
+        "407",
+        "Ultra",
+        "Prima"
+      ],
+      "reviewNote": "Full model/configuration selector; keep cab/chassis, wheelbase and payload derivatives.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://trucks.tatamotors.com/all-trucks",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "746cb85de5760baf0226cacca22f552a6c949ca4722395b40c398b2edb680472",
+      "access": "html-retrieved",
+      "documentUrls": [
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2025-08/Signa%202820.K%20CNG%20RMC%20leaflet_CTC%20Small.pdf?VersionId=UO.yqg.7B08cScmvBEBH72Rjkyykb7u2",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2025-08/Signa%203525.T%20leaflet_CTC%20Small.pdf?VersionId=gF8G4n3SyPXkA18ZHgX0p_.W8xrKl8YV",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2025-08/Signa%204625.S%20leaflet_CTC%20Small.pdf?VersionId=o2ZCwIuC9LiAo2TmlkUcA14DOV_8mqfo",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-01/prima-e28k-bev-leafletpdf.pdf?VersionId=Dc.jYCcUUe5C0sekv7_JUsot0EZ5rt3j",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-04/Signa%203123.T%20leaflet.pdf?VersionId=aMMytH_htuuXSJ_dpeTDopUBQFVL737d",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-04/Signa%203521.T%20leaflet.pdf?VersionId=IAzeMsUick1CvHL2F2jGZpoexN.a7Xlp",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-04/Signa%203523.T%20leaflet.pdf?VersionId=6bMy.gwod01q8xglSDN3qh08krV3H2LX",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-04/Signa%204023.S%20Container%20leaflet.pdf?VersionId=8YhgznnMneFbUgXR82RQ84v91.c02AkT",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-04/Signa%205521.S%204x2%20leaflet.pdf?VersionId=lopCOHT6uVDDxfJTKeCSSefuuxX9VlOD",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-10/Prima%202832.K%20SRT%20leaflet_CTC.pdf?VersionId=0rKyHiZeB4VWu4EdIHomnRaqFhMdi.pl",
+        "https://trucks.tatamotors.com/assets/trucks/files/brochures/2026-10/Prima-3532.K-RMC-leaflet.pdf?VersionId=.S2YsbXAOM9vO3IlicskLqCubEHUe7E9"
+      ],
+      "visibleTextCharacters": 38208
+    },
+    {
+      "sourceId": "tata-buses",
+      "url": "https://busesandvans.tatamotors.com/buses",
+      "candidateNames": [
+        "Starbus",
+        "LPO"
+      ],
+      "reviewNote": "LPO is a chassis-code family, not a single exterior; review exact chassis/body before rendering.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://busesandvans.tatamotors.com/buses",
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "cacd3ed9edb11b426ba918384ad367cbe8b84ef61967f4b9039b4dfc0ea26344",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 109624
+    },
+    {
+      "sourceId": "ashok-leyland",
+      "url": "https://www.ashokleyland.com/in/trucks",
+      "candidateNames": [
+        "Ecomet",
+        "Boss",
+        "AVTR"
+      ],
+      "reviewNote": "Family/configuration truck selector; date/body variants pending.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ashokleyland.com/in/trucks",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7a8901ec35704852535f4ca665454d23b9e5104742813c59e7de7b789d16f8e6",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 2892
+    },
+    {
+      "sourceId": "ashok-lightvehicles",
+      "url": "https://ashokleyland.com/in/lightvehicles/lcvpassenger",
+      "candidateNames": [
+        "Dost",
+        "Partner"
+      ],
+      "reviewNote": "Page label says passenger but lists goods vehicles; type must follow exact product specifications.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://ashokleyland.com/in/lightvehicles/lcvpassenger",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0114941deee39e2a729c47faad8ae062d92422d000bafffd628dfe22d819c71a",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 3602
+    },
+    {
+      "sourceId": "eicher-2055",
+      "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/light-duty/pro-2055",
+      "candidateNames": [
+        "Pro 2055"
+      ],
+      "reviewNote": "Exact India truck page with brochure. Brochure download button leads to a personal-information form; use public product specifications without submitting contact data.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/light-duty/pro-2055",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ff897bd7c0488e5c4e5ae4202e8ca4a7322cf866af8132bde0974f0bc769f656",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 4844
+    },
+    {
+      "sourceId": "eicher-3015",
+      "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/medium-duty/pro-3015",
+      "candidateNames": [
+        "Pro 3015"
+      ],
+      "reviewNote": "Exact India truck page with brochure. Brochure download button leads to a personal-information form; use public product specifications without submitting contact data.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/medium-duty/pro-3015",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1b9535ac4e201215d3e5c08238b1cf5d997698a16988a95d40a08ac4b7dffc13",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 5057
+    },
+    {
+      "sourceId": "eicher-6042",
+      "url": "https://www.eichertrucksandbuses.com/heavy-duty-trucks/haulage/pro-6042",
+      "candidateNames": [
+        "Pro 6042"
+      ],
+      "reviewNote": "Exact India truck page with brochure; distinguish haulage from HT tipper. Brochure download button leads to a personal-information form; use public product specifications without submitting contact data.",
+      "market": "IN",
+      "yearBasis": "unverified",
+      "httpStatus": 200,
+      "finalUrl": "https://www.eichertrucksandbuses.com/heavy-duty-trucks/haulage/pro-6042",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "37104529772f54b9a009cdf363ec14f2707f555547dea16594a7d95c21639245",
+      "access": "html-retrieved",
+      "documentUrls": [],
+      "visibleTextCharacters": 4841
+    }
+  ],
+  "identityReviewQueue": [
+    {
+      "make": "SUZUKI",
+      "requestedName": "WagonR",
+      "productionName": "WAGON R+",
+      "status": "regional-body-and-generation-review-required"
+    },
+    {
+      "make": "YAMAHA",
+      "requestedName": "R15",
+      "productionName": "YZF-R15",
+      "status": "year-and-generation-review-required"
+    },
+    {
+      "make": "HONDA",
+      "requestedName": "CB650R",
+      "productionNames": [
+        "CB650RA",
+        "CB650RAC"
+      ],
+      "status": "specification-code-review-required"
+    }
+  ]
+}
