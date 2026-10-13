@@ -127,6 +127,8 @@ const MAKE_SEARCH_ALIASES = new Map<string, string[]>([
   ["harley davidson", ["harley"]],
   ["mercedes benz", ["mercedes", "benz", "merc"]],
   ["volkswagen", ["vw"]],
+  // TQ WULING is the official Malaysian brand; retain its published identity.
+  ["tq wuling", ["wuling"]],
 ]);
 
 const sourceMaskById = new Map(

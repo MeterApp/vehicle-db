@@ -213,10 +213,10 @@ describe("getMakes", () => {
 
   it("includes Atul Auto only for the sourced product-catalog years", () => {
     for (const year of [2024, 2026]) {
-      const makes = getMakes({ year, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID });
+      const makes = getMakes({ year, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID, sourceId: "atul-auto-catalog" });
       expect(makes).toEqual([{ makeId: ATUL_AUTO_MAKE_ID, makeName: "ATUL AUTO" }]);
     }
-    expect(getMakes({ year: 1990, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID })).toEqual([]);
+    expect(getMakes({ year: 1990, vehicleTypeId: AUTO_RICKSHAW_TYPE_ID, sourceId: "atul-auto-catalog" })).toEqual([]);
   });
 
   it("each make has camelCase id and name", () => {
