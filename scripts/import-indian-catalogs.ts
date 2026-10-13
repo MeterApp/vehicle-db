@@ -41,9 +41,18 @@ export function decodeText(html: string): string {
 }
 const normalized = (value: string) => decodeText(value).toUpperCase();
 
+export function stripNonCatalogMarkup(html: string): string {
+  let previous: string;
+  do {
+    previous = html;
+    html = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, "").replace(/<!--[\s\S]*?-->/g, "");
+  } while (html !== previous);
+  return html;
+}
+
 /** Inspect inert markup only. Script data, image alt labels and manual filenames are not sales evidence. */
 export function parseSalesCatalog(html: string, baseUrl: string) {
-  const body = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, "").replace(/<!--[\s\S]*?-->/g, "");
+  const body = stripNonCatalogMarkup(html);
   const links = [...body.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)].flatMap(match => {
     const attribute = match[1].match(/\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
     const href = attribute?.[1] ?? attribute?.[2] ?? attribute?.[3];
