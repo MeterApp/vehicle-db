@@ -51,12 +51,15 @@ export function createVehicleResolver(catalog: Catalog, identities: IdentityGrap
     // Only a leading year is inferred. Model names such as Peugeot 2008 are preserved.
     const prefix = text.match(/^((?:19|20)\d{2})\s+/);
     if (prefix) { if (year !== undefined && year !== Number(prefix[1])) return result("INVALID_INPUT"); year = Number(prefix[1]); text = text.slice(prefix[0].length); }
+    const context = { year, market: options.market, yearBasis: options.yearBasis ?? "model-year" };
     let makeId = options.makeId;
-    const make = makeNames.find(m => text === m.name || text.startsWith(m.name + " "));
+    const make = [...makeNames, ...(identities.makeAliases ?? [])
+      .filter(a => scopeMatches(a, context)).map(a => ({ id: a.makeId, name: norm(a.text) }))]
+      .sort((a, b) => b.name.length - a.name.length)
+      .find(m => text === m.name || text.startsWith(m.name + " "));
     if (make && (makeId === undefined || make.id === makeId)) { makeId = make.id; text = text.slice(make.name.length).trim(); }
     if (makeId === undefined || !byMake.has(makeId)) return result("UNKNOWN_MAKE");
     if (!text) return result("UNKNOWN_MODEL");
-    const context = { year, market: options.market, yearBasis: options.yearBasis ?? "model-year" };
     const sourceIndex = options.sourceId === undefined ? undefined : catalog.sources.findIndex(s => s.source_id === options.sourceId);
     if (sourceIndex === -1) return result("SCOPE_UNVERIFIED");
     const rows = (byMake.get(makeId) ?? []).filter(r => (options.vehicleTypeId === undefined || r[4] === options.vehicleTypeId) && (sourceIndex === undefined || (r[5] & 2 ** sourceIndex) !== 0));

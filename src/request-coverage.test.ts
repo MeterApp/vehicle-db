@@ -1,0 +1,79 @@
+import { expect, test } from "vitest";
+import { resolveVehicle } from "./resolve";
+import { searchVehicles } from "./search";
+import graph from "./identity-data";
+import { evaluateVisualCompatibility } from "./identity";
+
+const india = { market: "IN", yearBasis: "catalog-year" as const };
+test("reviewed brand names keep catalog IDs and require their market in the resolver", () => {
+  const canonical = resolveVehicle("2025 Hero Splendor Plus", india);
+  const expanded = resolveVehicle("2025 Hero MotoCorp Splendor Plus", india);
+  expect(expanded.status).toBe("MATCHED");
+  expect(expanded).toEqual(canonical);
+  expect(resolveVehicle("2025 Hero MotoCorp Splendor Plus", { ...india, market: "VN" }).status).not.toBe("MATCHED");
+  const short = searchVehicles("2025 maruti ciaz", { fuzzy: false }).find(r => r.kind === "model");
+  const long = searchVehicles("2025 maruti suzuki ciaz", { fuzzy: false }).find(r => r.kind === "model");
+  expect(long).toMatchObject({ makeId: 3233934283, modelName: "Ciaz", matchKind: "exact" });
+  expect(long).toEqual(short);
+  expect(resolveVehicle("2025 Maruti Suzuki Ciaz", india).status).toBe("MATCHED");
+});
+
+test("category labels and unknown suffixes are never discarded to find a nearby vehicle", () => {
+  for (const query of ["2025 Honda Scooters Activa 125", "2025 Honda Motorcycles CB350", "2025 Tata Commercial Ace"]) {
+    expect(resolveVehicle(query, india).status).not.toBe("MATCHED");
+  }
+  for (const query of ["2025 TVS Jupiter", "2025 Honda Shine", "2025 Hero Xpulse 200", "2026 Yamaha RayZR", "2026 Ashok Leyland Partner", "2025 Ashok Leyland AVTR"]) {
+    expect(resolveVehicle(query, india).status).not.toBe("MATCHED");
+  }
+  expect(resolveVehicle("2025 Honda Activa 125", india).status).toBe("MATCHED");
+  expect(resolveVehicle("2025 TVS Jupiter 125", india).status).toBe("MATCHED");
+  expect(resolveVehicle("2026 Ashok Leyland Partner 6 Tyre", india).status).toBe("MATCHED");
+});
+
+test("a dated catalog or family record never becomes a model-year or visual match", () => {
+  expect(resolveVehicle("2025 Honda Amaze", { ...india, depth: "generation" }).status).toBe("AMBIGUOUS");
+  expect(resolveVehicle("2025 Honda Amaze 3rd Generation", { ...india, depth: "generation" }).status).toBe("MATCHED");
+  for (const query of ["2026 Ather 450X", "2025 Tata Nexon", "2025 TVS Apache RR 310", "2026 Eicher Pro 6042"]) {
+    expect(resolveVehicle(query, { ...india, yearBasis: "model-year" }).status).not.toBe("MATCHED");
+    expect(resolveVehicle(query, { ...india, depth: "visual" }).status).not.toBe("MATCHED");
+  }
+  expect(resolveVehicle("2026 Tata Nexon.ev", india).status).toBe("MATCHED");
+  expect(resolveVehicle("2025 Honda SP 125", { market: "IN", depth: "visual" }).status).toBe("GENERATION_UNRESOLVED");
+  expect(resolveVehicle("2028 Bentley Torcal", { market: "US" }).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2026 Bentley Torcal", { market: "US", yearBasis: "catalog-year" }).status).toBe("MATCHED");
+  expect(resolveVehicle("2026 Bentley Torcal S", { market: "US", yearBasis: "catalog-year" }).status).not.toBe("MATCHED");
+});
+
+test("F Sport and Peak editions retain distinct market, year, specification and exterior identities", () => {
+  const usa = resolveVehicle("2022 Lexus LX 600 F Sport", { market: "US", depth: "visual" });
+  const vn = resolveVehicle("2026 Lexus LX 600 F Sport", { market: "VN", yearBasis: "catalog-year", depth: "visual" });
+  const peak = resolveVehicle("2019 Lexus LX 570 Peak Edition", { market: "CN", depth: "visual" });
+  for (const r of [usa, vn, peak]) {
+    expect(r.status).toBe("MATCHED");
+    if (r.status === "MATCHED") {
+      expect(r.selection.lineage.specification).toBeDefined();
+      expect(r.selection.catalogSelections).toHaveLength(1);
+      expect(r.selection.visualIdentityIds).toHaveLength(1);
+    }
+  }
+  expect(resolveVehicle("2022 Lexus LX 600 F Sport", { market: "VN", depth: "visual" }).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2019 Lexus LX 570 Peak Edition", { market: "VN", depth: "visual" }).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2021 Lexus LX 570 Peak Edition", { market: "CN", depth: "visual" }).status).toBe("YEAR_UNVERIFIED");
+  expect(resolveVehicle("Lexus LX 600 F Sport", { market: "VN", depth: "visual" }).status).not.toBe("MATCHED");
+  if (usa.status === "MATCHED" && vn.status === "MATCHED") {
+    expect(usa.selection.visualIdentityIds).not.toEqual(vn.selection.visualIdentityIds);
+    expect(evaluateVisualCompatibility(graph.visualCompatibility, usa.selection.visualIdentityIds[0], vn.selection.visualIdentityIds[0], { year: 2026, market: "VN", yearBasis: "catalog-year" })).toBe("unknown");
+  }
+});
+
+test("G60 exact generation phrase links the existing sedan ID without substituting another generation", () => {
+  const r = resolveVehicle("2024 BMW 5 Series G60", { market: "US" });
+  expect(r.status).toBe("MATCHED");
+  if (r.status === "MATCHED") {
+    expect(r.selection.lineage.generation).toBe("bmw:5:g60");
+    expect(r.selection.catalogSelections.map(s => s.modelId)).toEqual([1241822597]);
+  }
+  expect(resolveVehicle("2023 BMW 5 Series G60", { market: "US" }).status).toBe("YEAR_UNVERIFIED");
+  expect(resolveVehicle("2024 BMW 5 Series G30", { market: "US" }).status).not.toBe("MATCHED");
+  expect(resolveVehicle("2022 Honda Accord 260 Turbo", { market: "VN", depth: "visual" }).status).not.toBe("MATCHED");
+});
