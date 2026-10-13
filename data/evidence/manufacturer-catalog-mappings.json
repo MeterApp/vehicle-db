@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 1,
+  "note": "Exact reviewed source name to catalog family/body mappings. Generation and specification labels remain in evidence; these mappings do not authorize visual equivalence. Unknown names are pending review.",
+  "changan": {
+    "长安启源Q05": {
+      "make": "CHANGAN NEVO",
+      "makeId": 4481830531,
+      "model": "Q05",
+      "vehicleTypeId": 7
+    },
+    "长安启源A06": {
+      "make": "CHANGAN NEVO",
+      "makeId": 4481830531,
+      "model": "A06",
+      "vehicleTypeId": 2
+    },
+    "长安启源Q06": {
+      "make": "CHANGAN NEVO",
+      "makeId": 4481830531,
+      "model": "Q06",
+      "vehicleTypeId": 7
+    },
+    "2026款 第四代CS75PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Plus",
+      "vehicleTypeId": 7
+    },
+    "第四代CS75PLUS 蓝鲸超擎混动": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Plus",
+      "vehicleTypeId": 7
+    },
+    "第四代逸动 蓝鲸超擎混动": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado",
+      "vehicleTypeId": 2
+    },
+    "逸动经典版": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado",
+      "vehicleTypeId": 2
+    },
+    "2026款UNI-Z（燃油）": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-Z",
+      "vehicleTypeId": 7
+    },
+    "第四代CS55PLUS 蓝鲸超擎混动": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS55 Plus",
+      "vehicleTypeId": 7
+    },
+    "第三代UNI-V 蓝鲸超擎混动": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-V",
+      "vehicleTypeId": 2
+    },
+    "2026款UNI-Z PHEV": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-Z",
+      "vehicleTypeId": 7
+    },
+    "第四代CS55PLUS PHEV": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS55 Plus",
+      "vehicleTypeId": 7
+    },
+    "第四代CS55PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS55 Plus",
+      "vehicleTypeId": 7
+    },
+    "第四代逸动": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado",
+      "vehicleTypeId": 2
+    },
+    "全新第二代长安X5 PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "X5 Plus",
+      "vehicleTypeId": 7
+    },
+    "CS75PLUS智慧冠军版": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Plus",
+      "vehicleTypeId": 7
+    },
+    "第三代UNI-V": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-V",
+      "vehicleTypeId": 2
+    },
+    "第二代UNI-V 新蓝鲸": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-V",
+      "vehicleTypeId": 2
+    },
+    "第三代逸动  新蓝鲸": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado",
+      "vehicleTypeId": 2
+    },
+    "长安启源Q07": {
+      "make": "CHANGAN NEVO",
+      "makeId": 4481830531,
+      "model": "Q07",
+      "vehicleTypeId": 7
+    },
+    "逸动PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado Plus",
+      "vehicleTypeId": 2
+    },
+    "第三代逸动PHEV": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado",
+      "vehicleTypeId": 2
+    },
+    "第三代CS55PLUS 新蓝鲸": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS55 Plus",
+      "vehicleTypeId": 7
+    },
+    "第三代CS55PLUS PHEV": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS55 Plus",
+      "vehicleTypeId": 7
+    },
+    "第四代CS75PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Plus",
+      "vehicleTypeId": 7
+    },
+    "长安启源A07": {
+      "make": "CHANGAN NEVO",
+      "makeId": 4481830531,
+      "model": "A07",
+      "vehicleTypeId": 2
+    },
+    "第四代CS75 PLUS Ultra": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Plus",
+      "vehicleTypeId": 7
+    },
+    "UNI-Z": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-Z",
+      "vehicleTypeId": 7
+    },
+    "UNI-Z PHEV": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-Z",
+      "vehicleTypeId": 7
+    },
+    "第二代UNI-V": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-V",
+      "vehicleTypeId": 2
+    },
+    "第三代逸动": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Eado",
+      "vehicleTypeId": 2
+    },
+    "UNI-V 高能版": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-V",
+      "vehicleTypeId": 2
+    },
+    "CS75 PRO": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Pro",
+      "vehicleTypeId": 7
+    },
+    "第三代CS75PLUS冠军版": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS75 Plus",
+      "vehicleTypeId": 7
+    },
+    "UNI-K": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-K",
+      "vehicleTypeId": 7
+    },
+    "UNI-T": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "UNI-T",
+      "vehicleTypeId": 7
+    },
+    "X7 PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "X7 Plus",
+      "vehicleTypeId": 7
+    },
+    "X5 PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "X5 Plus",
+      "vehicleTypeId": 7
+    },
+    "逸达": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Yida",
+      "vehicleTypeId": 2
+    },
+    "锐程PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Ruicheng Plus",
+      "vehicleTypeId": 2
+    },
+    "Lumin": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "Lumin",
+      "vehicleTypeId": 2
+    },
+    "第三代CS55PLUS": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS55 Plus",
+      "vehicleTypeId": 7
+    },
+    "CS35": {
+      "make": "CHANGAN",
+      "makeId": 4638620262,
+      "model": "CS35",
+      "vehicleTypeId": 7
+    }
+  },
+  "sgmw": {
+    "星光L": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingguang L",
+      "vehicleTypeId": 7
+    },
+    "星光730": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingguang 730",
+      "vehicleTypeId": 7
+    },
+    "缤果Pro": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Binguo Pro",
+      "vehicleTypeId": 2
+    },
+    "第五代宏光MINIEV": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang Mini EV",
+      "vehicleTypeId": 2
+    },
+    "缤果S": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Binguo S",
+      "vehicleTypeId": 2
+    },
+    "五菱荣光纯电版": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Rongguang EV",
+      "vehicleTypeId": 7
+    },
+    "五菱星光S 2025款": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingguang S",
+      "vehicleTypeId": 7
+    },
+    "五菱之光EV": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Zhiguang EV",
+      "vehicleTypeId": 7
+    },
+    "星光560": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingguang 560",
+      "vehicleTypeId": 7
+    },
+    "五菱宏光纯电版": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang",
+      "vehicleTypeId": 7
+    },
+    "2025款五菱缤果": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Binguo",
+      "vehicleTypeId": 2
+    },
+    "宏光MINIEV 四门版": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang Mini EV 4 Door",
+      "vehicleTypeId": 2
+    },
+    "五菱扬光": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Yangguang",
+      "vehicleTypeId": 7,
+      "panelVan": "Yangguang Panel Van"
+    },
+    "五菱宏光V": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang V",
+      "vehicleTypeId": 7,
+      "panelVan": "Hongguang V Panel Van"
+    },
+    "五菱宏光S": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang S",
+      "vehicleTypeId": 7
+    },
+    "新五菱宏光S": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang S",
+      "vehicleTypeId": 7,
+      "panelVan": "Hongguang S Panel Van"
+    },
+    "五菱宏光S3": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang S3",
+      "vehicleTypeId": 7
+    },
+    "五菱宏光PLUS": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang Plus",
+      "vehicleTypeId": 7
+    },
+    "五菱星光2025款": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingguang",
+      "vehicleTypeId": 2
+    },
+    "五菱荣光S": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Rongguang S",
+      "vehicleTypeId": 7,
+      "panelVan": "Rongguang S Panel Van"
+    },
+    "五菱荣光新卡": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Rongguang New Truck",
+      "vehicleTypeId": 3
+    },
+    "五菱缤果": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Binguo",
+      "vehicleTypeId": 2
+    },
+    "五菱缤果PLUS五座版": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Binguo Plus",
+      "vehicleTypeId": 2
+    },
+    "五菱荣光小卡EV": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Rongguang Mini Truck EV",
+      "vehicleTypeId": 3
+    },
+    "五菱荣光小卡": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Rongguang Mini Truck",
+      "vehicleTypeId": 3
+    },
+    "五菱星驰": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingchi",
+      "vehicleTypeId": 7
+    },
+    "第三代宏光MINIEV": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang Mini EV",
+      "vehicleTypeId": 2
+    },
+    "五菱之光": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Zhiguang",
+      "vehicleTypeId": 7,
+      "panelVan": "Zhiguang Panel Van"
+    },
+    "五菱星辰": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Xingchen",
+      "vehicleTypeId": 7
+    },
+    "五菱征程": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Zhengcheng",
+      "vehicleTypeId": 7,
+      "panelVan": "Zhengcheng Panel Van"
+    },
+    "五菱龙卡": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Longka",
+      "vehicleTypeId": 3
+    },
+    "五菱佳辰": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Jiachen",
+      "vehicleTypeId": 7
+    },
+    "五菱宏光增程版": {
+      "make": "WULING",
+      "makeId": 5142354878,
+      "model": "Hongguang",
+      "vehicleTypeId": 7
+    },
+    "宝骏享境": {
+      "make": "BAOJUN",
+      "makeId": 4846900630,
+      "model": "Xiangjing",
+      "vehicleTypeId": 2
+    },
+    "宝骏云海": {
+      "make": "BAOJUN",
+      "makeId": 4846900630,
+      "model": "Yunhai",
+      "vehicleTypeId": 7
+    },
+    "宝骏悦也Plus": {
+      "make": "BAOJUN",
+      "makeId": 4846900630,
+      "model": "Yueye Plus",
+      "vehicleTypeId": 7
+    },
+    "宝骏悦也": {
+      "make": "BAOJUN",
+      "makeId": 4846900630,
+      "model": "Yueye",
+      "vehicleTypeId": 7
+    }
+  },
+  "bajaj": {
+    "re": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE",
+      "vehicleTypeId": 10001
+    },
+    "re-4s-petrol": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001
+    },
+    "re-4s-cng": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001
+    },
+    "re-4s-lpg": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001
+    },
+    "maxima-z": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001
+    },
+    "maxima-z-petrol": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001
+    },
+    "maxima-z-lpg": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001
+    },
+    "maxima-x-wide": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima X Wide",
+      "vehicleTypeId": 10001
+    },
+    "maxima-c": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima C",
+      "vehicleTypeId": 3
+    },
+    "maxima-cargo": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3
+    },
+    "riki/riki-p40": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Riki P4005",
+      "vehicleTypeId": 10001
+    },
+    "riki/riki-c40": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Riki C4005",
+      "vehicleTypeId": 3
+    },
+    "wego/wego-p50": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P50",
+      "vehicleTypeId": 10001
+    },
+    "wego/wego-p70": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P70",
+      "vehicleTypeId": 10001
+    },
+    "wego/wego-p90": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P90",
+      "vehicleTypeId": 10001
+    },
+    "wego/wego-c90": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO C90",
+      "vehicleTypeId": 3
+    },
+    "wego-p50": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P50",
+      "vehicleTypeId": 10001
+    },
+    "qute": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002
+    },
+    "torito-xl": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito XL",
+      "vehicleTypeId": 10001
+    },
+    "2t-ug-glp": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito 2T UG",
+      "vehicleTypeId": 10001
+    },
+    "2t-ug-gsl": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito 2T UG",
+      "vehicleTypeId": 10001
+    },
+    "crom-glp": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito CROM",
+      "vehicleTypeId": 10001
+    },
+    "crom-gnv": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito CROM",
+      "vehicleTypeId": 10001
+    },
+    "crom-gsl": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito CROM",
+      "vehicleTypeId": 10001
+    },
+    "maxima": {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima",
+      "vehicleTypeId": 10001
+    }
+  }
+}

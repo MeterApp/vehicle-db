@@ -124,6 +124,11 @@ describe("getDataSources", () => {
       "manufacturer-reviewed",
       SENATRAN_BR_SOURCE_ID,
       "manufacturer-reviewed-catalog",
+      "bajaj-manufacturer-catalog",
+      "changan-manufacturer-catalog",
+      "changan-manufacturer-model-years",
+      "sgmw-manufacturer-catalog",
+      "sgmw-manufacturer-model-years",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;
