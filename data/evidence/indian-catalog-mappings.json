@@ -1388,7 +1388,7 @@
   ],
   "pending": [
     {
-      "source": "Hero Xpulse 200; Bajaj Avenger 160; Honda Shine and CB650R; Yamaha R15; Vespa VXL/SXL",
+      "source": "Hero Xpulse 200; Bajaj Avenger 160; Honda Shine; Yamaha R15; Vespa VXL/SXL",
       "reason": "Dated portfolios resolve MT-15, Ray ZR, Fascino, CB200X, Activa 6G and S1 Air. Remaining abbreviated names or technical codes lack reviewed exact family/year/variant mappings. Do not strip displacement, 4V, Street, M or other suffixes."
     },
     {
@@ -1396,7 +1396,7 @@
       "reason": "Manual revision/model labels and manufacturing cutoffs need separate year-basis review; sales importer intentionally excludes them."
     },
     {
-      "source": "Tata 407 and LPO; Ashok Leyland Dost, Partner, Ecomet and AVTR",
+      "source": "Tata LPO; Ashok Leyland Dost, Partner, Ecomet and AVTR",
       "reason": "Current specific body/configuration names remain imported. Annual-report fiscal periods and successor names do not establish a calendar-year generic family selection; LPO alone cannot establish a bus exterior."
     }
   ]
