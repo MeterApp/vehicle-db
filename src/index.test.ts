@@ -129,6 +129,11 @@ describe("getDataSources", () => {
       "changan-manufacturer-model-years",
       "sgmw-manufacturer-catalog",
       "sgmw-manufacturer-model-years",
+      "india-commercial-sales-catalog",
+      "india-hero-sales-catalog",
+      "india-passenger-sales-catalog",
+      "india-tvs-sales-catalog",
+      "india-two-wheelers-sales-catalog",
     ]);
 
     const ukSource = sources.find((source) => source.sourceId === UK_DFT_SOURCE_ID)!;

@@ -6,7 +6,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, Brazil's national vehicle register, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,199 models** in **196,571 model years**, from **18 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
+The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,294 models** in **196,745 model years**, from **23 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles. The Brazilian register adds the cars and motorcycles that fill Brazil's roads but are rarely sold elsewhere, such as the Fiat Argo, Mobi and Toro, the Volkswagen Gol and Saveiro, the Renault Kwid, and the Honda Biz and Pop.
 
@@ -331,26 +331,35 @@ New coverage in 2.16.0 adds 22 year/model/type records: seven consistently label
 
 Broad catalogs in 2.17.0 replace individual Changan/Wuling/Bajaj regional edits with `npm run refresh:manufacturer-catalogs`. Five source snapshots separate official active sales catalogs from explicitly labeled model years: Changan (including separate CHANGAN NEVO), SGMW (separate WULING and BAOJUN), and Bajaj country catalogs. They add 73 selections while retaining all published IDs and legacy source filters. Manufacturer evidence, reviewed translation/body mappings, and manual discovery indexes are retained outside the runtime bundle; see [broad-manufacturer-catalogs.md](docs/broad-manufacturer-catalogs.md).
 
+Indian catalogs in 2.19.0 add five sales-catalog snapshots refreshed with `npm run refresh:india`. Exact reviewed links/headings/selectors preserve model suffixes and published make IDs; their 2026 years mean observed calendar-year catalog presence. Broad dated portfolios refresh with `npm run refresh:india-history` into those same sources: Mahindra, Honda, Yamaha, MG and Ola establish individually evidenced 2020–2025 calendar years. Four Tata 2025 portfolio facts, three Ather 2024 sales facts and two individual Ciaz 2023–2024 sales facts use the existing reviewed catalog source. Historical manuals, fiscal-year periods and successor names do not create guessed year ranges or image-sharing permissions. Source mappings, original names, URLs and retrieval hashes stay outside the runtime bundle; see [the historical source review](docs/indian-historical-catalogs.md).
+
 ## Factory colors
 
 Factory paint availability is not included. The NZTA and Malaysia records contain the observed basic color of each registered vehicle, not the manufacturer’s stock colors for a make/model/year. Treating those fields as factory availability would produce false positives from repaints, imports, and broad color categories, so the importers intentionally omit them. A future color API should require manufacturer-backed paint options with explicit market and model-year provenance.
 
 New coverage in 2.18.0 adds 112 sourced year/model/type records and four makes (Ather, Eicher, Ashok Leyland and Ola Electric), with explicit catalog-year versus model-year evidence. Lexus LX 600 F Sport and China LX 570 Peak Edition gain separate specification and exterior identities; G60 queries link the existing BMW sedan ID. Generic families, missing years and markets, and unverified suffixes remain unresolved at visual depth. See [coverage acceptance criteria](docs/coverage-expansion-2026-10.md).
 
+| [TVS Indian sales catalog](https://www.tvsmotor.com/Our-Products/Vehicles) | 27 reviewed product/family selections observed in 2026; motorcycles, scooters and passenger/cargo three-wheelers | Source attribution; factual product names only |
+| [Hero Indian motorcycle catalog](https://www.heromotocorp.com/en-in/motorcycles.html) | 18 reviewed motorcycle selections observed in 2026 under the preserved HERO MOTOCORP LTD make ID | Source attribution; factual product names only |
+| [Indian commercial manufacturer catalogs](data/evidence/manufacturer-catalogs/india-commercial.json) | 32 dated Tata, Ashok Leyland and Eicher product/family selections; goods vehicles remain distinct from buses | Source attribution; factual product names only |
+| [Indian passenger-car sales catalogs](data/evidence/manufacturer-catalogs/india-passenger.json) | 55 reviewed current/historical product/family selections across Indian-market manufacturers; individually evidenced calendar years | Source attribution; factual product names only |
+| [Other Indian two-wheeler sales catalogs](data/evidence/manufacturer-catalogs/india-two-wheelers.json) | 72 current/historical Bajaj, Honda, KTM, Suzuki, Royal Enfield, Yamaha, Harley-Davidson and Ola selections | Source attribution; factual product names only |
+
+
 ## Snapshot stats
 
 | | |
 |---|---:|
 | Years | 1990–2027 |
-| Sources | 18 |
+| Sources | 23 |
 | Vehicle types | 7 |
 | Makes | 1,608 |
-| Models | 42,199 |
-| Model years | 196,571 |
+| Models | 42,294 |
+| Model years | 196,745 |
 | Make records (`getMakes()`) | 1,620 |
-| Model records (distinct `modelId`) | 46,641 |
-| Model-year records (`getModels()`) | 218,065 |
-| Bundled TypeScript data | 7.56 MB |
+| Model records (distinct `modelId`) | 46,796 |
+| Model-year records (`getModels()`) | 218,242 |
+| Bundled TypeScript data | 7.58 MB |
 
 ## Refreshing and rebuilding
 

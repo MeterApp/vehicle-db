@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.18.0",
+  "version": "2.19.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
@@ -72,7 +72,9 @@
     "refresh:fueleconomy-us": "tsx scripts/import-fueleconomy-us.ts",
     "refresh:reviewed": "tsx scripts/import-reviewed-models.ts data/evidence/manufacturer-reviewed.json",
     "replay": "tsx scripts/replay-catalog.ts",
-    "refresh:manufacturer-catalogs": "tsx scripts/import-manufacturer-catalogs.ts"
+    "refresh:manufacturer-catalogs": "tsx scripts/import-manufacturer-catalogs.ts",
+    "refresh:india": "tsx scripts/import-indian-catalogs.ts",
+    "refresh:india-history": "tsx scripts/import-indian-history.ts"
   },
   "keywords": [
     "nhtsa",
