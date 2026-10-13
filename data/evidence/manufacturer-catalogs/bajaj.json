@@ -1,0 +1,1562 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-13",
+  "brand": "bajaj",
+  "audits": [
+    {
+      "url": "https://www.bajajauto.com/global",
+      "sha256": "67c7c338e0648659469dd94adbefdc2e8ed7906c97d3f0e4f7f1c8ab61d38f5c",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/three-wheelers",
+      "sha256": "464871e86bcc99210735b358130bd633c4f8b4a131db0b503bd0272c075c2bc8",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ae/three-wheelers",
+      "sha256": "02fd364c1bffe7ffb681a6828a831925fecdcb2a4de12850f6b9cd7692be7744",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-af/three-wheelers",
+      "sha256": "896099b8c733b508335ec057eb77c7cc70264dc232a12ea84e495bac0a7d8312",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ao/three-wheelers",
+      "sha256": "e88bd34a5eacbc77f493abd30d329f0746b45ceed9d4f016ed61a35564020fc9",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ar/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ar/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-bd/three-wheelers",
+      "sha256": "3629e8b0f4a79cce5ba96a68ac3c887bc64091a4c3dd1b71b78d0c9dd8bce818",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-bf/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-bf/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-bj/three-wheelers",
+      "sha256": "4cafb039e045a0ab9b4151ff7b0c63006c846ddaa8bc478c49f33d17653df0f2",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-bo/three-wheelers",
+      "sha256": "fc51b73d7a21ab64e5eb65cb234677bc1c228c7c15727aa0446ca77858f9dd36",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-cd/three-wheelers",
+      "sha256": "3862191db599047b37cca8a50539127136b742263fea5e8dddaf0c7ddaee689e",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-cl/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-cl/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-cm/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-cm/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-co/three-wheelers",
+      "sha256": "8357bc8a1b960c0a04786eec3a3bddcfd3bf2fec24688bbfc16fd7e179c93a16",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-cr/three-wheelers",
+      "sha256": "2ea06dc2245d92925faedbdf46b1090e0be1fead992642fedb4dbd599df110ed",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-do/three-wheelers",
+      "sha256": "5d501f0f7d3acd5294395f8d4e1e290ff9c9911475b8670a38ba19a49832243b",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ec/three-wheelers",
+      "sha256": "a9158ea1c8cafcf5799c0621cf53d4c831368431512d4d4fd9d9325f1d6cba83",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-eg/three-wheelers",
+      "sha256": "0547c3fd11b8bb8206e355cd3ddaf2ee34a6f638a37bd4a090ffd126cb639b13",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-et/three-wheelers",
+      "sha256": "041ac702d9fb6ace3374373c1db33c2a8a737d4646fab476e39171fbb8a5dbf8",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-gh/three-wheelers",
+      "sha256": "edb54470c424fc4d3379e66c35d47fa46bb9ffea20bdef0fdd9689afaecbb08e",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-gn/three-wheelers",
+      "sha256": "daf4f042c6d4d928cd6f3685db8ea7634f5d0212cefa3cd18f00256a1baf03e9",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-gt/three-wheelers",
+      "sha256": "991d553e21ad92298e951d42a3f32a14dc1e7f8a181490da13c94de53463ebec",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-hn/three-wheelers",
+      "sha256": "32d265f9bf5be9f2676213b257de25beffa1be3c103acef77e6525f4e7dc5cae",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ht/three-wheelers",
+      "sha256": "4d968187c6b21e1b4068d9bf728a25f6d2f9c8ef4c282083a7b60039f788a927",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ke/three-wheelers",
+      "sha256": "3ef854d8003534d434c646b965cd3d78c2c8b16032a1dd098cd571caa519a9a9",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-kh/three-wheelers",
+      "sha256": "62d08da6aa8c20a9682b7b75cad2c176c216b7e5a6f404571485a71073b8f65b",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-kw/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-kw/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-lb/three-wheelers",
+      "sha256": "93f81e224ca37b832b6c5f4df634d448eb2db31204a1a4fc0bff829f2173d053",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-lk/three-wheelers",
+      "sha256": "ed9dd48525cbd6b3d44e9081e0858d18745ce860d7abe32b7a5456179cd231ab",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-lr/three-wheelers",
+      "sha256": "76bc92d0997da39837bcf27148b0400bd17f517ed180cf320349f139b57d07ab",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mg/three-wheelers",
+      "sha256": "bf3bad976c340056330bf4c8fb88e7c91e5be00096b5895d27cb3ece24771150",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ml/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ml/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mm/three-wheelers",
+      "sha256": "82433f40cfc6101532fcc26f458c929be84df37a3d3cc8a9efe3cacaec762b37",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mu/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mu/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mx/three-wheelers",
+      "sha256": "460dd50323e50271e8f1604b21b3f8efe218da9748e4c7956aa668a132e75c73",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-my/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-my/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mz/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-mz/threewheelersandqute",
+      "sha256": "b4760fc7466f0703f6cc771623c515f1f40fdc4767c4d867893e0b98910ab3a6",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ng/three-wheelers",
+      "sha256": "789b0d769356fa28b7af4e79b15b0343204faca902fe561b1023c9b4afc04866",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ni/three-wheelers",
+      "sha256": "af518ecba9f628e80415afd1df6faf9fcd38ccc35e5e41f7c1f986959024a288",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-np/three-wheelers",
+      "sha256": "23cfd36ec46381fd087cb043d443426d0415d37687fa13048dfe55ab2b3997ee",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-pe/three-wheelers",
+      "sha256": "17398987b2536c8c9aba02af521e6ae669be90d36758a76a444d8b2a943b60e6",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ph/three-wheelers",
+      "sha256": "ef969b28c47ef608604fbc8f1e679523d2fa1ca338b36b12efb6a8105a0bd651",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-qa/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-qa/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ru/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ru/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-rw/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-rw/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-sa/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-sa/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-sd/three-wheelers",
+      "sha256": "bc377a279865ed5cdd5710578b319d7329cbe3dc0bb404715bc3d45ca8434ddd",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-sl/three-wheelers",
+      "sha256": "f77ae3389fd4983c1109c2f4148dd4ee835e8ae054561c3dab9740d180f55065",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-sv/three-wheelers",
+      "sha256": "c286bb93c426cb7fc3d14567b5daaab62b25b3b7fead2f881596b0e3ffd2da2f",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-tg/three-wheelers",
+      "sha256": "36bbfa53abe9e9802041db57b622a886244ad7983739f8749a0322c28d02db3a",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-tz/three-wheelers",
+      "sha256": "5acd49a17074407e075569aa68153ca0e7363d294f5b1f9d0f3d66dedeae2323",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ug/three-wheelers",
+      "sha256": "5ce60701e97c729fb5ec9ae89785829272b1e3c92b4ca51f7913ac3bcfa09286",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-uy/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-uy/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ve/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ve/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ye/three-wheelers",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ye/threewheelersandqute",
+      "status": "unavailable",
+      "note": "HTTP 404"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-za/three-wheelers",
+      "sha256": "98f1cff9cf92c9997868ad3643806553a45cc3c0813e5f7a86bebe738501949b",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-zm/three-wheelers",
+      "sha256": "81bf52d2b49054c4812be5229f96b890eb1096d935ed328a9af8b73fad1d9d27",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-zw/three-wheelers",
+      "sha256": "a8c054b1acd7f880bd0fdcfd8379e4c8f618825372d15fe92729650bc712ba61",
+      "status": "retrieved"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-eg/three-wheelers",
+      "status": "no-product-links"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-ni/three-wheelers",
+      "status": "no-product-links"
+    },
+    {
+      "url": "https://www.bajajauto.com/en-zm/three-wheelers",
+      "status": "no-product-links"
+    }
+  ],
+  "pending": [],
+  "records": [
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "RE",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/re",
+      "note": "Current Indian manufacturer product catalog observed October 13, 2026. Year means this marketed catalog snapshot, not factory model year or launch year. Passenger auto-rickshaw and cargo tray bodies remain separate; fuel/battery options do not create extra models.",
+      "yearBasis": "catalog-year",
+      "rawName": "RE",
+      "sourceRecordId": "legacy:IN:RE"
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/maxima-z",
+      "note": "Current Indian manufacturer product catalog observed October 13, 2026. Year means this marketed catalog snapshot, not factory model year or launch year. Passenger auto-rickshaw and cargo tray bodies remain separate; fuel/battery options do not create extra models.",
+      "yearBasis": "catalog-year",
+      "rawName": "Maxima Z",
+      "sourceRecordId": "legacy:IN:Maxima Z"
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Maxima X Wide",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/maxima-x-wide",
+      "note": "Current Indian manufacturer product catalog observed October 13, 2026. Year means this marketed catalog snapshot, not factory model year or launch year. Passenger auto-rickshaw and cargo tray bodies remain separate; fuel/battery options do not create extra models.",
+      "yearBasis": "catalog-year",
+      "rawName": "Maxima X Wide",
+      "sourceRecordId": "legacy:IN:Maxima X Wide"
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Maxima C",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/maxima-c",
+      "note": "Current Indian manufacturer product catalog observed October 13, 2026. Year means this marketed catalog snapshot, not factory model year or launch year. Passenger auto-rickshaw and cargo tray bodies remain separate; fuel/battery options do not create extra models.",
+      "yearBasis": "catalog-year",
+      "rawName": "Maxima C",
+      "sourceRecordId": "legacy:IN:Maxima C"
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Riki P4005",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/riki/riki-p40",
+      "note": "Current Indian manufacturer product catalog observed October 13, 2026. Year means this marketed catalog snapshot, not factory model year or launch year. Passenger auto-rickshaw and cargo tray bodies remain separate; fuel/battery options do not create extra models.",
+      "yearBasis": "catalog-year",
+      "rawName": "Riki P4005",
+      "sourceRecordId": "legacy:IN:Riki P4005"
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Riki C4005",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/riki/riki-c40",
+      "note": "Current Indian manufacturer product catalog observed October 13, 2026. Year means this marketed catalog snapshot, not factory model year or launch year. Passenger auto-rickshaw and cargo tray bodies remain separate; fuel/battery options do not create extra models.",
+      "yearBasis": "catalog-year",
+      "rawName": "Riki C4005",
+      "sourceRecordId": "legacy:IN:Riki C4005"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima C",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/maxima-c",
+      "rawName": "maxima-c",
+      "sourceRecordId": "maxima-c",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima X Wide",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/maxima-x-wide",
+      "rawName": "maxima-x-wide",
+      "sourceRecordId": "maxima-x-wide",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/maxima-z",
+      "rawName": "maxima-z",
+      "sourceRecordId": "maxima-z",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/re",
+      "rawName": "re",
+      "sourceRecordId": "re",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Riki C4005",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/riki/riki-c40",
+      "rawName": "riki/riki-c40",
+      "sourceRecordId": "riki/riki-c40",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Riki P4005",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/riki/riki-p40",
+      "rawName": "riki/riki-p40",
+      "sourceRecordId": "riki/riki-p40",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO C90",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/wego/wego-c90",
+      "rawName": "wego/wego-c90",
+      "sourceRecordId": "wego/wego-c90",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P50",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/wego/wego-p50",
+      "rawName": "wego/wego-p50",
+      "sourceRecordId": "wego/wego-p50",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P70",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/wego/wego-p70",
+      "rawName": "wego/wego-p70",
+      "sourceRecordId": "wego/wego-p70",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P90",
+      "vehicleTypeId": 10001,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/three-wheelers/wego/wego-p90",
+      "rawName": "wego/wego-p90",
+      "sourceRecordId": "wego/wego-p90",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "AE",
+      "url": "https://www.bajajauto.com/en-ae/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "AF",
+      "url": "https://www.bajajauto.com/en-af/threewheelersandqute/re-4s-lpg",
+      "rawName": "re-4s-lpg",
+      "sourceRecordId": "re-4s-lpg",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "AF",
+      "url": "https://www.bajajauto.com/en-af/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "AO",
+      "url": "https://www.bajajauto.com/en-ao/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "BD",
+      "url": "https://www.bajajauto.com/en-bd/three-wheelers/re-4s-cng",
+      "rawName": "re-4s-cng",
+      "sourceRecordId": "re-4s-cng",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "BD",
+      "url": "https://www.bajajauto.com/en-bd/three-wheelers/re-4s-lpg",
+      "rawName": "re-4s-lpg",
+      "sourceRecordId": "re-4s-lpg",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "BJ",
+      "url": "https://www.bajajauto.com/en-bj/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito XL",
+      "vehicleTypeId": 10001,
+      "market": "BO",
+      "url": "https://www.bajajauto.com/en-bo/three-wheelers/torito-xl",
+      "rawName": "torito-xl",
+      "sourceRecordId": "torito-xl",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "CD",
+      "url": "https://www.bajajauto.com/en-cd/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "CD",
+      "url": "https://www.bajajauto.com/en-cd/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "CO",
+      "url": "https://www.bajajauto.com/en-co/three-wheelers/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "CO",
+      "url": "https://www.bajajauto.com/en-co/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "CR",
+      "url": "https://www.bajajauto.com/en-cr/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "DO",
+      "url": "https://www.bajajauto.com/en-do/threewheelersandqute/re-4s-lpg",
+      "rawName": "re-4s-lpg",
+      "sourceRecordId": "re-4s-lpg",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "DO",
+      "url": "https://www.bajajauto.com/en-do/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "EC",
+      "url": "https://www.bajajauto.com/en-ec/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "ET",
+      "url": "https://www.bajajauto.com/en-et/threewheelersandqute/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "ET",
+      "url": "https://www.bajajauto.com/en-et/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "ET",
+      "url": "https://www.bajajauto.com/en-et/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "GH",
+      "url": "https://www.bajajauto.com/en-gh/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "GH",
+      "url": "https://www.bajajauto.com/en-gh/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "GN",
+      "url": "https://www.bajajauto.com/en-gn/three-wheelers/maxima-z-petrol",
+      "rawName": "maxima-z-petrol",
+      "sourceRecordId": "maxima-z-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "GN",
+      "url": "https://www.bajajauto.com/en-gn/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "GT",
+      "url": "https://www.bajajauto.com/en-gt/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "GT",
+      "url": "https://www.bajajauto.com/en-gt/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "HN",
+      "url": "https://www.bajajauto.com/en-hn/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "HT",
+      "url": "https://www.bajajauto.com/en-ht/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "KE",
+      "url": "https://www.bajajauto.com/en-ke/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "KH",
+      "url": "https://www.bajajauto.com/en-kh/three-wheelers/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "KH",
+      "url": "https://www.bajajauto.com/en-kh/three-wheelers/maxima-z-lpg",
+      "rawName": "maxima-z-lpg",
+      "sourceRecordId": "maxima-z-lpg",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "KH",
+      "url": "https://www.bajajauto.com/en-kh/three-wheelers/re-4s-lpg",
+      "rawName": "re-4s-lpg",
+      "sourceRecordId": "re-4s-lpg",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "LB",
+      "url": "https://www.bajajauto.com/en-lb/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "LK",
+      "url": "https://www.bajajauto.com/en-lk/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P50",
+      "vehicleTypeId": 10001,
+      "market": "LK",
+      "url": "https://www.bajajauto.com/en-lk/three-wheelers/wego-p50",
+      "rawName": "wego-p50",
+      "sourceRecordId": "wego-p50",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "LR",
+      "url": "https://www.bajajauto.com/en-lr/threewheelersandqute/maxima-z-petrol",
+      "rawName": "maxima-z-petrol",
+      "sourceRecordId": "maxima-z-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "LR",
+      "url": "https://www.bajajauto.com/en-lr/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "LR",
+      "url": "https://www.bajajauto.com/en-lr/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "MG",
+      "url": "https://www.bajajauto.com/en-mg/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "MG",
+      "url": "https://www.bajajauto.com/en-mg/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "MM",
+      "url": "https://www.bajajauto.com/en-mm/threewheelersandqute/maxima-z-petrol",
+      "rawName": "maxima-z-petrol",
+      "sourceRecordId": "maxima-z-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "MM",
+      "url": "https://www.bajajauto.com/en-mm/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "MX",
+      "url": "https://www.bajajauto.com/en-mx/threewheelersandqute/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "MX",
+      "url": "https://www.bajajauto.com/en-mx/threewheelersandqute/maxima-z-petrol",
+      "rawName": "maxima-z-petrol",
+      "sourceRecordId": "maxima-z-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "MX",
+      "url": "https://www.bajajauto.com/en-mx/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "MX",
+      "url": "https://www.bajajauto.com/en-mx/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "MZ",
+      "url": "https://www.bajajauto.com/en-mz/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "NG",
+      "url": "https://www.bajajauto.com/en-ng/threewheelersandqute/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "NG",
+      "url": "https://www.bajajauto.com/en-ng/threewheelersandqute/re-4s-cng",
+      "rawName": "re-4s-cng",
+      "sourceRecordId": "re-4s-cng",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "NG",
+      "url": "https://www.bajajauto.com/en-ng/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "NP",
+      "url": "https://www.bajajauto.com/en-np/three-wheelers/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "NP",
+      "url": "https://www.bajajauto.com/en-np/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "WEGO P50",
+      "vehicleTypeId": 10001,
+      "market": "NP",
+      "url": "https://www.bajajauto.com/en-np/three-wheelers/wego-p50",
+      "rawName": "wego-p50",
+      "sourceRecordId": "wego-p50",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito 2T UG",
+      "vehicleTypeId": 10001,
+      "market": "PE",
+      "url": "https://www.bajajauto.com/en-pe/threewheelersandqute/2t-ug-glp",
+      "rawName": "2t-ug-glp",
+      "sourceRecordId": "2t-ug-glp",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito 2T UG",
+      "vehicleTypeId": 10001,
+      "market": "PE",
+      "url": "https://www.bajajauto.com/en-pe/threewheelersandqute/2t-ug-gsl",
+      "rawName": "2t-ug-gsl",
+      "sourceRecordId": "2t-ug-gsl",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito CROM",
+      "vehicleTypeId": 10001,
+      "market": "PE",
+      "url": "https://www.bajajauto.com/en-pe/threewheelersandqute/crom-glp",
+      "rawName": "crom-glp",
+      "sourceRecordId": "crom-glp",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito CROM",
+      "vehicleTypeId": 10001,
+      "market": "PE",
+      "url": "https://www.bajajauto.com/en-pe/threewheelersandqute/crom-gnv",
+      "rawName": "crom-gnv",
+      "sourceRecordId": "crom-gnv",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Torito CROM",
+      "vehicleTypeId": 10001,
+      "market": "PE",
+      "url": "https://www.bajajauto.com/en-pe/threewheelersandqute/crom-gsl",
+      "rawName": "crom-gsl",
+      "sourceRecordId": "crom-gsl",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima",
+      "vehicleTypeId": 10001,
+      "market": "PE",
+      "url": "https://www.bajajauto.com/en-pe/threewheelersandqute/maxima",
+      "rawName": "maxima",
+      "sourceRecordId": "maxima",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Cargo",
+      "vehicleTypeId": 3,
+      "market": "PH",
+      "url": "https://www.bajajauto.com/en-ph/threewheelersandqute/maxima-cargo",
+      "rawName": "maxima-cargo",
+      "sourceRecordId": "maxima-cargo",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "PH",
+      "url": "https://www.bajajauto.com/en-ph/threewheelersandqute/maxima-z-petrol",
+      "rawName": "maxima-z-petrol",
+      "sourceRecordId": "maxima-z-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "PH",
+      "url": "https://www.bajajauto.com/en-ph/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "SD",
+      "url": "https://www.bajajauto.com/en-sd/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Maxima Z",
+      "vehicleTypeId": 10001,
+      "market": "SL",
+      "url": "https://www.bajajauto.com/en-sl/threewheelersandqute/maxima-z-petrol",
+      "rawName": "maxima-z-petrol",
+      "sourceRecordId": "maxima-z-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "SL",
+      "url": "https://www.bajajauto.com/en-sl/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "SV",
+      "url": "https://www.bajajauto.com/en-sv/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "SV",
+      "url": "https://www.bajajauto.com/en-sv/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "TG",
+      "url": "https://www.bajajauto.com/en-tg/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "TZ",
+      "url": "https://www.bajajauto.com/en-tz/three-wheelers/re-4s-cng",
+      "rawName": "re-4s-cng",
+      "sourceRecordId": "re-4s-cng",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "TZ",
+      "url": "https://www.bajajauto.com/en-tz/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "UG",
+      "url": "https://www.bajajauto.com/en-ug/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "Qute",
+      "vehicleTypeId": 10002,
+      "market": "ZA",
+      "url": "https://www.bajajauto.com/en-za/threewheelersandqute/qute",
+      "rawName": "qute",
+      "sourceRecordId": "qute",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "ZA",
+      "url": "https://www.bajajauto.com/en-za/threewheelersandqute/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    },
+    {
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "model": "RE 4S",
+      "vehicleTypeId": 10001,
+      "market": "ZW",
+      "url": "https://www.bajajauto.com/en-zw/three-wheelers/re-4s-petrol",
+      "rawName": "re-4s-petrol",
+      "sourceRecordId": "re-4s-petrol",
+      "note": "Product listed in the official country sales catalog at observation. Reviewed fuel/battery options aggregate only within the documented regional family; passenger, cargo and four-wheel Qute bodies remain separate.",
+      "year": 2026,
+      "yearBasis": "catalog-year"
+    }
+  ]
+}
