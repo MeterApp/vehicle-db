@@ -69,6 +69,13 @@ export function validateIdentityGraph(graph: IdentityGraph, catalog: CatalogSnap
         normalizeIdentityText(other.text) === normalizeIdentityText(alias.text) && overlap(alias, other)) fail(`conflicting alias ${alias.text}`);
     }
   }
+  for (const [i, alias] of (graph.makeAliases ?? []).entries()) {
+    refs(alias.evidenceIds); scope(alias);
+    if (!normalizeIdentityText(alias.text) || !catalog.makes.some(m => m.make_id === alias.makeId)) fail(`invalid make alias ${alias.text}`);
+    const text = normalizeIdentityText(alias.text);
+    if (catalog.makes.some(m => normalizeIdentityText(m.make_name) === text && m.make_id !== alias.makeId)) fail(`make alias shadows catalog make ${alias.text}`);
+    if ((graph.makeAliases ?? []).slice(0, i).some(a => normalizeIdentityText(a.text) === text && a.makeId !== alias.makeId && overlap(a, alias))) fail(`conflicting make alias ${alias.text}`);
+  }
   for (const h of graph.homologation) {
     refs(h.evidenceIds);
     if (!h.sourceId || !h.market || (h.derivativeId && nodes.get(h.derivativeId)?.kind !== "derivative")) fail(`invalid homologation ${h.id}`);

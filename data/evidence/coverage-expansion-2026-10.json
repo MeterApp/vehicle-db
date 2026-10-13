@@ -1,0 +1,2841 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-13",
+  "acceptance": "Manufacturer/distributor names, explicit year basis and market. Source observations establish line presence only unless a scoped specification/visual lineage is separately reviewed. No image fulfillment or asset equivalence asserted.",
+  "records": [
+    {
+      "year": 2026,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Exter",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.hyundai.com/in/en",
+      "note": "Official India priced range observed 2026-10-13. Catalog observation year only; no factory model year or historical/facelift interval inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 4493846857,
+      "proposedCarImageVehicleId": "veh_b1181625gvr1v",
+      "proposedCarImageSlugs": {
+        "make": "hyundai",
+        "model": "exter"
+      },
+      "catalogIdentityIds": [
+        "cohort:498:exter:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:498:exter:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Alcazar",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.hyundai.com/in/en",
+      "note": "Official India priced range observed 2026-10-13. Catalog observation year only; no factory model year or historical/facelift interval inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 4174168619,
+      "proposedCarImageVehicleId": "veh_akk0tgbbf2qzd",
+      "proposedCarImageSlugs": {
+        "make": "hyundai",
+        "model": "alcazar"
+      },
+      "catalogIdentityIds": [
+        "cohort:498:alcazar:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:498:alcazar:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Verna",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.hyundai.com/in/en",
+      "note": "Official India priced sedan range observed 2026-10-13. Catalog observation year only; no factory model year or historical/facelift interval inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 2242216621,
+      "proposedCarImageVehicleId": "veh_9n96x0krcgvh2",
+      "proposedCarImageSlugs": {
+        "make": "hyundai",
+        "model": "verna"
+      },
+      "catalogIdentityIds": [
+        "cohort:498:verna:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:498:verna:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Aura",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.hyundai.com/in/en",
+      "note": "Official India priced sedan range observed 2026-10-13. Catalog observation year only; no factory model year or historical/facelift interval inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 3528656416,
+      "proposedCarImageVehicleId": "veh_1f3bnyekay2fk",
+      "proposedCarImageSlugs": {
+        "make": "hyundai",
+        "model": "aura"
+      },
+      "catalogIdentityIds": [
+        "cohort:498:aura:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:498:aura:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Curvv",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cars.tatamotors.com/news-and-events.html",
+      "note": "Official India current model range observed 2026-10-13. Catalog observation only; Curvv coupe SUV remains a separate line and no generation is selected.",
+      "yearBasis": "catalog-year",
+      "modelId": 3728247227,
+      "proposedCarImageVehicleId": "veh_5g40b0g03rbjt",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "curvv"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:curvv:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:curvv:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Nexon",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cars.tatamotors.com/news-and-events.html",
+      "note": "Official India current model range observed 2026-10-13. Catalog observation only; Curvv coupe SUV remains a separate line and no generation is selected.",
+      "yearBasis": "catalog-year",
+      "modelId": 4002707879,
+      "proposedCarImageVehicleId": "veh_6a94zp2xjkred",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "nexon"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:nexon:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:nexon:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Punch",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cars.tatamotors.com/news-and-events.html",
+      "note": "Official India current model range observed 2026-10-13. Catalog observation only; Curvv coupe SUV remains a separate line and no generation is selected.",
+      "yearBasis": "catalog-year",
+      "modelId": 4268585457,
+      "proposedCarImageVehicleId": "veh_85hrjqg8edpaz",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "punch"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:punch:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:punch:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Harrier",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cars.tatamotors.com/news-and-events.html",
+      "note": "Official India current model range observed 2026-10-13. Catalog observation only; Curvv coupe SUV remains a separate line and no generation is selected.",
+      "yearBasis": "catalog-year",
+      "modelId": 4443234368,
+      "proposedCarImageVehicleId": "veh_3fhyk8rmpzkyn",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "harrier"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:harrier:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:harrier:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Nexon.ev",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cars.tatamotors.com/news-and-events.html",
+      "note": "Official India current EV model range observed 2026-10-13. Catalog observation only; each EV is distinct from the combustion namesake.",
+      "yearBasis": "catalog-year",
+      "modelId": 1206560884,
+      "proposedCarImageVehicleId": "veh_10r3ksqe6dzwk",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "nexon-ev"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:nexon-ev:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:nexon-ev:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Punch.ev",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cars.tatamotors.com/news-and-events.html",
+      "note": "Official India current EV model range observed 2026-10-13. Catalog observation only; each EV is distinct from the combustion namesake.",
+      "yearBasis": "catalog-year",
+      "modelId": 4428041034,
+      "proposedCarImageVehicleId": "veh_bk0tkhq7yeqtd",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "punch-ev"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:punch-ev:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:punch-ev:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Urban Cruiser Taisor",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.toyotabharat.com/news/2025/urban-cruiser-hyryder-elevates-mobility-experience-with-advanced-feature-enhancements.html",
+      "note": "Toyota India 2025 Hyryder market offer and TKM plant/product overview explicitly identify marketed range including imported LC 300. Calendar catalog year only; Innova bodies/powertrains and LC 300 remain separate.",
+      "yearBasis": "catalog-year",
+      "modelId": 1580801858,
+      "proposedCarImageVehicleId": "veh_fp298w8jbmg45",
+      "proposedCarImageSlugs": {
+        "make": "toyota",
+        "model": "urban-cruiser-taisor"
+      },
+      "catalogIdentityIds": [
+        "cohort:448:urban-cruiser-taisor:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:448:urban-cruiser-taisor:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Urban Cruiser Hyryder",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.toyotabharat.com/news/2025/urban-cruiser-hyryder-elevates-mobility-experience-with-advanced-feature-enhancements.html",
+      "note": "Toyota India 2025 Hyryder market offer and TKM plant/product overview explicitly identify marketed range including imported LC 300. Calendar catalog year only; Innova bodies/powertrains and LC 300 remain separate.",
+      "yearBasis": "catalog-year",
+      "modelId": 4303679377,
+      "proposedCarImageVehicleId": "veh_fsdj33gn1ttwt",
+      "proposedCarImageSlugs": {
+        "make": "toyota",
+        "model": "urban-cruiser-hyryder"
+      },
+      "catalogIdentityIds": [
+        "cohort:448:urban-cruiser-hyryder:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:448:urban-cruiser-hyryder:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Innova Hycross",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.toyotabharat.com/news/2025/urban-cruiser-hyryder-elevates-mobility-experience-with-advanced-feature-enhancements.html",
+      "note": "Toyota India 2025 Hyryder market offer and TKM plant/product overview explicitly identify marketed range including imported LC 300. Calendar catalog year only; Innova bodies/powertrains and LC 300 remain separate.",
+      "yearBasis": "catalog-year",
+      "modelId": 3895839429,
+      "proposedCarImageVehicleId": "veh_7e6h764c3b91x",
+      "proposedCarImageSlugs": {
+        "make": "toyota",
+        "model": "innova-hycross"
+      },
+      "catalogIdentityIds": [
+        "cohort:448:innova-hycross:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:448:innova-hycross:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Innova Crysta",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.toyotabharat.com/news/2025/urban-cruiser-hyryder-elevates-mobility-experience-with-advanced-feature-enhancements.html",
+      "note": "Toyota India 2025 Hyryder market offer and TKM plant/product overview explicitly identify marketed range including imported LC 300. Calendar catalog year only; Innova bodies/powertrains and LC 300 remain separate.",
+      "yearBasis": "catalog-year",
+      "modelId": 3173830198,
+      "proposedCarImageVehicleId": "veh_1e4xxk04aet79",
+      "proposedCarImageSlugs": {
+        "make": "toyota",
+        "model": "innova-crysta"
+      },
+      "catalogIdentityIds": [
+        "cohort:448:innova-crysta:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:448:innova-crysta:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Land Cruiser 300",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.toyotabharat.com/news/2025/urban-cruiser-hyryder-elevates-mobility-experience-with-advanced-feature-enhancements.html",
+      "note": "Toyota India 2025 Hyryder market offer and TKM plant/product overview explicitly identify marketed range including imported LC 300. Calendar catalog year only; Innova bodies/powertrains and LC 300 remain separate.",
+      "yearBasis": "catalog-year",
+      "modelId": 3205162622,
+      "proposedCarImageVehicleId": "veh_4dpb9ax0a1bj1",
+      "proposedCarImageSlugs": {
+        "make": "toyota",
+        "model": "land-cruiser-300"
+      },
+      "catalogIdentityIds": [
+        "cohort:448:land-cruiser-300:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:448:land-cruiser-300:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "Thar",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mahindra.com/sites/default/files/2025-03/MonthlyReport07032025_0.pdf",
+      "note": "Manufacturer February 2025 monthly report identifies the marketed models. Calendar sales/catalog year only, not factory MY. Combined sales totals do not establish appearance equivalence.",
+      "yearBasis": "catalog-year",
+      "modelId": 2194816414,
+      "proposedCarImageVehicleId": "veh_9gpvdy0313g0w",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "thar"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:thar:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:thar:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "Thar Roxx",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mahindra.com/sites/default/files/2025-03/MonthlyReport07032025_0.pdf",
+      "note": "Manufacturer February 2025 monthly report identifies the marketed models. Calendar sales/catalog year only, not factory MY. Combined sales totals do not establish appearance equivalence.",
+      "yearBasis": "catalog-year",
+      "modelId": 4394876093,
+      "proposedCarImageVehicleId": "veh_efzq9627ymkqa",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "thar-roxx"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:thar-roxx:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:thar-roxx:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "XUV 3XO",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mahindra.com/sites/default/files/2025-03/MonthlyReport07032025_0.pdf",
+      "note": "Manufacturer February 2025 monthly report identifies the marketed models. Calendar sales/catalog year only, not factory MY. Combined sales totals do not establish appearance equivalence.",
+      "yearBasis": "catalog-year",
+      "modelId": 3173311724,
+      "proposedCarImageVehicleId": "veh_crj2nfxp6s8pt",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "xuv-3xo"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:xuv-3xo:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:xuv-3xo:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "XUV400",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mahindra.com/sites/default/files/2025-03/MonthlyReport07032025_0.pdf",
+      "note": "Manufacturer February 2025 monthly report identifies the marketed models. Calendar sales/catalog year only, not factory MY. Combined sales totals do not establish appearance equivalence.",
+      "yearBasis": "catalog-year",
+      "modelId": 2368673332,
+      "proposedCarImageVehicleId": "veh_dpwps9q6011b8",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "xuv400"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:xuv400:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:xuv400:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "XUV700",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mahindra.com/sites/default/files/2025-03/MonthlyReport07032025_0.pdf",
+      "note": "Manufacturer February 2025 monthly report identifies the marketed models. Calendar sales/catalog year only, not factory MY. Combined sales totals do not establish appearance equivalence.",
+      "yearBasis": "catalog-year",
+      "modelId": 3392280693,
+      "proposedCarImageVehicleId": "veh_5y9pmex4ab2c4",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "xuv700"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:xuv700:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:xuv700:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "Marazzo",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mahindra.com/sites/default/files/2025-03/MonthlyReport07032025_0.pdf",
+      "note": "Manufacturer February 2025 monthly report identifies the marketed models. Calendar sales/catalog year only, not factory MY. Combined sales totals do not establish appearance equivalence.",
+      "yearBasis": "catalog-year",
+      "modelId": 3389801967,
+      "proposedCarImageVehicleId": "veh_1p15zvk7nn48e",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "marazzo"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:marazzo:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:marazzo:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2146,
+      "make": "MAHINDRA",
+      "model": "Scorpio Classic",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://auto.mahindra.com/suv",
+      "note": "Manufacturer India priced range observed 2026-10-13 names Scorpio Classic separately from Scorpio-N. Calendar catalog observation only; no generic Scorpio substitution.",
+      "yearBasis": "catalog-year",
+      "modelId": 1895284462,
+      "proposedCarImageVehicleId": "veh_3z4r9x2gcg9ca",
+      "proposedCarImageSlugs": {
+        "make": "mahindra",
+        "model": "scorpio-classic"
+      },
+      "catalogIdentityIds": [
+        "cohort:2146:scorpio-classic:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2146:scorpio-classic:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Amaze",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://stage.hondacarindia.com/media/press-releases/honda-announces-its-car-prices-post-gst-reforms-2025",
+      "note": "Honda India September 22, 2025 price offer names second and third generation Amaze concurrently. Calendar marketed year only; line presence cannot choose either generation.",
+      "yearBasis": "catalog-year",
+      "modelId": 3494844581,
+      "proposedCarImageVehicleId": "veh_bn39e3pnj4bb8",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "amaze"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:amaze:catalog-year:IN",
+        "honda:amaze:india:2:catalog2025",
+        "honda:amaze:india:3:catalog2025"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:amaze:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "City e:HEV",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://stage.hondacarindia.com/media/press-releases/honda-announces-its-car-prices-post-gst-reforms-2025",
+      "note": "Honda India September 22, 2025 offer lists City e:HEV separately from petrol grades. Calendar marketed year only; no petrol City visual/powertrain substitution.",
+      "yearBasis": "catalog-year",
+      "modelId": 5041046098,
+      "proposedCarImageVehicleId": "veh_fhm15p7cab3vx",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "city-e-hev"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:city-e-hev:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:city-e-hev:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Elevate",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://stage.hondacarindia.com/media/press-releases/honda-announces-its-car-prices-post-gst-reforms-2025",
+      "note": "Honda India September 22, 2025 market price offer names Elevate. Calendar marketed year only; no historical year interval inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 1432899087,
+      "proposedCarImageVehicleId": "veh_6hcr6s3fsap6v",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "elevate"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:elevate:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:elevate:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Sonet",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/sonet/htk/Sonet_Mobile_2025.pdf",
+      "note": "Official India Sonet 2025 brochure establishes marketed catalog year. No trim, body or model-year history inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 2863561405,
+      "proposedCarImageVehicleId": "veh_2g70cr9cdakg7",
+      "proposedCarImageSlugs": {
+        "make": "kia",
+        "model": "sonet"
+      },
+      "catalogIdentityIds": [
+        "cohort:499:sonet:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:499:sonet:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Slavia",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.skoda-auto.co.in/news/news-detail/skodas-auto-india-announces-new-value-proposition-on-kushaq-and-slavia",
+      "note": "June 18, 2024 India market offer explicitly names Slavia sedan and Kushaq SUV. Calendar marketed year only.",
+      "yearBasis": "catalog-year",
+      "modelId": 1304259487,
+      "proposedCarImageVehicleId": "veh_7srggykfmpk5e",
+      "proposedCarImageSlugs": {
+        "make": "skoda",
+        "model": "slavia"
+      },
+      "catalogIdentityIds": [
+        "cohort:100105:slavia:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100105:slavia:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Kushaq",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.skoda-auto.co.in/news/news-detail/skodas-auto-india-announces-new-value-proposition-on-kushaq-and-slavia",
+      "note": "June 18, 2024 India market offer explicitly names Slavia sedan and Kushaq SUV. Calendar marketed year only.",
+      "yearBasis": "catalog-year",
+      "modelId": 1739506572,
+      "proposedCarImageVehicleId": "veh_apmqpwsnm2w11",
+      "proposedCarImageSlugs": {
+        "make": "skoda",
+        "model": "kushaq"
+      },
+      "catalogIdentityIds": [
+        "cohort:100105:kushaq:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100105:kushaq:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2021,
+      "makeId": 482,
+      "make": "VOLKSWAGEN",
+      "model": "Taigun",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.volkswagen.co.in/en/discover-volkswagen/news/archives/volkswagen-india-launches-suvw-taigun-price.html",
+      "note": "September 2021 India market introduction begins deliveries of Taigun SUV. Catalog delivery year only; not Tiguan and not a blanket later-year/facelift assertion.",
+      "yearBasis": "catalog-year",
+      "modelId": 2398255418,
+      "proposedCarImageVehicleId": "veh_9fj9e0dvf25gr",
+      "proposedCarImageSlugs": {
+        "make": "volkswagen",
+        "model": "taigun"
+      },
+      "catalogIdentityIds": [
+        "cohort:482:taigun:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:482:taigun:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Triber",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://media.renault.com/new-renault-triber-launched-with-complete-design-and-feature-overhaul/?lang=eng",
+      "note": "July 23, 2025 Renault India launch of refreshed seven-seat Triber. Calendar marketed year only; exact before/after facelift visual identity not established by line presence.",
+      "yearBasis": "catalog-year",
+      "modelId": 4629267242,
+      "proposedCarImageVehicleId": "veh_1zs38p2eh30an",
+      "proposedCarImageSlugs": {
+        "make": "renault",
+        "model": "triber"
+      },
+      "catalogIdentityIds": [
+        "cohort:13647:triber:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:13647:triber:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 478,
+      "make": "NISSAN",
+      "model": "Magnite",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.nissan.in/latest-news/new-nissan-magnite-launched-at-special-introductory-price.html",
+      "note": "October 2024 India launch market offer names refreshed Magnite. Calendar launch/catalog year only; no factory MY or historical interval inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 4509300748,
+      "proposedCarImageVehicleId": "veh_865dv76z5s5b6",
+      "proposedCarImageSlugs": {
+        "make": "nissan",
+        "model": "magnite"
+      },
+      "catalogIdentityIds": [
+        "cohort:478:magnite:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:478:magnite:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 100108,
+      "make": "MG",
+      "model": "Comet EV",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.mgmotor.co.in/media-center/newsroom/mg-motor-india-celebrates-100-years-with-wow-offerings",
+      "note": "MG India February 2, 2024 dated market offer names Comet EV. Catalog sales year only.",
+      "yearBasis": "catalog-year",
+      "modelId": 1486900988,
+      "proposedCarImageVehicleId": "veh_06q2ey5mcjcgc",
+      "proposedCarImageSlugs": {
+        "make": "mg",
+        "model": "comet-ev"
+      },
+      "catalogIdentityIds": [
+        "cohort:100108:comet-ev:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100108:comet-ev:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 100108,
+      "make": "MG",
+      "model": "Astor",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mgmotor.co.in/media-center/newsroom/mg-motor-india-celebrates-100-years-with-wow-offerings",
+      "note": "MG India February 2, 2024 dated market offer names Astor, Hector and Gloster. Catalog sales year only; distinct marketed lines.",
+      "yearBasis": "catalog-year",
+      "modelId": 2047887624,
+      "proposedCarImageVehicleId": "veh_60ze03k4k8kmd",
+      "proposedCarImageSlugs": {
+        "make": "mg",
+        "model": "astor"
+      },
+      "catalogIdentityIds": [
+        "cohort:100108:astor:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100108:astor:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 100108,
+      "make": "MG",
+      "model": "Hector",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mgmotor.co.in/media-center/newsroom/mg-motor-india-celebrates-100-years-with-wow-offerings",
+      "note": "MG India February 2, 2024 dated market offer names Astor, Hector and Gloster. Catalog sales year only; distinct marketed lines.",
+      "yearBasis": "catalog-year",
+      "modelId": 3958091466,
+      "proposedCarImageVehicleId": "veh_dv98nbnhyxazg",
+      "proposedCarImageSlugs": {
+        "make": "mg",
+        "model": "hector"
+      },
+      "catalogIdentityIds": [
+        "cohort:100108:hector:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100108:hector:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 100108,
+      "make": "MG",
+      "model": "Gloster",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mgmotor.co.in/media-center/newsroom/mg-motor-india-celebrates-100-years-with-wow-offerings",
+      "note": "MG India February 2, 2024 dated market offer names Astor, Hector and Gloster. Catalog sales year only; distinct marketed lines.",
+      "yearBasis": "catalog-year",
+      "modelId": 5079005645,
+      "proposedCarImageVehicleId": "veh_dk1yfjpc07fzs",
+      "proposedCarImageSlugs": {
+        "make": "mg",
+        "model": "gloster"
+      },
+      "catalogIdentityIds": [
+        "cohort:100108:gloster:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100108:gloster:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 100108,
+      "make": "MG",
+      "model": "Windsor EV",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://cc.mgmotor.co.in/windsorev",
+      "note": "Official India configurator observed 2026-10-13 offers WINDSOR EV ESSENCE. Catalog observation year only; Windsor Pro is not substituted.",
+      "yearBasis": "catalog-year",
+      "modelId": 3345219770,
+      "proposedCarImageVehicleId": "veh_59bapj1qqysj6",
+      "proposedCarImageSlugs": {
+        "make": "mg",
+        "model": "windsor-ev"
+      },
+      "catalogIdentityIds": [
+        "cohort:100108:windsor-ev:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100108:windsor-ev:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Splendor+",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 4668658217,
+      "proposedCarImageVehicleId": "veh_297k6xg09924b",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "splendor"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:splendor:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:splendor:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "HF Deluxe",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 3191203672,
+      "proposedCarImageVehicleId": "veh_bgyhwzaq9mmf8",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "hf-deluxe"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:hf-deluxe:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:hf-deluxe:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Xtreme 125R",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 5047691428,
+      "proposedCarImageVehicleId": "veh_2nbryzreca2j1",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "xtreme-125r"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:xtreme-125r:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:xtreme-125r:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Xtreme 160R",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 1934523473,
+      "proposedCarImageVehicleId": "veh_fjddb6r3tgn28",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "xtreme-160r"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:xtreme-160r:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:xtreme-160r:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Karizma XMR",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 5219214929,
+      "proposedCarImageVehicleId": "veh_54t193zhr1snb",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "karizma-xmr"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:karizma-xmr:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:karizma-xmr:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Xpulse 200 4V",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 4122519410,
+      "proposedCarImageVehicleId": "veh_9g7vs14q1a4k1",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "xpulse-200-4v"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:xpulse-200-4v:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:xpulse-200-4v:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Glamour XTEC",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 2031832756,
+      "proposedCarImageVehicleId": "veh_6mhjme744arr4",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "glamour-xtec"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:glamour-xtec:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:glamour-xtec:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1109672319,
+      "make": "HERO",
+      "model": "Glamour Canvas",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2024-2025/hero_motocorp_ir_2024_25_c2c_v3.pdf",
+      "note": "Hero FY2024-25 annual report printed pp18-21 (PDF pp11-12) visually labels India product portfolio. Catalog reporting observation at fiscal year end 2025 only; not factory MY or proof of full 2024-25 availability. Xtreme 160R and 4V, Xpulse 200 4V and 210, and Glamour variants are not collapsed.",
+      "yearBasis": "catalog-year",
+      "modelId": 4842073072,
+      "proposedCarImageVehicleId": "veh_3jm43204p2js2",
+      "proposedCarImageSlugs": {
+        "make": "hero",
+        "model": "glamour-canvas"
+      },
+      "catalogIdentityIds": [
+        "cohort:1109672319:glamour-canvas:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1109672319:glamour-canvas:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Apache RTR 160",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 1322844055,
+      "proposedCarImageVehicleId": "veh_8pj9smgcs0yvd",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "apache-rtr-160"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:apache-rtr-160:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:apache-rtr-160:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Apache RTR 200 4V",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 2171492286,
+      "proposedCarImageVehicleId": "veh_3eqezptn0ps27",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "apache-rtr-200-4v"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:apache-rtr-200-4v:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:apache-rtr-200-4v:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Apache RR 310",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 1173340990,
+      "proposedCarImageVehicleId": "veh_ew10wjp33cz0y",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "apache-rr-310"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:apache-rr-310:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:apache-rr-310:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Ronin",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 3343712292,
+      "proposedCarImageVehicleId": "veh_few9cypdwfs65",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "ronin"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:ronin:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:ronin:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Raider",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 5234122615,
+      "proposedCarImageVehicleId": "veh_d8h5s5f5p0wg1",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "raider"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:raider:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:raider:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Jupiter 110",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 1050901127,
+      "proposedCarImageVehicleId": "veh_8bnzmqbxnjrnj",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "jupiter-110"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:jupiter-110:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:jupiter-110:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "Jupiter 125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 2845561907,
+      "proposedCarImageVehicleId": "veh_fb6dnrcqmkr1q",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "jupiter-125"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:jupiter-125:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:jupiter-125:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "NTorq 125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 3619034304,
+      "proposedCarImageVehicleId": "veh_5w076tj8hca2f",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "ntorq-125"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:ntorq-125:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:ntorq-125:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 1837396753,
+      "make": "TVS",
+      "model": "iQube",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.tvsmotor.com/api/InvestorDownloadData?ItemId=08DD6A09C74C44A9897135C52F73CBBC",
+      "note": "TVS September 11, 2025 Information Memorandum printed p57 (PDF p45) lists current key motorcycle and scooter products. Calendar catalog observation only; Jupiter 110/125 and Apache engine/valve variants remain separate. No trim or visual-generation inference.",
+      "yearBasis": "catalog-year",
+      "modelId": 2508852548,
+      "proposedCarImageVehicleId": "veh_3bzjpgm0ffb1v",
+      "proposedCarImageSlugs": {
+        "make": "tvs",
+        "model": "iqube"
+      },
+      "catalogIdentityIds": [
+        "cohort:1837396753:iqube:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1837396753:iqube:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Pulsar 125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/",
+      "note": "Official India priced model range observed 2026-10-13 lists these exact engine/series names. Calendar catalog observation only; no 2025 lighting revision or previous generation equivalence inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 3839950796,
+      "proposedCarImageVehicleId": "veh_7n84qk7b7zbdk",
+      "proposedCarImageSlugs": {
+        "make": "bajaj",
+        "model": "pulsar-125"
+      },
+      "catalogIdentityIds": [
+        "cohort:2485975730:pulsar-125:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2485975730:pulsar-125:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Pulsar 150",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/",
+      "note": "Official India priced model range observed 2026-10-13 lists these exact engine/series names. Calendar catalog observation only; no 2025 lighting revision or previous generation equivalence inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 1742998684,
+      "proposedCarImageVehicleId": "veh_5hnappmk4r3x9",
+      "proposedCarImageSlugs": {
+        "make": "bajaj",
+        "model": "pulsar-150"
+      },
+      "catalogIdentityIds": [
+        "cohort:2485975730:pulsar-150:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2485975730:pulsar-150:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Pulsar N160",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/",
+      "note": "Official India priced model range observed 2026-10-13 lists these exact engine/series names. Calendar catalog observation only; no 2025 lighting revision or previous generation equivalence inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 3053349569,
+      "proposedCarImageVehicleId": "veh_2v101ry9v04jj",
+      "proposedCarImageSlugs": {
+        "make": "bajaj",
+        "model": "pulsar-n160"
+      },
+      "catalogIdentityIds": [
+        "cohort:2485975730:pulsar-n160:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2485975730:pulsar-n160:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Pulsar NS200",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.bajajauto.com/",
+      "note": "Official India priced model range observed 2026-10-13 lists these exact engine/series names. Calendar catalog observation only; no 2025 lighting revision or previous generation equivalence inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 1429834141,
+      "proposedCarImageVehicleId": "veh_6z8zfg3v434wn",
+      "proposedCarImageSlugs": {
+        "make": "bajaj",
+        "model": "pulsar-ns200"
+      },
+      "catalogIdentityIds": [
+        "cohort:2485975730:pulsar-ns200:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2485975730:pulsar-ns200:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2427767883,
+      "make": "YAMAHA",
+      "model": "MT-15",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://global.yamaha-motor.com/ir/library/report/pdf/2025/mc_qa_en_01.pdf",
+      "note": "Yamaha 2025 medium-term management Q&A identifies MT-15 and YZF-R15 as India marketed sports models. Calendar catalog year only; request needs version/year before visual selection.",
+      "yearBasis": "catalog-year",
+      "modelId": 4780072420,
+      "proposedCarImageVehicleId": "veh_bmkztnhmbvq40",
+      "proposedCarImageSlugs": {
+        "make": "yamaha",
+        "model": "mt-15"
+      },
+      "catalogIdentityIds": [
+        "cohort:2427767883:mt-15:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2427767883:mt-15:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Access 125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://cdn.suzukimotorcycle.co.in/public-live/user-manual/Access-125-UZ125-NR-Ride-connect-2025.pdf",
+      "note": "Official India Access 125 UZ125 NR Ride Connect 2025 manual; catalog edition year only. Do not merge preceding Access or engine/appearance generations.",
+      "yearBasis": "catalog-year",
+      "modelId": 4305735588,
+      "proposedCarImageVehicleId": "veh_acdmnr3fnenwp",
+      "proposedCarImageSlugs": {
+        "make": "suzuki",
+        "model": "access-125"
+      },
+      "catalogIdentityIds": [
+        "cohort:509:access-125:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:509:access-125:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Burgman Street",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.suzuki.co.jp/release/d/2026/0423/pdf/0423.pdf",
+      "note": "Suzuki April 23, 2026 India plant release names BURGMAN STREET and AVENIS among principal production models. Calendar catalog year only; Street EX remains distinct and no generation inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 4868039549,
+      "proposedCarImageVehicleId": "veh_fargc22bqhfaj",
+      "proposedCarImageSlugs": {
+        "make": "suzuki",
+        "model": "burgman-street"
+      },
+      "catalogIdentityIds": [
+        "cohort:509:burgman-street:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:509:burgman-street:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Avenis",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.suzuki.co.jp/release/d/2026/0423/pdf/0423.pdf",
+      "note": "Suzuki April 23, 2026 India plant release names BURGMAN STREET and AVENIS among principal production models. Calendar catalog year only; Street EX remains distinct and no generation inferred.",
+      "yearBasis": "catalog-year",
+      "modelId": 2141240516,
+      "proposedCarImageVehicleId": "veh_66mdjj7argv86",
+      "proposedCarImageSlugs": {
+        "make": "suzuki",
+        "model": "avenis"
+      },
+      "catalogIdentityIds": [
+        "cohort:509:avenis:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:509:avenis:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 3395073354,
+      "make": "ROYAL ENFIELD",
+      "model": "Continental GT 650",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.royalenfield.com/content/dam/royal-enfield/india/our-world/news-and-media/news/product-launches/gt-2024/press-release-continental-gt-cup-finals.pdf",
+      "note": "Royal Enfield India 2024 GT Cup release describes marketed Continental GT 650 twin separately from other models. Calendar catalog year only; not Continental GT 535.",
+      "yearBasis": "catalog-year",
+      "modelId": 4105888644,
+      "proposedCarImageVehicleId": "veh_9mewhyzp37e9p",
+      "proposedCarImageSlugs": {
+        "make": "royal-enfield",
+        "model": "continental-gt-650"
+      },
+      "catalogIdentityIds": [
+        "cohort:3395073354:continental-gt-650:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3395073354:continental-gt-650:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3395073354,
+      "make": "ROYAL ENFIELD",
+      "model": "Himalayan 450",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.royalenfield.com/in/en/motorcycles/new-himalayan/",
+      "note": "Official India priced Himalayan 450 page observed 2026-10-13. Catalog observation year only; earlier 411 is not an alias.",
+      "yearBasis": "catalog-year",
+      "modelId": 4882642630,
+      "proposedCarImageVehicleId": "veh_bjh5rmkkfpxh8",
+      "proposedCarImageSlugs": {
+        "make": "royal-enfield",
+        "model": "himalayan-450"
+      },
+      "catalogIdentityIds": [
+        "cohort:3395073354:himalayan-450:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3395073354:himalayan-450:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "SP125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.honda2wheelersindia.com/news/honda-motorcycle-and-scooter-india-launches-new-2025-sp125-be-bold-be-advanced",
+      "note": "Honda India December 23, 2024 launch explicitly names new 2025 SP125, LED head/taillamp and tank shrouds. Exact model-year designation; not SP160 or generic 125.",
+      "yearBasis": "model-year",
+      "modelId": 4926440064,
+      "proposedCarImageVehicleId": "veh_0d3hsr16dmceb",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "sp125"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:sp125:model-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:sp125:model-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Activa125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://global.honda/content/dam/site/global-en/newsroom-new/cq_img/news/2025/05/c250522beng/c250522beng.pdf",
+      "note": "Honda May 22, 2025 HMSI India production milestone release lists principal India models. Calendar catalog observation only. CB350, CB350RS and CB350 Hness are separately named; no parent alias. Activa125 is distinct from Activa 110.",
+      "yearBasis": "catalog-year",
+      "modelId": 1321943093,
+      "proposedCarImageVehicleId": "veh_ddff7xjg5wj18",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "activa125"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:activa125:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:activa125:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Dio125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://global.honda/content/dam/site/global-en/newsroom-new/cq_img/news/2025/05/c250522beng/c250522beng.pdf",
+      "note": "Honda May 22, 2025 HMSI India production milestone release lists principal India models. Calendar catalog observation only. CB350, CB350RS and CB350 Hness are separately named; no parent alias. Activa125 is distinct from Activa 110.",
+      "yearBasis": "catalog-year",
+      "modelId": 2952655053,
+      "proposedCarImageVehicleId": "veh_cbk7tch11h1jd",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "dio125"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:dio125:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:dio125:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Hornet2.0",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://global.honda/content/dam/site/global-en/newsroom-new/cq_img/news/2025/05/c250522beng/c250522beng.pdf",
+      "note": "Honda May 22, 2025 HMSI India production milestone release lists principal India models. Calendar catalog observation only. CB350, CB350RS and CB350 Hness are separately named; no parent alias. Activa125 is distinct from Activa 110.",
+      "yearBasis": "catalog-year",
+      "modelId": 3307137249,
+      "proposedCarImageVehicleId": "veh_f89sjkb1zn7f0",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "hornet2-0"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:hornet2-0:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:hornet2-0:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "CB350",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://global.honda/content/dam/site/global-en/newsroom-new/cq_img/news/2025/05/c250522beng/c250522beng.pdf",
+      "note": "Honda May 22, 2025 HMSI India production milestone release lists principal India models. Calendar catalog observation only. CB350, CB350RS and CB350 Hness are separately named; no parent alias. Activa125 is distinct from Activa 110.",
+      "yearBasis": "catalog-year",
+      "modelId": 1781133734,
+      "proposedCarImageVehicleId": "veh_574w4dj8s4ezc",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "cb350"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:cb350:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:cb350:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2022,
+      "makeId": 515,
+      "make": "LEXUS",
+      "model": "LX 600 F Sport",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://www.lexus.com/content/dam/lexus/documents/fcv/2022_Lexus_LX_600_Press_Release.pdf",
+      "note": "Lexus explicitly identifies all-new US 2022 LX600 and F SPORT grade with mesh grille and exclusive 22-inch forged wheels. Exact model year and exterior derivative; no VN sales claim.",
+      "yearBasis": "model-year",
+      "modelId": 3385515062,
+      "proposedCarImageVehicleId": "veh_42vwcqgbv8hw7",
+      "proposedCarImageSlugs": {
+        "make": "lexus",
+        "model": "lx-600-f-sport"
+      },
+      "catalogIdentityIds": [
+        "lexus:lx600:fourth:suv:fsport:us:2022"
+      ],
+      "localVisualStatus": "MATCHED",
+      "lineage": {
+        "specification": "lexus:lx600:fourth:suv:fsport:us:2022",
+        "derivative": "lexus:lx600:fourth:suv",
+        "generation": "lexus:lx600:fourth",
+        "line": "lexus:lx600"
+      },
+      "visualIdentityIds": [
+        "lexus:lx600:fourth:suv:fsport:us:2022:exterior"
+      ]
+    },
+    {
+      "year": 2019,
+      "makeId": 515,
+      "make": "LEXUS",
+      "model": "LX 570 Peak Edition",
+      "vehicleTypeId": 7,
+      "market": "CN",
+      "url": "https://www.lexus.com.cn/node/3625",
+      "note": "Lexus China explicitly identifies 2019款 LX570 巅峰特别版 (translated Peak Special Edition), reusing 2018 special edition spindle grille, front/rear bumpers and dark mirrors. Exact China model year; not generic LX570 or a VN official trim.",
+      "yearBasis": "model-year",
+      "modelId": 2838211921,
+      "proposedCarImageVehicleId": "veh_06wv6wp46613z",
+      "proposedCarImageSlugs": {
+        "make": "lexus",
+        "model": "lx-570-peak-edition"
+      },
+      "catalogIdentityIds": [
+        "lexus:lx570:third:suv:peak:cn2019"
+      ],
+      "localVisualStatus": "MATCHED",
+      "lineage": {
+        "specification": "lexus:lx570:third:suv:peak:cn2019",
+        "derivative": "lexus:lx570:third:suv",
+        "generation": "lexus:lx570:third",
+        "line": "lexus:lx570"
+      },
+      "visualIdentityIds": [
+        "lexus:lx570:third:suv:peak:cn2019:exterior"
+      ]
+    },
+    {
+      "year": 2022,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Sportage X-Line",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://www.thacoauto.vn/en/thaco-auto-now-accepts-orders-for-kia-sportage-cars",
+      "note": "THACO Vietnam order offer dated June 10, 2022 explicitly names Sportage X-Line exterior design separately from Sportage; calendar catalog/order year only, not factory MY.",
+      "yearBasis": "catalog-year",
+      "modelId": 2024274394,
+      "proposedCarImageVehicleId": "veh_32njxddjrrkrt",
+      "proposedCarImageSlugs": {
+        "make": "kia",
+        "model": "sportage-x-line"
+      },
+      "catalogIdentityIds": [
+        "cohort:499:sportage-x-line:catalog-year:VN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:499:sportage-x-line:catalog-year:VN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3622210114,
+      "make": "ATHER",
+      "model": "450 Apex",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.atherenergy.com/electric-scooter-all-models",
+      "note": "Official India bookable model list observed 2026-10-13 names 450 Apex, 450X and Rizta with S/Z variants. Calendar catalog observation only; battery/year/generation and Rizta variant remain to be established.",
+      "yearBasis": "catalog-year",
+      "modelId": 2779721154,
+      "proposedCarImageVehicleId": "veh_4k9asdk5a97bk",
+      "proposedCarImageSlugs": {
+        "make": "ather",
+        "model": "450-apex"
+      },
+      "catalogIdentityIds": [
+        "cohort:3622210114:450-apex:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3622210114:450-apex:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3622210114,
+      "make": "ATHER",
+      "model": "450X",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.atherenergy.com/electric-scooter-all-models",
+      "note": "Official India bookable model list observed 2026-10-13 names 450 Apex, 450X and Rizta with S/Z variants. Calendar catalog observation only; battery/year/generation and Rizta variant remain to be established.",
+      "yearBasis": "catalog-year",
+      "modelId": 3001408094,
+      "proposedCarImageVehicleId": "veh_a7jjpzgfdghbv",
+      "proposedCarImageSlugs": {
+        "make": "ather",
+        "model": "450x"
+      },
+      "catalogIdentityIds": [
+        "cohort:3622210114:450x:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3622210114:450x:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3622210114,
+      "make": "ATHER",
+      "model": "Rizta",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.atherenergy.com/electric-scooter-all-models",
+      "note": "Official India bookable model list observed 2026-10-13 names 450 Apex, 450X and Rizta with S/Z variants. Calendar catalog observation only; battery/year/generation and Rizta variant remain to be established.",
+      "yearBasis": "catalog-year",
+      "modelId": 2063882773,
+      "proposedCarImageVehicleId": "veh_d90yy8q1jbcen",
+      "proposedCarImageSlugs": {
+        "make": "ather",
+        "model": "rizta"
+      },
+      "catalogIdentityIds": [
+        "cohort:3622210114:rizta:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3622210114:rizta:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2794540878,
+      "make": "KTM",
+      "model": "250 Duke",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.ktmindia.com/ktm-bikes/naked-bike/ktm-250-duke",
+      "note": "Official India bookable 250 Duke product and price page observed 2026-10-13. Calendar catalog observation only; redirected 2025 URL does not prove MY2025.",
+      "yearBasis": "catalog-year",
+      "modelId": 4901160449,
+      "proposedCarImageVehicleId": "veh_a15r8646q31vm",
+      "proposedCarImageSlugs": {
+        "make": "ktm",
+        "model": "250-duke"
+      },
+      "catalogIdentityIds": [
+        "cohort:2794540878:250-duke:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2794540878:250-duke:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2794540878,
+      "make": "KTM",
+      "model": "RC 200",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.ktmindia.com/ktm-bikes/supersport/ktm-rc-200",
+      "note": "Official India bookable RC 200 product and price page observed 2026-10-13. Calendar catalog observation only; not generic KTM 200 or RC390.",
+      "yearBasis": "catalog-year",
+      "modelId": 3525903706,
+      "proposedCarImageVehicleId": "veh_ey49cacp60h8g",
+      "proposedCarImageSlugs": {
+        "make": "ktm",
+        "model": "rc-200"
+      },
+      "catalogIdentityIds": [
+        "cohort:2794540878:rc-200:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2794540878:rc-200:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 1223187720,
+      "make": "EICHER",
+      "model": "Pro 3015",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/medium-duty/pro-3015",
+      "note": "Official India Pro3015 E494 and seven-speed gearbox product page observed 2026-10-13. Calendar catalog observation only; wheelbase, body and year must be specified before rendering.",
+      "yearBasis": "catalog-year",
+      "modelId": 3624352485,
+      "proposedCarImageVehicleId": "veh_19hm0zj1d7thy",
+      "proposedCarImageSlugs": {
+        "make": "eicher",
+        "model": "pro-3015"
+      },
+      "catalogIdentityIds": [
+        "cohort:1223187720:pro-3015:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1223187720:pro-3015:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 1223187720,
+      "make": "EICHER",
+      "model": "Pro 6042",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.eichertrucksandbuses.com/heavy-duty-trucks/haulage/pro-6042",
+      "note": "Official India haulage Pro6042 product page observed 2026-10-13. Calendar catalog observation only; not tipper 6042T. Wheelbase/body/year not selected.",
+      "yearBasis": "catalog-year",
+      "modelId": 4376285944,
+      "proposedCarImageVehicleId": "veh_176wey25qe3fk",
+      "proposedCarImageSlugs": {
+        "make": "eicher",
+        "model": "pro-6042"
+      },
+      "catalogIdentityIds": [
+        "cohort:1223187720:pro-6042:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1223187720:pro-6042:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 1223187720,
+      "make": "EICHER",
+      "model": "Pro 2055",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/light-duty/pro-2055",
+      "note": "Official India Pro2055 product page observed 2026-10-13. Calendar catalog observation only; Nigeria specification is not substituted. Body/wheelbase/year unresolved.",
+      "yearBasis": "catalog-year",
+      "modelId": 3069937660,
+      "proposedCarImageVehicleId": "veh_a86gz39b867h5",
+      "proposedCarImageSlugs": {
+        "make": "eicher",
+        "model": "pro-2055"
+      },
+      "catalogIdentityIds": [
+        "cohort:1223187720:pro-2055:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1223187720:pro-2055:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 1991,
+      "make": "BYD",
+      "model": "eMAX 7",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://bydautoindia.com/news/BYD-India-Launches-Country%27s-First-Electric-MPV-in-6-and-7-Seater-Options",
+      "note": "BYD India October 8, 2024 six/seven-seat electric MPV market launch. Calendar launch/catalog year only; e6 and Song derivatives are not aliases.",
+      "yearBasis": "catalog-year",
+      "modelId": 4746006078,
+      "proposedCarImageVehicleId": "veh_4120z54pk01gn",
+      "proposedCarImageSlugs": {
+        "make": "byd",
+        "model": "emax-7"
+      },
+      "catalogIdentityIds": [
+        "cohort:1991:emax-7:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:1991:emax-7:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Alto K10",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/arena/alto-k10",
+      "note": "Official India bookable Alto K10 product page observed 2026-10-13. Calendar catalog observation only; generic Alto sales totals are not K10 proof.",
+      "yearBasis": "catalog-year",
+      "modelId": 2940401595,
+      "proposedCarImageVehicleId": "veh_57da8byj8fh18",
+      "proposedCarImageSlugs": {
+        "make": "maruti",
+        "model": "alto-k10"
+      },
+      "catalogIdentityIds": [
+        "cohort:3233934283:alto-k10:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3233934283:alto-k10:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Ciaz",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2026/april/Press_Release_Maruti_Suzuki_sales_in_March_2026_and_FY_2025_26.pdf",
+      "note": "Manufacturer comparison column identifies 676 Ciaz sales in March 2025. Catalog sales year only; zero March 2026 sales do not justify new 2026 marketed-year coverage.",
+      "yearBasis": "catalog-year",
+      "modelId": 2910038416,
+      "proposedCarImageVehicleId": "veh_40tyb8ag99wsp",
+      "proposedCarImageSlugs": {
+        "make": "maruti",
+        "model": "ciaz"
+      },
+      "catalogIdentityIds": [
+        "cohort:3233934283:ciaz:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3233934283:ciaz:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2017,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Nano",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://cv.tatamotors.com/assets/cv/files/investors/2023/10/014.pdf",
+      "note": "Manufacturer October 2017 domestic production/sales table explicitly names Nano with nonzero production/sales. Calendar sales year only; year, GenX and transmission/body variant must be supplied for visual selection.",
+      "yearBasis": "catalog-year",
+      "modelId": 3552880357,
+      "proposedCarImageVehicleId": "veh_0fqg1fteyb5tg",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "nano"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:nano:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:nano:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2020,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Activa 6G",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://global.honda/jp/investors/library/financialresult/main/02/teaserItems3/0/linkList/00/link/FY202003_4Q_financial_presentation_j.pdf",
+      "note": "Honda FY2020 financial presentation explicitly identifies Activa 6G January 2020 India launch. Calendar launch/catalog year only; not Activa125 or an arbitrary later year.",
+      "yearBasis": "catalog-year",
+      "modelId": 2550779020,
+      "proposedCarImageVehicleId": "veh_2vw2jkaqyb8zw",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "activa-6g"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:activa-6g:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:activa-6g:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "CB650R",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.honda2wheelersindia.com/news/india-launches-2025-cb650r-and-cbr650r-with-revolutionary-e-clutch-technology",
+      "note": "Honda India release body dated May 10, 2025 explicitly names 2025 CB650R E-Clutch, round LED lamp and sculpted tank. Page header date April16 differs; use body dated announcement. CB650R distinct from fully faired CBR650R.",
+      "yearBasis": "model-year",
+      "modelId": 4034639367,
+      "proposedCarImageVehicleId": "veh_31cgmggy46564",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "cb650r"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:cb650r:model-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:cb650r:model-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Shine 125",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.honda2wheelersindia.com/news/honda-motorcycle-scooter-india-launches-new-2025-shine-125-naye-india-ki-amazing-shine",
+      "note": "Honda India February12, 2025 launch explicitly names new 2025 Shine125. Generic Shine request cannot select between this and Shine100.",
+      "yearBasis": "model-year",
+      "modelId": 2333228310,
+      "proposedCarImageVehicleId": "veh_54vfg6an35sh5",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "shine-125"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:shine-125:model-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:shine-125:model-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Shine 100",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.honda2wheelersindia.com/news/honda-motorcycle-and-scooter-india-launches-obd2b-shine-100-naye-india-ki-amazing-shine",
+      "note": "Honda India March17, 2025 launch explicitly names 2025 Shine100. Kept separate from Shine125 and Shine100DX; generic Shine is ambiguous.",
+      "yearBasis": "model-year",
+      "modelId": 4766277255,
+      "proposedCarImageVehicleId": "veh_7byc8ppz9naxc",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "shine-100"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:shine-100:model-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:shine-100:model-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 515,
+      "make": "LEXUS",
+      "model": "LX 600 F Sport",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://www.lexus.com.vn/vn/models/lx/lx-600-fsport.html/",
+      "note": "Official Vietnam LX600 F Sport product/price page observed2026-10-13 confirms local trim, SUV body and distinct mesh grille/wheels. Calendar catalog observation only; no inferred MY2023/2026.",
+      "yearBasis": "catalog-year",
+      "modelId": 5189454392,
+      "proposedCarImageVehicleId": "veh_5b7qr954svzg6",
+      "proposedCarImageSlugs": {
+        "make": "lexus",
+        "model": "lx-600-f-sport"
+      },
+      "catalogIdentityIds": [
+        "lexus:lx600:fourth:suv:fsport:vn:2026"
+      ],
+      "localVisualStatus": "MATCHED",
+      "lineage": {
+        "specification": "lexus:lx600:fourth:suv:fsport:vn:2026",
+        "derivative": "lexus:lx600:fourth:suv",
+        "generation": "lexus:lx600:fourth",
+        "line": "lexus:lx600"
+      },
+      "visualIdentityIds": [
+        "lexus:lx600:fourth:suv:fsport:vn:2026:exterior"
+      ]
+    },
+    {
+      "year": 2026,
+      "makeId": 583,
+      "make": "BENTLEY",
+      "model": "Torcal",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://www.bentleymotors.com/us/en/models/torcal.html",
+      "note": "Official US Torcal announced model range observed2026-10-13 distinguishes Torcal and Torcal S, EV luxury SUV with LED diamond grille. Calendar announced catalog year only; neither delivery date nor US MY2028 is established.",
+      "yearBasis": "catalog-year",
+      "modelId": 1185924867,
+      "proposedCarImageVehicleId": "veh_bnnnqwd6b2d20",
+      "proposedCarImageSlugs": {
+        "make": "bentley",
+        "model": "torcal"
+      },
+      "catalogIdentityIds": [
+        "cohort:583:torcal:catalog-year:US"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:583:torcal:catalog-year:US"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Santa Fe Calligraphy",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://www.youtube.com/watch?v=PJY1mdUm4Sg",
+      "note": "Hyundai Thanh Cong Vietnam official channel September18,2024 launch names new-generation Santa Fe Calligraphy 6-seat,7-seat and Turbo versions. Calendar marketed launch year only; family trim does not select seat/powertrain or MY2024.",
+      "yearBasis": "catalog-year",
+      "modelId": 2882057121,
+      "proposedCarImageVehicleId": "veh_51kftgbe18x3n",
+      "proposedCarImageSlugs": {
+        "make": "hyundai",
+        "model": "santa-fe-calligraphy"
+      },
+      "catalogIdentityIds": [
+        "cohort:498:santa-fe-calligraphy:catalog-year:VN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:498:santa-fe-calligraphy:catalog-year:VN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Ace",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://static-assets.tatamotors.com/Production/www-tatamotors-com-NEW/wp-content/uploads/2025/08/Tata-Motors-Corporate-Presentation-2025-Final.pdf",
+      "note": "Tata Corporate Presentation 2025 p12 visually labels existing India truck product lines. Calendar catalog portfolio observation only; each family has unselected chassis/body/powertrain variants. Ultra EV bus is separately labeled and is not this Ultra truck.",
+      "yearBasis": "catalog-year",
+      "modelId": 4075019754,
+      "proposedCarImageVehicleId": "veh_ftm6fkrxxts78",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "ace"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:ace:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:ace:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Intra",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://static-assets.tatamotors.com/Production/www-tatamotors-com-NEW/wp-content/uploads/2025/08/Tata-Motors-Corporate-Presentation-2025-Final.pdf",
+      "note": "Tata Corporate Presentation 2025 p12 visually labels existing India truck product lines. Calendar catalog portfolio observation only; each family has unselected chassis/body/powertrain variants. Ultra EV bus is separately labeled and is not this Ultra truck.",
+      "yearBasis": "catalog-year",
+      "modelId": 3581849301,
+      "proposedCarImageVehicleId": "veh_ckn9trfb2yjtv",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "intra"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:intra:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:intra:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "407",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://static-assets.tatamotors.com/Production/www-tatamotors-com-NEW/wp-content/uploads/2025/08/Tata-Motors-Corporate-Presentation-2025-Final.pdf",
+      "note": "Tata Corporate Presentation 2025 p12 visually labels existing India truck product lines. Calendar catalog portfolio observation only; each family has unselected chassis/body/powertrain variants. Ultra EV bus is separately labeled and is not this Ultra truck.",
+      "yearBasis": "catalog-year",
+      "modelId": 2383125532,
+      "proposedCarImageVehicleId": "veh_8831y4djwmk84",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "407"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:407:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:407:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Ultra",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://static-assets.tatamotors.com/Production/www-tatamotors-com-NEW/wp-content/uploads/2025/08/Tata-Motors-Corporate-Presentation-2025-Final.pdf",
+      "note": "Tata Corporate Presentation 2025 p12 visually labels existing India truck product lines. Calendar catalog portfolio observation only; each family has unselected chassis/body/powertrain variants. Ultra EV bus is separately labeled and is not this Ultra truck.",
+      "yearBasis": "catalog-year",
+      "modelId": 4331711095,
+      "proposedCarImageVehicleId": "veh_2wtr7fh49ya85",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "ultra"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:ultra:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:ultra:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Prima",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://static-assets.tatamotors.com/Production/www-tatamotors-com-NEW/wp-content/uploads/2025/08/Tata-Motors-Corporate-Presentation-2025-Final.pdf",
+      "note": "Tata Corporate Presentation 2025 p12 visually labels existing India truck product lines. Calendar catalog portfolio observation only; each family has unselected chassis/body/powertrain variants. Ultra EV bus is separately labeled and is not this Ultra truck.",
+      "yearBasis": "catalog-year",
+      "modelId": 5148091286,
+      "proposedCarImageVehicleId": "veh_181qsfqdpyp0d",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "prima"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:prima:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:prima:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 4217729568,
+      "make": "TATA",
+      "model": "Starbus",
+      "vehicleTypeId": 5,
+      "market": "IN",
+      "url": "https://static-assets.tatamotors.com/Production/www-tatamotors-com-NEW/wp-content/uploads/2025/08/Tata-Motors-Corporate-Presentation-2025-Final.pdf",
+      "note": "Tata Corporate Presentation 2025 p12 identifies existing Starbus bus line. Calendar portfolio observation only; pictured electric bus does not identify every Starbus chassis, length, fuel or body. No exact bus body/render approval.",
+      "yearBasis": "catalog-year",
+      "modelId": 4065084771,
+      "proposedCarImageVehicleId": "veh_c82ax8a3e3n4s",
+      "proposedCarImageSlugs": {
+        "make": "tata",
+        "model": "starbus"
+      },
+      "catalogIdentityIds": [
+        "cohort:4217729568:starbus:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:4217729568:starbus:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3451353903,
+      "make": "ASHOK LEYLAND",
+      "model": "Dost XL",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.ashokleyland.com/in/lightvehicles",
+      "note": "Official India priced LCV catalog observed2026-10-13 names distinct Dost XL and Partner4/6 tyre configurations. Calendar catalog observation only; generic Dost/Partner does not select any one configuration.",
+      "yearBasis": "catalog-year",
+      "modelId": 3669470468,
+      "proposedCarImageVehicleId": "veh_5x74hm65wdeja",
+      "proposedCarImageSlugs": {
+        "make": "ashok-leyland",
+        "model": "dost-xl"
+      },
+      "catalogIdentityIds": [
+        "cohort:3451353903:dost-xl:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3451353903:dost-xl:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3451353903,
+      "make": "ASHOK LEYLAND",
+      "model": "Partner 4 Tyre",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.ashokleyland.com/in/lightvehicles",
+      "note": "Official India priced LCV catalog observed2026-10-13 names distinct Dost XL and Partner4/6 tyre configurations. Calendar catalog observation only; generic Dost/Partner does not select any one configuration.",
+      "yearBasis": "catalog-year",
+      "modelId": 2662456662,
+      "proposedCarImageVehicleId": "veh_0rp2vh1k6fbr9",
+      "proposedCarImageSlugs": {
+        "make": "ashok-leyland",
+        "model": "partner-4-tyre"
+      },
+      "catalogIdentityIds": [
+        "cohort:3451353903:partner-4-tyre:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3451353903:partner-4-tyre:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 3451353903,
+      "make": "ASHOK LEYLAND",
+      "model": "Partner 6 Tyre",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.ashokleyland.com/in/lightvehicles",
+      "note": "Official India priced LCV catalog observed2026-10-13 names distinct Dost XL and Partner4/6 tyre configurations. Calendar catalog observation only; generic Dost/Partner does not select any one configuration.",
+      "yearBasis": "catalog-year",
+      "modelId": 4135186132,
+      "proposedCarImageVehicleId": "veh_fnvhjes0f8v83",
+      "proposedCarImageSlugs": {
+        "make": "ashok-leyland",
+        "model": "partner-6-tyre"
+      },
+      "catalogIdentityIds": [
+        "cohort:3451353903:partner-6-tyre:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3451353903:partner-6-tyre:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 3451353903,
+      "make": "ASHOK LEYLAND",
+      "model": "ecomet Star 11T CNG",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.ashokleyland.com/backend/wp-content/uploads/2025/07/Annual-Report-FY-2024-25.pdf",
+      "note": "Ashok Leyland FY2024-25 annual report printed p49 identifies India domestic truck launches and commenced electric deliveries. Catalog portfolio at report year end2025 only; not factory MY. Ecomet/BOSS/AVTR family requests cannot choose fuel,tonnage,axles or body.",
+      "yearBasis": "catalog-year",
+      "modelId": 3525919165,
+      "proposedCarImageVehicleId": "veh_4j7dykv1ge1qs",
+      "proposedCarImageSlugs": {
+        "make": "ashok-leyland",
+        "model": "ecomet-star-11t-cng"
+      },
+      "catalogIdentityIds": [
+        "cohort:3451353903:ecomet-star-11t-cng:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3451353903:ecomet-star-11t-cng:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 3451353903,
+      "make": "ASHOK LEYLAND",
+      "model": "BOSS Electric",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.ashokleyland.com/backend/wp-content/uploads/2025/07/Annual-Report-FY-2024-25.pdf",
+      "note": "Ashok Leyland FY2024-25 annual report printed p49 identifies India domestic truck launches and commenced electric deliveries. Catalog portfolio at report year end2025 only; not factory MY. Ecomet/BOSS/AVTR family requests cannot choose fuel,tonnage,axles or body.",
+      "yearBasis": "catalog-year",
+      "modelId": 2224976986,
+      "proposedCarImageVehicleId": "veh_ax7ffgxmkpqtx",
+      "proposedCarImageSlugs": {
+        "make": "ashok-leyland",
+        "model": "boss-electric"
+      },
+      "catalogIdentityIds": [
+        "cohort:3451353903:boss-electric:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3451353903:boss-electric:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 3451353903,
+      "make": "ASHOK LEYLAND",
+      "model": "AVTR 55T Electric",
+      "vehicleTypeId": 3,
+      "market": "IN",
+      "url": "https://www.ashokleyland.com/backend/wp-content/uploads/2025/07/Annual-Report-FY-2024-25.pdf",
+      "note": "Ashok Leyland FY2024-25 annual report printed p49 identifies India domestic truck launches and commenced electric deliveries. Catalog portfolio at report year end2025 only; not factory MY. Ecomet/BOSS/AVTR family requests cannot choose fuel,tonnage,axles or body.",
+      "yearBasis": "catalog-year",
+      "modelId": 3224661268,
+      "proposedCarImageVehicleId": "veh_af82bt4cghvah",
+      "proposedCarImageSlugs": {
+        "make": "ashok-leyland",
+        "model": "avtr-55t-electric"
+      },
+      "catalogIdentityIds": [
+        "cohort:3451353903:avtr-55t-electric:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3451353903:avtr-55t-electric:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2020,
+      "makeId": 100108,
+      "make": "MG",
+      "model": "Hector Plus",
+      "vehicleTypeId": 7,
+      "market": "IN",
+      "url": "https://www.mgmotor.co.in/content/dam/mgmotor/documents/mg-dc-pdf-0140.pdf",
+      "note": "MG India July13,2020 launch explicitly describes six-seat Hector Plus SUV with new grille, headlamps, bumpers and taillights. Calendar marketed launch year only; base Hector is not an alias.",
+      "yearBasis": "catalog-year",
+      "modelId": 2789456354,
+      "proposedCarImageVehicleId": "veh_fff4hwhzhmr7c",
+      "proposedCarImageSlugs": {
+        "make": "mg",
+        "model": "hector-plus"
+      },
+      "catalogIdentityIds": [
+        "cohort:100108:hector-plus:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:100108:hector-plus:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 2561825508,
+      "make": "HARLEY-DAVIDSON",
+      "model": "X440",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.harley-davidsonx440.com/content/dam/hero-aem-website/in/en-in/premia/x440/brochure/harley-davidson-x440-brochure-2025.pdf",
+      "note": "Official India brochure explicitly labels 2025 H-D X440 variants: Denim,Vivid,S with distinct wheels and equipment. Calendar brochure/catalog edition year only; family request does not choose a trim.",
+      "yearBasis": "catalog-year",
+      "modelId": 1277901353,
+      "proposedCarImageVehicleId": "veh_5b02t9dwtqcnz",
+      "proposedCarImageSlugs": {
+        "make": "harley-davidson",
+        "model": "x440"
+      },
+      "catalogIdentityIds": [
+        "cohort:2561825508:x440:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2561825508:x440:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2427767883,
+      "make": "YAMAHA",
+      "model": "RayZR 125 Fi Hybrid",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.yamaha-motor-india.com/yamaha-ray-zr125fihybrid.html",
+      "note": "Official India RayZR125Fi Hybrid product page observed2026-10-13. Calendar catalog observation only; old113cc RayZR, Street Rally and drum/disc lighting equipment are not inferred aliases.",
+      "yearBasis": "catalog-year",
+      "modelId": 2110561121,
+      "proposedCarImageVehicleId": "veh_1m82m60fn3hyq",
+      "proposedCarImageSlugs": {
+        "make": "yamaha",
+        "model": "rayzr-125-fi-hybrid"
+      },
+      "catalogIdentityIds": [
+        "cohort:2427767883:rayzr-125-fi-hybrid:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2427767883:rayzr-125-fi-hybrid:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2026,
+      "makeId": 2427767883,
+      "make": "YAMAHA",
+      "model": "Fascino 125 Fi Hybrid",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.yamaha-motor-india.com/yamaha-newfascino125fi.html",
+      "note": "Official India New Fascino125Fi Hybrid product page observed2026-10-13. Calendar catalog observation only; old113cc Fascino and other variants are not inferred aliases.",
+      "yearBasis": "catalog-year",
+      "modelId": 2831106292,
+      "proposedCarImageVehicleId": "veh_e37qr4wmaafst",
+      "proposedCarImageSlugs": {
+        "make": "yamaha",
+        "model": "fascino-125-fi-hybrid"
+      },
+      "catalogIdentityIds": [
+        "cohort:2427767883:fascino-125-fi-hybrid:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2427767883:fascino-125-fi-hybrid:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2023,
+      "makeId": 5207964035,
+      "make": "OLA ELECTRIC",
+      "model": "S1 Pro",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://cdn.olaelectric.com/magazine/END_ICE_AGE_MAGAZINE_SEPTEMBER_2023.pdf",
+      "note": "Ola official September2023 magazine documents S1 Pro second generation,S1 Air and new S1 X range. Calendar marketed catalog observation only; exact generations,battery and equipment must be supplied before a visual binding.",
+      "yearBasis": "catalog-year",
+      "modelId": 4137480583,
+      "proposedCarImageVehicleId": "veh_fjq38eptdz7nz",
+      "proposedCarImageSlugs": {
+        "make": "ola-electric",
+        "model": "s1-pro"
+      },
+      "catalogIdentityIds": [
+        "cohort:5207964035:s1-pro:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:5207964035:s1-pro:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2023,
+      "makeId": 5207964035,
+      "make": "OLA ELECTRIC",
+      "model": "S1 Air",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://cdn.olaelectric.com/magazine/END_ICE_AGE_MAGAZINE_SEPTEMBER_2023.pdf",
+      "note": "Ola official September2023 magazine documents S1 Pro second generation,S1 Air and new S1 X range. Calendar marketed catalog observation only; exact generations,battery and equipment must be supplied before a visual binding.",
+      "yearBasis": "catalog-year",
+      "modelId": 2297070232,
+      "proposedCarImageVehicleId": "veh_3gv6ckk0y0w24",
+      "proposedCarImageSlugs": {
+        "make": "ola-electric",
+        "model": "s1-air"
+      },
+      "catalogIdentityIds": [
+        "cohort:5207964035:s1-air:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:5207964035:s1-air:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2023,
+      "makeId": 5207964035,
+      "make": "OLA ELECTRIC",
+      "model": "S1 X",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://cdn.olaelectric.com/magazine/END_ICE_AGE_MAGAZINE_SEPTEMBER_2023.pdf",
+      "note": "Ola official September2023 magazine documents S1 Pro second generation,S1 Air and new S1 X range. Calendar marketed catalog observation only; exact generations,battery and equipment must be supplied before a visual binding.",
+      "yearBasis": "catalog-year",
+      "modelId": 2620936892,
+      "proposedCarImageVehicleId": "veh_5c3xeb03xyhrd",
+      "proposedCarImageSlugs": {
+        "make": "ola-electric",
+        "model": "s1-x"
+      },
+      "catalogIdentityIds": [
+        "cohort:5207964035:s1-x:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:5207964035:s1-x:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2021,
+      "makeId": 2485975730,
+      "make": "BAJAJ",
+      "model": "Avenger 160 Street",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://cdn.bajajauto.com/pdf/Owner%27s-Manual-Avenger-160-BSVI.pdf",
+      "note": "Official Avenger160 Street BS-VI owner manual cover revision03 March2021. Calendar manual/catalog edition only; Avenger160 request needs BSIV/BSVI and exact year before visual selection.",
+      "yearBasis": "catalog-year",
+      "modelId": 1612878849,
+      "proposedCarImageVehicleId": "veh_8f26afz36ny08",
+      "proposedCarImageSlugs": {
+        "make": "bajaj",
+        "model": "avenger-160-street"
+      },
+      "catalogIdentityIds": [
+        "cohort:2485975730:avenger-160-street:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:2485975730:avenger-160-street:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "CB200X",
+      "vehicleTypeId": 1,
+      "market": "IN",
+      "url": "https://www.honda2wheelersindia.com/news/honda-motorcycle-and-scooter-india-achieves-2-crore-sales-milestone-in-south-india",
+      "note": "Honda India February18,2025 release explicitly includes CB200X in current180-200cc motorcycle lineup. Calendar marketed year only; NX200 is not an alias or retroactive replacement.",
+      "yearBasis": "catalog-year",
+      "modelId": 3572237768,
+      "proposedCarImageVehicleId": "veh_3q6cz6qgngvr2",
+      "proposedCarImageSlugs": {
+        "make": "honda",
+        "model": "cb200x"
+      },
+      "catalogIdentityIds": [
+        "cohort:474:cb200x:catalog-year:IN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:474:cb200x:catalog-year:IN"
+      },
+      "visualIdentityIds": []
+    },
+    {
+      "year": 2024,
+      "makeId": 3885285967,
+      "make": "LYNK&CO",
+      "model": "07 EM-P",
+      "vehicleTypeId": 2,
+      "market": "CN",
+      "url": "https://zgh.com/media-center/news/2024-04-26/?lang=en",
+      "note": "Geely Holding April26,2024 dated release explicitly identifies Lynk&Co07EM-P PHEV sedan unveiled in China March2024. Calendar announced catalog year only; no Vietnam-market proof or equivalence to07GT.",
+      "yearBasis": "catalog-year",
+      "modelId": 4919863447,
+      "proposedCarImageVehicleId": "veh_a95jwah9b0acw",
+      "proposedCarImageSlugs": {
+        "make": "lynk-co",
+        "model": "07-em-p"
+      },
+      "catalogIdentityIds": [
+        "cohort:3885285967:07-em-p:catalog-year:CN"
+      ],
+      "localVisualStatus": "GENERATION_UNRESOLVED",
+      "lineage": {
+        "line": "cohort:3885285967:07-em-p:catalog-year:CN"
+      },
+      "visualIdentityIds": []
+    }
+  ],
+  "existingBindingFixes": [
+    {
+      "identityId": "bmw:5:g60",
+      "year": 2024,
+      "makeId": 452,
+      "modelId": 1241822597,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "coverage:bmw-g60"
+      ],
+      "market": "US",
+      "yearBasis": "model-year",
+      "model": "5 Series G60",
+      "sourceUrl": "https://www.press.bmwgroup.com/usa/article/attachment/T0418778EN_US/624323",
+      "visualIdentityId": "bmw:5:g60:sedan:my24"
+    }
+  ]
+}

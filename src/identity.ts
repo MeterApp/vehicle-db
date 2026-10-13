@@ -41,6 +41,12 @@ export interface VehicleIdentityAlias extends IdentityScope {
   kind: "marketing-name" | "regional-name" | "translation" | "abbreviation" | "misspelling";
   evidenceIds: string[];
 }
+/** Reviewed brand names only; never a rule to discard vehicle category words. */
+export interface VehicleMakeAlias extends IdentityScope {
+  text: string;
+  makeId: number;
+  evidenceIds: string[];
+}
 export interface IdentityCatalogLink {
   identityId: string;
   year: number;
@@ -76,6 +82,7 @@ export interface IdentityGraph {
   revision: string;
   identities: VehicleIdentity[];
   aliases: VehicleIdentityAlias[];
+  makeAliases?: VehicleMakeAlias[];
   catalogLinks: IdentityCatalogLink[];
   evidence: IdentityEvidence[];
   homologation: HomologationIdentity[];

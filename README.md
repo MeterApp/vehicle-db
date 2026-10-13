@@ -6,7 +6,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, Brazil's national vehicle register, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,604 makes** and **42,088 models** in **196,459 model years**, from **18 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,616 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
+The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,199 models** in **196,571 model years**, from **18 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles. The Brazilian register adds the cars and motorcycles that fill Brazil's roads but are rarely sold elsewhere, such as the Fiat Argo, Mobi and Toro, the Volkswagen Gol and Saveiro, the Renault Kwid, and the Honda Biz and Pop.
 
@@ -179,7 +179,7 @@ if (result.status === "MATCHED") {
 }
 ```
 
-Queries use an optional leading year, followed by make and full model phrase. With `makeId`, the make can be omitted. Only exact normalized phrases and reviewed aliases resolve; autocomplete/fuzzy candidates never silently become resolved identities. Unknown suffixes remain `UNRESOLVED_TOKENS`. Options also include `year`, `vehicleTypeId`, and `sourceId`.
+Queries use an optional leading year, followed by make and full model phrase. Reviewed make aliases `Hero MotoCorp` and `Maruti Suzuki` require `market: "IN"`; category labels such as `Honda Scooters` are not discarded. With `makeId`, the make can be omitted. Only exact normalized phrases and reviewed aliases resolve; autocomplete/fuzzy candidates never silently become resolved identities. Unknown suffixes remain `UNRESOLVED_TOKENS`. Options also include `year`, `vehicleTypeId`, and `sourceId`.
 
 `depth` defaults to `catalog`: a match at this depth establishes catalog presence only, with the source's documented year semantics. Request `generation`, `derivative`, or `visual` for stricter evidence. The curated identity graph is intentionally sparse: most catalog rows return `GENERATION_UNRESOLVED` at visual depth. `MATCHED` includes a `selection`; all results include `candidates`, `unresolvedTokens`, and the identity revision. Missing market/year context cannot satisfy restricted evidence, and overlapping generations remain ambiguous. No nearby year is substituted.
 
@@ -335,6 +335,8 @@ Broad catalogs in 2.17.0 replace individual Changan/Wuling/Bajaj regional edits 
 
 Factory paint availability is not included. The NZTA and Malaysia records contain the observed basic color of each registered vehicle, not the manufacturer’s stock colors for a make/model/year. Treating those fields as factory availability would produce false positives from repaints, imports, and broad color categories, so the importers intentionally omit them. A future color API should require manufacturer-backed paint options with explicit market and model-year provenance.
 
+New coverage in 2.18.0 adds 112 sourced year/model/type records and four makes (Ather, Eicher, Ashok Leyland and Ola Electric), with explicit catalog-year versus model-year evidence. Lexus LX 600 F Sport and China LX 570 Peak Edition gain separate specification and exterior identities; G60 queries link the existing BMW sedan ID. Generic families, missing years and markets, and unverified suffixes remain unresolved at visual depth. See [coverage acceptance criteria](docs/coverage-expansion-2026-10.md).
+
 ## Snapshot stats
 
 | | |
@@ -342,12 +344,12 @@ Factory paint availability is not included. The NZTA and Malaysia records contai
 | Years | 1990–2027 |
 | Sources | 18 |
 | Vehicle types | 7 |
-| Makes | 1,604 |
-| Models | 42,088 |
-| Model years | 196,459 |
-| Make records (`getMakes()`) | 1,616 |
-| Model records (distinct `modelId`) | 46,529 |
-| Model-year records (`getModels()`) | 217,953 |
+| Makes | 1,608 |
+| Models | 42,199 |
+| Model years | 196,571 |
+| Make records (`getMakes()`) | 1,620 |
+| Model records (distinct `modelId`) | 46,641 |
+| Model-year records (`getModels()`) | 218,065 |
 | Bundled TypeScript data | 7.56 MB |
 
 ## Refreshing and rebuilding
