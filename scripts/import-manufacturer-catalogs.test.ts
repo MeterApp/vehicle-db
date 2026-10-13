@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { compileObservations, explicitModelYears, nuxtObjects, observedRecords, parseChanganProducts, parseSgmwProducts, productLinks } from "./import-manufacturer-catalogs";
+import { compileObservations, explicitModelYears, nuxtObjects, observedRecords, parseChanganManuals, parseChanganProducts, parseSgmwProducts, productLinks } from "./import-manufacturer-catalogs";
 const mapping = {make:"WULING",makeId:5142354878,model:"Example",vehicleTypeId:2};
 const metadata = {id:"fixture",name:"Fixture",url:"https://example.com",region:"CN",license:"Fixture",retrievedAt:"2026-10-13",description:"Fixture",yearBasis:"catalog-year" as const};
 
@@ -41,4 +41,12 @@ test("Bajaj country extraction excludes other countries, motorcycles and externa
     'https://www.bajajauto.com/en-np/motorcycles/pulsar',
     'https://example.com/en-np/three-wheelers/re-4s-petrol'].map(u=>`<a href="${u}">Explore</a>`).join("");
   expect(productLinks(html,"NP")).toEqual(['https://www.bajajauto.com/en-np/three-wheelers/re-4s-petrol','https://www.bajajauto.com/en-np/threewheelersandqute/maxima-cargo']);
+});
+
+test("manual discovery accepts text titles and rejects nested HTML without sanitizing it", () => {
+  const html = '<a href="/jsp/web/news.jsp?noticeId=1">CS75使用说明书文档更新</a>' +
+    '<a href="/jsp/web/news.jsp?noticeId=2"><script>alert(1)</script>使用说明书</a>' +
+    '<a href="/jsp/web/news.jsp?noticeId=3"><script使用说明书</a>';
+  expect(parseChanganManuals(html,"https://ats.changan.com.cn")).toEqual({totalArchiveEntries:1,
+    guides:[{title:"CS75使用说明书文档更新",url:"https://ats.changan.com.cn/jsp/web/news.jsp?noticeId=1"}]});
 });

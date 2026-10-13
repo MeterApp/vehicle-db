@@ -85,6 +85,14 @@ export function compileObservations(records: Observation[], metadata: SourceMeta
   const unique = [...new Map(records.map(r => [[r.year,r.makeId,r.model,r.vehicleTypeId].join("\0"),r])).values()];
   return buildReviewedCatalog(unique, metadata);
 }
+export function parseChanganManuals(html: string, baseUrl: string) {
+  // Accept a plain-text title, rather than attempting to sanitize arbitrary nested HTML.
+  const links = [...html.matchAll(/<a\b[^>]*href="([^"]*news\.jsp\?noticeId=\d+)"[^>]*>([^<>]*)<\/a>/g)];
+  return { totalArchiveEntries: links.length,
+    guides: links.filter(m=>/维修手册|使用手册|使用说明书|用户维修|服务手册/.test(m[2])).map(m=>({
+      title:m[2].trim(),url:new URL(m[1],baseUrl).href,
+    })) };
+}
 function metadata(brand: string, basis: "model-year" | "catalog-year", date: string): SourceMetadata {
   const specs: Record<string, [string, string, string]> = {
     changan: ["Changan official manufacturer catalogs", "https://www.changan.com.cn/dealer_inquiry", "China, Saudi Arabia and Mexico"],
@@ -144,12 +152,9 @@ async function main() {
       }
       const url = "https://ats.changan.com.cn/jsp/web/newslist.jsp?noticeType=10021004";
       const html = await retrieve(url,"changan-manuals.html");
-      const links = [...html.matchAll(/<a\b[^>]*href="([^"]*news\.jsp\?noticeId=\d+)"[^>]*>([\s\S]*?)<\/a>/g)];
-      const guides = links.filter(m=>/维修手册|使用手册|使用说明书|用户维修|服务手册/.test(m[2])).map(m=>({
-        title:m[2].replace(/<[^>]*>/g,"").trim(),url:new URL(m[1],url).href,
-      }));
+      const {totalArchiveEntries,guides} = parseChanganManuals(html,url);
       fs.writeFileSync(path.join(EVIDENCE,"changan-manuals.json"),JSON.stringify({observedAt:date,url,
-        totalArchiveEntries:links.length,note:"Named manual discovery only. Update dates and technical document codes never establish vehicle years.",guides},null,2)+"\n");
+        totalArchiveEntries,note:"Named manual discovery only. Update dates and technical document codes never establish vehicle years.",guides},null,2)+"\n");
     } else if (brand === "sgmw") {
       for (const route of ["mobile/wulingRedBadge","mobile/wulingSilverBadge","mobile/baojun"]) {
         const url = `https://www.sgmw.com.cn/${route}`;
