@@ -16,10 +16,10 @@ The historical refresh consolidates dated manufacturer portfolios and sales repo
 
 ## Remaining labels
 
-No additional small source was introduced to force these labels into coverage:
+After rebasing onto 2.18.0, its official Honda CB650R 2025 release and Tata 407 2025 portfolio evidence resolve two more labels. No additional small source was introduced to force the following labels into coverage:
 
-- Xpulse 200, Avenger 160, R15, Shine and CB650R: current derivatives, displacement-specific names or technical registration codes need an official scoped mapping. Xpulse 200 4V, Avenger 160 Street, R15M and Shine 100/125 are not interchangeable by suffix stripping. The Yamaha report establishes YZF-R15, but does not prove that an unqualified R15 request identifies one derivative or appearance.
+- Xpulse 200, Avenger 160, R15, Shine: current derivatives, displacement-specific names or technical registration codes need an official scoped mapping. Xpulse 200 4V, Avenger 160 Street, R15M and Shine 100/125 are not interchangeable by suffix stripping. The Yamaha report establishes YZF-R15, but does not prove that an unqualified R15 request identifies one derivative or appearance.
 - Vespa VXL and SXL: displacement and edition suffixes remain significant; an edition mention does not establish the unqualified family for a dated year.
-- Tata 407/LPO and Ashok Leyland Dost/Partner/Ecomet/AVTR: current specific configurations already exist. The [Ashok Leyland FY 2024–25 annual report](https://www.ashokleyland.com/backend/wp-content/uploads/2025/07/Annual-Report-FY-2024-25.pdf) was reviewed, but fiscal-period launches, AVTR platform references and Ecomet STAR variants do not establish a calendar-year generic body selection. LPO is a chassis designation and cannot select a bus exterior.
+- Tata LPO and Ashok Leyland Dost/Partner/Ecomet/AVTR: current specific configurations already exist. The [Ashok Leyland FY 2024–25 annual report](https://www.ashokleyland.com/backend/wp-content/uploads/2025/07/Annual-Report-FY-2024-25.pdf) was reviewed, but fiscal-period launches, AVTR platform references and Ecomet STAR variants do not establish a calendar-year generic body selection. LPO is a chassis designation and cannot select a bus exterior.
 
 These candidates remain unresolved until a broad dated catalog or an explicit manufacturer mapping supports the exact name and scope. Existing variants continue to be available under their full published names.
