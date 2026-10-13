@@ -31,5 +31,5 @@ test("dated Tata and Ather portfolio facts retain their demonstrated calendar ye
   expect(getModels({ sourceId, year: 2025, makeId: 4217729568 }).map(r => r.modelName)).toEqual(expect.arrayContaining(["Punch", "Nexon", "Curvv", "Harrier"]));
   const ather = getMakes({ sourceId }).find(m => m.makeName === "ATHER")!;
   expect(getModels({ sourceId, makeId: ather.makeId, year: 2024 }).map(r => r.modelName)).toEqual(["450 Apex", "450X", "Rizta"]);
-  expect(getModels({ sourceId, makeId: ather.makeId, year: 2026 })).toEqual([]);
+  expect(getModels({ sourceId, makeId: ather.makeId, year: 2025 })).toEqual([]);
 });

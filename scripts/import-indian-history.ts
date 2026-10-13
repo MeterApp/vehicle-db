@@ -5,7 +5,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { buildReviewedCatalog } from "./import-reviewed-models";
 import { writeSnapshot, type SourceCatalog } from "./catalog-types";
-import { decodeText, type CatalogObservation } from "./import-indian-catalogs";
+import { decodeText, stripNonCatalogMarkup, type CatalogObservation } from "./import-indian-catalogs";
 
 interface PortfolioRow { rawName: string; model: string; vehicleTypeId: number; proof: string; scope: "family" | "product" }
 export interface HistoricalReport {
@@ -51,7 +51,7 @@ export function historicalObservations(report: HistoricalReport, pages: string[]
         `Positive individual domestic sales in June ${row.year}. Production-only, export-only and combined-model counts are excluded. Published sales are unaudited; presence is a calendar-year fact, not a factory model year.`);
     });
   }
-  if (report.kind === "html-portfolio") text = decodeText(text.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ""));
+  if (report.kind === "html-portfolio") text = decodeText(stripNonCatalogMarkup(text));
   if (report.blockStart || report.blockEnd) {
     if (!report.blockStart || !report.blockEnd) throw new Error("Both portfolio bounds required");
     const start = text.indexOf(report.blockStart), end = text.indexOf(report.blockEnd, start);

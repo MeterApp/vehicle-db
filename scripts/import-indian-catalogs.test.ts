@@ -15,6 +15,7 @@ test("sales parser rejects script/comment observations and does not treat image 
     { name: "Cargo", url: "https://example.com/in/cargo" },
   ]);
   expect(parsed.headings).toEqual([]);
+  expect(parseSalesCatalog('<scr<script></script>ipt><a href="ghost">Ghost</a></scr<script></script>ipt>', group.url).links).toEqual([]);
 });
 
 test("catalog observations keep current year and body type without interpreting manual filename years", () => {
