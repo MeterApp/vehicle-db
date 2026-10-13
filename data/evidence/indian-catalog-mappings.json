@@ -1,0 +1,1398 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "tvs-products",
+      "url": "https://www.tvsmotor.com/Our-Products/Vehicles",
+      "cacheFile": "tvs-products.html",
+      "make": "TVS",
+      "makeId": 1837396753,
+      "batch": "tvs",
+      "mappings": [
+        {
+          "rawName": "Apache RTX",
+          "url": "https://www.tvsmotor.com/premium/tvs-apache/apache-rtx",
+          "model": "Apache RTX",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Apache RR 310",
+          "url": "https://www.tvsmotor.com/tvs-apache/rr-310",
+          "model": "Apache RR 310",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Apache RTR 310",
+          "url": "https://www.tvsmotor.com/tvs-apache/apache-rtr-310",
+          "model": "Apache RTR 310",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Ronin",
+          "url": "https://www.tvsmotor.com/tvs-ronin",
+          "model": "Ronin",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Raider",
+          "url": "https://www.tvsmotor.com/tvs-raider",
+          "model": "Raider",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Sport",
+          "url": "https://www.tvsmotor.com/tvs-sport",
+          "model": "Sport",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Ntorq 150",
+          "url": "https://www.tvsmotor.com/commuter/tvs-ntorq/ntorq-150",
+          "model": "Ntorq 150",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Ntorq 125",
+          "url": "https://www.tvsmotor.com/commuter/tvs-ntorq/ntorq-125",
+          "model": "Ntorq 125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Jupiter",
+          "url": "https://www.tvsmotor.com/tvs-jupiter/jupiter-dual-tone",
+          "model": "Jupiter",
+          "vehicleTypeId": 1,
+          "scope": "family"
+        },
+        {
+          "rawName": "TVS Jupiter 125",
+          "url": "https://www.tvsmotor.com/tvs-jupiter-125/smartxonnect",
+          "model": "Jupiter 125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Zest 110",
+          "url": "https://www.tvsmotor.com/tvs-zest",
+          "model": "Zest 110",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS iQube",
+          "url": "https://www.tvsmotor.com/electric-scooters/tvs-iqube",
+          "model": "iQube",
+          "vehicleTypeId": 1,
+          "scope": "family"
+        },
+        {
+          "rawName": "TVS X",
+          "url": "https://www.tvsmotor.com/electric-scooters/tvs-x",
+          "model": "X",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Orbiter",
+          "url": "https://www.tvsmotor.com/electric-scooters/tvs-orbiter",
+          "model": "Orbiter",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS XL100",
+          "url": "https://www.tvsmotor.com/commuter/tvs-xl100",
+          "model": "XL100",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS King Deluxe",
+          "url": "https://www.tvsmotor.com/three-wheelers/king-deluxe",
+          "model": "King Deluxe",
+          "vehicleTypeId": 10001,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS King Duramax Plus",
+          "url": "https://www.tvsmotor.com/three-wheelers/king-duramax-plus",
+          "model": "King Duramax Plus",
+          "vehicleTypeId": 10001,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS King EV Max",
+          "url": "https://www.tvsmotor.com/three-wheelers/king-ev-max",
+          "model": "King EV Max",
+          "vehicleTypeId": 10001,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS King Kargo HD EV",
+          "url": "https://www.tvsmotor.com/three-wheelers/king-kargo-ev-hd",
+          "model": "King Kargo HD EV",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS King Kargo",
+          "url": "https://www.tvsmotor.com/three-wheelers/king-kargo",
+          "model": "King Kargo",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS King Kargo HD CNG",
+          "url": "https://www.tvsmotor.com/three-wheelers/king-kargo-cng-hd",
+          "model": "King Kargo HD CNG",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TVS Ntorq",
+          "url": "https://www.tvsmotor.com/commuter/tvs-ntorq",
+          "model": "Ntorq",
+          "vehicleTypeId": 1,
+          "scope": "family"
+        },
+        {
+          "rawName": "TVS Jupiter 110",
+          "url": "https://www.tvsmotor.com/tvs-jupiter/jupiter-disc-smartxonnect",
+          "model": "Jupiter 110",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "RTR 200 4V",
+          "url": "https://www.tvsmotor.com/tvs-apache/apache-rtr-200-4v",
+          "model": "Apache RTR 200 4V",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "RTR 180",
+          "url": "https://www.tvsmotor.com/tvs-apache/apache-rtr-180",
+          "model": "Apache RTR 180",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "RTR 160 4V",
+          "url": "https://www.tvsmotor.com/tvs-apache/apache-rtr-160-4v",
+          "model": "Apache RTR 160 4V",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "RTR 160",
+          "url": "https://www.tvsmotor.com/tvs-apache/apache-rtr-160-2v",
+          "model": "Apache RTR 160",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "url": "https://www.heromotocorp.com/en-in/motorcycles.html",
+      "cacheFile": "hero.html",
+      "make": "HERO MOTOCORP LTD",
+      "makeId": 2360746789,
+      "batch": "hero",
+      "mappings": [
+        {
+          "rawName": "XTREME 250R",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/Xtreme-250r.html",
+          "model": "Xtreme 250R",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "XPULSE 210",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/xpulse-210.html",
+          "model": "Xpulse 210",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Karizma XMR",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/karizma-xmr.html",
+          "model": "Karizma XMR",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "XTREME 160R 4V",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/xtreme-160r-4v.html",
+          "model": "Xtreme 160R 4V",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "XPULSE 200 4V",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/xpulse-200-4v.html",
+          "model": "Xpulse 200 4V",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "XTREME 160R",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/xtreme-160r.html",
+          "model": "Xtreme 160R",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "SPLENDOR+ XTEC 2.0",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/splendor-plus-xtec-2-0.html",
+          "model": "Splendor Plus XTEC 2.0",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "SPLENDOR+",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/practical/splendor-plus.html",
+          "model": "Splendor Plus",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "SPLENDOR+ XTEC",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/splendor-plus-xtec.html",
+          "model": "Splendor Plus XTEC",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "HF DELUXE",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/practical/hf-deluxe.html",
+          "model": "HF Deluxe",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "HF 100",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/hf-100.html",
+          "model": "HF 100",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "GLAMOUR X ABS",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/glamour-x-abs.html",
+          "model": "Glamour X ABS",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "GLAMOUR X",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/glamour-x.html",
+          "model": "Glamour X",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "XTREME 125R",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/xtreme-125r.html",
+          "model": "Xtreme 125R",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "GLAMOUR",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/glamour.html",
+          "model": "Glamour",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "SUPER SPLENDOR XTEC",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/super-splendor-xtec.html",
+          "model": "Super Splendor XTEC",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "PASSION+",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/passion-plus.html",
+          "model": "Passion Plus",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "SUPER SPLENDOR XTEC 2.0",
+          "url": "https://www.heromotocorp.com/en-in/motorcycles/super-splendor-xtec-2-0.html",
+          "model": "Super Splendor XTEC 2.0",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "tata-smalltrucks",
+      "url": "https://smalltrucks.tatamotors.com/",
+      "cacheFile": "tata-smalltrucks.html",
+      "make": "TATA",
+      "makeId": 4217729568,
+      "batch": "commercial",
+      "mappings": [
+        {
+          "rawName": "Ace Pro",
+          "url": "https://smalltrucks.tatamotors.com/tata-ace-pro",
+          "model": "Ace Pro",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Ace",
+          "url": "https://smalltrucks.tatamotors.com/tata-ace",
+          "model": "Ace",
+          "vehicleTypeId": 3,
+          "scope": "family"
+        },
+        {
+          "rawName": "Intra",
+          "url": "https://smalltrucks.tatamotors.com/tata-intra",
+          "model": "Intra",
+          "vehicleTypeId": 3,
+          "scope": "family"
+        },
+        {
+          "rawName": "Tata Yodha",
+          "url": "https://smalltrucks.tatamotors.com/tata-yodha",
+          "model": "Yodha",
+          "vehicleTypeId": 3,
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "tata-trucks",
+      "url": "https://trucks.tatamotors.com/all-trucks",
+      "cacheFile": "tata-trucks.html",
+      "make": "TATA",
+      "makeId": 4217729568,
+      "batch": "commercial",
+      "mappings": [
+        {
+          "rawName": "TATA ULTRA T.6",
+          "url": "https://trucks.tatamotors.com/ultra/tata-ultra-t6",
+          "model": "ULTRA T.6",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA ULTRA T.7",
+          "url": "https://trucks.tatamotors.com/ultra/tata-ultra-t7",
+          "model": "ULTRA T.7",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA ULTRA T.19",
+          "url": "https://trucks.tatamotors.com/product/tata-ultra-t19",
+          "model": "ULTRA T.19",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 2832.K HRT",
+          "url": "https://trucks.tatamotors.com/product/prima-2832k-hrt",
+          "model": "PRIMA 2832.K HRT",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 2832.K SRT",
+          "url": "https://trucks.tatamotors.com/product/prima-2832-k-srt",
+          "model": "PRIMA 2832.K SRT",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 3532.K/.TK SRT",
+          "url": "https://trucks.tatamotors.com/product/prima-3532k-tk-srt",
+          "model": "PRIMA 3532.K/.TK SRT",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 3532.K HRT",
+          "url": "https://trucks.tatamotors.com/product/prima-3532k-hrt",
+          "model": "PRIMA 3532.K HRT",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 2832.K REPTO",
+          "url": "https://trucks.tatamotors.com/product/prima-2832k-repto",
+          "model": "PRIMA 2832.K REPTO",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 3532.K REPTO",
+          "url": "https://trucks.tatamotors.com/product/tata-prima-3532k-repto",
+          "model": "PRIMA 3532.K REPTO",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "TATA PRIMA 5530.S 4X2 LNG",
+          "url": "https://trucks.tatamotors.com/product/tata-prima-5530s-lng",
+          "model": "PRIMA 5530.S 4X2 LNG",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Tata Prima",
+          "url": "https://trucks.tatamotors.com/category/prima",
+          "model": "Prima",
+          "vehicleTypeId": 3,
+          "scope": "family"
+        },
+        {
+          "rawName": "Tata Ultra",
+          "url": "https://trucks.tatamotors.com/category/ultra",
+          "model": "Ultra",
+          "vehicleTypeId": 3,
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "tata-buses",
+      "url": "https://busesandvans.tatamotors.com/buses",
+      "cacheFile": "tata-buses.html",
+      "make": "TATA",
+      "makeId": 4217729568,
+      "batch": "commercial",
+      "mappings": [
+        {
+          "rawName": "Starbus",
+          "url": "https://busesandvans.tatamotors.com/brand/starbus",
+          "model": "Starbus",
+          "vehicleTypeId": 5,
+          "scope": "family"
+        }
+      ]
+    },
+    {
+      "id": "ashok-leyland",
+      "url": "https://www.ashokleyland.com/in/trucks",
+      "cacheFile": "ashok-leyland.html",
+      "make": "ASHOK LEYLAND",
+      "makeId": 2747321829,
+      "batch": "commercial",
+      "mappings": [
+        {
+          "rawName": "Partner Super",
+          "url": "https://www.ashokleyland.com/in/trucks/icv/icv-partner-super",
+          "model": "Partner Super",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "ecomet STAR",
+          "url": "https://www.ashokleyland.com/in/trucks/icv/icv-ecomet-star",
+          "model": "Ecomet STAR",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "BOSS",
+          "url": "https://www.ashokleyland.com/in/trucks/icv/icv-boss",
+          "model": "Boss",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "ashok-lightvehicles",
+      "url": "https://ashokleyland.com/in/lightvehicles/lcvpassenger",
+      "cacheFile": "ashok-lightvehicles.html",
+      "make": "ASHOK LEYLAND",
+      "makeId": 2747321829,
+      "batch": "commercial",
+      "mappings": [
+        {
+          "rawName": "DOST + XL CNG",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/dost-xl-cng",
+          "model": "DOST + XL CNG",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "BADA DOST i3+ with LNT",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/bada-dost-i3-with-lnt",
+          "model": "BADA DOST i3+ with LNT",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Dost + XL Twin Fuel",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/dost-xl-twin-fuel",
+          "model": "Dost + XL Twin Fuel",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Dost Twin Fuel",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/dost-twin-fuel",
+          "model": "Dost Twin Fuel",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "DOST XL",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/dost-xl",
+          "model": "DOST XL",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bada Dost i3+XL",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/bada-dost-i3xl",
+          "model": "Bada Dost i3+XL",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "BADA DOST i3+",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/bada-dost-i3",
+          "model": "BADA DOST i3+",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Partner 4 Tyre",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/partner-4-tyre",
+          "model": "Partner 4 Tyre",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        },
+        {
+          "rawName": "Partner 6 Tyre",
+          "url": "https://ashokleyland.com/in/lightvehicles/smallcommercialvechicles/partner",
+          "model": "Partner 6 Tyre",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "eicher-2055",
+      "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/light-duty/pro-2055",
+      "cacheFile": "eicher-2055.html",
+      "make": "EICHER",
+      "makeId": 5150392538,
+      "batch": "commercial",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "Eicher Pro 2055",
+          "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/light-duty/pro-2055",
+          "model": "Pro 2055",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "eicher-3015",
+      "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/medium-duty/pro-3015",
+      "cacheFile": "eicher-3015.html",
+      "make": "EICHER",
+      "makeId": 5150392538,
+      "batch": "commercial",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "Eicher Pro 3015",
+          "url": "https://www.eichertrucksandbuses.com/light-medium-duty-trucks/medium-duty/pro-3015",
+          "model": "Pro 3015",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "eicher-6042",
+      "url": "https://www.eichertrucksandbuses.com/heavy-duty-trucks/haulage/pro-6042",
+      "cacheFile": "eicher-6042.html",
+      "make": "EICHER",
+      "makeId": 5150392538,
+      "batch": "commercial",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "Eicher Pro 6042",
+          "url": "https://www.eichertrucksandbuses.com/heavy-duty-trucks/haulage/pro-6042",
+          "model": "Pro 6042",
+          "vehicleTypeId": 3,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "hyundai",
+      "url": "https://www.hyundai.com/in/en/find-a-car",
+      "cacheFile": "hyundai.html",
+      "make": "HYUNDAI",
+      "makeId": 498,
+      "batch": "passenger",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "Alcazar",
+          "url": "https://www.hyundai.com/in/en/find-a-car",
+          "model": "Alcazar",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Exter",
+          "url": "https://www.hyundai.com/in/en/find-a-car",
+          "model": "Exter",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Verna",
+          "url": "https://www.hyundai.com/in/en/find-a-car",
+          "model": "Verna",
+          "vehicleTypeId": 2,
+          "scope": "product"
+        },
+        {
+          "rawName": "Aura",
+          "url": "https://www.hyundai.com/in/en/find-a-car",
+          "model": "Aura",
+          "vehicleTypeId": 2,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "mahindra",
+      "url": "https://auto.mahindra.com/suv",
+      "cacheFile": "mahindra.html",
+      "make": "MAHINDRA",
+      "makeId": 2146,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "XUV 7XO",
+          "url": "https://auto.mahindra.com/suv/xuv-7xo.html",
+          "model": "XUV 7XO",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "XUV 3XO",
+          "url": "https://auto.mahindra.com/suv/xuv3xo/X3XO.html",
+          "model": "XUV 3XO",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Thar ROXX",
+          "model": "Thar Roxx",
+          "url": "https://auto.mahindra.com/suv/thar-roxx/TH5D.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Scorpio Classic",
+          "model": "Scorpio Classic",
+          "url": "https://auto.mahindra.com/suv/scorpio-classic/SCRC.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "XUV 400",
+          "model": "XUV400",
+          "url": "https://auto.mahindra.com/suv/xuv400/X400.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Thar OG",
+          "model": "Thar OG",
+          "url": "https://auto.mahindra.com/suv/thar/THRN.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "toyota",
+      "url": "https://www.toyotabharat.com/sitemap/",
+      "cacheFile": "toyota.html",
+      "make": "TOYOTA",
+      "makeId": 448,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "Urban Cruiser Taisor",
+          "url": "https://www.toyotabharat.com/showroom/urbancruiser-taisor/",
+          "model": "Urban Cruiser Taisor",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Urban Cruiser Hyryder",
+          "url": "https://www.toyotabharat.com/showroom/urbancruiser-hyryder/",
+          "model": "Urban Cruiser Hyryder",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Innova Crysta",
+          "url": "https://www.toyotabharat.com/showroom/innova-crysta/",
+          "model": "Innova Crysta",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Innova Hycross",
+          "url": "https://www.toyotabharat.com/showroom/innova/",
+          "model": "Innova HyCross",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Land Cruiser 300",
+          "url": "https://www.toyotabharat.com/showroom/lc300/",
+          "model": "Land Cruiser 300",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "kia",
+      "url": "https://www.kia.com/in/our-vehicles/sonet/showroom.html",
+      "cacheFile": "kia.html",
+      "make": "KIA",
+      "makeId": 499,
+      "batch": "passenger",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "SONET",
+          "url": "https://www.kia.com/in/our-vehicles/sonet/showroom.html",
+          "model": "Sonet",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "nissan",
+      "url": "https://www.nissan.in/vehicles/new/nissan-magnite.html",
+      "cacheFile": "nissan.html",
+      "make": "NISSAN",
+      "makeId": 478,
+      "batch": "passenger",
+      "mappings": [],
+      "headingMappings": [],
+      "titleMappings": [
+        {
+          "rawName": "Nissan Magnite Car - Price, Specifications &amp; Features",
+          "model": "Magnite",
+          "url": "https://www.nissan.in/vehicles/new/nissan-magnite.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "byd",
+      "url": "https://www.bydautoindia.com/car-dealer/electric-car-price",
+      "cacheFile": "byd.html",
+      "make": "BYD",
+      "makeId": 1991,
+      "batch": "passenger",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "BYD eMAX 7",
+          "url": "https://www.bydautoindia.com/car-dealer/electric-car-price",
+          "model": "eMAX 7",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "tata-ev",
+      "url": "https://ev.tata.cars/content/tml/ev/in/en/support/brochures.html",
+      "cacheFile": "tata-ev.html",
+      "make": "TATA",
+      "makeId": 4217729568,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "Nexon.ev",
+          "url": "https://ev.tata.cars/nexon/ev.html",
+          "model": "Nexon EV",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Punch.ev",
+          "url": "https://ev.tata.cars/punch/ev.html",
+          "model": "Punch EV",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "mg",
+      "url": "https://www.mgmotor.co.in/tools/brochures",
+      "cacheFile": "mg.html",
+      "make": "MG",
+      "makeId": 100108,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "MG Windsor EV",
+          "url": "https://www.mgmotor.co.in/vehicles/windsor-ev-electric-car-in-india/service",
+          "model": "Windsor EV",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "MG Comet EV",
+          "url": "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india/service",
+          "model": "Comet EV",
+          "vehicleTypeId": 2,
+          "scope": "product"
+        },
+        {
+          "rawName": "MG Astor",
+          "url": "https://www.mgmotor.co.in/vehicles/mgastor",
+          "model": "Astor",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "MG Hector",
+          "url": "https://www.mgmotor.co.in/vehicles/mghector",
+          "model": "Hector",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "skoda",
+      "url": "https://www.skoda-auto.co.in/",
+      "cacheFile": "skoda.html",
+      "make": "SKODA",
+      "makeId": 100105,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "Kushaq",
+          "url": "https://www.skoda-auto.co.in/shopping/kushaq-book-a-testdrive",
+          "model": "Kushaq",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        },
+        {
+          "rawName": "Slavia",
+          "url": "https://www.skoda-auto.co.in/models/slavia/slavia",
+          "model": "Slavia",
+          "vehicleTypeId": 2,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "renault",
+      "url": "https://www.renault.co.in/cars/renault-triber.html",
+      "cacheFile": "renault.html",
+      "make": "RENAULT",
+      "makeId": 13647,
+      "batch": "passenger",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "TRIBER",
+          "model": "Triber",
+          "url": "https://www.renault.co.in/cars/renault-triber.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "bajaj",
+      "url": "https://www.bajajauto.com/bikes",
+      "cacheFile": "bajaj.html",
+      "make": "BAJAJ",
+      "makeId": 2485975730,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "Bajaj Pulsar 180",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-180-2026",
+          "model": "Pulsar 180",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar N125",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-n125",
+          "model": "Pulsar N125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar NS400z",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-ns400z",
+          "model": "Pulsar NS400z",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar N250",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-n250",
+          "model": "Pulsar N250",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar 220F",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-220f",
+          "model": "Pulsar 220F",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar RS200",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-rs200",
+          "model": "Pulsar RS200",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar NS200",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-ns200",
+          "model": "Pulsar NS200",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar NS160",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-ns160",
+          "model": "Pulsar NS160",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar N160",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-n160",
+          "model": "Pulsar N160",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar 150",
+          "url": "https://www.bajajauto.com/bikes/pulsar/old-pulsar-150",
+          "model": "Pulsar 150",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Pulsar NS125",
+          "url": "https://www.bajajauto.com/bikes/pulsar/pulsar-ns125",
+          "model": "Pulsar NS125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Dominar 400",
+          "url": "https://www.bajajauto.com/bikes/dominar/dominar-400",
+          "model": "Dominar 400",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Bajaj Dominar 250",
+          "url": "https://www.bajajauto.com/bikes/dominar/dominar-250",
+          "model": "Dominar 250",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "ktm",
+      "url": "https://www.ktmindia.com/ktm-bikes",
+      "cacheFile": "ktm.html",
+      "make": "KTM",
+      "makeId": 2794540878,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "KTM 250 DUKE",
+          "url": "https://www.ktmindia.com/ktm-bikes/naked-bike/ktm-250-duke",
+          "model": "250 Duke",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "KTM RC 200",
+          "url": "https://www.ktmindia.com/ktm-bikes/supersport/ktm-rc-200",
+          "model": "RC 200",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "suzuki-scooters",
+      "url": "https://www.suzukimotorcycle.co.in/all-products/scooters",
+      "cacheFile": "suzuki-scooters.html",
+      "make": "SUZUKI",
+      "makeId": 509,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "ACCESS",
+          "url": "https://www.suzukimotorcycle.co.in/product-details/all-new-access-125-bluetooth-enabled",
+          "model": "Access 125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "BURGMAN STREET EX",
+          "url": "https://www.suzukimotorcycle.co.in/product-details/burgman-street-ex",
+          "model": "Burgman Street EX",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "BURGMAN STREET",
+          "url": "https://www.suzukimotorcycle.co.in/product-details/burgman-street",
+          "model": "Burgman Street",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "AVENIS",
+          "url": "https://www.suzukimotorcycle.co.in/product-details/avenis",
+          "model": "Avenis",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "royal-enfield",
+      "url": "https://www.royalenfield.com/in/en/motorcycles/new-himalayan/",
+      "cacheFile": "royal-enfield.html",
+      "make": "ROYAL ENFIELD",
+      "makeId": 3395073354,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "Himalayan 450",
+          "url": "https://www.royalenfield.com/in/en/motorcycles/new-himalayan/",
+          "model": "Himalayan 450",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Continental GT 650",
+          "url": "https://www.royalenfield.com/in/en/motorcycles/continental-gt/",
+          "model": "Continental GT 650",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "ola",
+      "url": "https://www.olaelectric.com/brochure",
+      "cacheFile": "ola.html",
+      "make": "OLA ELECTRIC",
+      "makeId": 5283244173,
+      "batch": "two-wheelers",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "OLA S1 Pro",
+          "url": "https://www.olaelectric.com/brochure",
+          "model": "S1 Pro",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "OLA S1 X",
+          "url": "https://www.olaelectric.com/brochure",
+          "model": "S1 X",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "honda-sales",
+      "url": "https://www.honda2wheelersindia.com/",
+      "cacheFile": "honda-sales.html",
+      "make": "HONDA",
+      "makeId": 474,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "Shine100",
+          "model": "Shine 100",
+          "url": "https://www.honda2wheelersindia.com/motorcycle/shine-100",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Shine125",
+          "model": "Shine 125",
+          "url": "https://www.honda2wheelersindia.com/motorcycle/shine-125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "SP125",
+          "model": "SP 125",
+          "url": "https://www.honda2wheelersindia.com/motorcycle/sp-125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Hornet2.0",
+          "model": "Hornet 2.0",
+          "url": "https://www.honda2wheelersindia.com/motorcycle/hornet-2-0",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "CB350",
+          "model": "CB350",
+          "url": "https://www.honda2wheelersindia.com/motorcycle/CB350",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Activa110",
+          "model": "Activa 110",
+          "url": "https://www.honda2wheelersindia.com/scooter/activa110",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Dio110",
+          "model": "Dio 110",
+          "url": "https://www.honda2wheelersindia.com/scooter/dio-110",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Activa125",
+          "model": "Activa 125",
+          "url": "https://www.honda2wheelersindia.com/scooter/activa125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Dio125",
+          "model": "Dio 125",
+          "url": "https://www.honda2wheelersindia.com/scooter/dio-125",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "honda-cars-sales",
+      "url": "https://www.hondacarindia.com/",
+      "cacheFile": "honda-cars-sales.html",
+      "make": "HONDA",
+      "makeId": 474,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "New Amaze",
+          "model": "Amaze",
+          "url": "https://www.hondacarindia.com/honda-amaze",
+          "vehicleTypeId": 2,
+          "scope": "product"
+        },
+        {
+          "rawName": "New Elevate",
+          "model": "Elevate",
+          "url": "https://www.hondacarindia.com/honda-elevate",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "volkswagen-sales",
+      "url": "https://www.volkswagen.co.in/en/models.html",
+      "cacheFile": "volkswagen-sales.html",
+      "make": "VOLKSWAGEN",
+      "makeId": 482,
+      "batch": "passenger",
+      "mappings": [
+        {
+          "rawName": "The new Taigun",
+          "model": "Taigun",
+          "url": "https://www.volkswagen.co.in/en/models/taigun.html",
+          "vehicleTypeId": 7,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "maruti-alto-sales",
+      "url": "https://www.marutisuzuki.com/arena/alto-k10",
+      "cacheFile": "maruti-alto-sales.html",
+      "make": "MARUTI",
+      "makeId": 3233934283,
+      "batch": "passenger",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "Alto K10: New Possibilities, New Moments",
+          "url": "https://www.marutisuzuki.com/arena/alto-k10",
+          "model": "Alto K10",
+          "vehicleTypeId": 2,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "yamaha-motorcycles",
+      "url": "https://shop.yamaha-motor-india.com/collections/motorcycle",
+      "cacheFile": "yamaha-motorcycles.html",
+      "make": "YAMAHA",
+      "makeId": 2427767883,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "Explore R15M",
+          "model": "R15M",
+          "url": "https://shop.yamaha-motor-india.com/products/buy-r15m",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Explore R15 V4",
+          "model": "R15 V4",
+          "url": "https://shop.yamaha-motor-india.com/products/buy-r15-v4-1",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Explore R15S",
+          "model": "R15S",
+          "url": "https://shop.yamaha-motor-india.com/products/buy-r15s",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Explore MT-15 Ver 2.0",
+          "model": "MT-15 Ver 2.0",
+          "url": "https://shop.yamaha-motor-india.com/products/buy-mt-15-ver2",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "yamaha-scooters",
+      "url": "https://shop.yamaha-motor-india.com/collections/scooters",
+      "cacheFile": "yamaha-scooters.html",
+      "make": "YAMAHA",
+      "makeId": 2427767883,
+      "batch": "two-wheelers",
+      "mappings": [
+        {
+          "rawName": "Explore RayZR Street Rally 125 Fi Hybrid",
+          "model": "RayZR Street Rally 125 Fi Hybrid",
+          "url": "https://shop.yamaha-motor-india.com/products/buy-rayzr-street-rally-125-fi-hybrid",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Explore RAYZR 125 FI Hybrid",
+          "model": "RAYZR 125 FI Hybrid",
+          "url": "https://shop.yamaha-motor-india.com/products/buy-rayzr-125-fi-hybrid",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Explore New Fascino 125 FI",
+          "model": "Fascino 125 FI",
+          "url": "https://shop.yamaha-motor-india.com/products/new-fascino-125-fi",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    },
+    {
+      "id": "harley-x440",
+      "url": "https://www.harley-davidson.com/in/en/motorcycles/h-d-x.html",
+      "cacheFile": "harley-x440.html",
+      "make": "HARLEY-DAVIDSON",
+      "makeId": 2561825508,
+      "batch": "two-wheelers",
+      "mappings": [],
+      "headingMappings": [
+        {
+          "rawName": "Harley-Davidson X™ 440",
+          "url": "https://www.harley-davidson.com/in/en/motorcycles/h-d-x.html",
+          "model": "X440",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        },
+        {
+          "rawName": "Harley-Davidson X™ 440 T",
+          "url": "https://www.harley-davidson.com/in/en/motorcycles/h-d-x.html",
+          "model": "X440 T",
+          "vehicleTypeId": 1,
+          "scope": "product"
+        }
+      ]
+    }
+  ],
+  "pending": [
+    {
+      "source": "Archived brochures for Ciaz, Marazzo, XUV700, S1 Air and Vespa VXL/SXL",
+      "reason": "Preserved PDFs or service links do not prove current sales. Exact dated marketed-year or model-year evidence is still required."
+    },
+    {
+      "source": "TVS and Honda owner-manual selectors",
+      "reason": "Manual revision/model labels and manufacturing cutoffs need separate year-basis review; sales importer intentionally excludes them."
+    },
+    {
+      "source": "Tata 407 and LPO; Ashok Leyland Dost, Partner, Ecomet and AVTR",
+      "reason": "Specific body/configuration names and selected family names are imported. Remaining generic labels need exact family/year/body evidence; LPO alone cannot establish a bus exterior."
+    },
+    {
+      "source": "Xpulse 200, R15, MT-15, Shine, RayZR, Fascino, Thar and CB650R",
+      "reason": "Named derivatives or current regional spellings exist. No suffix stripping or generation/appearance equivalence is approved."
+    }
+  ]
+}
