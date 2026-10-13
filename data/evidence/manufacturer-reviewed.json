@@ -1707,6 +1707,28 @@
       "url": "https://media.atherenergy.com/Ather-Energy-Prospectus.pdf#page=66",
       "yearBasis": "catalog-year",
       "note": "Prospectus physical page 66 (printed 61) lists Ather Rizta S and Rizta Z with New Delhi prices as at December 31, 2024 and sales during that period. Scooter family only; battery/generation/body resolution remains unverified. Calendar-year evidence, not factory model year."
+    },
+    {
+      "year": 2023,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Ciaz",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Press_Release_Maruti_Suzuki_sales_in_January_2024.pdf",
+      "yearBasis": "catalog-year",
+      "note": "January 2024 monthly manufacturer sales report, page 1, individual Mid-Size Ciaz row: 1000 domestic sales in January 2023. Calendar-year sales presence only; fiscal YTD totals and combined-model rows are not split. Official PDF was verified through the web reader; direct fetch currently returns HTML, so this reviewed fact is not an automated refresh claim."
+    },
+    {
+      "year": 2024,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Ciaz",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Press_Release_Maruti_Suzuki_sales_in_January_2024.pdf",
+      "yearBasis": "catalog-year",
+      "note": "January 2024 monthly manufacturer sales report, page 1, individual Mid-Size Ciaz row: 363 domestic sales in January 2024. Calendar-year sales presence only; fiscal YTD totals and combined-model rows are not split. Official PDF was verified through the web reader; direct fetch currently returns HTML, so this reviewed fact is not an automated refresh claim."
     }
   ],
   "catalogYearMetadata": {
