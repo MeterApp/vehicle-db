@@ -29,6 +29,8 @@ app that needs an offline make/model/year list. The image API consumes this cata
    RENAVAM make/model prefix there (`npm run refresh:senatran-br` logs the
    largest unmapped families) and refresh.
 
+Changan, SGMW and Bajaj regional facts now refresh through `npm run refresh:manufacturer-catalogs`. Review newly discovered exact names in `data/evidence/manufacturer-catalog-mappings.json`, rather than adding their current models one at a time to the generic reviewed file. Keep the complete original names and per-market evidence; never infer model years from guide upload dates. Old reviewed source filters remain published for compatibility.
+
 3. **Add a small curated source when no dataset exists.** Follow
    `data/sources/atul-auto.json`: give the source an `sourceId`, `sourceName`,
    `sourceUrl`, `license`, `region`, `retrievedAt`, and a list of

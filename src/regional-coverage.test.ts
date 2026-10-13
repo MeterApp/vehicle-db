@@ -41,3 +41,21 @@ test("Wuling queries find the Malaysian brand while keeping Indonesia and Malays
   expect(getModels({ makeId: 5142354878, year: 2026, sourceId: catalogSource }).some(m => m.modelName === "BINGO")).toBe(false);
   expect(searchVehicles("wuling binguoev", { year: 2025, sourceId: catalogSource, fuzzy: false })).toEqual([]);
 });
+
+test("broad manufacturer sources keep Chinese/export names and year bases separate", () => {
+  const getNames = (makeId: number, sourceId: string, year=2026) => getModels({makeId,sourceId,year}).map(m=>m.modelName);
+  const china = getNames(5142354878,"sgmw-manufacturer-catalog");
+  expect(china).toEqual(expect.arrayContaining(["Hongguang Mini EV", "Hongguang Mini EV 4 Door", "Binguo", "Yangguang", "Yangguang Panel Van", "Rongguang Mini Truck"]));
+  // Retired sales entries must not acquire 2026 coverage from a recently uploaded manual.
+  expect(china).not.toContain("NanoEV");
+  expect(china).not.toContain("Air ev Qingkong");
+  expect(getNames(5142354878,"sgmw-manufacturer-model-years",2025)).toContain("Binguo");
+  expect(getNames(5142354878,"sgmw-manufacturer-model-years",2026)).not.toContain("Yangguang");
+  const bajaj = getNames(2485975730,"bajaj-manufacturer-catalog");
+  expect(bajaj).toEqual(expect.arrayContaining(["WEGO P50", "WEGO P70", "WEGO P90", "WEGO C90", "RE 4S", "Maxima Cargo", "Torito XL", "Torito CROM", "Qute"]));
+  const qute = getModels({makeId:2485975730,sourceId:"bajaj-manufacturer-catalog",year:2026}).find(m=>m.modelName==="Qute");
+  expect(qute?.vehicleTypeId).toBe(10002);
+  const cargo = getModels({makeId:5142354878,sourceId:"sgmw-manufacturer-catalog",year:2026}).find(m=>m.modelName==="Yangguang Panel Van");
+  expect(cargo?.vehicleTypeId).toBe(3);
+  expect(getNames(4481830531,"changan-manufacturer-model-years",2027)).toEqual(expect.arrayContaining(["A06", "Q05"]));
+});

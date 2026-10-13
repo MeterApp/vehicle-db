@@ -30,6 +30,11 @@ const SOURCE_PRIORITY = [
   "manufacturer-reviewed",
   "senatran-br-renavam",
   "manufacturer-reviewed-catalog",
+  "bajaj-manufacturer-catalog",
+  "changan-manufacturer-catalog",
+  "changan-manufacturer-model-years",
+  "sgmw-manufacturer-catalog",
+  "sgmw-manufacturer-model-years",
 ];
 // Preserve previously shipped make IDs as source coverage expands, so stored
 // selections remain valid even when an earlier-priority source gains a make.
