@@ -1,12 +1,12 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.19.0",
+  "version": "2.19.1",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MeterApp/vehicle-db.git"
   },
-  "homepage": "https://github.com/MeterApp/vehicle-db#readme",
+  "homepage": "https://carimage.dev/?ref=catalog",
   "bugs": {
     "url": "https://github.com/MeterApp/vehicle-db/issues"
   },

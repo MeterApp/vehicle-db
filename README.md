@@ -14,6 +14,8 @@ The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Tru
 
 This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (eight camera views, any paint color, PNG/WebP/JPG up to 1024 px, 1 credit per image with 100 free credits to start; see [pricing](https://carimage.dev/pricing?ref=catalog)). Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse every make and model at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
 
+**Need to know where your vehicles operate?** [Geocode AI](https://geocodeai.dev/?ref=catalog) is the boundary API from the same team: get the polygon of any country, state, county, city, district or postcode by name or point, test whether a vehicle's location falls inside a service area, or describe a zone in plain language ("the nine Bay Area counties except San Jose") and get one validated polygon back, for fleet territories, pricing and fare zones, dispatch regions and geofences. REST, MCP and CLI; see [the docs](https://geocodeai.dev/docs?ref=catalog).
+
 **Missing a vehicle?** Add its source-backed identity here; downstream image support and asset sharing are validated separately — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Install
