@@ -6,7 +6,7 @@
     "url": "https://www.kia.com/saudiarabia/en.html",
     "license": "Source attribution (factual product names only)",
     "region": "Saudi Arabia, United States, China and India",
-    "retrievedAt": "2026-10-13",
+    "retrievedAt": "2026-10-20",
     "description": "Individually reviewed marketed models and body derivatives with explicit model-year evidence. Evidence URLs and market scopes are retained in data/evidence/manufacturer-reviewed.json. Published Changan/Wuling/Bajaj regional entries are retained for source-filter compatibility; their original evidence is now in data/evidence/manufacturer-catalogs/legacy-regional.json and maintained by refresh:manufacturer-catalogs.",
     "yearBasis": "model-year"
   },
@@ -1729,6 +1729,26 @@
       "url": "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Press_Release_Maruti_Suzuki_sales_in_January_2024.pdf",
       "yearBasis": "catalog-year",
       "note": "January 2024 monthly manufacturer sales report, page 1, individual Mid-Size Ciaz row: 363 domestic sales in January 2024. Calendar-year sales presence only; fiscal YTD totals and combined-model rows are not split. Official PDF was verified through the web reader; direct fetch currently returns HTML, so this reviewed fact is not an automated refresh claim."
+    },
+    {
+      "year": 2027,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "i3",
+      "vehicleTypeId": 2,
+      "market": "US",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0461093EN_US/the-new-bmw-3-series",
+      "note": "BMW USA (2026-09-29) lists a 2027 BMW i3 50 xDrive MSRP and a US launch in Q1 2027; fully electric eighth-generation 3 Series, unrelated to the 2014-2022 i3."
+    },
+    {
+      "year": 2027,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "iX5",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0458814EN_US/the-new-bmw-x5-and-ix5",
+      "note": "BMW USA (2026-06-30) states the 2027 BMW X5 lineup includes the first all-electric BMW iX5; iX5 60 xDrive US launch Q1 2027. iX5 Hydrogen is later and not included."
     }
   ],
   "catalogYearMetadata": {

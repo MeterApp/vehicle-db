@@ -6,5 +6,10 @@
   {"query":"2024 BMW 4 Series Gran Coupe","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["4 Series Coupe"]},
   {"query":"2024 BMW 4 Series Coupe unknown","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"UNRESOLVED_TOKENS"},
   {"query":"2024 Toyota Camry","cohort":"synthetic","options":{"depth":"visual"},"expectedStatus":"GENERATION_UNRESOLVED"},
-  {"query":"2025 Kia Pegas","cohort":"synthetic","options":{"market":"SA"},"expectedStatus":"MATCHED"}
+  {"query":"2025 Kia Pegas","cohort":"synthetic","options":{"market":"SA"},"expectedStatus":"MATCHED"},
+  {"query":"2027 BMW i3","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["I3S","i5","iX3"]},
+  {"query":"2018 BMW i3","cohort":"synthetic","expectedStatus":"MATCHED"},
+  {"query":"2027 BMW iX5","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["X5","iX"]},
+  {"query":"2026 BMW iX5","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2027 BMW iX4","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"UNKNOWN_MODEL"}
 ]
