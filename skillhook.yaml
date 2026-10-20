@@ -13,6 +13,10 @@ hooks:
     when:
       - path: repository.full_name
         equals: MeterApp/vehicle-db
+      - path: action
+        equals: completed
+      - path: workflow_run.head_branch
+        equals: main
     timeout_seconds: 3600
     concurrency: 1
     claude:
