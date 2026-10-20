@@ -1,0 +1,22 @@
+# Served from ~/dev/vehicle-db on Mac mini 2. See docs/skillhook.md.
+claude:
+  config_dir: ~/.claude-carimage
+hooks:
+  vehicle-db-operations:
+    skill: .claude/skills/operations
+    runner: claude
+    model: opus
+    effort: medium
+    auth:
+      type: github
+      secret_env: VEHICLE_DB_GITHUB_WEBHOOK_SECRET
+    when:
+      - path: repository.full_name
+        equals: MeterApp/vehicle-db
+    timeout_seconds: 3600
+    concurrency: 1
+    claude:
+      add_dirs:
+        - ~/dev/vehicle-db-wt
+    response:
+      mode: file
