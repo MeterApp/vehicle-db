@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "2026-10-13-request-coverage",
+  "revision": "2026-10-20-bmw-neue-klasse-2027",
   "identities": [
     {
       "id": "bmw:4",
@@ -3487,6 +3487,38 @@
       "evidenceIds": [
         "cohort:474:amaze:2025:IN"
       ]
+    },
+    {
+      "id": "bmw:ix5",
+      "kind": "line",
+      "makeId": 452,
+      "vehicleTypeId": 7,
+      "name": "iX5",
+      "names": [
+        "iX5"
+      ],
+      "evidenceIds": [
+        "oem:bmw-ix5-2027"
+      ]
+    },
+    {
+      "id": "bmw:ix5:first",
+      "kind": "generation",
+      "makeId": 452,
+      "vehicleTypeId": 7,
+      "name": "First iX5",
+      "names": [],
+      "evidenceIds": [
+        "oem:bmw-ix5-2027"
+      ],
+      "years": [
+        2027
+      ],
+      "markets": [
+        "US"
+      ],
+      "yearBasis": "model-year",
+      "parentId": "bmw:ix5"
     }
   ],
   "aliases": [
@@ -5269,6 +5301,26 @@
       "evidenceIds": [
         "cohort:474:amaze:2025:IN"
       ]
+    },
+    {
+      "identityId": "bmw:ix5:first",
+      "year": 2027,
+      "makeId": 452,
+      "modelId": 2329647879,
+      "vehicleTypeId": 7,
+      "evidenceIds": [
+        "oem:bmw-ix5-2027"
+      ]
+    },
+    {
+      "identityId": "bmw:ix5",
+      "year": 2027,
+      "makeId": 452,
+      "modelId": 2329647879,
+      "vehicleTypeId": 7,
+      "evidenceIds": [
+        "oem:bmw-ix5-2027"
+      ]
     }
   ],
   "evidence": [
@@ -6314,6 +6366,13 @@
       "url": "https://pressroom.lexus.com/album/2008-lexus-lx-570-third-3rd-generation/",
       "retrievedAt": "2026-10-13",
       "note": "Lexus official 2008 LX570 album labels third generation. China2019 trim release identifies LX570 continuation; no intervening exterior sharing rule."
+    },
+    {
+      "id": "oem:bmw-ix5-2027",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0458814EN_US/the-new-bmw-x5-and-ix5",
+      "retrievedAt": "2026-10-20",
+      "note": "BMW USA states the 2027 X5 lineup includes the first all-electric BMW iX5 (iX5 60 xDrive, US launch Q1 2027). iX5 Hydrogen is a later, separate derivative."
     }
   ],
   "homologation": [],
