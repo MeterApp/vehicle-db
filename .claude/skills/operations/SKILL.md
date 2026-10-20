@@ -1,5 +1,5 @@
 ---
-name: vehicle-db-operations
+name: operations
 description: Check vehicle-db CI and maintain small fixes through reviewed pull requests after GitHub webhooks or a daily sweep.
 ---
 
