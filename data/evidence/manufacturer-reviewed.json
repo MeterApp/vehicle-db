@@ -6,7 +6,7 @@
     "url": "https://www.kia.com/saudiarabia/en.html",
     "license": "Source attribution (factual product names only)",
     "region": "Saudi Arabia, United States, China and India",
-    "retrievedAt": "2026-10-20",
+    "retrievedAt": "2026-10-21",
     "description": "Individually reviewed marketed models and body derivatives with explicit model-year evidence. Evidence URLs and market scopes are retained in data/evidence/manufacturer-reviewed.json. Published Changan/Wuling/Bajaj regional entries are retained for source-filter compatibility; their original evidence is now in data/evidence/manufacturer-catalogs/legacy-regional.json and maintained by refresh:manufacturer-catalogs.",
     "yearBasis": "model-year"
   },
@@ -1749,6 +1749,17 @@
       "market": "US",
       "url": "https://www.press.bmwgroup.com/usa/article/detail/T0458814EN_US/the-new-bmw-x5-and-ix5",
       "note": "BMW USA (2026-06-30) states the 2027 BMW X5 lineup includes the first all-electric BMW iX5; iX5 60 xDrive US launch Q1 2027. iX5 Hydrogen is later and not included."
+    },
+    {
+      "year": 2027,
+      "makeId": 452,
+      "make": "BMW",
+      "model": "iX4",
+      "vehicleTypeId": 7,
+      "market": "US",
+      "yearBasis": "model-year",
+      "url": "https://www.bmwusa.com/vehicles/x-series/suv/bmw-ix4.html",
+      "note": "BMW USA signup section explicitly names the 2027 BMW iX4 50 xDrive. US model year 2027 only; coupe SUV body distinct from iX3. Retrieved 2026-10-21. No year inferred from launch timing; no separate specification-badge record."
     }
   ],
   "catalogYearMetadata": {

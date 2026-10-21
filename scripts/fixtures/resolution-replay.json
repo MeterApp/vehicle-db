@@ -11,5 +11,6 @@
   {"query":"2018 BMW i3","cohort":"synthetic","expectedStatus":"MATCHED"},
   {"query":"2027 BMW iX5","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["X5","iX"]},
   {"query":"2026 BMW iX5","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED"},
-  {"query":"2027 BMW iX4","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"UNKNOWN_MODEL"}
+  {"query":"2027 BMW iX4","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["iX3","iX5","i3","X4"]},
+  {"query":"2026 BMW iX4","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED"}
 ]

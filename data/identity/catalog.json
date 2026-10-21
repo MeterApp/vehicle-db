@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "2026-10-20-bmw-neue-klasse-2027",
+  "revision": "2026-10-21-bmw-ix4-2027",
   "identities": [
     {
       "id": "bmw:4",
@@ -3519,6 +3519,38 @@
       ],
       "yearBasis": "model-year",
       "parentId": "bmw:ix5"
+    },
+    {
+      "id": "bmw:ix4",
+      "kind": "line",
+      "makeId": 452,
+      "vehicleTypeId": 7,
+      "name": "iX4",
+      "names": [
+        "iX4"
+      ],
+      "evidenceIds": [
+        "oem:bmw-ix4-2027"
+      ]
+    },
+    {
+      "id": "bmw:ix4:first",
+      "kind": "generation",
+      "makeId": 452,
+      "vehicleTypeId": 7,
+      "name": "First iX4",
+      "names": [],
+      "evidenceIds": [
+        "oem:bmw-ix4-2027"
+      ],
+      "years": [
+        2027
+      ],
+      "markets": [
+        "US"
+      ],
+      "yearBasis": "model-year",
+      "parentId": "bmw:ix4"
     }
   ],
   "aliases": [
@@ -5321,6 +5353,26 @@
       "evidenceIds": [
         "oem:bmw-ix5-2027"
       ]
+    },
+    {
+      "identityId": "bmw:ix4:first",
+      "year": 2027,
+      "makeId": 452,
+      "modelId": 2312870260,
+      "vehicleTypeId": 7,
+      "evidenceIds": [
+        "oem:bmw-ix4-2027"
+      ]
+    },
+    {
+      "identityId": "bmw:ix4",
+      "year": 2027,
+      "makeId": 452,
+      "modelId": 2312870260,
+      "vehicleTypeId": 7,
+      "evidenceIds": [
+        "oem:bmw-ix4-2027"
+      ]
     }
   ],
   "evidence": [
@@ -6373,6 +6425,13 @@
       "url": "https://www.press.bmwgroup.com/usa/article/detail/T0458814EN_US/the-new-bmw-x5-and-ix5",
       "retrievedAt": "2026-10-20",
       "note": "BMW USA states the 2027 X5 lineup includes the first all-electric BMW iX5 (iX5 60 xDrive, US launch Q1 2027). iX5 Hydrogen is a later, separate derivative."
+    },
+    {
+      "id": "oem:bmw-ix4-2027",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://www.bmwusa.com/vehicles/x-series/suv/bmw-ix4.html",
+      "retrievedAt": "2026-10-21",
+      "note": "BMW USA signup section explicitly identifies 2027 BMW iX4 50 xDrive. US model year 2027 only; coupe SUV is distinct from iX3. Factual names only; no image or marketing text copied."
     }
   ],
   "homologation": [],
