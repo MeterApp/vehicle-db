@@ -53,7 +53,7 @@
     "dist"
   ],
   "scripts": {
-    "build:db": "npm run build:data",
+    "build:db": "pnpm run build:data",
     "build:data": "tsx scripts/build-db.ts && tsx scripts/build-identities.ts",
     "refresh:nhtsa": "tsx scripts/import-nhtsa.ts",
     "refresh:uk-dft": "tsx scripts/import-uk-dft.ts",
@@ -63,9 +63,9 @@
     "refresh:rdw-nl": "tsx scripts/import-rdw-nl.ts",
     "refresh:senatran-br": "tsx scripts/import-senatran-br.ts",
     "build:ts": "tsc",
-    "build": "npm run build:ts",
+    "build": "pnpm run build:ts",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.scripts.json",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "test": "vitest run",
     "build:identities": "tsx scripts/build-identities.ts",
     "check:compatibility": "tsx scripts/check-compatibility.ts",
@@ -74,7 +74,8 @@
     "replay": "tsx scripts/replay-catalog.ts",
     "refresh:manufacturer-catalogs": "tsx scripts/import-manufacturer-catalogs.ts",
     "refresh:india": "tsx scripts/import-indian-catalogs.ts",
-    "refresh:india-history": "tsx scripts/import-indian-history.ts"
+    "refresh:india-history": "tsx scripts/import-indian-history.ts",
+    "deps:install": "pnpm install --frozen-lockfile --prefer-offline"
   },
   "keywords": [
     "nhtsa",
@@ -113,5 +114,6 @@
     "tsx": "^4.23.12",
     "typescript": "^5.9.3",
     "vitest": "^4.1.11"
-  }
+  },
+  "packageManager": "pnpm@12.14.0"
 }

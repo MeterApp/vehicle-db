@@ -24,18 +24,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 12.14.0
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Verify generated catalog
         run: |
-          npm run build:data
+          pnpm run build:data
           git diff --exit-code -- data/compact.json src/data.ts src/identity-data.ts
 
       - name: Preserve published selections
@@ -56,19 +59,19 @@ jobs:
             fi
           fi
           echo "Checking published selections against $BASE_REF"
-          npm run check:compatibility -- "$BASE_REF"
+          pnpm run check:compatibility "$BASE_REF"
 
       - name: Replay identity assertions
-        run: npm run replay
+        run: pnpm run replay
 
       - name: Test
-        run: npm test
+        run: pnpm test
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm run typecheck
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Audit production dependencies
-        run: npm audit --omit=dev
+        run: pnpm audit --prod
