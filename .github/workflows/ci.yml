@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches: [main]
@@ -40,7 +41,22 @@ jobs:
       - name: Preserve published selections
         env:
           BASE_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: npm run check:compatibility -- "$BASE_REF"
+        run: |
+          if [[ -z "$BASE_REF" ]] || ! git cat-file -e "$BASE_REF:data/compact.json" 2>/dev/null; then
+            PACKAGE_NAME="$(node -p "require('./package.json').name")"
+            PUBLISHED_VERSION="$(npm view "$PACKAGE_NAME" version)"
+            if [[ ! "$PUBLISHED_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "Cannot determine a stable published compatibility baseline" >&2
+              exit 1
+            fi
+            BASE_REF="refs/tags/v$PUBLISHED_VERSION"
+            if ! git cat-file -e "$BASE_REF:data/compact.json" 2>/dev/null; then
+              echo "Published compatibility baseline $BASE_REF is unavailable" >&2
+              exit 1
+            fi
+          fi
+          echo "Checking published selections against $BASE_REF"
+          npm run check:compatibility -- "$BASE_REF"
 
       - name: Replay identity assertions
         run: npm run replay
