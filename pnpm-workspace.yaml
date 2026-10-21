@@ -1,0 +1,5 @@
+allowBuilds:
+  "esbuild": true
+  "fsevents": true
+enablePrePostScripts: true
+virtualStoreType: global

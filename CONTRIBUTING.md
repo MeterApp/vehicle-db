@@ -8,11 +8,11 @@ app that needs an offline make/model/year list. The image API consumes this cata
 1. **Check it is really missing.** Search the current snapshot:
 
    ```bash
-   npm install
+   pnpm install --frozen-lockfile --prefer-offline
    node -e "console.log(require('./dist/search.js').searchVehicles('2024 rivian r1s'))"
    ```
 
-   (Run `npm run build` first if `dist/` does not exist.) Spelling variants such
+   (Run `pnpm run build` first if `dist/` does not exist.) Spelling variants such
    as `f150` / `F-150` are already handled by search; do not add duplicates for
    punctuation or case.
 
@@ -20,20 +20,20 @@ app that needs an offline make/model/year list. The image API consumes this cata
    dataset or manufacturer catalog. The bundled sources live in
    `data/sources/*.json` and are described in the README's *Data sources*
    table. If your vehicle is in a source we already import, refresh that source
-   (`npm run refresh:<source>`) instead of hand-editing. A refresh only adds:
+   (`pnpm run refresh:<source>`) instead of hand-editing. A refresh only adds:
    entries the previous snapshot published and the source no longer reports
    are kept, because applications store the year/make/model they were given.
    Pass `--prune` only to remove a source error, and say so in the pull
    request. Brazilian models come from the SENATRAN register through the
    reviewed table in `scripts/senatran-br-models.ts`: to add one, add its
-   RENAVAM make/model prefix there (`npm run refresh:senatran-br` logs the
+   RENAVAM make/model prefix there (`pnpm run refresh:senatran-br` logs the
    largest unmapped families) and refresh.
 
-Changan, SGMW and Bajaj regional facts now refresh through `npm run refresh:manufacturer-catalogs`. Review newly discovered exact names in `data/evidence/manufacturer-catalog-mappings.json`, rather than adding their current models one at a time to the generic reviewed file. Keep the complete original names and per-market evidence; never infer model years from guide upload dates. Old reviewed source filters remain published for compatibility.
+Changan, SGMW and Bajaj regional facts now refresh through `pnpm run refresh:manufacturer-catalogs`. Review newly discovered exact names in `data/evidence/manufacturer-catalog-mappings.json`, rather than adding their current models one at a time to the generic reviewed file. Keep the complete original names and per-market evidence; never infer model years from guide upload dates. Old reviewed source filters remain published for compatibility.
 
-Indian TVS, Hero, commercial, passenger and other two-wheeler sales catalogs refresh through `npm run refresh:india`. Reviewed product links and headings live in `data/evidence/indian-catalog-mappings.json`; a missing or changed name fails the refresh rather than selecting a similar product. Use `--batch tvs|hero|commercial|passenger|two-wheelers` for a focused refresh, or `--offline --date YYYY-MM-DD --cache-dir DIR` with the original dated HTML captures. Raw HTML stays in ignored `.cache/`; public evidence retains factual names, URLs and hashes. These sources establish calendar-year catalog presence only. Owner-manual dates and archived brochures are discovery evidence, and cannot establish current sales or historical year ranges.
+Indian TVS, Hero, commercial, passenger and other two-wheeler sales catalogs refresh through `pnpm run refresh:india`. Reviewed product links and headings live in `data/evidence/indian-catalog-mappings.json`; a missing or changed name fails the refresh rather than selecting a similar product. Use `--batch tvs|hero|commercial|passenger|two-wheelers` for a focused refresh, or `--offline --date YYYY-MM-DD --cache-dir DIR` with the original dated HTML captures. Raw HTML stays in ignored `.cache/`; public evidence retains factual names, URLs and hashes. These sources establish calendar-year catalog presence only. Owner-manual dates and archived brochures are discovery evidence, and cannot establish current sales or historical year ranges.
 
-Broad historical Indian portfolios refresh with `npm run refresh:india-history`, using `data/evidence/indian-history-mappings.json`. They merge into the same India snapshots and retain published records. PDF extraction requires Python with `pypdf` installed; choose its executable with `--python PATH` or `INDIA_HISTORY_PYTHON`. Neither Python nor network access is a runtime dependency. For a reproducible refresh, retain the original PDF/HTML files in ignored `.cache/indian-history` and pass `--offline --date YYYY-MM-DD`. Review the dated portfolio page and exact names before adding mappings. Monthly sales reports use positive individual domestic sales, excluding production-only, export-only and combined-model rows. Fiscal-year periods never become assumed calendar-year ranges. See [the historical source review](docs/indian-historical-catalogs.md) for accepted sources and unresolved labels.
+Broad historical Indian portfolios refresh with `pnpm run refresh:india-history`, using `data/evidence/indian-history-mappings.json`. They merge into the same India snapshots and retain published records. PDF extraction requires Python with `pypdf` installed; choose its executable with `--python PATH` or `INDIA_HISTORY_PYTHON`. Neither Python nor network access is a runtime dependency. For a reproducible refresh, retain the original PDF/HTML files in ignored `.cache/indian-history` and pass `--offline --date YYYY-MM-DD`. Review the dated portfolio page and exact names before adding mappings. Monthly sales reports use positive individual domestic sales, excluding production-only, export-only and combined-model rows. Fiscal-year periods never become assumed calendar-year ranges. See [the historical source review](docs/indian-historical-catalogs.md) for accepted sources and unresolved labels.
 
 3. **Add a small curated source when no dataset exists.** Follow
    `data/sources/atul-auto.json`: give the source an `sourceId`, `sourceName`,
@@ -44,10 +44,10 @@ Broad historical Indian portfolios refresh with `npm run refresh:india-history`,
 4. **Rebuild and test.**
 
    ```bash
-   npm run build:data   # regenerates data/compact.json and src/data.ts
-   npm test
-   npm run typecheck
-   npm run build
+   pnpm run build:data   # regenerates data/compact.json and src/data.ts
+   pnpm test
+   pnpm run typecheck
+   pnpm run build
    ```
 
    CI verifies that the generated catalog is deterministic
@@ -87,7 +87,7 @@ Open an issue with the `makeId`/`modelId`, the source it came from
 
 ## Identity enrichment
 
-Curate `data/identity/catalog.json`, then run `npm run build:identities`.
+Curate `data/identity/catalog.json`, then run `pnpm run build:identities`.
 Generations are first-class; derivatives belong to a generation, and facelifts
 use separate visual identities. Uncertain observations remain evidence instead
 of being assigned a guessed generation. Aliases target identities and never
@@ -95,7 +95,15 @@ establish visual equivalence. Every relationship needs source evidence and an
 appropriate market/year scope. Add negative resolution fixtures for unsafe
 parent, body, generation, and performance substitutions.
 
-Run `npm run check:compatibility -- <prior-release-ref>` and `npm run replay`
+Run `pnpm run check:compatibility -- <prior-release-ref>` and `pnpm run replay`
 before release. Preserve the first selection without a vehicle-type filter as
 well as all typed selections. Raw evidence belongs in `data/evidence/`, not
 `data/sources/` or the runtime bundle. Customer replay files stay private.
+
+### Shared dependency cache
+
+Use pnpm 12.14.0 (the `packageManager` pin), then run `pnpm deps:install`. It installs the committed lockfile and prefers cached packages while fetching anything missing. Dependency updates remain explicit.
+
+The pnpm global virtual store is enabled here after tests and builds passed. Equivalent dependency graphs share installed packages across projects and worktrees. It is experimental; to opt out set `virtualStoreType: project` in `pnpm-workspace.yaml` and reinstall.
+
+Keep the shared download store warm; prune only occasionally, and retire completed worktrees through their owning tool after preserving changes.

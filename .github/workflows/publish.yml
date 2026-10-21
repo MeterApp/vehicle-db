@@ -22,6 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 12.14.0
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -82,15 +85,15 @@ jobs:
 
       - name: Install dependencies
         if: steps.state.outputs.npm_exists == 'false'
-        run: npm ci
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Run tests
         if: steps.state.outputs.npm_exists == 'false'
-        run: npm test
+        run: pnpm test
 
       - name: Build package
         if: steps.state.outputs.npm_exists == 'false'
-        run: npm run build
+        run: pnpm run build
 
       - name: Create GitHub release
         if: steps.state.outputs.tag_exists == 'false' && (steps.state.outputs.npm_exists == 'false' || github.event_name == 'workflow_dispatch')

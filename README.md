@@ -331,9 +331,9 @@ For scoped resolution of a dated catalog record, pass `yearBasis: "catalog-year"
 
 New coverage in 2.16.0 adds 22 year/model/type records: seven consistently labeled Saudi Changan model-year entries, four Mexican Changan catalog facts (one overlaps the Saudi CS75 Plus), six Indonesian Wuling models, and six Indian Bajaj passenger/cargo three-wheelers. Per-record official evidence and year semantics are in `data/evidence/manufacturer-reviewed.json`; the regional audit is in [regional-coverage-status.md](docs/regional-coverage-status.md). `WULING` is now a make alongside the official Malaysian `TQ WULING`; search accepts `wuling bingo` for the latter without changing its published IDs or equating Bingo with BinguoEV.
 
-Broad catalogs in 2.17.0 replace individual Changan/Wuling/Bajaj regional edits with `npm run refresh:manufacturer-catalogs`. Five source snapshots separate official active sales catalogs from explicitly labeled model years: Changan (including separate CHANGAN NEVO), SGMW (separate WULING and BAOJUN), and Bajaj country catalogs. They add 73 selections while retaining all published IDs and legacy source filters. Manufacturer evidence, reviewed translation/body mappings, and manual discovery indexes are retained outside the runtime bundle; see [broad-manufacturer-catalogs.md](docs/broad-manufacturer-catalogs.md).
+Broad catalogs in 2.17.0 replace individual Changan/Wuling/Bajaj regional edits with `pnpm run refresh:manufacturer-catalogs`. Five source snapshots separate official active sales catalogs from explicitly labeled model years: Changan (including separate CHANGAN NEVO), SGMW (separate WULING and BAOJUN), and Bajaj country catalogs. They add 73 selections while retaining all published IDs and legacy source filters. Manufacturer evidence, reviewed translation/body mappings, and manual discovery indexes are retained outside the runtime bundle; see [broad-manufacturer-catalogs.md](docs/broad-manufacturer-catalogs.md).
 
-Indian catalogs in 2.19.0 add five sales-catalog snapshots refreshed with `npm run refresh:india`. Exact reviewed links/headings/selectors preserve model suffixes and published make IDs; their 2026 years mean observed calendar-year catalog presence. Broad dated portfolios refresh with `npm run refresh:india-history` into those same sources: Mahindra, Honda, Yamaha, MG and Ola establish individually evidenced 2020–2025 calendar years. Four Tata 2025 portfolio facts, three Ather 2024 sales facts and two individual Ciaz 2023–2024 sales facts use the existing reviewed catalog source. Historical manuals, fiscal-year periods and successor names do not create guessed year ranges or image-sharing permissions. Source mappings, original names, URLs and retrieval hashes stay outside the runtime bundle; see [the historical source review](docs/indian-historical-catalogs.md).
+Indian catalogs in 2.19.0 add five sales-catalog snapshots refreshed with `pnpm run refresh:india`. Exact reviewed links/headings/selectors preserve model suffixes and published make IDs; their 2026 years mean observed calendar-year catalog presence. Broad dated portfolios refresh with `pnpm run refresh:india-history` into those same sources: Mahindra, Honda, Yamaha, MG and Ola establish individually evidenced 2020–2025 calendar years. Four Tata 2025 portfolio facts, three Ather 2024 sales facts and two individual Ciaz 2023–2024 sales facts use the existing reviewed catalog source. Historical manuals, fiscal-year periods and successor names do not create guessed year ranges or image-sharing permissions. Source mappings, original names, URLs and retrieval hashes stay outside the runtime bundle; see [the historical source review](docs/indian-historical-catalogs.md).
 
 ## Factory colors
 
@@ -368,26 +368,26 @@ New coverage in 2.18.0 adds 112 sourced year/model/type records and four makes (
 The committed source snapshots make the package build deterministic and offline:
 
 ```bash
-npm run build:data
-npm test
-npm run typecheck
-npm run build
+pnpm run build:data
+pnpm test
+pnpm run typecheck
+pnpm run build
 ```
 
 Refresh either network source independently, then rebuild the combined catalog:
 
 ```bash
-npm run refresh:uk-dft
-npm run refresh:nhtsa -- --start-year 2025 --end-year 2027 --merge --cache-dir .cache/nhtsa
-npm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2027
-npm run refresh:malaysia-jpj -- --start-year 2015 --end-year 2026
-npm run refresh:eea-co2 -- --start-year 2010 --end-year 2026
-npm run refresh:rdw-nl -- --start-year 1990 --end-year 2026
-npm run refresh:senatran-br
-npm run refresh:fueleconomy-us -- --start-year 2022 --end-year 2027
-npm run refresh:reviewed
-npm run refresh:manufacturer-catalogs
-npm run build:data
+pnpm run refresh:uk-dft
+pnpm run refresh:nhtsa -- --start-year 2025 --end-year 2027 --merge --cache-dir .cache/nhtsa
+pnpm run refresh:nzta-asia-pacific -- --start-year 1990 --end-year 2027
+pnpm run refresh:malaysia-jpj -- --start-year 2015 --end-year 2026
+pnpm run refresh:eea-co2 -- --start-year 2010 --end-year 2026
+pnpm run refresh:rdw-nl -- --start-year 1990 --end-year 2026
+pnpm run refresh:senatran-br
+pnpm run refresh:fueleconomy-us -- --start-year 2022 --end-year 2027
+pnpm run refresh:reviewed
+pnpm run refresh:manufacturer-catalogs
+pnpm run build:data
 ```
 
 **A refresh only adds.** Registers drop scrapped vehicles, count thresholds move between releases, and manufacturers re-file model years in vPIC (the 2026 Maserati MC20 became the MCPura in September 2026), but an application may already store a year/make/model this package published. Every importer therefore keeps the entries its previous snapshot published and the source no longer reports, and logs how many it kept; pass `--prune` to drop them deliberately, for example to remove a source error. Model-year sources run a year ahead of the calendar, so the NHTSA and NZTA importers default to ending next year; registration sources end with the current year.
@@ -397,12 +397,12 @@ The NHTSA API rate-limits aggressively: past a few requests a second its CDN ans
 ## Evidence and regression checks
 
 ```bash
-npm run refresh:rdw-nl -- --start-year 2026 --end-year 2026 --evidence-out .cache/rdw-evidence.json
-npm run refresh:eea-co2 -- --start-year 2024 --end-year 2024 --evidence-out .cache/eea-evidence.json
+pnpm run refresh:rdw-nl -- --start-year 2026 --end-year 2026 --evidence-out .cache/rdw-evidence.json
+pnpm run refresh:eea-co2 -- --start-year 2024 --end-year 2024 --evidence-out .cache/eea-evidence.json
 npx tsx scripts/reconcile-source.ts
-npm run check:compatibility -- <prior-release-git-ref>
-npm run replay
-npm run replay -- /private/replay.json /private/report.json
+pnpm run check:compatibility -- <prior-release-git-ref>
+pnpm run replay
+pnpm run replay -- /private/replay.json /private/report.json
 ```
 
 Replay cases contain `query` (or `make`, `model`, `year`), `cohort` (`customer`, `synthetic`, `haraj-sweep`), optional `n`, resolver `options`, `expectedStatus`, and `forbiddenModelNames`. Reports record catalog, fixture and resolver hashes, commit/version, and separate cohort totals. Unreviewed matches measure resolution coverage only; they do not establish render correctness. Synthetic cohorts have zero demand weight. Never commit customer exports.
