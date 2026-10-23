@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "source": "https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files",
+  "dataset": "VEH0124: vehicles at the end of the quarter by body type, make, generic model, model, year of first use and year of manufacture",
+  "license": "Open Government Licence v3.0",
+  "reviewedAt": "2026-10-23",
+  "rule": "A body derivative year is published when DVLA model descriptions under the generic model that contain the reviewed body word, in cars with that year of manufacture, add up to at least minVehicles. The body word is the manufacturer's UK body designation and is reviewed per generic model; trim words that resemble body words (Ford ST, Mazda TS, Peugeot 306 ST) are not mapped. Absence of the word is not evidence that a body did not exist: DVLA descriptions stop naming BMW Touring bodies after about 2015.",
+  "derivatives": [
+    {
+      "make": "BMW",
+      "genericModel": "BMW 3 SERIES",
+      "modelToken": "TOURING",
+      "model": "3 SERIES TOURING",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
+    },
+    {
+      "make": "BMW",
+      "genericModel": "BMW 5 SERIES",
+      "modelToken": "TOURING",
+      "model": "5 SERIES TOURING",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
+    },
+    {
+      "make": "KIA",
+      "genericModel": "KIA CEED",
+      "modelToken": "SW",
+      "model": "CEED SW",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
+    },
+    {
+      "make": "ROVER",
+      "genericModel": "ROVER 75",
+      "modelToken": "TOURER",
+      "model": "75 TOURER",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
+    }
+  ]
+}
