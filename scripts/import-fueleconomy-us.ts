@@ -1,10 +1,38 @@
-/** Official EPA bulk feed. Configuration names remain distinct; no suffix stripping. */
+/**
+ * Official EPA bulk feed. Configuration names remain distinct; no suffix stripping.
+ *
+ * Historical estate bodies (e.g. "CTS Wagon") are added outside the regular year
+ * window only through the reviewed mappings in
+ * data/evidence/fueleconomy-us-body-derivatives.json: an EPA configuration whose
+ * make and model exactly equal a mapped epaModel is published under the
+ * derivative's model name for that model year. Observed years and EPA record IDs
+ * are written to data/evidence/fueleconomy-us-body-derivatives-observed.json.
+ */
 import fs from "fs";
 import path from "path";
 import { parseArgs } from "node:util";
 import { createHash } from "node:crypto";
 import { stableSourceId, assertNoIdCollision, writeSnapshot, type SourceCatalog } from "./catalog-types";
 export const FEED_URL = "https://www.fueleconomy.gov/feg/epadata/vehicles.csv";
+const DERIVATIVES_PATH = path.join(__dirname, "..", "data", "evidence", "fueleconomy-us-body-derivatives.json");
+const OBSERVED_PATH = path.join(__dirname, "..", "data", "evidence", "fueleconomy-us-body-derivatives-observed.json");
+/** A reviewed EPA body derivative: exact EPA configuration names published as one body-specific model. */
+export interface BodyDerivative { make: string; model: string; bodyStyle: string; epaModels: string[] }
+export interface DerivativeObservation { make: string; model: string; years: number[]; epaIds: string[] }
+export function loadBodyDerivatives(filePath = DERIVATIVES_PATH): BodyDerivative[] {
+  return (JSON.parse(fs.readFileSync(filePath, "utf8")) as { derivatives: BodyDerivative[] }).derivatives;
+}
+/** Rows for mapped EPA names, renamed to the derivative model; every year of the feed counts. */
+export function bodyDerivativeRows(rows: Record<string, string>[], derivatives: BodyDerivative[], observations: DerivativeObservation[] = []): Record<string, string>[] {
+  const out: Record<string, string>[] = [];
+  for (const d of derivatives) {
+    const matched = rows.filter(r => r.make.trim() === d.make && d.epaModels.includes(r.model.trim()));
+    if (!matched.length) throw new Error(`EPA body derivative ${d.make} ${d.model} matched no configurations`);
+    out.push(...matched.map(r => ({ ...r, model: d.model })));
+    observations.push({ make: d.make, model: d.model, years: [...new Set(matched.map(r => Number(r.year)))].sort((a, b) => a - b), epaIds: matched.map(r => r.id).sort((a, b) => Number(a) - Number(b)) });
+  }
+  return out;
+}
 export function parseCsv(text: string): Record<string, string>[] {
   const rows: string[][] = []; let row: string[] = [], field = "", quoted = false;
   for (let i = 0; i < text.length; i++) {
@@ -56,7 +84,7 @@ export function buildSourceCatalog(rows: Record<string, string>[], retrievedAt: 
     makes, modelNames, models, vehicleTypes: [{ vehicle_type_id: 10002, vehicle_type_name: "Other Vehicle" }, { vehicle_type_id: 2, vehicle_type_name: "Passenger Car" }, { vehicle_type_id: 3, vehicle_type_name: "Truck" }, { vehicle_type_id: 7, vehicle_type_name: "Multipurpose Passenger Vehicle (MPV)" }].filter(t => models.some(r => r[4] === t.vehicle_type_id)) };
 }
 async function main() {
-  const { values: args } = parseArgs({ options: { input: { type: "string" }, out: { type: "string", default: "data/sources/fueleconomy-us.json" }, "start-year": { type: "string", default: "2022" }, "end-year": { type: "string", default: String(new Date().getUTCFullYear() + 1) }, "retrieved-at": { type: "string" }, "evidence-out": { type: "string", default: "data/evidence/fueleconomy-us.json" }, prune: { type: "boolean", default: false } } });
+  const { values: args } = parseArgs({ options: { input: { type: "string" }, out: { type: "string", default: "data/sources/fueleconomy-us.json" }, "start-year": { type: "string", default: "2022" }, "end-year": { type: "string", default: String(new Date().getUTCFullYear() + 1) }, "retrieved-at": { type: "string" }, "evidence-out": { type: "string", default: "data/evidence/fueleconomy-us.json" }, prune: { type: "boolean", default: false }, "derivatives-only": { type: "boolean", default: false } } });
   const start = Number(args["start-year"]), end = Number(args["end-year"]);
   if (!Number.isInteger(start) || !Number.isInteger(end) || start < 1984 || end > 2200 || start > end) throw new Error("Invalid year range");
   let csv: string;
@@ -73,10 +101,21 @@ async function main() {
     csv = downloaded;
     fs.mkdirSync(".cache/fueleconomy", { recursive: true }); fs.writeFileSync(".cache/fueleconomy/vehicles.csv", csv);
   }
-  const rows = parseCsv(csv).filter(r => Number(r.year) >= start && Number(r.year) <= end);
+  const allRows = parseCsv(csv);
+  const rows = allRows.filter(r => Number(r.year) >= start && Number(r.year) <= end);
   if (!rows.length) throw new Error("EPA returned no rows in requested range");
+  const observations: DerivativeObservation[] = [];
+  const derivativeRows = bodyDerivativeRows(allRows, loadBodyDerivatives(), observations);
   const retrievedAt = args["retrieved-at"] ?? new Date().toISOString().slice(0, 10);
-  const catalog = buildSourceCatalog(rows, retrievedAt);
+  fs.writeFileSync(OBSERVED_PATH, `${JSON.stringify({ source: FEED_URL, retrievedAt, sha256: createHash("sha256").update(csv).digest("hex"), derivatives: observations }, null, 2)}\n`);
+  if (args["derivatives-only"]) {
+    // Adds only the reviewed derivatives; the published window and its evidence sidecar stay as they are.
+    const published = JSON.parse(fs.readFileSync(args.out!, "utf8")) as SourceCatalog;
+    writeSnapshot(args.out!, buildSourceCatalog(derivativeRows, published.metadata.retrievedAt), false);
+    console.log(`EPA: ${derivativeRows.length} reviewed body-derivative configurations merged`);
+    return;
+  }
+  const catalog = buildSourceCatalog([...rows, ...derivativeRows], retrievedAt);
   const fields = ["id", "make", "model", "year", "VClass", "drive", "trany", "cylinders", "displ", "fuelType", "eng_dscr", "atvType"];
   fs.mkdirSync(path.dirname(args["evidence-out"]!), { recursive: true });
   fs.writeFileSync(args["evidence-out"]!, JSON.stringify({ schemaVersion: 1, sourceId: catalog.metadata.id, url: FEED_URL, retrievedAt, sha256: createHash("sha256").update(csv).digest("hex"), yearBasis: "model-year", records: rows.map(r => Object.fromEntries(fields.filter(k => r[k]).map(k => [k, r[k]]))) }));

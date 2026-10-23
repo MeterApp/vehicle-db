@@ -92,3 +92,26 @@ test("UK estate derivatives are distinct models and never replace the parent nam
   expect(exact("2022 Peugeot 508")?.modelName).toBe("508");
   expect(exact("2011 Kia Ceed")?.modelName).not.toBe("CEED SW");
 });
+
+test("U.S. EPA estate derivatives are distinct models and never replace the parent nameplate", () => {
+  const exact = (query: string) => searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+  const cases: [string, string, string][] = [
+    ["2012 Cadillac CTS Wagon", "CADILLAC", "CTS Wagon"],
+    ["2004 Ford Focus Station Wagon", "FORD", "Focus Station Wagon"],
+    ["2007 Jaguar X-Type Sport Brake", "JAGUAR", "X-Type Sport Brake"],
+    ["2006 Mazda 6 Sport Wagon", "MAZDA", "6 Sport Wagon"],
+    ["2004 Mercedes-Benz C-Class Wagon", "MERCEDES-BENZ", "C-Class Wagon"],
+    ["2003 Saab 9-5 Wagon", "SAAB", "9-5 Wagon"],
+    ["2008 Saab 9-5 SportCombi", "SAAB", "9-5 SportCombi"],
+    ["2005 Subaru Legacy Wagon", "SUBARU", "Legacy Wagon"],
+  ];
+  for (const [query, makeName, modelName] of cases) {
+    const hit = exact(query);
+    expect(hit, query).toMatchObject({ makeName, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase(), query).toBe(modelName.toUpperCase());
+  }
+  expect(exact("2012 Cadillac CTS")?.modelName.toUpperCase()).toBe("CTS");
+  expect(exact("2004 Ford Focus")?.modelName.toUpperCase()).toBe("FOCUS");
+  expect(exact("2005 Subaru Legacy")?.modelName.toUpperCase()).toBe("LEGACY");
+  expect(exact("2005 Subaru Impreza Wagon")?.modelName.toUpperCase()).not.toBe("IMPREZA WAGON");
+});
