@@ -6,7 +6,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, Brazil's national vehicle register, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,303 models** in **196,846 model years**, from **23 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
+The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,311 models** in **196,897 model years**, from **23 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles. The Brazilian register adds the cars and motorcycles that fill Brazil's roads but are rarely sold elsewhere, such as the Fiat Argo, Mobi and Toro, the Volkswagen Gol and Saveiro, the Renault Kwid, and the Honda Biz and Pop.
 
@@ -320,7 +320,7 @@ RDW source attribution: Open Data RDW (Dienst Wegverkeer), public domain. The re
 
 New sources in 2.13.0:
 
-- [FuelEconomy.gov bulk feed](https://www.fueleconomy.gov/feg/ws/): 2022–2027 model-year configurations; U.S. government public data. The legacy Maserati source remains independently addressable. Configuration suffixes are preserved, with a reviewed separator-only normalization for Mercedes-Benz AMG G63.
+- [FuelEconomy.gov bulk feed](https://www.fueleconomy.gov/feg/ws/): 2022–2027 model-year configurations; U.S. government public data. Historical U.S. estate bodies (Cadillac CTS Wagon, Ford Focus Station Wagon, Jaguar X-Type Sport Brake, Mazda 6 Sport Wagon, Mercedes-Benz C-Class Wagon, Saab 9-5 Wagon/SportCombi, Subaru Legacy Wagon; 51 model years) come from exact EPA model names through the reviewed mappings in `data/evidence/fueleconomy-us-body-derivatives.json`, with observed years and EPA record IDs in `data/evidence/fueleconomy-us-body-derivatives-observed.json`. The legacy Maserati source remains independently addressable. Configuration suffixes are preserved, with a reviewed separator-only normalization for Mercedes-Benz AMG G63.
 - Reviewed manufacturer evidence: eight model-year records for Saudi Kia Pegas and U.S. BMW body derivatives / Lamborghini STO. Factual names only, with per-record URLs and market/year rationale in `data/evidence/manufacturer-reviewed.json`. GSO/SASO bulk data is not bundled; access/permission dependencies are documented in the source investigation.
 
 ## Dated manufacturer catalogs
@@ -356,11 +356,11 @@ New coverage in 2.18.0 adds 112 sourced year/model/type records and four makes (
 | Sources | 23 |
 | Vehicle types | 7 |
 | Makes | 1,608 |
-| Models | 42,303 |
-| Model years | 196,846 |
+| Models | 42,311 |
+| Model years | 196,897 |
 | Make records (`getMakes()`) | 1,620 |
-| Model records (distinct `modelId`) | 46,806 |
-| Model-year records (`getModels()`) | 218,343 |
+| Model records (distinct `modelId`) | 46,814 |
+| Model-year records (`getModels()`) | 218,394 |
 | Bundled TypeScript data | 7.58 MB |
 
 ## Refreshing and rebuilding
