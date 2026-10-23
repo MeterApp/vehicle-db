@@ -37,6 +37,30 @@
       "model": "75 TOURER",
       "bodyStyle": "Estate",
       "minVehicles": 10
+    },
+    {
+      "make": "PEUGEOT",
+      "genericModel": "PEUGEOT 206",
+      "modelToken": "SW",
+      "model": "206 SW",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
+    },
+    {
+      "make": "PEUGEOT",
+      "genericModel": "PEUGEOT 308",
+      "modelToken": "SW",
+      "model": "308 SW",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
+    },
+    {
+      "make": "PEUGEOT",
+      "genericModel": "PEUGEOT 508",
+      "modelToken": "SW",
+      "model": "508 SW",
+      "bodyStyle": "Estate",
+      "minVehicles": 10
     }
   ]
 }

@@ -323,6 +323,219 @@
           "descriptions": 16
         }
       ]
+    },
+    {
+      "make": "PEUGEOT",
+      "model": "206 SW",
+      "years": [
+        {
+          "year": 2002,
+          "vehicles": 2360,
+          "descriptions": 21
+        },
+        {
+          "year": 2003,
+          "vehicles": 9151,
+          "descriptions": 55
+        },
+        {
+          "year": 2004,
+          "vehicles": 9069,
+          "descriptions": 50
+        },
+        {
+          "year": 2005,
+          "vehicles": 5358,
+          "descriptions": 41
+        },
+        {
+          "year": 2006,
+          "vehicles": 4489,
+          "descriptions": 22
+        },
+        {
+          "year": 2007,
+          "vehicles": 79,
+          "descriptions": 9
+        }
+      ]
+    },
+    {
+      "make": "PEUGEOT",
+      "model": "308 SW",
+      "years": [
+        {
+          "year": 2008,
+          "vehicles": 3174,
+          "descriptions": 47
+        },
+        {
+          "year": 2009,
+          "vehicles": 4841,
+          "descriptions": 56
+        },
+        {
+          "year": 2010,
+          "vehicles": 4042,
+          "descriptions": 68
+        },
+        {
+          "year": 2011,
+          "vehicles": 2394,
+          "descriptions": 79
+        },
+        {
+          "year": 2012,
+          "vehicles": 2761,
+          "descriptions": 53
+        },
+        {
+          "year": 2013,
+          "vehicles": 2173,
+          "descriptions": 55
+        },
+        {
+          "year": 2014,
+          "vehicles": 2584,
+          "descriptions": 56
+        },
+        {
+          "year": 2015,
+          "vehicles": 4572,
+          "descriptions": 53
+        },
+        {
+          "year": 2016,
+          "vehicles": 3774,
+          "descriptions": 31
+        },
+        {
+          "year": 2017,
+          "vehicles": 2346,
+          "descriptions": 25
+        },
+        {
+          "year": 2018,
+          "vehicles": 2621,
+          "descriptions": 54
+        },
+        {
+          "year": 2019,
+          "vehicles": 2178,
+          "descriptions": 47
+        },
+        {
+          "year": 2020,
+          "vehicles": 1390,
+          "descriptions": 46
+        },
+        {
+          "year": 2021,
+          "vehicles": 1082,
+          "descriptions": 41
+        },
+        {
+          "year": 2022,
+          "vehicles": 1590,
+          "descriptions": 30
+        },
+        {
+          "year": 2023,
+          "vehicles": 2147,
+          "descriptions": 22
+        },
+        {
+          "year": 2024,
+          "vehicles": 1759,
+          "descriptions": 33
+        },
+        {
+          "year": 2025,
+          "vehicles": 1476,
+          "descriptions": 23
+        }
+      ]
+    },
+    {
+      "make": "PEUGEOT",
+      "model": "508 SW",
+      "years": [
+        {
+          "year": 2011,
+          "vehicles": 2689,
+          "descriptions": 36
+        },
+        {
+          "year": 2012,
+          "vehicles": 3427,
+          "descriptions": 36
+        },
+        {
+          "year": 2013,
+          "vehicles": 2165,
+          "descriptions": 38
+        },
+        {
+          "year": 2014,
+          "vehicles": 1023,
+          "descriptions": 39
+        },
+        {
+          "year": 2015,
+          "vehicles": 764,
+          "descriptions": 35
+        },
+        {
+          "year": 2016,
+          "vehicles": 628,
+          "descriptions": 20
+        },
+        {
+          "year": 2017,
+          "vehicles": 348,
+          "descriptions": 14
+        },
+        {
+          "year": 2018,
+          "vehicles": 187,
+          "descriptions": 11
+        },
+        {
+          "year": 2019,
+          "vehicles": 960,
+          "descriptions": 23
+        },
+        {
+          "year": 2020,
+          "vehicles": 773,
+          "descriptions": 23
+        },
+        {
+          "year": 2021,
+          "vehicles": 593,
+          "descriptions": 28
+        },
+        {
+          "year": 2022,
+          "vehicles": 231,
+          "descriptions": 13
+        },
+        {
+          "year": 2023,
+          "vehicles": 298,
+          "descriptions": 20
+        },
+        {
+          "year": 2024,
+          "vehicles": 142,
+          "descriptions": 12
+        },
+        {
+          "year": 2025,
+          "vehicles": 26,
+          "descriptions": 7
+        }
+      ]
     }
   ]
 }

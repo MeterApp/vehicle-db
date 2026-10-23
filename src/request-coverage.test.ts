@@ -84,6 +84,11 @@ test("UK estate derivatives are distinct models and never replace the parent nam
   expect(exact("2006 BMW 5 Series Touring")).toMatchObject({ makeName: "BMW", modelName: "5 SERIES TOURING", matchKind: "exact" });
   expect(exact("2009 Kia Ceed SW")).toMatchObject({ makeName: "KIA", modelName: "CEED SW", matchKind: "exact" });
   expect(exact("2003 Rover 75 Tourer")).toMatchObject({ makeName: "ROVER", modelName: "75 TOURER", matchKind: "exact" });
+  expect(exact("2004 Peugeot 206 SW")).toMatchObject({ makeName: "PEUGEOT", modelName: "206 SW", matchKind: "exact" });
+  expect(exact("2020 Peugeot 308 SW")).toMatchObject({ makeName: "PEUGEOT", modelName: "308 SW", matchKind: "exact" });
+  expect(exact("2022 Peugeot 508 SW")).toMatchObject({ makeName: "PEUGEOT", modelName: "508 SW", matchKind: "exact" });
   expect(exact("2008 BMW 3 Series")?.modelName).toBe("3 SERIES");
+  expect(exact("2020 Peugeot 308")?.modelName).toBe("308");
+  expect(exact("2022 Peugeot 508")?.modelName).toBe("508");
   expect(exact("2011 Kia Ceed")?.modelName).not.toBe("CEED SW");
 });
