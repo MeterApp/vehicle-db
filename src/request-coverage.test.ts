@@ -77,3 +77,13 @@ test("G60 exact generation phrase links the existing sedan ID without substituti
   expect(resolveVehicle("2024 BMW 5 Series G30", { market: "US" }).status).not.toBe("MATCHED");
   expect(resolveVehicle("2022 Honda Accord 260 Turbo", { market: "VN", depth: "visual" }).status).not.toBe("MATCHED");
 });
+
+test("UK estate derivatives are distinct models and never replace the parent nameplate", () => {
+  const exact = (query: string) => searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+  expect(exact("2008 BMW 3 Series Touring")).toMatchObject({ makeName: "BMW", modelName: "3 SERIES TOURING", matchKind: "exact" });
+  expect(exact("2006 BMW 5 Series Touring")).toMatchObject({ makeName: "BMW", modelName: "5 SERIES TOURING", matchKind: "exact" });
+  expect(exact("2009 Kia Ceed SW")).toMatchObject({ makeName: "KIA", modelName: "CEED SW", matchKind: "exact" });
+  expect(exact("2003 Rover 75 Tourer")).toMatchObject({ makeName: "ROVER", modelName: "75 TOURER", matchKind: "exact" });
+  expect(exact("2008 BMW 3 Series")?.modelName).toBe("3 SERIES");
+  expect(exact("2011 Kia Ceed")?.modelName).not.toBe("CEED SW");
+});

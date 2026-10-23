@@ -1,0 +1,328 @@
+{
+  "source": "https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files",
+  "files": [
+    "https://assets.publishing.service.gov.uk/media/69ef3c3a20a498c16734afd1/df_VEH0124_AM.csv",
+    "https://assets.publishing.service.gov.uk/media/69ef3c8520a498c16734afd2/df_VEH0124_NZ.csv"
+  ],
+  "derivatives": [
+    {
+      "make": "BMW",
+      "model": "3 SERIES TOURING",
+      "years": [
+        {
+          "year": 1990,
+          "vehicles": 478,
+          "descriptions": 27
+        },
+        {
+          "year": 1991,
+          "vehicles": 228,
+          "descriptions": 25
+        },
+        {
+          "year": 1992,
+          "vehicles": 222,
+          "descriptions": 16
+        },
+        {
+          "year": 1993,
+          "vehicles": 485,
+          "descriptions": 26
+        },
+        {
+          "year": 1994,
+          "vehicles": 242,
+          "descriptions": 23
+        },
+        {
+          "year": 1995,
+          "vehicles": 341,
+          "descriptions": 17
+        },
+        {
+          "year": 1996,
+          "vehicles": 1032,
+          "descriptions": 43
+        },
+        {
+          "year": 1997,
+          "vehicles": 1127,
+          "descriptions": 41
+        },
+        {
+          "year": 1998,
+          "vehicles": 1547,
+          "descriptions": 82
+        },
+        {
+          "year": 1999,
+          "vehicles": 1166,
+          "descriptions": 78
+        },
+        {
+          "year": 2000,
+          "vehicles": 3629,
+          "descriptions": 106
+        },
+        {
+          "year": 2001,
+          "vehicles": 5514,
+          "descriptions": 129
+        },
+        {
+          "year": 2002,
+          "vehicles": 7085,
+          "descriptions": 139
+        },
+        {
+          "year": 2003,
+          "vehicles": 7470,
+          "descriptions": 151
+        },
+        {
+          "year": 2004,
+          "vehicles": 6637,
+          "descriptions": 127
+        },
+        {
+          "year": 2005,
+          "vehicles": 6319,
+          "descriptions": 152
+        },
+        {
+          "year": 2006,
+          "vehicles": 9702,
+          "descriptions": 174
+        },
+        {
+          "year": 2007,
+          "vehicles": 9165,
+          "descriptions": 178
+        },
+        {
+          "year": 2008,
+          "vehicles": 8072,
+          "descriptions": 211
+        },
+        {
+          "year": 2009,
+          "vehicles": 5910,
+          "descriptions": 156
+        },
+        {
+          "year": 2010,
+          "vehicles": 1218,
+          "descriptions": 84
+        },
+        {
+          "year": 2011,
+          "vehicles": 302,
+          "descriptions": 26
+        },
+        {
+          "year": 2012,
+          "vehicles": 2748,
+          "descriptions": 79
+        },
+        {
+          "year": 2013,
+          "vehicles": 4807,
+          "descriptions": 54
+        },
+        {
+          "year": 2014,
+          "vehicles": 3612,
+          "descriptions": 41
+        },
+        {
+          "year": 2015,
+          "vehicles": 1034,
+          "descriptions": 29
+        },
+        {
+          "year": 2016,
+          "vehicles": 10,
+          "descriptions": 8
+        }
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "5 SERIES TOURING",
+      "years": [
+        {
+          "year": 1992,
+          "vehicles": 136,
+          "descriptions": 23
+        },
+        {
+          "year": 1993,
+          "vehicles": 242,
+          "descriptions": 32
+        },
+        {
+          "year": 1994,
+          "vehicles": 335,
+          "descriptions": 47
+        },
+        {
+          "year": 1995,
+          "vehicles": 418,
+          "descriptions": 46
+        },
+        {
+          "year": 1996,
+          "vehicles": 296,
+          "descriptions": 47
+        },
+        {
+          "year": 1997,
+          "vehicles": 499,
+          "descriptions": 42
+        },
+        {
+          "year": 1998,
+          "vehicles": 1118,
+          "descriptions": 70
+        },
+        {
+          "year": 1999,
+          "vehicles": 1504,
+          "descriptions": 73
+        },
+        {
+          "year": 2000,
+          "vehicles": 1692,
+          "descriptions": 80
+        },
+        {
+          "year": 2001,
+          "vehicles": 1905,
+          "descriptions": 103
+        },
+        {
+          "year": 2002,
+          "vehicles": 2276,
+          "descriptions": 105
+        },
+        {
+          "year": 2003,
+          "vehicles": 2241,
+          "descriptions": 118
+        },
+        {
+          "year": 2004,
+          "vehicles": 2558,
+          "descriptions": 117
+        },
+        {
+          "year": 2005,
+          "vehicles": 4176,
+          "descriptions": 151
+        },
+        {
+          "year": 2006,
+          "vehicles": 3758,
+          "descriptions": 140
+        },
+        {
+          "year": 2007,
+          "vehicles": 3763,
+          "descriptions": 133
+        },
+        {
+          "year": 2008,
+          "vehicles": 4491,
+          "descriptions": 96
+        },
+        {
+          "year": 2009,
+          "vehicles": 1703,
+          "descriptions": 84
+        },
+        {
+          "year": 2010,
+          "vehicles": 485,
+          "descriptions": 39
+        },
+        {
+          "year": 2011,
+          "vehicles": 66,
+          "descriptions": 27
+        },
+        {
+          "year": 2012,
+          "vehicles": 15,
+          "descriptions": 12
+        },
+        {
+          "year": 2013,
+          "vehicles": 10,
+          "descriptions": 9
+        }
+      ]
+    },
+    {
+      "make": "KIA",
+      "model": "CEED SW",
+      "years": [
+        {
+          "year": 2007,
+          "vehicles": 485,
+          "descriptions": 13
+        },
+        {
+          "year": 2008,
+          "vehicles": 2158,
+          "descriptions": 16
+        },
+        {
+          "year": 2009,
+          "vehicles": 1322,
+          "descriptions": 20
+        },
+        {
+          "year": 2010,
+          "vehicles": 578,
+          "descriptions": 9
+        }
+      ]
+    },
+    {
+      "make": "ROVER",
+      "model": "75 TOURER",
+      "years": [
+        {
+          "year": 2001,
+          "vehicles": 1488,
+          "descriptions": 45
+        },
+        {
+          "year": 2002,
+          "vehicles": 3473,
+          "descriptions": 63
+        },
+        {
+          "year": 2003,
+          "vehicles": 2362,
+          "descriptions": 68
+        },
+        {
+          "year": 2004,
+          "vehicles": 1057,
+          "descriptions": 82
+        },
+        {
+          "year": 2005,
+          "vehicles": 169,
+          "descriptions": 34
+        },
+        {
+          "year": 2006,
+          "vehicles": 34,
+          "descriptions": 16
+        }
+      ]
+    }
+  ]
+}
