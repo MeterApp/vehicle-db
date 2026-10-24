@@ -1760,6 +1760,50 @@
       "yearBasis": "model-year",
       "url": "https://www.bmwusa.com/vehicles/x-series/suv/bmw-ix4.html",
       "note": "BMW USA signup section explicitly names the 2027 BMW iX4 50 xDrive. US model year 2027 only; coupe SUV body distinct from iX3. Retrieved 2026-10-21. No year inferred from launch timing; no separate specification-badge record."
+    },
+    {
+      "year": 2015,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Fabia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2015/",
+      "note": "Official Skoda Auto Deutschland release dated 2015-09-16 identifies Fabia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-24."
+    },
+    {
+      "year": 2015,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Superb Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2015/",
+      "note": "Official Skoda Auto Deutschland release dated 2015-09-16 identifies Superb Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-24. The release distinguishes the outgoing second generation from the incoming third generation; this nameplate/body row does not disambiguate them."
+    },
+    {
+      "year": 2016,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Fabia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2365/",
+      "note": "Official Skoda Auto Deutschland release dated 2016-12-13 identifies Fabia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-24."
+    },
+    {
+      "year": 2016,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Superb Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2365/",
+      "note": "Official Skoda Auto Deutschland release dated 2016-12-13 identifies Superb Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-24."
     }
   ],
   "catalogYearMetadata": {
@@ -1767,8 +1811,8 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States",
-    "retrievedAt": "2026-10-13",
+    "region": "Vietnam, India, China and United States, Germany",
+    "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
   }
