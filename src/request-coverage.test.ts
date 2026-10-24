@@ -115,3 +115,19 @@ test("U.S. EPA estate derivatives are distinct models and never replace the pare
   expect(exact("2005 Subaru Legacy")?.modelName.toUpperCase()).toBe("LEGACY");
   expect(exact("2005 Subaru Impreza Wagon")?.modelName.toUpperCase()).not.toBe("IMPREZA WAGON");
 });
+
+test("dated German estate observations preserve years and parent selections", () => {
+  for (const model of ["Fabia Combi", "Superb Combi"]) {
+    for (const year of [2015, 2016]) {
+      const hit = searchVehicles(`${year} Skoda ${model}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 100105, modelName: model, matchKind: "exact", years: [year] });
+      expect(hit?.sourceIds).toContain("manufacturer-reviewed-catalog");
+    }
+    const outOfScope = searchVehicles(`2017 Skoda ${model}`, { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+    expect(outOfScope?.years ?? []).not.toContain(2017);
+  }
+  for (const model of ["Fabia", "Superb"]) {
+    const parent = searchVehicles(`2016 Skoda ${model}`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(parent?.modelName.toUpperCase()).toBe(model.toUpperCase());
+  }
+});
