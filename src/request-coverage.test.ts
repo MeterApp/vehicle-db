@@ -131,3 +131,15 @@ test("dated German estate observations preserve years and parent selections", ()
     expect(parent?.modelName.toUpperCase()).toBe(model.toUpperCase());
   }
 });
+
+test("U.S. EPA E-Class wagons are a distinct estate model only in observed EPA years", () => {
+  const exact = (query: string) => searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [1994, 2003, 2008, 2015, 2019, 2026]) {
+    const hit = exact(`${year} Mercedes-Benz E-Class Wagon`);
+    expect(hit, String(year)).toMatchObject({ makeName: "MERCEDES-BENZ", matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase(), String(year)).toBe("E-CLASS WAGON");
+  }
+  for (const year of [2010, 2022]) expect(exact(`${year} Mercedes-Benz E-Class Wagon`)?.modelName.toUpperCase()).not.toBe("E-CLASS WAGON");
+  expect(exact("2015 Mercedes-Benz E-Class")?.modelName.toUpperCase()).not.toBe("E-CLASS WAGON");
+  expect(exact("2004 Mercedes-Benz C-Class Wagon")?.modelName.toUpperCase()).toBe("C-CLASS WAGON");
+});

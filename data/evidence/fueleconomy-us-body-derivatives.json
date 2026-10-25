@@ -5,8 +5,8 @@
   "license": "U.S. government public data",
   "market": "United States",
   "yearBasis": "model-year",
-  "reviewedAt": "2026-10-23",
-  "rule": "A body derivative year is published for every EPA model year with a configuration whose make and model name exactly equal one of the reviewed epaModels; years outside the regular EPA window come only from these mappings. epaModels are mapped only where the EPA model name carries the manufacturer's estate body designation (Wagon, Sport Wagon, SportCombi, Sport Brake) for that nameplate. Names that mix bodies are not mapped: Subaru 'Impreza Wagon' also labels later 5-door hatchbacks and 'Legacy/Outback Wagon' combines the Outback. Absence of a mapped name in a year is not evidence that the body was not sold.",
+  "reviewedAt": "2026-10-25",
+  "rule": "A body derivative year is published for every EPA model year with a configuration whose make and model name exactly equal one of the reviewed epaModels; years outside the regular EPA window come only from these mappings. epaModels are mapped only where the EPA model name carries the manufacturer's estate body designation (Wagon, Sport Wagon, SportCombi, Sport Brake) for that nameplate. Raised off-road derivatives with their own designation (Mercedes-Benz 'E450 4matic All-Terrain (wagon)') are not mapped to the estate. Names that mix bodies are not mapped: Subaru 'Impreza Wagon' also labels later 5-door hatchbacks and 'Legacy/Outback Wagon' combines the Outback. Absence of a mapped name in a year is not evidence that the body was not sold.",
   "derivatives": [
     { "make": "Cadillac", "model": "CTS Wagon", "bodyStyle": "Estate", "epaModels": ["CTS Wagon", "CTS Wagon AWD"] },
     { "make": "Ford", "model": "Focus Station Wagon", "bodyStyle": "Estate", "epaModels": ["Focus Station Wagon"] },
@@ -17,6 +17,18 @@
       "model": "C-Class Wagon",
       "bodyStyle": "Estate",
       "epaModels": ["C240 (Wagon)", "C240 4matic (Wagon)", "C240 FFV (Wagon)", "C320 (Wagon)", "C320 4matic (Wagon)", "C320 FFV (Wagon)"]
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "E-Class Wagon",
+      "bodyStyle": "Estate",
+      "epaModels": [
+        "E320 Wagon", "E320 Wagon 4Matic", "E320 (Wagon)", "E320 4Matic (Wagon)", "E320 4matic (Wagon)",
+        "E350 (wagon)", "E350 4matic (wagon)", "E400 4matic (station wagon)", "E450 4matic (station wagon)",
+        "E500 (Wagon)", "E500 4matic (Wagon)", "E500 4matic (wagon)", "E55 AMG (Wagon)", "E55 AMG (wagon)",
+        "E63 AMG (wagon)", "E63 AMG 4matic (wagon)", "E63 AMG S 4matic (wagon)", "AMG E63 S 4matic (wagon)",
+        "AMG E63 S 4matic Plus (wagon)", "AMG E53 Hybrid 4matic Plus (station wagon)"
+      ]
     },
     { "make": "Saab", "model": "9-5 Wagon", "bodyStyle": "Estate", "epaModels": ["9-5 Wagon"] },
     { "make": "Saab", "model": "9-5 SportCombi", "bodyStyle": "Estate", "epaModels": ["9-5 SportCombi"] },
