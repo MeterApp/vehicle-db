@@ -95,6 +95,10 @@ jobs:
         if: steps.state.outputs.npm_exists == 'false'
         run: pnpm run build
 
+      - name: Verify packed JavaScript and TypeScript consumers
+        if: steps.state.outputs.npm_exists == 'false'
+        run: node scripts/check-package-api.mjs
+
       - name: Create GitHub release
         if: steps.state.outputs.tag_exists == 'false' && (steps.state.outputs.npm_exists == 'false' || github.event_name == 'workflow_dispatch')
         env:
