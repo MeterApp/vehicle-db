@@ -73,5 +73,8 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Verify packed JavaScript and TypeScript consumers
+        run: node scripts/check-package-api.mjs
+
       - name: Audit production dependencies
         run: pnpm audit --prod
