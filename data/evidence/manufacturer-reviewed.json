@@ -1804,6 +1804,149 @@
       "yearBasis": "catalog-year",
       "url": "https://www.skoda-media.de/press/detail/2365/",
       "note": "Official Skoda Auto Deutschland release dated 2016-12-13 identifies Superb Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-24."
+    },
+    {
+      "year": 2012,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/1084/",
+      "note": "Official Skoda Auto Deutschland release dated 2012-04-18 (limited Octavia Combi Sport Edition special model) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2013,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/1342/",
+      "note": "Official Skoda Auto Deutschland release dated 2013-06-04 (new Octavia RS release naming the Octavia Combi RS) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2014,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/1523/",
+      "note": "Official Skoda Auto Deutschland release dated 2014-02-14 (business equipment packages for Octavia and Octavia Combi) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2015,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2015/",
+      "note": "Official Skoda Auto Deutschland release dated 2015-09-16 (Familienauto des Jahres 2015 results naming the Octavia Combi) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2016,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2374/",
+      "note": "Official Skoda Auto Deutschland release dated 2016-12-20 (order start and German prices for the updated Octavia Combi) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2017,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2422/",
+      "note": "Official Skoda Auto Deutschland release dated 2017-03-01 (German dealer launch of the updated Octavia Combi on 2017-03-04) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2018,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/2860/",
+      "note": "Official Skoda Auto Deutschland release dated 2018-10-22 (German prices for the Octavia Combi with Euro 6d-temp engines) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2019,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/3070/",
+      "note": "Official Skoda Auto Deutschland release dated 2019-03-22 (German prices for the Octavia Combi Sport Edition special model) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2020,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/3334/",
+      "note": "Official Skoda Auto Deutschland release dated 2020-01-21 (order start and German prices for the new Octavia Combi) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2021,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/3880/",
+      "note": "Official Skoda Auto Deutschland release dated 2021-12-21 (German prices for the Octavia Combi TOUR special model) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2022,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/4009/",
+      "note": "Official Skoda Auto Deutschland release dated 2022-08-31 (Familienautos des Jahres 2022 results naming the Octavia Combi) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2024,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/4348/",
+      "note": "Official Skoda Auto Deutschland release dated 2024-08-27 (Familienauto des Jahres 2024 results naming the Octavia Combi) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
+    },
+    {
+      "year": 2026,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Octavia Combi",
+      "vehicleTypeId": 2,
+      "market": "DE",
+      "yearBasis": "catalog-year",
+      "url": "https://www.skoda-media.de/press/detail/4648/",
+      "note": "Official Skoda Auto Deutschland release dated 2026-08-03 (order start for the Octavia Combi 30 Jahre special model) identifies Octavia Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-28."
     }
   ],
   "catalogYearMetadata": {

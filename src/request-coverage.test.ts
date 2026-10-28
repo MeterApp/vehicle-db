@@ -143,3 +143,17 @@ test("U.S. EPA E-Class wagons are a distinct estate model only in observed EPA y
   expect(exact("2015 Mercedes-Benz E-Class")?.modelName.toUpperCase()).not.toBe("E-CLASS WAGON");
   expect(exact("2004 Mercedes-Benz C-Class Wagon")?.modelName.toUpperCase()).toBe("C-CLASS WAGON");
 });
+
+test("dated German Octavia Combi observations fill estate years without replacing the parent", () => {
+  for (const year of [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2026]) {
+    const hit = searchVehicles(`${year} Skoda Octavia Combi`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 100105, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("OCTAVIA COMBI");
+    expect(hit?.years).toContain(year);
+  }
+  const reviewed = searchVehicles("2012 Skoda Octavia Combi", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  expect(reviewed?.years ?? []).not.toContain(2023);
+  expect(reviewed?.years ?? []).not.toContain(2025);
+  const parent = searchVehicles("2018 Skoda Octavia", { fuzzy: false }).find(r => r.kind === "model");
+  expect(parent?.modelName.toUpperCase()).toBe("OCTAVIA");
+});
