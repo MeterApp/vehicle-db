@@ -123,8 +123,8 @@ test("dated German estate observations preserve years and parent selections", ()
       expect(hit).toMatchObject({ makeId: 100105, modelName: model, matchKind: "exact", years: [year] });
       expect(hit?.sourceIds).toContain("manufacturer-reviewed-catalog");
     }
-    const outOfScope = searchVehicles(`2017 Skoda ${model}`, { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
-    expect(outOfScope?.years ?? []).not.toContain(2017);
+    const outOfScope = searchVehicles(`2009 Skoda ${model}`, { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+    expect(outOfScope?.years ?? []).not.toContain(2009);
   }
   for (const model of ["Fabia", "Superb"]) {
     const parent = searchVehicles(`2016 Skoda ${model}`, { fuzzy: false }).find(r => r.kind === "model");
@@ -156,4 +156,28 @@ test("dated German Octavia Combi observations fill estate years without replacin
   expect(reviewed?.years ?? []).not.toContain(2025);
   const parent = searchVehicles("2018 Skoda Octavia", { fuzzy: false }).find(r => r.kind === "model");
   expect(parent?.modelName.toUpperCase()).toBe("OCTAVIA");
+});
+
+test("dated German Superb Combi and Fabia Combi observations fill estate years without replacing the parents", () => {
+  const cases: Array<[string, string, number[]]> = [
+    ["Superb Combi", "SUPERB COMBI", [2010, 2011, 2012, 2013, 2014, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025, 2026]],
+    ["Fabia Combi", "FABIA COMBI", [2008, 2010, 2011, 2012, 2017, 2018, 2019, 2020]],
+  ];
+  for (const [model, name, years] of cases) {
+    for (const year of years) {
+      const hit = searchVehicles(`${year} Skoda ${model}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 100105, matchKind: "exact" });
+      expect(hit?.modelName.toUpperCase()).toBe(name);
+      expect(hit?.years).toContain(year);
+    }
+  }
+  // Years without a dated German release stay unclaimed by the reviewed source:
+  // the Superb Combi launched in Germany in January 2010, and no 2021 Fabia Combi release was found.
+  const superb = searchVehicles("2012 Skoda Superb Combi", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  expect(superb?.years ?? []).not.toContain(2009);
+  expect(superb?.years ?? []).not.toContain(2023);
+  const fabia = searchVehicles("2012 Skoda Fabia Combi", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  expect(fabia?.years ?? []).not.toContain(2021);
+  expect(searchVehicles("2019 Skoda Superb", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("SUPERB");
+  expect(searchVehicles("2018 Skoda Fabia", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("FABIA");
 });
