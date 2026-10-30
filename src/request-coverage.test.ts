@@ -181,3 +181,28 @@ test("dated German Superb Combi and Fabia Combi observations fill estate years w
   expect(searchVehicles("2019 Skoda Superb", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("SUPERB");
   expect(searchVehicles("2018 Skoda Fabia", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("FABIA");
 });
+
+test("dated UK Toyota Touring Sports observations fill estate years without replacing the parents", () => {
+  const cases: Array<[string, string, number[]]> = [
+    ["Auris Touring Sports", "AURIS TOURING SPORTS", [2013, 2014, 2015, 2016, 2017, 2018]],
+    ["Avensis Touring Sports", "AVENSIS TOURING SPORTS", [2015, 2016]],
+    ["Corolla Touring Sports", "COROLLA TOURING SPORTS", [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]],
+  ];
+  for (const [model, name, years] of cases) {
+    for (const year of years) {
+      const hit = searchVehicles(`${year} Toyota ${model}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 448, matchKind: "exact" });
+      expect(hit?.modelName.toUpperCase()).toBe(name);
+      expect(hit?.years).toContain(year);
+    }
+  }
+  // The UK Avensis estate was sold as the Tourer until the 2015 facelift, and no dated
+  // 2017 or 2018 UK release names the Avensis Touring Sports: those years stay unclaimed.
+  const avensis = searchVehicles("2015 Toyota Avensis Touring Sports", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  for (const year of [2012, 2013, 2014, 2017, 2018]) expect(avensis?.years ?? []).not.toContain(year);
+  const auris = searchVehicles("2015 Toyota Auris Touring Sports", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  expect(auris?.years ?? []).not.toContain(2012);
+  for (const [query, name] of [["2015 Toyota Auris", "AURIS"], ["2015 Toyota Avensis", "AVENSIS"], ["2020 Toyota Corolla", "COROLLA"]]) {
+    expect(searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe(name);
+  }
+});
