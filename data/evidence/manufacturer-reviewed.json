@@ -2189,6 +2189,182 @@
       "yearBasis": "catalog-year",
       "url": "https://www.skoda-media.de/press/detail/4679/",
       "note": "Official Skoda Auto Deutschland release dated 2026-10-16 (Motor Presse Stuttgart reader vote Familienautos des Jahres 2026: Superb Combi first in its estate class) identifies Superb Combi in the German market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-29."
+    },
+    {
+      "year": 2013,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Auris Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-announce-pricing-and-specification-details-for-auris-touring-sports/",
+      "note": "Official Toyota (GB) media release dated 2013-02-22 (UK launch prices and grades for the Auris Touring Sports) identifies Auris Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2014,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Auris Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/theres-auris-adds-icon-plus-summer-range-change/",
+      "note": "Official Toyota (GB) media release dated 2014-05-15 (summer range change adding the Icon Plus grade, with UK prices for the Auris Touring Sports) identifies Auris Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2015,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Auris Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/lightways-contractors-ltd-paves-way-toyota-hybrids/",
+      "note": "Official Toyota (GB) media release dated 2015-02-05 (UK company fleet delivery of Auris Touring Sports hybrids) identifies Auris Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2016,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Auris Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/new-year-gains-toyotas-2017-verso-auris/",
+      "note": "Official Toyota (GB) media release dated 2016-12-02 (2017 range change making Toyota Safety Sense standard on Auris Touring Sports grades) identifies Auris Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2017,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Auris Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-introduces-2018-auris-range/",
+      "note": "Official Toyota (GB) media release dated 2017-11-30 (new UK grade structure for the Auris hatchback and Touring Sports) identifies Auris Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2018,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Auris Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/defra-replaces-400-diesel-cars-british-built-toyota-auris-hybrids/",
+      "note": "Official Toyota (GB) media release dated 2018-04-19 (UK government fleet order stating the Auris Hybrid is available as a Touring Sports) identifies Auris Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2015,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Avensis Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/new-toyota-avensis-uk-range-specifications-and-prices-announced/",
+      "note": "Official Toyota (GB) media release dated 2015-04-02 (UK range, specifications and prices for the Avensis Touring Sports) identifies Avensis Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2016,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Avensis Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-yaris-avensis-red-ied-2017/",
+      "note": "Official Toyota (GB) media release dated 2016-12-21 (2017 UK saloon and Touring Sports versions offered in a new colour and wheel) identifies Avensis Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2019,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-corolla-touring-sports-collects-carbuyers-best-company-car-award/",
+      "note": "Official Toyota (GB) media release dated 2019-12-19 (UK Carbuyer Best Company Car award to the Corolla Touring Sports) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2020,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/tough-new-addition-for-customers-with-active-outdoor-lifestyles-added-to-corolla-line-up/",
+      "note": "Official Toyota (GB) media release dated 2020-04-29 (Corolla Trek version added to the UK Touring Sports range with prices) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2021,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-introduces-the-new-2022-corolla-and-c-hr/",
+      "note": "Official Toyota (GB) media release dated 2021-12-01 (2022 UK range changes covering the Corolla Touring Sports) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2022,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/orders-open-for-the-new-2023-toyota-corolla/",
+      "note": "Official Toyota (GB) media release dated 2022-08-23 (UK order opening with Corolla Touring Sports prices by grade) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2023,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-practicality-and-performance-rewarded-in-the-2023-auto-express-new-car-awards/",
+      "note": "Official Toyota (GB) media release dated 2023-07-04 (UK Auto Express Estate Car of the Year award to the Corolla Touring Sports) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2024,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/double-success-for-the-uks-toyota-corolla-in-the-2024-what-car-awards/",
+      "note": "Official Toyota (GB) media release dated 2024-01-18 (UK What Car? Estate Car of the Year award to the Corolla Touring Sports) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2025,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-corolla-new-features-for-the-2025-hatchback-and-touring-sports/",
+      "note": "Official Toyota (GB) media release dated 2025-02-28 (2025 UK specification changes for the Corolla Touring Sports) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
+    },
+    {
+      "year": 2026,
+      "makeId": 448,
+      "make": "TOYOTA",
+      "model": "Corolla Touring Sports",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://media.toyota.co.uk/toyota-marks-60-years-of-corolla-with-exclusive-special-editions/",
+      "note": "Official Toyota (GB) media release dated 2026-08-25 (UK range statement that the Corolla Touring Sports continues with two hybrid powertrains) identifies Corolla Touring Sports in the UK market. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-10-30."
     }
   ],
   "catalogYearMetadata": {
@@ -2196,7 +2372,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
