@@ -206,3 +206,29 @@ test("dated UK Toyota Touring Sports observations fill estate years without repl
     expect(searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe(name);
   }
 });
+
+test("dated UK Ford Focus and Mondeo estate observations fill estate years without replacing the parents", () => {
+  const cases: Array<[string, string, number[]]> = [
+    ["Focus Estate", "FOCUS ESTATE", [2009, 2010, 2011, 2015]],
+    ["Mondeo Estate", "MONDEO ESTATE", [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016]],
+  ];
+  for (const [model, name, years] of cases) {
+    for (const year of years) {
+      const hit = searchVehicles(`${year} Ford ${model}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 460, matchKind: "exact" });
+      expect(hit?.modelName.toUpperCase()).toBe(name);
+      expect(hit?.years).toContain(year);
+    }
+  }
+  // Only Ford of Britain releases that name the estate count. Years with only a
+  // pan-European "wagon" release, a reveal, or no dated UK release stay unclaimed.
+  const focus = searchVehicles("2011 Ford Focus Estate", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  for (const year of [2008, 2012, 2013, 2014, 2016, 2018, 2020, 2024]) expect(focus?.years ?? []).not.toContain(year);
+  const mondeo = searchVehicles("2011 Ford Mondeo Estate", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  for (const year of [2005, 2014, 2017, 2018, 2019, 2020]) expect(mondeo?.years ?? []).not.toContain(year);
+  // The U.S. EPA Focus Station Wagon stays its own model.
+  expect(searchVehicles("2005 Ford Focus Station Wagon", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("FOCUS STATION WAGON");
+  for (const [query, name] of [["2016 Ford Focus", "FOCUS"], ["2010 Ford Mondeo", "MONDEO"]]) {
+    expect(searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe(name);
+  }
+});
