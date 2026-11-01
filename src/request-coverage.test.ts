@@ -232,3 +232,22 @@ test("dated UK Ford Focus and Mondeo estate observations fill estate years witho
     expect(searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe(name);
   }
 });
+
+test("dated UK Mercedes-Benz C-Class Estate observations fill estate years without replacing the parents", () => {
+  const years = [2006, 2010, 2011, 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2023, 2025, 2026];
+  for (const year of years) {
+    const hit = searchVehicles(`${year} Mercedes-Benz C-Class Estate`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 449, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("C-CLASS ESTATE");
+    expect(hit?.years).toContain(year);
+  }
+  // Only dated Mercedes-Benz UK price lists and releases that name the estate
+  // count. Years without one stay unclaimed rather than inferred from neighbours.
+  for (const year of [2005, 2007, 2008, 2009, 2012, 2013, 2020, 2022, 2024]) {
+    const hits = searchVehicles(`${year} Mercedes-Benz C-Class Estate`, { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" });
+    expect(hits.some(r => r.kind === "model" && r.modelName.toUpperCase() === "C-CLASS ESTATE" && (r.years ?? []).includes(year))).toBe(false);
+  }
+  // The U.S. EPA C-Class Wagon stays its own model, and the parent keeps its first selection.
+  expect(searchVehicles("2004 Mercedes-Benz C-Class Wagon", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C-CLASS WAGON");
+  expect(searchVehicles("2016 Mercedes-Benz C-Class", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C CLASS");
+});
