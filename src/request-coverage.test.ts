@@ -318,3 +318,17 @@ test("dated South African JAC X200 bodies and electric twin stay separate catalo
   // Existing JAC T-Series selections are unchanged.
   expect(searchVehicles("2026 JAC T9", { fuzzy: false }).find(r => r.kind === "model")?.modelName).toBe("T9");
 });
+
+test("dated Mexican Hyundai Grand i10 hatchback and sedan years stay separate from the i10", () => {
+  for (const [name, years] of [["Grand i10", [2014, 2026]], ["Grand i10 Sedan", [2014, 2026]]] as const) {
+    for (const year of [years[0], 2020, years[1]]) {
+      const hit = searchVehicles(`${year} Hyundai ${name}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 498, matchKind: "exact", vehicleTypeId: 2 });
+      expect(hit?.modelName).toBe(name);
+    }
+  }
+  // INEGI reports no Mexican Grand i10 sales before 2014; no earlier year is inferred from the 2013 Indian launch.
+  expect(searchVehicles("2013 Hyundai Grand i10", { fuzzy: false }).some(r => r.kind === "model" && r.modelName === "Grand i10")).toBe(false);
+  // The European i10 is unchanged and never becomes a Grand i10.
+  expect(searchVehicles("2020 Hyundai i10", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("I10");
+});
