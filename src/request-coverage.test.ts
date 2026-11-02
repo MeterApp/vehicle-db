@@ -251,3 +251,20 @@ test("dated UK Mercedes-Benz C-Class Estate observations fill estate years witho
   expect(searchVehicles("2004 Mercedes-Benz C-Class Wagon", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C-CLASS WAGON");
   expect(searchVehicles("2016 Mercedes-Benz C-Class", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C CLASS");
 });
+
+test("dated South African JAC X200 bodies and electric twin stay separate catalog vehicles", () => {
+  const za = { market: "ZA", yearBasis: "catalog-year" as const };
+  for (const name of ["X200 Single Cab", "X200 Double Cab", "X200 EV"]) {
+    const hit = searchVehicles(`2026 JAC ${name}`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 3336793959, matchKind: "exact", vehicleTypeId: 3 });
+    expect(hit?.modelName.toUpperCase()).toBe(name.toUpperCase());
+    expect(hit?.years).toEqual([2026]);
+  }
+  // Only the current official JAC Motors SA pages and its 2026-10-09 release
+  // establish these; earlier years are not inferred from the 2017 launch.
+  expect(searchVehicles("2025 JAC X200 Double Cab", { fuzzy: false }).some(r => r.kind === "model" && (r.years ?? []).includes(2025))).toBe(false);
+  // A bare family name never resolves to one body or to the electric twin.
+  expect(resolveVehicle("2026 JAC X200", za).status).not.toBe("MATCHED");
+  // Existing JAC T-Series selections are unchanged.
+  expect(searchVehicles("2026 JAC T9", { fuzzy: false }).find(r => r.kind === "model")?.modelName).toBe("T9");
+});
