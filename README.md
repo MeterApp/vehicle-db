@@ -6,7 +6,7 @@
 
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, Brazil's national vehicle register, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
-The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,318 models** in **197,004 model years**, from **23 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
+The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,321 models** in **197,007 model years**, from **23 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
 
 The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Truck**, **Bus**, **Multipurpose Passenger Vehicle (MPV)**, **Auto Rickshaw**, and **Other Vehicle**. The European source adds continental models from Dacia, Cupra, DS, Lynk & Co, Alpine, and the Chinese brands entering Europe such as BYD, MG, Omoda, Xpeng, and Nio, as sold in the EU rather than the UK or U.S. The Dutch register keeps that coverage current: vehicles first registered this year appear within days, so 2026 models such as the BYD Atto 2 and Renault 5 E-Tech are already listed. The Asia-Pacific sources add Japanese domestic and kei models, Chinese EVs, Indian and Korean vehicles, Southeast Asian makes such as Perodua and Proton, and additional motorcycles and commercial vehicles. The Brazilian register adds the cars and motorcycles that fill Brazil's roads but are rarely sold elsewhere, such as the Fiat Argo, Mobi and Toro, the Volkswagen Gol and Saveiro, the Renault Kwid, and the Honda Biz and Pop.
 
@@ -300,7 +300,7 @@ Model results contain `years` and a year-specific `variants` array. Make results
 | [Changan official sales/configuration catalog](https://www.changan.com.cn/dealer_inquiry) | Active Chinese-market families, with Saudi and Mexican regional evidence retained; separate catalog-year and explicit model-year snapshots | Source attribution; factual product names only |
 | [SGMW official sales catalogs](https://www.sgmw.com.cn/mobile/wulingRedBadge) | On-sale Wuling and Baojun models in China, with Indonesian Wuling evidence retained; separate catalog-year and explicit model-year snapshots | Source attribution; factual product names only |
 | [Bajaj global country catalogs](https://www.bajajauto.com/global) | Indian and accessible export-market passenger/cargo three-wheelers and four-wheel Qute; observed calendar-year catalog | Source attribution; factual product names only |
-| [Reviewed dated manufacturer market catalogs](https://lynkco.com.vn/en) | Individually documented dated or explicitly retrieved catalog observations in Vietnam, India, China and the United States; includes regional MPVs, Indian cars, motorcycles, scooters, trucks and buses, and announced Torcal | Source attribution; factual product names only |
+| [Reviewed dated manufacturer market catalogs](https://lynkco.com.vn/en) | Individually documented dated or explicitly retrieved catalog observations in Vietnam, India, China, the United States, the United Kingdom, Germany and South Africa; includes regional MPVs, Indian cars, motorcycles, scooters, trucks and buses, and announced Torcal | Source attribution; factual product names only |
 
 Year means the source’s model year for NHTSA, year of manufacture for DfT/DVLA (falling back to year of first use when manufacture year is unavailable), catalog year for Atul Auto, vehicle year for NZTA, registration year for Malaysia JPJ, the reporting (registration) year for the EEA register, the year of first admission (first registration anywhere, so imported used vehicles keep their original year) for the Dutch RDW register, the year of manufacture on the registration certificate (ano de fabricação) for the Brazilian SENATRAN register, the Brazilian model year (ano/modelo) for the Hyundai Motor Brasil line-up, and the U.S. model year for FuelEconomy.gov. From 2007 onward, NZTA vehicle year means the year of first registration in New Zealand or overseas. Registration sources are evidence that a make/model was present in that market and do not guarantee a factory model-year designation. Source filters let applications choose the semantics appropriate for their workflow.
 
@@ -356,11 +356,11 @@ New coverage in 2.18.0 adds 112 sourced year/model/type records and four makes (
 | Sources | 23 |
 | Vehicle types | 7 |
 | Makes | 1,608 |
-| Models | 42,318 |
-| Model years | 197,004 |
+| Models | 42,321 |
+| Model years | 197,007 |
 | Make records (`getMakes()`) | 1,620 |
-| Model records (distinct `modelId`) | 46,824 |
-| Model-year records (`getModels()`) | 218,501 |
+| Model records (distinct `modelId`) | 46,827 |
+| Model-year records (`getModels()`) | 218,504 |
 | Bundled TypeScript data | 7.59 MB |
 
 ## Refreshing and rebuilding
