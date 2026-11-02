@@ -1,7 +1,7 @@
 /**
  * Official EPA bulk feed. Configuration names remain distinct; no suffix stripping.
  *
- * Historical estate bodies (e.g. "CTS Wagon") are added outside the regular year
+ * Historical estate and convertible bodies (e.g. "CTS Wagon", "230i Convertible") are added outside the regular year
  * window only through the reviewed mappings in
  * data/evidence/fueleconomy-us-body-derivatives.json: an EPA configuration whose
  * make and model exactly equal a mapped epaModel is published under the

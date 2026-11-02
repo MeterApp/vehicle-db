@@ -31,5 +31,13 @@ test("reviewed body derivatives publish exact EPA estate names only, in every mo
 test("reviewed body derivative mappings never map mixed-body EPA names",()=>{
   const names=loadBodyDerivatives().flatMap(d=>d.epaModels);
   expect(names.some(n=>/Impreza|Outback/.test(n))).toBe(false);
-  for(const d of loadBodyDerivatives()) expect(d.bodyStyle).toBe("Estate");
+  for(const d of loadBodyDerivatives()) expect(["Estate","Convertible"]).toContain(d.bodyStyle);
+});
+test("reviewed convertible derivatives publish each exact EPA convertible name under that same name",()=>{
+  const convertibles=loadBodyDerivatives().filter(d=>d.bodyStyle==="Convertible");
+  expect(convertibles.length).toBeGreaterThan(0);
+  for(const d of convertibles){expect(d.epaModels).toEqual([d.model]);expect(d.model).toMatch(/ Convertible$/);}
+  const rows=[{id:"1",make:"BMW",model:"230i Convertible",year:"2019",VClass:"Subcompact Cars"},{id:"2",make:"BMW",model:"230i xDrive Convertible",year:"2019",VClass:"Subcompact Cars"},{id:"3",make:"BMW",model:"230i Coupe",year:"2019",VClass:"Subcompact Cars"}];
+  const out=bodyDerivativeRows(rows,[{make:"BMW",model:"230i Convertible",bodyStyle:"Convertible",epaModels:["230i Convertible"]}]);
+  expect(out.map(r=>[r.id,r.model])).toEqual([["1","230i Convertible"]]);
 });

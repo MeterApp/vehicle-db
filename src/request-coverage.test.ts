@@ -1,6 +1,8 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "vitest";
 import { resolveVehicle } from "./resolve";
 import { searchVehicles } from "./search";
+import { getAvailableYears, getModels } from "./index";
 import graph from "./identity-data";
 import { evaluateVisualCompatibility } from "./identity";
 
@@ -114,6 +116,54 @@ test("U.S. EPA estate derivatives are distinct models and never replace the pare
   expect(exact("2004 Ford Focus")?.modelName.toUpperCase()).toBe("FOCUS");
   expect(exact("2005 Subaru Legacy")?.modelName.toUpperCase()).toBe("LEGACY");
   expect(exact("2005 Subaru Impreza Wagon")?.modelName.toUpperCase()).not.toBe("IMPREZA WAGON");
+});
+
+test("U.S. EPA BMW 2 Series and Mercedes-Benz C-Class convertibles keep their exact names in observed model years only", () => {
+  const exact = (query: string) => searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+  const cases: [string, string, string][] = [
+    ["2019 BMW 230i Convertible", "BMW", "230i Convertible"],
+    ["2017 BMW 230i xDrive Convertible", "BMW", "230i xDrive Convertible"],
+    ["2021 BMW M240i Convertible", "BMW", "M240i Convertible"],
+    ["2016 BMW 228i Convertible", "BMW", "228i Convertible"],
+    ["2016 BMW M235i xDrive Convertible", "BMW", "M235i xDrive Convertible"],
+    ["2020 Mercedes-Benz AMG C43 4matic Convertible", "MERCEDES-BENZ", "AMG C43 4matic Convertible"],
+    ["2021 Mercedes-Benz AMG C63 Convertible", "MERCEDES-BENZ", "AMG C63 Convertible"],
+    ["2021 Mercedes-Benz AMG C63 S Convertible", "MERCEDES-BENZ", "AMG C63 S Convertible"],
+    ["2019 Mercedes-Benz C300 Convertible", "MERCEDES-BENZ", "C300 Convertible"],
+    ["2023 Mercedes-Benz AMG C63 S Convertible", "MERCEDES-BENZ", "AMG C63 S Convertible"],
+  ];
+  for (const [query, makeName, modelName] of cases) {
+    const hit = exact(query);
+    expect(hit, query).toMatchObject({ makeName, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase(), query).toBe(modelName.toUpperCase());
+  }
+  // Years without an EPA record for the exact name are not published.
+  for (const query of ["2022 BMW 230i Convertible", "2014 BMW 228i Convertible", "2022 Mercedes-Benz AMG C63 Convertible", "2022 Mercedes-Benz AMG C63 S Convertible", "2016 Mercedes-Benz C300 Convertible"]) {
+    expect(exact(query)?.modelName.toUpperCase() ?? "", query).not.toMatch(/CONVERTIBLE$/);
+  }
+  // The coupe/sedan parents keep their own selections.
+  expect(exact("2019 BMW 230i")?.modelName.toUpperCase()).toBe("230I");
+  expect(exact("2021 Mercedes-Benz AMG C 63")?.modelName.toUpperCase()).toBe("AMG C 63");
+  expect(exact("2020 Mercedes-Benz AMG C 43")?.modelName.toUpperCase()).toBe("AMG C 43");
+});
+
+test("U.S. EPA body derivatives publish exactly their observed EPA years before the regular window", () => {
+  const observed = JSON.parse(readFileSync(new URL("../data/evidence/fueleconomy-us-body-derivatives-observed.json", import.meta.url), "utf8")) as { derivatives: { make: string; model: string; years: number[] }[] };
+  const published = new Map<string, Set<number>>();
+  for (const year of getAvailableYears()) {
+    if (year >= 2022) continue;
+    for (const row of getModels({ year, sourceId: "fueleconomy-us" })) {
+      const key = `${row.makeName}|${row.modelName}`.toUpperCase();
+      published.set(key, (published.get(key) ?? new Set()).add(year));
+    }
+  }
+  for (const d of observed.derivatives) {
+    const key = `${d.make}|${d.model}`.toUpperCase();
+    expect([...(published.get(key) ?? [])].sort((a, b) => a - b), key).toEqual(d.years.filter(y => y < 2022));
+    published.delete(key);
+  }
+  // Before 2022 the EPA source publishes nothing but the reviewed derivatives.
+  expect([...published.keys()]).toEqual([]);
 });
 
 test("dated German estate observations preserve years and parent selections", () => {

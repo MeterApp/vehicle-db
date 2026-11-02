@@ -1,8 +1,133 @@
 {
   "source": "https://www.fueleconomy.gov/feg/epadata/vehicles.csv",
-  "retrievedAt": "2026-10-25",
+  "retrievedAt": "2026-11-02",
   "sha256": "b1ff0e3071c46cdc1c99e0015878b98a01851462d7e447237ce2fc1294ccf303",
   "derivatives": [
+    {
+      "make": "BMW",
+      "model": "228i Convertible",
+      "years": [
+        2015,
+        2016
+      ],
+      "epaIds": [
+        "35897",
+        "36711"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "228i xDrive Convertible",
+      "years": [
+        2015,
+        2016
+      ],
+      "epaIds": [
+        "35936",
+        "36640"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "230i Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "epaIds": [
+        "37878",
+        "39114",
+        "40439",
+        "41312",
+        "42918"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "230i xDrive Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "epaIds": [
+        "37879",
+        "39115",
+        "40440",
+        "41313",
+        "43609"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "M235i Convertible",
+      "years": [
+        2015,
+        2016
+      ],
+      "epaIds": [
+        "35937",
+        "35938",
+        "36203",
+        "36643"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "M235i xDrive Convertible",
+      "years": [
+        2016
+      ],
+      "epaIds": [
+        "36713"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "M240i Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "epaIds": [
+        "37960",
+        "38010",
+        "39119",
+        "39120",
+        "40447",
+        "40448",
+        "41320",
+        "41321",
+        "42878",
+        "42879"
+      ]
+    },
+    {
+      "make": "BMW",
+      "model": "M240i xDrive Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "epaIds": [
+        "38011",
+        "39121",
+        "40449",
+        "41322",
+        "42880"
+      ]
+    },
     {
       "make": "Cadillac",
       "model": "CTS Wagon",
@@ -129,6 +254,66 @@
     },
     {
       "make": "Mercedes-Benz",
+      "model": "AMG C43 4matic Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "epaIds": [
+        "38367",
+        "39224",
+        "41074",
+        "42219",
+        "43528",
+        "44861",
+        "46217"
+      ]
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "AMG C63 Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "epaIds": [
+        "38365",
+        "39324",
+        "41069",
+        "42215",
+        "43524"
+      ]
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "AMG C63 S Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "epaIds": [
+        "38364",
+        "39323",
+        "41068",
+        "42214",
+        "43523",
+        "46431"
+      ]
+    },
+    {
+      "make": "Mercedes-Benz",
       "model": "C-Class Wagon",
       "years": [
         2002,
@@ -152,6 +337,50 @@
         "20423",
         "21010",
         "21494"
+      ]
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "C300 4matic Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "epaIds": [
+        "38140",
+        "39221",
+        "40686",
+        "41909",
+        "43334",
+        "44845",
+        "45922"
+      ]
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "C300 Convertible",
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "epaIds": [
+        "38141",
+        "39222",
+        "40594",
+        "41910",
+        "43335",
+        "44859",
+        "45923"
       ]
     },
     {
