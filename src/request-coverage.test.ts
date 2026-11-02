@@ -116,6 +116,35 @@ test("U.S. EPA estate derivatives are distinct models and never replace the pare
   expect(exact("2005 Subaru Impreza Wagon")?.modelName.toUpperCase()).not.toBe("IMPREZA WAGON");
 });
 
+test("U.S. EPA BMW 2 Series and Mercedes-Benz C-Class convertibles keep their exact names in observed model years only", () => {
+  const exact = (query: string) => searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+  const cases: [string, string, string][] = [
+    ["2019 BMW 230i Convertible", "BMW", "230i Convertible"],
+    ["2017 BMW 230i xDrive Convertible", "BMW", "230i xDrive Convertible"],
+    ["2021 BMW M240i Convertible", "BMW", "M240i Convertible"],
+    ["2016 BMW 228i Convertible", "BMW", "228i Convertible"],
+    ["2016 BMW M235i xDrive Convertible", "BMW", "M235i xDrive Convertible"],
+    ["2020 Mercedes-Benz AMG C43 4matic Convertible", "MERCEDES-BENZ", "AMG C43 4matic Convertible"],
+    ["2021 Mercedes-Benz AMG C63 Convertible", "MERCEDES-BENZ", "AMG C63 Convertible"],
+    ["2021 Mercedes-Benz AMG C63 S Convertible", "MERCEDES-BENZ", "AMG C63 S Convertible"],
+    ["2019 Mercedes-Benz C300 Convertible", "MERCEDES-BENZ", "C300 Convertible"],
+    ["2023 Mercedes-Benz AMG C63 S Convertible", "MERCEDES-BENZ", "AMG C63 S Convertible"],
+  ];
+  for (const [query, makeName, modelName] of cases) {
+    const hit = exact(query);
+    expect(hit, query).toMatchObject({ makeName, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase(), query).toBe(modelName.toUpperCase());
+  }
+  // Years without an EPA record for the exact name are not published.
+  for (const query of ["2022 BMW 230i Convertible", "2014 BMW 228i Convertible", "2022 Mercedes-Benz AMG C63 Convertible", "2022 Mercedes-Benz AMG C63 S Convertible", "2016 Mercedes-Benz C300 Convertible"]) {
+    expect(exact(query)?.modelName.toUpperCase() ?? "", query).not.toMatch(/CONVERTIBLE$/);
+  }
+  // The coupe/sedan parents keep their own selections.
+  expect(exact("2019 BMW 230i")?.modelName.toUpperCase()).toBe("230I");
+  expect(exact("2021 Mercedes-Benz AMG C 63")?.modelName.toUpperCase()).toBe("AMG C 63");
+  expect(exact("2020 Mercedes-Benz AMG C 43")?.modelName.toUpperCase()).toBe("AMG C 43");
+});
+
 test("dated German estate observations preserve years and parent selections", () => {
   for (const model of ["Fabia Combi", "Superb Combi"]) {
     for (const year of [2015, 2016]) {
