@@ -2981,6 +2981,94 @@
       "yearBasis": "catalog-year",
       "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
       "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'Hyundai - Grand I10 Sedán - Automóviles - Subcompactos - Importado - India': positive retail sales in 9 months of 2026. Separate INEGI rows keep the hatchback and the sedan body distinct; neither is the European i10. Calendar sales year only, not factory model year or visual-generation equivalence; recent months are preliminary. Retrieved 2026-11-02."
+    },
+    {
+      "year": 2023,
+      "makeId": 100102,
+      "make": "CITROEN",
+      "model": "C-Elysee",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20231209180100/https://talep.citroen.com.tr/fiyat-listesi",
+      "note": "Official Citroën Türkiye price list (talep.citroen.com.tr/fiyat-listesi), Internet Archive capture 2023-12-09: the price set active from 2023-04-13 lists the C-Elysée (model code c-elysee, 1.5 BlueHDi 100 HP, Feel Bold) with model year 2023. It is absent from the 2024-09-11 capture and every later capture to 2026-03-25, so 2025 and 2026 are not claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2024,
+      "makeId": 100102,
+      "make": "CITROEN",
+      "model": "C-Elysee",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20240415212005/https://talep.citroen.com.tr/fiyat-listesi",
+      "note": "Official Citroën Türkiye price list (talep.citroen.com.tr/fiyat-listesi), Internet Archive captures 2024-04-15 and 2024-06-20: the price set active from 2024-01-04 lists the C-Elysée (model code c-elysee, 1.5 BlueHDi 100 HP, Feel Bold) with model year 2024. It is absent from the 2024-09-11 capture and every later capture to 2026-03-25, so 2025 and 2026 are not claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2021,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Taliant",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20210730140541/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2021-05-15 and 2021-07-30 list 'YENİ TALIANT' (model code taliant-ljf-ph1); it is absent from the 2021-02-28 capture, so no earlier year is claimed. Listed only under Renault; no Dacia Taliant is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2022,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Taliant",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20220604101115/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2022-06-04 and 2022-12-17 list 'YENİ TALIANT' (model code taliant-ljf-ph1). Listed only under Renault; no Dacia Taliant is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2023,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Taliant",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20230701053759/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2023-07-01 and 2023-12-08 list 'TALIANT' (model code taliant-ljf-ph1). Listed only under Renault; no Dacia Taliant is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2024,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Taliant",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20240419231428/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2024-04-19 and 2024-12-03 list 'TALIANT' (model code taliant-ljf-ph1). Listed only under Renault; no Dacia Taliant is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2025,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Taliant",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20250312000851/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive capture 2025-03-12 lists 'TALIANT' (model code taliant-ljf-ph1); it is absent from the 2025-04-11, 2025-10-11 and 2026-09-13 captures, so 2026 is not claimed. Listed only under Renault; no Dacia Taliant is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2021,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Symbol",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20210515082001/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2021-02-28 and 2021-05-15 list 'SYMBOL' (model code symbol-l46-ph2). It is absent from the 2021-06-06 capture and every later capture to 2026-09-13 (the Taliant took its place on the list), so no later year is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
     }
   ],
   "catalogYearMetadata": {
@@ -2988,7 +3076,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
