@@ -332,3 +332,25 @@ test("dated Mexican Hyundai Grand i10 hatchback and sedan years stay separate fr
   // The European i10 is unchanged and never becomes a Grand i10.
   expect(searchVehicles("2020 Hyundai i10", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("I10");
 });
+
+test("dated Turkish C-Elysee, Taliant and Symbol price-list years fill catalog gaps without unsold years", () => {
+  const cases = [["Citroen", "C-Elysee", [2023, 2024]], ["Renault", "Taliant", [2021, 2022, 2023, 2024, 2025]], ["Renault", "Symbol", [2021]]] as const;
+  for (const [make, name, years] of cases) {
+    for (const year of years) {
+      const hit = searchVehicles(`${year} ${make} ${name}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ matchKind: "exact", vehicleTypeId: 2 });
+      expect(hit?.modelName.toUpperCase()).toBe(name.toUpperCase());
+      expect(hit?.years).toContain(year);
+    }
+  }
+  // Official Turkish price lists drop the C-Elysee after model year 2024, the Taliant after March 2025
+  // and the Symbol in mid-2021; those later years stay unclaimed rather than inferred.
+  for (const [make, name, year] of [["Citroen", "C-Elysee", 2025], ["Citroen", "C-Elysee", 2026], ["Renault", "Taliant", 2026], ["Renault", "Taliant", 2020], ["Renault", "Symbol", 2022]] as const) {
+    const hits = searchVehicles(`${year} ${make} ${name}`, { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" });
+    expect(hits.some(r => r.kind === "model" && r.modelName.toUpperCase() === name.toUpperCase() && (r.years ?? []).includes(year))).toBe(false);
+  }
+  // The Taliant is listed only under Renault: no Dacia Taliant is invented.
+  expect(searchVehicles("2025 Dacia Taliant", { fuzzy: false }).some(r => r.kind === "model" && r.modelName.toUpperCase() === "TALIANT")).toBe(false);
+  // Earlier C-Elysee years from the EU register keep their rows.
+  expect(searchVehicles("2022 Citroen C-Elysee", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C-ELYSEE");
+});
