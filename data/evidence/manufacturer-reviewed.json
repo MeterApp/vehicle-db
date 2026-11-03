@@ -2991,7 +2991,7 @@
       "market": "TR",
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20231209180100/https://talep.citroen.com.tr/fiyat-listesi",
-      "note": "Official Citroën Türkiye price list (talep.citroen.com.tr/fiyat-listesi), Internet Archive capture 2023-12-09: the price set active from 2023-04-13 lists the C-Elysée (model code c-elysee, 1.5 BlueHDi 100 HP, Feel Bold, the page's 'Yeni Nesil Sedan') with model year 2023. It is absent from the 2024-09-11 capture and every later capture to 2026-03-25, so 2025 and 2026 are not claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+      "note": "Official Citroën Türkiye price list (talep.citroen.com.tr/fiyat-listesi), Internet Archive capture 2023-12-09: the price set active from 2023-04-13 lists the C-Elysée (model code c-elysee, 1.5 BlueHDi 100 HP, Feel Bold) with model year 2023. It is absent from the 2024-09-11 capture and every later capture to 2026-03-25, so 2025 and 2026 are not claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
     },
     {
       "year": 2024,
@@ -3068,7 +3068,7 @@
       "market": "TR",
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20210515082001/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
-      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2021-02-28 and 2021-05-15 list 'SYMBOL' (model code symbol-l46-ph2). It is absent from the 2021-07-30 capture and every later capture to 2026-09-13 (the Taliant took its place on the list), so no later year is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+      "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2021-02-28 and 2021-05-15 list 'SYMBOL' (model code symbol-l46-ph2). It is absent from the 2021-06-06 capture and every later capture to 2026-09-13 (the Taliant took its place on the list), so no later year is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
     }
   ],
   "catalogYearMetadata": {

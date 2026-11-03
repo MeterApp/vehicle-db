@@ -352,5 +352,7 @@ test("dated Turkish C-Elysee, Taliant and Symbol price-list years fill catalog g
   // The Taliant is listed only under Renault: no Dacia Taliant is invented.
   expect(searchVehicles("2025 Dacia Taliant", { fuzzy: false }).some(r => r.kind === "model" && r.modelName.toUpperCase() === "TALIANT")).toBe(false);
   // Earlier C-Elysee years from the EU register keep their rows.
-  expect(searchVehicles("2022 Citroen C-Elysee", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C-ELYSEE");
+  const eu = searchVehicles("2022 Citroen C-Elysee", { fuzzy: false }).find(r => r.kind === "model");
+  expect(eu?.modelName.toUpperCase()).toBe("C-ELYSEE");
+  expect(eu?.sourceIds).toContain("eea-co2-monitoring");
 });
