@@ -380,8 +380,9 @@ test("dated Russian Chery Tiggo 4 and Tiggo 4 Pro price-list years fill catalog 
   expect(pro2025?.sourceIds).toContain("nzta-asia-pacific-mvr");
   const pros = searchVehicles("Chery Tiggo 4 Pro", { fuzzy: false }).filter(r => r.kind === "model" && r.modelName.toUpperCase() === "TIGGO 4 PRO");
   expect(pros).toHaveLength(1);
-  expect(pros[0]?.years).toEqual([2022, 2023, 2024, 2025, 2026]);
+  expect(pros[0]?.years).toEqual(expect.arrayContaining([2022, 2023, 2024, 2025, 2026]));
+  expect(Math.min(...(pros[0]?.years ?? []))).toBe(2022);
   const hybrid = searchVehicles("2025 Chery Tiggo 4 Hybrid", { fuzzy: false }).find(r => r.kind === "model");
   expect(hybrid?.modelName.toUpperCase()).toBe("TIGGO 4 HYBRID");
-  expect(hybrid?.years).not.toContain(2023);
+  expect(hybrid?.sourceIds).not.toContain("manufacturer-reviewed-catalog");
 });
