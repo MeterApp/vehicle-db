@@ -356,3 +356,33 @@ test("dated Turkish C-Elysee, Taliant and Symbol price-list years fill catalog g
   expect(eu?.modelName.toUpperCase()).toBe("C-ELYSEE");
   expect(eu?.sourceIds).toContain("eea-co2-monitoring");
 });
+
+test("dated Russian Chery Tiggo 4 and Tiggo 4 Pro price-list years fill catalog gaps without unsourced years", () => {
+  const cases = [["Tiggo 4", [2019, 2020, 2021, 2022, 2023, 2024, 2025]], ["Tiggo 4 Pro", [2022, 2023, 2024, 2025, 2026]]] as const;
+  for (const [name, years] of cases) {
+    for (const year of years) {
+      const hit = searchVehicles(`${year} Chery ${name}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ matchKind: "exact", vehicleTypeId: 2 });
+      expect(hit?.modelName.toUpperCase()).toBe(name.toUpperCase());
+      expect(hit?.years).toContain(year);
+    }
+  }
+  // The Tiggo 4 Pro is first offered by Chery Russia in 2022, and no 2026 plain Tiggo 4 is listed yet.
+  for (const [name, year] of [["Tiggo 4 Pro", 2021], ["Tiggo 4", 2026], ["Tiggo 4", 2018]] as const) {
+    const hits = searchVehicles(`${year} Chery ${name}`, { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" });
+    expect(hits.some(r => r.kind === "model" && r.modelName.toUpperCase() === name.toUpperCase() && (r.years ?? []).includes(year))).toBe(false);
+  }
+  // The new Pro years join the existing NZTA Tiggo 4 Pro instead of creating a second model, and the
+  // European Tiggo 4 Hybrid stays a separate vehicle.
+  const pro2024 = searchVehicles("2024 Chery Tiggo 4 Pro", { fuzzy: false }).find(r => r.kind === "model");
+  const pro2025 = searchVehicles("2025 Chery Tiggo 4 Pro", { fuzzy: false }).find(r => r.kind === "model");
+  expect(pro2024?.sourceIds).toContain("manufacturer-reviewed-catalog");
+  expect(pro2025?.sourceIds).toContain("nzta-asia-pacific-mvr");
+  const pros = searchVehicles("Chery Tiggo 4 Pro", { fuzzy: false }).filter(r => r.kind === "model" && r.modelName.toUpperCase() === "TIGGO 4 PRO");
+  expect(pros).toHaveLength(1);
+  expect(pros[0]?.years).toEqual(expect.arrayContaining([2022, 2023, 2024, 2025, 2026]));
+  expect(Math.min(...(pros[0]?.years ?? []))).toBe(2022);
+  const hybrid = searchVehicles("2025 Chery Tiggo 4 Hybrid", { fuzzy: false }).find(r => r.kind === "model");
+  expect(hybrid?.modelName.toUpperCase()).toBe("TIGGO 4 HYBRID");
+  expect(hybrid?.sourceIds).not.toContain("manufacturer-reviewed-catalog");
+});
