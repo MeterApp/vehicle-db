@@ -3069,6 +3069,116 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20210515082001/https://www.renault.com.tr/renault-fiyat-listeleri/binek-arac-fiyat-listesi.html",
       "note": "Official Renault Türkiye passenger-car price list (binek araç fiyat listesi, renault.com.tr), Internet Archive captures 2021-02-28 and 2021-05-15 list 'SYMBOL' (model code symbol-l46-ph2). It is absent from the 2021-06-06 capture and every later capture to 2026-09-13 (the Taliant took its place on the list), so no later year is claimed. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-03."
+    },
+    {
+      "year": 2019,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20190724062713/https://www.chery.ru/models/tiggo4/",
+      "note": "Official Chery Russia Tiggo 4 model page (chery.ru/models/tiggo4/), Internet Archive capture 2019-07-24: the crossover is offered 'от 1 039 900 руб.' with Comfort and Luxury CVT trims and a downloadable price list; the 2020-07-07 capture lists trims labelled '2019 PY'. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2020,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20200707042238/https://www.chery.ru/models/tiggo4/",
+      "note": "Official Chery Russia Tiggo 4 model page (chery.ru/models/tiggo4/), Internet Archive capture 2020-07-07: the configurator lists 'Tiggo 4 Start MT5, 2020 PY', 'Techno CVT, 2020 PY' and 'Cosmo DCT6, 2020 PY' beside 2019 PY stock. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2021,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20210614020458/https://www.chery.ru/models/tiggo4/",
+      "note": "Official Chery Russia Tiggo 4 model page (chery.ru/models/tiggo4/), Internet Archive capture 2021-06-14: the configurator lists Base, Comfort, Luxury, Techno and Cosmo trims for 2020 and 2021. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2022,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20230302205913/https://www.chery.ru/Tiggo%204%20price-010223_2195973985184255741.pdf",
+      "note": "Official Chery Russia price list 'Комплектации и цены Tiggo 4' dated 01.02.23 (Internet Archive capture 2023-03-02): 'Комплектации, 2022 модельный год', Comfort, Luxury, Travel and Cosmo; the model page capture 2022-08-12 also offers the Tiggo 4. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2023,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20230505215545/https://www.chery.ru/Tiggo-4-price-2023-110423_4919681620156033373.pdf",
+      "note": "Official Chery Russia price list 'Комплектации и цены Tiggo 4' dated 11.04.23 (Internet Archive capture 2023-05-05): 'Комплектации, 2023 год производства', Comfort, Luxury, Travel and Cosmo; the model page capture 2023-06-30 offers the Tiggo 4 from 1 794 900 RUB beside the Tiggo 4 PRO. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2024,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20241222002551/https://www.chery.ru/models/tiggo4/",
+      "note": "Official Chery Russia Tiggo 4 model page (chery.ru/models/tiggo4/), Internet Archive capture 2024-12-22: 'Новый TIGGO 4' offered from 2 050 000 RUB; the official price list dated 01.11.25 also lists Tiggo 4 configurations of '2024 год выпуска'. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2025,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20251210001229/https://www.chery.ru/Tiggo4_price%20list_01.11.25_473627405457955036.pdf",
+      "note": "Official Chery Russia Tiggo 4 price list dated 01.11.25 (Internet Archive capture 2025-12-10): configurations of '2025 год выпуска' (MT Line, CVT Line, Active, Prime, Ultra) beside 2024 stock. No 2026 year is claimed. Listed as Tiggo 4, separate from the Tiggo 4 Pro and the European Tiggo 4 Hybrid. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2022,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4 Pro",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20230302205720/https://www.chery.ru/Tiggo%204%20pro%20pricelist-010223_17729298176980971594.pdf",
+      "note": "Official Chery Russia price list 'Комплектации Tiggo 4 Pro' dated 01.02.23 (Internet Archive capture 2023-03-02): 'Комплектации, 2022 модельный год', Action MT to Ultimate; the model page chery.ru/models/tiggo4pro/ is first captured 2022-09-22 with its 22.09.22 price list. The Tiggo 4 page capture 2022-08-12 lists no Tiggo 4 PRO, so no 2021 year is claimed. Listed as Tiggo 4 Pro, separate from the plain Tiggo 4. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2023,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4 Pro",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20240205034748/https://www.chery.ru/Tiggo%204%20Pro%20picelist%2001%2001%2024_13772022067655109258.pdf",
+      "note": "Official Chery Russia price list 'Комплектации Tiggo 4 Pro' dated 01.01.24 (Internet Archive capture 2024-02-05): 'Комплектации, 2023 модельный год'; the model page capture 2023-09-22 offers the Tiggo 4 PRO. Listed as Tiggo 4 Pro, separate from the plain Tiggo 4. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2024,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 4 Pro",
+      "vehicleTypeId": 2,
+      "market": "RU",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20240627043147/https://www.chery.ru/Tiggo%204%20PRO%20%D0%BF%D1%80%D0%B0%D0%B9%D1%81_2024_14_06_13089312012009557544.pdf",
+      "note": "Official Chery Russia price list 'Комплектации Tiggo 4 Pro 18 Years Edition' dated 14.06.24 (Internet Archive capture 2024-06-27): 'Комплектации, 2024 производственный год', Action MT to Ultimate. Listed as Tiggo 4 Pro, separate from the plain Tiggo 4. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
     }
   ],
   "catalogYearMetadata": {
@@ -3076,7 +3186,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
