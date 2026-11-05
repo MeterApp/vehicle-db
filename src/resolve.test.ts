@@ -152,3 +152,20 @@ test("graph validation accepts a facelift visual directly under its generation",
   line.identities.push({ ...line.identities[1], id: "line-visual", kind: "visual", parentId: "line", name: "Line visual", names: [], years: undefined, yearBasis: undefined });
   expect(() => validateIdentityGraph(line, catalog)).toThrow(/parent/);
 });
+
+test("the EV list's generations and facelifts resolve by catalog year (car-image-server #1173)", () => {
+  const context = { market: "GB", yearBasis: "catalog-year" as const, depth: "generation" as const };
+  const visual = { ...context, depth: "visual" as const };
+  // The new electric CLA is its own generation; the Model S fronts are appearance revisions.
+  expect(resolveVehicle("2026 Mercedes-Benz CLA", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "mercedes-benz:cla:third" } });
+  expect(resolveVehicle("2019 Tesla Model S", visual)).toMatchObject({ status: "MATCHED", selection: { identityId: "tesla:model-s:first:facelift-2017" } });
+  expect(resolveVehicle("2023 Tesla Model S", visual)).toMatchObject({ status: "MATCHED", selection: { identityId: "tesla:model-s:first:facelift-2021" } });
+  expect(resolveVehicle("2026 Tesla Model Y", visual)).toMatchObject({ status: "MATCHED", selection: { identityId: "tesla:model-y:first:facelift-2026" } });
+  expect(resolveVehicle("2024 Hyundai IONIQ 5", visual)).toMatchObject({ status: "MATCHED", selection: { identityId: "hyundai:ioniq-5:first:original" } });
+  // Years that sold both fronts stay ambiguous.
+  expect(resolveVehicle("2016 Tesla Model S", visual).status).toBe("AMBIGUOUS");
+  expect(resolveVehicle("2025 Tesla Model Y", visual).status).toBe("AMBIGUOUS");
+  // The plain Macan line mixes the combustion and electric cars in 2024; the electric car has its own line.
+  expect(resolveVehicle("2024 Porsche Macan", context).status).toBe("GENERATION_UNRESOLVED");
+  expect(resolveVehicle("2025 Porsche Macan Electric", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "porsche:macan-electric:first" } });
+});
