@@ -116,3 +116,39 @@ test("dated marketed catalogs require catalog-year context and do not infer gene
   expect(resolveVehicle("2024 Volkswagen Teramont X", context).status).not.toBe("MATCHED");
   expect(resolveVehicle("2025 Volkswagen Teramont X", { ...context, market: "US" }).status).not.toBe("MATCHED");
 });
+
+test("manufacturer-dated generations resolve Audi, Skoda, Renault and Peugeot catalog years without guessing", () => {
+  const context = { market: "GB", yearBasis: "catalog-year" as const, depth: "generation" as const };
+  // The 2026 Audi Q3, A5 and Q5 and the 2025 Skoda Kodiaq are their new generations, not the ones a year alone suggests.
+  expect(resolveVehicle("2026 Audi Q3", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "audi:q3:third" } });
+  expect(resolveVehicle("2026 Audi A5", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "audi:a5:third" } });
+  expect(resolveVehicle("2026 Audi Q5", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "audi:q5:third" } });
+  expect(resolveVehicle("2025 Skoda Kodiaq", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "skoda:kodiaq:second" } });
+  expect(resolveVehicle("2026 Peugeot 2008", context)).toMatchObject({ status: "MATCHED", selection: { identityId: "peugeot:2008:second" } });
+  // A changeover year sold both generations and stays ambiguous.
+  const changeover = resolveVehicle("2025 Audi Q3", context);
+  expect(changeover.status).toBe("AMBIGUOUS");
+  expect(changeover.candidates.map(c => c.identityId).sort()).toEqual(["audi:q3:second", "audi:q3:third"]);
+  // A year before the dated generations is not assigned one.
+  expect(resolveVehicle("2016 Skoda Kodiaq", context).status).toBe("GENERATION_UNRESOLVED");
+  // Facelifts are appearance revisions under the generation; the years that sold both fronts stay ambiguous.
+  const visual = { ...context, depth: "visual" as const };
+  expect(resolveVehicle("2020 Audi A5", visual)).toMatchObject({ status: "MATCHED", selection: { identityId: "audi:a5:second:facelift-2020", lineage: { generation: "audi:a5:second", line: "audi:a5" } } });
+  expect(resolveVehicle("2018 Audi A5", visual)).toMatchObject({ status: "MATCHED", selection: { identityId: "audi:a5:second:original" } });
+  expect(resolveVehicle("2012 Audi A5", visual).status).toBe("AMBIGUOUS");
+  // The scope is the catalog year in the evidenced markets; model-year context does not satisfy it.
+  expect(resolveVehicle("2026 Audi Q3", { ...context, yearBasis: "model-year" }).status).toBe("GENERATION_UNRESOLVED");
+  expect(resolveVehicle("2026 Audi Q3", { ...context, market: "SA" }).status).toBe("GENERATION_UNRESOLVED");
+  // Catalog depth keeps matching the line's rows, as the flat records did before.
+  expect(resolveVehicle("2024 Audi A5").status).toBe("MATCHED");
+  expect(resolveVehicle("2005 Audi A4").status).toBe("MATCHED");
+});
+
+test("graph validation accepts a facelift visual directly under its generation", () => {
+  const g = fixture();
+  g.identities.push({ ...g.identities[1], id: "new-facelift", kind: "visual", parentId: "new", name: "New facelift", names: [], appearanceRevision: "facelift", years: [2025] });
+  expect(() => validateIdentityGraph(g, catalog)).not.toThrow();
+  const line = fixture();
+  line.identities.push({ ...line.identities[1], id: "line-visual", kind: "visual", parentId: "line", name: "Line visual", names: [], years: undefined, yearBasis: undefined });
+  expect(() => validateIdentityGraph(line, catalog)).toThrow(/parent/);
+});

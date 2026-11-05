@@ -9,7 +9,8 @@ export interface CatalogSnapshot {
 }
 const parents: Record<IdentityKind, IdentityKind[]> = {
   line: [], generation: ["line"], derivative: ["generation"],
-  specification: ["derivative"], visual: ["derivative", "specification"],
+  // A facelift that applies to every body of a generation hangs off the generation itself.
+  specification: ["derivative"], visual: ["generation", "derivative", "specification"],
 };
 function overlap(a: IdentityScope, b: IdentityScope): boolean {
   return (!a.years || !b.years || a.years.some(y => b.years!.includes(y))) &&
