@@ -12,6 +12,17 @@
   },
   "records": [
     {
+      "year": 2024,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Megane GrandCoupe",
+      "vehicleTypeId": 2,
+      "market": "HR",
+      "url": "https://www.renault.hr/CountriesData/Croatia/images/cjenik/Cjenik_Megane_Grandcoupe.pdf",
+      "note": "Renault Croatia's price list dated 1 October 2024 documents the facelifted four-door Megane GrandCoupe, including Blue dCi 115 EDC. This is Croatian catalog-year evidence. Renault calls this body the Megane Sedan in its global launch announcement.",
+      "yearBasis": "catalog-year"
+    },
+    {
       "year": 2026,
       "makeId": 483,
       "make": "JEEP",
@@ -3197,7 +3208,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia (Renault)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
