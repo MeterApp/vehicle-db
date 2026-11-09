@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "2026-11-05-ev-generations",
+  "revision": "2026-11-09-glc-eq-technology-name",
   "identities": [
     {
       "id": "bmw:4",
@@ -13040,6 +13040,30 @@
       "yearBasis": "catalog-year",
       "evidenceIds": [
         "cohort:474:hornet2-0:2025:IN"
+      ]
+    },
+    {
+      "text": "GLC with EQ Technology",
+      "targetId": "mercedes-benz:glc-400-4matic-with-eq-te",
+      "kind": "marketing-name",
+      "years": [
+        2026
+      ],
+      "yearBasis": "model-year",
+      "evidenceIds": [
+        "mercedes-benz:glc-with-eq-technology-name"
+      ]
+    },
+    {
+      "text": "GLC with EQ Technology",
+      "targetId": "mercedes-benz:glc400-4matic-electric",
+      "kind": "marketing-name",
+      "years": [
+        2027
+      ],
+      "yearBasis": "model-year",
+      "evidenceIds": [
+        "mercedes-benz:glc-with-eq-technology-name"
       ]
     }
   ],
@@ -34548,6 +34572,13 @@
       "url": "https://news.cision.com/volvo-car-usa/r/the-all-new--all-electric-volvo-ex90-suv-on-the-road---first-customers-will-get-their-cars-this-month,c4194184",
       "retrievedAt": "2026-11-05",
       "note": "Revealed November 2022; production at Charleston from June 2024 and first customer deliveries in the US and Europe in September 2024, as the US 2025 model year (Volvo, 4 September 2024). Bodies: five-door electric seven-seat SUV. Launched 2024-09."
+    },
+    {
+      "id": "mercedes-benz:glc-with-eq-technology-name",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://media.mbusa.com/news/face-of-the-future-a-new-era-of-iconic-design-at-mercedes-benz-starts-with-all-new-electric-glc",
+      "retrievedAt": "2026-11-09",
+      "note": "The maker release names the electric X540 'the all-new Mercedes-Benz GLC with EQ Technology' (also 'the new GLC with EQ Technology'). The registers abbreviate it (RDW 'GLC 400 4MATIC WITH EQ TE', 2026) or call it 'GLC400 4matic electric' (US, model year 2027). The name is lexical only: it selects the X540 line for the requested year and never the combustion/plug-in X254 GLC (mercedes-benz/glc). Mercedes-Benz USA sells the car from model year 2027, so a 2026 model year is the European car on sale from 2026. No manufacturer source names an X540 'GLC 250'; the RDW-only 'GLC 250 ELECTRIC' row stays unattached."
     }
   ],
   "homologation": [],
