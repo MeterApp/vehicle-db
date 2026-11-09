@@ -80,6 +80,24 @@ test("reviewed aliases resolve a line without inventing generation or render equ
   expect(resolveVehicle("2024 Toyota Prado EV").status).not.toBe("MATCHED");
 });
 
+test("the maker's 'GLC with EQ Technology' name selects the electric X540 line per year, never the X254 GLC",()=>{
+  for (const [year, line, model] of [
+    [2026, "mercedes-benz:glc-400-4matic-with-eq-te", "GLC 400 4MATIC WITH EQ TE"],
+    [2027, "mercedes-benz:glc400-4matic-electric", "GLC400 4matic electric"],
+  ] as const) {
+    const result = resolveVehicle(`${year} Mercedes-Benz GLC with EQ Technology`);
+    expect(result.status).toBe("MATCHED");
+    expect(result.candidates).toHaveLength(1);
+    expect(result.candidates[0].identityId).toBe(line);
+    expect(result.candidates[0].catalogSelections.map(s => [s.year, s.modelName.toLowerCase()])).toEqual([[year, model.toLowerCase()]]);
+  }
+  expect(resolveVehicle("2025 Mercedes-Benz GLC with EQ Technology").status).not.toBe("MATCHED");
+  expect(resolveVehicle("Mercedes-Benz GLC with EQ Technology").status).not.toBe("MATCHED");
+  expect(resolveVehicle("2026 Mercedes-Benz GLC with EQ Technology", { yearBasis: "catalog-year" }).status).not.toBe("MATCHED");
+  const combustion = resolveVehicle("2026 Mercedes-Benz GLC");
+  expect(combustion.candidates[0]?.identityId).toBe("mercedes-benz:glc");
+});
+
 test("reviewed regional additions preserve generation, body and performance boundaries", () => {
   const octa = resolveVehicle("2025 Land Rover Defender OCTA", { market: "US", depth: "visual" });
   const modern = resolveVehicle("2023 Land Rover Defender 130", { market: "US", depth: "visual" });
