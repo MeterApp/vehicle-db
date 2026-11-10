@@ -416,3 +416,16 @@ test("dated Porsche Germany pages add the Cayenne Turbo E-Hybrid Coupe with GT P
   expect(coupe?.modelName.toUpperCase()).toBe("CAYENNE TURBO E-HYBRID COUPE");
   expect(coupe?.years).not.toContain(2026);
 });
+
+test("dated Citroën UK C5 Tourer pages add the estate without replacing the C5", () => {
+  for (const year of [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]) {
+    const hit = searchVehicles(`${year} Citroen C5 Tourer`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 100102, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("C5 TOURER");
+    expect(hit?.years).toContain(year);
+  }
+  // Only years with a dated official UK sales page count.
+  const tourer = searchVehicles("2010 Citroen C5 Tourer", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  for (const year of [2007, 2017, 2018]) expect(tourer?.years ?? []).not.toContain(year);
+  expect(searchVehicles("2010 Citroen C5", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C5");
+});
