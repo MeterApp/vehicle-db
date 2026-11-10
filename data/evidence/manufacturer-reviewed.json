@@ -3960,6 +3960,28 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20220126231312/https://www.fiat.co.uk/tipo/tipo-station-wagon",
       "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2022-01-26, offering it for sale in the UK with quote, test drive and retailer links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2026,
+      "makeId": 584,
+      "make": "PORSCHE",
+      "model": "Cayenne Turbo E-Hybrid Coupe with GT Package",
+      "vehicleTypeId": 7,
+      "market": "DE",
+      "yearBasis": "model-year",
+      "url": "https://web.archive.org/web/20250817201105/https://www.porsche.com/germany/models/cayenne/cayenne-coupe-models/cayenne-coupe-turbo-e-hybrid-gt-package/",
+      "note": "Porsche Germany's official model page for the Cayenne Turbo E-Hybrid Coupé mit GT-Paket, captured 2025-08-17 and again 2025-11-19, carries the structured model year 2026 for this model (model code 9YBAI1). Porsche International's English page for the same model code names it 'Cayenne Turbo E-Hybrid Coupé with GT Package' with model year 2026 (captures 2025-08-09 and 2025-11-18). Porsche's press kit describes the GT Package as coupe-only and market-specific, with a titanium exhaust with centrally positioned tailpipes, a carbon roof and a carbon rear diffuser, so it stays distinct from the Cayenne Turbo E-Hybrid Coupe. Factory model year; the cited copy is the Internet Archive's. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2027,
+      "makeId": 584,
+      "make": "PORSCHE",
+      "model": "Cayenne Turbo E-Hybrid Coupe with GT Package",
+      "vehicleTypeId": 7,
+      "market": "DE",
+      "yearBasis": "model-year",
+      "url": "https://web.archive.org/web/20260618051337/https://www.porsche.com/germany/models/cayenne/cayenne-coupe-models/cayenne-coupe-turbo-e-hybrid-gt-package/",
+      "note": "Porsche Germany's official model page for the Cayenne Turbo E-Hybrid Coupé mit GT-Paket, captured 2026-06-18, carries the structured model year 2027 for this model (model code 9YBAI1). Factory model year; the cited copy is the Internet Archive's. Retrieved 2026-11-10."
     }
   ],
   "catalogYearMetadata": {
