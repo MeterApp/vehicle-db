@@ -3707,6 +3707,182 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20240627043147/https://www.chery.ru/Tiggo%204%20PRO%20%D0%BF%D1%80%D0%B0%D0%B9%D1%81_2024_14_06_13089312012009557544.pdf",
       "note": "Official Chery Russia price list 'Комплектации Tiggo 4 Pro 18 Years Edition' (file named '…прайс_2024_14_06', Internet Archive capture 2024-06-27): 'Комплектации, 2024 производственный год', Action MT to Ultimate. Listed as Tiggo 4 Pro, separate from the plain Tiggo 4. Calendar marketed year in Russia only, not factory model year or visual-generation equivalence. Retrieved 2026-11-04."
+    },
+    {
+      "year": 2025,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2025/april/PressRelease-Maruti_Suzuki_sales_in_March_2025_and_FY_2024-25.pdf",
+      "note": "Manufacturer March 2025 sales table (April 1, 2025) explicitly includes the model in the Compact category with positive March 2025 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://bseindia.com/xml-data/corpfiling/AttachHis/83aec808-0653-49a3-97de-520b89f4e40b.pdf",
+      "note": "Manufacturer March 2024 sales press release filed with BSE on April 1, 2024 explicitly includes the model in the Compact category with positive March 2024 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2023,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://www.marutisuzuki.com/content/dam/arena-eds/corporate/press-release/assets/documents/2023/april/Press_Release_-_Maruti_Suzuki_sales_in_March_2023_and_FY_2022-23.pdf",
+      "note": "Manufacturer March 2023 sales table (April 1, 2023) explicitly includes the model in the Compact category with positive March 2023 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2022,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://bseindia.com/xml-data/corpfiling/AttachHis/950432ff-8674-4140-944b-bce89224afd1.pdf",
+      "note": "Manufacturer March 2022 sales press release filed with BSE on April 1, 2022 explicitly includes the model in the Compact category with positive March 2022 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2021,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://bseindia.com/xml-data/corpfiling/AttachHis/3b4d6cb6-9777-4619-a255-e0b0cfc4a7e7.pdf",
+      "note": "Manufacturer March 2021 sales press release filed with BSE on April 1, 2021 explicitly includes the model in the Compact category with positive March 2021 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2020,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://bseindia.com/xml-data/corpfiling/AttachHis/3b4d6cb6-9777-4619-a255-e0b0cfc4a7e7.pdf",
+      "note": "The same April 1, 2021 manufacturer release reports that Compact category (WagonR, Swift, Celerio, Ignis, Baleno, Dzire, Tour S) with positive March 2020 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2019,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://bseindia.com/xml-data/corpfiling/AttachHis/f03800ff-7d2e-4579-bab9-931200012b79.pdf",
+      "note": "Manufacturer March 2019 sales press release filed with BSE on April 1, 2019 explicitly includes the model in the Compact category with positive March 2019 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2018,
+      "makeId": 3233934283,
+      "make": "MARUTI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "IN",
+      "url": "https://bseindia.com/xml-data/corpfiling/CorpAttachment/2018/4/329434bc-2b95-40cd-aef3-9a4ad5ea387e.pdf",
+      "note": "Manufacturer March 2018 sales press release filed with BSE on April 1, 2018 explicitly includes the model in the Compact category with positive March 2018 sales. Calendar catalog year of marketed range, not model year; existing Maruti make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2019,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20190722202810/https://www.suzukiauto.co.za/accessories/dzire/",
+      "note": "Suzuki Auto South Africa's official accessories catalog page for the Dzire, archived 2019-07-22, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2020,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20200815102907/https://www.suzukiauto.co.za/accessories/dzire/",
+      "note": "Suzuki Auto South Africa's official accessories catalog page for the Dzire, archived 2020-08-15, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2021,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20210413093024/https://www.suzukiauto.co.za/cars/dzire",
+      "note": "Suzuki Auto South Africa's official model page for the Dzire, archived 2021-04-13, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2022,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20220120102054/https://www.suzukiauto.co.za/cars/dzire",
+      "note": "Suzuki Auto South Africa's official model page for the Dzire, archived 2022-01-20, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2023,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20230409024537/https://www.suzukiauto.co.za/cars/dzire",
+      "note": "Suzuki Auto South Africa's official model page for the Dzire, archived 2023-04-09, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20240424154605/https://www.suzukiauto.co.za/dzire-features-specs-suzuki-auto",
+      "note": "Suzuki Auto South Africa's official features and specs page for the Dzire, archived 2024-04-24, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20250118024237/https://www.suzukiauto.co.za/cars/dzire",
+      "note": "Suzuki Auto South Africa's official model page for the Dzire, archived 2025-01-18, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "ZA",
+      "url": "https://web.archive.org/web/20260114034838/https://www.suzukiauto.co.za/cars/dzire",
+      "note": "Suzuki Auto South Africa's official model page for the Dzire, archived 2026-01-14, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
