@@ -3883,6 +3883,83 @@
       "url": "https://web.archive.org/web/20260114034838/https://www.suzukiauto.co.za/cars/dzire",
       "note": "Suzuki Auto South Africa's official model page for the Dzire, archived 2026-01-14, shows the Suzuki-branded model on sale in South Africa. Calendar catalog year, not model year; existing Suzuki make ID preserved.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2016,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20160902110353/http://www.fiat.co.uk:80/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2016-09-02, offering it for sale in the UK with configure link. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2017,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20170606191540/https://www.fiat.co.uk/tipo/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2017-06-06, offering it for sale in the UK with configurator and a UK 'From' price. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2018,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20180716030441/https://www.fiat.co.uk/tipo/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2018-07-16, offering it for sale in the UK with configurator and a UK 'From' price. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2019,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20190322182500/https://www.fiat.co.uk/tipo/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2019-03-22, offering it for sale in the UK with configurator and a UK 'From' price. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2020,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20200920172054/https://www.fiat.co.uk/tipo/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2020-09-20, offering it for sale in the UK with configurator and a UK 'From' price. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2021,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20210225233020/https://www.fiat.co.uk/tipo/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2021-02-25, offering it for sale in the UK with retailer and trim links (New Tipo Station Wagon). The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2022,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo Station Wagon",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20220126231312/https://www.fiat.co.uk/tipo/tipo-station-wagon",
+      "note": "Official Fiat UK model page for the Tipo Station Wagon (estate body) captured 2022-01-26, offering it for sale in the UK with quote, test drive and retailer links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-10."
     }
   ],
   "catalogYearMetadata": {

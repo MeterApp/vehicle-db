@@ -386,3 +386,16 @@ test("dated Russian Chery Tiggo 4 and Tiggo 4 Pro price-list years fill catalog 
   expect(hybrid?.modelName.toUpperCase()).toBe("TIGGO 4 HYBRID");
   expect(hybrid?.sourceIds).not.toContain("manufacturer-reviewed-catalog");
 });
+
+test("dated Fiat UK Tipo Station Wagon pages add the estate without replacing the Tipo", () => {
+  for (const year of [2016, 2017, 2018, 2019, 2020, 2021, 2022]) {
+    const hit = searchVehicles(`${year} Fiat Tipo Station Wagon`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 492, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("TIPO STATION WAGON");
+    expect(hit?.years).toContain(year);
+  }
+  // Only years with a dated official UK page count.
+  const wagon = searchVehicles("2018 Fiat Tipo Station Wagon", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  for (const year of [2015, 2023, 2024]) expect(wagon?.years ?? []).not.toContain(year);
+  expect(searchVehicles("2018 Fiat Tipo", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("TIPO");
+});
