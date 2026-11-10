@@ -399,3 +399,20 @@ test("dated Fiat UK Tipo Station Wagon pages add the estate without replacing th
   for (const year of [2015, 2023, 2024]) expect(wagon?.years ?? []).not.toContain(year);
   expect(searchVehicles("2018 Fiat Tipo", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("TIPO");
 });
+
+test("dated Porsche Germany pages add the Cayenne Turbo E-Hybrid Coupe with GT Package without replacing the coupe", () => {
+  for (const year of [2026, 2027]) {
+    const hit = searchVehicles(`${year} Porsche Cayenne Turbo E-Hybrid Coupe with GT Package`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 584, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("CAYENNE TURBO E-HYBRID COUPE WITH GT PACKAGE");
+    expect(hit?.years).toContain(year);
+    expect(hit?.sourceIds).toContain("manufacturer-reviewed");
+  }
+  // Only model years with a dated official market page count; 2024-2025 have none yet.
+  const gt = searchVehicles("2026 Porsche Cayenne Turbo E-Hybrid Coupe with GT Package", { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [2024, 2025]) expect(gt?.years ?? []).not.toContain(year);
+  // The standard coupe keeps its own name and years.
+  const coupe = searchVehicles("2025 Porsche Cayenne Turbo E-Hybrid Coupe", { fuzzy: false }).find(r => r.kind === "model");
+  expect(coupe?.modelName.toUpperCase()).toBe("CAYENNE TURBO E-HYBRID COUPE");
+  expect(coupe?.years).not.toContain(2026);
+});
