@@ -458,3 +458,16 @@ test("dated Renault France Talisman Estate pages add the estate without replacin
   const saloon = searchVehicles("2019 Renault Talisman", { fuzzy: false }).find(r => r.kind === "model");
   expect(saloon?.modelName.toUpperCase()).toBe("TALISMAN");
 });
+
+test("dated Hyundai UK i40 Tourer pages add the estate without replacing the i40", () => {
+  for (const year of [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]) {
+    const hit = searchVehicles(`${year} Hyundai i40 Tourer`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 498, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("I40 TOURER");
+    expect(hit?.years).toContain(year);
+  }
+  const tourer = searchVehicles("2015 Hyundai i40 Tourer", { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [2011, 2020]) expect(tourer?.years).not.toContain(year);
+  const saloon = searchVehicles("2015 Hyundai i40", { fuzzy: false }).find(r => r.kind === "model");
+  expect(saloon?.modelName.toUpperCase()).toBe("I40");
+});
