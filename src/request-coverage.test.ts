@@ -445,3 +445,16 @@ test("dated Citroën UK C5 Tourer pages add the estate without replacing the C5"
   for (const year of [2007, 2017, 2018]) expect(tourer?.years ?? []).not.toContain(year);
   expect(searchVehicles("2010 Citroen C5", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("C5");
 });
+
+test("dated Renault France Talisman Estate pages add the estate without replacing the Talisman", () => {
+  for (const year of [2016, 2017, 2018, 2019, 2020, 2021, 2022]) {
+    const hit = searchVehicles(`${year} Renault Talisman Estate`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 13647, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("TALISMAN ESTATE");
+    expect(hit?.years).toContain(year);
+  }
+  const estate = searchVehicles("2019 Renault Talisman Estate", { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [2015, 2023]) expect(estate?.years).not.toContain(year);
+  const saloon = searchVehicles("2019 Renault Talisman", { fuzzy: false }).find(r => r.kind === "model");
+  expect(saloon?.modelName.toUpperCase()).toBe("TALISMAN");
+});

@@ -4092,6 +4092,83 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20160409214053/http://www.citroen.co.uk/new-cars-and-vans/citroen-range/citroen-c5-tourer",
       "note": "Official Citroën UK model page for the C5 Tourer (estate body of the C5), captured 2016-04-09, offering it for sale in the UK with a UK 'From £25,515' price, configurator, test-drive, dealer and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year. By 2016-12-29 the page redirects, so no year after 2016 is claimed. Retrieved 2026-11-10."
+    },
+    {
+      "year": 2016,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20160814184543/https://www.renault.fr/vehicules/vehicules-particuliers/talisman-estate.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2016-08-14, offering it for sale in France with an 'A partir de' price block, configurator, test-drive and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2017,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20170311042326/https://www.renault.fr/vehicules/vehicules-particuliers/talisman-estate.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2017-03-11, offering it for sale in France with an 'A partir de' price block, versions and prices, configurator, test-drive and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2018,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20180908213325/https://www.renault.fr/vehicules/vehicules-particuliers/talisman-estate.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2018-09-08, offering it for sale in France with configurator, test-drive and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2019,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20191023085114/https://www.renault.fr/vehicules/vehicules-particuliers/talisman-estate.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2019-10-23, offering it for sale in France with an 'À partir de' price block, versions and prices, configurator, test-drive and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2020,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20201029115853/https://www.renault.fr/vehicules-particuliers/talisman-break-phase-2.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2020-10-29, offering it for sale in France with the facelifted 'Nouvelle Talisman Estate' with a 'Prix à partir de 37 000 €' price, configurator, test-drive and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2021,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20210620133256/https://www.renault.fr/vehicules-particuliers/talisman-break-phase-2.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2021-06-20, offering it for sale in France with a 'prix à partir de 36 400 €' price, configurator, test-drive and brochure links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2022,
+      "makeId": 13647,
+      "make": "RENAULT",
+      "model": "Talisman Estate",
+      "vehicleTypeId": 2,
+      "market": "FR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20220623214124/https://www.renault.fr/vehicules-particuliers/talisman-break-phase-2.html",
+      "note": "Official Renault France model page for the Talisman Estate (estate body of the Talisman), captured 2022-06-23, offering it for sale in France with configurator ('configurez-la'), test-drive, brochure and available-stock links. The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. By 2023 the page redirects to Renault France's previous-range section, so no later year is claimed. Retrieved 2026-11-11."
     }
   ],
   "catalogYearMetadata": {
@@ -4099,7 +4176,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia (Renault), Australia (Toyota, Nissan, Ford)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
