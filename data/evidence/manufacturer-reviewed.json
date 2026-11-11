@@ -3963,6 +3963,17 @@
     },
     {
       "year": 2026,
+      "makeId": 492,
+      "make": "FIAT",
+      "model": "Tipo",
+      "vehicleTypeId": 2,
+      "market": "TR",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20260213123749/https://www.fiat.com.tr/modeller/egea/sedan",
+      "note": "Official Fiat Türkiye model page for the Egea Sedan (fiat.com.tr/modeller/egea/sedan, title 'Fiat Egea Sedan Modeli ve Fiyatları'), Internet Archive captures 2026-02-13 and 2026-06-12, with Egea in the site's passenger-car menu and linked to the passenger-car price list; the Egea model pages (modeller/egea) are also captured live on 2026-01-14, 2026-05-10, 2026-07-07 and 2026-08-14. Egea is Fiat's Turkish name for the Tofaş-built Tipo saloon, recorded under the existing Tipo. The Egea Cross is not claimed. The capture dates establish the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year in Turkey only, not factory model year or visual-generation equivalence. Retrieved 2026-11-11."
+    },
+    {
+      "year": 2026,
       "makeId": 584,
       "make": "PORSCHE",
       "model": "Cayenne Turbo E-Hybrid Coupe with GT Package",

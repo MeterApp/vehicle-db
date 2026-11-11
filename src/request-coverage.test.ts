@@ -400,6 +400,22 @@ test("dated Fiat UK Tipo Station Wagon pages add the estate without replacing th
   expect(searchVehicles("2018 Fiat Tipo", { fuzzy: false }).find(r => r.kind === "model")?.modelName.toUpperCase()).toBe("TIPO");
 });
 
+test("dated Fiat Türkiye Egea pages add the 2026 Tipo for Turkey without changing earlier years", () => {
+  const tipo2025 = searchVehicles("2025 Fiat Tipo", { fuzzy: false }).find(r => r.kind === "model");
+  const tipo2026 = searchVehicles("2026 Fiat Tipo", { fuzzy: false }).find(r => r.kind === "model");
+  expect(tipo2026).toMatchObject({ makeId: 492, matchKind: "exact" });
+  expect(tipo2026?.modelName.toUpperCase()).toBe("TIPO");
+  expect(tipo2026?.years).toContain(2026);
+  // Reviewed catalog rows carry their own per-source model ID (as for the C-Elysee); 2025 keeps its register rows.
+  expect(tipo2025?.modelName.toUpperCase()).toBe("TIPO");
+  expect(tipo2025?.sourceIds).not.toContain("manufacturer-reviewed-catalog");
+  // Only the dated 2026 Turkish pages count: no 2027, and no Egea Cross.
+  const reviewed = searchVehicles("2026 Fiat Tipo", { fuzzy: false, sourceId: "manufacturer-reviewed-catalog" }).find(r => r.kind === "model");
+  expect(reviewed?.years).toEqual([2026]);
+  expect(searchVehicles("2027 Fiat Tipo", { fuzzy: false }).find(r => r.kind === "model")?.years ?? []).not.toContain(2027);
+  expect(searchVehicles("2026 Fiat Egea Cross", { fuzzy: false }).find(r => r.kind === "model" && r.modelName.toUpperCase().includes("EGEA"))).toBeUndefined();
+});
+
 test("dated Porsche Germany pages add the Cayenne Turbo E-Hybrid Coupe with GT Package without replacing the coupe", () => {
   for (const year of [2026, 2027]) {
     const hit = searchVehicles(`${year} Porsche Cayenne Turbo E-Hybrid Coupe with GT Package`, { fuzzy: false }).find(r => r.kind === "model");
