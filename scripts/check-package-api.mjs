@@ -20,8 +20,8 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 import { getMakes, getModels } from "@meterapp/vehicle-db";
 import { searchVehicles } from "@meterapp/vehicle-db/search";
-import { resolveVehicle } from "@meterapp/vehicle-db/resolve";
-import { normalizeIdentityText } from "@meterapp/vehicle-db/identity";
+import { resolveVehicle, getVisualCompatibilityRules } from "@meterapp/vehicle-db/resolve";
+import { normalizeIdentityText, evaluateVisualCompatibility } from "@meterapp/vehicle-db/identity";
 const require = createRequire(import.meta.url);
 for (const subpath of ["", "/search", "/resolve", "/identity", "/package.json"]) assert.ok(Object.keys(require("@meterapp/vehicle-db" + subpath)).length);
 assert.equal(require("@meterapp/vehicle-db/package.json").version, ${JSON.stringify(manifest.version)});
@@ -36,13 +36,22 @@ assert.equal(resolveVehicle("2012 Nissan Navara D40", { market: "AU" }).status, 
 assert.equal(resolveVehicle("2012 Nissan Navara D40", { market: "US" }).status, "SCOPE_UNVERIFIED");
 assert.equal(resolveVehicle("2019 Ford Ranger", { market: "AU", yearBasis: "catalog-year", depth: "visual" }).selection?.identityId, "ford:ranger:px:facelift-2015");
 assert.equal(normalizeIdentityText(" Toyota  Camry "), "toyota camry");
+// The bundled appearance rules are readable: a badge twin is allowed in its scope, a look-alike denied, anything else unknown.
+const rules = getVisualCompatibilityRules();
+const twin = ["opel:corsa:2019:facelift-2023", "vauxhall:corsa:2019:facelift-2023"];
+assert.equal(evaluateVisualCompatibility(rules, twin[0], twin[1], { year: 2024, market: "DE", yearBasis: "catalog-year" }), "allow");
+assert.equal(evaluateVisualCompatibility(rules, twin[0], twin[1], { year: 2023, market: "DE", yearBasis: "catalog-year" }), "unknown");
+assert.equal(evaluateVisualCompatibility(rules, "toyota:bz4x:first:original", "subaru:solterra:first:original", { year: 2024, market: "US", yearBasis: "catalog-year" }), "deny");
+assert.ok(rules.every(rule => rule.rationale && rule.evidenceIds.length));
 `);
   run(process.execPath, [join(work, "consumer.mjs")]);
   const types = `
 import { getMakes, getModels, type Make } from "@meterapp/vehicle-db";
 import { searchVehicles } from "@meterapp/vehicle-db/search";
-import { resolveVehicle } from "@meterapp/vehicle-db/resolve";
-import { normalizeIdentityText } from "@meterapp/vehicle-db/identity";
+import { resolveVehicle, getVisualCompatibilityRules } from "@meterapp/vehicle-db/resolve";
+import { normalizeIdentityText, evaluateVisualCompatibility, type VisualCompatibility } from "@meterapp/vehicle-db/identity";
+const rules: readonly VisualCompatibility[] = getVisualCompatibilityRules();
+void evaluateVisualCompatibility(rules, "a", "b", { year: 2024, market: "DE", yearBasis: "catalog-year" });
 const makes: Make[] = getMakes({year:2024});
 void [makes, getModels({year:2024}), searchVehicles("2024 Toyota Camry"), resolveVehicle("2024 Toyota Camry"), normalizeIdentityText("Camry")];
 `;

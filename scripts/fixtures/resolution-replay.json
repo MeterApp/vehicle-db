@@ -39,5 +39,18 @@
   {"query":"2018 Toyota LandCruiser 70","cohort":"synthetic","options":{"market":"AU"},"expectedStatus":"MATCHED","forbiddenModelNames":["LANDCRUISER"]},
   {"query":"2018 Toyota LandCruiser 70","cohort":"synthetic","options":{"market":"NZ"},"expectedStatus":"SCOPE_UNVERIFIED"},
   {"query":"2019 Hyundai i30 Tourer","cohort":"synthetic","options":{"market":"GB"},"expectedStatus":"MATCHED","forbiddenModelNames":["i30"]},
-  {"query":"2019 Hyundai i30 Tourer","cohort":"synthetic","options":{"market":"FR"},"expectedStatus":"SCOPE_UNVERIFIED"}
+  {"query":"2019 Hyundai i30 Tourer","cohort":"synthetic","options":{"market":"FR"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2024 Opel Corsa","cohort":"synthetic","options":{"market":"DE","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["CORSA-E","ASTRA"]},
+  {"query":"2025 Vauxhall Corsa","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["CORSA-E","ASTRA"]},
+  {"query":"2023 Opel Corsa","cohort":"synthetic","options":{"market":"DE","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2024 Opel Corsa","cohort":"synthetic","options":{"market":"NL","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2024 Opel Corsa","cohort":"synthetic","expectedStatus":"MATCHED"},
+  {"query":"2024 Vauxhall Corsa","cohort":"synthetic","expectedStatus":"MATCHED"},
+  {"query":"2023 Opel Astra","cohort":"synthetic","options":{"market":"DE","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["CORSA","MOKKA"]},
+  {"query":"2023 Vauxhall Astra","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["CORSA","MOKKA"]},
+  {"query":"2022 Opel Mokka","cohort":"synthetic","options":{"market":"DE","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["MOKKA-E","MOKKA X"]},
+  {"query":"2022 Vauxhall Mokka","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["MOKKA-E","MOKKA X"]},
+  {"query":"2025 Opel Mokka","cohort":"synthetic","options":{"market":"DE","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2026 Mercedes-Benz GLC","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["GLC 400 4MATIC WITH EQ TE","GLC400 4matic electric"]},
+  {"query":"2026 Mercedes-Benz GLC 400 4MATIC WITH EQ TE","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["GLC"]}
 ]

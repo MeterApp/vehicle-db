@@ -98,6 +98,14 @@ test("counts allow/deny rules between visual identities and lists them in the ch
   expect(diff.visualCompatibility).toEqual({ added: [{ id: "deny:a", requestedVisualIdentityId: "v1", assetVisualIdentityId: "v2", decision: "deny" }], removed: [] });
   expect(diff.counts).toMatchObject({ visualRulesAdded: 1, visualRulesRemoved: 0 });
   expect(renderChangelogSection(diff, "2026-11-12")).toContain("- Appearance rules: 1 allow/deny rule added, 0 removed.");
+  // An allow is listed with the scope it holds in; the same pair in another scope is another rule.
+  const allow = { ...rule, id: "allow:a", decision: "allow" as const, years: [2024], markets: ["DE"], yearBasis: "catalog-year" as const };
+  const scoped = buildReleaseDiff({ version: "1.0.0", catalog, graph: { ...graph, visualCompatibility: [rule] } }, { version: "1.1.0", catalog, graph: { ...graph, visualCompatibility: [rule, allow, { ...allow, id: "allow:b", markets: ["GB"] }] } }, { generatedAt: "2026-11-12T00:00:00.000Z" });
+  expect(scoped.visualCompatibility.added).toEqual([
+    { id: "allow:a", requestedVisualIdentityId: "v1", assetVisualIdentityId: "v2", decision: "allow", markets: ["DE"], years: [2024], yearBasis: "catalog-year" },
+    { id: "allow:b", requestedVisualIdentityId: "v1", assetVisualIdentityId: "v2", decision: "allow", markets: ["GB"], years: [2024], yearBasis: "catalog-year" },
+  ]);
+  expect(renderChangelogSection(scoped, "2026-11-12")).toContain("- Appearance rules: 2 allow/deny rules added, 0 removed.");
   const unchanged = buildReleaseDiff({ version: "1.0.0", catalog, graph }, { version: "1.1.0", catalog, graph }, { generatedAt: "2026-11-12T00:00:00.000Z" });
   expect(renderChangelogSection(unchanged, "2026-11-12")).not.toContain("Appearance rules");
 });
