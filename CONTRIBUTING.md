@@ -69,6 +69,11 @@ Broad historical Indian portfolios refresh with `pnpm run refresh:india-history`
    number of makes/models added, and the license. Bump `version` in
    `package.json` (minor for new data). Merging to `main` publishes the new
    version to npm automatically through trusted publishing.
+   In the same pull request run `pnpm run changelog`, which writes that
+   version's section of `CHANGELOG.md`. If the change answers a request on a
+   consumer's board, end a commit message with `Request-Ref: <opaque id>`
+   (see [AGENTS.md](AGENTS.md)); the publish workflow attaches a
+   machine-readable `release.json` to the GitHub release.
 
 ## Reporting a wrong or duplicate vehicle
 

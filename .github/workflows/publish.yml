@@ -115,3 +115,15 @@ jobs:
         run: npm publish --access public --tag "$NPM_DIST_TAG"
         env:
           NPM_DIST_TAG: ${{ steps.package.outputs.dist_tag }}
+
+      # After the publish and allowed to fail: the package never waits on its release notes.
+      - name: Attach release.json to the GitHub release
+        if: steps.state.outputs.npm_exists == 'false'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PACKAGE_TAG: ${{ steps.package.outputs.tag }}
+        run: |
+          git fetch --quiet --tags --unshallow origin || git fetch --quiet --tags origin
+          pnpm run release:diff --to "$GITHUB_SHA" --out release.json
+          gh release upload "$PACKAGE_TAG" release.json --clobber

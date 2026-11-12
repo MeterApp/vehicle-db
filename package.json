@@ -72,6 +72,8 @@
     "refresh:fueleconomy-us": "tsx scripts/import-fueleconomy-us.ts",
     "refresh:reviewed": "tsx scripts/import-reviewed-models.ts data/evidence/manufacturer-reviewed.json",
     "replay": "tsx scripts/replay-catalog.ts",
+    "release:diff": "tsx scripts/release-diff.ts",
+    "changelog": "tsx scripts/release-diff.ts --worktree --changelog",
     "refresh:manufacturer-catalogs": "tsx scripts/import-manufacturer-catalogs.ts",
     "refresh:india": "tsx scripts/import-indian-catalogs.ts",
     "refresh:india-history": "tsx scripts/import-indian-history.ts",
