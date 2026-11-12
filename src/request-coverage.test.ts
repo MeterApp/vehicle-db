@@ -471,3 +471,16 @@ test("dated Hyundai UK i40 Tourer pages add the estate without replacing the i40
   const saloon = searchVehicles("2015 Hyundai i40", { fuzzy: false }).find(r => r.kind === "model");
   expect(saloon?.modelName.toUpperCase()).toBe("I40");
 });
+
+test("dated Hyundai UK i30 Tourer pages add the estate without replacing the i30", () => {
+  for (let year = 2012; year <= 2022; year++) {
+    const hit = searchVehicles(`${year} Hyundai i30 Tourer`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 498, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("I30 TOURER");
+    expect(hit?.years).toContain(year);
+  }
+  const tourer = searchVehicles("2015 Hyundai i30 Tourer", { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [2011, 2023]) expect(tourer?.years).not.toContain(year);
+  const hatch = searchVehicles("2015 Hyundai i30", { fuzzy: false }).find(r => r.kind === "model");
+  expect(hatch?.modelName.toUpperCase()).toBe("I30");
+});
