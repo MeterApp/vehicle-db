@@ -1,9 +1,11 @@
 import fs from "fs";
 import { execFileSync } from "child_process";
 import type { CatalogSnapshot } from "./identity-types";
-const norm = (s: string) => s.trim().toUpperCase().replace(/\s+/g, " ");
+export const norm = (s: string) => s.trim().toUpperCase().replace(/\s+/g, " ");
+/** One published selection: year, make ID, normalized model name and vehicle type. */
+export const selectionKey = (d: CatalogSnapshot, r: number[]) => [r[0], r[1], norm(d.modelNames[r[3]]), r[4]].join(":");
 export function compareCatalogs(before: CatalogSnapshot, after: CatalogSnapshot) {
-  const key = (d: CatalogSnapshot, r: number[]) => [r[0], r[1], norm(d.modelNames[r[3]]), r[4]].join(":");
+  const key = selectionKey;
   const a = new Map(before.models.map(r => [key(before, r), r]));
   const b = new Map(after.models.map(r => [key(after, r), r]));
   const removed: string[] = [], changedIds: string[] = [], changedFirstSelections: string[] = [], changedMakes: number[] = [];

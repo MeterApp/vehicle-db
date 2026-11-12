@@ -4,3 +4,4 @@ dist
 *.db-wal
 *.db-journal
 .cache
+release.json
