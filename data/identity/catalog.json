@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "2026-11-12-au-pickups",
+  "revision": "2026-11-12-twins",
   "identities": [
     {
       "id": "bmw:4",
@@ -13864,6 +13864,429 @@
         "AU"
       ],
       "yearBasis": "catalog-year"
+    },
+    {
+      "id": "opel:mokka",
+      "kind": "line",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Mokka",
+      "names": [],
+      "evidenceIds": [
+        "oem:opel-vauxhall-mokka-one-car",
+        "oem:opel-mokka-de-2021-2024"
+      ]
+    },
+    {
+      "id": "opel:mokka:2021",
+      "kind": "generation",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Mokka launched in 2021 (Germany)",
+      "names": [],
+      "parentId": "opel:mokka",
+      "evidenceIds": [
+        "oem:opel-mokka-de-2021-2024",
+        "oem:opel-mokka-2024-facelift"
+      ],
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "opel:mokka:2021:original",
+      "kind": "visual",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Opel Mokka as launched in 2021 (Germany)",
+      "names": [],
+      "parentId": "opel:mokka:2021",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:opel-vauxhall-mokka-one-car",
+        "oem:opel-mokka-de-2021-2024",
+        "oem:opel-mokka-ie-2023-pictures",
+        "oem:opel-mokka-2024-facelift"
+      ],
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "vauxhall:mokka",
+      "kind": "line",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Mokka",
+      "names": [],
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021"
+      ]
+    },
+    {
+      "id": "vauxhall:mokka:2021",
+      "kind": "generation",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Mokka launched in 2021 (United Kingdom)",
+      "names": [],
+      "parentId": "vauxhall:mokka",
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021",
+        "oem:vauxhall-mokka-2024-facelift"
+      ],
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "vauxhall:mokka:2021:original",
+      "kind": "visual",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Vauxhall Mokka as launched in 2021 (United Kingdom)",
+      "names": [],
+      "parentId": "vauxhall:mokka:2021",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021",
+        "oem:vauxhall-mokka-2024-facelift"
+      ],
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "opel:corsa",
+      "kind": "line",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Corsa",
+      "names": [],
+      "evidenceIds": [
+        "oem:opel-vauxhall-corsa-2019-generation"
+      ]
+    },
+    {
+      "id": "opel:corsa:2019",
+      "kind": "generation",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Corsa generation built from 2019 (Germany)",
+      "names": [],
+      "parentId": "opel:corsa",
+      "evidenceIds": [
+        "oem:opel-vauxhall-corsa-2019-generation",
+        "oem:opel-corsa-de-2024",
+        "oem:opel-corsa-de-2025"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "opel:corsa:2019:facelift-2023",
+      "kind": "visual",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Opel Corsa 2023 Vizor front (Germany)",
+      "names": [],
+      "parentId": "opel:corsa:2019",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:opel-corsa-2023-front",
+        "oem:opel-corsa-de-2024",
+        "oem:opel-corsa-de-2025"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "vauxhall:corsa",
+      "kind": "line",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Corsa",
+      "names": [],
+      "evidenceIds": [
+        "oem:opel-vauxhall-corsa-2019-generation"
+      ]
+    },
+    {
+      "id": "vauxhall:corsa:2019",
+      "kind": "generation",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Corsa generation built from 2019 (United Kingdom)",
+      "names": [],
+      "parentId": "vauxhall:corsa",
+      "evidenceIds": [
+        "oem:opel-vauxhall-corsa-2019-generation",
+        "oem:vauxhall-corsa-gb-2024",
+        "oem:vauxhall-corsa-gb-2025"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "vauxhall:corsa:2019:facelift-2023",
+      "kind": "visual",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Vauxhall Corsa 2023 Vizor front (United Kingdom)",
+      "names": [],
+      "parentId": "vauxhall:corsa:2019",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:vauxhall-corsa-2023-front",
+        "oem:vauxhall-corsa-gb-2024",
+        "oem:vauxhall-corsa-gb-2025"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "opel:astra",
+      "kind": "line",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Astra",
+      "names": [],
+      "evidenceIds": [
+        "oem:opel-astra-2021-premiere"
+      ]
+    },
+    {
+      "id": "opel:astra:2021",
+      "kind": "generation",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Sixth Opel Astra generation (Germany)",
+      "names": [],
+      "parentId": "opel:astra",
+      "evidenceIds": [
+        "oem:opel-astra-2021-premiere",
+        "oem:opel-astra-de-2021-orders",
+        "oem:opel-astra-2026-facelift"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "opel:astra:2021:original",
+      "kind": "visual",
+      "makeId": 471,
+      "vehicleTypeId": 2,
+      "name": "Opel Astra as revealed in 2021 (Germany)",
+      "names": [],
+      "parentId": "opel:astra:2021",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:opel-astra-2021-premiere",
+        "oem:opel-astra-de-2021-orders",
+        "oem:opel-astra-2026-facelift"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "vauxhall:astra",
+      "kind": "line",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Astra",
+      "names": [],
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal"
+      ]
+    },
+    {
+      "id": "vauxhall:astra:2021",
+      "kind": "generation",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Eighth Vauxhall Astra generation (United Kingdom)",
+      "names": [],
+      "parentId": "vauxhall:astra",
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-2026-facelift"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "vauxhall:astra:2021:original",
+      "kind": "visual",
+      "makeId": 100101,
+      "vehicleTypeId": 2,
+      "name": "Vauxhall Astra as revealed in 2021 (United Kingdom)",
+      "names": [],
+      "parentId": "vauxhall:astra:2021",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-gb-pictures",
+        "oem:vauxhall-astra-2026-facelift"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "mercedes-benz:glc:second:documented",
+      "kind": "visual",
+      "makeId": 449,
+      "vehicleTypeId": 2,
+      "name": "Mercedes-Benz GLC second generation as revealed in 2022",
+      "names": [],
+      "parentId": "mercedes-benz:glc:second",
+      "appearanceRevision": "as revealed in June 2022; later revisions not dated",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc-second",
+        "oem:mercedes-benz-glc-x254-front"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "yearBasis": "catalog-year",
+      "markets": [
+        "GB",
+        "NL"
+      ]
+    },
+    {
+      "id": "mercedes-benz:glc-400-4matic-with-eq-te:first:documented",
+      "kind": "visual",
+      "makeId": 449,
+      "vehicleTypeId": 2,
+      "name": "Mercedes-Benz GLC with EQ Technology as revealed in 2025",
+      "names": [],
+      "parentId": "mercedes-benz:glc-400-4matic-with-eq-te:first",
+      "appearanceRevision": "as revealed in September 2025",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc-400-4matic-with-eq-te-first",
+        "oem:mercedes-benz-glc-electric-front"
+      ],
+      "years": [
+        2026
+      ],
+      "yearBasis": "catalog-year",
+      "markets": [
+        "GB",
+        "NL",
+        "US"
+      ]
+    },
+    {
+      "id": "mercedes-benz:glc400-4matic-electric:first:documented",
+      "kind": "visual",
+      "makeId": 449,
+      "vehicleTypeId": 2,
+      "name": "Mercedes-Benz GLC with EQ Technology as revealed in 2025",
+      "names": [],
+      "parentId": "mercedes-benz:glc400-4matic-electric:first",
+      "appearanceRevision": "as revealed in September 2025",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc400-4matic-electric-first",
+        "oem:mercedes-benz-glc-electric-front"
+      ],
+      "years": [
+        2026,
+        2027
+      ],
+      "yearBasis": "catalog-year",
+      "markets": [
+        "GB",
+        "NL",
+        "US"
+      ]
     }
   ],
   "aliases": [
@@ -34267,6 +34690,222 @@
       "evidenceIds": [
         "oem:nissan-navara-au-2026-arrival"
       ]
+    },
+    {
+      "identityId": "opel:mokka:2021:original",
+      "year": 2021,
+      "makeId": 471,
+      "modelId": 4448433047,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-mokka-de-2021-2024"
+      ]
+    },
+    {
+      "identityId": "opel:mokka:2021:original",
+      "year": 2022,
+      "makeId": 471,
+      "modelId": 4448433047,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-mokka-de-2021-2024"
+      ]
+    },
+    {
+      "identityId": "opel:mokka:2021:original",
+      "year": 2023,
+      "makeId": 471,
+      "modelId": 4448433047,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-mokka-de-2021-2024"
+      ]
+    },
+    {
+      "identityId": "opel:mokka:2021:original",
+      "year": 2024,
+      "makeId": 471,
+      "modelId": 4448433047,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-mokka-de-2021-2024"
+      ]
+    },
+    {
+      "identityId": "vauxhall:mokka:2021:original",
+      "year": 2021,
+      "makeId": 100101,
+      "modelId": 4572301837,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021",
+        "oem:vauxhall-mokka-2024-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:mokka:2021:original",
+      "year": 2022,
+      "makeId": 100101,
+      "modelId": 4572301837,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021",
+        "oem:vauxhall-mokka-2024-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:mokka:2021:original",
+      "year": 2023,
+      "makeId": 100101,
+      "modelId": 4572301837,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021",
+        "oem:vauxhall-mokka-2024-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:mokka:2021:original",
+      "year": 2024,
+      "makeId": 100101,
+      "modelId": 4572301837,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-mokka-2021",
+        "oem:vauxhall-mokka-2024-facelift"
+      ]
+    },
+    {
+      "identityId": "opel:corsa:2019:facelift-2023",
+      "year": 2024,
+      "makeId": 471,
+      "modelId": 4595105950,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-corsa-de-2024",
+        "oem:opel-corsa-de-2025"
+      ]
+    },
+    {
+      "identityId": "opel:corsa:2019:facelift-2023",
+      "year": 2025,
+      "makeId": 471,
+      "modelId": 4595105950,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-corsa-de-2024",
+        "oem:opel-corsa-de-2025"
+      ]
+    },
+    {
+      "identityId": "vauxhall:corsa:2019:facelift-2023",
+      "year": 2024,
+      "makeId": 100101,
+      "modelId": 4679894736,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-corsa-gb-2024",
+        "oem:vauxhall-corsa-gb-2025"
+      ]
+    },
+    {
+      "identityId": "vauxhall:corsa:2019:facelift-2023",
+      "year": 2025,
+      "makeId": 100101,
+      "modelId": 4679894736,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-corsa-gb-2024",
+        "oem:vauxhall-corsa-gb-2025"
+      ]
+    },
+    {
+      "identityId": "opel:astra:2021:original",
+      "year": 2022,
+      "makeId": 471,
+      "modelId": 1550016151,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-astra-de-2021-orders",
+        "oem:opel-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "opel:astra:2021:original",
+      "year": 2023,
+      "makeId": 471,
+      "modelId": 1550016151,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-astra-de-2021-orders",
+        "oem:opel-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "opel:astra:2021:original",
+      "year": 2024,
+      "makeId": 471,
+      "modelId": 1550016151,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-astra-de-2021-orders",
+        "oem:opel-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "opel:astra:2021:original",
+      "year": 2025,
+      "makeId": 471,
+      "modelId": 1550016151,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:opel-astra-de-2021-orders",
+        "oem:opel-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:astra:2021:original",
+      "year": 2022,
+      "makeId": 100101,
+      "modelId": 4736839337,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:astra:2021:original",
+      "year": 2023,
+      "makeId": 100101,
+      "modelId": 4736839337,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:astra:2021:original",
+      "year": 2024,
+      "makeId": 100101,
+      "modelId": 4736839337,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-2026-facelift"
+      ]
+    },
+    {
+      "identityId": "vauxhall:astra:2021:original",
+      "year": 2025,
+      "makeId": 100101,
+      "modelId": 4736839337,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-2026-facelift"
+      ]
     }
   ],
   "evidence": [
@@ -37167,6 +37806,174 @@
       "url": "https://australia.nissannews.com/en-AU/releases/all-new-nissan-navara-pricing-and-specifications-announced-ahead-of-march-arrival",
       "retrievedAt": "2026-11-12",
       "note": "Nissan Australia release of 5 February 2026: the all-new Navara goes on sale in Australia in March 2026, exclusively as a dual cab 4x4 pick-up. Whether the D23 was still offered in early 2026 is not stated, so 2026 is given to the new generation only."
+    },
+    {
+      "id": "oem:opel-vauxhall-mokka-one-car",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20241116214013/https://www.media.stellantis.com/em-en/opel/press/new-mokka-from-opel-sister-vauxhall-named-top-gear-s-design-of-the-year",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, Rüsselsheim, 1 December 2021 (Internet Archive capture 2024-11-16): 'The new Mokka from Opel's sister brand Vauxhall' wins Top Gear's Design of the Year. Opel describes the Vauxhall-badged car as 'the Mokka': the Vizor front integrates the LED headlights, the wing signature lights and 'the all-new brand emblem'; 'the new brand logo' is also at the rear with the Mokka lettering across the tailgate. The release is illustrated with the Vauxhall-badged, UK-registered car (the same picture file as the Vauxhall release of 30 November 2021). Quoted designer title: 'Opel/Vauxhall Vice President Design'."
+    },
+    {
+      "id": "oem:vauxhall-mokka-2021",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260309151708/https://www.media.stellantis.com/uk-en/vauxhall/press/all-new-vauxhall-mokka-named-top-gear-s-design-of-the-year",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall release, 30 November 2021 (Internet Archive capture 2026-03-09): the all-new Mokka and Mokka-e have the Vizor front that integrates the LED headlights and the Griffin badge into one module; the Griffin logo is also at the back, with the Mokka lettering across the tailgate. On sale in the United Kingdom in 2021. Calendar year of the release, not a factory model year."
+    },
+    {
+      "id": "oem:opel-mokka-de-2021-2024",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20210512111258/https://www.opel.de/fahrzeuge/mokka-modelle/mokka/uebersicht.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel Deutschland's Mokka model page ('Opel Mokka | Fakten im Überblick | Opel Deutschland', with configurator and price list), Internet Archive captures 2021-05-12, 2022-05-26, 2023-03-21 and 2024-06-02: the Mokka is offered in Germany in each of those calendar years. Opel's launch campaign for the new Mokka began on 1 March 2021 (Opel release of that date). Calendar years of the dated captures, not factory model years."
+    },
+    {
+      "id": "oem:opel-mokka-2024-facelift",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260710083635/https://www.media.stellantis.com/em-en/opel/press/crisper-more-modern-and-digital-new-opel-mokka-available-from-26-740",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, 23 October 2024 (Internet Archive capture 2026-07-10): the new Opel Mokka, with the new Opel Blitz and a new LED lighting signature, can be ordered from €26,740 (RRP in Germany). The Mokka launched in 2021 is therefore the car in German showrooms until late 2024; 2024 holds both."
+    },
+    {
+      "id": "oem:vauxhall-mokka-2024-facelift",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260613151239/https://www.media.stellantis.com/uk-en/vauxhall/press/vauxhall-reveals-new-mokka-with-crisper-more-modern-design",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall release, 22 October 2024 (Internet Archive capture 2026-06-13): Vauxhall reveals the new-look Mokka with a new LED lighting signature. The Mokka launched in 2021 is therefore the car in UK showrooms until late 2024; 2024 holds both."
+    },
+    {
+      "id": "oem:opel-mokka-ie-2023-pictures",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20230607000953/https://www.opel.ie/cars/mokka-models/mokka/overview.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel Ireland's Mokka model page (Internet Archive capture 2023-06-07), opened for its pictures of the Opel-badged car: the same body, Vizor, lamps, bumpers and tailgate with the Mokka lettering as the Vauxhall-badged car in the Vauxhall release of 30 November 2021; the emblem is the Opel Blitz. No picture is stored here."
+    },
+    {
+      "id": "oem:opel-vauxhall-awards-2023",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260314140648/https://www.media.stellantis.com/em-en/opel/press/and-the-winners-are-opel-and-vauxhall-collect-numerous-international-awards-in-2023",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, Rüsselsheim, 9 January 2024 (Internet Archive capture 2026-03-14), 'Opel and Vauxhall Collect Numerous International Awards in 2023': Opel counts the awards won in the United Kingdom, where the cars are sold as Vauxhalls, as awards of 'the new Astra' ('Best Car of the Year' from Ireland and the United Kingdom to Portugal) and of 'the new Corsa' ('Best Small Car' in the UK, 'autonis' in Germany), in one list of 'Opel and Vauxhall awards 2023'. Opel treats each as one car under two brands."
+    },
+    {
+      "id": "oem:opel-vauxhall-corsa-2019-generation",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20250326064930/https://www.media.stellantis.com/em-en/opel/press/first-fully-electric-opel-vauxhall-corsa-will-be-made-in-zaragoza-1632575978",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, Rüsselsheim, 14 February 2018 (Internet Archive capture 2025-03-26): 'the next generation of the Opel/Vauxhall Corsa will be produced exclusively in Zaragoza as of 2019'. Opel names the car of both brands as one model from one plant. The release gives no series code, so none is recorded."
+    },
+    {
+      "id": "oem:opel-corsa-2023-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260227022253/https://www.media.stellantis.com/em-en/opel/press/small-car-bestseller-opel-unveils-new-corsa",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, Rüsselsheim, 24 May 2023 (Internet Archive capture 2026-02-27): the new Corsa has the Opel Vizor, which integrates the grille, the LED headlights and the central Opel Blitz in one element, larger optical air inlets in the front bumper, and the Corsa nameplate in the centre of the tailgate; 'coming this year still'. The 2023 changeover year is not dated here."
+    },
+    {
+      "id": "oem:vauxhall-corsa-2023-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20240204014733/https://www.media.stellantis.com/uk-en/vauxhall/press/vauxhall-new-corsa",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall release, 24 May 2023, the day of the Opel release (Internet Archive capture 2024-02-04): the New Corsa gets the Vauxhall Vizor, a single smooth panel between the LED headlights with the new Griffin logo at its centre; orders open in summer 2023, first deliveries planned for the fourth quarter. The 2023 changeover year is not dated here."
+    },
+    {
+      "id": "oem:opel-corsa-de-2024",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20240911123029/https://www.opel.de/fahrzeuge/corsa-modelle/corsa/uebersicht.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel Deutschland's Corsa model page ('Opel Corsa | Corsa 5-Türer im Überblick | Opel Deutschland', with configurator and price list), Internet Archive capture 2024-09-11: the Corsa is offered in Germany in calendar year 2024."
+    },
+    {
+      "id": "oem:opel-corsa-de-2025",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260616185553/https://www.media.stellantis.com/em-en/opel/press/available-to-order-now-opel-corsa-electric-with-even-more-range",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, 24 March 2025 (Internet Archive capture 2026-06-16): the Corsa Electric with more range can be ordered from €32,485 (RRP in Germany). The Corsa is on sale in Germany in calendar year 2025."
+    },
+    {
+      "id": "oem:vauxhall-corsa-gb-2024",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20241215190311/https://www.vauxhall.co.uk/cars/corsa/overview.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall's UK Corsa model page ('Vauxhall Corsa | Small Cars | Vauxhall'), Internet Archive capture 2024-12-15: the Corsa is offered in the United Kingdom in calendar year 2024. Opened also for its picture of the Vauxhall-badged car: the same body, lamps and bumpers as the Opel-badged car pictured in Opel's release of 24 May 2023, with the Griffin and the Corsa lettering in the centre of the tailgate. No picture is stored here."
+    },
+    {
+      "id": "oem:vauxhall-corsa-gb-2025",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260615134224/https://www.media.stellantis.com/uk-en/vauxhall/press/vauxhall-opens-orders-for-2025-corsa-yes-edition",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall release, 5 February 2025 (Internet Archive capture 2026-06-15): orders open for the 2025 Corsa YES Edition, from £18,995. The Corsa is on sale in the United Kingdom in calendar year 2025."
+    },
+    {
+      "id": "oem:opel-astra-2021-premiere",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260610160241/https://www.media.stellantis.com/em-en/opel/press/new-opel-astra-makes-world-premiere-in-russelsheim",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, Rüsselsheim, 1 September 2021 (Internet Archive capture 2026-06-10): world premiere of 'the all-new sixth generation of the Astra', designed, developed and produced in Rüsselsheim; order books open in October 2021. Opel counts this car as its sixth Astra generation; Vauxhall counts the same car as its eighth."
+    },
+    {
+      "id": "oem:opel-astra-de-2021-orders",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260606120102/https://www.media.stellantis.com/em-en/opel/press/available-to-order-now-new-opel-astra-from-22-465-in-germany",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, 13 October 2021 (Internet Archive capture 2026-06-06): the new Astra can be ordered from €22,465 (RRP in Germany). Orders in late 2021 are not counted as a year on sale here; the first year dated is 2022."
+    },
+    {
+      "id": "oem:vauxhall-astra-2021-reveal",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20250326024631/https://www.media.stellantis.com/uk-en/vauxhall/press/vauxhall-reveals-all-new-astra",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall release, Luton, 13 July 2021 (Internet Archive capture 2025-03-26): 'the all-new, eighth generation of the Astra' has the Vizor front with the Vauxhall Griffin emblem in the middle; at the rear the centrally mounted Griffin doubles as the tailgate latch. Order books open in autumn 2021 and the first customers take delivery early in 2022."
+    },
+    {
+      "id": "oem:opel-astra-2026-facelift",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260716073008/https://www.media.stellantis.com/em-en/opel/press/brussels-motor-show-2026-new-opel-astra-celebrates-its-world-premiere",
+      "retrievedAt": "2026-11-12",
+      "note": "Opel release, 18 December 2025 (Internet Archive capture 2026-07-16): the new Opel Astra and Astra Sports Tourer, with a permanently illuminated Blitz in the modernised Vizor, have their world premiere at the Brussels Motor Show on 9 January 2026. The Astra revealed in 2021 is therefore the car on sale to the end of 2025."
+    },
+    {
+      "id": "oem:vauxhall-astra-2026-facelift",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260613032948/https://www.media.stellantis.com/uk-en/vauxhall/press/vauxhall-announces-new-astra-and-astra-sports-tourer-for-2026",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall release, 10 December 2025 (Internet Archive capture 2026-06-13): the new Astra and Astra Sports Tourer for 2026, with a new Vizor design and a permanently illuminated Griffin logo. The Astra revealed in 2021 is therefore the car on sale in the United Kingdom to the end of 2025."
+    },
+    {
+      "id": "oem:vauxhall-astra-gb-pictures",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20250409094841/https://www.vauxhall.co.uk/cars/astra/overview.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Vauxhall's UK Astra model page (Internet Archive capture 2025-04-09), opened for its pictures of the Vauxhall-badged Astra revealed in 2021: the Vizor with the Griffin in the middle. The Opel-badged pictures of the same years could not be opened in this run; that the two are one car rests on Opel's release of 9 January 2024 and on the matching descriptions in the two brands' reveal releases. No picture is stored here."
+    },
+    {
+      "id": "oem:mercedes-benz-glc-x254-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://media.mbusa.com/news/the-new-mercedes-benz-glc-dynamic-powerful-and-exclusively-with-electrified-drive",
+      "retrievedAt": "2026-11-12",
+      "note": "Mercedes-Benz release for the GLC revealed on 1 June 2022: a redesigned front end with headlamps that connect directly to the radiator grille; the grille has a chrome surround and a louvre in matte grey, with the star pattern on the AMG Line."
+    },
+    {
+      "id": "oem:mercedes-benz-glc-electric-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://media.mbusa.com/news/face-of-the-future-a-new-era-of-iconic-design-at-mercedes-benz-starts-with-all-new-electric-glc",
+      "retrievedAt": "2026-11-12",
+      "note": "Mercedes-Benz release, 4 August 2025: the all-new electric GLC (GLC with EQ Technology, world premiere 7 September 2025) is the first Mercedes-Benz with the reimagined grille: a wide chrome frame, a smoked-glass-look lattice and integrated contour lighting. Mercedes-Benz calls it an all-new car, not a revision of the GLC of 2022."
+    },
+    {
+      "id": "oem:subaru-solterra-2021-design",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://www.subaru.co.jp/news-en/2021_11_11_173924/",
+      "retrievedAt": "2026-11-12",
+      "note": "Subaru Corporation release, 11 November 2021, world debut of the Solterra: jointly developed by Toyota and Subaru on a shared platform; the exterior has Subaru's 'seamlessly shaped hexagon grille', with the body's horizontal axis starting from that hexagon."
+    },
+    {
+      "id": "oem:toyota-bz4x-2021-design",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://global.toyota/en/newsroom/toyota/36254760.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Motor Corporation release, Toyota City, 29 October 2021, details of the all-new bZ4X: the platform was jointly developed with Subaru; the front has 'the large hammerhead shark-like shape running from the hood to the top of the headlamps', which Toyota calls uniquely iconic."
     }
   ],
   "homologation": [],
@@ -37422,6 +38229,242 @@
       "reviewedBy": "vehicle-db data review",
       "reviewedAt": "2026-11-12",
       "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "allow:opel-vauxhall-mokka-2021-original:a",
+      "requestedVisualIdentityId": "opel:mokka:2021:original",
+      "assetVisualIdentityId": "vauxhall:mokka:2021:original",
+      "decision": "allow",
+      "evidenceIds": [
+        "oem:opel-vauxhall-mokka-one-car",
+        "oem:vauxhall-mokka-2021",
+        "oem:opel-mokka-ie-2023-pictures"
+      ],
+      "rationale": "One car under two brands: Opel's own release of 1 December 2021 calls the Vauxhall Mokka 'the new Mokka from Opel's sister brand Vauxhall', describes it as 'the Mokka' with 'the brand emblem' in the Vizor, and illustrates it with the Vauxhall-badged car. Badge twins: the body, lamps, grille panel and bumpers are the same and the only visible difference is the brand emblem (Opel Blitz, Vauxhall Griffin) at the front, at the rear and on the wheel centres; the model lettering is the same. An image of one therefore shows the other's shape, but not its emblem: a consumer that draws badges must redraw or check the views where the emblem is visible. Steering side and number plates follow the market and are not part of this rule. The rule ends with the Mokka revealed in October 2024.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "allow:opel-vauxhall-mokka-2021-original:b",
+      "requestedVisualIdentityId": "vauxhall:mokka:2021:original",
+      "assetVisualIdentityId": "opel:mokka:2021:original",
+      "decision": "allow",
+      "evidenceIds": [
+        "oem:opel-vauxhall-mokka-one-car",
+        "oem:vauxhall-mokka-2021",
+        "oem:opel-mokka-ie-2023-pictures"
+      ],
+      "rationale": "One car under two brands: Opel's own release of 1 December 2021 calls the Vauxhall Mokka 'the new Mokka from Opel's sister brand Vauxhall', describes it as 'the Mokka' with 'the brand emblem' in the Vizor, and illustrates it with the Vauxhall-badged car. Badge twins: the body, lamps, grille panel and bumpers are the same and the only visible difference is the brand emblem (Opel Blitz, Vauxhall Griffin) at the front, at the rear and on the wheel centres; the model lettering is the same. An image of one therefore shows the other's shape, but not its emblem: a consumer that draws badges must redraw or check the views where the emblem is visible. Steering side and number plates follow the market and are not part of this rule. The rule ends with the Mokka revealed in October 2024.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "allow:opel-vauxhall-corsa-2019-facelift-2023:a",
+      "requestedVisualIdentityId": "opel:corsa:2019:facelift-2023",
+      "assetVisualIdentityId": "vauxhall:corsa:2019:facelift-2023",
+      "decision": "allow",
+      "evidenceIds": [
+        "oem:opel-vauxhall-corsa-2019-generation",
+        "oem:opel-vauxhall-awards-2023",
+        "oem:opel-corsa-2023-front",
+        "oem:vauxhall-corsa-2023-front",
+        "oem:vauxhall-corsa-gb-2024"
+      ],
+      "rationale": "One car under two brands: Opel announced 'the next generation of the Opel/Vauxhall Corsa' as one model from Zaragoza, both brands revealed the 2023 Vizor front on the same day, and Opel's release of 9 January 2024 counts the UK awards of the Vauxhall as awards of 'the new Corsa'. Badge twins: the body, lamps, grille panel and bumpers are the same and the only visible difference is the brand emblem (Opel Blitz, Vauxhall Griffin) at the front, at the rear and on the wheel centres; the model lettering is the same. An image of one therefore shows the other's shape, but not its emblem: a consumer that draws badges must redraw or check the views where the emblem is visible. Steering side and number plates follow the market and are not part of this rule. Dated for 2024 and 2025 only; the 2023 changeover year is not covered.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins",
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "allow:opel-vauxhall-corsa-2019-facelift-2023:b",
+      "requestedVisualIdentityId": "vauxhall:corsa:2019:facelift-2023",
+      "assetVisualIdentityId": "opel:corsa:2019:facelift-2023",
+      "decision": "allow",
+      "evidenceIds": [
+        "oem:opel-vauxhall-corsa-2019-generation",
+        "oem:opel-vauxhall-awards-2023",
+        "oem:opel-corsa-2023-front",
+        "oem:vauxhall-corsa-2023-front",
+        "oem:vauxhall-corsa-gb-2024"
+      ],
+      "rationale": "One car under two brands: Opel announced 'the next generation of the Opel/Vauxhall Corsa' as one model from Zaragoza, both brands revealed the 2023 Vizor front on the same day, and Opel's release of 9 January 2024 counts the UK awards of the Vauxhall as awards of 'the new Corsa'. Badge twins: the body, lamps, grille panel and bumpers are the same and the only visible difference is the brand emblem (Opel Blitz, Vauxhall Griffin) at the front, at the rear and on the wheel centres; the model lettering is the same. An image of one therefore shows the other's shape, but not its emblem: a consumer that draws badges must redraw or check the views where the emblem is visible. Steering side and number plates follow the market and are not part of this rule. Dated for 2024 and 2025 only; the 2023 changeover year is not covered.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins",
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "allow:opel-vauxhall-astra-2021-original:a",
+      "requestedVisualIdentityId": "opel:astra:2021:original",
+      "assetVisualIdentityId": "vauxhall:astra:2021:original",
+      "decision": "allow",
+      "evidenceIds": [
+        "oem:opel-vauxhall-awards-2023",
+        "oem:opel-astra-2021-premiere",
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-gb-pictures"
+      ],
+      "rationale": "One car under two brands: Opel's release of 9 January 2024 counts the awards the Vauxhall Astra won in the United Kingdom as awards of 'the new Astra', and both brands' 2021 reveal releases present it with the Vizor brand face (Opel's sixth Astra generation is Vauxhall's eighth). Badge twins: the body, lamps, grille panel and bumpers are the same and the only visible difference is the brand emblem (Opel Blitz, Vauxhall Griffin) at the front, at the rear and on the wheel centres; the model lettering is the same. An image of one therefore shows the other's shape, but not its emblem: a consumer that draws badges must redraw or check the views where the emblem is visible. Steering side and number plates follow the market and are not part of this rule. The catalog rows do not separate the hatchback from the Sports Tourer in either brand, so the rule holds body for body. It ends with the Astra revealed for 2026.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "DE"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "allow:opel-vauxhall-astra-2021-original:b",
+      "requestedVisualIdentityId": "vauxhall:astra:2021:original",
+      "assetVisualIdentityId": "opel:astra:2021:original",
+      "decision": "allow",
+      "evidenceIds": [
+        "oem:opel-vauxhall-awards-2023",
+        "oem:opel-astra-2021-premiere",
+        "oem:vauxhall-astra-2021-reveal",
+        "oem:vauxhall-astra-gb-pictures"
+      ],
+      "rationale": "One car under two brands: Opel's release of 9 January 2024 counts the awards the Vauxhall Astra won in the United Kingdom as awards of 'the new Astra', and both brands' 2021 reveal releases present it with the Vizor brand face (Opel's sixth Astra generation is Vauxhall's eighth). Badge twins: the body, lamps, grille panel and bumpers are the same and the only visible difference is the brand emblem (Opel Blitz, Vauxhall Griffin) at the front, at the rear and on the wheel centres; the model lettering is the same. An image of one therefore shows the other's shape, but not its emblem: a consumer that draws badges must redraw or check the views where the emblem is visible. Steering side and number plates follow the market and are not part of this rule. The catalog rows do not separate the hatchback from the Sports Tourer in either brand, so the rule holds body for body. It ends with the Astra revealed for 2026.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "GB"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "deny:mercedes-benz-glc-vs-glc-with-eq-technology-2026:a",
+      "requestedVisualIdentityId": "mercedes-benz:glc:second:documented",
+      "assetVisualIdentityId": "mercedes-benz:glc-400-4matic-with-eq-te:first:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc-x254-front",
+        "oem:mercedes-benz-glc-electric-front"
+      ],
+      "rationale": "Same name, different cars sold side by side: the GLC with EQ Technology is an all-new electric car with the reimagined chrome-framed grille and its own body, not the GLC of 2022 with headlamps joined to the radiator grille.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins"
+    },
+    {
+      "id": "deny:mercedes-benz-glc-vs-glc-with-eq-technology-2026:b",
+      "requestedVisualIdentityId": "mercedes-benz:glc-400-4matic-with-eq-te:first:documented",
+      "assetVisualIdentityId": "mercedes-benz:glc:second:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc-x254-front",
+        "oem:mercedes-benz-glc-electric-front"
+      ],
+      "rationale": "Same name, different cars sold side by side: the GLC with EQ Technology is an all-new electric car with the reimagined chrome-framed grille and its own body, not the GLC of 2022 with headlamps joined to the radiator grille.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins"
+    },
+    {
+      "id": "deny:mercedes-benz-glc-vs-glc-electric-2027:a",
+      "requestedVisualIdentityId": "mercedes-benz:glc:second:documented",
+      "assetVisualIdentityId": "mercedes-benz:glc400-4matic-electric:first:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc-x254-front",
+        "oem:mercedes-benz-glc-electric-front"
+      ],
+      "rationale": "Same name, different cars sold side by side: the GLC with EQ Technology is an all-new electric car with the reimagined chrome-framed grille and its own body, not the GLC of 2022 with headlamps joined to the radiator grille.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins"
+    },
+    {
+      "id": "deny:mercedes-benz-glc-vs-glc-electric-2027:b",
+      "requestedVisualIdentityId": "mercedes-benz:glc400-4matic-electric:first:documented",
+      "assetVisualIdentityId": "mercedes-benz:glc:second:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:mercedes-benz-glc-x254-front",
+        "oem:mercedes-benz-glc-electric-front"
+      ],
+      "rationale": "Same name, different cars sold side by side: the GLC with EQ Technology is an all-new electric car with the reimagined chrome-framed grille and its own body, not the GLC of 2022 with headlamps joined to the radiator grille.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins"
+    },
+    {
+      "id": "deny:toyota-bz4x-vs-subaru-solterra-original:a",
+      "requestedVisualIdentityId": "toyota:bz4x:first:original",
+      "assetVisualIdentityId": "subaru:solterra:first:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-bz4x-2021-design",
+        "oem:subaru-solterra-2021-design"
+      ],
+      "rationale": "Jointly developed on one platform, but not badge twins: the Solterra has Subaru's hexagon grille and its own front, the bZ4X Toyota's hammerhead front without it. The front fascia differs, so neither image may stand for the other.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins"
+    },
+    {
+      "id": "deny:toyota-bz4x-vs-subaru-solterra-original:b",
+      "requestedVisualIdentityId": "subaru:solterra:first:original",
+      "assetVisualIdentityId": "toyota:bz4x:first:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-bz4x-2021-design",
+        "oem:subaru-solterra-2021-design"
+      ],
+      "rationale": "Jointly developed on one platform, but not badge twins: the Solterra has Subaru's hexagon grille and its own front, the bZ4X Toyota's hammerhead front without it. The front fascia differs, so neither image may stand for the other.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-twins"
     }
   ],
   "makeAliases": [

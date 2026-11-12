@@ -80,7 +80,7 @@ export function buildReleaseDiff(before: ReleaseSide, after: ReleaseSide, option
   const evidence = changes(a.evidence, b.evidence, e => e.id);
   // A rule is its pair, direction, decision and scope; the rationale and evidence can be reworded.
   const rules = changes(a.visualCompatibility ?? [], b.visualCompatibility ?? [], r => [r.requestedVisualIdentityId, r.assetVisualIdentityId, r.decision, scope(r)].join("|"));
-  const rule = (r: NonNullable<Graph["visualCompatibility"]>[number]) => ({ id: r.id, requestedVisualIdentityId: r.requestedVisualIdentityId, assetVisualIdentityId: r.assetVisualIdentityId, decision: r.decision });
+  const rule = (r: NonNullable<Graph["visualCompatibility"]>[number]) => ({ id: r.id, requestedVisualIdentityId: r.requestedVisualIdentityId, assetVisualIdentityId: r.assetVisualIdentityId, decision: r.decision, ...(r.markets ? { markets: r.markets } : {}), ...(r.years ? { years: r.years } : {}), ...(r.yearBasis ? { yearBasis: r.yearBasis } : {}) });
 
   const modelKey = (makeId: number, model: string) => `${makeId}:${norm(model)}`;
   const knownModels = new Set(before.catalog.models.map(r => modelKey(r[1], before.catalog.modelNames[r[3]])));

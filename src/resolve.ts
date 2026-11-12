@@ -1,6 +1,6 @@
 import data from "./data";
 import graph from "./identity-data";
-import { normalizeIdentityText as norm, scopeMatches, type IdentityGraph, type IdentityKind, type ScopeContext, type VehicleIdentity } from "./identity";
+import { normalizeIdentityText as norm, scopeMatches, type IdentityGraph, type IdentityKind, type ScopeContext, type VehicleIdentity, type VisualCompatibility } from "./identity";
 export type { IdentityGraph, VehicleIdentity } from "./identity";
 export interface ResolveVehicleOptions extends ScopeContext {
   makeId?: number;
@@ -161,4 +161,8 @@ let resolver: ReturnType<typeof createVehicleResolver> | undefined;
 export function resolveVehicle(query: string, options: ResolveVehicleOptions = {}): VehicleResolution {
   resolver ??= createVehicleResolver(data, graph);
   return resolver(query, options);
+}
+/** The bundled allow/deny rules between visual identities, with rationale and scope: pass them to evaluateVisualCompatibility(). */
+export function getVisualCompatibilityRules(): readonly VisualCompatibility[] {
+  return graph.visualCompatibility;
 }

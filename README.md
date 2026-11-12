@@ -203,9 +203,23 @@ resolveVehicle("2012 Nissan Navara D22", au);                        // MATCHED 
 
 The Australian Ford Ranger (PX, its 2015 front, Next-Generation), Toyota HiLux (seventh to ninth generation and their fronts), Nissan Navara (D22, D40, D23 and its 2021 front, the 2026 truck) and Toyota LandCruiser 70 (2007, 2009, the 2016 single cab-chassis body, 2023) are dated this way from Ford, Toyota and Nissan Australia sources, as calendar years on sale (`catalog-year`), never converted to model years. A changeover year keeps every shape sold in it. At `catalog` depth the answer is the verified row, with the appearances in scope in `visualIdentityIds`. Years, markets and facelifts without a manufacturer source stay unresolved.
 
-`visualCompatibility` in the graph now records pairs that must not share an appearance although their names suggest it (the Australian PX Ranger and the North American Ranger of 2019-2023, Navara D22 and D40, a generation and its successor in the changeover year). `evaluateVisualCompatibility()` reads them; they are directional and deny wins.
+`visualCompatibility` in the graph now records pairs that must not share an appearance although their names suggest it (the Australian PX Ranger and the North American Ranger of 2019-2023, Navara D22 and D40, a generation and its successor in the changeover year). `evaluateVisualCompatibility()` reads them; they are directional and deny wins. The same is recorded for look-alikes of two makes or two cars under one name: the Toyota bZ4X and the Subaru Solterra as launched (jointly developed, different fronts) and the Mercedes-Benz GLC of 2022 against the electric GLC with EQ Technology.
 
-`@meterapp/vehicle-db/identity` exports the graph types and `evaluateVisualCompatibility`. The latter evaluates direct, directional, scoped allow/deny rules: missing rules return `unknown`, an applicable deny wins, and approvals are never reversed or chained. It is a portable fact evaluator, not an asset database. Applications own reviewed asset bindings and final sharing policy. No asset-sharing approvals are bundled in this release.
+**Twins.** The first `allow` rules name pairs that are one exterior shape sold under two names, so that one image can stand for both: the Opel and Vauxhall Corsa with the 2023 front (2024-2025), Astra as revealed in 2021 (2022-2025) and Mokka as launched in 2021 (2021-2024), Opel dated for Germany and Vauxhall for the United Kingdom, as calendar years on sale.
+
+```typescript
+import { getVisualCompatibilityRules } from "@meterapp/vehicle-db/resolve";
+import { evaluateVisualCompatibility } from "@meterapp/vehicle-db/identity";
+const rules = getVisualCompatibilityRules(); // each with id, decision, rationale, evidenceIds and scope
+evaluateVisualCompatibility(rules, "opel:corsa:2019:facelift-2023", "vauxhall:corsa:2019:facelift-2023", { year: 2024, market: "DE", yearBasis: "catalog-year" }); // "allow"
+evaluateVisualCompatibility(rules, "vauxhall:corsa:2019:facelift-2023", "opel:corsa:2019:facelift-2023", { year: 2024, market: "GB", yearBasis: "catalog-year" }); // "allow": the other direction is its own rule
+evaluateVisualCompatibility(rules, "opel:corsa:2019:facelift-2023", "vauxhall:corsa:2019:facelift-2023", { year: 2023, market: "DE", yearBasis: "catalog-year" }); // "unknown": outside the dated years
+evaluateVisualCompatibility(rules, "toyota:bz4x:first:original", "subaru:solterra:first:original", { year: 2024, market: "US", yearBasis: "catalog-year" }); // "deny"
+```
+
+An allow is recorded only when the manufacturer's own material shows the two as one car and the only visible difference is the brand emblem and lettering. It says so in its `rationale`: the shape is shared, the emblem is not, so an application that draws badges redraws or checks the views where the emblem shows. Steering side and number plates follow the market and are outside the rule. An allow is scoped by `years`, `markets` (the requesting side's) and `yearBasis`, is recorded once per direction, and is never chained: Opel Corsa → Vauxhall Corsa says nothing about a third car. Pairs whose fronts, lamps, grilles or bumpers differ get a deny or no rule; a pair without a rule is `unknown`, never allowed.
+
+`@meterapp/vehicle-db/identity` exports the graph types and `evaluateVisualCompatibility`; `getVisualCompatibilityRules()` from `@meterapp/vehicle-db/resolve` returns the bundled rules. The latter evaluates direct, directional, scoped allow/deny rules: missing rules return `unknown`, an applicable deny wins, and approvals are never reversed or chained. It is a portable fact evaluator, not an asset database. Applications own reviewed asset bindings and final sharing policy. The bundled allow rules are facts about shapes, not approvals of any image.
 
 Raw configuration and homologation evidence stays in build-time sidecars under `data/evidence/`, outside the npm bundle. See [the implementation plan](docs/catalog-update-plan.md) and [source investigation](docs/source-investigation.md).
 

@@ -51,6 +51,10 @@ Every record must be traceable to a public dataset or a manufacturer source; see
 - A market-specific shape under a name other markets share is a `generation`/`visual` identity scoped by
   `markets`, `years` and `yearBasis` and linked to the rows it describes. Leave `names` empty on it and on
   its line: a name on an identity captures that name for every market.
+- An `allow` in `visualCompatibility` (one shape under two names) needs the manufacturer's own material
+  showing the two as one car, a visible difference limited to the emblem and lettering, a `rationale` that
+  says so, a scope, and one rule per direction. Anything that differs in a panel, lamp, grille or bumper is
+  a `deny` or no rule.
 - Say which year a source means (model year, catalog year, registration year…). Never infer a year,
   a generation or a market the source does not state.
 - Factual product names only: no copied text, no images.
@@ -61,6 +65,9 @@ Every record must be traceable to a public dataset or a manufacturer source; see
 2. Add replay cases to `scripts/fixtures/resolution-replay.json`: the query that must now resolve
    (`expectedStatus`) and the substitution that must not happen (`forbiddenModelNames`, for example
    the parent model, another body or another generation). Customer replay files stay private.
+   An allow or deny rule gets a case in `scripts/fixtures/visual-compatibility-replay.json` (the pair, a
+   context and the expected `allow`, `deny` or `unknown`); `pnpm run replay` and the tests fail when a
+   bundled rule has none.
 3. Run what CI runs (`.github/workflows/ci.yml`); all of it must pass:
 
    ```bash
@@ -112,7 +119,8 @@ the newest release tag below the current version, and `HEAD`) and writes `releas
 - `identities.added` / `changed` / `removed` (id and kind);
 - `catalogLinks`, `aliases`, `makeAliases`: `added` / `removed`;
 - `evidence.added` (id and URL);
-- `visualCompatibility`: allow/deny rules `added` / `removed` (id, the two visual identities, decision);
+- `visualCompatibility`: allow/deny rules `added` / `removed` (id, the two visual identities, decision and,
+  when the rule is scoped, its `markets`, `years` and `yearBasis`);
 - `requestRefs`: the `Request-Ref` trailers of the commits between the two refs.
 
 Options: `--from <ref>`, `--to <ref>`, `--out <file>`, `--worktree` (read the files on disk instead
