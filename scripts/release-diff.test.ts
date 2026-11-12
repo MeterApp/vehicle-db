@@ -57,7 +57,7 @@ test("lists what a release added, removed and changed", () => {
   expect(diff.counts).toEqual({
     catalogRowsAdded: 3, catalogRowsRemoved: 1, modelIdsChanged: 1, makesAdded: 1, modelsAdded: 2,
     identitiesAdded: 1, identitiesChanged: 1, identitiesRemoved: 1, catalogLinksAdded: 1, catalogLinksRemoved: 1,
-    aliasesAdded: 1, aliasesRemoved: 1, makeAliasesAdded: 1, makeAliasesRemoved: 0, evidenceAdded: 1, evidenceRemoved: 0, requestRefs: 3,
+    aliasesAdded: 1, aliasesRemoved: 1, makeAliasesAdded: 1, makeAliasesRemoved: 0, evidenceAdded: 1, evidenceRemoved: 0, visualRulesAdded: 0, visualRulesRemoved: 0, requestRefs: 3,
   });
 });
 
@@ -88,4 +88,16 @@ test("writes one changelog section per version, newest first, and says what it l
   expect(next.indexOf("## 1.2.0")).toBeLessThan(next.indexOf("## 1.1.0"));
   expect(updateChangelog(next, "1.1.0", "## 1.1.0 (2026-01-03)\n\nAgain.\n").match(/^## /gm)).toHaveLength(2);
   expect(updateChangelog(next, "1.2.0", "## 1.2.0 (2026-02-01)\n\nNewer.\n")).toBe(next);
+});
+
+test("counts allow/deny rules between visual identities and lists them in the changelog only when they change", () => {
+  const catalog = { makes: [{ make_id: 1, make_name: "ALFA" }], modelNames: ["Car"], models: [[2024, 1, 10, 0, 2, 1]], sources: [{ source_id: "s" }] };
+  const graph = { identities: [], aliases: [], catalogLinks: [], evidence: [], visualCompatibility: [] };
+  const rule = { id: "deny:a", requestedVisualIdentityId: "v1", assetVisualIdentityId: "v2", decision: "deny" as const, evidenceIds: ["e"], rationale: "Different bodies", reviewedBy: "review", reviewedAt: "2026-11-12", revision: "r" };
+  const diff = buildReleaseDiff({ version: "1.0.0", catalog, graph }, { version: "1.1.0", catalog, graph: { ...graph, visualCompatibility: [rule] } }, { generatedAt: "2026-11-12T00:00:00.000Z" });
+  expect(diff.visualCompatibility).toEqual({ added: [{ id: "deny:a", requestedVisualIdentityId: "v1", assetVisualIdentityId: "v2", decision: "deny" }], removed: [] });
+  expect(diff.counts).toMatchObject({ visualRulesAdded: 1, visualRulesRemoved: 0 });
+  expect(renderChangelogSection(diff, "2026-11-12")).toContain("- Appearance rules: 1 allow/deny rule added, 0 removed.");
+  const unchanged = buildReleaseDiff({ version: "1.0.0", catalog, graph }, { version: "1.1.0", catalog, graph }, { generatedAt: "2026-11-12T00:00:00.000Z" });
+  expect(renderChangelogSection(unchanged, "2026-11-12")).not.toContain("Appearance rules");
 });

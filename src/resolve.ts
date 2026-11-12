@@ -27,6 +27,8 @@ interface Catalog {
   modelNames: string[];
   models: readonly (readonly number[])[];
   sources: { source_id: string }[];
+  /** Markets the reviewed manufacturer rows were evidenced for: `rows` holds (index into `models`, index into `sets`) pairs. */
+  reviewedMarkets?: { sets: readonly (readonly string[])[]; rows: readonly number[] };
 }
 const rank = { catalog: 0, line: 1, generation: 2, derivative: 3, specification: 4, visual: 5 };
 /** Create an isolated resolver for a validated graph and catalog, including test fixtures. */
@@ -41,6 +43,24 @@ export function createVehicleResolver(catalog: Catalog, identities: IdentityGrap
   const byMake = new Map<number, (readonly number[])[]>();
   for (const r of catalog.models) { const list = byMake.get(r[1]) ?? []; list.push(r); byMake.set(r[1], list); }
   const names = catalog.modelNames.map(norm);
+  // A flat row is verified for a market by its reviewed evidence or by a scoped identity linked to it.
+  const reviewed = new Map<readonly number[], readonly string[]>();
+  const mask = catalog.reviewedMarkets;
+  if (mask) for (let i = 0; i + 1 < mask.rows.length; i += 2) reviewed.set(catalog.models[mask.rows[i]], mask.sets[mask.rows[i + 1]] ?? []);
+  const rowKey = (year: number, makeId: number, modelId: number, vehicleTypeId: number) => `${year}:${makeId}:${modelId}:${vehicleTypeId}`;
+  let linkIndex: Map<string, VehicleIdentity[]> | undefined;
+  const linkedTo = (r: readonly number[]): VehicleIdentity[] => {
+    if (!linkIndex) {
+      linkIndex = new Map();
+      for (const l of identities.catalogLinks) {
+        const node = nodes.get(l.identityId); if (!node) continue;
+        const key = rowKey(l.year, l.makeId, l.modelId, l.vehicleTypeId), list = linkIndex.get(key) ?? [];
+        if (!list.includes(node)) list.push(node);
+        linkIndex.set(key, list);
+      }
+    }
+    return linkIndex.get(rowKey(r[0], r[1], r[2], r[4])) ?? [];
+  };
   const select = (r: readonly number[]): ResolvedCatalogSelection => ({ year: r[0], makeId: r[1], modelId: r[2], modelName: catalog.modelNames[r[3]], vehicleTypeId: r[4], sourceIds: catalog.sources.filter((_, i) => (r[5] & 2 ** i) !== 0).map(s => s.source_id) });
   return function resolve(query: string, options: ResolveVehicleOptions = {}): VehicleResolution {
     const result = (status: VehicleResolutionStatus, candidates: VehicleResolutionCandidate[] = [], unresolvedTokens: string[] = []): VehicleResolution => status === "MATCHED"
@@ -64,6 +84,13 @@ export function createVehicleResolver(catalog: Catalog, identities: IdentityGrap
     if (sourceIndex === -1) return result("SCOPE_UNVERIFIED");
     const rows = (byMake.get(makeId) ?? []).filter(r => (options.vehicleTypeId === undefined || r[4] === options.vehicleTypeId) && (sourceIndex === undefined || (r[5] & 2 ** sourceIndex) !== 0));
     const scopeOk = (n: VehicleIdentity) => ancestry(n).every(p => scopeMatches(p, context));
+    const candidateOf = (n: VehicleIdentity, from: readonly (readonly number[])[]): VehicleResolutionCandidate => {
+      const chain = ancestry(n), lineage = Object.fromEntries(chain.map(p => [p.kind, p.id]));
+      const links = identities.catalogLinks.filter(l => (l.identityId === n.id || (n.kind === "visual" && chain.some(p => p.id === l.identityId))) && (year === undefined || l.year === year));
+      const catalogSelections = from.filter(r => links.some(l => l.year === r[0] && l.makeId === r[1] && l.modelId === r[2] && l.vehicleTypeId === r[4])).map(select);
+      const visuals = identities.identities.filter(v => v.kind === "visual" && ancestry(v).some(p => p.id === n.id) && scopeOk(v));
+      return { identityId: n.id, depth: n.kind, lineage, catalogSelections, visualIdentityIds: visuals.map(v => v.id), evidenceIds: [...new Set(chain.flatMap(p => p.evidenceIds))] };
+    };
     const allNamed = identities.identities.filter(n => n.makeId === makeId && (options.vehicleTypeId === undefined || options.vehicleTypeId === n.vehicleTypeId) && n.names.some(s => norm(s) === text));
     const aliases = identities.aliases.filter(a => norm(a.text) === text && nodes.get(a.targetId)?.makeId === makeId && (options.vehicleTypeId === undefined || nodes.get(a.targetId)?.vehicleTypeId === options.vehicleTypeId));
     const named = [...new Map([...allNamed, ...aliases.filter(a => scopeMatches(a, context)).map(a => nodes.get(a.targetId)!)].map(n => [n.id,n])).values()];
@@ -80,13 +107,7 @@ export function createVehicleResolver(catalog: Catalog, identities: IdentityGrap
       }
       matching = [...new Map(matching.map(n => [n.id,n])).values()];
       if (!matching.length) return result("GENERATION_UNRESOLVED");
-      const candidates = matching.map(n => {
-        const chain = ancestry(n), lineage = Object.fromEntries(chain.map(p => [p.kind, p.id]));
-        const links = identities.catalogLinks.filter(l => (l.identityId === n.id || (n.kind === "visual" && chain.some(p => p.id === l.identityId))) && (year === undefined || l.year === year));
-        const catalogSelections = rows.filter(r => links.some(l => l.year === r[0] && l.makeId === r[1] && l.modelId === r[2] && l.vehicleTypeId === r[4])).map(select);
-        const visuals = identities.identities.filter(v => v.kind === "visual" && ancestry(v).some(p => p.id === n.id) && scopeOk(v));
-        return { identityId: n.id, depth: n.kind, lineage, catalogSelections, visualIdentityIds: visuals.map(v => v.id), evidenceIds: [...new Set(chain.flatMap(p => p.evidenceIds))] };
-      });
+      const candidates = matching.map(n => candidateOf(n, rows));
       if (sourceIndex !== undefined && candidates.every(c => !c.catalogSelections.length)) return result("SCOPE_UNVERIFIED", candidates);
       if (candidates.length !== 1) return result("AMBIGUOUS", candidates);
       if (requestedDepth === "catalog" && !candidates[0].catalogSelections.length) {
@@ -101,10 +122,35 @@ export function createVehicleResolver(catalog: Catalog, identities: IdentityGrap
     if (yearRows.length) {
       const groups = new Map<string, (readonly number[])[]>();
       for (const r of yearRows) { const k = `${names[r[3]]}:${r[4]}`; const group = groups.get(k) ?? []; group.push(r); groups.set(k, group); }
-      const candidates: VehicleResolutionCandidate[] = [...groups.values()].map(rs => ({ depth: "catalog", lineage: {}, catalogSelections: rs.map(select), visualIdentityIds: [], evidenceIds: [] }));
-      if (options.market !== undefined) return result("SCOPE_UNVERIFIED", candidates);
-      if (options.depth && options.depth !== "catalog") return result("GENERATION_UNRESOLVED", candidates);
-      return result(candidates.length === 1 ? "MATCHED" : "AMBIGUOUS", candidates);
+      const flat = (rs: readonly (readonly number[])[]): VehicleResolutionCandidate => ({ depth: "catalog", lineage: {}, catalogSelections: rs.map(select), visualIdentityIds: [], evidenceIds: [] });
+      const candidates = [...groups.values()].map(flat);
+      if (options.market === undefined) {
+        if (options.depth && options.depth !== "catalog") return result("GENERATION_UNRESOLVED", candidates);
+        return result(candidates.length === 1 ? "MATCHED" : "AMBIGUOUS", candidates);
+      }
+      // With a market, only rows evidenced for it answer: reviewed for that market, or linked to an
+      // identity whose whole scope (market, year and year basis) fits the request.
+      const market = options.market;
+      const inScope = (r: readonly number[]) => linkedTo(r).filter(scopeOk);
+      const verified = yearRows.filter(r => reviewed.get(r)?.includes(market) || inScope(r).length);
+      if (!verified.length) return result("SCOPE_UNVERIFIED", candidates);
+      const depth = options.depth ?? "catalog";
+      if (depth === "catalog") {
+        const verifiedGroups = [...groups.values()].map(rs => rs.filter(r => verified.includes(r))).filter(rs => rs.length);
+        const scoped = verifiedGroups.map(rs => {
+          const linked = [...new Set(rs.flatMap(inScope))];
+          const visuals = identities.identities.filter(v => v.kind === "visual" && scopeOk(v) && ancestry(v).some(p => linked.includes(p)));
+          return { ...flat(rs), visualIdentityIds: visuals.map(v => v.id), evidenceIds: [...new Set(linked.flatMap(n => ancestry(n)).flatMap(p => p.evidenceIds))] };
+        });
+        return result(scoped.length === 1 ? "MATCHED" : "AMBIGUOUS", scoped);
+      }
+      const linked = [...new Set(verified.flatMap(inScope))];
+      // A linked identity deeper than the request answers with its ancestor at that depth; a shallower one with its scoped children.
+      const deep = [...new Set(linked.flatMap(n => rank[n.kind] >= rank[depth] ? [ancestry(n).find(p => p.kind === depth) ?? n] : identities.identities.filter(child => rank[child.kind] === rank[depth] && ancestry(child).some(p => p.id === n.id) && scopeOk(child))))];
+      if (!deep.length) return result("GENERATION_UNRESOLVED", [...groups.values()].map(rs => rs.filter(r => verified.includes(r))).filter(rs => rs.length).map(flat));
+      // The selections are the verified rows that led to the identity, through itself, a descendant or an ancestor.
+      const scoped = deep.map(n => ({ ...candidateOf(n, verified), catalogSelections: verified.filter(r => inScope(r).some(x => ancestry(x).some(p => p.id === n.id) || ancestry(n).some(p => p.id === x.id))).map(select) }));
+      return result(scoped.length === 1 ? "MATCHED" : "AMBIGUOUS", scoped);
     }
     const prefixes = [...rows.map(r => names[r[3]]), ...identities.identities.filter(n => n.makeId === makeId).flatMap(n => n.names.map(norm))].filter(n => text.startsWith(n + " ")).sort((a,b) => b.length-a.length);
     return prefixes.length ? result("UNRESOLVED_TOKENS", [], text.slice(prefixes[0].length).trim().split(" ")) : result("UNKNOWN_MODEL");
