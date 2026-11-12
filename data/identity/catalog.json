@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "2026-11-09-glc-eq-technology-name",
+  "revision": "2026-11-12-au-pickups",
   "identities": [
     {
       "id": "bmw:4",
@@ -12963,6 +12963,907 @@
         "NL",
         "US"
       ]
+    },
+    {
+      "id": "ford:ranger",
+      "kind": "line",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "Ranger",
+      "names": [],
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012",
+        "oem:ford-ranger-us-2019"
+      ]
+    },
+    {
+      "id": "ford:ranger:px",
+      "kind": "generation",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "PX (Australia)",
+      "names": [],
+      "parentId": "ford:ranger",
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012",
+        "oem:ford-ranger-au-px-mkii-name",
+        "oem:ford-ranger-next-gen-arrival"
+      ],
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year",
+      "codes": [
+        "PX"
+      ]
+    },
+    {
+      "id": "ford:ranger:px:original",
+      "kind": "visual",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "Ford Ranger PX original (Australia)",
+      "names": [],
+      "parentId": "ford:ranger:px",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012",
+        "oem:ford-ranger-2015-reveal"
+      ],
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "ford:ranger:px:facelift-2015",
+      "kind": "visual",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "Ford Ranger PX MkII 2015 front (Australia)",
+      "names": [],
+      "parentId": "ford:ranger:px",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:ford-ranger-2015-reveal",
+        "oem:ford-ranger-au-2015-front",
+        "oem:ford-ranger-au-px-mkii-name",
+        "oem:ford-ranger-au-2021-update",
+        "oem:ford-ranger-next-gen-arrival"
+      ],
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "ford:ranger:next-gen",
+      "kind": "generation",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "Next-Generation Ranger (Australia)",
+      "names": [],
+      "parentId": "ford:ranger",
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-reveal",
+        "oem:ford-ranger-next-gen-arrival",
+        "oem:ford-ranger-au-2026-page"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "ford:ranger:next-gen:original",
+      "kind": "visual",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "Ford Next-Generation Ranger original (Australia)",
+      "names": [],
+      "parentId": "ford:ranger:next-gen",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-reveal",
+        "oem:ford-ranger-next-gen-arrival",
+        "oem:ford-ranger-au-2026-page"
+      ],
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "ford:ranger:north-america-2019",
+      "kind": "generation",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "North American Ranger, model years 2019-2023",
+      "names": [],
+      "parentId": "ford:ranger",
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019",
+        "oem:ford-ranger-us-2024"
+      ],
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "markets": [
+        "US"
+      ],
+      "yearBasis": "model-year"
+    },
+    {
+      "id": "ford:ranger:north-america-2019:original",
+      "kind": "visual",
+      "makeId": 460,
+      "vehicleTypeId": 3,
+      "name": "Ford Ranger North America 2019 original",
+      "names": [],
+      "parentId": "ford:ranger:north-america-2019",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019",
+        "oem:ford-ranger-us-2024"
+      ],
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "markets": [
+        "US"
+      ],
+      "yearBasis": "model-year"
+    },
+    {
+      "id": "toyota:hilux",
+      "kind": "line",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "HiLux",
+      "names": [],
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "id": "toyota:hilux:seventh",
+      "kind": "generation",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Seventh generation (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ],
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:seventh:pre-2011",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux seventh generation before the September 2011 front (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:seventh",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations",
+        "oem:toyota-hilux-au-2011-front"
+      ],
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:seventh:facelift-2011",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux seventh generation 2011 front (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:seventh",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations",
+        "oem:toyota-hilux-au-2011-front"
+      ],
+      "years": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:eighth",
+      "kind": "generation",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Eighth generation (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:eighth:original",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux eighth generation original (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:eighth",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations",
+        "oem:toyota-hilux-au-2018-front",
+        "oem:toyota-hilux-au-2020-front"
+      ],
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:eighth:facelift-2018",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux eighth generation 2018 front of Rogue, SR and SR5 extra and double cabs (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:eighth",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2018-front",
+        "oem:toyota-hilux-au-2020-front"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:eighth:facelift-2020",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux eighth generation 2020 front (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:eighth",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front",
+        "oem:toyota-hilux-au-2024-front",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:eighth:facelift-2024",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux eighth generation 2024 front of the core grades (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:eighth",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2024-front",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "years": [
+        2024,
+        2025
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:ninth",
+      "kind": "generation",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Ninth generation (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "years": [
+        2025,
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:hilux:ninth:original",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota HiLux ninth generation original (Australia)",
+      "names": [],
+      "parentId": "toyota:hilux:ninth",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "years": [
+        2025,
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:landcruiser-70",
+      "kind": "line",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "LandCruiser 70",
+      "names": [],
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "id": "toyota:landcruiser-70:2007",
+      "kind": "generation",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "70 Series from the 2007 revamp (Australia)",
+      "names": [],
+      "parentId": "toyota:landcruiser-70",
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history",
+        "oem:toyota-landcruiser-70-au-2023",
+        "oem:toyota-landcruiser-70-au-2026-page"
+      ],
+      "years": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year",
+      "codes": [
+        "76",
+        "78",
+        "79"
+      ]
+    },
+    {
+      "id": "toyota:landcruiser-70:2007:original",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota LandCruiser 70 2007 V8 front (Australia)",
+      "names": [],
+      "parentId": "toyota:landcruiser-70:2007",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ],
+      "years": [
+        2007,
+        2008,
+        2009
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:landcruiser-70:2007:facelift-2009",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota LandCruiser 70 2009 front (Australia)",
+      "names": [],
+      "parentId": "toyota:landcruiser-70:2007",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history",
+        "oem:toyota-landcruiser-70-au-2009",
+        "oem:toyota-landcruiser-70-au-2023-arrival"
+      ],
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "toyota:landcruiser-70:2007:single-cab-2016",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota LandCruiser 70 2016 single cab-chassis with the taller bonnet (Australia)",
+      "names": [],
+      "parentId": "toyota:landcruiser-70:2007",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016",
+        "oem:toyota-landcruiser-70-au-2023-arrival"
+      ],
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year",
+      "bodyStyle": "Single cab-chassis"
+    },
+    {
+      "id": "toyota:landcruiser-70:2007:facelift-2023",
+      "kind": "visual",
+      "makeId": 448,
+      "vehicleTypeId": 3,
+      "name": "Toyota LandCruiser 70 2023 front (Australia)",
+      "names": [],
+      "parentId": "toyota:landcruiser-70:2007",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2023",
+        "oem:toyota-landcruiser-70-au-2023-arrival",
+        "oem:toyota-landcruiser-70-au-2026-page"
+      ],
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "nissan:navara",
+      "kind": "line",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Navara",
+      "names": [],
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "id": "nissan:navara:d22",
+      "kind": "generation",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "D22 (Australia)",
+      "names": [],
+      "parentId": "nissan:navara",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012",
+        "oem:nissan-navara-au-d22-2006",
+        "oem:nissan-navara-au-2015-range"
+      ],
+      "years": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year",
+      "codes": [
+        "D22"
+      ]
+    },
+    {
+      "id": "nissan:navara:d22:documented",
+      "kind": "visual",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Nissan Navara D22 as sold 2006-2015 (Australia)",
+      "names": [],
+      "parentId": "nissan:navara:d22",
+      "appearanceRevision": "D22 as sold alongside the D40; revisions not dated",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-2006",
+        "oem:nissan-navara-au-d22-d40-2012",
+        "oem:nissan-navara-au-2015-range"
+      ],
+      "years": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "nissan:navara:d40",
+      "kind": "generation",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "D40 (Australia)",
+      "names": [],
+      "parentId": "nissan:navara",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012",
+        "oem:nissan-navara-au-d40-2005",
+        "oem:nissan-navara-au-2015-range"
+      ],
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year",
+      "codes": [
+        "D40"
+      ]
+    },
+    {
+      "id": "nissan:navara:d40:documented",
+      "kind": "visual",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Nissan Navara D40 as sold 2005-2015 (Australia)",
+      "names": [],
+      "parentId": "nissan:navara:d40",
+      "appearanceRevision": "D40; facelifts not dated",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d40-2005",
+        "oem:nissan-navara-au-d22-d40-2012",
+        "oem:nissan-navara-au-2015-range"
+      ],
+      "years": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "nissan:navara:d23",
+      "kind": "generation",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "D23, launched as the NP300 Navara (Australia)",
+      "names": [],
+      "parentId": "nissan:navara",
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015",
+        "oem:nissan-navara-au-d23-outgoing"
+      ],
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year",
+      "codes": [
+        "D23"
+      ]
+    },
+    {
+      "id": "nissan:navara:d23:original",
+      "kind": "visual",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Nissan Navara D23 original (Australia)",
+      "names": [],
+      "parentId": "nissan:navara:d23",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015",
+        "oem:nissan-navara-au-series-2-name",
+        "oem:nissan-navara-au-2021-front"
+      ],
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "nissan:navara:d23:facelift-2021",
+      "kind": "visual",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Nissan Navara D23 2021 front (Australia)",
+      "names": [],
+      "parentId": "nissan:navara:d23",
+      "appearanceRevision": "facelift",
+      "evidenceIds": [
+        "oem:nissan-navara-au-2021-front",
+        "oem:nissan-navara-au-d23-outgoing"
+      ],
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "nissan:navara:2026",
+      "kind": "generation",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Navara launched in 2026 (Australia)",
+      "names": [],
+      "parentId": "nissan:navara",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d23-outgoing",
+        "oem:nissan-navara-au-2026-arrival"
+      ],
+      "years": [
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
+    },
+    {
+      "id": "nissan:navara:2026:original",
+      "kind": "visual",
+      "makeId": 478,
+      "vehicleTypeId": 3,
+      "name": "Nissan Navara 2026 original (Australia)",
+      "names": [],
+      "parentId": "nissan:navara:2026",
+      "appearanceRevision": "original",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d23-outgoing",
+        "oem:nissan-navara-au-2026-arrival"
+      ],
+      "years": [
+        2026
+      ],
+      "markets": [
+        "AU"
+      ],
+      "yearBasis": "catalog-year"
     }
   ],
   "aliases": [
@@ -31903,6 +32804,1469 @@
       "evidenceIds": [
         "oem:volvo-ex90-first"
       ]
+    },
+    {
+      "identityId": "ford:ranger:px:original",
+      "year": 2012,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:original",
+      "year": 2013,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:original",
+      "year": 2014,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:original",
+      "year": 2015,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-px-2012"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2015,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2016,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2017,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2018,
+      "makeId": 460,
+      "modelId": 2350274207,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2019,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2020,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2021,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:px:facelift-2015",
+      "year": 2022,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-au-2015-front"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2022,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2023,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2024,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2025,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2026,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2022,
+      "makeId": 460,
+      "modelId": 1346919552,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2023,
+      "makeId": 460,
+      "modelId": 1346919552,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2024,
+      "makeId": 460,
+      "modelId": 1346919552,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2025,
+      "makeId": 460,
+      "modelId": 1346919552,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:next-gen:original",
+      "year": 2026,
+      "makeId": 460,
+      "modelId": 1346919552,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-arrival"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:north-america-2019:original",
+      "year": 2019,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:north-america-2019:original",
+      "year": 2020,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:north-america-2019:original",
+      "year": 2021,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:north-america-2019:original",
+      "year": 2022,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019"
+      ]
+    },
+    {
+      "identityId": "ford:ranger:north-america-2019:original",
+      "year": 2023,
+      "makeId": 460,
+      "modelId": 1803,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2005,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2006,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2007,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2008,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2009,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2010,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:pre-2011",
+      "year": 2011,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:facelift-2011",
+      "year": 2011,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:facelift-2011",
+      "year": 2012,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:facelift-2011",
+      "year": 2013,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:facelift-2011",
+      "year": 2014,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:seventh:facelift-2011",
+      "year": 2015,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:original",
+      "year": 2015,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:original",
+      "year": 2016,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:original",
+      "year": 2017,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:original",
+      "year": 2018,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:original",
+      "year": 2019,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:original",
+      "year": 2020,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2018",
+      "year": 2018,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2018-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2018",
+      "year": 2019,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2018-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2018",
+      "year": 2020,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2018-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2020",
+      "year": 2020,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2020",
+      "year": 2021,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2020",
+      "year": 2022,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2020",
+      "year": 2023,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2020",
+      "year": 2024,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2020",
+      "year": 2025,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2020-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2024",
+      "year": 2024,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2024-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:eighth:facelift-2024",
+      "year": 2025,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-2024-front"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:ninth:original",
+      "year": 2025,
+      "makeId": 448,
+      "modelId": 4884845205,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth"
+      ]
+    },
+    {
+      "identityId": "toyota:hilux:ninth:original",
+      "year": 2026,
+      "makeId": 448,
+      "modelId": 3058751128,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:original",
+      "year": 2007,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:original",
+      "year": 2008,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:original",
+      "year": 2009,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2009,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2010,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2011,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2012,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2013,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2014,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2015,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2016,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2017,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2018,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2019,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2020,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2021,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2022,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2009",
+      "year": 2023,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-history"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2016,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2017,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2018,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2019,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2020,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2021,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2022,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:single-cab-2016",
+      "year": 2023,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2016"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2023",
+      "year": 2023,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2023"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2023",
+      "year": 2024,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2023"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2023",
+      "year": 2025,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2023"
+      ]
+    },
+    {
+      "identityId": "toyota:landcruiser-70:2007:facelift-2023",
+      "year": 2026,
+      "makeId": 448,
+      "modelId": 1658771358,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:toyota-landcruiser-70-au-2023"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2006,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2007,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2008,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2009,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2010,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2011,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2012,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2013,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2014,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2015,
+      "makeId": 478,
+      "modelId": 3662327738,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2006,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2007,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2008,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2009,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2010,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2011,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2012,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2013,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2014,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d22:documented",
+      "year": 2015,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2005,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2006,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2007,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2008,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2009,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2010,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2011,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2012,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2013,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2014,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2015,
+      "makeId": 478,
+      "modelId": 3427146882,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2005,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2006,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2007,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2008,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2009,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2010,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2011,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2012,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2013,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2014,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d40:documented",
+      "year": 2015,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2015,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2016,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2017,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2018,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2019,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2020,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2021,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2015,
+      "makeId": 478,
+      "modelId": 4954245708,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015",
+        "oem:nissan-navara-au-series-2-name"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2016,
+      "makeId": 478,
+      "modelId": 4954245708,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015",
+        "oem:nissan-navara-au-series-2-name"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:original",
+      "year": 2017,
+      "makeId": 478,
+      "modelId": 4954245708,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-np300-2015",
+        "oem:nissan-navara-au-series-2-name"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:facelift-2021",
+      "year": 2021,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-2021-front"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:facelift-2021",
+      "year": 2022,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-2021-front"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:facelift-2021",
+      "year": 2023,
+      "makeId": 478,
+      "modelId": 1217305060,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-2021-front"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:facelift-2021",
+      "year": 2024,
+      "makeId": 478,
+      "modelId": 3495558147,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-2021-front"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:d23:facelift-2021",
+      "year": 2025,
+      "makeId": 478,
+      "modelId": 3495558147,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-2021-front"
+      ]
+    },
+    {
+      "identityId": "nissan:navara:2026:original",
+      "year": 2026,
+      "makeId": 478,
+      "modelId": 3495558147,
+      "vehicleTypeId": 3,
+      "evidenceIds": [
+        "oem:nissan-navara-au-2026-arrival"
+      ]
     }
   ],
   "evidence": [
@@ -34579,10 +36943,487 @@
       "url": "https://media.mbusa.com/news/face-of-the-future-a-new-era-of-iconic-design-at-mercedes-benz-starts-with-all-new-electric-glc",
       "retrievedAt": "2026-11-09",
       "note": "The maker release names the electric X540 'the all-new Mercedes-Benz GLC with EQ Technology' (also 'the new GLC with EQ Technology'). The registers abbreviate it (RDW 'GLC 400 4MATIC WITH EQ TE', 2026) or call it 'GLC400 4matic electric' (US, model year 2027). The name is lexical only: it selects the X540 line for the requested year and never the combustion/plug-in X254 GLC (mercedes-benz/glc). Mercedes-Benz USA sells the car from model year 2027, so a 2026 model year is the European car on sale from 2026. No manufacturer source names an X540 'GLC 250'; the RDW-only 'GLC 250 ELECTRIC' row stays unattached."
+    },
+    {
+      "id": "oem:ford-ranger-au-px-2012",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20120222201039/http://www.ford.com.au:80/commercial/new-ranger",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia's 'All-New Ranger' model page (Internet Archive capture 2012-02-22) offers the all-new Ranger; the site's menu lists 'Ranger (All-New)' and the outgoing 'Ranger' as separate models. Calendar year of the dated capture, not a factory model year. An on-sale date in 2011 was not found on a manufacturer page and is not asserted."
+    },
+    {
+      "id": "oem:ford-ranger-au-px-mkii-name",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20190327125535/https://www.ford.com.au/about-ford/newsroom/2017/ford-announces-new-enhancements-to-the-award-winning-ranger-line/",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia newsroom, Melbourne, 27 June 2017 (Internet Archive capture 2019-03-27): upgrades for the 'PX MkII Ranger 2017MY range', also written 'PX Ranger MkII'. Ford Australia's own series names: PX for this Ranger and PX MkII for the updated truck then on sale. No Ford page using 'PX MkIII' could be opened, so that name is not recorded."
+    },
+    {
+      "id": "oem:ford-ranger-2015-reveal",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20190327135225/https://www.ford.com.au/about-ford/newsroom/2015/ford-challenges-the-conventional-world-of-pickup-trucks-with-a-t/",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia newsroom copy of the Bangkok reveal, 23 March 2015 (Internet Archive capture 2019-03-27): the new Ranger has an updated exterior, a more muscular hood, a new trapezoidal grille and projector headlamps, on sale 'starting later this year' in more than 180 markets."
+    },
+    {
+      "id": "oem:ford-ranger-au-2015-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20160303201857/http://www.ford.com.au/commercial/ranger",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia's Ranger model page (Internet Archive capture 2016-03-03) offers the '2015 Ranger' range (single cab, Super Cab and double cab; cab-chassis and pick-up) and says the 2015 Ford Ranger has 'a bold new front end' and a redesigned interior. Calendar year of the dated capture, not a factory model year."
+    },
+    {
+      "id": "oem:ford-ranger-au-2021-update",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20210514045602/https://www.ford.com.au/about-ford/newsroom/2021/updated-ford-ranger-ready-to-work-with-new-ranger-4x2-xl-sport/",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia newsroom, Melbourne, 22 April 2021 (Internet Archive capture 2021-05-14): new and enhanced Ranger variants for the range then on sale, before the Next-Generation Ranger was revealed. It announces no new front-end design; no Ford Australia source for the exterior of the 2018 update ('2019 Ranger') could be opened, so that update is not a separate appearance here."
+    },
+    {
+      "id": "oem:ford-ranger-next-gen-reveal",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20211125102656/https://media.ford.com/content/fordmedia/img/au/en/news/2021/11/24/next-gen-ranger.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia media release, Melbourne, 24 November 2021 (Internet Archive capture 2021-11-25): reveal of the Next-Generation Ranger with a new grille and C-clamp headlight treatment, built in Thailand and South Africa from 2022. The release gives no programme code, so none is recorded."
+    },
+    {
+      "id": "oem:ford-ranger-next-gen-arrival",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20220415122846/https://media.ford.com/content/fordmedia/img/au/en/news/2022/04/07/2022-ranger-pricing-announced.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia media release, Melbourne, 7 April 2022 (Internet Archive capture 2022-04-15): pricing of the 2022 Next-Generation Ranger, orders open and 'vehicle arrivals from June'. The previous Ranger was therefore the truck in Australian showrooms in the first part of 2022 and both shapes belong to that calendar year."
+    },
+    {
+      "id": "oem:ford-ranger-us-2019",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20180114183932/https://media.ford.com/content/fordmedia/fna/us/en/news/2018/01/14/an-american-favorite-reinvented--new-ford-ranger-brings-built-fo.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford US media release, Detroit, 14 January 2018 (Internet Archive capture of the same day): the all-new 2019 Ford Ranger for North America has 'a new exterior design, chassis and powertrain developed specifically for North American truck customers', built at Michigan Assembly Plant. US model year."
+    },
+    {
+      "id": "oem:ford-ranger-us-2024",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20230510124043/https://media.ford.com/content/fordmedia/fna/us/en/news/2023/05/10/all-new-ford-ranger-is-the-most-connected-and-capable-ranger-eve.html",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford US media release, Dearborn, 10 May 2023 (Internet Archive capture of the same day): the 'fully redesigned 2024 Ford Ranger', called all-new. The North American Ranger introduced for model year 2019 therefore ends with model year 2023."
+    },
+    {
+      "id": "oem:ford-ranger-au-2026-page",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260116004323/https://www.ford.com.au/showroom/trucks-and-vans/ranger/",
+      "retrievedAt": "2026-11-12",
+      "note": "Ford Australia's Ranger model page (Internet Archive capture 2026-01-16) offers the current Ranger with the 3.0L V6, 2.0L bi-turbo and 2.0L single-turbo diesels of the Next-Generation range. Calendar year of the dated capture; the latest year this batch dates."
+    },
+    {
+      "id": "oem:toyota-hilux-au-generations",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=cb2140af-330e-438e-9a35-3c0391d89fe5",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia press kit document 'HiLux through the generations' (2020 Toyota HiLux press kit): seventh generation 2005, eighth generation 2015 ('the 2015 HiLux'), with Rogue and Rugged X added in 2018; vehicles for Australia come from Thailand. Years are the Australian launch years Toyota gives, not factory model years. The document gives no chassis codes, so none are recorded."
+    },
+    {
+      "id": "oem:toyota-hilux-au-2011-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=0376de7a-b2a3-4608-adfc-c5a9e7c16236",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia, 'HiLux - what's new or different' (2011 HiLux press kit, 5 September 2011): new bonnet, front fenders, front bumper, headlamps and upper and lower radiator grilles across the range. An earlier 2008 revision of the seventh generation could not be found on a Toyota page and is not dated here."
+    },
+    {
+      "id": "oem:toyota-hilux-au-2018-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=f3631139-1b6c-420b-bb97-da5c6749f01b",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release 'Aussie-styled face fronts updated HiLux SR, SR5' (22 August 2018): a new front bumper and grille for all SR and SR5 extra cab and double cab models, the face of the HiLux Rogue launched earlier in 2018. Other grades and single cabs keep the earlier front."
+    },
+    {
+      "id": "oem:toyota-hilux-au-2020-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=203cdabc-7626-45f3-b878-80ce73837877",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release 'New HiLux: tougher, better-looking, more capable than ever' (2020 Toyota HiLux press kit): a larger trapezoidal grille and smaller, newly designed headlights for WorkMate, SR and SR5 in single, extra and double cab bodies. The year is the press kit's '2020 Toyota HiLux'; the release itself only says the range goes on sale 'from tomorrow'."
+    },
+    {
+      "id": "oem:toyota-hilux-au-2024-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=1836d366-9d99-426f-bc52-9fc7e469fc92",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release 'Upgraded Toyota HiLux range arrives in Australia with V-Active technology' (20 March 2024): on sale with new front bumpers and a honeycomb mesh grille on all core grades except the WorkMate, the SR single cab and petrol variants, which keep the 2020 front."
+    },
+    {
+      "id": "oem:toyota-hilux-au-ninth",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=ba76bbe1-38ee-4602-936c-01e00efa5b7e",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release of 10 November 2025: 'its new 9th generation HiLux', with an exterior designed by Toyota Design Australia."
+    },
+    {
+      "id": "oem:toyota-hilux-au-ninth-launch",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=55f03d39-5177-404d-a56e-47f73ac9f609",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release 'New Toyota HiLux range lands in Australia' (8 December 2025): the new-generation HiLux is launched in Australia in single, extra and double cab bodies as cab-chassis or pick-up. The eighth generation was therefore the HiLux on sale in Australia until December 2025, and 2025 holds both shapes."
+    },
+    {
+      "id": "oem:toyota-landcruiser-70-au-history",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=4b999de4-6ee7-456d-b86a-ff965793f94c",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia, 'The new LC70 Series - more than 30 years in the making' (2016 LandCruiser 70 Series press kit, 25 October 2016): a major revamp in March 2007 brought the first V8 turbo-diesel and the first wagon (76 Series) with structural and styling changes, including a large scoop in the bonnet, for a more imposing front end; August 2009 brought 'a revision to front-end styling' with driver and passenger airbags; the double cab joined in September 2012."
+    },
+    {
+      "id": "oem:toyota-landcruiser-70-au-2009",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=fd746f21-743e-4c5f-94b0-f1740440fe4b",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release 'Toyota beefs up workhorse LandCruiser' (21 August 2009): the cab-chassis, troop carrier and wagon range gains front airbags and 'an extended front bumper to accommodate airbag requirements'."
+    },
+    {
+      "id": "oem:toyota-landcruiser-70-au-2016",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=4c768137-8ad9-4587-95b3-fbd8771fca32",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia, 'What's new in LandCruiser 70 Series' (2016 press kit, 25 October 2016): the changes listed for single cab-chassis models include a new frame and 'new body panels, including taller bonnet'; no body-panel change is listed for the wagon, troop carrier or double cab."
+    },
+    {
+      "id": "oem:toyota-landcruiser-70-au-2023",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=ad84fa41-da1e-4e6e-91ce-dbeb4dcb1c55",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia launch release of 1 December 2023: the upgraded LandCruiser 70 Series (76 Series wagon, 78 Series troop carrier, 79 Series single and double cab-chassis) has circular LED headlamps in place of the halogen cluster, a new square grille with TOYOTA lettering and a wide bumper; Toyota dates the current-generation 70 Series from its launch in 2007."
+    },
+    {
+      "id": "oem:toyota-landcruiser-70-au-2023-arrival",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.toyota.com.au/PressRelease?pr-code=d75a8b54-11c8-47fe-968a-a038bf040e72",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia release of 13 October 2023: the upgraded LandCruiser 70 Series with its redesigned front end arrives in Australian showrooms in November 2023, so 2023 holds both fronts."
+    },
+    {
+      "id": "oem:toyota-landcruiser-70-au-2026-page",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20260103045258/https://www.toyota.com.au/landcruiser-70",
+      "retrievedAt": "2026-11-12",
+      "note": "Toyota Australia's 'LandCruiser 70 Series | Single, Dual Cab, Wagon, Troop Carrier' model page (Internet Archive capture 2026-01-03) still offers the range. Calendar year of the dated capture; the latest year this batch dates."
+    },
+    {
+      "id": "oem:nissan-navara-au-d22-d40-2012",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://australia.nissannews.com/en-AU/releases/release-31e8ec72e40241d87163a580d1044060-nissan-releases-navara-25th-anniversary-limited-edition",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia release, Melbourne, 19 November 2012: the Navara D22 'is currently offered alongside the Navara D40'. Nissan Australia's own generation codes for the two utes it sold side by side."
+    },
+    {
+      "id": "oem:nissan-navara-au-d40-2005",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20051210024551/http://www.nissan.com.au:80/navaradual06/",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia's '2006 Navara Dual Cab' page (Internet Archive capture 2005-12-10) offers 'the all new Nissan Navara' (the D40; the page does not use the code) and points to the carry-over DX and ST-R dual cab as a separate range. Calendar year of the dated capture, not a factory model year."
+    },
+    {
+      "id": "oem:nissan-navara-au-d22-2006",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20060113083017/http://www.nissan.com.au:80/navaradual06/",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia's '2006 Navara Dual Cab' page (Internet Archive capture 2006-01-13) offers the new Navara and, as a separate range, the carry-over Navara DX and ST-R dual cab (the D22; the page does not use the code). Calendar year of the dated capture."
+    },
+    {
+      "id": "oem:nissan-navara-au-2015-range",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20150106021434/http://www.nissan.com.au/Cars-Vehicles/Navara/Overview",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia's Navara page (Internet Archive capture 2015-01-06) lists three separate models: Navara (the model Nissan Australia calls the D40 in its 2012 release), Navara D22 and the NP300 Navara open for registrations of interest. Calendar year of the dated capture. Nissan Australia sources opened for this batch do not date a D40 facelift, so the D40 has one undivided appearance record."
+    },
+    {
+      "id": "oem:nissan-navara-au-np300-2015",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://australia.nissannews.com/en-AU/releases/in-detail-the-all-new-nissan-np300-navara",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia release of 1 June 2015: the all-new NP300 Navara, with a V-motion grille that flows into the bonnet, goes on sale in June 2015 as dual cab pickup; dual cab chassis, single cab and king cab follow in the third quarter. It compares the truck with its predecessor, the D40."
+    },
+    {
+      "id": "oem:nissan-navara-au-series-2-name",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://australia.nissannews.com/en-AU/releases/nissan-navara-series-2-full-details",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia release of 24 March 2017: Series 2 deletes the NP300 model naming, 'no longer NP300 Navara, now Navara'. No exterior change is listed."
+    },
+    {
+      "id": "oem:nissan-navara-au-2021-front",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://australia.nissannews.com/en-AU/releases/nissan-raises-the-bar-again-with-the-new-navara",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia release of 4 March 2021: the new Navara, with an interlocked frame grille and C-shaped quad LED projector headlamps, is 'now available in dealerships nationwide' as single, king and dual cab, pickup or cab chassis. 2021 holds both fronts."
+    },
+    {
+      "id": "oem:nissan-navara-au-d23-outgoing",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://australia.nissannews.com/en-AU/releases/next-generation-nissan-navara-debuts-ahead-of-showroom-arrival-next-year",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia release of 19 November 2025: the next-generation Navara debuts and is targeted to go on sale at the end of the first quarter of 2026; the release calls the truck then on sale 'the outgoing D23 Navara'. Nissan Australia's code for the Navara launched in 2015 as the NP300 Navara."
+    },
+    {
+      "id": "oem:nissan-navara-au-2026-arrival",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://australia.nissannews.com/en-AU/releases/all-new-nissan-navara-pricing-and-specifications-announced-ahead-of-march-arrival",
+      "retrievedAt": "2026-11-12",
+      "note": "Nissan Australia release of 5 February 2026: the all-new Navara goes on sale in Australia in March 2026, exclusively as a dual cab 4x4 pick-up. Whether the D23 was still offered in early 2026 is not stated, so 2026 is given to the new generation only."
     }
   ],
   "homologation": [],
-  "visualCompatibility": [],
+  "visualCompatibility": [
+    {
+      "id": "deny:ford-ranger-au-px-vs-north-america:a",
+      "requestedVisualIdentityId": "ford:ranger:px:facelift-2015",
+      "assetVisualIdentityId": "ford:ranger:north-america-2019:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019",
+        "oem:ford-ranger-au-2015-front"
+      ],
+      "rationale": "Same name and overlapping years, different trucks: Ford says the 2019 Ranger for North America has an exterior design developed specifically for North American customers, while Australia kept selling the PX with its 2015 front until the Next-Generation Ranger arrived in 2022.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:ford-ranger-au-px-vs-north-america:b",
+      "requestedVisualIdentityId": "ford:ranger:north-america-2019:original",
+      "assetVisualIdentityId": "ford:ranger:px:facelift-2015",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019",
+        "oem:ford-ranger-au-2015-front"
+      ],
+      "rationale": "Same name and overlapping years, different trucks: Ford says the 2019 Ranger for North America has an exterior design developed specifically for North American customers, while Australia kept selling the PX with its 2015 front until the Next-Generation Ranger arrived in 2022.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:ford-ranger-au-px-vs-next-gen:a",
+      "requestedVisualIdentityId": "ford:ranger:px:facelift-2015",
+      "assetVisualIdentityId": "ford:ranger:next-gen:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-reveal",
+        "oem:ford-ranger-next-gen-arrival"
+      ],
+      "rationale": "2022 holds both in Australia: the Next-Generation Ranger is a new body with a new grille and C-clamp headlights, not a revision of the PX.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:ford-ranger-au-px-vs-next-gen:b",
+      "requestedVisualIdentityId": "ford:ranger:next-gen:original",
+      "assetVisualIdentityId": "ford:ranger:px:facelift-2015",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:ford-ranger-next-gen-reveal",
+        "oem:ford-ranger-next-gen-arrival"
+      ],
+      "rationale": "2022 holds both in Australia: the Next-Generation Ranger is a new body with a new grille and C-clamp headlights, not a revision of the PX.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:ford-ranger-north-america-vs-au-next-gen:a",
+      "requestedVisualIdentityId": "ford:ranger:north-america-2019:original",
+      "assetVisualIdentityId": "ford:ranger:next-gen:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019",
+        "oem:ford-ranger-us-2024",
+        "oem:ford-ranger-next-gen-arrival"
+      ],
+      "rationale": "In 2022 and 2023 a Ranger in Australia is the Next-Generation truck while the US model years 2022 and 2023 are still the North American Ranger introduced for 2019; the US received its redesigned Ranger for model year 2024.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:ford-ranger-north-america-vs-au-next-gen:b",
+      "requestedVisualIdentityId": "ford:ranger:next-gen:original",
+      "assetVisualIdentityId": "ford:ranger:north-america-2019:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:ford-ranger-us-2019",
+        "oem:ford-ranger-us-2024",
+        "oem:ford-ranger-next-gen-arrival"
+      ],
+      "rationale": "In 2022 and 2023 a Ranger in Australia is the Next-Generation truck while the US model years 2022 and 2023 are still the North American Ranger introduced for 2019; the US received its redesigned Ranger for model year 2024.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:toyota-hilux-seventh-vs-eighth:a",
+      "requestedVisualIdentityId": "toyota:hilux:seventh:facelift-2011",
+      "assetVisualIdentityId": "toyota:hilux:eighth:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ],
+      "rationale": "2015 holds both in Australia: Toyota counts the 2015 HiLux as the eighth generation, a different body from the seventh.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:toyota-hilux-seventh-vs-eighth:b",
+      "requestedVisualIdentityId": "toyota:hilux:eighth:original",
+      "assetVisualIdentityId": "toyota:hilux:seventh:facelift-2011",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-generations"
+      ],
+      "rationale": "2015 holds both in Australia: Toyota counts the 2015 HiLux as the eighth generation, a different body from the seventh.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:toyota-hilux-eighth-2020-vs-ninth:a",
+      "requestedVisualIdentityId": "toyota:hilux:eighth:facelift-2020",
+      "assetVisualIdentityId": "toyota:hilux:ninth:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "rationale": "2025 holds both in Australia: Toyota launched its ninth-generation HiLux, with a new exterior design, in December 2025.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:toyota-hilux-eighth-2020-vs-ninth:b",
+      "requestedVisualIdentityId": "toyota:hilux:ninth:original",
+      "assetVisualIdentityId": "toyota:hilux:eighth:facelift-2020",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "rationale": "2025 holds both in Australia: Toyota launched its ninth-generation HiLux, with a new exterior design, in December 2025.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:toyota-hilux-eighth-2024-vs-ninth:a",
+      "requestedVisualIdentityId": "toyota:hilux:eighth:facelift-2024",
+      "assetVisualIdentityId": "toyota:hilux:ninth:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "rationale": "2025 holds both in Australia: Toyota launched its ninth-generation HiLux, with a new exterior design, in December 2025.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:toyota-hilux-eighth-2024-vs-ninth:b",
+      "requestedVisualIdentityId": "toyota:hilux:ninth:original",
+      "assetVisualIdentityId": "toyota:hilux:eighth:facelift-2024",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:toyota-hilux-au-ninth",
+        "oem:toyota-hilux-au-ninth-launch"
+      ],
+      "rationale": "2025 holds both in Australia: Toyota launched its ninth-generation HiLux, with a new exterior design, in December 2025.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:nissan-navara-d22-vs-d40:a",
+      "requestedVisualIdentityId": "nissan:navara:d22:documented",
+      "assetVisualIdentityId": "nissan:navara:d40:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012",
+        "oem:nissan-navara-au-2015-range"
+      ],
+      "rationale": "Nissan Australia sold the Navara D22 alongside the Navara D40 from 2006 to 2015 as separate models; they are different generations with different bodies and share only the Navara name.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:nissan-navara-d22-vs-d40:b",
+      "requestedVisualIdentityId": "nissan:navara:d40:documented",
+      "assetVisualIdentityId": "nissan:navara:d22:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:nissan-navara-au-d22-d40-2012",
+        "oem:nissan-navara-au-2015-range"
+      ],
+      "rationale": "Nissan Australia sold the Navara D22 alongside the Navara D40 from 2006 to 2015 as separate models; they are different generations with different bodies and share only the Navara name.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:nissan-navara-d40-vs-d23:a",
+      "requestedVisualIdentityId": "nissan:navara:d40:documented",
+      "assetVisualIdentityId": "nissan:navara:d23:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:nissan-navara-au-2015-range",
+        "oem:nissan-navara-au-np300-2015"
+      ],
+      "rationale": "2015 holds both in Australia: the all-new NP300 Navara (D23) went on sale in June 2015 while the D40 was still listed as the Navara.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:nissan-navara-d40-vs-d23:b",
+      "requestedVisualIdentityId": "nissan:navara:d23:original",
+      "assetVisualIdentityId": "nissan:navara:d40:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:nissan-navara-au-2015-range",
+        "oem:nissan-navara-au-np300-2015"
+      ],
+      "rationale": "2015 holds both in Australia: the all-new NP300 Navara (D23) went on sale in June 2015 while the D40 was still listed as the Navara.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:nissan-navara-d22-vs-d23:a",
+      "requestedVisualIdentityId": "nissan:navara:d22:documented",
+      "assetVisualIdentityId": "nissan:navara:d23:original",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:nissan-navara-au-2015-range",
+        "oem:nissan-navara-au-np300-2015"
+      ],
+      "rationale": "2015 holds both in Australia: the Navara D22 was still listed when the all-new NP300 Navara (D23) went on sale in June 2015.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    },
+    {
+      "id": "deny:nissan-navara-d22-vs-d23:b",
+      "requestedVisualIdentityId": "nissan:navara:d23:original",
+      "assetVisualIdentityId": "nissan:navara:d22:documented",
+      "decision": "deny",
+      "evidenceIds": [
+        "oem:nissan-navara-au-2015-range",
+        "oem:nissan-navara-au-np300-2015"
+      ],
+      "rationale": "2015 holds both in Australia: the Navara D22 was still listed when the all-new NP300 Navara (D23) went on sale in June 2015.",
+      "reviewedBy": "vehicle-db data review",
+      "reviewedAt": "2026-11-12",
+      "revision": "2026-11-12-au-pickups"
+    }
+  ],
   "makeAliases": [
     {
       "text": "Hero MotoCorp",

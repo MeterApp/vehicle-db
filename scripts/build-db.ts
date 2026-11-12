@@ -16,6 +16,13 @@ const TYPESCRIPT_PATH = path.join(__dirname, "..", "src", "data.ts");
 // Pins for newly reported types also preserve the first model ID returned by
 // an unfiltered year/make/model picker that previously had only another type.
 const MODEL_ID_COMPATIBILITY_PATH = path.join(__dirname, "..", "data", "model-id-compatibility.json");
+// Reviewed manufacturer rows are evidenced for one market each. The market stays in the evidence
+// sidecars; the bundle carries only a compact mask so the resolver can answer a market request.
+const REVIEWED_EVIDENCE_PATHS = [
+  path.join(__dirname, "..", "data", "evidence", "manufacturer-reviewed.json"),
+  path.join(__dirname, "..", "data", "evidence", "manufacturer-catalogs", "legacy-regional.json"),
+];
+const REVIEWED_SOURCE_IDS = ["manufacturer-reviewed", "manufacturer-reviewed-catalog"];
 const SOURCE_PRIORITY = [
   "nhtsa-vpic",
   "uk-dft-vehicle-licensing",
@@ -85,6 +92,11 @@ interface CompactData {
   makes: { make_id: number; make_name: string }[];
   modelNames: string[];
   models: [number, number, number, number, number, number][];
+  /**
+   * Markets the reviewed manufacturer rows were evidenced for: `sets` are sorted market lists,
+   * `rows` are flat pairs of (index into `models`, index into `sets`), ordered by row.
+   */
+  reviewedMarkets: { sets: string[][]; rows: number[] };
 }
 
 function loadSources(): SourceCatalog[] {
@@ -238,6 +250,47 @@ function compile(sources: SourceCatalog[]): CompactData {
     model.sourceMask,
   ]);
 
+  const reviewedMask = REVIEWED_SOURCE_IDS.reduce((mask, id) => {
+    const index = sources.findIndex((source) => source.metadata.id === id);
+    return index < 0 ? mask : mask + 2 ** index;
+  }, 0);
+  const marketsByRow = new Map<string, Set<string>>();
+  for (const file of REVIEWED_EVIDENCE_PATHS) {
+    if (!fs.existsSync(file)) continue;
+    const { records } = JSON.parse(fs.readFileSync(file, "utf8")) as {
+      records: { year: number; make: string; model: string; vehicleTypeId: number; market?: string }[];
+    };
+    for (const record of records) {
+      if (!record.market || !/^[A-Z]{2}$/.test(record.market)) continue;
+      const makeName = normalizeName(record.make);
+      const make = makeByNormalizedName.get(MAKE_NAME_ALIASES.get(makeName) ?? makeName);
+      if (!make) continue;
+      const key = `${record.year}\u0000${make.id}\u0000${normalizeName(record.model)}\u0000${record.vehicleTypeId}`;
+      const markets = marketsByRow.get(key) ?? new Set<string>();
+      markets.add(record.market);
+      marketsByRow.set(key, markets);
+    }
+  }
+  const marketSets: string[][] = [];
+  const marketSetIndexes = new Map<string, number>();
+  const marketRows: number[] = [];
+  for (const [rowIndex, model] of workingModels.entries()) {
+    if ((model.sourceMask & reviewedMask) === 0) continue;
+    const markets = marketsByRow.get(
+      `${model.year}\u0000${model.makeId}\u0000${normalizeName(model.modelName)}\u0000${model.vehicleTypeId}`,
+    );
+    if (!markets) continue;
+    const set = [...markets].sort(compareStrings);
+    const setKey = set.join(",");
+    let setIndex = marketSetIndexes.get(setKey);
+    if (setIndex === undefined) {
+      setIndex = marketSets.length;
+      marketSets.push(set);
+      marketSetIndexes.set(setKey, setIndex);
+    }
+    marketRows.push(rowIndex, setIndex);
+  }
+
   const compiledSources: CompiledSource[] = sources.map((source, sourceIndex) => {
     const sourceMask = 2 ** sourceIndex;
     const matchingModels = workingModels.filter((model) => (model.sourceMask & sourceMask) !== 0);
@@ -275,6 +328,7 @@ function compile(sources: SourceCatalog[]): CompactData {
       .sort((left, right) => compareStrings(left.make_name, right.make_name)),
     modelNames,
     models,
+    reviewedMarkets: { sets: marketSets, rows: marketRows },
   };
 }
 
@@ -303,6 +357,8 @@ interface CompactData {
   makes: { make_id: number; make_name: string }[];
   modelNames: string[];
   models: [number, number, number, number, number, number][];
+  /** Markets of reviewed manufacturer rows: rows holds (index into models, index into sets) pairs. */
+  reviewedMarkets: { sets: string[][]; rows: number[] };
 }
 
 const data: CompactData = ${json};
@@ -332,6 +388,9 @@ function main(): void {
   console.log(`  Makes:         ${data.makes.length.toLocaleString()}`);
   console.log(`  Model names:   ${data.modelNames.length.toLocaleString()}`);
   console.log(`  Model entries: ${data.models.length.toLocaleString()}`);
+  console.log(
+    `  Reviewed rows with a market: ${(data.reviewedMarkets.rows.length / 2).toLocaleString()} (${data.reviewedMarkets.sets.length} market sets, ${JSON.stringify(data.reviewedMarkets).length.toLocaleString()} bytes)`,
+  );
   console.log(`  File size:     ${sizeMb} MB`);
 }
 

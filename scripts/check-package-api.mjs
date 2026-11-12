@@ -31,6 +31,10 @@ assert.ok(toyota);
 assert.ok(getModels({ year: 2024, makeId: toyota.makeId }).some(model => model.modelName.toLowerCase() === "camry"));
 assert.ok(searchVehicles("2024 Toyota Camry").length);
 assert.equal(resolveVehicle("2024 Toyota Camry").status, "MATCHED");
+// The market of a reviewed row ships in the bundle; a register row has none.
+assert.equal(resolveVehicle("2012 Nissan Navara D40", { market: "AU" }).status, "MATCHED");
+assert.equal(resolveVehicle("2012 Nissan Navara D40", { market: "US" }).status, "SCOPE_UNVERIFIED");
+assert.equal(resolveVehicle("2019 Ford Ranger", { market: "AU", yearBasis: "catalog-year", depth: "visual" }).selection?.identityId, "ford:ranger:px:facelift-2015");
 assert.equal(normalizeIdentityText(" Toyota  Camry "), "toyota camry");
 `);
   run(process.execPath, [join(work, "consumer.mjs")]);

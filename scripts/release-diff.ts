@@ -15,7 +15,7 @@ import { compareCatalogs, norm, selectionKey } from "./check-compatibility";
 import type { CatalogSnapshot, IdentityGraph } from "./identity-types";
 
 export interface ReleaseCatalog extends CatalogSnapshot { vehicleTypes?: { vehicle_type_id: number; vehicle_type_name: string }[] }
-type Graph = Pick<IdentityGraph, "identities" | "aliases" | "catalogLinks" | "evidence"> & Partial<Pick<IdentityGraph, "makeAliases">>;
+type Graph = Pick<IdentityGraph, "identities" | "aliases" | "catalogLinks" | "evidence"> & Partial<Pick<IdentityGraph, "makeAliases" | "visualCompatibility">>;
 export interface ReleaseSide { version: string; catalog: ReleaseCatalog; graph?: Graph }
 export interface CatalogRow { year: number; make: string; model: string; vehicleType: string; makeId: number; modelId: number; vehicleTypeId: number }
 
@@ -78,6 +78,9 @@ export function buildReleaseDiff(before: ReleaseSide, after: ReleaseSide, option
   const makeAliases = changes(a.makeAliases ?? [], b.makeAliases ?? [], x => [x.text, x.makeId, scope(x)].join("|"));
   const makeAlias = (x: NonNullable<Graph["makeAliases"]>[number]) => ({ text: x.text, makeId: x.makeId, make: makeName(x.makeId), ...(x.markets ? { markets: x.markets } : {}), ...(x.years ? { years: x.years } : {}) });
   const evidence = changes(a.evidence, b.evidence, e => e.id);
+  // A rule is its pair, direction, decision and scope; the rationale and evidence can be reworded.
+  const rules = changes(a.visualCompatibility ?? [], b.visualCompatibility ?? [], r => [r.requestedVisualIdentityId, r.assetVisualIdentityId, r.decision, scope(r)].join("|"));
+  const rule = (r: NonNullable<Graph["visualCompatibility"]>[number]) => ({ id: r.id, requestedVisualIdentityId: r.requestedVisualIdentityId, assetVisualIdentityId: r.assetVisualIdentityId, decision: r.decision });
 
   const modelKey = (makeId: number, model: string) => `${makeId}:${norm(model)}`;
   const knownModels = new Set(before.catalog.models.map(r => modelKey(r[1], before.catalog.modelNames[r[3]])));
@@ -93,6 +96,7 @@ export function buildReleaseDiff(before: ReleaseSide, after: ReleaseSide, option
     aliases: { added: aliases.added.map(alias), removed: aliases.removed.map(alias) },
     makeAliases: { added: makeAliases.added.map(makeAlias), removed: makeAliases.removed.map(makeAlias) },
     evidence: { added: evidence.added.map(e => ({ id: e.id, url: e.url })) },
+    visualCompatibility: { added: rules.added.map(rule), removed: rules.removed.map(rule) },
     requestRefs: collectRequestRefs(options.commitMessages ?? []),
   };
   result.counts = {
@@ -104,6 +108,7 @@ export function buildReleaseDiff(before: ReleaseSide, after: ReleaseSide, option
     aliasesAdded: aliases.added.length, aliasesRemoved: aliases.removed.length,
     makeAliasesAdded: makeAliases.added.length, makeAliasesRemoved: makeAliases.removed.length,
     evidenceAdded: evidence.added.length, evidenceRemoved: evidence.removed.length,
+    visualRulesAdded: rules.added.length, visualRulesRemoved: rules.removed.length,
     requestRefs: result.requestRefs.length,
   };
   return result;
@@ -118,6 +123,8 @@ export function renderChangelogSection(diff: ReleaseDiff, date: string, limit = 
     `- Identity graph: ${n(c.identitiesAdded, "identity", "identities")} added, ${c.identitiesChanged} changed, ${c.identitiesRemoved} removed; ${n(c.catalogLinksAdded, "catalog link")} added, ${c.catalogLinksRemoved} removed.`,
     `- Names: ${n(c.aliasesAdded, "alias", "aliases")} added, ${c.aliasesRemoved} removed; ${n(c.makeAliasesAdded, "make alias", "make aliases")} added, ${c.makeAliasesRemoved} removed.`,
     `- Evidence: ${n(c.evidenceAdded, "record")} added.`];
+  // Listed only when a release touches them, so sections written before the rules existed do not change.
+  if (c.visualRulesAdded || c.visualRulesRemoved) lines.push(`- Appearance rules: ${n(c.visualRulesAdded, "allow/deny rule")} added, ${c.visualRulesRemoved} removed.`);
   const models = new Map<string, { make: string; model: string; years: number[] }>();
   for (const r of diff.catalog.added) {
     const k = `${r.makeId}:${norm(r.model)}`;
