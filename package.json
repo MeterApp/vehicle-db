@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.54.0",
+  "version": "2.55.0",
   "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
   "repository": {
     "type": "git",
@@ -33,6 +33,11 @@
       "types": "./dist/identity.d.ts",
       "require": "./dist/identity.js",
       "default": "./dist/identity.js"
+    },
+    "./packages": {
+      "types": "./dist/packages.d.ts",
+      "require": "./dist/packages.js",
+      "default": "./dist/packages.js"
     }
   },
   "typesVersions": {
@@ -45,6 +50,9 @@
       ],
       "identity": [
         "dist/identity.d.ts"
+      ],
+      "packages": [
+        "dist/packages.d.ts"
       ]
     }
   },

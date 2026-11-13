@@ -1,5 +1,5 @@
 import type { IdentityGraph, IdentityKind, IdentityScope } from "../src/identity";
-import { normalizeIdentityText } from "../src/identity";
+import { EXTERIOR_DIFFERENCES, appearancePackageSlug, normalizeIdentityText, type VehicleIdentity } from "../src/identity";
 export type { IdentityGraph } from "../src/identity";
 export interface CatalogSnapshot {
   makes: { make_id: number; make_name: string }[];
@@ -53,6 +53,7 @@ export function validateIdentityGraph(graph: IdentityGraph, catalog: CatalogSnap
   for (const link of graph.catalogLinks) {
     refs(link.evidenceIds);
     const n = nodes.get(link.identityId);
+    if (link.relation !== undefined && link.relation !== "offered-on") fail(`invalid catalog link relation ${link.identityId}`);
     if (!n || n.makeId !== link.makeId || n.vehicleTypeId !== link.vehicleTypeId ||
       !tuples.has([link.year, link.makeId, link.modelId, link.vehicleTypeId].join(":"))) fail(`invalid catalog link ${link.identityId}`);
     let scoped = n;
@@ -61,6 +62,7 @@ export function validateIdentityGraph(graph: IdentityGraph, catalog: CatalogSnap
       scoped = scoped.parentId ? nodes.get(scoped.parentId) : undefined;
     }
   }
+  validateAppearancePackages(graph, nodes, fail);
   for (const [i, alias] of graph.aliases.entries()) {
     refs(alias.evidenceIds); scope(alias);
     const target = nodes.get(alias.targetId);
@@ -87,6 +89,52 @@ export function validateIdentityGraph(graph: IdentityGraph, catalog: CatalogSnap
       !["allow", "deny"].includes(rule.decision) || !rule.rationale || !rule.reviewedBy || !rule.reviewedAt || !rule.revision) fail(`invalid visual rule ${rule.id}`);
     for (const other of graph.visualCompatibility.slice(0, i)) {
       if (other.requestedVisualIdentityId === rule.requestedVisualIdentityId && other.assetVisualIdentityId === rule.assetVisualIdentityId && other.decision !== rule.decision && overlap(rule, other)) fail(`contradictory visual rules ${rule.id}`);
+    }
+  }
+}
+/** A scope fits inside another when every year and market it names is the other's (an unscoped side is open). */
+function within(inner: IdentityScope, outer: IdentityScope): boolean {
+  return (!outer.years || (!!inner.years && inner.years.every(y => outer.years!.includes(y)))) &&
+    (!outer.markets || (!!inner.markets && inner.markets.every(m => outer.markets!.includes(m)))) &&
+    (!outer.yearBasis || inner.yearBasis === outer.yearBasis);
+}
+/**
+ * An appearance package is a specification identity with `specification.trim`, years and a year basis, scoped
+ * inside its derivative and generation, with exactly one visual child that lists `exteriorDifferences`
+ * (the fixed list, at least one, no repeats) and `offered-on` catalog links to the rows it is offered on.
+ * Its slug (from the trim) is unique per catalog row and year unless the markets are disjoint.
+ */
+function validateAppearancePackages(graph: IdentityGraph, nodes: Map<string, VehicleIdentity>, fail: (message: string) => never): void {
+  const allowed = new Set<string>(EXTERIOR_DIFFERENCES);
+  const ancestors = (n: VehicleIdentity) => { const out: VehicleIdentity[] = []; let p = n.parentId ? nodes.get(n.parentId) : undefined; while (p) { out.push(p); p = p.parentId ? nodes.get(p.parentId) : undefined; } return out; };
+  for (const n of graph.identities) {
+    if (n.exteriorDifferences === undefined) continue;
+    const parent = n.parentId ? nodes.get(n.parentId) : undefined;
+    if (n.kind !== "visual" || !n.exteriorDifferences.length || new Set(n.exteriorDifferences).size !== n.exteriorDifferences.length ||
+      n.exteriorDifferences.some(d => !allowed.has(d))) fail(`invalid exterior differences ${n.id}`);
+    if (parent?.kind !== "specification" || !parent.specification?.trim) fail(`exterior differences need a specification parent with a trim ${n.id}`);
+    if (graph.identities.some(o => o !== n && o.parentId === n.parentId && o.exteriorDifferences)) fail(`more than one package exterior under ${n.parentId}`);
+    if (!within(n, parent!)) fail(`package exterior outside its specification scope ${n.id}`);
+  }
+  const offered = graph.catalogLinks.filter(l => l.relation === "offered-on");
+  for (const link of offered) {
+    const spec = nodes.get(link.identityId)!;
+    if (spec.kind !== "specification" || !spec.specification?.trim || !graph.identities.some(v => v.parentId === spec.id && v.exteriorDifferences)) fail(`offered-on link without a package ${link.identityId}`);
+  }
+  const packages = graph.identities.filter(n => n.kind === "specification" && graph.identities.some(v => v.parentId === n.id && v.exteriorDifferences));
+  const slugs = new Map<string, VehicleIdentity[]>();
+  for (const spec of packages) {
+    const slug = appearancePackageSlug(spec.specification!.trim!);
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) fail(`invalid package slug ${spec.id}`);
+    if (!spec.years || !spec.yearBasis) fail(`package without years and year basis ${spec.id}`);
+    if (ancestors(spec).some(a => !within(spec, a))) fail(`package outside its generation scope ${spec.id}`);
+    const links = offered.filter(l => l.identityId === spec.id);
+    if (!links.length) fail(`package without offered-on catalog links ${spec.id}`);
+    for (const l of links) {
+      const key = [l.year, l.makeId, l.modelId, slug].join(":"), list = slugs.get(key) ?? [];
+      if (list.some(o => o.id !== spec.id && (!o.markets || !spec.markets || o.markets.some(m => spec.markets!.includes(m))))) fail(`duplicate package slug ${slug} on ${l.makeId}:${l.modelId} ${l.year}`);
+      if (!list.includes(spec)) list.push(spec);
+      slugs.set(key, list);
     }
   }
 }

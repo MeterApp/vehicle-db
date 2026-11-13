@@ -55,6 +55,10 @@ Every record must be traceable to a public dataset or a manufacturer source; see
   showing the two as one car, a visible difference limited to the emblem and lettering, a `rationale` that
   says so, a scope, and one rule per direction. Anything that differs in a panel, lamp, grille or bumper is
   a `deny` or no rule.
+- An appearance package (F SPORT, M Sport, N Line) is a `specification` identity with `specification.trim`, a
+  `visual` identity under it whose `exteriorDifferences` list only the parts the manufacturer's configurator, model
+  page, press kit or brochure (or a dated archive of one) shows differ from the base car, and `offered-on` catalog
+  links to the rows it is offered on. A performance model with its own bodywork (IS F, M3) is a catalog model.
 - Say which year a source means (model year, catalog year, registration year…). Never infer a year,
   a generation or a market the source does not state.
 - Factual product names only: no copied text, no images.

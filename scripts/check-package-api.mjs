@@ -22,8 +22,9 @@ import { getMakes, getModels } from "@meterapp/vehicle-db";
 import { searchVehicles } from "@meterapp/vehicle-db/search";
 import { resolveVehicle, getVisualCompatibilityRules } from "@meterapp/vehicle-db/resolve";
 import { normalizeIdentityText, evaluateVisualCompatibility } from "@meterapp/vehicle-db/identity";
+import { getAppearancePackages } from "@meterapp/vehicle-db/packages";
 const require = createRequire(import.meta.url);
-for (const subpath of ["", "/search", "/resolve", "/identity", "/package.json"]) assert.ok(Object.keys(require("@meterapp/vehicle-db" + subpath)).length);
+for (const subpath of ["", "/search", "/resolve", "/identity", "/packages", "/package.json"]) assert.ok(Object.keys(require("@meterapp/vehicle-db" + subpath)).length);
 assert.equal(require("@meterapp/vehicle-db/package.json").version, ${JSON.stringify(manifest.version)});
 globalThis.fetch = () => { throw new Error("Offline catalog must never use the network"); };
 const toyota = getMakes({ year: 2024 }).find(make => make.makeName.toLowerCase() === "toyota");
@@ -43,6 +44,11 @@ assert.equal(evaluateVisualCompatibility(rules, twin[0], twin[1], { year: 2024, 
 assert.equal(evaluateVisualCompatibility(rules, twin[0], twin[1], { year: 2023, market: "DE", yearBasis: "catalog-year" }), "unknown");
 assert.equal(evaluateVisualCompatibility(rules, "toyota:bz4x:first:original", "subaru:solterra:first:original", { year: 2024, market: "US", yearBasis: "catalog-year" }), "deny");
 assert.ok(rules.every(rule => rule.rationale && rule.evidenceIds.length));
+// Appearance packages: a market-scoped package answers only for its market.
+const lexus = getMakes({ year: 2022 }).find(make => make.makeName.toLowerCase() === "lexus");
+const is = getModels({ year: 2022, makeId: lexus.makeId }).find(model => model.modelName === "IS");
+assert.deepEqual(getAppearancePackages({ makeId: lexus.makeId, modelId: is.modelId, year: 2022, market: "US" }).map(p => p.slug), ["f-sport"]);
+assert.deepEqual(getAppearancePackages({ makeId: lexus.makeId, modelId: is.modelId, year: 2022 }), []);
 `);
   run(process.execPath, [join(work, "consumer.mjs")]);
   const types = `
@@ -50,6 +56,10 @@ import { getMakes, getModels, type Make } from "@meterapp/vehicle-db";
 import { searchVehicles } from "@meterapp/vehicle-db/search";
 import { resolveVehicle, getVisualCompatibilityRules } from "@meterapp/vehicle-db/resolve";
 import { normalizeIdentityText, evaluateVisualCompatibility, type VisualCompatibility } from "@meterapp/vehicle-db/identity";
+import { getAppearancePackages, type AppearancePackage, type ExteriorDifference } from "@meterapp/vehicle-db/packages";
+const packages: AppearancePackage[] = getAppearancePackages({ makeId: 515, modelId: 2184, year: 2022, market: "US" });
+const parts: ExteriorDifference[] = packages.flatMap(p => p.exteriorDifferences);
+void parts;
 const rules: readonly VisualCompatibility[] = getVisualCompatibilityRules();
 void evaluateVisualCompatibility(rules, "a", "b", { year: 2024, market: "DE", yearBasis: "catalog-year" });
 const makes: Make[] = getMakes({year:2024});

@@ -56,5 +56,16 @@
   {"query":"2005 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["C4","C5","C6","C7","C8","C SERIES","Silverado","TopKick"]},
   {"query":"1995 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["C4","C5","C6","C7","C8","C SERIES","Silverado","TopKick"]},
   {"query":"2005 GMC TopKick","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["C4","C5","C6","C7","C8","C SERIES","Silverado","Kodiak","Sierra"]},
-  {"query":"2000 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED"}
+  {"query":"2000 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2021 Lexus IS F Sport","cohort":"synthetic","expectedStatus":"UNRESOLVED_TOKENS","forbiddenModelNames":["IS F","IS-F"]},
+  {"query":"2021 Lexus IS F Sport","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"UNRESOLVED_TOKENS","forbiddenModelNames":["IS F","IS-F"]},
+  {"query":"2022 Lexus IS F Sport","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"UNRESOLVED_TOKENS","forbiddenModelNames":["IS F","IS-F"]},
+  {"query":"2013 Lexus IS F Sport","cohort":"synthetic","expectedStatus":"UNRESOLVED_TOKENS","forbiddenModelNames":["IS F","IS-F"]},
+  {"query":"2021 Lexus IS","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["IS F","IS-F"]},
+  {"query":"2021 Lexus IS","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2022 Lexus IS 350","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["IS F","IS-F"]},
+  {"query":"2010 Lexus IS F","cohort":"synthetic","expectedStatus":"MATCHED"},
+  {"query":"2022 Lexus LX 600","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["LX 600 F Sport"]},
+  {"query":"2022 Lexus LX 600","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"SCOPE_UNVERIFIED","forbiddenModelNames":["LX 600 F Sport"]},
+  {"query":"2022 Lexus LX 600 F Sport","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"MATCHED"}
 ]
