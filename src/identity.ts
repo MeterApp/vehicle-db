@@ -142,7 +142,7 @@ export interface AppearancePackageQuery { makeId: number; modelId: number; year:
 /** The stable slug of a package name: lower-case kebab, accents and punctuation dropped. */
 export function appearancePackageSlug(name: string): string {
   return name.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\+/g, " plus ")
-    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    .split(/[^a-z0-9]+/).filter(Boolean).join("-");
 }
 /** The package's exterior: the visual child of a specification that lists its exterior differences. */
 export function packageVisual(graph: Pick<IdentityGraph, "identities">, specificationId: string): VehicleIdentity | undefined {
