@@ -52,5 +52,9 @@
   {"query":"2022 Vauxhall Mokka","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["MOKKA-E","MOKKA X"]},
   {"query":"2025 Opel Mokka","cohort":"synthetic","options":{"market":"DE","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"SCOPE_UNVERIFIED"},
   {"query":"2026 Mercedes-Benz GLC","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["GLC 400 4MATIC WITH EQ TE","GLC400 4matic electric"]},
-  {"query":"2026 Mercedes-Benz GLC 400 4MATIC WITH EQ TE","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["GLC"]}
+  {"query":"2026 Mercedes-Benz GLC 400 4MATIC WITH EQ TE","cohort":"synthetic","options":{"market":"GB","yearBasis":"catalog-year","depth":"visual"},"expectedStatus":"MATCHED","forbiddenModelNames":["GLC"]},
+  {"query":"2005 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["C4","C5","C6","C7","C8","C SERIES","Silverado","TopKick"]},
+  {"query":"1995 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["C4","C5","C6","C7","C8","C SERIES","Silverado","TopKick"]},
+  {"query":"2005 GMC TopKick","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"MATCHED","forbiddenModelNames":["C4","C5","C6","C7","C8","C SERIES","Silverado","Kodiak","Sierra"]},
+  {"query":"2000 Chevrolet Kodiak","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"YEAR_UNVERIFIED"}
 ]
