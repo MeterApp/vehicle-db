@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "2026-11-12-twins",
+  "revision": "2026-11-13-appearance-packages",
   "identities": [
     {
       "id": "bmw:4",
@@ -3364,7 +3364,11 @@
       "yearBasis": "model-year",
       "bodyStyle": "suv",
       "appearanceRevision": "F SPORT mesh grille and exclusive exterior equipment; 2022 US source snapshot",
-      "parentId": "lexus:lx600:fourth:suv:fsport:us:2022"
+      "parentId": "lexus:lx600:fourth:suv:fsport:us:2022",
+      "exteriorDifferences": [
+        "grille",
+        "wheels"
+      ]
     },
     {
       "id": "lexus:lx600:fourth:suv:fsport:vn:2026:exterior",
@@ -3385,7 +3389,11 @@
       "yearBasis": "catalog-year",
       "bodyStyle": "suv",
       "appearanceRevision": "F SPORT mesh grille and exclusive exterior equipment; 2026 VN source snapshot",
-      "parentId": "lexus:lx600:fourth:suv:fsport:vn:2026"
+      "parentId": "lexus:lx600:fourth:suv:fsport:vn:2026",
+      "exteriorDifferences": [
+        "grille",
+        "wheels"
+      ]
     },
     {
       "id": "lexus:lx570",
@@ -14286,6 +14294,110 @@
         "GB",
         "NL",
         "US"
+      ]
+    },
+    {
+      "id": "lexus:is",
+      "kind": "line",
+      "makeId": 515,
+      "vehicleTypeId": 2,
+      "name": "IS",
+      "names": [],
+      "evidenceIds": [
+        "oem:lexus-is-third-2014"
+      ]
+    },
+    {
+      "id": "lexus:is:third",
+      "kind": "generation",
+      "makeId": 515,
+      "vehicleTypeId": 2,
+      "name": "Third generation IS",
+      "names": [],
+      "parentId": "lexus:is",
+      "evidenceIds": [
+        "oem:lexus-is-third-2014",
+        "oem:lexus-is-minor-change-2020-jp"
+      ]
+    },
+    {
+      "id": "lexus:is:third:sedan",
+      "kind": "derivative",
+      "makeId": 515,
+      "vehicleTypeId": 2,
+      "name": "IS sedan",
+      "names": [],
+      "parentId": "lexus:is:third",
+      "bodyStyle": "sedan",
+      "evidenceIds": [
+        "oem:lexus-is-third-2014"
+      ]
+    },
+    {
+      "id": "lexus:is:third:sedan:fsport:us:2021",
+      "kind": "specification",
+      "makeId": 515,
+      "vehicleTypeId": 2,
+      "name": "IS F SPORT",
+      "names": [],
+      "parentId": "lexus:is:third:sedan",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "US"
+      ],
+      "yearBasis": "model-year",
+      "bodyStyle": "sedan",
+      "specification": {
+        "trim": "F SPORT",
+        "rawText": "IS 350 F SPORT; IS 300 F SPORT (2024)"
+      },
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2021-us",
+        "oem:lexus-is-fsport-2022-us",
+        "oem:lexus-is-fsport-2023-us",
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "id": "lexus:is:third:sedan:fsport:us:2021:exterior",
+      "kind": "visual",
+      "makeId": 515,
+      "vehicleTypeId": 2,
+      "name": "IS F SPORT",
+      "names": [],
+      "parentId": "lexus:is:third:sedan:fsport:us:2021",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "markets": [
+        "US"
+      ],
+      "yearBasis": "model-year",
+      "bodyStyle": "sedan",
+      "appearanceRevision": "F SPORT exterior on the 2021 restyle: F mesh grille, front and rear bumpers, rocker molding, lip spoiler, 19-inch wheels, exhaust and diffuser, badges",
+      "exteriorDifferences": [
+        "grille",
+        "front_bumper",
+        "rear_bumper",
+        "side_skirts",
+        "spoiler",
+        "wheels",
+        "badges",
+        "exhaust"
+      ],
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2021-us",
+        "oem:lexus-is-fsport-2022-us",
+        "oem:lexus-is-fsport-2023-us",
+        "oem:lexus-is-fsport-2024-us"
       ]
     }
   ],
@@ -34906,6 +35018,237 @@
         "oem:vauxhall-astra-2021-reveal",
         "oem:vauxhall-astra-2026-facelift"
       ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2021,
+      "makeId": 515,
+      "modelId": 2184,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2021-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2021,
+      "makeId": 515,
+      "modelId": 3573963307,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2021-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2022,
+      "makeId": 515,
+      "modelId": 2184,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2022-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2022,
+      "makeId": 515,
+      "modelId": 2789494252,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2022-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2022,
+      "makeId": 515,
+      "modelId": 1092045940,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2022-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2022,
+      "makeId": 515,
+      "modelId": 3573963307,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2022-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2023,
+      "makeId": 515,
+      "modelId": 2184,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2023-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2023,
+      "makeId": 515,
+      "modelId": 2789494252,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2023-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2023,
+      "makeId": 515,
+      "modelId": 1092045940,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2023-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2023,
+      "makeId": 515,
+      "modelId": 3573963307,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2023-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 2184,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 2789494252,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 1092045940,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 3573963307,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 5171371697,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 1753206501,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:is:third:sedan:fsport:us:2021",
+      "year": 2024,
+      "makeId": 515,
+      "modelId": 1192085862,
+      "vehicleTypeId": 2,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "oem:lexus-is-fsport-2024-us"
+      ]
+    },
+    {
+      "identityId": "lexus:lx600:fourth:suv:fsport:us:2022",
+      "year": 2022,
+      "makeId": 515,
+      "modelId": 2212,
+      "vehicleTypeId": 7,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "cohort:515:lx-600-f-sport:2022:US"
+      ]
+    },
+    {
+      "identityId": "lexus:lx600:fourth:suv:fsport:us:2022",
+      "year": 2022,
+      "makeId": 515,
+      "modelId": 2166581238,
+      "vehicleTypeId": 7,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "cohort:515:lx-600-f-sport:2022:US"
+      ]
+    },
+    {
+      "identityId": "lexus:lx600:fourth:suv:fsport:vn:2026",
+      "year": 2026,
+      "makeId": 515,
+      "modelId": 2212,
+      "vehicleTypeId": 7,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "cohort:515:lx-600-f-sport:2026:VN"
+      ]
+    },
+    {
+      "identityId": "lexus:lx600:fourth:suv:fsport:vn:2026",
+      "year": 2026,
+      "makeId": 515,
+      "modelId": 2166581238,
+      "vehicleTypeId": 7,
+      "relation": "offered-on",
+      "evidenceIds": [
+        "cohort:515:lx-600-f-sport:2026:VN"
+      ]
     }
   ],
   "evidence": [
@@ -37974,6 +38317,48 @@
       "url": "https://global.toyota/en/newsroom/toyota/36254760.html",
       "retrievedAt": "2026-11-12",
       "note": "Toyota Motor Corporation release, Toyota City, 29 October 2021, details of the all-new bZ4X: the platform was jointly developed with Subaru; the front has 'the large hammerhead shark-like shape running from the hood to the top of the headlamps', which Toyota calls uniquely iconic."
+    },
+    {
+      "id": "oem:lexus-is-third-2014",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.lexus.com/lexus-third-generation-is-sport-sedan-2014/",
+      "retrievedAt": "2026-11-13",
+      "note": "Lexus USA newsroom, 25 March 2013: debut of the third-generation IS sport sedan as model year 2014, a four-door sedan, with F SPORT offered across the range (IS 250 and IS 350). Starts the third generation in the US."
+    },
+    {
+      "id": "oem:lexus-is-minor-change-2020-jp",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://global.toyota/jp/newsroom/lexus/34258837.html",
+      "retrievedAt": "2026-11-13",
+      "note": "Toyota/Lexus Japan release, 5 November 2020: the new IS goes on sale as a minor change (マイナーチェンジ) of the compact rear-drive sedan, so the 2020 restyle (US model year 2021) stays within the third generation. The F SPORT has an exclusive F mesh spindle grille, rear spoiler, rear bumper lower garnish and staggered 19-inch wheels."
+    },
+    {
+      "id": "oem:lexus-is-fsport-2021-us",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.lexus.com/2021-lexus-is-agility-and-athleticism-expand-pure-driving-performance/",
+      "retrievedAt": "2026-11-13",
+      "note": "Lexus USA newsroom, 15 June 2020: the 2021 IS (US, model year 2021, on sale late 2020). F SPORT only on the IS 350; F SPORT exterior differs from the other grades in a unique front bumper, rear bumper, grille surround and F mesh grille pattern with a grille-bottom intake, rear lip spoiler, rocker molding, 19-inch F SPORT wheels, F SPORT exhaust and diffuser, and F SPORT badges on the sides and rear. Carbon mirror caps and spoiler only with the Dynamic Handling Package (option, not recorded)."
+    },
+    {
+      "id": "oem:lexus-is-fsport-2022-us",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.lexus.com/whats-new-2022-lexus-is-300-350/",
+      "retrievedAt": "2026-11-13",
+      "note": "Lexus USA newsroom, 10 September 2021: What's New 2022 IS 300, 350 (US, model year 2022). F SPORT only on the IS 350; repeats the F SPORT front bumper, rear bumper, grille surround, rear lip spoiler, rocker molding, 19-inch wheels, exhaust and diffuser, and F SPORT badges."
+    },
+    {
+      "id": "oem:lexus-is-fsport-2023-us",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.lexus.com/whats-new-2023-is-300-350-500/",
+      "retrievedAt": "2026-11-13",
+      "note": "Lexus USA newsroom, 14 September 2022: What's New 2023 IS 300/350/500 (US, model year 2023). IS 350 F SPORT continues (RWD and AWD) with F SPORT bumpers, grille, rear lip spoiler, badging and 19-inch F SPORT wheels; adds the separate IS 350 F SPORT Design grade (not recorded here). The IS 500 F SPORT Performance is its own model."
+    },
+    {
+      "id": "oem:lexus-is-fsport-2024-us",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://pressroom.lexus.com/whats-new-2024-lexus-is-300-350-500/",
+      "retrievedAt": "2026-11-13",
+      "note": "Lexus USA newsroom, 12 October 2023: What's New 2024 IS 300/350/500 (US, model year 2024). The IS 300 adds F SPORT (RWD and AWD) beside the IS 350 F SPORT; F SPORT front bumper, rear bumper, grille surround, rear lip spoiler, rocker molding, 19-inch wheels and side F SPORT badges."
     }
   ],
   "homologation": [],

@@ -223,6 +223,34 @@ An allow is recorded only when the manufacturer's own material shows the two as 
 
 Raw configuration and homologation evidence stays in build-time sidecars under `data/evidence/`, outside the npm bundle. See [the implementation plan](docs/catalog-update-plan.md) and [source investigation](docs/source-investigation.md).
 
+## Appearance packages
+
+An appearance package is a factory option that keeps a vehicle's body but changes what its outside looks like (Lexus F SPORT, BMW M Sport, Hyundai N Line). A picture of the base car is not a picture of the package. `@meterapp/vehicle-db/packages` lists the packages offered on a catalog vehicle, so a consumer can ask by the row it already holds:
+
+```typescript
+import { getAppearancePackages } from "@meterapp/vehicle-db/packages";
+
+getAppearancePackages({ makeId: 515, modelId: 2184, year: 2021, market: "US" }); // Lexus IS
+// [{ slug: "f-sport", name: "F SPORT",
+//    specificationId: "lexus:is:third:sedan:fsport:us:2021",
+//    visualIdentityId: "lexus:is:third:sedan:fsport:us:2021:exterior",
+//    exteriorDifferences: ["grille", "front_bumper", "rear_bumper", "side_skirts", "spoiler", "wheels", "badges", "exhaust"],
+//    years: [2021, 2022, 2023, 2024], markets: ["US"], yearBasis: "model-year", evidenceIds: [...] }]
+getAppearancePackages({ makeId: 515, modelId: 2184, year: 2021 }); // []: the package is scoped to the US
+```
+
+- `slug` is the maker's package name in lower-case kebab form (`appearancePackageSlug("F SPORT")` is `f-sport`). It is unique per catalog vehicle and year (two packages may share it only in disjoint markets) and stable once published.
+- A market-scoped package is returned only when `market` is given and in its scope; with no market, only packages without a market scope are returned.
+- `exteriorDifferences` are the parts the package's evidence shows differ from the base car, from a fixed list (`EXTERIOR_DIFFERENCES`): `grille`, `front_bumper`, `rear_bumper`, `side_skirts`, `wheels`, `badges`, `mirrors`, `spoiler`, `exhaust`, `lamps`, `trim_color`. A part the source does not show is not listed, and options such as a handling package are left out.
+
+In the graph a package is a `specification` identity whose `specification.trim` is the package name, under the derivative (body) it is offered on, with `years`, `markets` and `yearBasis` from its evidence; a `visual` identity under it carries `exteriorDifferences`; and catalog links with `relation: "offered-on"` name the catalog rows it is offered on. Those rows still describe the base car, so `resolveVehicle` ignores offered-on links and never walks from a base car down to a package: `2022 Lexus LX 600` resolves exactly as before, and `2021 Lexus IS F Sport` stays `UNRESOLVED_TOKENS` instead of becoming the IS F. A performance model with its own bodywork (IS F, M3) or a body (Touring, a cab) is a catalog model, never a package.
+
+| Package | Rows offered on | Years | Market | Exterior differences | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| Lexus IS F SPORT | IS, IS 350, IS 350 AWD, IS350; IS 300, IS 300 AWD, IS300 (2024) | 2021–2024 (model year) | US | grille, front and rear bumper, side skirts, spoiler, wheels, badges, exhaust | Lexus USA newsroom, 2021–2024 releases |
+| Lexus LX 600 F SPORT | LX, LX 600 | 2022 (model year) | US | grille, wheels | Lexus 2022 LX 600 press release |
+| Lexus LX 600 F SPORT | LX, LX 600 | 2026 (catalog year) | VN | grille, wheels | Lexus Vietnam LX 600 F SPORT page |
+
 ## API
 
 ### `getDataSources(): DataSource[]`

@@ -13,6 +13,9 @@ export interface IdentityEvidence {
   retrievedAt: string;
   note: string;
 }
+/** The exterior parts an appearance package can change, a fixed list. */
+export const EXTERIOR_DIFFERENCES = ["grille", "front_bumper", "rear_bumper", "side_skirts", "wheels", "badges", "mirrors", "spoiler", "exhaust", "lamps", "trim_color"] as const;
+export type ExteriorDifference = typeof EXTERIOR_DIFFERENCES[number];
 export interface VehicleIdentity extends IdentityScope {
   id: string;
   kind: IdentityKind;
@@ -33,6 +36,11 @@ export interface VehicleIdentity extends IdentityScope {
     transmission?: string;
     rawText: string;
   };
+  /**
+   * On the visual identity of an appearance package (under a specification with `specification.trim`):
+   * the parts its evidence shows differ from the base car.
+   */
+  exteriorDifferences?: ExteriorDifference[];
   evidenceIds: string[];
 }
 export interface VehicleIdentityAlias extends IdentityScope {
@@ -53,6 +61,12 @@ export interface IdentityCatalogLink {
   makeId: number;
   modelId: number;
   vehicleTypeId: number;
+  /**
+   * Absent: the identity describes the row. `offered-on`: the identity (an appearance package's
+   * specification) is an option on the row's vehicle; the row still describes the base car, so
+   * resolution ignores these links.
+   */
+  relation?: "offered-on";
   evidenceIds: string[];
 }
 export interface VisualCompatibility extends IdentityScope {
@@ -109,4 +123,54 @@ export function evaluateVisualCompatibility(
     rule.assetVisualIdentityId === assetId && scopeMatches(rule, context));
   if (applicable.some(rule => rule.decision === "deny")) return "deny";
   return applicable.some(rule => rule.decision === "allow") ? "allow" : "unknown";
+}
+/** An appearance package offered on a catalog vehicle: a specification identity and its exterior. */
+export interface AppearancePackage {
+  /** The package name in lower-case kebab form ("F SPORT" → "f-sport"); unique per catalog vehicle and year. */
+  slug: string;
+  /** The maker's package name, `specification.trim`. */
+  name: string;
+  specificationId: string;
+  visualIdentityId: string;
+  exteriorDifferences: ExteriorDifference[];
+  years: number[];
+  markets?: string[];
+  yearBasis: YearBasis;
+  evidenceIds: string[];
+}
+export interface AppearancePackageQuery { makeId: number; modelId: number; year: number; market?: string }
+/** The stable slug of a package name: lower-case kebab, accents and punctuation dropped. */
+export function appearancePackageSlug(name: string): string {
+  return name.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\+/g, " plus ")
+    .split(/[^a-z0-9]+/).filter(Boolean).join("-");
+}
+/** The package's exterior: the visual child of a specification that lists its exterior differences. */
+export function packageVisual(graph: Pick<IdentityGraph, "identities">, specificationId: string): VehicleIdentity | undefined {
+  return graph.identities.find(n => n.kind === "visual" && n.parentId === specificationId && n.exteriorDifferences?.length);
+}
+/**
+ * The appearance packages offered on a catalog vehicle in a year. A market-scoped package is returned
+ * only when `market` is given and in its scope; with no market, only packages without a market scope.
+ */
+export function listAppearancePackages(graph: IdentityGraph, query: AppearancePackageQuery): AppearancePackage[] {
+  const { makeId, modelId, year, market } = query;
+  if (![makeId, modelId, year].every(Number.isInteger)) return [];
+  const nodes = new Map(graph.identities.map(n => [n.id, n]));
+  const inMarkets = (scope: IdentityScope) => !scope.markets || (market !== undefined && scope.markets.includes(market));
+  const result = new Map<string, AppearancePackage>();
+  for (const link of graph.catalogLinks) {
+    if (link.relation !== "offered-on" || link.makeId !== makeId || link.modelId !== modelId || link.year !== year || result.has(link.identityId)) continue;
+    const spec = nodes.get(link.identityId);
+    const visual = spec && packageVisual(graph, spec.id);
+    if (!spec?.specification?.trim || !visual || !spec.years || !spec.yearBasis) continue;
+    if (!spec.years.includes(year) || (visual.years && !visual.years.includes(year)) || !inMarkets(spec) || !inMarkets(visual)) continue;
+    const markets = visual.markets ?? spec.markets;
+    result.set(spec.id, {
+      slug: appearancePackageSlug(spec.specification.trim), name: spec.specification.trim,
+      specificationId: spec.id, visualIdentityId: visual.id, exteriorDifferences: [...visual.exteriorDifferences!],
+      years: [...spec.years], ...(markets ? { markets: [...markets] } : {}), yearBasis: spec.yearBasis,
+      evidenceIds: [...new Set([...spec.evidenceIds, ...visual.evidenceIds])],
+    });
+  }
+  return [...result.values()].sort((a, b) => a.slug.localeCompare(b.slug) || a.specificationId.localeCompare(b.specificationId));
 }

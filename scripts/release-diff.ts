@@ -70,7 +70,7 @@ export function buildReleaseDiff(before: ReleaseSide, after: ReleaseSide, option
     removed: nodes.removed.map(brief),
   };
   const links = changes(a.catalogLinks, b.catalogLinks, l => [l.identityId, l.year, l.makeId, l.modelId, l.vehicleTypeId].join("|"));
-  const link = (l: Graph["catalogLinks"][number]) => ({ identityId: l.identityId, year: l.year, makeId: l.makeId, modelId: l.modelId, vehicleTypeId: l.vehicleTypeId });
+  const link = (l: Graph["catalogLinks"][number]) => ({ identityId: l.identityId, year: l.year, makeId: l.makeId, modelId: l.modelId, vehicleTypeId: l.vehicleTypeId, ...(l.relation ? { relation: l.relation } : {}) });
   // An alias is its text, target and scope: a rescoped alias is one removal and one addition.
   const scope = (s: { years?: number[]; markets?: string[]; yearBasis?: string }) => stable([s.years ?? null, s.markets ?? null, s.yearBasis ?? null]);
   const aliases = changes(a.aliases, b.aliases, x => [x.text, x.targetId, x.kind, scope(x)].join("|"));
