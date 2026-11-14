@@ -4620,6 +4620,17 @@
       "url": "https://web.archive.org/web/20140617083730/http://www.lincoln.mx/compra/promociones/mark-lt-4x4-2014",
       "note": "Lincoln Mexico's offers page (lincoln.mx, Internet Archive capture 2014-06-17) lists 'MARK LT 4x4 2014' with an MXN price. Model year as stated by the manufacturer for the Mexican market. MY2011 has no text capture (the 2011 site is a Flash shell) and is not asserted. The source states no generation, so no identity links these rows to the U.S. 2006-2008 Mark LT. Retrieved 2026-11-14.",
       "yearBasis": "model-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Soluto",
+      "vehicleTypeId": 2,
+      "market": "PH",
+      "url": "https://kiaphilippines.com/vehicles/soluto",
+      "note": "Kia Philippines (KP Motors; kia.com/ph/showroom/soluto.html redirects here) lists the Soluto sedan with L MT and L AT prices in its current line-up, retrieved 2026-11-14. Calendar catalog year, not MY2026 proof; the page states no model year. THACO Auto's Kia Vietnam site (kiavietnam.com.vn/kia-soluto) also lists the Soluto sedan for sale on that date. The same-platform Pegas name (Saudi Arabia) stays a separate record; no visual equivalence is asserted.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
@@ -4627,7 +4638,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
