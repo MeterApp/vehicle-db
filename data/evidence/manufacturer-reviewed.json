@@ -4587,6 +4587,39 @@
       "url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=GMC&model=TOPKICK&modelYear=2009",
       "note": "NHTSA recall records filed by General Motors list model year 2009 GMC TopKick (campaign 18V267000). Model year as stated in the filings; GM medium-duty conventional truck, published in vPIC only under series codes (C4-C8). Years without a GM filing are not asserted. No substitution of Chevrolet Kodiak, Silverado or the C-series rows. Retrieved 2026-11-13.",
       "yearBasis": "model-year"
+    },
+    {
+      "year": 2012,
+      "makeId": 464,
+      "make": "LINCOLN",
+      "model": "Mark LT",
+      "vehicleTypeId": 3,
+      "market": "MX",
+      "url": "https://web.archive.org/web/20120519134839/http://www.lincoln.com.mx/VehiculoMenu.aspx?n=MARK+LT",
+      "note": "Lincoln Mexico's vehicle page (lincoln.com.mx, Internet Archive capture 2012-05-19) is titled '2012 LINCOLN MARK LT' and lists the Mark LT in the Mexican Lincoln line-up with gallery, specifications and prices. Model year as stated by the manufacturer for the Mexican market. MY2011 has no text capture (the 2011 site is a Flash shell) and is not asserted. The source states no generation, so no identity links these rows to the U.S. 2006-2008 Mark LT. Retrieved 2026-11-14.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2013,
+      "makeId": 464,
+      "make": "LINCOLN",
+      "model": "Mark LT",
+      "vehicleTypeId": 3,
+      "market": "MX",
+      "url": "https://web.archive.org/web/20140617083710/http://www.lincoln.mx/compra/promociones/mark-lt-4x2-2013",
+      "note": "Lincoln Mexico's offers page (lincoln.mx, Internet Archive capture 2014-06-17) lists 'MARK LT 4x2 2013' with an MXN price. Model year as stated by the manufacturer for the Mexican market. MY2011 has no text capture (the 2011 site is a Flash shell) and is not asserted. The source states no generation, so no identity links these rows to the U.S. 2006-2008 Mark LT. Retrieved 2026-11-14.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2014,
+      "makeId": 464,
+      "make": "LINCOLN",
+      "model": "Mark LT",
+      "vehicleTypeId": 3,
+      "market": "MX",
+      "url": "https://web.archive.org/web/20140617083730/http://www.lincoln.mx/compra/promociones/mark-lt-4x4-2014",
+      "note": "Lincoln Mexico's offers page (lincoln.mx, Internet Archive capture 2014-06-17) lists 'MARK LT 4x4 2014' with an MXN price. Model year as stated by the manufacturer for the Mexican market. MY2011 has no text capture (the 2011 site is a Flash shell) and is not asserted. The source states no generation, so no identity links these rows to the U.S. 2006-2008 Mark LT. Retrieved 2026-11-14.",
+      "yearBasis": "model-year"
     }
   ],
   "catalogYearMetadata": {
