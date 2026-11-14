@@ -67,5 +67,11 @@
   {"query":"2010 Lexus IS F","cohort":"synthetic","expectedStatus":"MATCHED"},
   {"query":"2022 Lexus LX 600","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["LX 600 F Sport"]},
   {"query":"2022 Lexus LX 600","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"SCOPE_UNVERIFIED","forbiddenModelNames":["LX 600 F Sport"]},
-  {"query":"2022 Lexus LX 600 F Sport","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"MATCHED"}
+  {"query":"2022 Lexus LX 600 F Sport","cohort":"synthetic","options":{"market":"US","depth":"visual"},"expectedStatus":"MATCHED"},
+  {"query":"2012 Lincoln Mark LT","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED"},
+  {"query":"2013 Lincoln Mark LT","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED"},
+  {"query":"2014 Lincoln Mark LT","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED"},
+  {"query":"2011 Lincoln Mark LT","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2013 Lincoln Mark LT","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2008 Lincoln Mark LT","cohort":"synthetic","expectedStatus":"MATCHED"}
 ]
