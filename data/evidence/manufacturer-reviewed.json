@@ -4589,6 +4589,28 @@
       "yearBasis": "model-year"
     },
     {
+      "year": 1999,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Kodiak",
+      "vehicleTypeId": 3,
+      "market": "US",
+      "url": "https://www.gmupfitter.com/wp-content/uploads/2021/05/1999_MD_CSeries.pdf",
+      "note": "General Motors Upfitter Integration 1999 Medium Duty body builder set (gmupfitter.com, Medium Duty Prior to 2007 archive): the C Series volume (MDC Rev. 12/98, cited URL) refers to Topkick/Kodiak models for the C6/7H conventional cab; the same set's General Information volume (https://www.gmupfitter.com/wp-content/uploads/2021/05/1999_MD_GeneralInformation.pdf, MDGI Rev. 12/98) covers all 1998I and 1999 Medium Duty models, and GM files both under 1999 with the label C Series (Chevrolet Kodiak & GMC TopKick). Model year 1999 only: the 2000 files are the same Rev. 12/98 print and the 2001/2002 volumes do not name Kodiak or TopKick, so no other year is asserted. GM medium-duty conventional truck, published in vPIC only under series codes (C4-C8). Retrieved 2026-11-15. No substitution of GMC TopKick, Silverado or the C-series rows.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 1999,
+      "makeId": 472,
+      "make": "GMC",
+      "model": "TopKick",
+      "vehicleTypeId": 3,
+      "market": "US",
+      "url": "https://www.gmupfitter.com/wp-content/uploads/2021/05/1999_MD_CSeries.pdf",
+      "note": "General Motors Upfitter Integration 1999 Medium Duty body builder set (gmupfitter.com, Medium Duty Prior to 2007 archive): the C Series volume (MDC Rev. 12/98, cited URL) refers to Topkick/Kodiak models for the C6/7H conventional cab; the same set's General Information volume (https://www.gmupfitter.com/wp-content/uploads/2021/05/1999_MD_GeneralInformation.pdf, MDGI Rev. 12/98) covers all 1998I and 1999 Medium Duty models, and GM files both under 1999 with the label C Series (Chevrolet Kodiak & GMC TopKick). Model year 1999 only: the 2000 files are the same Rev. 12/98 print and the 2001/2002 volumes do not name Kodiak or TopKick, so no other year is asserted. GM medium-duty conventional truck, published in vPIC only under series codes (C4-C8). Retrieved 2026-11-15. No substitution of Chevrolet Kodiak, Silverado or the C-series rows.",
+      "yearBasis": "model-year"
+    },
+    {
       "year": 2012,
       "makeId": 464,
       "make": "LINCOLN",
