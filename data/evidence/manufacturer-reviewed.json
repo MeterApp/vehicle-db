@@ -4928,6 +4928,39 @@
       "url": "https://web.archive.org/web/20240414004345id_/https://chery.cl/tiggo-2/",
       "note": "Chery Chile's Tiggo 2 page (chery.cl/tiggo-2/, Internet Archive capture 2024-04-14) offers Tiggo 2 GL MT Euro 6 from $8.990.000, GLS MT and GLS CVT; the model menu lists 'Tiggo 2 Desde $8.990.000' beside 'Tiggo 2 Pro', with promotions valid for April 2024 purchases. Listed as Tiggo 2, separate from the Tiggo 2 Pro and Tiggo 2 Pro Max sold beside it; by the 2024-12-05 capture the chery.cl model menu lists only Tiggo 2 Pro / Pro Max and the Tiggo 2 page shows no prices, so 2025 and later are not asserted. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Click125",
+      "vehicleTypeId": 1,
+      "market": "PH",
+      "url": "https://www.hondaph.com/motorcycle/news/honda-philippines-inc-celebrates-the-click125-new-model-and-engine-localization-milestone",
+      "note": "Honda Philippines Inc. release dated February 19, 2026 lists the Click 125 production milestones: 'December 2022: Click 125 Frame Assembly Localization', 'April 2024: Click 125 Model Refresh', 'April 2025: Click 125 Model Refresh'. Catalog year (the dated April 2024 refresh), not a factory model year. Earlier years (the Dec 2022 'All-New CLICK125' launch) are not asserted. Scooter, published as Motorcycle like the PCX and ADV rows. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Click125",
+      "vehicleTypeId": 1,
+      "market": "PH",
+      "url": "https://www.hondaph.com/motorcycle/news/honda-philippines-inc-celebrates-the-click125-new-model-and-engine-localization-milestone",
+      "note": "Same Honda Philippines Inc. release (February 19, 2026) lists 'April 2025: Click 125 Model Refresh'. Catalog year, not a factory model year. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Click125",
+      "vehicleTypeId": 1,
+      "market": "PH",
+      "url": "https://www.hondaph.com/motorcycle/news/game-changer-upgrade-honda-introduces-the-click125-2026-year-model",
+      "note": "Honda Philippines Inc. release dated February 12, 2026, 'Game Changer Upgrade: Honda Introduces the Click125 2026 Year Model': the Click125 scooter in Standard and Smart Edition variants, available at Honda 3S Shops and authorized dealers nationwide from February 6. Model year as stated by the manufacturer for the Philippine market. Variants and the later Click125 Street (August 27, 2026, no model year stated) are trims, not separate models. Retrieved 2026-11-16.",
+      "yearBasis": "model-year"
     }
   ],
   "catalogYearMetadata": {
@@ -4935,7 +4968,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia, Honda), Chile (Chevrolet, Chery)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
