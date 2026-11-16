@@ -92,5 +92,7 @@
   {"query":"2024 Suzuki Baleno","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Swift","SWIFT","Fronx","Dzire","Glanza","GLANZA"]},
   {"query":"2026 Suzuki Baleno","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Swift","SWIFT","Fronx","Dzire","Glanza","GLANZA"]},
   {"query":"2018 Suzuki Dzire","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Swift","SWIFT","Ciaz","Baleno"]},
-  {"query":"2017 Suzuki Dzire","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
+  {"query":"2017 Suzuki Dzire","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2017 Renault Trucks K","cohort":"synthetic","options":{"market":"FR","yearBasis":"catalog-year"},"expectedStatus":"MATCHED","forbiddenModelNames":["Kerax","C","T","Master"]},
+  {"query":"2012 Renault Trucks K","cohort":"synthetic","options":{"market":"FR","yearBasis":"catalog-year"},"expectedStatus":"YEAR_UNVERIFIED","forbiddenModelNames":["Kerax","C","T","Master"]}
 ]
