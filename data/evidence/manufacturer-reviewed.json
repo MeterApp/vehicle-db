@@ -4895,6 +4895,39 @@
       "url": "https://web.archive.org/web/20260518095115id_/https://www.chevrolet.cl/suvs/groove-suv-deportivo",
       "note": "Chevrolet Chile's Groove page (capture 2026-05-18, prices valid May 2026) lists the second-generation Groove with a CLP price. ANAC reports 3,514 Groove registrations in Chile January-September 2026. Catalog year (the capture date), not a factory model year. The source states the generation change in October 2025 (Baojun 510 base to Wuling Alvez base); no generation identity is asserted. Retrieved 2026-11-16.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2022,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 2",
+      "vehicleTypeId": 7,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20220326160158id_/https://chery.cl/tiggo-2/",
+      "note": "Chery Chile's Tiggo 2 page (chery.cl/tiggo-2/, Internet Archive capture 2022-03-26) lists Tiggo 2 GL MT, GLS MT and GLS CVT with CLP list prices (GL MT $10.990.000) and a promotion 'válida hasta el 31 de marzo de 2022'; the model menu lists Tiggo 2 and Tiggo 2 PRO separately. Listed as Tiggo 2, separate from the Tiggo 2 Pro and Tiggo 2 Pro Max sold beside it; by the 2024-12-05 capture the chery.cl model menu lists only Tiggo 2 Pro / Pro Max and the Tiggo 2 page shows no prices, so 2025 and later are not asserted. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2023,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 2",
+      "vehicleTypeId": 7,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20231206200055id_/https://chery.cl/tiggo-2/",
+      "note": "Chery Chile's Tiggo 2 page (chery.cl/tiggo-2/, Internet Archive capture 2023-12-06) offers Tiggo 2 GL MT Euro 6 from $8.990.000, GLS MT from $9.490.000 and GLS CVT from $9.990.000 (1.5 L); the model menu lists 'Tiggo 2 Desde $8.990.000' beside 'Tiggo 2 Pro', with promotions valid for December 2023 purchases. Listed as Tiggo 2, separate from the Tiggo 2 Pro and Tiggo 2 Pro Max sold beside it; by the 2024-12-05 capture the chery.cl model menu lists only Tiggo 2 Pro / Pro Max and the Tiggo 2 page shows no prices, so 2025 and later are not asserted. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 4783111891,
+      "make": "CHERY",
+      "model": "Tiggo 2",
+      "vehicleTypeId": 7,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20240414004345id_/https://chery.cl/tiggo-2/",
+      "note": "Chery Chile's Tiggo 2 page (chery.cl/tiggo-2/, Internet Archive capture 2024-04-14) offers Tiggo 2 GL MT Euro 6 from $8.990.000, GLS MT and GLS CVT; the model menu lists 'Tiggo 2 Desde $8.990.000' beside 'Tiggo 2 Pro', with promotions valid for April 2024 purchases. Listed as Tiggo 2, separate from the Tiggo 2 Pro and Tiggo 2 Pro Max sold beside it; by the 2024-12-05 capture the chery.cl model menu lists only Tiggo 2 Pro / Pro Max and the Tiggo 2 page shows no prices, so 2025 and later are not asserted. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
@@ -4902,7 +4935,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
