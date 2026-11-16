@@ -4928,6 +4928,50 @@
       "url": "https://web.archive.org/web/20240414004345id_/https://chery.cl/tiggo-2/",
       "note": "Chery Chile's Tiggo 2 page (chery.cl/tiggo-2/, Internet Archive capture 2024-04-14) offers Tiggo 2 GL MT Euro 6 from $8.990.000, GLS MT and GLS CVT; the model menu lists 'Tiggo 2 Desde $8.990.000' beside 'Tiggo 2 Pro', with promotions valid for April 2024 purchases. Listed as Tiggo 2, separate from the Tiggo 2 Pro and Tiggo 2 Pro Max sold beside it; by the 2024-12-05 capture the chery.cl model menu lists only Tiggo 2 Pro / Pro Max and the Tiggo 2 page shows no prices, so 2025 and later are not asserted. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Baleno",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20240419191336id_/https://suzuki.cl/vehiculo/baleno/",
+      "note": "Suzuki Chile's Baleno page (suzuki.cl/vehiculo/baleno/, Internet Archive capture 2024-04-19) offers the Baleno hatchback 'Desde: $11.890.000' (precio lista $13.790.000) with versions and a technical sheet; the model menu lists Baleno beside Swift and Dzire, and prices are stated 'válidos a la fecha de publicación'. Listed as Baleno (hatchback) by Derco SpA, Suzuki's Chilean importer; catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Baleno",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20250911213958id_/https://www.suzuki.cl/vehiculo/baleno/",
+      "note": "Suzuki Chile's Baleno page (suzuki.cl/vehiculo/baleno/, Internet Archive capture 2025-09-11) offers the Baleno hatchback 'Desde: $12.390.000' (precio lista $14.390.000) with a 'COTIZA TU BALENO' quote form; the model menu lists BALENO under hatchbacks, prices 'válidos a la fecha de publicación', page footer © 2025. Listed as Baleno (hatchback) by Derco SpA, Suzuki's Chilean importer; catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Baleno",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20260227153214id_/https://www.suzuki.cl/vehiculo/baleno/",
+      "note": "Suzuki Chile's Baleno page (suzuki.cl/vehiculo/baleno/, Internet Archive capture 2026-02-27) offers the Baleno hatchback 'Desde: $12.790.000' (precio lista $14.790.000) with a 'COTIZA TU BALENO' quote form; the model menu lists BALENO under hatchbacks, prices 'válidos a la fecha de publicación'. The 2026-03-29 capture shows the same offer. Listed as Baleno (hatchback) by Derco SpA, Suzuki's Chilean importer; catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2018,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Dzire",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20180425024111id_/http://www.suzuki.cl:80/auto/nuevo-dzire",
+      "note": "Suzuki Chile's Nuevo Dzire page (suzuki.cl/auto/nuevo-dzire, Internet Archive capture 2018-04-25) offers the Nuevo Dzire sedan 'Desde $6.290.000'; the model menu lists 'Nuevo Dzire' under sedans beside Ciaz, prices 'válidos a la fecha de publicación'. Catalog year (the capture date), not a factory model year; the existing SUZUKI Dzire rows (South Africa 2019-2026) are unchanged and no generation identity is asserted. Retrieved 2026-11-16.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
@@ -4935,7 +4979,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery, Suzuki)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."

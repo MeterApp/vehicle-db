@@ -88,5 +88,9 @@
   {"query":"2022 Chery Tiggo 2","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Tiggo 2 Pro","TIGGO 3","Tiggo 3","Tiggo 4"]},
   {"query":"2024 Chery Tiggo 2","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Tiggo 2 Pro","TIGGO 3","Tiggo 3","Tiggo 4"]},
   {"query":"2025 Chery Tiggo 2","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
-  {"query":"2023 Chery Tiggo 2","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"}
+  {"query":"2023 Chery Tiggo 2","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2024 Suzuki Baleno","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Swift","SWIFT","Fronx","Dzire","Glanza","GLANZA"]},
+  {"query":"2026 Suzuki Baleno","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Swift","SWIFT","Fronx","Dzire","Glanza","GLANZA"]},
+  {"query":"2018 Suzuki Dzire","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Swift","SWIFT","Ciaz","Baleno"]},
+  {"query":"2017 Suzuki Dzire","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
 ]
