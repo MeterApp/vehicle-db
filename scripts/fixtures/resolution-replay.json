@@ -84,5 +84,9 @@
   {"query":"2020 Chevrolet Sail","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"},
   {"query":"2022 Chevrolet Groove","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Tracker","TRACKER","Trax"]},
   {"query":"2025 Chevrolet Groove","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Tracker","TRACKER","Trax"]},
-  {"query":"2019 Chevrolet Groove","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
+  {"query":"2019 Chevrolet Groove","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2022 Chery Tiggo 2","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Tiggo 2 Pro","TIGGO 3","Tiggo 3","Tiggo 4"]},
+  {"query":"2024 Chery Tiggo 2","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Tiggo 2 Pro","TIGGO 3","Tiggo 3","Tiggo 4"]},
+  {"query":"2025 Chery Tiggo 2","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2023 Chery Tiggo 2","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"}
 ]
