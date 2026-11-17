@@ -4,6 +4,8 @@
 ![license](https://img.shields.io/npm/l/@meterapp/vehicle-db)
 [![playground](https://img.shields.io/badge/playground-carimage.dev-black)](https://carimage.dev/playground?ref=catalog)
 
+<p align="center"><a href="https://carimage.dev/cars/toyota/rav4/2025?ref=catalog"><img src="https://carimage.dev/images/previews/toyota/rav4/2025/silver/front-3-4-600.webp" width="420" alt="2025 Toyota RAV4, front three-quarter view, transparent background, from the Car Image API"></a></p>
+
 An offline, international vehicle make/model catalog for Node.js and TypeScript. The package combines U.S. model-year data, the UK registered fleet, the European Union's new car and van registration register, the daily-updated Dutch vehicle register, Asian-origin vehicles registered in New Zealand, Malaysian registration transactions, Brazil's national vehicle register, an Indian manufacturer catalog, the Brazil-exclusive Hyundai HB20 family, recent U.S. model configurations from FuelEconomy.gov, and reviewed manufacturer body derivatives and Saudi model-year evidence into one small, zero-dependency API. It never makes runtime network requests.
 
 The current snapshot spans **1990–2027** and includes **1,608 makes** and **42,353 models** in **197,267 model years**, from **23 data sources**. Those are distinct vehicles by name, with case, accents and punctuation normalized while preserving the distinct 03+ badge, which is how the [Car Image API](https://carimage.dev/cars?ref=catalog) counts and lists them. The package's own records number more (1,620 makes from `getMakes()`), because sources spell some makes and models more than one way (`MOTO GUZZI` and `MOTO-GUZZI`) and a few makes have no model in these years; see [Snapshot stats](#snapshot-stats).
@@ -12,7 +14,7 @@ The catalog covers seven vehicle types: **Motorcycle**, **Passenger Car**, **Tru
 
 ## Demo and playground
 
-This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog) — an AI-native API that renders studio-quality, transparent-background images of every vehicle listed here (eight camera views, any paint color, PNG/WebP/JPG up to 1024 px, 1 credit per image with 100 free credits to start; see [pricing](https://carimage.dev/pricing?ref=catalog)). Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse every make and model at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
+This catalog is the backbone of the [Car Image API](https://carimage.dev?ref=catalog), which renders studio-quality, transparent-background images of every vehicle listed here: nine camera views, any paint color, PNG, WebP or JPG. Explore the data in the [interactive playground](https://carimage.dev/playground?ref=catalog) or browse every make and model at [carimage.dev/cars](https://carimage.dev/cars?ref=catalog).
 
 **Need to know where your vehicles operate?** [Geocode AI](https://geocodeai.dev/?ref=catalog) is the boundary API from the same team: get the polygon of any country, state, county, city, district or postcode by name or point, test whether a vehicle's location falls inside a service area, or describe a zone in plain language ("the nine Bay Area counties except San Jose") and get one validated polygon back, for fleet territories, pricing and fare zones, dispatch regions and geofences. REST, MCP and CLI; see [the docs](https://geocodeai.dev/docs?ref=catalog).
 
@@ -124,6 +126,18 @@ const years = getAvailableYears({
   sourceId: "nhtsa-vpic",
 });
 ```
+
+## Show a picture of any vehicle in this catalog
+
+A make, model and year picked from this package can be shown as a transparent-background image with one request to the [Car Image API](https://carimage.dev?ref=catalog), in nine views (front, rear, both sides, all four three-quarter corners and top-down) and any paint color. Typical uses are a vehicle picker that shows the car the driver chose, inventory and catalog pages, wrap, tint and PPF visualizers, and dealer tools that start from a VIN.
+
+```bash
+curl -H "Authorization: Bearer $CAR_IMAGE_API_KEY" \
+  "https://carimage.dev/api/v1/images/car?make=toyota&model=rav4&year=2025&view=front-3-4&color=red" \
+  -o rav4.png
+```
+
+A free account includes 30 vehicle images, no card needed: [get a key](https://carimage.dev/dashboard?ref=catalog). Code examples for the browser, React, Shopify and WordPress are in the [guides](https://carimage.dev/docs?ref=catalog); [pricing](https://carimage.dev/pricing?ref=catalog) lists the plans.
 
 ## Driver search and autocomplete
 

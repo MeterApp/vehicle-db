@@ -1,7 +1,7 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.62.0",
-  "description": "Offline international database for cars, motorcycles, trucks, buses, MPVs, and more",
+  "version": "2.62.1",
+  "description": "Offline international database of car, motorcycle, truck and bus makes, models and years (1990-2027) for vehicle pickers, autocomplete and validation, with transparent car images for every entry through carimage.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MeterApp/vehicle-db.git"
@@ -111,7 +111,15 @@
     "renavam",
     "byd",
     "international",
-    "offline"
+    "offline",
+    "car-images",
+    "vehicle-images",
+    "car-api",
+    "vehicle-api",
+    "car-database",
+    "vehicle-picker",
+    "automotive",
+    "transparent-png"
   ],
   "author": "",
   "license": "ISC",
