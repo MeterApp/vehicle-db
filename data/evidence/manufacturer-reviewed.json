@@ -5016,6 +5016,116 @@
       "url": "https://web.archive.org/web/20250427111110id_/https://www.kia.cl/modelos/automoviles/kia-soluto.html",
       "note": "Kia Chile's Soluto page (kia.cl/modelos/automoviles/kia-soluto.html, Internet Archive capture 2025-04-27), titled 'Kia Soluto 2025', offers versions SOLUTO LX 1.4L 5MT G LL (list price $11.290.000) and SOLUTO EX 1.4L 5MT G SRF FULL. Catalog year (the capture date and page title), not proof of a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2017,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat - Automóviles - Subcompactos - Importado - India': positive retail sales in 7 months of 2017. Chevrolet Mexico names this body 'Beat Hatchback' / 'Beat HB' (model page titled 'Beat HB 2021', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030023459id_/https://www.chevrolet.com.mx/autos/beat-auto-hatchback). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2018,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2018. Chevrolet Mexico names this body 'Beat Hatchback' / 'Beat HB' (model page titled 'Beat HB 2021', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030023459id_/https://www.chevrolet.com.mx/autos/beat-auto-hatchback). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2019,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2019. Chevrolet Mexico names this body 'Beat Hatchback' / 'Beat HB' (model page titled 'Beat HB 2021', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030023459id_/https://www.chevrolet.com.mx/autos/beat-auto-hatchback). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2020,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2020. Chevrolet Mexico names this body 'Beat Hatchback' / 'Beat HB' (model page titled 'Beat HB 2021', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030023459id_/https://www.chevrolet.com.mx/autos/beat-auto-hatchback). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2021,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat - Automóviles - Subcompactos - Importado - India': positive retail sales in 10 months of 2021. Chevrolet Mexico names this body 'Beat Hatchback' / 'Beat HB' (model page titled 'Beat HB 2021', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030023459id_/https://www.chevrolet.com.mx/autos/beat-auto-hatchback). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2017,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat Notchback",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat 4 PTAS. - Automóviles - Subcompactos - Importado - India': positive retail sales in 5 months of 2017. Chevrolet Mexico names this four-door body 'Beat Notchback' (model page titled 'Beat Notchback 2021 | Auto tipo sedán', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030021056id_/https://www.chevrolet.com.mx/autos/beat-notchback-auto-tipo-sedan). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2018,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat Notchback",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat 4 PTAS. - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2018. Chevrolet Mexico names this four-door body 'Beat Notchback' (model page titled 'Beat Notchback 2021 | Auto tipo sedán', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030021056id_/https://www.chevrolet.com.mx/autos/beat-notchback-auto-tipo-sedan). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2019,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat Notchback",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat 4 PTAS. - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2019. Chevrolet Mexico names this four-door body 'Beat Notchback' (model page titled 'Beat Notchback 2021 | Auto tipo sedán', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030021056id_/https://www.chevrolet.com.mx/autos/beat-notchback-auto-tipo-sedan). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2020,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat Notchback",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat 4 PTAS. - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2020. Chevrolet Mexico names this four-door body 'Beat Notchback' (model page titled 'Beat Notchback 2021 | Auto tipo sedán', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030021056id_/https://www.chevrolet.com.mx/autos/beat-notchback-auto-tipo-sedan). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
+    },
+    {
+      "year": 2021,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Beat Notchback",
+      "vehicleTypeId": 2,
+      "market": "MX",
+      "yearBasis": "catalog-year",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'General Motors - Beat 4 PTAS. - Automóviles - Subcompactos - Importado - India': positive retail sales in 12 months of 2021. Chevrolet Mexico names this four-door body 'Beat Notchback' (model page titled 'Beat Notchback 2021 | Auto tipo sedán', Internet Archive capture 2020-10-30: https://web.archive.org/web/20201030021056id_/https://www.chevrolet.com.mx/autos/beat-notchback-auto-tipo-sedan). Separate INEGI rows keep the hatchback and the notchback body distinct. Single-digit stragglers after 2021 are not asserted. Calendar sales year only, not factory model year or visual-generation equivalence. Retrieved 2026-11-18."
     }
   ],
   "catalogYearMetadata": {

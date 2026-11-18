@@ -98,5 +98,7 @@
   {"query":"2024 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","RIO","Pegas","Picanto","Morning"]},
   {"query":"2025 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","RIO","Pegas","Picanto","Morning"]},
   {"query":"2023 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","RIO","Pegas","Picanto","Morning"]},
-  {"query":"2022 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
+  {"query":"2022 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2021 Chevrolet Beat","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Spark","Aveo","Bolt","Bolt EV","Sail"]},
+  {"query":"2019 Chevrolet Beat Notchback","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Beat","Aveo","Sail","Onix"]}
 ]
