@@ -708,6 +708,17 @@
       "yearBasis": "catalog-year"
     },
     {
+      "year": 2026,
+      "makeId": 11366,
+      "make": "VINFAST",
+      "model": "VF 5",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://static-cms-prod.vinfastauto.com/20260105_thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-01.2026.pdf",
+      "note": "VinFast Vietnam sales policy 20260105_ThongbaoCSthucdaybanhangotodienVinFasttaiVN lists the VF 5 in its 'Manh liet vi Tuong lai Xanh' program for cars invoiced January 4 to December 31, 2026. Small SUV; catalog year of sale only, not MY2026 proof. The 2024 Malaysian register row 'VF5' is the register's spelling and is left unchanged.",
+      "yearBasis": "catalog-year"
+    },
+    {
       "year": 2025,
       "makeId": 11366,
       "make": "VINFAST",

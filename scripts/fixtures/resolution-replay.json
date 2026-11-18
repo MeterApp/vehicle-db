@@ -103,5 +103,6 @@
   {"query":"2025 VinFast VF 3","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 5","VF5","VF 6","VF e34"]},
   {"query":"2005 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]},
   {"query":"2012 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]},
-  {"query":"2017 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]}
+  {"query":"2017 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]},
+  {"query":"2026 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]}
 ]
