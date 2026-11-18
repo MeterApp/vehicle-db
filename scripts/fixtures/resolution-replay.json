@@ -98,5 +98,7 @@
   {"query":"2024 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","RIO","Pegas","Picanto","Morning"]},
   {"query":"2025 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","RIO","Pegas","Picanto","Morning"]},
   {"query":"2023 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","RIO","Pegas","Picanto","Morning"]},
-  {"query":"2022 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
+  {"query":"2022 Kia Soluto","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2025 VinFast VF e34","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["E34","VF 3","VF 5","VF 6"]},
+  {"query":"2025 VinFast VF 3","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 5","VF5","VF 6","VF e34"]}
 ]
