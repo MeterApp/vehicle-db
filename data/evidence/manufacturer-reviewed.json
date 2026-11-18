@@ -4776,6 +4776,17 @@
       "yearBasis": "model-year"
     },
     {
+      "year": 2011,
+      "makeId": 464,
+      "make": "LINCOLN",
+      "model": "Mark LT",
+      "vehicleTypeId": 3,
+      "market": "MX",
+      "url": "https://www.inegi.org.mx/app/tabulados/pxwebv2/pxweb/es/RAIAVL/RAIAVL/RAIAVL_8_9.px/",
+      "note": "INEGI RAIAVL table 'Venta al público y producción de vehículos ligeros por marca, modelo, segmento y país origen' (Mexico's national statistics office; monthly figures reported by the manufacturer), row 'Lincoln - Mark Lt - Camiones ligeros - Pick Ups - Importado - Estados Unidos': positive retail sales in 12 months of 2011 (497 units). Same Mexican-market Mark LT nameplate as the 2012-2014 Lincoln Mexico model-year rows. Calendar sales year only, not factory model year or visual-generation equivalence; no identity links this row to the U.S. 2006-2008 Mark LT. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
       "year": 2012,
       "makeId": 464,
       "make": "LINCOLN",
