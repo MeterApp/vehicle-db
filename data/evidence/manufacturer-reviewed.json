@@ -5181,6 +5181,138 @@
       "url": "https://web.archive.org/web/20250427111110id_/https://www.kia.cl/modelos/automoviles/kia-soluto.html",
       "note": "Kia Chile's Soluto page (kia.cl/modelos/automoviles/kia-soluto.html, Internet Archive capture 2025-04-27), titled 'Kia Soluto 2025', offers versions SOLUTO LX 1.4L 5MT G LL (list price $11.290.000) and SOLUTO EX 1.4L 5MT G SRF FULL. Catalog year (the capture date and page title), not proof of a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2014,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "VOLEEX C30",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20140328023729id_/http://www.greatwallmotors.cl/modelos/ficha_Voleex_C30.php",
+      "note": "Great Wall Chile's model page 'GreatWall | Modelo Voleex C30' (greatwallmotors.cl, Internet Archive capture 2014-03-28) lists the Voleex C30 among its automobiles (beside Voleex C10/C20/C50) with its technical specifications (1.5 L four-cylinder) and a quote link. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2018,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "VOLEEX C30",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20180113234256id_/http://www.greatwallmotors.cl/auto/c30-classic",
+      "note": "Great Wall Chile's 'C30 Classic 1.5 Comfort' page (greatwallmotors.cl, capture 2018-01-13) offers the sedan; the same site lists 'Sedán C30 Classic desde $ 5.790.000' and 'C30 Plus desde $ 6.290.000' (homepage capture 2018-06-12), and the C30 Classic page's colour images are named 'great-wall-new-voleex-c30-color-*' and link the site's 'new-voleex-c30' video page, i.e. the importer sells the Voleex C30 under the name C30 Classic. Only the Voleex C30 row is added; no 'C30 Classic' or 'C30 Plus' model or alias. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2021,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "VOLEEX C30",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20210305202245id_/https://www.greatwallmotors.cl/auto/c30-classic",
+      "note": "Great Wall Chile's C30 Classic page (greatwallmotors.cl, capture 2021-03-05) offers 'C30 Classic 1.5 Comfort Desde $ 7.590.000'; the page's own SEO title is 'New Voleex C30' and its interior images are named 'VOLEEX-INTERIOR'. Only the Voleex C30 row is added; no 'C30 Classic' model or alias. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2023,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "WINGLE 7",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20230326032839id_/https://www.greatwall.cl/auto/wingle-7-diesel",
+      "note": "Great Wall Chile's 'Wingle 7 Diésel' page (greatwall.cl/auto/wingle-7-diesel, capture 2023-03-26) offers the Wingle 7 double-cab pickup with a 'versiones y precios' section and 'COTIZA AHORA' quote buttons; no price is in the captured HTML; the 2023-03-26 capture of greatwall.cl/busqueda lists Wingle 7 Gasolina and Wingle 7 Diésel among the pickups. Wingle 7 is a separate model from the existing WINGLE rows (Malaysia) and from the Wingle 5 sold beside it. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "WINGLE 7",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20240228181902id_/https://www.gwm.cl/poer/",
+      "note": "GWM Chile's site (gwm.cl/poer/, capture 2024-02-28) lists 'Wingle 7 Gasolina Desde: $12.245.100' in its model menu beside Poer Plus Automática and POER MECÁNICA; the 2024-02-28 capture of its quote form offers WINGLE 7 GASOLINA as a pickup. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "WINGLE 7",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20251226163713id_/https://www.gwm.cl/vehiculo/nueva-wingle-7/",
+      "note": "GWM Chile's 'NUEVA WINGLE 7' page (gwm.cl/vehiculo/nueva-wingle-7/, capture 2025-12-26) offers 'Nueva Wingle 7 Gasolina y Diésel Desde: $14.506.100'. The page calls it 'Nueva' (new); whether it is a facelift or a new generation is not stated and not asserted. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "WINGLE 7",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20260105031015id_/https://www.gwm.cl/",
+      "note": "GWM Chile's homepage (gwm.cl, capture 2026-01-05) lists 'Nueva Wingle 7 Gasolina y Diésel Desde: $14.625.100' in its model menu. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "POER",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20251208152947id_/https://www.gwm.cl/vehiculo/poer/nueva-poer-mecanica/",
+      "note": "GWM Chile's 'NUEVA POER MECÁNICA' page (gwm.cl, capture 2025-12-08) offers the Poer pickup: 'NUEVA POER MECÁNICA Desde: $21.170.100', with 'POER MECÁNICA Desde: $19.028.100' and 'Poer Plus Automática Desde: $25.573.100' in the same model menu. The Poer P500 hybrid listed beside it is not covered by this row. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 2433956243,
+      "make": "GREAT WALL",
+      "model": "POER",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20260105031015id_/https://www.gwm.cl/",
+      "note": "GWM Chile's homepage (gwm.cl, capture 2026-01-05) lists 'POER MECÁNICA Desde: $19.028.100', 'NUEVA POER MECÁNICA Desde: $21.170.100' and 'Poer Plus Automática Desde: $25.573.100' in its model menu. The Poer P500 hybrid is not covered by this row. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2022,
+      "makeId": 100103,
+      "make": "MAXUS",
+      "model": "T60",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20220525233308id_/https://maxus.cl/-/maxus-t60-1",
+      "note": "Maxus Chile's 'MAXUS T60' page (maxus.cl, capture 2022-05-25) offers the 'MAXUS T60 DIÉSEL' pickup, 'precio desde corresponde a modelo T60 DX 4X2 CS, IVA incluido, incluye bonos $ 17.124.100'. The existing MAXUS T60 rows (2025, 2026) and the LDV T60 rows are unchanged; no LDV/Maxus twin rule or duplicate row is added. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2023,
+      "makeId": 100103,
+      "make": "MAXUS",
+      "model": "T60",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20230208174930id_/https://maxus.cl/-/maxus-t60-1",
+      "note": "Maxus Chile's 'MAXUS T60' page (maxus.cl, capture 2023-02-08) offers the 'MAXUS T60 D20 DIÉSEL' pickup in manual and automatic versions, 'precio desde corresponde a modelo T60 GL 4X4 D20, IVA incluido, incluye bonos $ 21.408.100'. No LDV/Maxus twin rule or duplicate row is added. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 100103,
+      "make": "MAXUS",
+      "model": "T60",
+      "vehicleTypeId": 3,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20240104140059id_/https://maxus.cl/",
+      "note": "Maxus Chile's homepage (maxus.cl, capture 2024-01-04) offers the 'MAXUS NEW T60 DIÉSEL' pickup in manual and automatic 4x4 versions, 'precio corresponde a modelo T60 4X2 DX MT E6, IVA no incluido, incluye bono BK $ 14.990.000 + IVA'. 'New' is the importer's name for the updated T60; no generation is asserted. No LDV/Maxus twin rule or duplicate row is added. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
@@ -5188,7 +5320,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault, Renault Trucks), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery, Suzuki, Kia)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault, Renault Trucks), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery, Suzuki, Kia, Great Wall, Maxus)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
