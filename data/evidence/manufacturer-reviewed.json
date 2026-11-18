@@ -708,6 +708,28 @@
       "yearBasis": "catalog-year"
     },
     {
+      "year": 2025,
+      "makeId": 11366,
+      "make": "VINFAST",
+      "model": "VF 3",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://static-cms-prod.vinfastauto.com/20250603_thong-bao-chinh-sach-thuc-day-ban-hang-thang-05.2025.pdf",
+      "note": "VinFast May 2025 Vietnam sales policy lists the VF 3 in its retail promotion table for cars bought and invoiced April 24 to May 31, 2025. Mini SUV; catalog year of sale only, not MY2025 proof.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 11366,
+      "make": "VINFAST",
+      "model": "VF e34",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://static-cms-prod.vinfastauto.com/20250603_thong-bao-chinh-sach-thuc-day-ban-hang-thang-05.2025.pdf",
+      "note": "VinFast May 2025 Vietnam sales policy lists 'Nerio Green/VFe 34' in its retail promotion table for cars bought and invoiced April 24 to May 31, 2025; VinFast writes the name VF e34 on its own sites. Compact SUV; catalog year of sale only, not MY2025 proof. The 2024 Malaysian register row 'E34' is the register's spelling and is left unchanged.",
+      "yearBasis": "catalog-year"
+    },
+    {
       "year": 2024,
       "makeId": 498,
       "make": "HYUNDAI",
