@@ -103,5 +103,12 @@
   {"query":"2025 VinFast VF 3","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 5","VF5","VF 6","VF e34"]},
   {"query":"2005 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]},
   {"query":"2012 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]},
-  {"query":"2017 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]}
+  {"query":"2017 Nissan Tsuru","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"MATCHED","forbiddenModelNames":["Sentra","SENTRA","Sunny","SUNNY","Versa","March","V16"]},
+  {"query":"2014 Great Wall Voleex C30","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["VOLEEX C10","VOLEEX C20R","C30","C30 R-DESIGN"]},
+  {"query":"2021 Great Wall Voleex C30","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["VOLEEX C10","VOLEEX C20R","C30"]},
+  {"query":"2024 Great Wall Wingle 7","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["WINGLE","POER","STEED"]},
+  {"query":"2026 Great Wall Wingle 7","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["WINGLE","POER","STEED"]},
+  {"query":"2026 Great Wall Poer","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["WINGLE","GWM CANNON","WINGLE 7"]},
+  {"query":"2023 Maxus T60","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["T90","T60 MAX AWD AUTO","T90 EV"]},
+  {"query":"2018 Great Wall Poer","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
 ]
