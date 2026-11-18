@@ -4983,6 +4983,39 @@
       "url": "https://www.renault-trucks.fr/press-release/lusine-renault-trucks-de-bourg-en-bresse-produit-son-millionieme-camion",
       "note": "Renault Trucks France identifies the K as the heavy-construction range produced at Bourg-en-Bresse from the 2013 range renewal, separate from the outgoing Kerax. The Les Cognées event organizer records Renault Trucks unveiling the K 520 4x4 tractor in Les Gets, France in June 2017 (https://www.lescognees.fr/renault-trucks-decouvrez-k-520-4x4/). The row records French catalog presence in 2017, with no factory model-year, cab, body derivative or adjacent year inferred. Retrieved 2026-11-16.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2023,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Soluto",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20230128035148id_/https://www.kia.cl/modelos/automoviles-suv/kia-soluto.html",
+      "note": "Kia Chile's Soluto page (kia.cl/modelos/automoviles-suv/kia-soluto.html, Internet Archive capture 2023-01-28) offers the Kia Soluto 'A partir de $9.690.000' with versions SOLUTO LX 1.4L 5MT ($9.690.000), LX 1.4L 5MT AC ($10.790.000) and EX 1.4L 5MT FULL ($12.190.000). The 2023-03-23 capture of kia.cl/modelos/automoviles/kia-soluto.html lists the same three versions ($8.990.000 / $9.990.000 / $12.190.000). Catalog year (the capture date), not a factory model year; no capture before 2023-01-28 exists, so 2022 is not asserted. The existing KIA Soluto row (PH 2026) is unchanged and no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Soluto",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20240619051957id_/https://www.kia.cl/modelos/automoviles/kia-soluto.html",
+      "note": "Kia Chile's Soluto page (kia.cl/modelos/automoviles/kia-soluto.html, Internet Archive capture 2024-06-19), titled 'Kia Soluto 2024', offers versions SOLUTO LX 1.4L 5MT G LL (list price $11.290.000) and SOLUTO EX 1.4L 5MT G SRF FULL. Catalog year (the capture date and page title), not proof of a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 499,
+      "make": "KIA",
+      "model": "Soluto",
+      "vehicleTypeId": 2,
+      "market": "CL",
+      "url": "https://web.archive.org/web/20250427111110id_/https://www.kia.cl/modelos/automoviles/kia-soluto.html",
+      "note": "Kia Chile's Soluto page (kia.cl/modelos/automoviles/kia-soluto.html, Internet Archive capture 2025-04-27), titled 'Kia Soluto 2025', offers versions SOLUTO LX 1.4L 5MT G LL (list price $11.290.000) and SOLUTO EX 1.4L 5MT G SRF FULL. Catalog year (the capture date and page title), not proof of a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
@@ -4990,7 +5023,7 @@
     "name": "Reviewed dated manufacturer market catalogs",
     "url": "https://lynkco.com.vn/en",
     "license": "Source attribution (factual product names only)",
-    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault, Renault Trucks), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery, Suzuki)",
+    "region": "Vietnam, India, China and United States, Germany, United Kingdom, South Africa, Mexico, Turkey, Russia, United Kingdom (Jeep), Croatia and France (Renault, Renault Trucks), Australia (Toyota, Nissan, Ford), Philippines (Kia), Chile (Chevrolet, Chery, Suzuki, Kia)",
     "retrievedAt": "2026-10-24",
     "yearBasis": "catalog-year",
     "description": "Individually reviewed dated sales, portfolio, launch and explicitly retrieved catalog observations. Catalog years are observations, not factory model years. Includes announced Torcal, not delivery-year proof. Per-record sources and scopes remain in data/evidence/manufacturer-reviewed.json."
