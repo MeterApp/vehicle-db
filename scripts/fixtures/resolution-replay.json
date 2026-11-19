@@ -111,5 +111,7 @@
   {"query":"2026 Great Wall Wingle 7","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["WINGLE","POER","STEED"]},
   {"query":"2026 Great Wall Poer","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["WINGLE","GWM CANNON","WINGLE 7"]},
   {"query":"2023 Maxus T60","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["T90","T60 MAX AWD AUTO","T90 EV"]},
-  {"query":"2018 Great Wall Poer","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"}
+  {"query":"2018 Great Wall Poer","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
+  {"query":"2025 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]},
+  {"query":"2026 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]}
 ]
