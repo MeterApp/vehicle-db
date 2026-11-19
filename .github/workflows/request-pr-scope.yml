@@ -1,0 +1,50 @@
+name: Request PR scope
+
+# A `request/*` pull request is opened by the missing-vehicle automation and
+# merges itself when CI passes, which publishes to npm. This check keeps such a
+# pull request to catalog data and its generated files.
+#
+# `pull_request_target` runs this workflow and scripts/check-request-pr-scope.ts
+# from the base branch, so a pull request cannot edit the rule it is held to.
+# It never checks out or runs the pull request's code: it reads the list of
+# changed files and package.json through the API with a read-only token.
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  scope:
+    name: Request PR scope
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the base branch
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 12.14.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+
+      - name: Check the changed files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: pnpm exec tsx scripts/check-request-pr-scope.ts
