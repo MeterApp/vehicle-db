@@ -82,6 +82,15 @@ Open an issue with the `makeId`/`modelId`, the source it came from
 
 ## Code changes
 
+A pull request from a `request/*` branch is opened by the missing-vehicle
+automation and merges itself when CI passes. The `Request PR scope` check
+(`scripts/check-request-pr-scope.ts`) therefore holds it to a data release:
+`data/`, the generated `src/data.ts` and `src/identity-data.ts`,
+`scripts/fixtures/`, `README.md`, `CHANGELOG.md` and the `version` in
+`package.json`. Change code, workflows or dependencies on a branch with another
+name, where a person reads the diff.
+
+
 - Zero runtime dependencies and no network access at runtime are hard rules.
 - Keep the public API (`getMakes`, `getModels`, `getAvailableYears`,
   `getDataSources`, `getVehicleTypes`, `searchVehicles`) backward compatible.
