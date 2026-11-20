@@ -78,6 +78,7 @@
   {"query":"2010 Lincoln Mark LT","cohort":"synthetic","options":{"market":"MX"},"expectedStatus":"YEAR_UNVERIFIED"},
   {"query":"2013 Lincoln Mark LT","cohort":"synthetic","options":{"market":"US"},"expectedStatus":"SCOPE_UNVERIFIED"},
   {"query":"2008 Lincoln Mark LT","cohort":"synthetic","expectedStatus":"MATCHED"},
+  {"query":"2007 Chevrolet Spark","cohort":"synthetic","options":{"market":"CO"},"expectedStatus":"MATCHED","forbiddenModelNames":["Matiz","Spark GT","Beat"]},
   {"query":"2011 Chevrolet Sail","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Spark","Aveo","Onix"]},
   {"query":"2020 Chevrolet Sail","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Spark","Aveo","Onix","ONIX PLUS"]},
   {"query":"2026 Chevrolet Sail","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"MATCHED","forbiddenModelNames":["Onix","ONIX PLUS"]},

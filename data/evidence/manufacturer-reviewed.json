@@ -5106,6 +5106,39 @@
       "yearBasis": "catalog-year"
     },
     {
+      "year": 2005,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Spark",
+      "vehicleTypeId": 2,
+      "market": "CO",
+      "url": "https://www.datos.gov.co/d/x9pp-pcn5",
+      "note": "Colombian government vehicle registers on datos.gov.co (CC BY-SA 4.0), each listing vehicles registered in the RUNT with MARCA, LINEA and MODELO (the model year): Gobernación de Risaralda 'Parque Automotor Registrado en el Departamento de Risaralda' (x9pp-pcn5) has 134 passenger cars (AUTOMOVIL) with MARCA CHEVROLET, LINEA SPARK, MODELO 2005; Gobernación de Boyacá 'Parque automotor activo de servicio particular' (https://www.datos.gov.co/d/em3d-hmim) has 49; Alcaldía de Fusagasugá (https://www.datos.gov.co/d/aj2e-7jwg) has 5. Colombian-market Chevrolet Spark (the GM Colmotores-sold city car the catalog already lists from 2008 under the same name); registry model year, trim and equipment suffixes (GO, LOCAL, LS, C/A) are not separate vehicles. Isolated register rows dated 1953 and 2004 are treated as data-entry errors and not asserted. INEGI RAIAVL shows no Spark retail sales in Mexico before 2008, so this is a Colombia-only scope. No generation identity is asserted. Retrieved 2026-11-20.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2006,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Spark",
+      "vehicleTypeId": 2,
+      "market": "CO",
+      "url": "https://www.datos.gov.co/d/x9pp-pcn5",
+      "note": "Colombian government vehicle registers on datos.gov.co (CC BY-SA 4.0), each listing vehicles registered in the RUNT with MARCA, LINEA and MODELO (the model year): Gobernación de Risaralda 'Parque Automotor Registrado en el Departamento de Risaralda' (x9pp-pcn5) has 59 passenger cars (AUTOMOVIL) with MARCA CHEVROLET, LINEA SPARK, MODELO 2006; Gobernación de Boyacá 'Parque automotor activo de servicio particular' (https://www.datos.gov.co/d/em3d-hmim) has 10; Alcaldía de Fusagasugá (https://www.datos.gov.co/d/aj2e-7jwg) has 2. Colombian-market Chevrolet Spark (the GM Colmotores-sold city car the catalog already lists from 2008 under the same name); registry model year, trim and equipment suffixes (GO, LOCAL, LS, C/A) are not separate vehicles. Isolated register rows dated 1953 and 2004 are treated as data-entry errors and not asserted. INEGI RAIAVL shows no Spark retail sales in Mexico before 2008, so this is a Colombia-only scope. No generation identity is asserted. Retrieved 2026-11-20.",
+      "yearBasis": "model-year"
+    },
+    {
+      "year": 2007,
+      "makeId": 467,
+      "make": "CHEVROLET",
+      "model": "Spark",
+      "vehicleTypeId": 2,
+      "market": "CO",
+      "url": "https://www.datos.gov.co/d/x9pp-pcn5",
+      "note": "Colombian government vehicle registers on datos.gov.co (CC BY-SA 4.0), each listing vehicles registered in the RUNT with MARCA, LINEA and MODELO (the model year): Gobernación de Risaralda 'Parque Automotor Registrado en el Departamento de Risaralda' (x9pp-pcn5) has 474 passenger cars (AUTOMOVIL) with MARCA CHEVROLET, LINEA SPARK, MODELO 2007; Gobernación de Boyacá 'Parque automotor activo de servicio particular' (https://www.datos.gov.co/d/em3d-hmim) has 122; Alcaldía de Fusagasugá (https://www.datos.gov.co/d/aj2e-7jwg) has 20. Colombian-market Chevrolet Spark (the GM Colmotores-sold city car the catalog already lists from 2008 under the same name); registry model year, trim and equipment suffixes (GO, LOCAL, LS, C/A) are not separate vehicles. Isolated register rows dated 1953 and 2004 are treated as data-entry errors and not asserted. INEGI RAIAVL shows no Spark retail sales in Mexico before 2008, so this is a Colombia-only scope. No generation identity is asserted. Retrieved 2026-11-20.",
+      "yearBasis": "model-year"
+    },
+    {
       "year": 2022,
       "makeId": 4783111891,
       "make": "CHERY",
