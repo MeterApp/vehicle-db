@@ -115,5 +115,6 @@
   {"query":"2018 Great Wall Poer","cohort":"synthetic","options":{"market":"CL"},"expectedStatus":"YEAR_UNVERIFIED"},
   {"query":"2025 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]},
   {"query":"2026 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]},
-  {"query":"2026 VinFast Limo Green","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 5","VF 6","VF e34","Herio Green","Minio Green"]}
+  {"query":"2026 VinFast Limo Green","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 5","VF 6","VF e34","Herio Green","Minio Green"]},
+  {"query":"2024 NETA S","cohort":"synthetic","options":{"market":"CN"},"expectedStatus":"MATCHED","forbiddenModelNames":["V","X","GT","AYA","L"]}
 ]
