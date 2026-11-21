@@ -5390,6 +5390,17 @@
       "url": "https://web.archive.org/web/20240104140059id_/https://maxus.cl/",
       "note": "Maxus Chile's homepage (maxus.cl, capture 2024-01-04) offers the 'MAXUS NEW T60 DIÉSEL' pickup in manual and automatic 4x4 versions, 'precio corresponde a modelo T60 4X2 DX MT E6, IVA no incluido, incluye bono BK $ 14.990.000 + IVA'. 'New' is the importer's name for the updated T60; no generation is asserted. No LDV/Maxus twin rule or duplicate row is added. Catalog year (the capture date), not a factory model year; no generation identity is asserted. Retrieved 2026-11-18.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2024,
+      "makeId": 5179655195,
+      "make": "NETA",
+      "model": "S",
+      "vehicleTypeId": 2,
+      "market": "CN",
+      "url": "https://web.archive.org/web/20240714170038id_/https://www.hozonauto.com/s.html",
+      "note": "Hozon Auto's official NETA site (hozonauto.com, Wayback capture 2024-07-14) model page for 哪吒S (NETA S) heads its offer '2024 款 运动型科技轿跑 15.48 万元起' (2024 model year sedan, from CNY 154,800), with 520 and 520 Lite versions. The site's 哪吒S配置表 (capture 2024-12-09, https://web.archive.org/web/20241209022430id_/https://www.hozonauto.com/s-set.html) lists seven range-extender and battery-electric versions with official guide prices from CNY 154,800 to 224,800. Hozon writes the model 哪吒S under its NETA brand; the shooting brake 哪吒S猎装 is a separate body and is not added. Passenger sedan; China model year 2024. Retrieved 2026-11-21.",
+      "yearBasis": "model-year"
     }
   ],
   "catalogYearMetadata": {
