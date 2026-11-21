@@ -1,6 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { getAppearancePackages } from "./packages";
-import { appearancePackageSlug, listAppearancePackages, type IdentityGraph, type VehicleIdentity } from "./identity";
+import { appearancePackageSlug, listAppearancePackages, type AppearancePackage, type IdentityGraph, type VehicleIdentity } from "./identity";
+import { getAvailableYears, getModels } from "./index";
 import { createVehicleResolver, resolveVehicle } from "./resolve";
 import { validateIdentityGraph } from "../scripts/identity-types";
 import graph from "./identity-data";
@@ -137,5 +138,119 @@ describe("appearance package rules", () => {
     const packages = graph.identities.filter(n => n.exteriorDifferences);
     expect(packages.length).toBeGreaterThanOrEqual(3);
     for (const v of packages) expect(v.evidenceIds.length).toBeGreaterThan(0);
+  });
+});
+
+/** The pre-2.73 implementation, kept as the reference the indexed one must match byte for byte. */
+function referencePackages(g: IdentityGraph, query: { makeId: number; modelId: number; year: number; market?: string }) {
+  const { makeId, modelId, year, market } = query;
+  if (![makeId, modelId, year].every(Number.isInteger)) return [];
+  const nodes = new Map(g.identities.map(n => [n.id, n]));
+  const visualOf = (id: string) => g.identities.find(n => n.kind === "visual" && n.parentId === id && n.exteriorDifferences?.length);
+  const inMarkets = (scope: { markets?: string[] }) => !scope.markets || (market !== undefined && scope.markets.includes(market));
+  const result = new Map<string, unknown>();
+  for (const link of g.catalogLinks) {
+    if (link.relation !== "offered-on" || link.makeId !== makeId || link.modelId !== modelId || link.year !== year || result.has(link.identityId)) continue;
+    const spec = nodes.get(link.identityId);
+    const visual = spec && visualOf(spec.id);
+    if (!spec?.specification?.trim || !visual || !spec.years || !spec.yearBasis) continue;
+    if (!spec.years.includes(year) || (visual.years && !visual.years.includes(year)) || !inMarkets(spec) || !inMarkets(visual)) continue;
+    const markets = visual.markets ?? spec.markets;
+    result.set(spec.id, {
+      slug: appearancePackageSlug(spec.specification.trim), name: spec.specification.trim,
+      specificationId: spec.id, visualIdentityId: visual.id, exteriorDifferences: [...visual.exteriorDifferences!],
+      years: [...spec.years], ...(markets ? { markets: [...markets] } : {}), yearBasis: spec.yearBasis,
+      evidenceIds: [...new Set([...spec.evidenceIds, ...visual.evidenceIds])],
+    });
+  }
+  return ([...result.values()] as { slug: string; specificationId: string }[])
+    .sort((a, b) => a.slug.localeCompare(b.slug) || a.specificationId.localeCompare(b.specificationId));
+}
+/** The union, by specification id and in the documented order, of the market-less call and one call per market. */
+function unionOverMarkets(g: IdentityGraph, row: { makeId: number; modelId: number; year: number }, markets: readonly string[]) {
+  const union = new Map<string, AppearancePackage>();
+  for (const market of [undefined, ...markets]) for (const p of listAppearancePackages(g, { ...row, market })) if (!union.has(p.specificationId)) union.set(p.specificationId, p);
+  return [...union.values()].sort((a, b) => a.slug.localeCompare(b.slug) || a.specificationId.localeCompare(b.specificationId));
+}
+
+describe("appearance packages in any market", () => {
+  const scopes: { markets?: string[] }[] = [...graph.identities, ...graph.aliases, ...(graph.makeAliases ?? []), ...graph.visualCompatibility];
+  const graphMarkets = [...new Set([...scopes.flatMap(s => s.markets ?? []), ...graph.homologation.map(h => h.market)])].sort();
+  const offeredRows = [...new Map(graph.catalogLinks.filter(l => l.relation === "offered-on")
+    .map(l => [`${l.makeId}|${l.modelId}|${l.year}`, { makeId: l.makeId, modelId: l.modelId, year: l.year }])).values()];
+  const linked = new Set(offeredRows.map(r => `${r.makeId}|${r.modelId}|${r.year}`));
+  const unlinkedRows = getAvailableYears().filter((_, i) => i % 3 === 0).flatMap(year => getModels({ year }).filter((_, i) => i % 97 === 0)
+    .map(m => ({ makeId: m.makeId, modelId: m.modelId, year })))
+    .concat([{ makeId: LEXUS, modelId: IS, year: 2020 }, { makeId: LEXUS, modelId: IS, year: 2025 }, { makeId: LEXUS, modelId: LX, year: 2024 }])
+    .filter(r => !linked.has(`${r.makeId}|${r.modelId}|${r.year}`));
+
+  test("the bundled graph has offered-on rows, markets and a sample of rows without links", () => {
+    expect(offeredRows.length).toBeGreaterThan(0);
+    expect(graphMarkets.length).toBeGreaterThan(5);
+    expect(unlinkedRows.length).toBeGreaterThan(50);
+  });
+  test("anyMarket equals the union over no market and every market in the graph, for every offered-on row", () => {
+    for (const row of offeredRows) {
+      const any = getAppearancePackages({ ...row, anyMarket: true });
+      expect(any).toEqual(unionOverMarkets(graph, row, graphMarkets));
+      expect(any.length).toBeGreaterThan(0);
+    }
+  });
+  test("anyMarket is empty, like every market call, for rows without an offered-on link", () => {
+    for (const row of unlinkedRows) {
+      expect(getAppearancePackages({ ...row, anyMarket: true })).toEqual([]);
+      expect(unionOverMarkets(graph, row, graphMarkets)).toEqual([]);
+    }
+  });
+  test("anyMarket wins over market", () => {
+    expect(getAppearancePackages({ makeId: LEXUS, modelId: LX, year: 2026, market: "US", anyMarket: true }).map(p => p.visualIdentityId))
+      .toEqual(["lexus:lx600:fourth:suv:fsport:vn:2026:exterior"]);
+    expect(getAppearancePackages({ makeId: LEXUS, modelId: IS, year: 2022, anyMarket: false })).toEqual([]);
+  });
+  test("the indexed lookup matches the reference implementation byte for byte", () => {
+    for (const row of [...offeredRows, ...unlinkedRows.slice(0, 40)]) {
+      for (const market of [undefined, ...graphMarkets]) {
+        expect(JSON.stringify(getAppearancePackages({ ...row, market }))).toBe(JSON.stringify(referencePackages(graph, { ...row, market })));
+      }
+    }
+  });
+
+  // Synthetic: one row, packages whose specification and exterior markets differ.
+  const evidence = [{ id: "ev", sourceId: "fixture", url: "https://example.com/fixture", retrievedAt: "2026-11-21", note: "Synthetic test fixture" }];
+  const common = { makeId: 1, vehicleTypeId: 2, evidenceIds: ["ev"] };
+  const scope = { years: [2024], yearBasis: "model-year" as const };
+  function pkg(id: string, trim: string, specMarkets?: string[], visualMarkets?: string[]): VehicleIdentity[] {
+    return [
+      { ...common, id, kind: "specification", parentId: "body", name: trim, names: [], ...scope, ...(specMarkets ? { markets: specMarkets } : {}), specification: { trim, rawText: trim } },
+      { ...common, id: `${id}:exterior`, kind: "visual", parentId: id, name: trim, names: [], ...scope, ...(visualMarkets ? { markets: visualMarkets } : {}), exteriorDifferences: ["wheels"] },
+    ] as VehicleIdentity[];
+  }
+  const synthetic: IdentityGraph = { schemaVersion: 1, revision: "fixture", evidence, aliases: [], homologation: [], visualCompatibility: [], identities: [
+    { ...common, id: "body", kind: "derivative", name: "Sedan", names: [] } as VehicleIdentity,
+    ...pkg("disjoint", "Disjoint", ["US"], ["GB"]),
+    ...pkg("overlap", "Overlap", ["US", "CA"], ["CA", "MX"]),
+    ...pkg("spec-only", "Spec Only", ["DE"], undefined),
+    ...pkg("visual-only", "Visual Only", undefined, ["JP"]),
+    ...pkg("unscoped", "Unscoped"),
+    ...pkg("empty", "Empty", [], undefined),
+  ], catalogLinks: ["disjoint", "overlap", "spec-only", "visual-only", "unscoped", "empty"]
+    .map(identityId => ({ ...common, identityId, year: 2024, modelId: 10, relation: "offered-on" as const })) };
+  const row = { makeId: 1, modelId: 10, year: 2024 };
+
+  test("disjoint specification and exterior markets are never offered, overlapping ones are", () => {
+    expect(listAppearancePackages(synthetic, { ...row, anyMarket: true }).map(p => p.specificationId))
+      .toEqual(["overlap", "spec-only", "unscoped", "visual-only"]);
+    for (const market of ["US", "GB", "CA", "MX", "DE", "JP"]) {
+      expect(listAppearancePackages(synthetic, { ...row, market }).map(p => p.specificationId)).not.toContain("disjoint");
+    }
+    expect(listAppearancePackages(synthetic, { ...row, anyMarket: true })).toEqual(unionOverMarkets(synthetic, row, ["US", "GB", "CA", "MX", "DE", "JP"]));
+    expect(listAppearancePackages(synthetic, { ...row, market: "CA" }).map(p => p.specificationId)).toEqual(["overlap", "unscoped"]);
+  });
+  test("a graph replaced or extended after a query is re-indexed", () => {
+    const g: IdentityGraph = { ...synthetic, identities: [...synthetic.identities], catalogLinks: [...synthetic.catalogLinks] };
+    expect(listAppearancePackages(g, { ...row, year: 2025, anyMarket: true })).toEqual([]);
+    g.identities.push(...pkg("late", "Late"));
+    g.catalogLinks.push({ ...common, identityId: "late", year: 2024, modelId: 10, relation: "offered-on" });
+    expect(listAppearancePackages(g, { ...row }).map(p => p.specificationId)).toEqual(["late", "unscoped"]);
   });
 });

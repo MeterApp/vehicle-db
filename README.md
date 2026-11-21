@@ -251,10 +251,12 @@ getAppearancePackages({ makeId: 515, modelId: 2184, year: 2021, market: "US" });
 //    exteriorDifferences: ["grille", "front_bumper", "rear_bumper", "side_skirts", "spoiler", "wheels", "badges", "exhaust"],
 //    years: [2021, 2022, 2023, 2024], markets: ["US"], yearBasis: "model-year", evidenceIds: [...] }]
 getAppearancePackages({ makeId: 515, modelId: 2184, year: 2021 }); // []: the package is scoped to the US
+getAppearancePackages({ makeId: 515, modelId: 2184, year: 2021, anyMarket: true }); // [F SPORT (US)]: every market
 ```
 
 - `slug` is the maker's package name in lower-case kebab form (`appearancePackageSlug("F SPORT")` is `f-sport`). It is unique per catalog vehicle and year (two packages may share it only in disjoint markets) and stable once published.
 - A market-scoped package is returned only when `market` is given and in its scope; with no market, only packages without a market scope are returned.
+- `anyMarket: true` returns every package offered on the row in that year in any market, in one call: exactly the union, by `specificationId`, of the call without a market and the call for every market. A package is included when its specification and its exterior are both unscoped, only one of them is market-scoped, or both are scoped and their market lists share a market. `market` is ignored when `anyMarket` is true. The result has the same shape and order (by `slug`, then `specificationId`) as any other call.
 - `exteriorDifferences` are the parts the package's evidence shows differ from the base car, from a fixed list (`EXTERIOR_DIFFERENCES`): `grille`, `front_bumper`, `rear_bumper`, `side_skirts`, `wheels`, `badges`, `mirrors`, `spoiler`, `exhaust`, `lamps`, `trim_color`. A part the source does not show is not listed, and options such as a handling package are left out.
 
 In the graph a package is a `specification` identity whose `specification.trim` is the package name, under the derivative (body) it is offered on, with `years`, `markets` and `yearBasis` from its evidence; a `visual` identity under it carries `exteriorDifferences`; and catalog links with `relation: "offered-on"` name the catalog rows it is offered on. Those rows still describe the base car, so `resolveVehicle` ignores offered-on links and never walks from a base car down to a package: `2022 Lexus LX 600` resolves exactly as before, and `2021 Lexus IS F Sport` stays `UNRESOLVED_TOKENS` instead of becoming the IS F. A performance model with its own bodywork (IS F, M3) or a body (Touring, a cab) is a catalog model, never a package.

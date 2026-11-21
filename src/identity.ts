@@ -138,7 +138,20 @@ export interface AppearancePackage {
   yearBasis: YearBasis;
   evidenceIds: string[];
 }
-export interface AppearancePackageQuery { makeId: number; modelId: number; year: number; market?: string }
+export interface AppearancePackageQuery {
+  makeId: number;
+  modelId: number;
+  year: number;
+  /** The market (ISO 3166-1 alpha-2) to answer for. Without it, only packages with no market scope. Ignored with `anyMarket`. */
+  market?: string;
+  /**
+   * Every package offered on the row in the year in any market, in one call: the union, by `specificationId`,
+   * of the call without a market and the call for every market. A package is included when its specification
+   * and its exterior are both unscoped, only one of them is market-scoped (to at least one market), or both
+   * are scoped and their market lists share a market. `anyMarket: true` takes precedence: `market` is ignored.
+   */
+  anyMarket?: boolean;
+}
 /** The stable slug of a package name: lower-case kebab, accents and punctuation dropped. */
 export function appearancePackageSlug(name: string): string {
   return name.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\+/g, " plus ")
@@ -148,22 +161,67 @@ export function appearancePackageSlug(name: string): string {
 export function packageVisual(graph: Pick<IdentityGraph, "identities">, specificationId: string): VehicleIdentity | undefined {
   return graph.identities.find(n => n.kind === "visual" && n.parentId === specificationId && n.exteriorDifferences?.length);
 }
+interface PackageIndex {
+  identities: readonly VehicleIdentity[];
+  identityCount: number;
+  catalogLinks: readonly IdentityCatalogLink[];
+  linkCount: number;
+  nodes: Map<string, VehicleIdentity>;
+  /** `offered-on` links by `makeId|modelId|year`, in graph order. */
+  offeredOn: Map<string, IdentityCatalogLink[]>;
+  /** `packageVisual` by specification id. */
+  visuals: Map<string, VehicleIdentity>;
+}
+const packageIndexes = new WeakMap<IdentityGraph, PackageIndex>();
+/** Built once per graph object; rebuilt when its identity or link arrays are replaced or change length. */
+function packageIndex(graph: IdentityGraph): PackageIndex {
+  const cached = packageIndexes.get(graph);
+  if (cached && cached.identities === graph.identities && cached.identityCount === graph.identities.length &&
+    cached.catalogLinks === graph.catalogLinks && cached.linkCount === graph.catalogLinks.length) return cached;
+  const nodes = new Map(graph.identities.map(n => [n.id, n]));
+  const offeredOn = new Map<string, IdentityCatalogLink[]>();
+  for (const link of graph.catalogLinks) {
+    if (link.relation !== "offered-on") continue;
+    const key = `${link.makeId}|${link.modelId}|${link.year}`;
+    const list = offeredOn.get(key);
+    if (list) list.push(link); else offeredOn.set(key, [link]);
+  }
+  const visuals = new Map<string, VehicleIdentity>();
+  for (const n of graph.identities) {
+    if (n.kind === "visual" && n.parentId !== undefined && n.exteriorDifferences?.length && !visuals.has(n.parentId)) visuals.set(n.parentId, n);
+  }
+  const index: PackageIndex = {
+    identities: graph.identities, identityCount: graph.identities.length,
+    catalogLinks: graph.catalogLinks, linkCount: graph.catalogLinks.length, nodes, offeredOn, visuals,
+  };
+  packageIndexes.set(graph, index);
+  return index;
+}
+/** Whether some single market, or no market, is in both scopes (what `anyMarket` asks). */
+function marketsMeet(a: IdentityScope, b: IdentityScope): boolean {
+  if (!a.markets) return !b.markets || b.markets.length > 0;
+  if (!b.markets) return a.markets.length > 0;
+  return a.markets.some(m => b.markets!.includes(m));
+}
 /**
  * The appearance packages offered on a catalog vehicle in a year. A market-scoped package is returned
  * only when `market` is given and in its scope; with no market, only packages without a market scope.
+ * With `anyMarket: true`, every package offered in any market or none (see `AppearancePackageQuery.anyMarket`);
+ * `market` is then ignored. Indexes are cached per graph object, so treat a graph as read-only once queried.
  */
 export function listAppearancePackages(graph: IdentityGraph, query: AppearancePackageQuery): AppearancePackage[] {
-  const { makeId, modelId, year, market } = query;
+  const { makeId, modelId, year, market, anyMarket } = query;
   if (![makeId, modelId, year].every(Number.isInteger)) return [];
-  const nodes = new Map(graph.identities.map(n => [n.id, n]));
+  const { nodes, offeredOn, visuals } = packageIndex(graph);
   const inMarkets = (scope: IdentityScope) => !scope.markets || (market !== undefined && scope.markets.includes(market));
+  const marketsMatch = anyMarket === true ? marketsMeet : (spec: IdentityScope, visual: IdentityScope) => inMarkets(spec) && inMarkets(visual);
   const result = new Map<string, AppearancePackage>();
-  for (const link of graph.catalogLinks) {
-    if (link.relation !== "offered-on" || link.makeId !== makeId || link.modelId !== modelId || link.year !== year || result.has(link.identityId)) continue;
+  for (const link of offeredOn.get(`${makeId}|${modelId}|${year}`) ?? []) {
+    if (result.has(link.identityId)) continue;
     const spec = nodes.get(link.identityId);
-    const visual = spec && packageVisual(graph, spec.id);
+    const visual = spec && visuals.get(spec.id);
     if (!spec?.specification?.trim || !visual || !spec.years || !spec.yearBasis) continue;
-    if (!spec.years.includes(year) || (visual.years && !visual.years.includes(year)) || !inMarkets(spec) || !inMarkets(visual)) continue;
+    if (!spec.years.includes(year) || (visual.years && !visual.years.includes(year)) || !marketsMatch(spec, visual)) continue;
     const markets = visual.markets ?? spec.markets;
     result.set(spec.id, {
       slug: appearancePackageSlug(spec.specification.trim), name: spec.specification.trim,
