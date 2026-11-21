@@ -1,6 +1,6 @@
 {
   "name": "@meterapp/vehicle-db",
-  "version": "2.71.0",
+  "version": "2.72.0",
   "description": "Offline international database of car, motorcycle, truck and bus makes, models and years (1990-2027) for vehicle pickers, autocomplete and validation, with transparent car images for every entry through carimage.dev",
   "repository": {
     "type": "git",
