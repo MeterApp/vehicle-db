@@ -484,3 +484,20 @@ test("dated Hyundai UK i30 Tourer pages add the estate without replacing the i30
   const hatch = searchVehicles("2015 Hyundai i30", { fuzzy: false }).find(r => r.kind === "model");
   expect(hatch?.modelName.toUpperCase()).toBe("I30");
 });
+
+test("dated Mazda UK Mazda6 Tourer pages add the estate without replacing the Mazda6", () => {
+  for (let year = 2012; year <= 2022; year++) {
+    for (const query of [`${year} Mazda 6 Tourer`, `${year} Mazda6 Tourer`]) {
+      const hit = searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 473, matchKind: "exact" });
+      expect(hit?.modelName.toUpperCase()).toBe("6 TOURER");
+      expect(hit?.years).toContain(year);
+    }
+  }
+  const tourer = searchVehicles("2015 Mazda 6 Tourer", { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [2011, 2023]) expect(tourer?.years).not.toContain(year);
+  const saloon = searchVehicles("2015 Mazda 6", { fuzzy: false }).find(r => r.kind === "model");
+  expect(saloon?.modelName.toUpperCase()).toBe("6");
+  const sportWagon = searchVehicles("2006 Mazda 6 Sport Wagon", { fuzzy: false }).find(r => r.kind === "model");
+  expect(sportWagon?.modelName.toUpperCase()).toBe("6 SPORT WAGON");
+});
