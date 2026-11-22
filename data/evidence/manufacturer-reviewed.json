@@ -775,6 +775,28 @@
     },
     {
       "year": 2025,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Custin",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://web.archive.org/web/20250207133728/https://hyundai.thanhcong.vn/custin",
+      "note": "Hyundai Thanh Cong (TC Group, Hyundai's Vietnam distributor) Custin model page offers Custin under 'Xe MPV' with test-drive and order buttons (Internet Archive capture 2025-02-07). TC Group's November and December 2025 sales announcements, as reported by Thi truong Tai chinh Tien te (2025-12-10, 2026-01-09), count 139 and 152 Custin sales. Calendar year of the dated capture and sales only, not model year.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 498,
+      "make": "HYUNDAI",
+      "model": "Custin",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://web.archive.org/web/20260316141616/https://hyundai.thanhcong.vn/custin",
+      "note": "Hyundai Thanh Cong (TC Group) Custin model page offers Custin under 'Xe MPV' with test-drive and order buttons (Internet Archive capture 2026-03-16; also captured 2026-07-15 and live 2026-11-22). TC Group's January 2026 sales announcement, as reported by Thi truong Tai chinh Tien te (2026-02-11), counts 140 Custin sales. Calendar year of the dated capture and sales only, not model year.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
       "makeId": 482,
       "make": "VOLKSWAGEN",
       "model": "Viloran",
