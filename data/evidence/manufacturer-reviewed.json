@@ -5544,6 +5544,28 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20220119143831/https://www.mazda.co.uk/cars/mazda6-tourer/",
       "note": "Official Mazda UK model page for the Mazda6 Tourer (estate body of the Mazda6) at /cars/mazda6-tourer/, captured 2022-01-19, offering it for sale in the UK with a UK price (£26,440 (body type TOURER) and a test-drive link). The capture date establishes the page was live in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No capture of this page before 2012-10-05 exists, and no https capture after 2022-11-24 exists (the 2023-05-30 capture is only an http redirect), so no year before 2012 or after 2022 is claimed. Retrieved 2026-11-21."
+    },
+    {
+      "year": 2025,
+      "makeId": 4202242475,
+      "make": "JINPENG",
+      "model": "TY150UK",
+      "vehicleTypeId": 3,
+      "market": "CN",
+      "url": "https://web.archive.org/web/20250715203414/https://www.electric-tricycle.com/Cargo-And-Passenger-Electric-Tricycle-TY150UK-pd562440658.html",
+      "note": "Jiangsu Jinpeng Group Co., Ltd. official export catalog (electric-tricycle.com, footer: Jiangsu Jinpeng Group Co., Ltd, ICP 苏ICP备2023029413号-2) lists \"Cargo And Passenger Electric Tricycle TY150UK\", Model: TY150UK, Brand: JINPENG, under Electric Cargo Tricycle (Internet Archive capture 2025-07-15; earlier 2025 captures of language versions 2025-02-18 and of the jinpeng-global.com TY150UK page 2025-03-20). Cargo three-wheeler typed as Truck, as for Bajaj Maxima Cargo and TVS King Kargo. Calendar year of the dated capture only, not model year; no capture before 2025 exists, so no earlier year is claimed. Retrieved 2026-11-22.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 4202242475,
+      "make": "JINPENG",
+      "model": "TY150UK",
+      "vehicleTypeId": 3,
+      "market": "CN",
+      "url": "https://web.archive.org/web/20260306093204/https://www.electric-tricycle.com/Cargo-And-Passenger-Electric-Tricycle-TY150UK-pd562440658.html",
+      "note": "Jiangsu Jinpeng Group Co., Ltd. official export catalog (electric-tricycle.com) lists \"Cargo And Passenger Electric Tricycle TY150UK\", Model: TY150UK, Brand: JINPENG (Internet Archive capture 2026-03-06). Jinpeng's jinpeng-global.com (footer: Jiangsu Jinpeng Group Co., Ltd., ICP 苏ICP备2023029413号-1) lists \"Electric Cargo Tricycle TY150UK\" live on 2026-11-22. Calendar year of the dated capture only, not model year. Retrieved 2026-11-22.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
