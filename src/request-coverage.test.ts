@@ -501,3 +501,24 @@ test("dated Mazda UK Mazda6 Tourer pages add the estate without replacing the Ma
   const sportWagon = searchVehicles("2006 Mazda 6 Sport Wagon", { fuzzy: false }).find(r => r.kind === "model");
   expect(sportWagon?.modelName.toUpperCase()).toBe("6 SPORT WAGON");
 });
+
+test("dated Kia UK Sportswagon pages add the estates without replacing the cee'd SW or the Optima", () => {
+  for (let year = 2012; year <= 2016; year++) {
+    for (const query of [`${year} Kia Ceed Sportswagon`, `${year} Kia cee'd Sportswagon`]) {
+      const hit = searchVehicles(query, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 499, matchKind: "exact" });
+      expect(hit?.modelName.toUpperCase()).toBe("CEED SPORTSWAGON");
+      expect(hit?.years).toContain(year);
+    }
+  }
+  const ceed = searchVehicles("2014 Kia Ceed Sportswagon", { fuzzy: false }).find(r => r.kind === "model");
+  for (const year of [2011, 2017]) expect(ceed?.years).not.toContain(year);
+  const optima = searchVehicles("2016 Kia Optima Sportswagon", { fuzzy: false }).find(r => r.kind === "model");
+  expect(optima).toMatchObject({ makeId: 499, matchKind: "exact" });
+  expect(optima?.modelName.toUpperCase()).toBe("OPTIMA SPORTSWAGON");
+  expect(optima?.years).toEqual([2016]);
+  const sw = searchVehicles("2009 Kia Ceed SW", { fuzzy: false }).find(r => r.kind === "model");
+  expect(sw?.modelName.toUpperCase()).toBe("CEED SW");
+  const saloon = searchVehicles("2016 Kia Optima", { fuzzy: false }).find(r => r.kind === "model");
+  expect(saloon?.modelName.toUpperCase()).toBe("OPTIMA");
+});
