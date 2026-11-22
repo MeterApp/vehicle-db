@@ -522,3 +522,25 @@ test("dated Kia UK Sportswagon pages add the estates without replacing the cee'd
   const saloon = searchVehicles("2016 Kia Optima", { fuzzy: false }).find(r => r.kind === "model");
   expect(saloon?.modelName.toUpperCase()).toBe("OPTIMA");
 });
+
+test("dated Renault UK pages add the Clio Sport Tourer estate without replacing the Clio, the Grandtour or the 2018 EU row", () => {
+  for (let year = 2008; year <= 2012; year++) {
+    const hit = searchVehicles(`${year} Renault Clio Sport Tourer`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 13647, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("CLIO SPORT TOURER");
+    expect(hit?.years).toContain(year);
+    expect(resolveVehicle(`${year} Renault Clio Sport Tourer`, { market: "GB" }).status).toBe("MATCHED");
+  }
+  for (const year of [2007, 2013]) {
+    expect(searchVehicles(`${year} Renault Clio Sport Tourer`, { fuzzy: false }).find(r => r.kind === "model")).toBeUndefined();
+    expect(resolveVehicle(`${year} Renault Clio Sport Tourer`, { market: "GB" }).status).toBe("YEAR_UNVERIFIED");
+  }
+  expect(resolveVehicle("2010 Renault Clio Sport Tourer", { market: "FR" }).status).toBe("SCOPE_UNVERIFIED");
+  const eu = searchVehicles("2018 Renault Clio Sport Tourer", { fuzzy: false }).find(r => r.kind === "model");
+  expect(eu?.modelName).toBe("CLIO SPORT TOURER");
+  expect(eu?.years).toEqual([2018]);
+  const hatch = searchVehicles("2010 Renault Clio", { fuzzy: false }).find(r => r.kind === "model");
+  expect(hatch?.modelName.toUpperCase()).toBe("CLIO");
+  const grandtour = searchVehicles("2010 Renault Clio Grandtour", { fuzzy: false }).find(r => r.kind === "model");
+  expect(grandtour?.modelName.toUpperCase()).toBe("CLIO GRANDTOUR");
+});
