@@ -1,6 +1,31 @@
 import fs from "fs";
 import path from "path";
 
+/**
+ * Serialises a source catalog with one array element or object field per line
+ * (nested values stay compact), so adding or changing a row touches one line
+ * of the diff instead of rewriting the whole file. `check:sources` enforces it.
+ */
+export function formatSourceJson(value: unknown, depth = 0): string {
+  const pad = "  ".repeat(depth + 1);
+  const close = "  ".repeat(depth);
+  const inner = (v: unknown) => (depth < 1 ? formatSourceJson(v, depth + 1) : JSON.stringify(v));
+  const body = Array.isArray(value)
+    ? value.map((item) => pad + inner(item))
+    : value !== null && typeof value === "object"
+      ? Object.entries(value).filter(([, v]) => v !== undefined).map(([k, v]) => `${pad}${JSON.stringify(k)}: ${inner(v)}`)
+      : null;
+  if (body === null) return JSON.stringify(value);
+  const [open, end] = Array.isArray(value) ? ["[", "]"] : ["{", "}"];
+  const text = body.length === 0 ? open + end : `${open}\n${body.join(",\n")}\n${close}${end}`;
+  return depth === 0 ? text + "\n" : text;
+}
+
+export function writeSourceJson(outPath: string, catalog: SourceCatalog): void {
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, formatSourceJson(catalog));
+}
+
 export interface SourceMetadata {
   id: string;
   name: string;
@@ -168,8 +193,7 @@ export function writeSnapshot(outPath: string, fresh: SourceCatalog, prune: bool
       `Kept ${retained.toLocaleString()} published entries the source no longer reports (--prune drops them)`,
     );
   }
-  fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify(catalog));
+  writeSourceJson(outPath, catalog);
   return catalog;
 }
 

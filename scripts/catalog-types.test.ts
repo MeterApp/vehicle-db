@@ -2,7 +2,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { afterEach, describe, expect, it } from "vitest";
-import { retainPublishedEntries, writeSnapshot, type SourceCatalog } from "./catalog-types";
+import { formatSourceJson, retainPublishedEntries, writeSnapshot, type SourceCatalog } from "./catalog-types";
 
 const metadata = {
   id: "test-source",
@@ -115,5 +115,13 @@ describe("writeSnapshot", () => {
 
     expect(entries(writeSnapshot(file, fresh, true))).toEqual(["2026 AUDI Q4 #12 t2"]);
     expect(entries(JSON.parse(fs.readFileSync(file, "utf8")) as SourceCatalog)).toEqual(["2026 AUDI Q4 #12 t2"]);
+  });
+});
+
+describe("formatSourceJson", () => {
+  it("puts one row or field per line and keeps nested values compact", () => {
+    const text = formatSourceJson({ metadata: { id: "x", yearBasis: undefined }, models: [[2025, 1, 2, 0, 2], [2026, 1, 2, 0, 2]], empty: [] });
+    expect(text).toBe('{\n  "metadata": {\n    "id": "x"\n  },\n  "models": [\n    [2025,1,2,0,2],\n    [2026,1,2,0,2]\n  ],\n  "empty": []\n}\n');
+    expect(JSON.parse(text)).toEqual({ metadata: { id: "x" }, models: [[2025, 1, 2, 0, 2], [2026, 1, 2, 0, 2]], empty: [] });
   });
 });
