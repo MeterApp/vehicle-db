@@ -5753,6 +5753,28 @@
       "yearBasis": "model-year",
       "url": "https://web.archive.org/web/20200923234204/https://www.ford.com.br/carros/ka-sedan/",
       "note": "The same official Ford Brasil Ka Sedan page captured 2020-09-23 is headed 'Explore o KA SEDAN 2021'; no later model year is claimed. Ford Brasil sold this four-door sedan as the Ford KA+ / 'Ka+ Sedan' for model years 2016-2018 and, after the 2018 facelift, as the 'Ka Sedan' for 2019-2021 (the KA+ technical specifications page captured 2015-09-09 lists a 4,254 mm length and a 445 L boot). It is not the European five-door Ka+ hatchback: the existing KA+ rows come from the UK register and are unchanged, and the Brazilian register maps this sedan into its KA family. Model years are the ones the pages state; the cited copies are the Internet Archive's. Retrieved 2026-11-23."
+    },
+    {
+      "year": 2020,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Ertiga",
+      "vehicleTypeId": 7,
+      "market": "ID",
+      "url": "https://www.suzuki.co.id/news/produk-buatan-dalam-negeri-dominasi-penjualan-suzuki-tahun-2020",
+      "note": "PT Suzuki Indomobil Motor (Suzuki Motor Corporation's Indonesian subsidiary) release dated 13 January 2021 reports 2020 full-year sales: the (All New) Ertiga contributed 11.4% of Suzuki wholesales and 13.3% of retail sales. Its release of 19 June 2020 (https://www.suzuki.co.id/news/ekspor-cbu-suzuki-tumbuh-di-tengah-pandemi) names it the largest CBU export, 7,880 units in January-May 2020. Suzuki Global's release of 19 April 2018 (https://www.globalsuzuki.com/globalnews/2018/0419.html) names the model 'Ertiga', a 7-seater MPV built in Indonesia and India. 'All New' is marketing text, not part of the name. Calendar sales year, not model year; MARUTI Ertiga and PROTON ERTIGA rows are unchanged. Retrieved 2026-11-23.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2021,
+      "makeId": 509,
+      "make": "SUZUKI",
+      "model": "Ertiga",
+      "vehicleTypeId": 7,
+      "market": "ID",
+      "url": "https://www.suzuki.co.id/news/kebijakan-relaksasi-ppnbm-dorong-penjualan-produk-unggulan-suzuki",
+      "note": "PT Suzuki Indomobil Motor release dated 23 April 2021 reports 1,299 (All New) Ertiga retail sales in March 2021, up 277% from February. Calendar sales year, not model year. Retrieved 2026-11-23.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
