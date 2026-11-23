@@ -14399,6 +14399,33 @@
         "oem:lexus-is-fsport-2023-us",
         "oem:lexus-is-fsport-2024-us"
       ]
+    },
+    {
+      "id": "ford:ka-sedan:br",
+      "kind": "line",
+      "makeId": 460,
+      "vehicleTypeId": 2,
+      "name": "Ka Sedan",
+      "names": [],
+      "evidenceIds": [
+        "ford:ka-sedan-br:2015-12",
+        "ford:ka-sedan-br:2017-01",
+        "ford:ka-sedan-br:2017-04",
+        "ford:ka-sedan-br:2018-08",
+        "ford:ka-sedan-br:2020-09"
+      ],
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "markets": [
+        "BR"
+      ],
+      "yearBasis": "model-year"
     }
   ],
   "aliases": [
@@ -14500,6 +14527,24 @@
       "yearBasis": "model-year",
       "evidenceIds": [
         "mercedes-benz:glc-with-eq-technology-name"
+      ]
+    },
+    {
+      "text": "Ka+ Sedan",
+      "targetId": "ford:ka-sedan:br",
+      "kind": "marketing-name",
+      "years": [
+        2016,
+        2017,
+        2018
+      ],
+      "markets": [
+        "BR"
+      ],
+      "yearBasis": "model-year",
+      "evidenceIds": [
+        "ford:ka-sedan-br:2017-01",
+        "ford:ka-sedan-br:2017-04"
       ]
     }
   ],
@@ -35249,6 +35294,66 @@
       "evidenceIds": [
         "cohort:515:lx-600-f-sport:2026:VN"
       ]
+    },
+    {
+      "identityId": "ford:ka-sedan:br",
+      "year": 2016,
+      "makeId": 460,
+      "modelId": 1960952569,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "ford:ka-sedan-br:2015-12"
+      ]
+    },
+    {
+      "identityId": "ford:ka-sedan:br",
+      "year": 2017,
+      "makeId": 460,
+      "modelId": 1960952569,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "ford:ka-sedan-br:2017-01"
+      ]
+    },
+    {
+      "identityId": "ford:ka-sedan:br",
+      "year": 2018,
+      "makeId": 460,
+      "modelId": 1960952569,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "ford:ka-sedan-br:2017-04"
+      ]
+    },
+    {
+      "identityId": "ford:ka-sedan:br",
+      "year": 2019,
+      "makeId": 460,
+      "modelId": 1960952569,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "ford:ka-sedan-br:2018-08"
+      ]
+    },
+    {
+      "identityId": "ford:ka-sedan:br",
+      "year": 2020,
+      "makeId": 460,
+      "modelId": 1960952569,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "ford:ka-sedan-br:2020-09"
+      ]
+    },
+    {
+      "identityId": "ford:ka-sedan:br",
+      "year": 2021,
+      "makeId": 460,
+      "modelId": 1960952569,
+      "vehicleTypeId": 2,
+      "evidenceIds": [
+        "ford:ka-sedan-br:2020-09"
+      ]
     }
   ],
   "evidence": [
@@ -38359,6 +38464,41 @@
       "url": "https://pressroom.lexus.com/whats-new-2024-lexus-is-300-350-500/",
       "retrievedAt": "2026-11-13",
       "note": "Lexus USA newsroom, 12 October 2023: What's New 2024 IS 300/350/500 (US, model year 2024). The IS 300 adds F SPORT (RWD and AWD) beside the IS 350 F SPORT; F SPORT front bumper, rear bumper, grille surround, rear lip spoiler, rocker molding, 19-inch wheels and side F SPORT badges."
+    },
+    {
+      "id": "ford:ka-sedan-br:2015-12",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20151220090836/http://www.ford.com.br:80/carros/ka-mais/compare-as-versoes",
+      "retrievedAt": "2026-11-23",
+      "note": "Official Ford Brasil KA+ 'Compare as Versões' page captured 2015-12-20, headed 'Explore o Ford KA+ 2016'. Ford Brasil's KA+ is a four-door sedan (the KA+ technical specifications page captured 2015-09-09 lists a 4,254 mm length and a 445 L boot), not the European five-door Ka+ hatch. Model year 2016."
+    },
+    {
+      "id": "ford:ka-sedan-br:2017-01",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20170106102247/http://www.ford.com.br/carros/ka-mais/compare-as-versoes",
+      "retrievedAt": "2026-11-23",
+      "note": "Official Ford Brasil page titled 'KA+ Sedan: Compare as Versões' captured 2017-01-06, headed 'Explore o Ka+ Sedan 2017'. Model year 2017, Brazil."
+    },
+    {
+      "id": "ford:ka-sedan-br:2017-04",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20170424125910/http://www.ford.com.br:80/carros/ka-mais/compare-as-versoes",
+      "retrievedAt": "2026-11-23",
+      "note": "Official Ford Brasil page titled 'KA+ Sedan: Compare as Versões' captured 2017-04-24, headed 'Explore o Ka+ Sedan 2018'. Model year 2018, Brazil."
+    },
+    {
+      "id": "ford:ka-sedan-br:2018-08",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20180812094128/https://www.ford.com.br/carros/ka-sedan/",
+      "retrievedAt": "2026-11-23",
+      "note": "Official Ford Brasil model page titled 'Novo Ka Sedan 2019' captured 2018-08-12. Model year 2019, Brazil; the Ka+ Sedan renamed Ka Sedan."
+    },
+    {
+      "id": "ford:ka-sedan-br:2020-09",
+      "sourceId": "manufacturer-reviewed",
+      "url": "https://web.archive.org/web/20200923234204/https://www.ford.com.br/carros/ka-sedan/",
+      "retrievedAt": "2026-11-23",
+      "note": "Official Ford Brasil model page titled 'Ka Sedan 2020' captured 2020-09-23, headed 'Explore o KA SEDAN 2021'. Model years 2020 and 2021, Brazil."
     }
   ],
   "homologation": [],
