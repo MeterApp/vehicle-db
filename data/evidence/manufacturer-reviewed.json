@@ -5797,6 +5797,17 @@
       "url": "https://www.hondaphil.com/price-guide",
       "note": "Honda Cars Philippines price guide lists the Brio (1.2 V CVT and 1.2 RS Black Top CVT grades) in its current line-up, retrieved 2026-11-23; the Brio model page (https://www.hondaphil.com/model/brio) shows a promotion valid 13-30 November 2026. GAIKINDO's best-seller list dated 25 October 2026 (https://www.gaikindo.or.id/20-model-mobil-terlaris-september-2026-atto-1-menempel-gran-max/) reports 2,097 Honda Brio units in Indonesia in September 2026. Calendar catalog year, not MY2026 proof; grade names are trims, not separate models.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2003,
+      "makeId": 3100434934,
+      "make": "SAIPA",
+      "model": "Pride",
+      "vehicleTypeId": 2,
+      "market": "IR",
+      "url": "https://web.archive.org/web/20031010025745/http://www.saipacorp.com:80/english/family.htm",
+      "note": "SAIPA's official English site (saipacorp.com), page \"SAIPA Corp - SAIPA Family\" (Internet Archive capture 2003-10-10), lists the group's products including Pride Wagon, Hatchback, Notchback and Saipa 141 next to Xantia, Nissan Patrol and the commercial vehicles. SAIPA's history page (https://web.archive.org/web/20041213001947/http://www.saipacorp.com:80/en/history/default.htm, capture 2004-12-13) states \"1994 Production of pride (Small-Class Passenger Car in 4 models\", \"2003 Production of Volvo FM9, Pride141, P.K and Volvo NH12\" and \"Production of near 600000 Pride up to now\". Pride is the SAIPA-built small passenger car family; its bodies (hatchback, notchback, wagon, 141) are not separate vehicles here. Calendar year of the dated capture (catalog year), Iranian market; not a factory model year. No alias, identity or visual equivalence with KIA PRIDE (built in Korea, listed 1991-2000) is asserted. Retrieved 2026-11-23.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {

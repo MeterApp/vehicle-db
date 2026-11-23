@@ -133,5 +133,7 @@
   {"query":"2016 Ford Ka Sedan","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["KA+","KA+ TREND","KA+ STUDIO","KA+ ZETEC","KA"]},
   {"query":"2021 Ford Ka Sedan","cohort":"synthetic","options":{"market":"BR"},"expectedStatus":"MATCHED","forbiddenModelNames":["KA+","KA+ TREND","KA+ STUDIO","KA+ ZETEC","KA"]},
   {"query":"2018 Ford KA+ TREND","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["Ka Sedan"]},
-  {"query":"2018 Ford Ka+ Sedan","cohort":"synthetic","expectedStatus":"SCOPE_UNVERIFIED"}
+  {"query":"2018 Ford Ka+ Sedan","cohort":"synthetic","expectedStatus":"SCOPE_UNVERIFIED"},
+  {"query":"2003 SAIPA Pride","cohort":"synthetic","options":{"market":"IR"},"expectedStatus":"MATCHED","forbiddenModelNames":["Rio","Avella"]},
+  {"query":"2003 Kia Pride","cohort":"synthetic","expectedStatus":"YEAR_UNVERIFIED"}
 ]
