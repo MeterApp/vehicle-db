@@ -24,7 +24,7 @@
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
-import { compareStrings, type SourceCatalog } from "./catalog-types";
+import { compareStrings, writeSourceJson, type SourceCatalog } from "./catalog-types";
 
 const OUT_PATH = path.join(__dirname, "..", "data", "sources", "nhtsa.json");
 const BASE = "https://vpic.nhtsa.dot.gov/api/vehicles";
@@ -380,9 +380,7 @@ async function main() {
     modelNames,
     models: compactModels,
   };
-  const json = JSON.stringify(compactData);
-  fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
-  fs.writeFileSync(OUT_PATH, json);
+  writeSourceJson(OUT_PATH, compactData);
 
   const { size } = fs.statSync(OUT_PATH);
   const sizeMB = (size / 1024 / 1024).toFixed(2);

@@ -9,35 +9,17 @@
     "retrievedAt": "2026-09-20"
   },
   "vehicleTypes": [
-    {
-      "vehicle_type_id": 2,
-      "vehicle_type_name": "Passenger Car"
-    }
+    {"vehicle_type_id":2,"vehicle_type_name":"Passenger Car"}
   ],
   "makes": [
-    {
-      "make_id": 443,
-      "make_name": "MASERATI"
-    }
+    {"make_id":443,"make_name":"MASERATI"}
   ],
   "modelNames": [
     "GT2 STRADALE",
     "MCPURA SPYDER"
   ],
   "models": [
-    [
-      2026,
-      443,
-      3729461697,
-      0,
-      2
-    ],
-    [
-      2026,
-      443,
-      4906098597,
-      1,
-      2
-    ]
+    [2026,443,3729461697,0,2],
+    [2026,443,4906098597,1,2]
   ]
 }
