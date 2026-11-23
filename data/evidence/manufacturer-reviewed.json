@@ -5808,6 +5808,17 @@
       "url": "https://web.archive.org/web/20031010025745/http://www.saipacorp.com:80/english/family.htm",
       "note": "SAIPA's official English site (saipacorp.com), page \"SAIPA Corp - SAIPA Family\" (Internet Archive capture 2003-10-10), lists the group's products including Pride Wagon, Hatchback, Notchback and Saipa 141 next to Xantia, Nissan Patrol and the commercial vehicles. SAIPA's history page (https://web.archive.org/web/20041213001947/http://www.saipacorp.com:80/en/history/default.htm, capture 2004-12-13) states \"1994 Production of pride (Small-Class Passenger Car in 4 models\", \"2003 Production of Volvo FM9, Pride141, P.K and Volvo NH12\" and \"Production of near 600000 Pride up to now\". Pride is the SAIPA-built small passenger car family; its bodies (hatchback, notchback, wagon, 141) are not separate vehicles here. Calendar year of the dated capture (catalog year), Iranian market; not a factory model year. No alias, identity or visual equivalence with KIA PRIDE (built in Korea, listed 1991-2000) is asserted. Retrieved 2026-11-23.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 100105,
+      "make": "SKODA",
+      "model": "Kushaq",
+      "vehicleTypeId": 7,
+      "market": "VN",
+      "url": "https://www.skoda-storyboard.com/en/press-releases/next-internationalisation-milestone-skoda-auto-and-regional-partner-and-investor-thanh-cong-group-open-plant-to-assemble-skoda-kushaq-and-slavia-in-vietnam/",
+      "note": "Official Skoda Auto press release dated 27 March 2025 (Skoda Storyboard) says \"Series production of the Kushaq SUV officially began yesterday\" at the new plant in Vietnam, assembled from CKD kits from India, and that the locally assembled Kushaq and Slavia are a cornerstone of Skoda's portfolio in Vietnam. Calendar marketed year only, not factory model year. Retrieved 2026-11-23.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
