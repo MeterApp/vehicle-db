@@ -5775,6 +5775,28 @@
       "url": "https://www.suzuki.co.id/news/kebijakan-relaksasi-ppnbm-dorong-penjualan-produk-unggulan-suzuki",
       "note": "PT Suzuki Indomobil Motor release dated 23 April 2021 reports 1,299 (All New) Ertiga retail sales in March 2021, up 277% from February. Calendar sales year, not model year. Retrieved 2026-11-23.",
       "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2025,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Brio",
+      "vehicleTypeId": 2,
+      "market": "PH",
+      "url": "https://www.hondaphil.com/news/honda-cars-philippines-inc-receives-awards-and-recognition-for-five-of-its-models",
+      "note": "Honda Cars Philippines, Inc. release dated 31 January 2025 (date from its news index) names the Honda Brio among five of its current models receiving awards (2024-2025 Auto Focus Media's Choice Awards, mini-hatch category). Calendar marketed year only, not model year; award text is not catalog data. Retrieved 2026-11-23.",
+      "yearBasis": "catalog-year"
+    },
+    {
+      "year": 2026,
+      "makeId": 474,
+      "make": "HONDA",
+      "model": "Brio",
+      "vehicleTypeId": 2,
+      "market": "PH",
+      "url": "https://www.hondaphil.com/price-guide",
+      "note": "Honda Cars Philippines price guide lists the Brio (1.2 V CVT and 1.2 RS Black Top CVT grades) in its current line-up, retrieved 2026-11-23; the Brio model page (https://www.hondaphil.com/model/brio) shows a promotion valid 13-30 November 2026. GAIKINDO's best-seller list dated 25 October 2026 (https://www.gaikindo.or.id/20-model-mobil-terlaris-september-2026-atto-1-menempel-gran-max/) reports 2,097 Honda Brio units in Indonesia in September 2026. Calendar catalog year, not MY2026 proof; grade names are trims, not separate models.",
+      "yearBasis": "catalog-year"
     }
   ],
   "catalogYearMetadata": {
