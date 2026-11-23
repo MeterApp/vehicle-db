@@ -127,5 +127,11 @@
   {"query":"2025 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]},
   {"query":"2026 VinFast VF 5","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 6","VF e34","Herio Green"]},
   {"query":"2026 VinFast Limo Green","cohort":"synthetic","options":{"market":"VN"},"expectedStatus":"MATCHED","forbiddenModelNames":["VF 3","VF 5","VF 6","VF e34","Herio Green","Minio Green"]},
-  {"query":"2024 NETA S","cohort":"synthetic","options":{"market":"CN"},"expectedStatus":"MATCHED","forbiddenModelNames":["V","X","GT","AYA","L"]}
+  {"query":"2024 NETA S","cohort":"synthetic","options":{"market":"CN"},"expectedStatus":"MATCHED","forbiddenModelNames":["V","X","GT","AYA","L"]},
+  {"query":"2018 Ford Ka Sedan","cohort":"synthetic","options":{"market":"BR"},"expectedStatus":"MATCHED","forbiddenModelNames":["KA+","KA+ TREND","KA+ STUDIO","KA+ ZETEC","KA"]},
+  {"query":"2018 Ford Ka+ Sedan","cohort":"synthetic","options":{"market":"BR"},"expectedStatus":"MATCHED","forbiddenModelNames":["KA+","KA+ TREND","KA+ STUDIO","KA+ ZETEC","KA"]},
+  {"query":"2016 Ford Ka Sedan","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["KA+","KA+ TREND","KA+ STUDIO","KA+ ZETEC","KA"]},
+  {"query":"2021 Ford Ka Sedan","cohort":"synthetic","options":{"market":"BR"},"expectedStatus":"MATCHED","forbiddenModelNames":["KA+","KA+ TREND","KA+ STUDIO","KA+ ZETEC","KA"]},
+  {"query":"2018 Ford KA+ TREND","cohort":"synthetic","expectedStatus":"MATCHED","forbiddenModelNames":["Ka Sedan"]},
+  {"query":"2018 Ford Ka+ Sedan","cohort":"synthetic","expectedStatus":"SCOPE_UNVERIFIED"}
 ]
