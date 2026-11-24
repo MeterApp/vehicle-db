@@ -544,3 +544,26 @@ test("dated Renault UK pages add the Clio Sport Tourer estate without replacing 
   const grandtour = searchVehicles("2010 Renault Clio Grandtour", { fuzzy: false }).find(r => r.kind === "model");
   expect(grandtour?.modelName.toUpperCase()).toBe("CLIO GRANDTOUR");
 });
+
+test("dated Peugeot UK showroom pages add the 306 Estate and 406 Estate without replacing the 306, 406 or NL 306 Break rows", () => {
+  const ranges: Array<[string, number, number]> = [["306 ESTATE", 1999, 2001], ["406 ESTATE", 1999, 2002]];
+  for (const [model, first, last] of ranges) {
+    const name = `Peugeot ${model.split(" ")[0]} Estate`;
+    for (let year = first; year <= last; year++) {
+      const hit = searchVehicles(`${year} ${name}`, { fuzzy: false }).find(r => r.kind === "model");
+      expect(hit).toMatchObject({ makeId: 5554, matchKind: "exact" });
+      expect(hit?.modelName.toUpperCase()).toBe(model);
+      expect(hit?.years).toContain(year);
+      expect(resolveVehicle(`${year} ${name}`, { market: "GB" }).status).toBe("MATCHED");
+    }
+    for (const year of [first - 1, last + 1]) {
+      expect(searchVehicles(`${year} ${name}`, { fuzzy: false }).find(r => r.kind === "model")).toBeUndefined();
+      expect(resolveVehicle(`${year} ${name}`, { market: "GB" }).status).toBe("YEAR_UNVERIFIED");
+    }
+    expect(resolveVehicle(`2000 ${name}`, { market: "FR" }).status).toBe("SCOPE_UNVERIFIED");
+  }
+  for (const base of ["306", "406"]) {
+    const plain = searchVehicles(`2000 Peugeot ${base}`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(plain?.modelName.toUpperCase()).toBe(base);
+  }
+});
