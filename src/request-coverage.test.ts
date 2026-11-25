@@ -546,7 +546,7 @@ test("dated Renault UK pages add the Clio Sport Tourer estate without replacing 
 });
 
 test("dated Peugeot UK showroom pages add the 306 Estate and 406 Estate without replacing the 306, 406 or NL 306 Break rows", () => {
-  const ranges: Array<[string, number, number]> = [["306 ESTATE", 1999, 2001], ["406 ESTATE", 1999, 2002]];
+  const ranges: Array<[string, number, number]> = [["306 ESTATE", 1999, 2001], ["406 ESTATE", 1999, 2003]];
   for (const [model, first, last] of ranges) {
     const name = `Peugeot ${model.split(" ")[0]} Estate`;
     for (let year = first; year <= last; year++) {
