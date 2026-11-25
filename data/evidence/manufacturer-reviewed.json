@@ -5854,6 +5854,17 @@
       "note": "Official Peugeot UK online showroom 406 range page (/showroom/step2.asp?range=406), captured 2002-06-24, offering the 406 in Saloon and Estate bodies (range £13,495 - £27,095). The capture date establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Peugeot UK sold the 406 estate body as the '406 Estate' (not 'SW' or 'Break'). Calendar marketed year only, not factory model year or generation. The earliest reachable dated official UK capture is 1999-05-08; peugeot.co.uk captures of the 406 estate pages from 2003 on were not read, so no year before 1999 or after 2002 is claimed. The existing 406 and 406 COUPE rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-24."
     },
     {
+      "year": 2003,
+      "makeId": 5554,
+      "make": "PEUGEOT",
+      "model": "406 Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20030214150237/http://www.peugeot.co.uk:80/cgi-bin/ppkfcwebuk/ppplp1108_01.jsp",
+      "note": "Official Peugeot UK brochure request page (/cgi-bin/ppkfcwebuk/ppplp1108_01.jsp), captured 2003-02-14, listing a separate '406 Estate' brochure next to 'The 406 range' and '406 Coupé'. The capture date establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Peugeot UK sold the 406 estate body as the '406 Estate' (not 'SW' or 'Break'). Calendar marketed year only, not factory model year or generation. No year after 2003 is claimed: the 2004-01-25 capture of /ppp/PPPWEBUK/Showroom/vp/406/Estate/showroom.htm is a Flash wrapper with no readable model text, and the brochure page captured 2004-06-05 lists the 407 and no 406. The existing 406 and 406 COUPE rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-25."
+    },
+    {
       "year": 1999,
       "makeId": 5554,
       "make": "PEUGEOT",
