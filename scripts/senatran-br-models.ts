@@ -186,6 +186,7 @@ export const RENAVAM_MODELS: [string, string, number, string[]?][] = [
   ["CHEVROLET", "ONIX PLUS", 2],
   ["CHEVROLET", "CORSA", 2],
   ["CHEVROLET", "CORSA CLASSIC", 2],
+  ["CHEVROLET", "CORSA SEDAN", 2],
   ["CHEVROLET", "CELTA", 2],
   ["CHEVROLET", "CLASSIC", 2],
   ["CHEVROLET", "S10", 3],
