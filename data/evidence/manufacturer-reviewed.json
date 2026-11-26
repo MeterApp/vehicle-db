@@ -5896,6 +5896,28 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20010609004659/http://www.peugeot.co.uk:80/showroom/step2.asp?range=306&subrange=estate",
       "note": "Official Peugeot UK online showroom 306 estate range page (/showroom/step2.asp?range=306&subrange=estate), captured 2001-06-09, listing the 306 L Estate (£11,685 - £13,475); the same range's Meridian Estate S and SE pages were captured 2001-08-14 and 2001-10-07. The capture date establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Peugeot UK sold the 306 estate body as the '306 Estate' (not 'SW' or 'Break'). Calendar marketed year only, not factory model year or generation. No dated official UK capture before 1999 or after 2001 was read, so no other year is claimed; the 306 was succeeded in the UK range by the 307. The existing 306 rows and the NL-registered 306 BREAK COMM. 1.9D row are unchanged. Facts only; no text or images copied. Retrieved 2026-11-24."
+    },
+    {
+      "year": 2016,
+      "makeId": 847,
+      "make": "DAIHATSU",
+      "model": "Sigra",
+      "vehicleTypeId": 7,
+      "market": "ID",
+      "yearBasis": "catalog-year",
+      "url": "https://www.daihatsu.com/news/2016/20160802-2.html",
+      "note": "Daihatsu Motor Co., Ltd. release dated 2 August 2016, 'Daihatsu to Launch New SIGRA Multi-Purpose Passenger Vehicle in Indonesia': Astra Daihatsu Motor launches the SIGRA, a seven-seater A-segment MPV built exclusively for the Indonesian market under the LCGC policy. Its release of 12 August 2016 (https://www.daihatsu.com/news/2016/20160812-2.html) states the SIGRA was launched on August 2 and exhibited at GIIAS 2016. Daihatsu Indonesia writes the name 'Sigra'; trims such as R Deluxe, X and M are grades, not models. Calendar catalog year, not model year. Retrieved 2026-11-26."
+    },
+    {
+      "year": 2017,
+      "makeId": 847,
+      "make": "DAIHATSU",
+      "model": "Sigra",
+      "vehicleTypeId": 7,
+      "market": "ID",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20170430091625/http://daihatsu.co.id:80/price-list/sigra",
+      "note": "Official PT Astra Daihatsu Motor price list (daihatsu.co.id/price-list/sigra), captured 2017-04-30 and again on daihatsu.co.id/sigra captured 2017-10-30 (https://web.archive.org/web/20171030164439/http://daihatsu.co.id:80/sigra), lists 'Sigra Mulai dari Rp 108.900.000' among the Daihatsu range. The product page captured 2017-01-29 (https://web.archive.org/web/20170129020743/http://daihatsu.co.id/product/sigra) calls the Astra Daihatsu Sigra an 'MPV 7-seater' with grades up to Tipe R Deluxe. Capture dates establish the 2017 catalog year; calendar catalog year, not model year. Retrieved 2026-11-26."
     }
   ],
   "catalogYearMetadata": {
