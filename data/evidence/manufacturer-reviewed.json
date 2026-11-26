@@ -5918,6 +5918,28 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20170430091625/http://daihatsu.co.id:80/price-list/sigra",
       "note": "Official PT Astra Daihatsu Motor price list (daihatsu.co.id/price-list/sigra), captured 2017-04-30 and again on daihatsu.co.id/sigra captured 2017-10-30 (https://web.archive.org/web/20171030164439/http://daihatsu.co.id:80/sigra), lists 'Sigra Mulai dari Rp 108.900.000' among the Daihatsu range. The product page captured 2017-01-29 (https://web.archive.org/web/20170129020743/http://daihatsu.co.id/product/sigra) calls the Astra Daihatsu Sigra an 'MPV 7-seater' with grades up to Tipe R Deluxe. Capture dates establish the 2017 catalog year; calendar catalog year, not model year. Retrieved 2026-11-26."
+    },
+    {
+      "year": 2003,
+      "makeId": 478,
+      "make": "NISSAN",
+      "model": "Primera Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20031204071157/http://www.nissan.co.uk:80/data/flat_pages/02_uk/prices/primera_estate_prices.pdf",
+      "note": "Official Nissan UK price list PDF (/data/flat_pages/02_uk/prices/primera_estate_prices.pdf), Nissan Motor (GB) Limited, headed 'Nissan Primera Estate 2003 model year', prices effective from 1 August 2003, every grade listed with body 'Estate'; captured 2003-12-04. Nissan Motor (GB) sold the Primera estate body as the 'Primera Estate'. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2003 is claimed (no readable dated official UK estate page before the 2003 list was found) and no year after 2004 is claimed (the 2005-2007 nissan.co.uk Primera pages captured are script shells with no readable body text; the July 2004 list headed '2005 model year' is not used as a 2005 calendar-year claim). The existing NL-registered PRIMERA 2.0D WAGON and PRIMERA 2.0I WAGON U9 rows (1991-1993) are unchanged. Facts only; no text or images copied. Retrieved 2026-11-26."
+    },
+    {
+      "year": 2004,
+      "makeId": 478,
+      "make": "NISSAN",
+      "model": "Primera Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20040613115317/http://www.nissan.co.uk:80/data/flat_pages/02_uk/prices/primera_estate_prices.pdf",
+      "note": "Official Nissan UK price list PDF (same path), headed 'Price list April 2004', with a 'Nissan Primera Estate' section whose grades are all listed with body 'Estate'; captured 2004-06-13. A later capture (2004-08-05) of the same path, headed 'Price list July 2004', also lists the Primera Estate. Nissan Motor (GB) sold the Primera estate body as the 'Primera Estate'. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2003 is claimed (no readable dated official UK estate page before the 2003 list was found) and no year after 2004 is claimed (the 2005-2007 nissan.co.uk Primera pages captured are script shells with no readable body text; the July 2004 list headed '2005 model year' is not used as a 2005 calendar-year claim). The existing NL-registered PRIMERA 2.0D WAGON and PRIMERA 2.0I WAGON U9 rows (1991-1993) are unchanged. Facts only; no text or images copied. Retrieved 2026-11-26."
     }
   ],
   "catalogYearMetadata": {
