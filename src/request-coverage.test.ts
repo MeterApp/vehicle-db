@@ -567,3 +567,20 @@ test("dated Peugeot UK showroom pages add the 306 Estate and 406 Estate without 
     expect(plain?.modelName.toUpperCase()).toBe(base);
   }
 });
+
+test("dated Nissan UK price lists add the Primera Estate for 2003-2004 without replacing the Primera or NL Primera wagon rows", () => {
+  for (const year of [2003, 2004]) {
+    const hit = searchVehicles(`${year} Nissan Primera Estate`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 478, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("PRIMERA ESTATE");
+    expect(hit?.years).toContain(year);
+    expect(resolveVehicle(`${year} Nissan Primera Estate`, { market: "GB" }).status).toBe("MATCHED");
+  }
+  for (const year of [2002, 2005]) {
+    expect(searchVehicles(`${year} Nissan Primera Estate`, { fuzzy: false }).find(r => r.kind === "model")).toBeUndefined();
+    expect(resolveVehicle(`${year} Nissan Primera Estate`, { market: "GB" }).status).toBe("YEAR_UNVERIFIED");
+  }
+  expect(resolveVehicle("2003 Nissan Primera Estate", { market: "FR" }).status).toBe("SCOPE_UNVERIFIED");
+  const plain = searchVehicles("2003 Nissan Primera", { fuzzy: false }).find(r => r.kind === "model");
+  expect(plain?.modelName.toUpperCase()).toBe("PRIMERA");
+});
