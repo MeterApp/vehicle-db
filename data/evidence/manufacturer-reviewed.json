@@ -5940,6 +5940,17 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20040613115317/http://www.nissan.co.uk:80/data/flat_pages/02_uk/prices/primera_estate_prices.pdf",
       "note": "Official Nissan UK price list PDF (same path), headed 'Price list April 2004', with a 'Nissan Primera Estate' section whose grades are all listed with body 'Estate'; captured 2004-06-13. A later capture (2004-08-05) of the same path, headed 'Price list July 2004', also lists the Primera Estate. Nissan Motor (GB) sold the Primera estate body as the 'Primera Estate'. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2003 is claimed (no readable dated official UK estate page before the 2003 list was found) and no year after 2004 is claimed (the 2005-2007 nissan.co.uk Primera pages captured are script shells with no readable body text; the July 2004 list headed '2005 model year' is not used as a 2005 calendar-year claim). The existing NL-registered PRIMERA 2.0D WAGON and PRIMERA 2.0I WAGON U9 rows (1991-1993) are unchanged. Facts only; no text or images copied. Retrieved 2026-11-26."
+    },
+    {
+      "year": 2026,
+      "makeId": 3116762559,
+      "make": "SYM",
+      "model": "MMBCU 125",
+      "vehicleTypeId": 1,
+      "market": "GB",
+      "yearBasis": "model-year",
+      "url": "https://symuk.co.uk/model/2026-sym-mmbcu-125cc-1914",
+      "note": "SYM UK (symuk.co.uk, the SYM brand site run by its UK distributor MotoGB Ltd, through whose authorised dealers the manufacturer warranty is given) model page '2026-sym-mmbcu-125cc-1914', headed 'Sym MMBCU 125cc' with images labelled 'Sym MMBCU 125cc 2026' and a 125 cc displacement in its specification. The page labels the 2026 model year; the former 2025 page (/model/2025-sym-mmbcu-125-1914) now serves the same 2026 listing. The name matches the existing UK DVLA 'MMBCU 125' (2025) row of make SYM. The 150/158 cc MMBCU sold in Taiwan, China and continental Europe is not claimed. Facts only; no text or images copied. Retrieved 2026-11-26."
     }
   ],
   "catalogYearMetadata": {
