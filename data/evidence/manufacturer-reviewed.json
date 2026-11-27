@@ -1771,7 +1771,7 @@
       "vehicleTypeId": 7,
       "market": "CN",
       "url": "https://www.lexus.com.cn/node/3625",
-      "note": "Lexus China explicitly identifies 2019\u6b3e LX570 \u5dc5\u5cf0\u7279\u522b\u7248 (translated Peak Special Edition), reusing 2018 special edition spindle grille, front/rear bumpers and dark mirrors. Exact China model year; not generic LX570 or a VN official trim.",
+      "note": "Lexus China explicitly identifies 2019款 LX570 巅峰特别版 (translated Peak Special Edition), reusing 2018 special edition spindle grille, front/rear bumpers and dark mirrors. Exact China model year; not generic LX570 or a VN official trim.",
       "yearBasis": "model-year"
     },
     {
@@ -5973,6 +5973,39 @@
       "yearBasis": "catalog-year",
       "url": "https://web.archive.org/web/20010913014340/http://www.volkswagen.co.uk:80/cars/polo/mn_range_estate.jsp?GroupId=12",
       "note": "Official Volkswagen UK Polo range page for the Estate (volkswagen.co.uk/cars/polo/mn_range_estate.jsp), describing the Polo Estate with a revised UK price range and an 'Estate Specification' section; captured 2001-09-13 (earlier 2001 captures of the same path: 2001-02-11, 2001-04-18, 2001-06-26, 2001-08-05). Volkswagen UK sold the Polo estate body (Polo Mk3 facelift) as the 'Polo Estate'. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2000 is claimed (no readable dated volkswagen.co.uk Polo Estate page before the 2000-02-29 capture was found) and no year after 2001 is claimed (from early 2002 volkswagen.co.uk presents the new Polo range under /newcars/new_polo/ with no estate page). The existing POLO, POLO VAN and RDW-NL POLO-CLASSIC rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-27."
+    },
+    {
+      "year": 2002,
+      "makeId": 481,
+      "make": "MITSUBISHI",
+      "model": "Galant Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20020603032604/http://www.mitsubishi-cars.co.uk:80/galant/prices.asp",
+      "note": "Official Mitsubishi Motors UK Galant price list (mitsubishi-cars.co.uk/galant/prices.asp) listing separate SALOON and ESTATE sections with on-the-road UK prices for Classic, Equippe and Elegance grades; captured 2002-06-03, and again as the printable price list on 2002-12-28 (https://web.archive.org/web/20021228141612/http://www.mitsubishi-cars.co.uk:80/galant/printpages/prices_prn.asp). Mitsubishi UK sold the Galant estate body as the 'Galant Estate', priced separately from the Galant Saloon. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2002 is claimed (the earliest dated mitsubishi-cars.co.uk Galant capture is 2002-06-02) and no year after 2004 is claimed (no dated mitsubishi-cars.co.uk Galant page after the 2004-04-28 capture was found). The existing GALANT rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-27."
+    },
+    {
+      "year": 2003,
+      "makeId": 481,
+      "make": "MITSUBISHI",
+      "model": "Galant Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20030415222344/http://www.mitsubishi-cars.co.uk:80/galant/prices.asp",
+      "note": "Official Mitsubishi Motors UK Galant price list (mitsubishi-cars.co.uk/galant/prices.asp) listing separate SALOON and ESTATE sections with on-the-road UK prices for Equippe and Elegance grades; captured 2003-04-15, and again as the printable price list on 2003-10-17 with revised prices (https://web.archive.org/web/20031017213609/http://www.mitsubishi-cars.co.uk:80/galant/printpages/prices_prn.asp). Mitsubishi UK sold the Galant estate body as the 'Galant Estate', priced separately from the Galant Saloon. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2002 is claimed (the earliest dated mitsubishi-cars.co.uk Galant capture is 2002-06-02) and no year after 2004 is claimed (no dated mitsubishi-cars.co.uk Galant page after the 2004-04-28 capture was found). The existing GALANT rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-27."
+    },
+    {
+      "year": 2004,
+      "makeId": 481,
+      "make": "MITSUBISHI",
+      "model": "Galant Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20040428065525/http://www.mitsubishi-cars.co.uk:80/galant/prices.asp",
+      "note": "Official Mitsubishi Motors UK Galant price list (mitsubishi-cars.co.uk/galant/prices.asp) listing separate SALOON and ESTATE sections with revised on-the-road UK prices for Equippe and Elegance grades; captured 2004-04-28, and earlier in 2004 as the printable price list on 2004-02-24 (https://web.archive.org/web/20040224234245/http://www.mitsubishi-cars.co.uk:80/galant/printpages/prices_prn.asp). Mitsubishi UK sold the Galant estate body as the 'Galant Estate', priced separately from the Galant Saloon. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2002 is claimed (the earliest dated mitsubishi-cars.co.uk Galant capture is 2002-06-02) and no year after 2004 is claimed (no dated mitsubishi-cars.co.uk Galant page after the 2004-04-28 capture was found). The existing GALANT rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-27."
     }
   ],
   "catalogYearMetadata": {
