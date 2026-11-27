@@ -12,7 +12,7 @@ permissions:
 jobs:
   test:
     name: Node.js ${{ matrix.node-version }}
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     strategy:
       fail-fast: false
       matrix:
@@ -65,6 +65,10 @@ jobs:
         run: pnpm run replay
 
       - name: Test
+        # Node 20 sizes its default heap from the runner's memory and gets ~2 GB on
+        # Blacksmith, which the suite outgrows; Node 22 and GitHub-hosted runners got more.
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
         run: pnpm test
 
       - name: Typecheck
