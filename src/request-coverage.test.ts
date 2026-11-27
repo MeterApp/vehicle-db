@@ -584,3 +584,20 @@ test("dated Nissan UK price lists add the Primera Estate for 2003-2004 without r
   const plain = searchVehicles("2003 Nissan Primera", { fuzzy: false }).find(r => r.kind === "model");
   expect(plain?.modelName.toUpperCase()).toBe("PRIMERA");
 });
+
+test("dated Volkswagen UK range pages add the Polo Estate for 2000-2001 without replacing the Polo, Polo Van or NL Polo Classic rows", () => {
+  for (const year of [2000, 2001]) {
+    const hit = searchVehicles(`${year} Volkswagen Polo Estate`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 482, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("POLO ESTATE");
+    expect(hit?.years).toContain(year);
+    expect(resolveVehicle(`${year} Volkswagen Polo Estate`, { market: "GB" }).status).toBe("MATCHED");
+  }
+  for (const year of [1999, 2002]) {
+    expect(searchVehicles(`${year} Volkswagen Polo Estate`, { fuzzy: false }).find(r => r.kind === "model")).toBeUndefined();
+    expect(resolveVehicle(`${year} Volkswagen Polo Estate`, { market: "GB" }).status).toBe("YEAR_UNVERIFIED");
+  }
+  expect(resolveVehicle("2000 Volkswagen Polo Estate", { market: "FR" }).status).toBe("SCOPE_UNVERIFIED");
+  const plain = searchVehicles("2000 Volkswagen Polo", { fuzzy: false }).find(r => r.kind === "model");
+  expect(plain?.modelName.toUpperCase()).toBe("POLO");
+});
