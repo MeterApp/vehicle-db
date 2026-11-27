@@ -601,3 +601,20 @@ test("dated Volkswagen UK range pages add the Polo Estate for 2000-2001 without 
   const plain = searchVehicles("2000 Volkswagen Polo", { fuzzy: false }).find(r => r.kind === "model");
   expect(plain?.modelName.toUpperCase()).toBe("POLO");
 });
+
+test("dated Mitsubishi UK price lists add the Galant Estate for 2002-2004 without replacing the Galant rows", () => {
+  for (const year of [2002, 2003, 2004]) {
+    const hit = searchVehicles(`${year} Mitsubishi Galant Estate`, { fuzzy: false }).find(r => r.kind === "model");
+    expect(hit).toMatchObject({ makeId: 481, matchKind: "exact" });
+    expect(hit?.modelName.toUpperCase()).toBe("GALANT ESTATE");
+    expect(hit?.years).toContain(year);
+    expect(resolveVehicle(`${year} Mitsubishi Galant Estate`, { market: "GB" }).status).toBe("MATCHED");
+  }
+  for (const year of [2001, 2005]) {
+    expect(searchVehicles(`${year} Mitsubishi Galant Estate`, { fuzzy: false }).find(r => r.kind === "model")).toBeUndefined();
+    expect(resolveVehicle(`${year} Mitsubishi Galant Estate`, { market: "GB" }).status).toBe("YEAR_UNVERIFIED");
+  }
+  expect(resolveVehicle("2003 Mitsubishi Galant Estate", { market: "FR" }).status).toBe("SCOPE_UNVERIFIED");
+  const plain = searchVehicles("2003 Mitsubishi Galant", { fuzzy: false }).find(r => r.kind === "model");
+  expect(plain?.modelName.toUpperCase()).toBe("GALANT");
+});
