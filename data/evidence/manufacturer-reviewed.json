@@ -5951,6 +5951,28 @@
       "yearBasis": "model-year",
       "url": "https://symuk.co.uk/model/2026-sym-mmbcu-125cc-1914",
       "note": "SYM UK (symuk.co.uk, the SYM brand site run by its UK distributor MotoGB Ltd, through whose authorised dealers the manufacturer warranty is given) model page '2026-sym-mmbcu-125cc-1914', headed 'Sym MMBCU 125cc' with images labelled 'Sym MMBCU 125cc 2026' and a 125 cc displacement in its specification. The page labels the 2026 model year; the former 2025 page (/model/2025-sym-mmbcu-125-1914) now serves the same 2026 listing. The name matches the existing UK DVLA 'MMBCU 125' (2025) row of make SYM. The 150/158 cc MMBCU sold in Taiwan, China and continental Europe is not claimed. Facts only; no text or images copied. Retrieved 2026-11-26."
+    },
+    {
+      "year": 2000,
+      "makeId": 482,
+      "make": "VOLKSWAGEN",
+      "model": "Polo Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20000229042459/http://www.volkswagen.co.uk:80/cars/polo/mn_range_estate.html",
+      "note": "Official Volkswagen UK Polo range page for the Estate (volkswagen.co.uk/cars/polo/mn_range_estate.html), titled 'Volkswagen | Polo', describing the Polo Estate with a UK price range and an 'Estate Specification' section beside the Hatch and Saloon pages; captured 2000-02-29, and again 2000-12-07 as mn_range_estate.jsp (https://web.archive.org/web/20001207124800/http://www.volkswagen.co.uk:80/cars/polo/mn_range_estate.jsp). Volkswagen UK sold the Polo estate body (Polo Mk3 facelift) as the 'Polo Estate'. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2000 is claimed (no readable dated volkswagen.co.uk Polo Estate page before the 2000-02-29 capture was found) and no year after 2001 is claimed (from early 2002 volkswagen.co.uk presents the new Polo range under /newcars/new_polo/ with no estate page). The existing POLO, POLO VAN and RDW-NL POLO-CLASSIC rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-27."
+    },
+    {
+      "year": 2001,
+      "makeId": 482,
+      "make": "VOLKSWAGEN",
+      "model": "Polo Estate",
+      "vehicleTypeId": 2,
+      "market": "GB",
+      "yearBasis": "catalog-year",
+      "url": "https://web.archive.org/web/20010913014340/http://www.volkswagen.co.uk:80/cars/polo/mn_range_estate.jsp?GroupId=12",
+      "note": "Official Volkswagen UK Polo range page for the Estate (volkswagen.co.uk/cars/polo/mn_range_estate.jsp), describing the Polo Estate with a revised UK price range and an 'Estate Specification' section; captured 2001-09-13 (earlier 2001 captures of the same path: 2001-02-11, 2001-04-18, 2001-06-26, 2001-08-05). Volkswagen UK sold the Polo estate body (Polo Mk3 facelift) as the 'Polo Estate'. The capture establishes the estate was offered in that calendar year; the cited copy is the Internet Archive's. Calendar marketed year only, not factory model year or generation. No year before 2000 is claimed (no readable dated volkswagen.co.uk Polo Estate page before the 2000-02-29 capture was found) and no year after 2001 is claimed (from early 2002 volkswagen.co.uk presents the new Polo range under /newcars/new_polo/ with no estate page). The existing POLO, POLO VAN and RDW-NL POLO-CLASSIC rows are unchanged. Facts only; no text or images copied. Retrieved 2026-11-27."
     }
   ],
   "catalogYearMetadata": {
